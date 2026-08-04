@@ -1,0 +1,284 @@
+{
+  "schema": "digi-mon/ontology-audit@1",
+  "scope": {
+    "subjects": [
+      "math",
+      "korean",
+      "english"
+    ]
+  },
+  "upstream": {
+    "dataVersion": "Korean Elementary Learning Map full-depth integrated workstream build",
+    "taxonomyVersion": "kr-full-depth-v0.4",
+    "generatedAt": "2026-07-09T00:00:00+09:00"
+  },
+  "integrity": [
+    {
+      "file": "curriculum-standards.json",
+      "bytes": 1913076,
+      "bytesOnDisk": 1950742,
+      "eolNormalized": true,
+      "sha256": "aaaebb939c17fcc11a808fef3ae8164823425f74bfe8092a4a66941cb8c33335",
+      "manifestSha256": "aaaebb939c17fcc11a808fef3ae8164823425f74bfe8092a4a66941cb8c33335",
+      "matchesManifest": true
+    },
+    {
+      "file": "topics.json",
+      "bytes": 5387054,
+      "bytesOnDisk": 5470585,
+      "eolNormalized": true,
+      "sha256": "80aa059ed305ce4cbeb0df45436c0b204a42cd208204c1cc1e5332c70c4bf5f3",
+      "manifestSha256": "80aa059ed305ce4cbeb0df45436c0b204a42cd208204c1cc1e5332c70c4bf5f3",
+      "matchesManifest": true
+    },
+    {
+      "file": "dependencies.json",
+      "bytes": 762739,
+      "bytesOnDisk": 777907,
+      "eolNormalized": true,
+      "sha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c",
+      "manifestSha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c",
+      "matchesManifest": true
+    },
+    {
+      "file": "clusters.json",
+      "bytes": 336090,
+      "bytesOnDisk": 342317,
+      "eolNormalized": true,
+      "sha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb",
+      "manifestSha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb",
+      "matchesManifest": true
+    }
+  ],
+  "thresholds": {
+    "boilerplate": 0.05,
+    "partiallyTemplated": 0.5
+  },
+  "subjects": {
+    "math": {
+      "subjectKorean": "수학",
+      "topics": {
+        "topicCount": 363,
+        "standardsCovered": 121,
+        "fanoutPerStandard": {
+          "3": 121
+        },
+        "fanoutIsUniform": true,
+        "fields": {
+          "description": {
+            "total": 363,
+            "uniqueShapes": 3,
+            "uniqueRatio": 0.0083,
+            "verdict": "boilerplate"
+          },
+          "assessmentPrompt": {
+            "total": 363,
+            "uniqueShapes": 3,
+            "uniqueRatio": 0.0083,
+            "verdict": "boilerplate"
+          },
+          "evidence": {
+            "total": 726,
+            "uniqueShapes": 6,
+            "uniqueRatio": 0.0083,
+            "verdict": "boilerplate"
+          }
+        },
+        "missingGenerationAxes": [
+          {
+            "key": "officialStandardText",
+            "label": "성취기준 원문"
+          },
+          {
+            "key": "grade",
+            "label": "학년(학년군 아님)"
+          },
+          {
+            "key": "numberRange",
+            "label": "수 범위·수치 제약"
+          },
+          {
+            "key": "itemFormat",
+            "label": "문항 형식"
+          },
+          {
+            "key": "misconceptions",
+            "label": "오개념·오답 유형"
+          },
+          {
+            "key": "difficulty",
+            "label": "난이도"
+          },
+          {
+            "key": "solutionSteps",
+            "label": "풀이 절차"
+          }
+        ]
+      },
+      "dependencies": {
+        "edgeCount": 359,
+        "intraStandardEdges": 242,
+        "intraStandardRatio": 0.6741,
+        "crossDomainEdges": 0,
+        "crossGradeBandEdges": 8,
+        "reasonUniqueShapes": 4,
+        "carriesRealHierarchy": false
+      },
+      "usage": {
+        "codeInventory": "trusted",
+        "topicContent": "index-only",
+        "prerequisiteGraph": "index-only"
+      }
+    },
+    "korean": {
+      "subjectKorean": "국어",
+      "topics": {
+        "topicCount": 348,
+        "standardsCovered": 87,
+        "fanoutPerStandard": {
+          "4": 87
+        },
+        "fanoutIsUniform": true,
+        "fields": {
+          "description": {
+            "total": 348,
+            "uniqueShapes": 348,
+            "uniqueRatio": 1,
+            "verdict": "reviewable-candidate"
+          },
+          "assessmentPrompt": {
+            "total": 348,
+            "uniqueShapes": 348,
+            "uniqueRatio": 1,
+            "verdict": "reviewable-candidate"
+          },
+          "evidence": {
+            "total": 696,
+            "uniqueShapes": 35,
+            "uniqueRatio": 0.0503,
+            "verdict": "partially-templated"
+          }
+        },
+        "missingGenerationAxes": [
+          {
+            "key": "officialStandardText",
+            "label": "성취기준 원문"
+          },
+          {
+            "key": "grade",
+            "label": "학년(학년군 아님)"
+          },
+          {
+            "key": "numberRange",
+            "label": "수 범위·수치 제약"
+          },
+          {
+            "key": "itemFormat",
+            "label": "문항 형식"
+          },
+          {
+            "key": "misconceptions",
+            "label": "오개념·오답 유형"
+          },
+          {
+            "key": "difficulty",
+            "label": "난이도"
+          },
+          {
+            "key": "solutionSteps",
+            "label": "풀이 절차"
+          }
+        ]
+      },
+      "dependencies": {
+        "edgeCount": 360,
+        "intraStandardEdges": 261,
+        "intraStandardRatio": 0.725,
+        "crossDomainEdges": 10,
+        "crossGradeBandEdges": 20,
+        "reasonUniqueShapes": 21,
+        "carriesRealHierarchy": true
+      },
+      "usage": {
+        "codeInventory": "trusted",
+        "topicContent": "index-only",
+        "prerequisiteGraph": "reviewable-candidate"
+      }
+    },
+    "english": {
+      "subjectKorean": "영어",
+      "topics": {
+        "topicCount": 120,
+        "standardsCovered": 40,
+        "fanoutPerStandard": {
+          "3": 40
+        },
+        "fanoutIsUniform": true,
+        "fields": {
+          "description": {
+            "total": 120,
+            "uniqueShapes": 63,
+            "uniqueRatio": 0.525,
+            "verdict": "reviewable-candidate"
+          },
+          "assessmentPrompt": {
+            "total": 120,
+            "uniqueShapes": 19,
+            "uniqueRatio": 0.1583,
+            "verdict": "partially-templated"
+          },
+          "evidence": {
+            "total": 240,
+            "uniqueShapes": 32,
+            "uniqueRatio": 0.1333,
+            "verdict": "partially-templated"
+          }
+        },
+        "missingGenerationAxes": [
+          {
+            "key": "officialStandardText",
+            "label": "성취기준 원문"
+          },
+          {
+            "key": "grade",
+            "label": "학년(학년군 아님)"
+          },
+          {
+            "key": "numberRange",
+            "label": "수 범위·수치 제약"
+          },
+          {
+            "key": "itemFormat",
+            "label": "문항 형식"
+          },
+          {
+            "key": "misconceptions",
+            "label": "오개념·오답 유형"
+          },
+          {
+            "key": "difficulty",
+            "label": "난이도"
+          },
+          {
+            "key": "solutionSteps",
+            "label": "풀이 절차"
+          }
+        ]
+      },
+      "dependencies": {
+        "edgeCount": 146,
+        "intraStandardEdges": 80,
+        "intraStandardRatio": 0.5479,
+        "crossDomainEdges": 0,
+        "crossGradeBandEdges": 20,
+        "reasonUniqueShapes": 6,
+        "carriesRealHierarchy": true
+      },
+      "usage": {
+        "codeInventory": "trusted",
+        "topicContent": "index-only",
+        "prerequisiteGraph": "reviewable-candidate"
+      }
+    }
+  }
+}

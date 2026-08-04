@@ -1,0 +1,2376 @@
+{
+  "schema": "digi-mon/coverage@1",
+  "generatedFrom": {
+    "standardCount": 248,
+    "generatorCount": 34
+  },
+  "totalStandards": 248,
+  "coveredStandards": 18,
+  "uncoveredStandards": 230,
+  "coverageRatio": 0.0726,
+  "bySubject": {
+    "math": {
+      "subjectKorean": "수학",
+      "total": 121,
+      "covered": 18,
+      "generators": 34,
+      "byDomain": {
+        "수와 연산": {
+          "total": 42,
+          "covered": 11
+        },
+        "변화와 관계": {
+          "total": 10,
+          "covered": 0
+        },
+        "도형과 측정": {
+          "total": 57,
+          "covered": 7
+        },
+        "자료와 가능성": {
+          "total": 12,
+          "covered": 0
+        }
+      },
+      "coverageRatio": 0.1488
+    },
+    "korean": {
+      "subjectKorean": "국어",
+      "total": 87,
+      "covered": 0,
+      "generators": 0,
+      "byDomain": {
+        "듣기·말하기": {
+          "total": 18,
+          "covered": 0
+        },
+        "읽기": {
+          "total": 16,
+          "covered": 0
+        },
+        "쓰기": {
+          "total": 15,
+          "covered": 0
+        },
+        "문법": {
+          "total": 14,
+          "covered": 0
+        },
+        "문학": {
+          "total": 15,
+          "covered": 0
+        },
+        "매체": {
+          "total": 9,
+          "covered": 0
+        }
+      },
+      "coverageRatio": 0
+    },
+    "english": {
+      "subjectKorean": "영어",
+      "total": 40,
+      "covered": 0,
+      "generators": 0,
+      "byDomain": {
+        "이해": {
+          "total": 20,
+          "covered": 0
+        },
+        "표현": {
+          "total": 20,
+          "covered": 0
+        }
+      },
+      "coverageRatio": 0
+    }
+  },
+  "covered": [
+    {
+      "code": "[2수01-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "네 자리 이하의 수",
+      "generatorCount": 4,
+      "generatorIds": [
+        "math.g12.no.s01.read-sino",
+        "math.g12.no.s01.write-digit",
+        "math.g12.no.s01.count-tens-ones",
+        "math.g12.no.s01.count-native"
+      ]
+    },
+    {
+      "code": "[2수01-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "네 자리 이하의 수",
+      "generatorCount": 3,
+      "generatorIds": [
+        "math.g12.no.s02.place-digit",
+        "math.g12.no.s02.place-amount",
+        "math.g12.no.s02.decompose"
+      ]
+    },
+    {
+      "code": "[2수01-03]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "네 자리 이하의 수",
+      "generatorCount": 3,
+      "generatorIds": [
+        "math.g12.no.s03.compare",
+        "math.g12.no.s03.order",
+        "math.g12.no.s03.sequence"
+      ]
+    },
+    {
+      "code": "[2수01-04]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "네 자리 이하의 수",
+      "generatorCount": 3,
+      "generatorIds": [
+        "math.g12.no.s04.decompose",
+        "math.g12.no.s04.compose",
+        "math.g12.no.s04.make-ten"
+      ]
+    },
+    {
+      "code": "[2수01-05]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s05.story-add",
+        "math.g12.no.s05.story-sub"
+      ]
+    },
+    {
+      "code": "[2수01-06]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s06.add",
+        "math.g12.no.s06.sub"
+      ]
+    },
+    {
+      "code": "[2수01-07]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s07.add-to-sub",
+        "math.g12.no.s07.fact-family"
+      ]
+    },
+    {
+      "code": "[2수01-08]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s08.estimate",
+        "math.g12.no.s08.estimate-compare"
+      ]
+    },
+    {
+      "code": "[2수01-09]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.no.s09.box"
+      ]
+    },
+    {
+      "code": "[2수01-10]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "한 자리 수의 곱셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s10.groups",
+        "math.g12.no.s10.add-to-mult"
+      ]
+    },
+    {
+      "code": "[2수01-11]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "수와 연산",
+      "module": "한 자리 수의 곱셈",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.no.s11.times-table",
+        "math.g12.no.s11.times-blank"
+      ]
+    },
+    {
+      "code": "[2수03-05]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "평면도형과 그 구성 요소",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.gm.s05.identify",
+        "math.g12.gm.s05.count-sides"
+      ]
+    },
+    {
+      "code": "[2수03-07]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s07.read-clock"
+      ]
+    },
+    {
+      "code": "[2수03-08]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s08.convert"
+      ]
+    },
+    {
+      "code": "[2수03-09]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s09.calendar"
+      ]
+    },
+    {
+      "code": "[2수03-10]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s10.choose-unit"
+      ]
+    },
+    {
+      "code": "[2수03-11]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s11.m-cm"
+      ]
+    },
+    {
+      "code": "[2수03-12]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.gm.s12.read-ruler"
+      ]
+    }
+  ],
+  "uncovered": [
+    {
+      "code": "[2수02-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "변화와 관계",
+      "module": "규칙 찾기",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수02-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "변화와 관계",
+      "module": "규칙 찾기",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "입체도형의 모양",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "입체도형의 모양",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-03]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "평면도형과 그 구성 요소",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-04]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "평면도형과 그 구성 요소",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-06]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "양의 비교",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수03-13]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수04-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "자료와 가능성",
+      "module": "자료의 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수04-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "자료와 가능성",
+      "module": "자료의 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2수04-03]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "자료와 가능성",
+      "module": "자료의 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-01]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "다섯 자리 이상의 수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-02]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "다섯 자리 이상의 수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-03]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "세 자리 수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-04]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "세 자리 수 범위의 곱셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-05]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "세 자리 수 범위의 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-06]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "세 자리 수 범위의 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-07]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "세 자리 수 범위의 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-08]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "자연수의 어림셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-09]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "분수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-10]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "분수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-11]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "분수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-12]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "소수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-13]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "소수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-14]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "소수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-15]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "분수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수01-16]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "수와 연산",
+      "module": "소수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수02-01]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "변화와 관계",
+      "module": "규칙을 수나 식으로 나타내기",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수02-02]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "변화와 관계",
+      "module": "규칙을 수나 식으로 나타내기",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수02-03]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "변화와 관계",
+      "module": "등호와 동치 관계",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-01]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "도형의 기초",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-02]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "도형의 기초",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-03]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "도형의 기초",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-04]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "평면도형의 이동",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-05]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "평면도형의 이동",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-06]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "원의 구성 요소",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-07]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "원의 구성 요소",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-08]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "여러 가지 삼각형",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-09]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "여러 가지 삼각형",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-10]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "여러 가지 사각형",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-11]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "다각형",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-12]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "다각형",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-13]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-14]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-15]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-16]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-17]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-18]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-19]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-20]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-21]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-22]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-23]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-24]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "각도",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수03-25]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "각도",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수04-01]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수04-02]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4수04-03]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-01]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "자연수의 혼합 계산",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-02]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "수의 범위와 올림, 버림, 반올림",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-03]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "수의 범위와 올림, 버림, 반올림",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-04]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "약수와 배수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-05]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "약수와 배수",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-06]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-07]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-08]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 덧셈과 뺄셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-09]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-10]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-11]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-12]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "분수와 소수의 관계",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-13]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "소수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-14]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "소수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수01-15]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "수와 연산",
+      "module": "소수의 곱셈과 나눗셈",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수02-01]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "변화와 관계",
+      "module": "대응 관계",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수02-02]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "변화와 관계",
+      "module": "비와 비율",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수02-03]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "변화와 관계",
+      "module": "비와 비율",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수02-04]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "변화와 관계",
+      "module": "비례식과 비례배분",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수02-05]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "변화와 관계",
+      "module": "비례식과 비례배분",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-01]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "합동과 대칭",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-02]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "합동과 대칭",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-03]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "직육면체와 정육면체",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-04]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "직육면체와 정육면체",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-05]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "각기둥과 각뿔",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-06]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "각기둥과 각뿔",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-07]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "원기둥, 원뿔, 구",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-08]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "원기둥, 원뿔, 구",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-09]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "입체도형의 공간 감각",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-10]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "입체도형의 공간 감각",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-11]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "다각형의 둘레와 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-12]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "다각형의 둘레와 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-13]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "다각형의 둘레와 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-14]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "다각형의 둘레와 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-15]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "원주율과 원의 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-16]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "원주율과 원의 넓이",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-17]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "입체도형의 겉넓이와 부피",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-18]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "입체도형의 겉넓이와 부피",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수03-19]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "도형과 측정",
+      "module": "입체도형의 겉넓이와 부피",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-01]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-02]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-03]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "자료의 수집과 정리",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-04]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "가능성",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-05]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "가능성",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6수04-06]",
+      "subject": "math",
+      "gradeBand": "5-6",
+      "domain": "자료와 가능성",
+      "module": "가능성",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-05]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-05]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국04-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국04-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국04-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국06-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국06-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-06]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-06]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국04-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국04-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국04-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국04-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국04-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국05-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국05-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국05-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국05-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국05-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국06-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국06-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국06-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-07]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-01]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-02]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-03]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-04]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-05]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-06]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-07]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-08]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-09]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-10]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-01]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-02]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-03]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-04]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-05]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-06]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-07]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-08]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-09]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-10]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-01]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-02]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-03]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-04]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-05]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-06]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-07]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-09]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-10]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-01]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-02]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-03]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-04]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-05]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-06]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-07]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-09]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-10]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "generatorCount": 0,
+      "generatorIds": []
+    }
+  ]
+}

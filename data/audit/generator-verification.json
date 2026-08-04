@@ -1,0 +1,977 @@
+{
+  "schema": "digi-mon/generator-verification@1",
+  "samplesPerCombination": 400,
+  "generatorCount": 34,
+  "totalGenerated": 40800,
+  "totalFailed": 0,
+  "figuresRendered": 4800,
+  "coverage": {
+    "totalStandards": 248,
+    "coveredStandards": 18,
+    "coverageRatio": 0.0726,
+    "bySubject": {
+      "math": {
+        "subjectKorean": "수학",
+        "total": 121,
+        "covered": 18,
+        "generators": 34,
+        "byDomain": {
+          "수와 연산": {
+            "total": 42,
+            "covered": 11
+          },
+          "변화와 관계": {
+            "total": 10,
+            "covered": 0
+          },
+          "도형과 측정": {
+            "total": 57,
+            "covered": 7
+          },
+          "자료와 가능성": {
+            "total": 12,
+            "covered": 0
+          }
+        },
+        "coverageRatio": 0.1488
+      },
+      "korean": {
+        "subjectKorean": "국어",
+        "total": 87,
+        "covered": 0,
+        "generators": 0,
+        "byDomain": {
+          "듣기·말하기": {
+            "total": 18,
+            "covered": 0
+          },
+          "읽기": {
+            "total": 16,
+            "covered": 0
+          },
+          "쓰기": {
+            "total": 15,
+            "covered": 0
+          },
+          "문법": {
+            "total": 14,
+            "covered": 0
+          },
+          "문학": {
+            "total": 15,
+            "covered": 0
+          },
+          "매체": {
+            "total": 9,
+            "covered": 0
+          }
+        },
+        "coverageRatio": 0
+      },
+      "english": {
+        "subjectKorean": "영어",
+        "total": 40,
+        "covered": 0,
+        "generators": 0,
+        "byDomain": {
+          "이해": {
+            "total": 20,
+            "covered": 0
+          },
+          "표현": {
+            "total": 20,
+            "covered": 0
+          }
+        },
+        "coverageRatio": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "generatorId": "math.g12.no.s01.read-sino",
+      "code": "[2수01-01]",
+      "skill": "수를 한자어로 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 100,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0833
+    },
+    {
+      "generatorId": "math.g12.no.s01.write-digit",
+      "code": "[2수01-01]",
+      "skill": "읽은 수를 숫자로 쓰기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 30,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 90,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.075
+    },
+    {
+      "generatorId": "math.g12.no.s01.count-tens-ones",
+      "code": "[2수01-01]",
+      "skill": "10개씩 묶음과 낱개로 수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 198,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 270,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 266,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 621,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5175
+    },
+    {
+      "generatorId": "math.g12.no.s01.count-native",
+      "code": "[2수01-01]",
+      "skill": "고유어 수사로 개수 말하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 51,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 99,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 208,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 358,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2983
+    },
+    {
+      "generatorId": "math.g12.no.s02.place-digit",
+      "code": "[2수01-02]",
+      "skill": "지정한 자리의 숫자 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 372,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 396,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 394,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1159,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9658
+    },
+    {
+      "generatorId": "math.g12.no.s02.place-amount",
+      "code": "[2수01-02]",
+      "skill": "숫자가 나타내는 값 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1170,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.975
+    },
+    {
+      "generatorId": "math.g12.no.s02.decompose",
+      "code": "[2수01-02]",
+      "skill": "네 자리 수를 자릿값으로 분해하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 396,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 391,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1165,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9708
+    },
+    {
+      "generatorId": "math.g12.no.s03.compare",
+      "code": "[2수01-03]",
+      "skill": "두 수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 392,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1192,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9933
+    },
+    {
+      "generatorId": "math.g12.no.s03.order",
+      "code": "[2수01-03]",
+      "skill": "세 수를 크기 순서로 늘어놓기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g12.no.s03.sequence",
+      "code": "[2수01-03]",
+      "skill": "뛰어 세기 규칙으로 빈칸 채우기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1198,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9983
+    },
+    {
+      "generatorId": "math.g12.no.s04.decompose",
+      "code": "[2수01-04]",
+      "skill": "한 수를 두 수로 가르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 66,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 130,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 155,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 351,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2925
+    },
+    {
+      "generatorId": "math.g12.no.s04.compose",
+      "code": "[2수01-04]",
+      "skill": "두 수를 모으기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 92,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 153,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 174,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.145
+    },
+    {
+      "generatorId": "math.g12.no.s04.make-ten",
+      "code": "[2수01-04]",
+      "skill": "10 만들기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 154,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 163,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1358
+    },
+    {
+      "generatorId": "math.g12.no.s05.story-add",
+      "code": "[2수01-05]",
+      "skill": "덧셈 상황에서 식 세우고 답 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 318,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 394,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1094,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9117
+    },
+    {
+      "generatorId": "math.g12.no.s05.story-sub",
+      "code": "[2수01-05]",
+      "skill": "뺄셈 상황에서 식 세우고 답 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 238,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 383,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 952,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7933
+    },
+    {
+      "generatorId": "math.g12.no.s06.add",
+      "code": "[2수01-06]",
+      "skill": "두 자리 수의 덧셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 332,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 320,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 285,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 849,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7075
+    },
+    {
+      "generatorId": "math.g12.no.s06.sub",
+      "code": "[2수01-06]",
+      "skill": "두 자리 수의 뺄셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 344,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 337,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 343,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 940,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7833
+    },
+    {
+      "generatorId": "math.g12.no.s07.add-to-sub",
+      "code": "[2수01-07]",
+      "skill": "덧셈식을 뺄셈식으로 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 56,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 321,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 387,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 733,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6108
+    },
+    {
+      "generatorId": "math.g12.no.s07.fact-family",
+      "code": "[2수01-07]",
+      "skill": "세 수로 덧셈식 만들기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 25,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 233,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 370,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 609,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5075
+    },
+    {
+      "generatorId": "math.g12.no.s08.estimate",
+      "code": "[2수01-08]",
+      "skill": "몇십으로 어림하여 계산하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 327,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 344,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 375,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 893,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7442
+    },
+    {
+      "generatorId": "math.g12.no.s08.estimate-compare",
+      "code": "[2수01-08]",
+      "skill": "어림하여 두 식의 결과 비교하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g12.no.s09.box",
+      "code": "[2수01-09]",
+      "skill": "□의 값 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 204,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 376,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 391,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 955,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7958
+    },
+    {
+      "generatorId": "math.g12.no.s10.groups",
+      "code": "[2수01-10]",
+      "skill": "묶음 상황을 곱셈식으로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 133,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 311,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 309,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 555,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.4625
+    },
+    {
+      "generatorId": "math.g12.no.s10.add-to-mult",
+      "code": "[2수01-10]",
+      "skill": "같은 수의 덧셈을 곱셈식으로 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 48,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 48,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 52,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0433
+    },
+    {
+      "generatorId": "math.g12.no.s11.times-table",
+      "code": "[2수01-11]",
+      "skill": "곱셈구구",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 64,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 68,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0567
+    },
+    {
+      "generatorId": "math.g12.no.s11.times-blank",
+      "code": "[2수01-11]",
+      "skill": "곱셈구구 빈칸 채우기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 120,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 125,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 128,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1067
+    },
+    {
+      "generatorId": "math.g12.gm.s05.identify",
+      "code": "[2수03-05]",
+      "skill": "변의 수로 다각형 이름 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 168,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 216,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 247,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 337,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2808
+    },
+    {
+      "generatorId": "math.g12.gm.s05.count-sides",
+      "code": "[2수03-05]",
+      "skill": "다각형의 변과 꼭짓점 수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "math.g12.gm.s07.read-clock",
+      "code": "[2수03-07]",
+      "skill": "시계를 보고 시각 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 122,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 295,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 429,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.3575
+    },
+    {
+      "generatorId": "math.g12.gm.s08.convert",
+      "code": "[2수03-08]",
+      "skill": "시간과 분 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 65,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 66,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 68,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0567
+    },
+    {
+      "generatorId": "math.g12.gm.s09.calendar",
+      "code": "[2수03-09]",
+      "skill": "날짜 단위 관계 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 27,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0225
+    },
+    {
+      "generatorId": "math.g12.gm.s11.m-cm",
+      "code": "[2수03-11]",
+      "skill": "m와 cm 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 362,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 370,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 657,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5475
+    },
+    {
+      "generatorId": "math.g12.gm.s12.read-ruler",
+      "code": "[2수03-12]",
+      "skill": "자를 보고 물건의 길이 재기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 46,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 46,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 55,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0458
+    },
+    {
+      "generatorId": "math.g12.gm.s10.choose-unit",
+      "code": "[2수03-10]",
+      "skill": "상황에 알맞은 길이 단위 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    }
+  ],
+  "errors": []
+}

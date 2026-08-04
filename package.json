@@ -1,0 +1,18 @@
+{
+  "name": "digi-mon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "2022 개정 초등 국어·수학·영어 학습 데이터 생성 파이프라인",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "serve": "node bin/serve.mjs",
+    "build:spine": "node bin/build-spine.mjs",
+    "audit:ontology": "node bin/audit-ontology.mjs",
+    "verify:generators": "node bin/verify-generators.mjs",
+    "worksheet": "node bin/worksheet.mjs",
+    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node bin/verify-generators.mjs"
+  }
+}

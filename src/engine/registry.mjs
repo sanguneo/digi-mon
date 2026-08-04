@@ -1,0 +1,101 @@
+import { generators as mathG12NumberOperations } from '../generators/math/g12-number-operations.mjs';
+import { generators as mathG12GeometryMeasurement } from '../generators/math/g12-geometry-measurement.mjs';
+
+/**
+ * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
+ * 커버리지 원장이 '아직 안 붙은 성취기준'을 세므로 진척이 기계로 측정된다.
+ */
+const MODULES = [
+  { file: 'math/g12-number-operations.mjs', generators: mathG12NumberOperations },
+  { file: 'math/g12-geometry-measurement.mjs', generators: mathG12GeometryMeasurement },
+];
+
+function assertGeneratorContract(g, file) {
+  const fail = (msg) => {
+    throw new Error(`생성기 계약 위반 [${g?.id ?? '?'} in ${file}]: ${msg}`);
+  };
+  if (typeof g?.id !== 'string' || g.id.length === 0) fail('id 없음');
+  if (typeof g.standardCode !== 'string' || !/^\[\d[가-힣]+\d{2}-\d{2}\]$/.test(g.standardCode)) fail(`standardCode 형식 오류: ${g.standardCode}`);
+  if (typeof g.skill !== 'string' || g.skill.length === 0) fail('skill 없음');
+  if (typeof g.generate !== 'function') fail('generate 없음');
+  if (typeof g.verify !== 'function') fail('verify 없음 — 검산 없는 생성기는 받지 않는다');
+}
+
+export function createRegistry() {
+  const byId = new Map();
+  const byStandardCode = new Map();
+
+  for (const { file, generators } of MODULES) {
+    for (const g of generators) {
+      assertGeneratorContract(g, file);
+      if (byId.has(g.id)) throw new Error(`생성기 id 중복: ${g.id}`);
+      byId.set(g.id, { ...g, sourceFile: file });
+      if (!byStandardCode.has(g.standardCode)) byStandardCode.set(g.standardCode, []);
+      byStandardCode.get(g.standardCode).push(byId.get(g.id));
+    }
+  }
+
+  return {
+    size: byId.size,
+    byId,
+    byStandardCode,
+    get(id) {
+      return byId.get(id);
+    },
+    forStandard(code) {
+      return byStandardCode.get(code) ?? [];
+    },
+    all() {
+      return [...byId.values()];
+    },
+  };
+}
+
+/**
+ * 커버리지 원장. 스파인의 성취기준 248개 중 생성기가 붙은 것과 안 붙은 것을 센다.
+ * '지속적으로 진화하는 엔진'의 진척은 이 숫자로만 주장할 수 있다.
+ */
+export function buildCoverage(spine, registry) {
+  const bySubject = {};
+  const covered = [];
+  const uncovered = [];
+
+  for (const std of spine.standards) {
+    const gens = registry.forStandard(std.code);
+    const entry = {
+      code: std.code,
+      subject: std.subject,
+      gradeBand: std.gradeBand,
+      domain: std.domain,
+      module: std.module,
+      generatorCount: gens.length,
+      generatorIds: gens.map((g) => g.id),
+    };
+    (gens.length > 0 ? covered : uncovered).push(entry);
+
+    bySubject[std.subject] ??= { subjectKorean: std.subjectKorean, total: 0, covered: 0, generators: 0, byDomain: {} };
+    const b = bySubject[std.subject];
+    b.total += 1;
+    b.generators += gens.length;
+    if (gens.length > 0) b.covered += 1;
+    b.byDomain[std.domain] ??= { total: 0, covered: 0 };
+    b.byDomain[std.domain].total += 1;
+    if (gens.length > 0) b.byDomain[std.domain].covered += 1;
+  }
+
+  for (const b of Object.values(bySubject)) {
+    b.coverageRatio = Number((b.covered / b.total).toFixed(4));
+  }
+
+  return {
+    schema: 'digi-mon/coverage@1',
+    generatedFrom: { standardCount: spine.standardCount, generatorCount: registry.size },
+    totalStandards: spine.standards.length,
+    coveredStandards: covered.length,
+    uncoveredStandards: uncovered.length,
+    coverageRatio: Number((covered.length / spine.standards.length).toFixed(4)),
+    bySubject,
+    covered,
+    uncovered,
+  };
+}
