@@ -1,22 +1,22 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 84,
-  "totalGenerated": 100800,
+  "generatorCount": 101,
+  "totalGenerated": 121200,
   "totalFailed": 0,
-  "figuresRendered": 9600,
+  "figuresRendered": 27185,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 58,
-    "coverageRatio": 0.2348,
+    "coveredStandards": 75,
+    "coverageRatio": 0.3036,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
         "total": 121,
         "autoScorable": 120,
         "manualOnly": 1,
-        "covered": 58,
-        "generators": 84,
+        "covered": 75,
+        "generators": 101,
         "byDomain": {
           "수와 연산": {
             "total": 42,
@@ -31,15 +31,15 @@
           "도형과 측정": {
             "total": 57,
             "autoScorable": 56,
-            "covered": 23
+            "covered": 37
           },
           "자료와 가능성": {
             "total": 12,
             "autoScorable": 12,
-            "covered": 3
+            "covered": 6
           }
         },
-        "coverageRatio": 0.4833
+        "coverageRatio": 0.625
       },
       "korean": {
         "subjectKorean": "국어",
@@ -2289,6 +2289,448 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.1358
+    },
+    {
+      "generatorId": "math.g34.gd.s01.identify-line",
+      "code": "[4수03-01]",
+      "skill": "직선·선분·반직선 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 3,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0025
+    },
+    {
+      "generatorId": "math.g34.gd.s02.right-angle",
+      "code": "[4수03-02]",
+      "skill": "직각 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 394,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 396,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1166,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9717
+    },
+    {
+      "generatorId": "math.g34.gd.s03.right-figures",
+      "code": "[4수03-03]",
+      "skill": "직각이 있는 도형의 성질",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 3,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0025
+    },
+    {
+      "generatorId": "math.g34.gd.s04.transform",
+      "code": "[4수03-04]",
+      "skill": "평면도형의 이동 방법 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 5,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0042
+    },
+    {
+      "generatorId": "math.g34.gd.s05.pattern",
+      "code": "[4수03-05]",
+      "skill": "이동을 반복한 무늬의 규칙 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 20,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0167
+    },
+    {
+      "generatorId": "math.g34.gd.s06.parts",
+      "code": "[4수03-06]",
+      "skill": "원의 구성 요소 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 3,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0025
+    },
+    {
+      "generatorId": "math.g34.gd.s07.radius-diameter",
+      "code": "[4수03-07]",
+      "skill": "반지름과 지름의 관계",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 34,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 79,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 97,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0808
+    },
+    {
+      "generatorId": "math.g34.gd.s08.by-sides",
+      "code": "[4수03-08]",
+      "skill": "변의 길이로 삼각형 분류하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 54,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 192,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 185,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 313,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2608
+    },
+    {
+      "generatorId": "math.g34.gd.s09.by-angles",
+      "code": "[4수03-09]",
+      "skill": "각의 크기로 삼각형 분류하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 231,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 285,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 300,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 673,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5608
+    },
+    {
+      "generatorId": "math.g34.gd.s10.quadrilateral",
+      "code": "[4수03-10]",
+      "skill": "여러 가지 사각형 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 170,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 274,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 266,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 417,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.3475
+    },
+    {
+      "generatorId": "math.g34.gd.s11.name-polygon",
+      "code": "[4수03-11]",
+      "skill": "변의 수로 다각형 이름 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 12,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.01
+    },
+    {
+      "generatorId": "math.g34.gd.s12.diagonals",
+      "code": "[4수03-12]",
+      "skill": "대각선의 수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 1,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 5,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0042
+    },
+    {
+      "generatorId": "math.g34.gd.s24.measure",
+      "code": "[4수03-24]",
+      "skill": "각의 크기 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 15,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 132,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 136,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1133
+    },
+    {
+      "generatorId": "math.g34.gd.s25.angle-sum",
+      "code": "[4수03-25]",
+      "skill": "삼각형·사각형의 각의 크기 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 384,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 396,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1142,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9517
+    },
+    {
+      "generatorId": "math.g34.gd.s04-01.collect",
+      "code": "[4수04-01]",
+      "skill": "자료를 표로 정리하고 합계 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1192,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9933
+    },
+    {
+      "generatorId": "math.g34.gd.s04-02.read-bar",
+      "code": "[4수04-02]",
+      "skill": "막대그래프에서 값 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 397,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1197,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9975
+    },
+    {
+      "generatorId": "math.g34.gd.s04-03.interpret-bar",
+      "code": "[4수04-03]",
+      "skill": "막대그래프 해석하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1194,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.995
     }
   ],
   "errors": []

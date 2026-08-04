@@ -1,40 +1,28 @@
 /**
- * figure.spec -> SVG. 결정적으로 그린다.
- *
- * 왜 이미지 생성 모델을 쓰지 않는가:
- * 수학 도형은 각도 47도가 정확히 47도여야 하고, 모눈은 칸이 정확히 세어져야 하며,
- * 시계는 정확히 그 시각을 가리켜야 한다. 확률적 렌더는 문항을 오답으로 만든다.
- * 삽화·표지·캐릭터는 이미지 모델의 몫이고, 도해는 여기 몫이다.
+ * figure.spec -> SVG 디스패치.
+ * 공통 헬퍼는 svg-base.mjs, 3~4학년 기하 도해는 figure-geometry34.mjs 에 있다.
  */
-
-const VERTEX_LABELS = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ'];
-
-const STYLE = {
-  stroke: '#111111',
-  light: '#9aa0a6',
-  fill: 'none',
-  font: 'system-ui, -apple-system, "Malgun Gothic", sans-serif',
-};
-
-function svgRoot(width, height, body, altText) {
-  return [
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"`,
-    ` role="img" aria-label="${escapeXml(altText)}">`,
-    `<rect width="${width}" height="${height}" fill="#ffffff"/>`,
-    body,
-    '</svg>',
-  ].join('');
-}
-
-function escapeXml(s) {
-  return String(s).replace(/[<>&"']/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' }[c]));
-}
-
-function text(x, y, content, { size = 13, anchor = 'middle', weight = 'normal' } = {}) {
-  return `<text x="${round(x)}" y="${round(y)}" font-family="${STYLE.font}" font-size="${size}" font-weight="${weight}" text-anchor="${anchor}" fill="${STYLE.stroke}">${escapeXml(content)}</text>`;
-}
-
-const round = (n) => Math.round(n * 100) / 100;
+import {
+  DEFAULT_ROTATION,
+  REGULAR_SIDES,
+  SVG_STYLE as STYLE,
+  VERTEX_LABELS,
+  polygonPoints,
+  round,
+  svgRoot,
+  svgText as text,
+} from './svg-base.mjs';
+import {
+  renderAngle,
+  renderAngleRow,
+  renderCircle,
+  renderLine,
+  renderPolygonDiagonals,
+  renderTransform,
+  renderQuadrilateral,
+  renderBarGraph,
+  renderTriangle,
+} from './figure-geometry34.mjs';
 
 // ---------------------------------------------------------------------------
 // measure.clock — 시각과 시간 [2수03-07]
@@ -81,25 +69,6 @@ function renderClock({ hour, minute }, altText) {
 // ---------------------------------------------------------------------------
 // geometry.plane-shape — 평면도형 [2수03-03~05]
 // ---------------------------------------------------------------------------
-
-const REGULAR_SIDES = { triangle: 3, quadrilateral: 4, pentagon: 5, hexagon: 6 };
-
-/**
- * 도형별 기본 회전. 저학년 교재는 도형을 표준 방향으로 싣는다.
- *
- * 정n각형의 첫 꼭짓점을 위로 두면 사각형이 마름모로 서 버린다. 수학적으로는
- * 같은 사각형이지만, 1~2학년에게 사각형을 마름모 방향으로 보여 주면 도형 이름을
- * 방향으로 외우게 만들어 오답을 유발한다. 4각형만 45도 돌려 아래변을 수평으로 둔다.
- */
-const DEFAULT_ROTATION = { triangle: 0, quadrilateral: 45, pentagon: 0, hexagon: 0 };
-
-/** 정n각형 꼭짓점. 첫 꼭짓점을 위로 두어 아이가 보는 표준 방향으로 맞춘다. */
-function polygonPoints(sides, cx, cy, radius, rotationDeg = 0) {
-  return Array.from({ length: sides }, (_, k) => {
-    const angle = ((k * 360) / sides - 90 + rotationDeg) * (Math.PI / 180);
-    return [cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)];
-  });
-}
 
 function renderPlaneShape({ shape, labelVertices = false, rotationDeg }, altText) {
   const size = 130;
@@ -351,6 +320,15 @@ const RENDERERS = {
   'geometry.solid-shape': (spec, alt) => (spec.layers ? renderStackedCubes(spec, alt) : renderSolidShape(spec, alt)),
   'data.table': renderDataTable,
   'data.picture-graph': renderPictureGraph,
+  // 3~4학년 기하. spec 의 모양으로 하위 렌더러를 고른다.
+  'geometry.angle': (spec, alt) => (spec.angles ? renderAngleRow(spec, alt) : renderAngle(spec, alt)),
+  'geometry.line': renderLine,
+  'geometry.circle': renderCircle,
+  'geometry.triangle': renderTriangle,
+  'geometry.grid-area': renderPolygonDiagonals,
+  'geometry.symmetry': renderTransform,
+  'geometry.quadrilateral': renderQuadrilateral,
+  'data.bar-graph': renderBarGraph,
 };
 
 /** figure 를 SVG 문자열로 만든다. 렌더러가 없는 kind 는 조용히 넘기지 않고 던진다. */

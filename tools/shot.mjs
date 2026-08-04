@@ -23,12 +23,16 @@ ws.onmessage = (ev) => {
 };
 
 await send('Page.enable');
+// 폭을 먼저 고정한 뒤 높이를 측정한다. 순서를 바꾸면 리플로우 이전 높이를 재서
+// 아래쪽 컷이 잘린 채로 저장된다.
+const WIDTH = 1180;
+await send('Emulation.setDeviceMetricsOverride', { width: WIDTH, height: 900, deviceScaleFactor: 2, mobile: false });
 await new Promise((r) => setTimeout(r, 1200));
 const metrics = await send('Page.getLayoutMetrics');
-const h = Math.ceil(metrics.cssContentSize.height);
-await send('Emulation.setDeviceMetricsOverride', { width: 1000, height: h, deviceScaleFactor: 2, mobile: false });
-await new Promise((r) => setTimeout(r, 400));
-const shot = await send('Page.captureScreenshot', { format: 'png' });
+const h = Math.ceil(metrics.cssContentSize.height) + 24;
+await send('Emulation.setDeviceMetricsOverride', { width: WIDTH, height: h, deviceScaleFactor: 2, mobile: false });
+await new Promise((r) => setTimeout(r, 500));
+const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
 fs.writeFileSync('out/figures/gallery.png', Buffer.from(shot.data, 'base64'));
 console.log(`out/figures/gallery.png (${(fs.statSync('out/figures/gallery.png').size / 1024).toFixed(0)}KB)`);
 await fetch(`${CDP}/json/close/${tab.id}`);
