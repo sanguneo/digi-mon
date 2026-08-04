@@ -155,3 +155,63 @@ export const numEun = (n) => `${n}${numberParticle(n, '은', '는')}`;
 export const numI = (n) => `${n}${numberParticle(n, '이', '가')}`;
 export const numEul = (n) => `${n}${numberParticle(n, '을', '를')}`;
 export const numGwa = (n) => `${n}${numberParticle(n, '과', '와')}`;
+
+/**
+ * 서술격 조사. 받침이 있으면 '이다', 없으면 '다'.
+ *   3권이다 / 51송이다 / 12개다
+ * '송이이다'처럼 겹쳐 쓰면 문법은 맞아도 읽기가 거슬린다.
+ */
+export function ida(word) {
+  return `${word}${particle(word, '이다', '다')}`;
+}
+
+/** 숫자와 단위명사에 서술격 조사를 붙인다. 조사는 단위명사가 정한다. */
+export const countIda = (count, counter) => `${count}${ida(counter)}`;
+
+/**
+ * 단위 기호를 읽는 소리. 조사는 표기가 아니라 소리가 정한다.
+ *   1kg -> '킬로그램' -> 램에 받침이 있으므로 '1kg은'
+ */
+const UNIT_READING = {
+  cm: '센티미터',
+  mm: '밀리미터',
+  m: '미터',
+  km: '킬로미터',
+  g: '그램',
+  kg: '킬로그램',
+  t: '톤',
+  L: '리터',
+  mL: '밀리리터',
+};
+
+export function unitParticle(unitSymbol, withJong, withoutJong) {
+  const reading = UNIT_READING[unitSymbol];
+  if (!reading) throw new Error(`읽는 소리를 모르는 단위: ${unitSymbol}`);
+  return particle(reading, withJong, withoutJong);
+}
+
+/** 수치와 단위 뒤의 조사. unitEun(2, 'kg') -> '2kg은' */
+export const unitEun = (value, unit) => `${value}${unit}${unitParticle(unit, '은', '는')}`;
+export const unitI = (value, unit) => `${value}${unit}${unitParticle(unit, '이', '가')}`;
+export const unitEul = (value, unit) => `${value}${unit}${unitParticle(unit, '을', '를')}`;
+
+/**
+ * 분수 표기 뒤의 조사.
+ *
+ * particle 은 마지막 글자가 한글이 아니면 받침 없음으로 처리한다. 그래서
+ * '11/8' 에 그대로 쓰면 '8' 을 보고 '는' 을 골라 '11/8는' 이 된다.
+ * 분수는 '팔분의 십일' 로 읽어 분자를 마지막에 소리 내므로 '11/8은' 이 맞다.
+ */
+export function fractionParticle(text, withJong, withoutJong) {
+  const mixed = /^(\d+)\s+(\d+)\/(\d+)$/.exec(String(text).trim());
+  if (mixed) return numberParticle(Number(mixed[2]), withJong, withoutJong);
+  const frac = /^(\d+)\/(\d+)$/.exec(String(text).trim());
+  if (frac) return numberParticle(Number(frac[1]), withJong, withoutJong);
+  const plain = /^\d+$/.exec(String(text).trim());
+  if (plain) return numberParticle(Number(text), withJong, withoutJong);
+  return particle(String(text), withJong, withoutJong);
+}
+
+export const fracEun = (t) => `${t}${fractionParticle(t, '은', '는')}`;
+export const fracI = (t) => `${t}${fractionParticle(t, '이', '가')}`;
+export const fracEul = (t) => `${t}${fractionParticle(t, '을', '를')}`;

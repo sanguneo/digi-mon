@@ -1,0 +1,56 @@
+{
+  "schema": "digi-mon/korean-check@1",
+  "samplesPerGenerator": 60,
+  "textsScanned": 52418,
+  "checks": {
+    "josa-after-number": {
+      "label": "숫자 뒤 조사",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "josa-after-unit": {
+      "label": "단위 뒤 조사",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "josa-after-counter": {
+      "label": "단위명사 뒤 조사",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "duplicate-josa": {
+      "label": "조사 중복",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "space-before-josa": {
+      "label": "조사 앞 공백",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "template-leak": {
+      "label": "치환 안 된 흔적",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "double-space": {
+      "label": "연속 공백·문장부호 앞 공백",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    }
+  }
+}

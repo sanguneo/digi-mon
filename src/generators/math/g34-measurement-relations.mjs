@@ -7,7 +7,7 @@
  * 단위 계산은 기준 단위 정수값으로만 처리한다(curriculum/units.mjs).
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEul, josaEun, josaI, numEun, numEul, sinoKorean } from '../../engine/korean-number.mjs';
+import { josaEul, josaEun, josaI, numEun, numEul, numI, sinoKorean, unitEun, unitI } from '../../engine/korean-number.mjs';
 import { UNIT_SYSTEMS, formatCompound, formatCompoundPair, ratioBetween, unitOf } from '../../curriculum/units.mjs';
 
 const num = (n) => String(n);
@@ -169,7 +169,7 @@ const equalitySense = {
         : { value: leftB, display: num(leftB), accepts: [num(leftB)] },
       solution: [
         `왼쪽은 ${leftA} + ${leftB} = ${total}이다.`,
-        `등호는 양쪽 크기가 같음을 뜻하므로 오른쪽도 ${total}이 되어야 한다.`,
+        `등호는 양쪽 크기가 같음을 뜻하므로 오른쪽도 ${numI(total)} 되어야 한다.`,
         hideRight ? `${total} - ${rightA} = ${rightB}` : `${total} - ${leftA} = ${leftB}`,
       ],
       dedupeKey: `equality:${total}:${leftA}:${rightA}:${hideRight ? 'r' : 'l'}`,
@@ -352,7 +352,7 @@ function makeUnitConversion(system, code, idSuffix, bigSymbol, smallSymbol) {
           stem: `${compound} = □${smallSymbol}`,
           answer: { value: smallValue, display: `${smallValue}${smallSymbol}`, accepts: [num(smallValue), `${smallValue}${smallSymbol}`] },
           solution: [
-            `1${bigSymbol}는 ${ratio}${smallSymbol}이므로 ${whole}${bigSymbol}는 ${whole * ratio}${smallSymbol}이다.`,
+            `${unitEun(1, bigSymbol)} ${ratio}${smallSymbol}이므로 ${unitEun(whole, bigSymbol)} ${whole * ratio}${smallSymbol}이다.`,
             rest === 0 ? `${smallValue}${smallSymbol}이다.` : `${whole * ratio} + ${rest} = ${smallValue}${smallSymbol}이다.`,
           ],
           dedupeKey: `convert-${system}-${bigSymbol}-${smallSymbol}-to-small:${smallValue}`,
@@ -365,7 +365,7 @@ function makeUnitConversion(system, code, idSuffix, bigSymbol, smallSymbol) {
         stem: `${smallValue}${smallSymbol} = ${whole}${bigSymbol} □${smallSymbol}`,
         answer: { value: rest, display: `${rest}${smallSymbol}`, accepts: [num(rest), `${rest}${smallSymbol}`] },
         solution: [
-          `${whole}${bigSymbol}는 ${whole * ratio}${smallSymbol}이다.`,
+          `${unitEun(whole, bigSymbol)} ${whole * ratio}${smallSymbol}이다.`,
           `${smallValue} - ${whole * ratio} = ${rest}${smallSymbol}이다.`,
         ],
         dedupeKey: `convert-${system}-${bigSymbol}-${smallSymbol}-to-big:${smallValue}`,
@@ -406,7 +406,7 @@ function makeUnitArithmetic(system, code, idSuffix, bigSymbol) {
         answer: { value: display, display, accepts: [display] },
         solution: [
           `${sys.base} 단위끼리, ${bigSymbol} 단위끼리 자리를 맞추어 계산한다.`,
-          `${big.factor}${sys.base}가 되면 1${bigSymbol}로 ${isAdd ? '올린다' : '바꾸어 내린다'}.`,
+          `${unitI(big.factor, sys.base)} 되면 1${bigSymbol}로 ${isAdd ? '올린다' : '바꾸어 내린다'}.`,
           `답은 ${display}이다.`,
         ],
         dedupeKey: `unit-arith-${system}:${a}:${b}:${isAdd ? 'a' : 's'}`,

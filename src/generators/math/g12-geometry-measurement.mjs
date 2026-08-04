@@ -5,7 +5,7 @@
  * 정확히 재현되고, 같은 spec 에서 정답도 나오므로 그림과 답이 어긋날 수 없다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEun, josaI, numEun } from '../../engine/korean-number.mjs';
+import { josaEun, josaI, numEun, numGwa } from '../../engine/korean-number.mjs';
 
 const CODE = (n) => `[2수03-${String(n).padStart(2, '0')}]`;
 const num = (n) => String(n);
@@ -146,7 +146,7 @@ const readClock = {
         accepts: [display, `${hour}시${minute}분`, `${hour}:${String(minute).padStart(2, '0')}`],
       },
       solution: [
-        `짧은바늘이 ${hour}와 ${hour === 12 ? 1 : hour + 1} 사이에 있으므로 ${hour}시이다.`,
+        `짧은바늘이 ${numGwa(hour)} ${hour === 12 ? 1 : hour + 1} 사이에 있으므로 ${hour}시이다.`,
         minute === 0 ? '긴바늘이 12를 가리키므로 0분이다.' : `긴바늘이 ${minute}분을 가리킨다.`,
         `${display}이다.`,
       ],

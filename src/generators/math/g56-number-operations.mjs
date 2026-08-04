@@ -5,7 +5,7 @@
  * 소수의 곱셈·나눗셈은 자리수가 늘어나므로 고정소수점 정수 연산이 특히 중요하다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEul, josaEun, josaI, numEun, numEul, numI, numberParticle } from '../../engine/korean-number.mjs';
+import { fracEul, josaEul, josaEun, josaI, numEun, numEul, numGwa, numI, numberParticle } from '../../engine/korean-number.mjs';
 import {
   addFractions,
   compareFractions,
@@ -216,10 +216,10 @@ const numberRange = {
       stem: `${shuffled.join(', ')} 중에서 ${boundary} ${word}인 수를 모두 쓰시오.`,
       answer: { value: matching, display, accepts: [display, matching.join(' ')] },
       solution: [
-        word === '이상' ? `${boundary} 이상은 ${boundary}와 같거나 큰 수다.`
-          : word === '이하' ? `${boundary} 이하는 ${boundary}와 같거나 작은 수다.`
-            : word === '초과' ? `${boundary} 초과는 ${boundary}보다 큰 수다. ${boundary}는 넣지 않는다.`
-              : `${boundary} 미만은 ${boundary}보다 작은 수다. ${boundary}는 넣지 않는다.`,
+        word === '이상' ? `${boundary} 이상은 ${numGwa(boundary)} 같거나 큰 수다.`
+          : word === '이하' ? `${boundary} 이하는 ${numGwa(boundary)} 같거나 작은 수다.`
+            : word === '초과' ? `${boundary} 초과는 ${boundary}보다 큰 수다. ${numEun(boundary)} 넣지 않는다.`
+              : `${boundary} 미만은 ${boundary}보다 작은 수다. ${numEun(boundary)} 넣지 않는다.`,
         `조건에 맞는 수는 ${display}이다.`,
       ],
       dedupeKey: `range:${word}:${boundary}:${shuffled.join('-')}`,
@@ -533,7 +533,7 @@ const multiplyFractionsItem = {
         instruction: '계산하시오.',
         stem: `${formatFraction(a)} × ${k}`,
         answer: { value: display, display, accepts: [display, formatFraction(result)] },
-        solution: [`분자에 자연수를 곱한다: ${n} × ${k} = ${n * k}`, `${n * k}/${d}${result.d === 1 ? '' : `를 약분하면 ${display}`}`],
+        solution: [`분자에 자연수를 곱한다: ${n} × ${k} = ${n * k}`, `${fracEul(`${n * k}/${d}`)} 약분하면 ${display}`],
         dedupeKey: `frac-mul-nat:${n}:${d}:${k}`,
         difficulty,
       };
@@ -721,7 +721,7 @@ const multiplyDecimalByNatural = {
       stem: `${formatDecimal(a)} × ${k}`,
       answer: { value: formatDecimal(result), display: formatDecimal(result), accepts: [formatDecimal(result)] },
       solution: [
-        `소수점을 무시하고 ${units} × ${k} = ${units * k}을 계산한다.`,
+        `소수점을 무시하고 ${units} × ${k} = ${numEul(units * k)} 계산한다.`,
         `곱하는 소수의 소수점 아래 자리가 ${scale}개이므로 결과도 ${scale}개다.`,
         `${formatDecimal(result)}`,
       ],
@@ -757,7 +757,7 @@ const multiplyDecimals = {
       stem: `${formatDecimal(a)} × ${formatDecimal(b)}`,
       answer: { value: formatDecimal(result), display: formatDecimal(result), accepts: [formatDecimal(result)] },
       solution: [
-        `소수점을 무시하고 ${u1} × ${u2} = ${u1 * u2}을 계산한다.`,
+        `소수점을 무시하고 ${u1} × ${u2} = ${numEul(u1 * u2)} 계산한다.`,
         `소수점 아래 자리가 ${s1} + ${s2} = ${s1 + s2}개이므로 소수점을 ${s1 + s2}칸 옮긴다.`,
         `${formatDecimal(result)}`,
       ],
@@ -792,7 +792,7 @@ const divideDecimals = {
       stem: `${formatDecimal(dividend)} ÷ ${divisor}`,
       answer: { value: formatDecimal(quotient), display: formatDecimal(quotient), accepts: [formatDecimal(quotient)] },
       solution: [
-        `소수점을 무시하고 ${dividendUnits} ÷ ${divisor} = ${quotientUnits}을 계산한다.`,
+        `소수점을 무시하고 ${dividendUnits} ÷ ${divisor} = ${numEul(quotientUnits)} 계산한다.`,
         `나누어지는 수의 소수점 위치를 그대로 옮긴다.`,
         `${formatDecimal(quotient)}`,
       ],

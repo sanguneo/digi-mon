@@ -8,7 +8,7 @@
  * 원주율은 교육과정 표기대로 3.14 를 쓰고, 3.14 를 100분의 314 정수로 다룬다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEul, josaEun, josaI, numEul, numEun, numI } from '../../engine/korean-number.mjs';
+import { fracEul, josaEul, josaEun, josaI, numEul, numEun, numI } from '../../engine/korean-number.mjs';
 import {
   formatDecimal,
   formatDecimalTrimmed,
@@ -53,7 +53,7 @@ const correspondence = {
     return {
       params: { a, b, askX },
       instruction: '표를 보고 □에 알맞은 수를 구하시오.',
-      stem: `${rows.map((r) => `${r.x} -> ${r.y}`).join(',  ')}\n    ${askX} -> □`,
+      stem: `${rows.map((r) => `${r.x} -> ${r.y}`).join(', ')}\n    ${askX} -> □`,
       figure: {
         kind: 'data.table',
         spec: {
@@ -62,12 +62,12 @@ const correspondence = {
           headerLabel: '＊',
           valueLabel: '☆',
         },
-        altText: `대응 관계 표. ${rows.map((r) => `${r.x}은 ${r.y}`).join(', ')}이고 ${askX}은 빈칸이다.`,
+        altText: `대응 관계 표. ${rows.map((r) => `${numEun(r.x)} ${r.y}`).join(', ')}이고 ${numEun(askX)} 빈칸이다.`,
         prompt: { ko: `흰 배경에 검은 선으로 그린 2행 대응 관계 표. 위 행은 ${rows.map((r) => r.x).join(', ')}, ${askX}, 아래 행은 ${rows.map((r) => r.y).join(', ')}, 빈칸. 초등 수학 교재용. AR 16:9` },
       },
       answer: { value: answer, display: num(answer), accepts: [num(answer)] },
       solution: [
-        b === 0 ? `＊에 ${a}를 곱하면 ☆가 된다. ☆ = ＊ × ${a}` : `＊에 ${a}를 곱하고 ${b}을 더하면 ☆가 된다. ☆ = ＊ × ${a} + ${b}`,
+        b === 0 ? `＊에 ${numEul(a)} 곱하면 ☆가 된다. ☆ = ＊ × ${a}` : `＊에 ${numEul(a)} 곱하고 ${numEul(b)} 더하면 ☆가 된다. ☆ = ＊ × ${a} + ${b}`,
         `${askX} × ${a}${b === 0 ? '' : ` + ${b}`} = ${answer}`,
       ],
       dedupeKey: `correspondence:${a}:${b}:${askX}`,
@@ -153,7 +153,7 @@ const ratioValue = {
         instruction: '비율을 기약분수로 나타내시오.',
         stem: `${base}에 대한 ${compared}의 비율`,
         answer: { value: display, display, accepts: [display] },
-        solution: [`비율은 (비교하는 양) ÷ (기준량)이다.`, `${compared}/${base}를 약분하면 ${display}이다.`],
+        solution: ['비율은 (비교하는 양) ÷ (기준량)이다.', `${fracEul(`${compared}/${base}`)} 약분하면 ${display}이다.`],
         dedupeKey: `ratio-frac:${compared}:${base}`,
         difficulty,
       };
@@ -164,7 +164,7 @@ const ratioValue = {
         instruction: '비율을 백분율로 나타내시오.',
         stem: `${base}에 대한 ${compared}의 비율`,
         answer: { value: percent, display: `${percent}%`, accepts: [num(percent), `${percent}%`] },
-        solution: [`비율은 ${compared} ÷ ${base}이다.`, `백분율은 비율에 100을 곱한다: ${percent}%`],
+        solution: [`비율은 ${compared} ÷ ${base}이다.`, '백분율은 비율에 100을 곱한다.' + ` ${percent}%`],
         dedupeKey: `ratio-percent:${compared}:${base}`,
         difficulty,
       };

@@ -10,6 +10,8 @@ import {
   josaEul,
   josaEun,
   josaI,
+  fracEul,
+  fracEun,
   numEun,
   numEul,
   numI,
@@ -338,8 +340,8 @@ const divisionMeaning = {
       params: { dividend, divisor, quotient, askQuotient },
       instruction: '□에 알맞은 수를 써넣으시오.',
       stem: askQuotient
-        ? `${divisor} × □ = ${dividend}  이므로  ${dividend} ÷ ${divisor} = □`
-        : `${dividend} ÷ ${divisor} = ${quotient}  이므로  ${divisor} × ${quotient} = □`,
+        ? `${divisor} × □ = ${dividend} 이므로 ${dividend} ÷ ${divisor} = □`
+        : `${dividend} ÷ ${divisor} = ${quotient} 이므로 ${divisor} × ${quotient} = □`,
       answer: askQuotient
         ? { value: quotient, display: num(quotient), accepts: [num(quotient)] }
         : { value: dividend, display: num(dividend), accepts: [num(dividend)] },
@@ -506,7 +508,7 @@ const readFractionItem = {
         instruction: '분수를 읽는 방법을 쓰시오.',
         stem: formatFraction(fraction),
         answer: { value: reading, display: reading, accepts: [reading] },
-        solution: [`분모 ${d}${josaEul(sinoKorean(d))} 먼저 읽고 분자 ${numEul(n)} 나중에 읽는다.`, reading],
+        solution: [`분모 ${numEul(d)} 먼저 읽고 분자 ${numEul(n)} 나중에 읽는다.`, reading],
         dedupeKey: `read-fraction:${n}:${d}`,
         difficulty,
       };
@@ -583,15 +585,15 @@ const classifyFraction = {
     return {
       params: { n, d },
       instruction: '알맞은 것을 고르시오.',
-      stem: `${formatFraction(fraction)}${josaEun(formatFraction(fraction))} 어떤 분수입니까?`,
+      stem: `${fracEun(formatFraction(fraction))} 어떤 분수입니까?`,
       choices: buildChoices(rng, correct, [...wrong, '자연수']),
       answer: { value: correct, display: correct, accepts: [correct] },
       solution: [
         actual === 'unit'
           ? '분자가 1인 분수를 단위분수라고 한다.'
           : actual === 'proper'
-            ? `분자 ${n}${josaI(sinoKorean(n))} 분모 ${d}보다 작으므로 진분수다.`
-            : `분자 ${n}${josaI(sinoKorean(n))} 분모 ${d}보다 크거나 같으므로 가분수다.`,
+            ? `분자 ${numI(n)} 분모 ${d}보다 작으므로 진분수다.`
+            : `분자 ${numI(n)} 분모 ${d}보다 크거나 같으므로 가분수다.`,
       ],
       dedupeKey: `classify-fraction:${n}:${d}`,
       difficulty,
@@ -690,7 +692,7 @@ const compareUnitFractions = {
       answer: { value: sign, display: sign, accepts: [sign] },
       solution: [
         '단위분수는 분모가 클수록 작다. 똑같이 더 많이 나눌수록 한 조각이 작아진다.',
-        `분모 ${d1}${josaI(sinoKorean(d1))} ${d2}보다 ${d1 > d2 ? '크므로' : '작으므로'} ${formatFraction(a)} ${sign} ${formatFraction(b)}이다.`,
+        `분모 ${numI(d1)} ${d2}보다 ${d1 > d2 ? '크므로' : '작으므로'} ${formatFraction(a)} ${sign} ${formatFraction(b)}이다.`,
       ],
       dedupeKey: `compare-unit:${d1}:${d2}`,
       difficulty,

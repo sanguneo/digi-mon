@@ -15,6 +15,7 @@ import {
   nativeCounted,
   numEul,
   numEun,
+  countIda,
   numGwa,
   numI,
   parseSinoKorean,
@@ -213,7 +214,7 @@ const placeValueAmount = {
       answer: { value, display: num(value), accepts: [num(value)] },
       solution: [
         `숫자 ${numEun(d)} ${PLACE_NAMES[place]}의 자리에 있다.`,
-        `${PLACE_NAMES[place]}의 자리 숫자 ${d}는 ${d} × ${10 ** place} = ${value}${josaEul(sinoKorean(value))} 나타낸다.`,
+        `${PLACE_NAMES[place]}의 자리 숫자 ${numEun(d)} ${d} × ${10 ** place} = ${numEul(value)} 나타낸다.`,
       ],
       dedupeKey: `place-amount:${n}:${place}`,
       difficulty,
@@ -465,7 +466,7 @@ const storyAdd = {
         + ` 친구에게 ${b}${thing.counter}${josaEul(thing.counter)} 더 받았습니다.`
         + ` ${name}${josaI(name)} 가진 ${N}${josaEun(N)} 모두 몇 ${thing.counter}입니까?`,
       answer: { value: sum, display: `${expr} / 답 ${sum}${thing.counter}`, accepts: [num(sum), `${sum}${thing.counter}`, expr] },
-      solution: ['더 받아서 늘어났으므로 덧셈으로 구한다.', expr, `답은 ${sum}${thing.counter}이다.`],
+      solution: ['더 받아서 늘어났으므로 덧셈으로 구한다.', expr, `답은 ${countIda(sum, thing.counter)}.`],
       dedupeKey: `story-add:${a}:${b}:${N}`,
       difficulty,
     };
@@ -495,7 +496,7 @@ const storySub = {
         + ` 그중 ${b}${thing.counter}${josaEul(thing.counter)} 사용했습니다.`
         + ` 남은 ${N}${josaEun(N)} 몇 ${thing.counter}입니까?`,
       answer: { value: rest, display: `${expr} / 답 ${rest}${thing.counter}`, accepts: [num(rest), `${rest}${thing.counter}`, expr] },
-      solution: ['사용해서 줄었으므로 뺄셈으로 구한다.', expr, `답은 ${rest}${thing.counter}이다.`],
+      solution: ['사용해서 줄었으므로 뺄셈으로 구한다.', expr, `답은 ${countIda(rest, thing.counter)}.`],
       dedupeKey: `story-sub:${a}:${b}:${N}`,
       difficulty,
     };
@@ -627,7 +628,7 @@ const addToSub = {
     return {
       params: { c, subtrahend, hidden },
       instruction: '덧셈식을 보고 뺄셈식의 □를 채우시오.',
-      stem: `${a} + ${b} = ${c}   →   ${c} - ${subtrahend} = □`,
+      stem: `${a} + ${b} = ${c} → ${c} - ${subtrahend} = □`,
       answer: { value: hidden, display: num(hidden), accepts: [num(hidden)] },
       solution: [
         `덧셈식 ${a} + ${b} = ${c}에서 두 수 중 하나를 빼면 나머지 수가 남는다.`,
