@@ -48,6 +48,49 @@ export function parseSinoKorean(text) {
   return total + coefficient;
 }
 
+/** 만 단위로 끊어 읽을 때 쓰는 큰 자리 이름. */
+const BIG_UNITS = [
+  { value: 10 ** 12, name: '조' },
+  { value: 10 ** 8, name: '억' },
+  { value: 10 ** 4, name: '만' },
+];
+
+/**
+ * 만·억·조까지 읽는 한자어 수사. 32450000 -> '삼천이백사십오만'
+ * sinoKorean 은 9999까지만 다루므로 그 이상은 이 함수를 쓴다.
+ */
+export function sinoKoreanLarge(n) {
+  if (!Number.isInteger(n) || n < 0) throw new Error(`sinoKoreanLarge 범위 밖: ${n}`);
+  if (n === 0) return '영';
+  if (n <= 9999) return sinoKorean(n);
+  let rest = n;
+  const parts = [];
+  for (const { value, name } of BIG_UNITS) {
+    const chunk = Math.floor(rest / value);
+    if (chunk > 0) {
+      parts.push(`${sinoKorean(chunk)}${name}`);
+      rest %= value;
+    }
+  }
+  if (rest > 0) parts.push(sinoKorean(rest));
+  return parts.join(' ');
+}
+
+/** 큰 수 한자어 -> 숫자. sinoKoreanLarge 의 역방향 독립 경로다. */
+export function parseSinoKoreanLarge(text) {
+  const compact = text.replaceAll(' ', '');
+  let total = 0;
+  let rest = compact;
+  for (const { value, name } of BIG_UNITS) {
+    const idx = rest.indexOf(name);
+    if (idx === -1) continue;
+    total += parseSinoKorean(rest.slice(0, idx)) * value;
+    rest = rest.slice(idx + name.length);
+  }
+  if (rest.length > 0 && rest !== '영') total += parseSinoKorean(rest);
+  return total;
+}
+
 const NATIVE_ONES = ['', '하나', '둘', '셋', '넷', '다섯', '여섯', '일곱', '여덟', '아홉'];
 const NATIVE_TENS = ['', '열', '스물', '서른', '마흔', '쉰', '예순', '일흔', '여든', '아흔'];
 const ATTRIBUTIVE = { 하나: '한', 둘: '두', 셋: '세', 넷: '네', 스물: '스무' };
@@ -104,7 +147,8 @@ export const josaEul = (w) => particle(w, '을', '를');
  *   27(이십칠) -> 은 / 52(오십이) -> 는 / 3(삼) -> 과 / 4(사) -> 와
  */
 export function numberParticle(n, withJong, withoutJong) {
-  return particle(sinoKorean(n), withJong, withoutJong);
+  // 만 단위를 넘는 수도 다뤄야 한다. 조사는 마지막으로 소리 내는 음절이 정한다.
+  return particle(sinoKoreanLarge(n), withJong, withoutJong);
 }
 
 export const numEun = (n) => `${n}${numberParticle(n, '은', '는')}`;

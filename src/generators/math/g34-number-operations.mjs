@@ -6,7 +6,17 @@
  */
 import { buildChoices } from '../../engine/item.mjs';
 import { NAMES, THINGS } from '../corpus.mjs';
-import { josaEul, josaEun, josaI, numEun, numEul, numI, sinoKorean } from '../../engine/korean-number.mjs';
+import {
+  josaEul,
+  josaEun,
+  josaI,
+  numEun,
+  numEul,
+  numI,
+  parseSinoKoreanLarge,
+  sinoKorean,
+  sinoKoreanLarge,
+} from '../../engine/korean-number.mjs';
 import {
   DECIMAL_PLACE_NAMES,
   addDecimals,
@@ -48,28 +58,6 @@ function distractors(correct, candidates) {
 // [4수01-01] 만·억·조의 자릿값과 십진법
 // ---------------------------------------------------------------------------
 
-/** 만 단위로 끊어 읽는다: 32450000 -> '삼천이백사십오만' */
-const BIG_UNITS = [
-  { value: 10 ** 12, name: '조' },
-  { value: 10 ** 8, name: '억' },
-  { value: 10 ** 4, name: '만' },
-];
-
-function readBigNumber(n) {
-  if (n === 0) return '영';
-  let rest = n;
-  const parts = [];
-  for (const { value, name } of BIG_UNITS) {
-    const chunk = Math.floor(rest / value);
-    if (chunk > 0) {
-      parts.push(`${sinoKorean(chunk)}${name}`);
-      rest %= value;
-    }
-  }
-  if (rest > 0) parts.push(sinoKorean(rest));
-  return parts.join(' ');
-}
-
 /** 만 단위 자리 이름. 자릿값 문항의 정답 근거가 된다. */
 const BIG_PLACE_NAMES = ['일', '십', '백', '천', '만', '십만', '백만', '천만', '억', '십억', '백억', '천억'];
 
@@ -86,7 +74,7 @@ const readBigNumberItem = {
     // 난이도가 자릿수를 정한다. 만 -> 천만 -> 억 순으로 커진다.
     const digits = difficulty === 1 ? rng.int(5, 6) : difficulty === 2 ? rng.int(7, 8) : rng.int(9, 10);
     const n = rng.int(10 ** (digits - 1), 10 ** digits - 1);
-    const reading = readBigNumber(n);
+    const reading = sinoKoreanLarge(n);
     return {
       params: { n },
       instruction: '수를 읽는 방법을 한글로 쓰시오.',
@@ -101,37 +89,10 @@ const readBigNumberItem = {
     };
   },
   verify({ n }, answer) {
-    // 읽은 말에서 단위별 값을 되짚어 원래 수를 재구성한다.
-    let total = 0;
-    let rest = answer.value.replaceAll(' ', '');
-    for (const { value, name } of BIG_UNITS) {
-      const idx = rest.indexOf(name);
-      if (idx === -1) continue;
-      const head = rest.slice(0, idx);
-      total += parseSino(head) * value;
-      rest = rest.slice(idx + name.length);
-    }
-    if (rest.length > 0) total += parseSino(rest);
-    return total === n;
+    // 읽은 말을 숫자로 되돌려 확인한다. 만 단위 역파서가 독립 경로다.
+    return parseSinoKoreanLarge(answer.value) === n;
   },
 };
-
-const SINO_DIGIT_VALUE = { 일: 1, 이: 2, 삼: 3, 사: 4, 오: 5, 육: 6, 칠: 7, 팔: 8, 구: 9 };
-const SINO_UNIT_VALUE = { 십: 10, 백: 100, 천: 1000 };
-
-function parseSino(text) {
-  if (text === '' || text === '영') return 0;
-  let total = 0;
-  let coefficient = 0;
-  for (const ch of text) {
-    if (SINO_DIGIT_VALUE[ch] !== undefined) coefficient = SINO_DIGIT_VALUE[ch];
-    else if (SINO_UNIT_VALUE[ch] !== undefined) {
-      total += (coefficient === 0 ? 1 : coefficient) * SINO_UNIT_VALUE[ch];
-      coefficient = 0;
-    } else return Number.NaN;
-  }
-  return total + coefficient;
-}
 
 const bigPlaceValue = {
   id: 'math.g34.no.s01.place-value',
@@ -230,7 +191,7 @@ const bigSequence = {
     const hideIndex = rng.int(1, 4);
     const hidden = terms[hideIndex];
     const shown = terms.map((t, idx) => (idx === hideIndex ? '□' : String(t)));
-    const stepName = readBigNumber(step);
+    const stepName = sinoKoreanLarge(step);
     return {
       params: { step, hideIndex, terms },
       instruction: '규칙을 찾아 □에 알맞은 수를 써넣으시오.',

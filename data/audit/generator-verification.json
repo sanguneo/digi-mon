@@ -1,27 +1,27 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 101,
-  "totalGenerated": 121200,
+  "generatorCount": 116,
+  "totalGenerated": 139200,
   "totalFailed": 0,
   "figuresRendered": 27185,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 75,
-    "coverageRatio": 0.3036,
+    "coveredStandards": 90,
+    "coverageRatio": 0.3644,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
         "total": 121,
         "autoScorable": 120,
         "manualOnly": 1,
-        "covered": 75,
-        "generators": 101,
+        "covered": 90,
+        "generators": 116,
         "byDomain": {
           "수와 연산": {
             "total": 42,
             "autoScorable": 42,
-            "covered": 27
+            "covered": 42
           },
           "변화와 관계": {
             "total": 10,
@@ -39,7 +39,7 @@
             "covered": 6
           }
         },
-        "coverageRatio": 0.625
+        "coverageRatio": 0.75
       },
       "korean": {
         "subjectKorean": "국어",
@@ -2731,6 +2731,396 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.995
+    },
+    {
+      "generatorId": "math.g56.no.s01.mixed-ops",
+      "code": "[6수01-01]",
+      "skill": "자연수의 혼합 계산",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 390,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 384,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1164,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.97
+    },
+    {
+      "generatorId": "math.g56.no.s02.range",
+      "code": "[6수01-02]",
+      "skill": "이상·이하·초과·미만",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1199,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9992
+    },
+    {
+      "generatorId": "math.g56.no.s03.rounding",
+      "code": "[6수01-03]",
+      "skill": "올림·버림·반올림",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 361,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 391,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1124,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9367
+    },
+    {
+      "generatorId": "math.g56.no.s04.divisors",
+      "code": "[6수01-04]",
+      "skill": "약수와 배수 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 50,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 68,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 114,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.095
+    },
+    {
+      "generatorId": "math.g56.no.s05.gcd-lcm",
+      "code": "[6수01-05]",
+      "skill": "최대공약수와 최소공배수",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 112,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 352,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 347,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 681,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5675
+    },
+    {
+      "generatorId": "math.g56.no.s06.reduce",
+      "code": "[6수01-06]",
+      "skill": "분수를 약분하여 기약분수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 33,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 206,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 199,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 250,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2083
+    },
+    {
+      "generatorId": "math.g56.no.s07.compare",
+      "code": "[6수01-07]",
+      "skill": "분모가 다른 분수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 132,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 358,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 349,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 703,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5858
+    },
+    {
+      "generatorId": "math.g56.no.s08.add-sub",
+      "code": "[6수01-08]",
+      "skill": "분모가 다른 분수의 덧셈과 뺄셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 115,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 365,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 366,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 737,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6142
+    },
+    {
+      "generatorId": "math.g56.no.s09.multiply",
+      "code": "[6수01-09]",
+      "skill": "분수의 곱셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 205,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 311,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 296,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 554,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.4617
+    },
+    {
+      "generatorId": "math.g56.no.s10.divide-natural",
+      "code": "[6수01-10]",
+      "skill": "분수를 자연수로 나누기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 60,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 249,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 253,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 355,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2958
+    },
+    {
+      "generatorId": "math.g56.no.s11.divide-fraction",
+      "code": "[6수01-11]",
+      "skill": "분수의 나눗셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 53,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 337,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 346,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 612,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.51
+    },
+    {
+      "generatorId": "math.g56.no.s12.relation",
+      "code": "[6수01-12]",
+      "skill": "분수를 소수로, 소수를 분수로",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 127,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 126,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 181,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1508
+    },
+    {
+      "generatorId": "math.g56.no.s13.mul-natural",
+      "code": "[6수01-13]",
+      "skill": "소수와 자연수의 곱셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 333,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1127,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9392
+    },
+    {
+      "generatorId": "math.g56.no.s14.mul-decimals",
+      "code": "[6수01-14]",
+      "skill": "소수의 곱셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 384,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 393,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 397,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1153,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9608
+    },
+    {
+      "generatorId": "math.g56.no.s15.divide",
+      "code": "[6수01-15]",
+      "skill": "소수의 나눗셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 376,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1168,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9733
     }
   ],
   "errors": []

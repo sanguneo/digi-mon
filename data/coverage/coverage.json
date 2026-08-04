@@ -2,27 +2,27 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 101
+    "generatorCount": 116
   },
   "totalStandards": 248,
   "autoScorableStandards": 247,
   "manualOnlyStandards": 1,
-  "coveredStandards": 75,
-  "uncoveredStandards": 172,
-  "coverageRatio": 0.3036,
+  "coveredStandards": 90,
+  "uncoveredStandards": 157,
+  "coverageRatio": 0.3644,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
       "total": 121,
       "autoScorable": 120,
       "manualOnly": 1,
-      "covered": 75,
-      "generators": 101,
+      "covered": 90,
+      "generators": 116,
       "byDomain": {
         "수와 연산": {
           "total": 42,
           "autoScorable": 42,
-          "covered": 27
+          "covered": 42
         },
         "변화와 관계": {
           "total": 10,
@@ -40,7 +40,7 @@
           "covered": 6
         }
       },
-      "coverageRatio": 0.625
+      "coverageRatio": 0.75
     },
     "korean": {
       "subjectKorean": "국어",
@@ -1034,9 +1034,7 @@
       "generatorIds": [
         "math.g34.gd.s04-03.interpret-bar"
       ]
-    }
-  ],
-  "uncovered": [
+    },
     {
       "code": "[6수01-01]",
       "subject": "math",
@@ -1044,8 +1042,10 @@
       "domain": "수와 연산",
       "module": "자연수의 혼합 계산",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s01.mixed-ops"
+      ]
     },
     {
       "code": "[6수01-02]",
@@ -1054,8 +1054,10 @@
       "domain": "수와 연산",
       "module": "수의 범위와 올림, 버림, 반올림",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s02.range"
+      ]
     },
     {
       "code": "[6수01-03]",
@@ -1064,8 +1066,10 @@
       "domain": "수와 연산",
       "module": "수의 범위와 올림, 버림, 반올림",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s03.rounding"
+      ]
     },
     {
       "code": "[6수01-04]",
@@ -1074,8 +1078,10 @@
       "domain": "수와 연산",
       "module": "약수와 배수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s04.divisors"
+      ]
     },
     {
       "code": "[6수01-05]",
@@ -1084,8 +1090,10 @@
       "domain": "수와 연산",
       "module": "약수와 배수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s05.gcd-lcm"
+      ]
     },
     {
       "code": "[6수01-06]",
@@ -1094,8 +1102,10 @@
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s06.reduce"
+      ]
     },
     {
       "code": "[6수01-07]",
@@ -1104,8 +1114,10 @@
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s07.compare"
+      ]
     },
     {
       "code": "[6수01-08]",
@@ -1114,8 +1126,10 @@
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s08.add-sub"
+      ]
     },
     {
       "code": "[6수01-09]",
@@ -1124,8 +1138,10 @@
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s09.multiply"
+      ]
     },
     {
       "code": "[6수01-10]",
@@ -1134,8 +1150,10 @@
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s10.divide-natural"
+      ]
     },
     {
       "code": "[6수01-11]",
@@ -1144,8 +1162,10 @@
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s11.divide-fraction"
+      ]
     },
     {
       "code": "[6수01-12]",
@@ -1154,8 +1174,10 @@
       "domain": "수와 연산",
       "module": "분수와 소수의 관계",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s12.relation"
+      ]
     },
     {
       "code": "[6수01-13]",
@@ -1164,8 +1186,10 @@
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s13.mul-natural"
+      ]
     },
     {
       "code": "[6수01-14]",
@@ -1174,8 +1198,10 @@
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s14.mul-decimals"
+      ]
     },
     {
       "code": "[6수01-15]",
@@ -1184,9 +1210,13 @@
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.no.s15.divide"
+      ]
+    }
+  ],
+  "uncovered": [
     {
       "code": "[6수02-01]",
       "subject": "math",
