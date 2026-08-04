@@ -1,14 +1,14 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 147,
-  "totalGenerated": 176400,
+  "generatorCount": 163,
+  "totalGenerated": 195600,
   "totalFailed": 0,
   "figuresRendered": 35585,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 120,
-    "coverageRatio": 0.4858,
+    "coveredStandards": 132,
+    "coverageRatio": 0.5388,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -46,19 +46,29 @@
       },
       "korean": {
         "subjectKorean": "국어",
-        "strategy": "asset-required",
-        "generatable": false,
-        "basis": "읽기·문학·쓰기 문항은 학년 수준에 맞는 지문이 있어야 성립한다. 지문은 파라미터로 만들 수 없다.",
+        "strategy": "mixed",
+        "generatable": "partial",
+        "generatableDomains": [
+          "문법"
+        ],
+        "blockedDomains": [
+          "듣기·말하기",
+          "읽기",
+          "쓰기",
+          "문학",
+          "매체"
+        ],
+        "basis": "문법은 규칙(자모·사전순서·받침·문장부호·높임·호응)이라 파라메트릭으로 된다. 읽기·문학·쓰기는 지문이 있어야 성립하고 지문은 파라미터로 만들 수 없다.",
         "blockedBy": [
           "학년군별 지문 자산 (길이·어휘 수준·저작권 정리)",
           "학년군별 어휘 목록과 예문",
           "문법 항목별 오답 유형 정의"
         ],
         "total": 87,
-        "autoScorable": 87,
-        "manualOnly": 0,
-        "covered": 0,
-        "generators": 0,
+        "autoScorable": 85,
+        "manualOnly": 2,
+        "covered": 12,
+        "generators": 16,
         "byDomain": {
           "듣기·말하기": {
             "total": 18,
@@ -77,8 +87,8 @@
           },
           "문법": {
             "total": 14,
-            "autoScorable": 14,
-            "covered": 0
+            "autoScorable": 12,
+            "covered": 12
           },
           "문학": {
             "total": 15,
@@ -91,7 +101,7 @@
             "covered": 0
           }
         },
-        "coverageRatio": 0
+        "coverageRatio": 0.1412
       },
       "english": {
         "subjectKorean": "영어",
@@ -3946,6 +3956,422 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.9133
+    },
+    {
+      "generatorId": "korean.g12.gr.s01.letter-name",
+      "code": "[2국04-01]",
+      "skill": "자모의 이름 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 14,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 24,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.02
+    },
+    {
+      "generatorId": "korean.g12.gr.s01.count-letters",
+      "code": "[2국04-01]",
+      "skill": "낱말을 자모로 나누어 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 29,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 58,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 17,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 76,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0633
+    },
+    {
+      "generatorId": "korean.g12.gr.s02.final",
+      "code": "[2국04-02]",
+      "skill": "낱말의 받침 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 36,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.03
+    },
+    {
+      "generatorId": "korean.g12.gr.s02.has-final",
+      "code": "[2국04-02]",
+      "skill": "받침이 있는 낱말 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 75,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 76,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 75,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 76,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0633
+    },
+    {
+      "generatorId": "korean.g12.gr.s03.punctuation",
+      "code": "[2국04-03]",
+      "skill": "문장에 알맞은 문장 부호 넣기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 6,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.005
+    },
+    {
+      "generatorId": "korean.g12.gr.s03.punctuation-name",
+      "code": "[2국04-03]",
+      "skill": "문장 부호의 이름 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 4,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0033
+    },
+    {
+      "generatorId": "korean.g34.gr.s01.relation",
+      "code": "[4국04-01]",
+      "skill": "뜻이 반대인 낱말과 포함 관계 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 84,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 82,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 95,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0792
+    },
+    {
+      "generatorId": "korean.g34.gr.s02.dictionary-order",
+      "code": "[4국04-02]",
+      "skill": "국어사전에서 낱말 찾는 순서 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 350,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1149,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9575
+    },
+    {
+      "generatorId": "korean.g34.gr.s02.dictionary-first",
+      "code": "[4국04-02]",
+      "skill": "사전에서 가장 먼저 나오는 낱말 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "korean.g34.gr.s03.sentence-parts",
+      "code": "[4국04-03]",
+      "skill": "문장에서 주어와 서술어 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 36,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.03
+    },
+    {
+      "generatorId": "korean.g34.gr.s04.honorific",
+      "code": "[4국04-04]",
+      "skill": "높임 표현 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "korean.g56.gr.s02.standard-word",
+      "code": "[6국04-02]",
+      "skill": "표준어와 방언 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "korean.g56.gr.s03.idiom",
+      "code": "[6국04-03]",
+      "skill": "관용 표현의 뜻 알기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 12,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.01
+    },
+    {
+      "generatorId": "korean.g56.gr.s04.agreement",
+      "code": "[6국04-04]",
+      "skill": "호응 관계가 바른 문장 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 5,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0042
+    },
+    {
+      "generatorId": "korean.g56.gr.s05.tense",
+      "code": "[6국04-05]",
+      "skill": "시간 표현에 맞는 서술어 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 4,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0033
+    },
+    {
+      "generatorId": "korean.g56.gr.s06.spacing",
+      "code": "[6국04-06]",
+      "skill": "띄어쓰기가 바른 문장 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 5,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0042
     }
   ],
   "errors": []

@@ -16,6 +16,16 @@ export const MANUAL_SCORING = {
     // 작도 문항은 생성해 학습지에 싣고, 채점 기준만 사람에게 넘긴다.
     hasGenerator: true,
   },
+  '[4국04-05]': {
+    reason: '언어를 소통과 관계 형성의 수단으로 이해하는 태도 기준이다. 정답이 규칙으로 정해지지 않는다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6국04-01]': {
+    reason: '매체 표현의 효과를 평가하는 기준이다. 평가는 근거가 여러 갈래로 갈려 정답 대조로 채점할 수 없다.',
+    kind: 'evaluation',
+    hasGenerator: false,
+  },
 };
 
 /**
@@ -37,9 +47,12 @@ export const SUBJECT_STRATEGY = {
     basis: '수·연산·도형·측정은 파라미터를 바꾸면 새 문항이 되고, 답을 역연산·불변식으로 검산할 수 있다.',
   },
   korean: {
-    strategy: 'asset-required',
-    generatable: false,
-    basis: '읽기·문학·쓰기 문항은 학년 수준에 맞는 지문이 있어야 성립한다. 지문은 파라미터로 만들 수 없다.',
+    // 영역마다 다르다. 문법은 규칙이라 되고, 나머지는 자산이 있어야 한다.
+    strategy: 'mixed',
+    generatable: 'partial',
+    generatableDomains: ['문법'],
+    blockedDomains: ['듣기·말하기', '읽기', '쓰기', '문학', '매체'],
+    basis: '문법은 규칙(자모·사전순서·받침·문장부호·높임·호응)이라 파라메트릭으로 된다. 읽기·문학·쓰기는 지문이 있어야 성립하고 지문은 파라미터로 만들 수 없다.',
     blockedBy: [
       '학년군별 지문 자산 (길이·어휘 수준·저작권 정리)',
       '학년군별 어휘 목록과 예문',

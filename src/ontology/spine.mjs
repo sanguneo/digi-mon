@@ -127,6 +127,17 @@ export function buildSpine(ontology) {
         domainEnglish: domain.english,
         sequence: parsed.sequence,
         module: std.module ?? null,
+        /**
+         * 성취기준 내용 앵커.
+         *
+         * 온톨로지는 교과마다 다른 필드로 앵커를 준다. 수학은 module(소주제)이
+         * 121/121 있고 summary 는 고유 문장틀 2개짜리 보일러플레이트다.
+         * 국어·영어는 module 이 없고 summary 가 87/87, 40/40 전부 고유한 내용
+         * 라벨이다. 어느 필드를 앵커로 쓸 수 있는지 교과마다 다르므로 데이터에 남긴다.
+         */
+        summary: std.summary ?? null,
+        contentAnchor: std.module ?? (subject.slug === 'math' ? null : std.summary ?? null),
+        anchorSource: std.module ? 'module' : (subject.slug === 'math' ? 'none' : 'summary'),
         tags: std.domainTags ?? [],
         officialTextAvailable: false,
         source: normalizeSource(std),

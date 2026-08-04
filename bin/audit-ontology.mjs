@@ -19,6 +19,7 @@ for (const [slug, s] of Object.entries(audit.subjects)) {
   const d = s.dependencies;
   console.log(`  선수관계 ${d.edgeCount}간선: 기준내부 ${d.intraStandardEdges}(${((d.intraStandardRatio ?? 0) * 100).toFixed(0)}%) / 영역넘김 ${d.crossDomainEdges} / 학년군넘김 ${d.crossGradeBandEdges} -> 실위계 ${d.carriesRealHierarchy ? '있음' : '없음'}`);
   console.log(`  문항 생성에 없는 축: ${s.topics.missingGenerationAxes.map((a) => a.label).join(', ') || '없음'}`);
-  console.log(`  ▶ 활용: 코드인벤토리=${s.usage.codeInventory} / 주제내용=${s.usage.topicContent} / 선수그래프=${s.usage.prerequisiteGraph}`);
+  console.log(`  성취기준 앵커: module ${s.standards.moduleCount}/${s.standards.standardCount}, summary 고유 ${s.standards.summaryUniqueShapes}/${s.standards.standardCount} (${s.standards.summaryVerdict}) -> 사용 가능 앵커 ${s.standards.usableAnchor}`);
+  console.log(`  ▶ 활용: 코드인벤토리=${s.usage.codeInventory} / 주제내용=${s.usage.topicContent} / 성취기준앵커=${s.usage.standardAnchor} / 선수그래프=${s.usage.prerequisiteGraph}`);
 }
 console.log(`\n-> ${path.relative(REPO_ROOT, out)}`);

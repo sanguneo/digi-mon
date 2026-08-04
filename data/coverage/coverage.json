@@ -2,15 +2,15 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 147
+    "generatorCount": 163
   },
   "totalStandards": 248,
-  "autoScorableStandards": 247,
-  "manualOnlyStandards": 1,
-  "coveredStandards": 120,
-  "uncoveredStandards": 127,
-  "standardsWithGenerator": 121,
-  "coverageRatio": 0.4858,
+  "autoScorableStandards": 245,
+  "manualOnlyStandards": 3,
+  "coveredStandards": 132,
+  "uncoveredStandards": 113,
+  "standardsWithGenerator": 133,
+  "coverageRatio": 0.5388,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -48,19 +48,29 @@
     },
     "korean": {
       "subjectKorean": "국어",
-      "strategy": "asset-required",
-      "generatable": false,
-      "basis": "읽기·문학·쓰기 문항은 학년 수준에 맞는 지문이 있어야 성립한다. 지문은 파라미터로 만들 수 없다.",
+      "strategy": "mixed",
+      "generatable": "partial",
+      "generatableDomains": [
+        "문법"
+      ],
+      "blockedDomains": [
+        "듣기·말하기",
+        "읽기",
+        "쓰기",
+        "문학",
+        "매체"
+      ],
+      "basis": "문법은 규칙(자모·사전순서·받침·문장부호·높임·호응)이라 파라메트릭으로 된다. 읽기·문학·쓰기는 지문이 있어야 성립하고 지문은 파라미터로 만들 수 없다.",
       "blockedBy": [
         "학년군별 지문 자산 (길이·어휘 수준·저작권 정리)",
         "학년군별 어휘 목록과 예문",
         "문법 항목별 오답 유형 정의"
       ],
       "total": 87,
-      "autoScorable": 87,
-      "manualOnly": 0,
-      "covered": 0,
-      "generators": 0,
+      "autoScorable": 85,
+      "manualOnly": 2,
+      "covered": 12,
+      "generators": 16,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
@@ -79,8 +89,8 @@
         },
         "문법": {
           "total": 14,
-          "autoScorable": 14,
-          "covered": 0
+          "autoScorable": 12,
+          "covered": 12
         },
         "문학": {
           "total": 15,
@@ -93,7 +103,7 @@
           "covered": 0
         }
       },
-      "coverageRatio": 0
+      "coverageRatio": 0.1412
     },
     "english": {
       "subjectKorean": "영어",
@@ -1594,6 +1604,154 @@
       "generatorIds": [
         "math.g56.rm.s04-06.likelihood-compare"
       ]
+    },
+    {
+      "code": "[2국04-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g12.gr.s01.letter-name",
+        "korean.g12.gr.s01.count-letters"
+      ]
+    },
+    {
+      "code": "[2국04-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g12.gr.s02.final",
+        "korean.g12.gr.s02.has-final"
+      ]
+    },
+    {
+      "code": "[2국04-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g12.gr.s03.punctuation",
+        "korean.g12.gr.s03.punctuation-name"
+      ]
+    },
+    {
+      "code": "[4국04-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.gr.s01.relation"
+      ]
+    },
+    {
+      "code": "[4국04-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g34.gr.s02.dictionary-order",
+        "korean.g34.gr.s02.dictionary-first"
+      ]
+    },
+    {
+      "code": "[4국04-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.gr.s03.sentence-parts"
+      ]
+    },
+    {
+      "code": "[4국04-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.gr.s04.honorific"
+      ]
+    },
+    {
+      "code": "[6국04-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.gr.s02.standard-word"
+      ]
+    },
+    {
+      "code": "[6국04-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.gr.s03.idiom"
+      ]
+    },
+    {
+      "code": "[6국04-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.gr.s04.agreement"
+      ]
+    },
+    {
+      "code": "[6국04-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.gr.s05.tense"
+      ]
+    },
+    {
+      "code": "[6국04-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.gr.s06.spacing"
+      ]
     }
   ],
   "uncovered": [
@@ -1732,36 +1890,6 @@
       "subject": "korean",
       "gradeBand": "1-2",
       "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국04-01]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국04-02]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국04-03]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "문법",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -1992,56 +2120,6 @@
       "subject": "korean",
       "gradeBand": "3-4",
       "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국04-01]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국04-02]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국04-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국04-04]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국04-05]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문법",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -2302,66 +2380,6 @@
       "subject": "korean",
       "gradeBand": "5-6",
       "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-01]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-02]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-03]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-04]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국04-06]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문법",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -2881,6 +2899,28 @@
       "generatorIds": [
         "math.g12.sc.s04.draw"
       ]
+    },
+    {
+      "code": "[4국04-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "언어를 소통과 관계 형성의 수단으로 이해하는 태도 기준이다. 정답이 규칙으로 정해지지 않는다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국04-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문법",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "매체 표현의 효과를 평가하는 기준이다. 평가는 근거가 여러 갈래로 갈려 정답 대조로 채점할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
     }
   ]
 }

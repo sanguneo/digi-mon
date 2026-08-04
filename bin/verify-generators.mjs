@@ -144,7 +144,7 @@ console.log(`문항이 생성되는 성취기준: ${coverage.standardsWithGenera
 
 for (const [, b] of Object.entries(coverage.bySubject)) {
   console.log(`\n  ${b.subjectKorean}  ${b.covered}/${b.autoScorable} 자동채점 기준  (수동전용 ${b.manualOnly}개, 생성기 ${b.generators}개)  전략=${b.strategy}`);
-  if (!b.generatable) {
+  if (b.generatable !== true) {
     // 왜 비어 있는지를 숫자 옆에 붙여 둔다. 0 이라는 숫자만으로는 이유를 알 수 없다.
     console.log(`      ${b.basis}`);
     for (const need of b.blockedBy ?? []) console.log(`      선행 자산: ${need}`);

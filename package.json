@@ -18,7 +18,8 @@
     "check:mutation": "node tools/mutation-test.mjs",
     "check:korean": "node tools/check-korean.mjs",
     "check:prerequisites": "node tools/check-prerequisites.mjs",
+    "check:vocabulary": "node tools/check-vocabulary.mjs",
     "figures": "node tools/figure-gallery.mjs",
-    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/check-trim.mjs"
+    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/check-vocabulary.mjs && node tools/check-trim.mjs"
   }
 }

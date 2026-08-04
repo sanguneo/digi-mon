@@ -115,6 +115,14 @@
           }
         ]
       },
+      "standards": {
+        "standardCount": 121,
+        "moduleCount": 121,
+        "summaryUniqueShapes": 2,
+        "summaryUniqueRatio": 0.0165,
+        "summaryVerdict": "boilerplate",
+        "usableAnchor": "module"
+      },
       "dependencies": {
         "edgeCount": 359,
         "intraStandardEdges": 242,
@@ -127,6 +135,7 @@
       "usage": {
         "codeInventory": "trusted",
         "topicContent": "index-only",
+        "standardAnchor": "module",
         "prerequisiteGraph": "index-only"
       }
     },
@@ -190,6 +199,14 @@
           }
         ]
       },
+      "standards": {
+        "standardCount": 87,
+        "moduleCount": 0,
+        "summaryUniqueShapes": 87,
+        "summaryUniqueRatio": 1,
+        "summaryVerdict": "reviewable-candidate",
+        "usableAnchor": "summary"
+      },
       "dependencies": {
         "edgeCount": 360,
         "intraStandardEdges": 261,
@@ -202,6 +219,7 @@
       "usage": {
         "codeInventory": "trusted",
         "topicContent": "index-only",
+        "standardAnchor": "summary",
         "prerequisiteGraph": "reviewable-candidate"
       }
     },
@@ -265,6 +283,14 @@
           }
         ]
       },
+      "standards": {
+        "standardCount": 40,
+        "moduleCount": 0,
+        "summaryUniqueShapes": 40,
+        "summaryUniqueRatio": 1,
+        "summaryVerdict": "reviewable-candidate",
+        "usableAnchor": "summary"
+      },
       "dependencies": {
         "edgeCount": 146,
         "intraStandardEdges": 80,
@@ -277,6 +303,7 @@
       "usage": {
         "codeInventory": "trusted",
         "topicContent": "index-only",
+        "standardAnchor": "summary",
         "prerequisiteGraph": "reviewable-candidate"
       }
     }

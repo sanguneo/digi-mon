@@ -1,4 +1,9 @@
-import { SUBJECTS, SUBJECT_BY_KOREAN, selectSubjectTopics } from './source.mjs';
+import {
+  SUBJECTS,
+  SUBJECT_BY_KOREAN,
+  selectSubjectCurricula,
+  selectSubjectTopics,
+} from './source.mjs';
 
 /**
  * 문항 생성에 실제로 필요한 축. 업스트림 주제 레코드에 있는지 확인한다.
@@ -124,8 +129,43 @@ function auditSubjectEdges(topics, dependencies) {
   };
 }
 
+/**
+ * 성취기준 레코드 자체의 앵커 품질.
+ *
+ * 처음 감사는 topics.json 만 봤다. 그래서 '국어 주제내용 index-only' 라고 판정하고
+ * 국어는 못 한다고 결론했는데, 성취기준 레코드의 summary 는 87/87 전부 고유한
+ * 내용 라벨이었다. 앵커는 교과마다 다른 필드에 있다.
+ *   수학  module 121/121, summary 는 고유 문장틀 2개(보일러플레이트)
+ *   국어  module 0, summary 87/87 고유
+ *   영어  module 0, summary 40/40 고유
+ * 이 사실이 데이터에 없으면 같은 실수를 또 한다.
+ */
+function auditStandardAnchors(curriculum) {
+  const standards = curriculum.standards;
+  const shapes = new Set(standards.map((s) => {
+    let out = s.summary ?? '';
+    for (const token of [s.code, s.module, s.domainKorean, s.officialAreaKorean, s.gradeBand].filter(Boolean)) {
+      out = out.split(token).join('⟦⟧');
+    }
+    return out.replace(/\d+/g, '#');
+  }));
+  const withModule = standards.filter((s) => typeof s.module === 'string' && s.module.length > 0).length;
+  const ratio = standards.length === 0 ? null : Number((shapes.size / standards.length).toFixed(4));
+
+  return {
+    standardCount: standards.length,
+    moduleCount: withModule,
+    summaryUniqueShapes: shapes.size,
+    summaryUniqueRatio: ratio,
+    summaryVerdict: classify(ratio),
+    // 문항을 저작할 때 무엇에 앵커할 수 있는가.
+    usableAnchor: withModule === standards.length ? 'module' : (ratio !== null && ratio >= 0.5 ? 'summary' : 'none'),
+  };
+}
+
 export function auditOntology(ontology) {
   const allTopics = selectSubjectTopics(ontology);
+  const curricula = new Map(selectSubjectCurricula(ontology).map((x) => [x.subject.slug, x.curriculum]));
   const subjects = {};
 
   for (const subject of SUBJECTS) {
@@ -139,10 +179,12 @@ export function auditOntology(ontology) {
     subjects[subject.slug] = {
       subjectKorean: subject.korean,
       topics: topicAudit,
+      standards: auditStandardAnchors(curricula.get(subject.slug)),
       dependencies: edgeAudit,
       usage: {
         codeInventory: 'trusted',
         topicContent: usableAsContent ? 'reviewable-candidate' : 'index-only',
+        standardAnchor: auditStandardAnchors(curricula.get(subject.slug)).usableAnchor,
         prerequisiteGraph: edgeAudit.carriesRealHierarchy ? 'reviewable-candidate' : 'index-only',
       },
     };

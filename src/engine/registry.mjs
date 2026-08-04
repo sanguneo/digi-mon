@@ -7,6 +7,7 @@ import { generators as mathG34MeasurementRelations } from '../generators/math/g3
 import { generators as mathG34GeometryData } from '../generators/math/g34-geometry-data.mjs';
 import { generators as mathG56NumberOperations } from '../generators/math/g56-number-operations.mjs';
 import { generators as mathG56RelationsMeasurement } from '../generators/math/g56-relations-measurement.mjs';
+import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 
 /**
@@ -23,6 +24,7 @@ const MODULES = [
   { file: 'math/g34-geometry-data.mjs', generators: mathG34GeometryData },
   { file: 'math/g56-number-operations.mjs', generators: mathG56NumberOperations },
   { file: 'math/g56-relations-measurement.mjs', generators: mathG56RelationsMeasurement },
+  { file: 'korean/grammar.mjs', generators: koreanGrammar },
 ];
 
 function assertGeneratorContract(g, file) {

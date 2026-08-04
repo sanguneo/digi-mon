@@ -20,6 +20,7 @@ import { buildSpine } from '../src/ontology/spine.mjs';
 import { createRegistry } from '../src/engine/registry.mjs';
 import { createRng } from '../src/engine/rng.mjs';
 import { generateItem } from '../src/engine/worksheet.mjs';
+import { normalizeResponse } from '../src/server/grade.mjs';
 
 const SAMPLES = Number(process.env.SAMPLES ?? 40);
 
@@ -31,9 +32,14 @@ const SAMPLES = Number(process.env.SAMPLES ?? 40);
 function mutantsOf(answer) {
   const out = [];
   const seen = new Set();
+  // accepts 는 허용 답안의 정의다. 여기 있는 값은 틀린 답이 아니므로 변형에서 뺀다.
+  // 예: '나는 어제 학교에 갔다.' 에서 마침표를 지운 형태는 오답이 아니라 같은 정답이다.
+  const accepted = new Set((answer.accepts ?? []).map(normalizeResponse));
   const push = (value) => {
     const key = JSON.stringify(value);
     if (key === JSON.stringify(answer.value) || seen.has(key)) return;
+    if ((typeof value === 'string' || typeof value === 'number')
+      && accepted.has(normalizeResponse(String(value)))) return;
     seen.add(key);
     out.push({ ...answer, value });
   };
