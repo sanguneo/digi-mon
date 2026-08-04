@@ -69,6 +69,8 @@ function distractors(correct, candidates) {
 
 const letterName = {
   id: 'korean.g12.gr.s01.letter-name',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 자음, 2는 모음, 3은 이름이 헷갈리는 자음(ㄱㄷㅅ 계열)을 낸다.',
   standardCode: '[2국04-01]',
   skill: '자모의 이름 알기',
   format: 'multiple-choice',
@@ -102,6 +104,8 @@ const letterName = {
 
 const countLetters = {
   id: 'korean.g12.gr.s01.count-letters',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 받침 없는 두 글자, 2는 받침 있는 낱말, 3은 세 글자 낱말이다.',
   standardCode: '[2국04-01]',
   skill: '낱말을 자모로 나누어 세기',
   format: 'short-answer',
@@ -142,6 +146,8 @@ const countLetters = {
 
 const finalConsonant = {
   id: 'korean.g12.gr.s02.final',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[2국04-02]',
   skill: '낱말의 받침 찾기',
   format: 'short-answer',
@@ -171,6 +177,8 @@ const finalConsonant = {
 
 const hasFinalChoice = {
   id: 'korean.g12.gr.s02.has-final',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[2국04-02]',
   skill: '받침이 있는 낱말 고르기',
   format: 'multiple-choice',
@@ -215,6 +223,8 @@ const PUNCTUATION = [
 
 const punctuationChoice = {
   id: 'korean.g12.gr.s03.punctuation',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 마침표·물음표만, 2 이상은 느낌표까지 넣는다.',
   standardCode: '[2국04-03]',
   skill: '문장에 알맞은 문장 부호 넣기',
   format: 'multiple-choice',
@@ -244,6 +254,8 @@ const punctuationChoice = {
 
 const punctuationName = {
   id: 'korean.g12.gr.s03.punctuation-name',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[2국04-03]',
   skill: '문장 부호의 이름 알기',
   format: 'multiple-choice',
@@ -274,6 +286,8 @@ const punctuationName = {
 
 const wordRelation = {
   id: 'korean.g34.gr.s01.relation',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 반대말만, 2 이상은 포함 관계까지 섞는다.',
   standardCode: '[4국04-01]',
   skill: '뜻이 반대인 낱말과 포함 관계 알기',
   format: 'multiple-choice',
@@ -326,6 +340,8 @@ const wordRelation = {
 
 const dictionaryOrder = {
   id: 'korean.g34.gr.s02.dictionary-order',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 3개, 2는 4개, 3은 첫 글자가 같은 낱말 5개를 준다. 첫 글자가 같으면 모음·받침까지 비교해야 한다.',
   standardCode: '[4국04-02]',
   skill: '국어사전에서 낱말 찾는 순서 알기',
   format: 'ordering',
@@ -374,6 +390,8 @@ const dictionaryOrder = {
 
 const dictionaryFirst = {
   id: 'korean.g34.gr.s02.dictionary-first',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 1~2학년 어휘, 2 이상은 3~4학년 어휘에서 고른다.',
   standardCode: '[4국04-02]',
   skill: '사전에서 가장 먼저 나오는 낱말 고르기',
   format: 'multiple-choice',
@@ -409,6 +427,8 @@ const dictionaryFirst = {
 
 const sentenceParts = {
   id: 'korean.g34.gr.s03.sentence-parts',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 주어와 서술어만, 2 이상은 앞에 부사어를 붙여 문장을 길게 만든다.',
   standardCode: '[4국04-03]',
   skill: '문장에서 주어와 서술어 찾기',
   format: 'short-answer',
@@ -455,6 +475,8 @@ const HONORIFIC_PARTICLES = [
 
 const honorificExpression = {
   id: 'korean.g34.gr.s04.honorific',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1~2는 높임 어휘, 3은 높임 조사(께서·께)까지 섞는다.',
   standardCode: '[4국04-04]',
   skill: '높임 표현 알기',
   format: 'multiple-choice',
@@ -507,6 +529,8 @@ const honorificExpression = {
 
 const standardWord = {
   id: 'korean.g56.gr.s02.standard-word',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[6국04-02]',
   skill: '표준어와 방언 구별하기',
   format: 'multiple-choice',
@@ -546,6 +570,8 @@ const standardWord = {
 
 const idiomMeaning = {
   id: 'korean.g56.gr.s03.idiom',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 관용 표현에서 뜻을 찾고, 2 이상은 뜻에서 관용 표현을 거꾸로 찾는다.',
   standardCode: '[6국04-03]',
   skill: '관용 표현의 뜻 알기',
   format: 'multiple-choice',
@@ -598,6 +624,8 @@ const AGREEMENT_CASES = [
 
 const agreementFix = {
   id: 'korean.g56.gr.s04.agreement',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[6국04-04]',
   skill: '호응 관계가 바른 문장 고르기',
   format: 'multiple-choice',
@@ -631,6 +659,8 @@ const agreementFix = {
 
 const tenseAgreement = {
   id: 'korean.g56.gr.s05.tense',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 3은 다른 시간 표현의 서술어를 오답으로 더 섞는다.',
   standardCode: '[6국04-05]',
   skill: '시간 표현에 맞는 서술어 고르기',
   format: 'multiple-choice',
@@ -674,6 +704,8 @@ const SPACING_CASES = [
 
 const spacingFix = {
   id: 'korean.g56.gr.s06.spacing',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[6국04-06]',
   skill: '띄어쓰기가 바른 문장 고르기',
   format: 'multiple-choice',

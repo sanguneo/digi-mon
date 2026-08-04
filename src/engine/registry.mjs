@@ -36,6 +36,28 @@ function assertGeneratorContract(g, file) {
   if (typeof g.skill !== 'string' || g.skill.length === 0) fail('skill 없음');
   if (typeof g.generate !== 'function') fail('generate 없음');
   if (typeof g.verify !== 'function') fail('verify 없음 — 검산 없는 생성기는 받지 않는다');
+
+  /**
+   * 난이도 축을 선언한다.
+   *
+   * difficulty 1/2/3 이 뜻을 가지려면 무엇이 달라지는지 말할 수 있어야 한다.
+   *   numeric      수의 크기·계산 단계가 커진다. check-difficulty 가 기계로 잰다.
+   *   categorical  언어적으로 어려워진다(첫 글자가 같은 낱말, 조사 대신 특수 어휘 등).
+   *                기계로 재지 못하므로 무엇이 달라지는지 difficultyNote 에 적는다.
+   *   single       난이도 구분이 없다. 개념이 원래 하나뿐인 문항이다.
+   *
+   * 선언 없이 1/2/3 을 받아 놓고 아무것도 안 바꾸면 그 숫자는 장식이다.
+   */
+  const axis = g.difficultyAxis ?? 'numeric';
+  if (!['numeric', 'categorical', 'single'].includes(axis)) fail(`difficultyAxis 값 오류: ${axis}`);
+  const levels = g.difficulties ?? (axis === 'single' ? [1] : [1, 2, 3]);
+  if (!Array.isArray(levels) || levels.length === 0) fail('difficulties 가 비었다');
+  if (levels.some((d) => ![1, 2, 3].includes(d))) fail(`difficulties 는 1, 2, 3 중에서만: ${levels}`);
+  if (axis === 'single' && levels.length !== 1) fail("difficultyAxis 'single' 인데 난이도가 여러 개다");
+  if (axis !== 'single' && levels.length === 1) fail("난이도가 하나뿐이면 difficultyAxis 를 'single' 로 선언해야 한다");
+  if (axis === 'categorical' && (typeof g.difficultyNote !== 'string' || g.difficultyNote.length === 0)) {
+    fail("difficultyAxis 'categorical' 은 무엇이 달라지는지 difficultyNote 에 적어야 한다");
+  }
 }
 
 export function createRegistry() {

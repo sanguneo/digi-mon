@@ -1,0 +1,150 @@
+/**
+ * 응답 로그와 난이도 실측.
+ *
+ * 지금 difficulty 1/2/3 은 내가 손으로 정한 값이다. 파라미터 공간이 넓어지는
+ * 방향은 맞지만 실제로 아이들이 더 어려워하는지는 재지 않았다. '난이도 3'이
+ * '난이도 1'보다 정답률이 낮다는 증거가 없으면 그 숫자는 장식이다.
+ *
+ * 이 모듈은 채점 결과를 누적해 생성기·난이도별 정답률을 계산하고, 손으로 정한
+ * 난이도와 실측이 어긋나는 곳을 지목한다. 자동으로 값을 바꾸지 않는다.
+ * 표본이 적을 때 자동 보정하면 우연을 난이도로 굳혀 버린다.
+ *
+ * 저장은 엔진 밖의 관심사다. 여기서는 순수 함수로 집계만 하고, 어디에 쌓을지는
+ * 호출자가 정한다.
+ */
+
+/** 응답 한 건. 채점 결과에서 만든다. */
+export function makeResponseRecord({ item, correct, answered, elapsedMs = null, learnerId = null, at = null }) {
+  if (typeof correct !== 'boolean' && correct !== null) {
+    throw new Error(`correct 는 boolean 또는 null 이어야 한다: ${correct}`);
+  }
+  return {
+    itemId: item.id,
+    generatorId: item.generatorId,
+    standardCode: item.standardCode,
+    subject: item.subject,
+    gradeBand: item.gradeBand,
+    // 문항이 선언한 난이도. 실측과 비교하는 대상이다.
+    declaredDifficulty: item.difficulty,
+    format: item.format,
+    scoring: item.scoring ?? 'auto',
+    dedupeKey: item.dedupeKey,
+    answered,
+    correct,
+    elapsedMs,
+    learnerId,
+    at: at ?? null,
+  };
+}
+
+/** 채점 결과 전체를 응답 기록으로 바꾼다. 사람 채점 문항은 제외한다. */
+export function recordsFromGrading(worksheet, grading, meta = {}) {
+  const byNumber = new Map(worksheet.items.map((it) => [it.number, it]));
+  return grading.results
+    .map((r) => {
+      const item = byNumber.get(r.number);
+      if (!item) return null;
+      return makeResponseRecord({
+        item,
+        correct: r.correct,
+        answered: r.answered,
+        elapsedMs: meta.elapsedMs?.[r.number] ?? null,
+        learnerId: meta.learnerId ?? null,
+        at: meta.at ?? null,
+      });
+    })
+    .filter((r) => r !== null);
+}
+
+const MIN_SAMPLES = 30;
+
+/**
+ * 생성기 × 난이도별 정답률.
+ * 표본이 MIN_SAMPLES 미만이면 정확도를 계산하지 않는다. 세 번 풀어 두 번 맞은 것을
+ * 정답률 0.67 이라고 부르면 숫자가 사실보다 세 보인다.
+ */
+export function aggregateAccuracy(records) {
+  const buckets = new Map();
+  for (const r of records) {
+    if (r.scoring !== 'auto' || r.correct === null) continue;
+    const key = `${r.generatorId}|${r.declaredDifficulty}`;
+    if (!buckets.has(key)) {
+      buckets.set(key, {
+        generatorId: r.generatorId,
+        standardCode: r.standardCode,
+        declaredDifficulty: r.declaredDifficulty,
+        attempts: 0,
+        correct: 0,
+      });
+    }
+    const b = buckets.get(key);
+    b.attempts += 1;
+    if (r.correct) b.correct += 1;
+  }
+  return [...buckets.values()]
+    .map((b) => ({
+      ...b,
+      accuracy: b.attempts >= MIN_SAMPLES ? Number((b.correct / b.attempts).toFixed(4)) : null,
+      sufficientSamples: b.attempts >= MIN_SAMPLES,
+    }))
+    .sort((a, b) => a.generatorId.localeCompare(b.generatorId) || a.declaredDifficulty - b.declaredDifficulty);
+}
+
+/**
+ * 선언한 난이도와 실측이 어긋난 곳을 찾는다.
+ *
+ * 기대: 난이도가 오르면 정답률이 내려간다. 오르거나 같으면 뒤집힌 것이다.
+ * 값을 자동으로 바꾸지 않고 지목만 한다. 난이도는 파라미터 범위·받아올림 유무 같은
+ * 설계 결정이라 숫자만 고쳐서는 문항이 실제로 쉬워지지 않는다.
+ */
+export function findDifficultyInversions(aggregates, { tolerance = 0.02 } = {}) {
+  const byGenerator = new Map();
+  for (const a of aggregates) {
+    if (!a.sufficientSamples) continue;
+    if (!byGenerator.has(a.generatorId)) byGenerator.set(a.generatorId, []);
+    byGenerator.get(a.generatorId).push(a);
+  }
+
+  const inversions = [];
+  for (const [generatorId, list] of byGenerator) {
+    const sorted = [...list].sort((x, y) => x.declaredDifficulty - y.declaredDifficulty);
+    for (let i = 1; i < sorted.length; i += 1) {
+      const prev = sorted[i - 1];
+      const cur = sorted[i];
+      // 어려운 난이도가 더 잘 맞으면 선언과 실측이 뒤집힌 것이다.
+      if (cur.accuracy > prev.accuracy + tolerance) {
+        inversions.push({
+          generatorId,
+          standardCode: cur.standardCode,
+          easier: { difficulty: prev.declaredDifficulty, accuracy: prev.accuracy, attempts: prev.attempts },
+          harder: { difficulty: cur.declaredDifficulty, accuracy: cur.accuracy, attempts: cur.attempts },
+          gap: Number((cur.accuracy - prev.accuracy).toFixed(4)),
+        });
+      }
+    }
+  }
+  return inversions.sort((a, b) => b.gap - a.gap);
+}
+
+/** 성취기준별 정답률. 취약 기준 판정과 복습 학습지의 입력이다. */
+export function aggregateByStandard(records) {
+  const buckets = new Map();
+  for (const r of records) {
+    if (r.scoring !== 'auto' || r.correct === null) continue;
+    if (!buckets.has(r.standardCode)) {
+      buckets.set(r.standardCode, { standardCode: r.standardCode, attempts: 0, correct: 0 });
+    }
+    const b = buckets.get(r.standardCode);
+    b.attempts += 1;
+    if (r.correct) b.correct += 1;
+  }
+  return [...buckets.values()]
+    .map((b) => ({
+      ...b,
+      accuracy: b.attempts >= MIN_SAMPLES ? Number((b.correct / b.attempts).toFixed(4)) : null,
+      sufficientSamples: b.attempts >= MIN_SAMPLES,
+    }))
+    .sort((a, b) => a.standardCode.localeCompare(b.standardCode));
+}
+
+export { MIN_SAMPLES };

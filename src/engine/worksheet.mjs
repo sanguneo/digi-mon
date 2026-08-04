@@ -9,13 +9,21 @@ const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
  * 검산 실패는 삼키지 않는다. 답이 틀린 문항이 학습지에 나가는 게 최악이다.
  */
 export function generateItem(generator, standard, rng, difficulty) {
-  const raw = generator.generate(rng, { difficulty, standard });
+  // 생성기가 지원하지 않는 난이도를 요청하면 지원하는 것 중 가장 가까운 값으로 잠근다.
+  // 난이도 구분이 없는 문항에 3을 요구해도 3짜리 문항이 생기지는 않는다.
+  const supported = generator.difficulties
+    ?? (generator.difficultyAxis === 'single' ? [1] : [1, 2, 3]);
+  const level = supported.includes(difficulty)
+    ? difficulty
+    : supported.reduce((best, d) => (Math.abs(d - difficulty) < Math.abs(best - difficulty) ? d : best), supported[0]);
+
+  const raw = generator.generate(rng, { difficulty: level, standard });
   const withMeta = {
     ...raw,
     generatorId: generator.id,
     skill: raw.skill ?? generator.skill,
     format: raw.format ?? generator.format,
-    difficulty: raw.difficulty ?? difficulty,
+    difficulty: raw.difficulty ?? level,
   };
   const item = finalizeItem(withMeta, { standard });
 
