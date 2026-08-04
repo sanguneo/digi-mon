@@ -2,22 +2,22 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 68
+    "generatorCount": 84
   },
   "totalStandards": 248,
   "autoScorableStandards": 247,
   "manualOnlyStandards": 1,
-  "coveredStandards": 44,
-  "uncoveredStandards": 203,
-  "coverageRatio": 0.1781,
+  "coveredStandards": 58,
+  "uncoveredStandards": 189,
+  "coverageRatio": 0.2348,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
       "total": 121,
       "autoScorable": 120,
       "manualOnly": 1,
-      "covered": 44,
-      "generators": 68,
+      "covered": 58,
+      "generators": 84,
       "byDomain": {
         "수와 연산": {
           "total": 42,
@@ -27,12 +27,12 @@
         "변화와 관계": {
           "total": 10,
           "autoScorable": 10,
-          "covered": 2
+          "covered": 5
         },
         "도형과 측정": {
           "total": 57,
           "autoScorable": 56,
-          "covered": 12
+          "covered": 23
         },
         "자료와 가능성": {
           "total": 12,
@@ -40,7 +40,7 @@
           "covered": 3
         }
       },
-      "coverageRatio": 0.3667
+      "coverageRatio": 0.4833
     },
     "korean": {
       "subjectKorean": "국어",
@@ -660,9 +660,7 @@
       "generatorIds": [
         "math.g34.no.s16.add-sub"
       ]
-    }
-  ],
-  "uncovered": [
+    },
     {
       "code": "[4수02-01]",
       "subject": "math",
@@ -670,8 +668,10 @@
       "domain": "변화와 관계",
       "module": "규칙을 수나 식으로 나타내기",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s02-01.rule-expression"
+      ]
     },
     {
       "code": "[4수02-02]",
@@ -680,8 +680,10 @@
       "domain": "변화와 관계",
       "module": "규칙을 수나 식으로 나타내기",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s02-02.calc-pattern"
+      ]
     },
     {
       "code": "[4수02-03]",
@@ -690,9 +692,147 @@
       "domain": "변화와 관계",
       "module": "등호와 동치 관계",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s02-03.equality"
+      ]
     },
+    {
+      "code": "[4수03-13]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-13.minute-second"
+      ]
+    },
+    {
+      "code": "[4수03-14]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "시각과 시간",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-14.time-arithmetic"
+      ]
+    },
+    {
+      "code": "[4수03-15]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-15.choose-unit"
+      ]
+    },
+    {
+      "code": "[4수03-16]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "길이",
+      "scoringMode": "auto",
+      "generatorCount": 3,
+      "generatorIds": [
+        "math.g34.mr.s03-16.convert-cm-mm",
+        "math.g34.mr.s03-16.convert-km-m",
+        "math.g34.mr.s03-16.estimate"
+      ]
+    },
+    {
+      "code": "[4수03-17]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-17.choose-unit"
+      ]
+    },
+    {
+      "code": "[4수03-18]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-18.convert-L-mL"
+      ]
+    },
+    {
+      "code": "[4수03-19]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "들이",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-19.arithmetic"
+      ]
+    },
+    {
+      "code": "[4수03-20]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-20.choose-unit"
+      ]
+    },
+    {
+      "code": "[4수03-21]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-21.convert-kg-g"
+      ]
+    },
+    {
+      "code": "[4수03-22]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-22.arithmetic"
+      ]
+    },
+    {
+      "code": "[4수03-23]",
+      "subject": "math",
+      "gradeBand": "3-4",
+      "domain": "도형과 측정",
+      "module": "무게",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.mr.s03-23.estimate"
+      ]
+    }
+  ],
+  "uncovered": [
     {
       "code": "[4수03-01]",
       "subject": "math",
@@ -809,116 +949,6 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "다각형",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-13]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "시각과 시간",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-14]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "시각과 시간",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-15]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "길이",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-16]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "길이",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-17]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "들이",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-18]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "들이",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-19]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "들이",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-20]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "무게",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-21]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "무게",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-22]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "무게",
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4수03-23]",
-      "subject": "math",
-      "gradeBand": "3-4",
-      "domain": "도형과 측정",
-      "module": "무게",
       "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
