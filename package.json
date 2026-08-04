@@ -15,7 +15,8 @@
     "worksheet": "node bin/worksheet.mjs",
     "check:boundaries": "node tools/check-boundaries.mjs",
     "check:trim": "node tools/check-trim.mjs",
+    "check:mutation": "node tools/mutation-test.mjs",
     "figures": "node tools/figure-gallery.mjs",
-    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/check-trim.mjs"
+    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/mutation-test.mjs && node tools/check-trim.mjs"
   }
 }

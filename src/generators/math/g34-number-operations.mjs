@@ -37,6 +37,7 @@ import {
   reduceFraction,
   subDecimals,
   subFractions,
+  parseFractionText,
   subSameDenominator,
   formatUnreducedFraction,
   toMixed,
@@ -860,10 +861,16 @@ const addSubSameDenominator = {
       difficulty,
     };
   },
-  verify({ a, b, isAdd, result }, answer) {
-    // 역연산으로 되짚는다. 분모가 유지되었는지도 함께 본다.
-    const back = isAdd ? subSameDenominator(result, b) : addSameDenominator(result, b);
-    return back.n === a.n && back.d === a.d && result.d === a.d;
+  verify({ a, b, isAdd }, answer) {
+    // 답 문자열을 분수로 다시 읽어 역연산한다.
+    // params 의 result 를 되읽으면 answer 를 보지 않는 검산이 되어 아무것도 잡지 못한다.
+    const parsed = parseFractionText(answer.value);
+    if (!parsed) return false;
+    // 6/6 처럼 자연수로 적힌 답은 분모를 맞춰 되돌린다.
+    const restored = parsed.d === 1 ? { n: parsed.n * a.d, d: a.d } : parsed;
+    if (restored.d !== a.d) return false;
+    const back = isAdd ? subSameDenominator(restored, b) : addSameDenominator(restored, b);
+    return back.n === a.n && back.d === a.d;
   },
 };
 

@@ -198,6 +198,38 @@ export function formatDecimalTrimmed(decimal) {
   return shown.replace(/0+$/, '').replace(/\.$/, '');
 }
 
+/**
+ * 표기 문자열을 다시 값으로 읽는다.
+ *
+ * 검산이 params 에 담긴 계산 결과를 되읽으면 answer 를 보지 않는 검산이 되어
+ * 아무것도 잡지 못한다. 답 문자열에서 값을 복원하는 이 경로가 생성 경로와
+ * 방향이 반대이므로 검산의 독립성을 만든다.
+ */
+export function parseFractionText(text) {
+  const t = String(text).trim();
+  const mixed = /^(\d+)\s+(\d+)\/(\d+)$/.exec(t);
+  if (mixed) {
+    const d = Number(mixed[3]);
+    if (d === 0) return null;
+    return { n: Number(mixed[1]) * d + Number(mixed[2]), d };
+  }
+  const frac = /^(\d+)\/(\d+)$/.exec(t);
+  if (frac) {
+    const d = Number(frac[2]);
+    return d === 0 ? null : { n: Number(frac[1]), d };
+  }
+  const whole = /^(\d+)$/.exec(t);
+  return whole ? { n: Number(whole[1]), d: 1 } : null;
+}
+
+/** 소수 표기 -> { units, scale }. '5.0' 은 units 50, scale 1 이다. */
+export function parseDecimalText(text) {
+  const m = /^(-?)(\d+)(?:\.(\d+))?$/.exec(String(text).trim());
+  if (!m) return null;
+  const frac = m[3] ?? '';
+  return { units: Number(`${m[1]}${m[2]}${frac}`), scale: frac.length };
+}
+
 /** 소수를 읽는 말: 3.25 -> '삼 점 이오'가 아니라 문항에서는 자리 이름을 쓴다. */
 export const DECIMAL_PLACE_NAMES = ['소수 첫째', '소수 둘째', '소수 셋째'];
 

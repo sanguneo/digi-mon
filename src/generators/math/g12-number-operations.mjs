@@ -121,6 +121,9 @@ const countTensOnes = {
     };
   },
   verify({ tens, ones }, answer) {
+    // 자리 숫자만 맞추면 199 처럼 자리수가 더 많은 답도 통과한다.
+    // 10개씩 묶음과 낱개로 만든 수는 두 자리를 넘을 수 없다.
+    if (!Number.isInteger(answer.value) || answer.value < 10 || answer.value > 99) return false;
     return digitAt(answer.value, 1) === tens && digitAt(answer.value, 0) === ones;
   },
 };

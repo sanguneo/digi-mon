@@ -19,6 +19,8 @@ import {
   makeDecimal,
   makeFraction,
   multiplyFractions,
+  parseDecimalText,
+  parseFractionText,
   reduceFraction,
   subFractions,
   toMixed,
@@ -323,10 +325,12 @@ const divisorsAndMultiples = {
   },
   verify(params, answer) {
     if (params.kind === 'divisors') {
-      // 모든 답이 실제로 나누어떨어지게 하고, 빠진 약수가 없어야 한다.
+      // 모든 답이 나누어떨어지게 하고, 빠진 약수가 없고, 작은 것부터여야 한다.
+      // 순서를 안 보면 역순 답도 통과해 정답 허용 목록과 어긋난다.
       const every = answer.value.every((v) => params.n % v === 0);
       const complete = divisorsOf(params.n).length === answer.value.length;
-      return every && complete;
+      const ascending = answer.value.every((v, i) => i === 0 || answer.value[i - 1] < v);
+      return every && complete && ascending;
     }
     // 모든 답이 배수이고 간격이 일정해야 한다.
     return answer.value.every((v, i) => v % params.base === 0 && v === params.base * (i + 1));
@@ -622,9 +626,12 @@ const divideFractionsItem = {
       difficulty,
     };
   },
-  verify({ a, b, result }, answer) {
-    // 몫에 나누는 수를 곱하면 나누어지는 수가 되어야 한다.
-    const back = multiplyFractions(result, b);
+  verify({ a, b }, answer) {
+    // 답 문자열을 분수로 다시 읽어 나누는 수를 곱한다.
+    // params 의 result 를 되읽으면 answer 를 보지 않는 검산이 된다.
+    const parsed = parseFractionText(answer.value);
+    if (!parsed) return false;
+    const back = multiplyFractions(parsed, b);
     const expected = reduceFraction(a);
     return back.n === expected.n && back.d === expected.d;
   },
@@ -679,9 +686,17 @@ const fractionDecimalRelation = {
       difficulty,
     };
   },
-  verify({ fraction, units, scale }, answer) {
-    // 분수와 소수가 같은 크기인지 정수 교차곱으로 확인한다.
-    return units * fraction.d === fraction.n * 10 ** scale;
+  verify({ fraction, units, scale, reverse }, answer) {
+    // 답 문자열을 값으로 되읽어 원래 값과 크기가 같은지 교차곱으로 확인한다.
+    if (reverse) {
+      const parsed = parseFractionText(answer.value);
+      if (!parsed) return false;
+      // 기약분수를 요구한 문항이므로 약분 상태도 함께 본다.
+      return parsed.n * 10 ** scale === units * parsed.d && gcd(parsed.n, parsed.d) === 1;
+    }
+    const parsed = parseDecimalText(answer.value);
+    if (!parsed) return false;
+    return parsed.units * fraction.d === fraction.n * 10 ** parsed.scale;
   },
 };
 
