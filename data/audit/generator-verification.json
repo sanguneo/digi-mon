@@ -1,22 +1,22 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 116,
-  "totalGenerated": 139200,
+  "generatorCount": 146,
+  "totalGenerated": 175200,
   "totalFailed": 0,
-  "figuresRendered": 27185,
+  "figuresRendered": 35585,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 90,
-    "coverageRatio": 0.3644,
+    "coveredStandards": 120,
+    "coverageRatio": 0.4858,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
         "total": 121,
         "autoScorable": 120,
         "manualOnly": 1,
-        "covered": 90,
-        "generators": 116,
+        "covered": 120,
+        "generators": 146,
         "byDomain": {
           "수와 연산": {
             "total": 42,
@@ -26,20 +26,20 @@
           "변화와 관계": {
             "total": 10,
             "autoScorable": 10,
-            "covered": 5
+            "covered": 10
           },
           "도형과 측정": {
             "total": 57,
             "autoScorable": 56,
-            "covered": 37
+            "covered": 56
           },
           "자료와 가능성": {
             "total": 12,
             "autoScorable": 12,
-            "covered": 6
+            "covered": 12
           }
         },
-        "coverageRatio": 0.75
+        "coverageRatio": 1
       },
       "korean": {
         "subjectKorean": "국어",
@@ -3121,6 +3121,786 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.9733
+    },
+    {
+      "generatorId": "math.g56.rm.s02-01.correspondence",
+      "code": "[6수02-01]",
+      "skill": "두 양의 대응 관계를 식으로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 310,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 313,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 509,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.4242
+    },
+    {
+      "generatorId": "math.g56.rm.s02-02.ratio",
+      "code": "[6수02-02]",
+      "skill": "비를 쓰고 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 119,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 355,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 354,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 708,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.59
+    },
+    {
+      "generatorId": "math.g56.rm.s02-03.ratio-value",
+      "code": "[6수02-03]",
+      "skill": "비율을 분수·소수·백분율로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 203,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 230,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 244,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 408,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.34
+    },
+    {
+      "generatorId": "math.g56.rm.s02-04.proportion",
+      "code": "[6수02-04]",
+      "skill": "비례식의 성질로 빈칸 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 324,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 374,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 371,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 941,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7842
+    },
+    {
+      "generatorId": "math.g56.rm.s02-05.distribution",
+      "code": "[6수02-05]",
+      "skill": "비례배분",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 86,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 305,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 306,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 521,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.4342
+    },
+    {
+      "generatorId": "math.g56.rm.s03-01.congruence",
+      "code": "[6수03-01]",
+      "skill": "합동인 도형의 대응변·대응각",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 174,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 172,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 162,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 243,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2025
+    },
+    {
+      "generatorId": "math.g56.rm.s03-02.symmetry",
+      "code": "[6수03-02]",
+      "skill": "선대칭도형의 대칭축 수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 4,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0033
+    },
+    {
+      "generatorId": "math.g56.rm.s03-03.cuboid",
+      "code": "[6수03-03]",
+      "skill": "직육면체의 면·모서리·꼭짓점 수",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 6,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.005
+    },
+    {
+      "generatorId": "math.g56.rm.s03-04.edge-sum",
+      "code": "[6수03-04]",
+      "skill": "직육면체 모서리 길이의 합",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 206,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 199,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 378,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.315
+    },
+    {
+      "generatorId": "math.g56.rm.s03-05.prism-pyramid",
+      "code": "[6수03-05]",
+      "skill": "각기둥과 각뿔의 이름과 구성",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 24,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.02
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-name",
+      "code": "[6수03-06]",
+      "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "math.g56.rm.s03-07.round-solids",
+      "code": "[6수03-07]",
+      "skill": "원기둥·원뿔·구 구별",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 3,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0025
+    },
+    {
+      "generatorId": "math.g56.rm.s03-08.cylinder-parts",
+      "code": "[6수03-08]",
+      "skill": "원기둥의 전개도 이해",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 9,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0075
+    },
+    {
+      "generatorId": "math.g56.rm.s03-09.cube-count",
+      "code": "[6수03-09]",
+      "skill": "쌓기나무의 개수 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 11,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 26,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 30,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.025
+    },
+    {
+      "generatorId": "math.g56.rm.s03-10.cube-block",
+      "code": "[6수03-10]",
+      "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 48,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 48,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 48,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.04
+    },
+    {
+      "generatorId": "math.g56.rm.s03-11.perimeter",
+      "code": "[6수03-11]",
+      "skill": "다각형의 둘레 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 177,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 238,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 237,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 423,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.3525
+    },
+    {
+      "generatorId": "math.g56.rm.s03-12.area",
+      "code": "[6수03-12]",
+      "skill": "사각형·삼각형의 넓이 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 175,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 319,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 322,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 718,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5983
+    },
+    {
+      "generatorId": "math.g56.rm.s03-13.area-unit",
+      "code": "[6수03-13]",
+      "skill": "넓이 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 18,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.015
+    },
+    {
+      "generatorId": "math.g56.rm.s03-14.composite-area",
+      "code": "[6수03-14]",
+      "skill": "여러 도형으로 나누어 넓이 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 265,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 386,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 389,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 957,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7975
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.circumference",
+      "code": "[6수03-15]",
+      "skill": "원주 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 46,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 46,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 48,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.04
+    },
+    {
+      "generatorId": "math.g56.rm.s03-16.circle-area",
+      "code": "[6수03-16]",
+      "skill": "원의 넓이 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 7,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 19,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0158
+    },
+    {
+      "generatorId": "math.g56.rm.s03-17.surface-area",
+      "code": "[6수03-17]",
+      "skill": "직육면체의 겉넓이",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 210,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 187,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 355,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2958
+    },
+    {
+      "generatorId": "math.g56.rm.s03-18.volume",
+      "code": "[6수03-18]",
+      "skill": "직육면체의 부피",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 212,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 208,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 390,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.325
+    },
+    {
+      "generatorId": "math.g56.rm.s03-19.volume-unit",
+      "code": "[6수03-19]",
+      "skill": "부피 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 18,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.015
+    },
+    {
+      "generatorId": "math.g56.rm.s04-01.average",
+      "code": "[6수04-01]",
+      "skill": "평균 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1198,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9983
+    },
+    {
+      "generatorId": "math.g56.rm.s04-02.missing-for-average",
+      "code": "[6수04-02]",
+      "skill": "평균을 이용해 빠진 값 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g56.rm.s04-03.band-graph",
+      "code": "[6수04-03]",
+      "skill": "띠그래프·원그래프의 백분율 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 397,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1191,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9925
+    },
+    {
+      "generatorId": "math.g56.rm.s04-04.likelihood-word",
+      "code": "[6수04-04]",
+      "skill": "일이 일어날 가능성을 말로 표현하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "math.g56.rm.s04-05.likelihood-number",
+      "code": "[6수04-05]",
+      "skill": "가능성을 수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 6,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.005
+    },
+    {
+      "generatorId": "math.g56.rm.s04-06.likelihood-compare",
+      "code": "[6수04-06]",
+      "skill": "가능성 비교하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 380,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 388,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1096,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9133
     }
   ],
   "errors": []

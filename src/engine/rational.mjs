@@ -185,6 +185,19 @@ export function formatDecimal({ units, scale }) {
   return `${sign}${whole}.${frac}`;
 }
 
+/**
+ * 뒤따르는 0을 지운 표기. 계산 결과를 보일 때 쓴다.
+ *
+ * 50 × 3.14 = 157 인데 '157.00' 으로 내면, 학생이 '157' 이라고 쓴 정답이
+ * 오답으로 채점된다. 자리수를 보여야 하는 문항(소수 두 자리 수 읽기)에서는
+ * formatDecimal 을, 계산 결과에서는 이 함수를 쓴다.
+ */
+export function formatDecimalTrimmed(decimal) {
+  const shown = formatDecimal(decimal);
+  if (!shown.includes('.')) return shown;
+  return shown.replace(/0+$/, '').replace(/\.$/, '');
+}
+
 /** 소수를 읽는 말: 3.25 -> '삼 점 이오'가 아니라 문항에서는 자리 이름을 쓴다. */
 export const DECIMAL_PLACE_NAMES = ['소수 첫째', '소수 둘째', '소수 셋째'];
 

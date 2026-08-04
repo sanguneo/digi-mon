@@ -2,22 +2,22 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 116
+    "generatorCount": 146
   },
   "totalStandards": 248,
   "autoScorableStandards": 247,
   "manualOnlyStandards": 1,
-  "coveredStandards": 90,
-  "uncoveredStandards": 157,
-  "coverageRatio": 0.3644,
+  "coveredStandards": 120,
+  "uncoveredStandards": 127,
+  "coverageRatio": 0.4858,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
       "total": 121,
       "autoScorable": 120,
       "manualOnly": 1,
-      "covered": 90,
-      "generators": 116,
+      "covered": 120,
+      "generators": 146,
       "byDomain": {
         "수와 연산": {
           "total": 42,
@@ -27,20 +27,20 @@
         "변화와 관계": {
           "total": 10,
           "autoScorable": 10,
-          "covered": 5
+          "covered": 10
         },
         "도형과 측정": {
           "total": 57,
           "autoScorable": 56,
-          "covered": 37
+          "covered": 56
         },
         "자료와 가능성": {
           "total": 12,
           "autoScorable": 12,
-          "covered": 6
+          "covered": 12
         }
       },
-      "coverageRatio": 0.75
+      "coverageRatio": 1
     },
     "korean": {
       "subjectKorean": "국어",
@@ -1214,9 +1214,7 @@
       "generatorIds": [
         "math.g56.no.s15.divide"
       ]
-    }
-  ],
-  "uncovered": [
+    },
     {
       "code": "[6수02-01]",
       "subject": "math",
@@ -1224,8 +1222,10 @@
       "domain": "변화와 관계",
       "module": "대응 관계",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s02-01.correspondence"
+      ]
     },
     {
       "code": "[6수02-02]",
@@ -1234,8 +1234,10 @@
       "domain": "변화와 관계",
       "module": "비와 비율",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s02-02.ratio"
+      ]
     },
     {
       "code": "[6수02-03]",
@@ -1244,8 +1246,10 @@
       "domain": "변화와 관계",
       "module": "비와 비율",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s02-03.ratio-value"
+      ]
     },
     {
       "code": "[6수02-04]",
@@ -1254,8 +1258,10 @@
       "domain": "변화와 관계",
       "module": "비례식과 비례배분",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s02-04.proportion"
+      ]
     },
     {
       "code": "[6수02-05]",
@@ -1264,8 +1270,10 @@
       "domain": "변화와 관계",
       "module": "비례식과 비례배분",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s02-05.distribution"
+      ]
     },
     {
       "code": "[6수03-01]",
@@ -1274,8 +1282,10 @@
       "domain": "도형과 측정",
       "module": "합동과 대칭",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-01.congruence"
+      ]
     },
     {
       "code": "[6수03-02]",
@@ -1284,8 +1294,10 @@
       "domain": "도형과 측정",
       "module": "합동과 대칭",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-02.symmetry"
+      ]
     },
     {
       "code": "[6수03-03]",
@@ -1294,8 +1306,10 @@
       "domain": "도형과 측정",
       "module": "직육면체와 정육면체",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-03.cuboid"
+      ]
     },
     {
       "code": "[6수03-04]",
@@ -1304,8 +1318,10 @@
       "domain": "도형과 측정",
       "module": "직육면체와 정육면체",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-04.edge-sum"
+      ]
     },
     {
       "code": "[6수03-05]",
@@ -1314,8 +1330,10 @@
       "domain": "도형과 측정",
       "module": "각기둥과 각뿔",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-05.prism-pyramid"
+      ]
     },
     {
       "code": "[6수03-06]",
@@ -1324,8 +1342,10 @@
       "domain": "도형과 측정",
       "module": "각기둥과 각뿔",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-06.prism-name"
+      ]
     },
     {
       "code": "[6수03-07]",
@@ -1334,8 +1354,10 @@
       "domain": "도형과 측정",
       "module": "원기둥, 원뿔, 구",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-07.round-solids"
+      ]
     },
     {
       "code": "[6수03-08]",
@@ -1344,8 +1366,10 @@
       "domain": "도형과 측정",
       "module": "원기둥, 원뿔, 구",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-08.cylinder-parts"
+      ]
     },
     {
       "code": "[6수03-09]",
@@ -1354,8 +1378,10 @@
       "domain": "도형과 측정",
       "module": "입체도형의 공간 감각",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-09.cube-count"
+      ]
     },
     {
       "code": "[6수03-10]",
@@ -1364,8 +1390,10 @@
       "domain": "도형과 측정",
       "module": "입체도형의 공간 감각",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-10.cube-block"
+      ]
     },
     {
       "code": "[6수03-11]",
@@ -1374,8 +1402,10 @@
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-11.perimeter"
+      ]
     },
     {
       "code": "[6수03-12]",
@@ -1384,8 +1414,10 @@
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-12.area"
+      ]
     },
     {
       "code": "[6수03-13]",
@@ -1394,8 +1426,10 @@
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-13.area-unit"
+      ]
     },
     {
       "code": "[6수03-14]",
@@ -1404,8 +1438,10 @@
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-14.composite-area"
+      ]
     },
     {
       "code": "[6수03-15]",
@@ -1414,8 +1450,10 @@
       "domain": "도형과 측정",
       "module": "원주율과 원의 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-15.circumference"
+      ]
     },
     {
       "code": "[6수03-16]",
@@ -1424,8 +1462,10 @@
       "domain": "도형과 측정",
       "module": "원주율과 원의 넓이",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-16.circle-area"
+      ]
     },
     {
       "code": "[6수03-17]",
@@ -1434,8 +1474,10 @@
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-17.surface-area"
+      ]
     },
     {
       "code": "[6수03-18]",
@@ -1444,8 +1486,10 @@
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-18.volume"
+      ]
     },
     {
       "code": "[6수03-19]",
@@ -1454,8 +1498,10 @@
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s03-19.volume-unit"
+      ]
     },
     {
       "code": "[6수04-01]",
@@ -1464,8 +1510,10 @@
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-01.average"
+      ]
     },
     {
       "code": "[6수04-02]",
@@ -1474,8 +1522,10 @@
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-02.missing-for-average"
+      ]
     },
     {
       "code": "[6수04-03]",
@@ -1484,8 +1534,10 @@
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-03.band-graph"
+      ]
     },
     {
       "code": "[6수04-04]",
@@ -1494,8 +1546,10 @@
       "domain": "자료와 가능성",
       "module": "가능성",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-04.likelihood-word"
+      ]
     },
     {
       "code": "[6수04-05]",
@@ -1504,8 +1558,10 @@
       "domain": "자료와 가능성",
       "module": "가능성",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-05.likelihood-number"
+      ]
     },
     {
       "code": "[6수04-06]",
@@ -1514,9 +1570,13 @@
       "domain": "자료와 가능성",
       "module": "가능성",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g56.rm.s04-06.likelihood-compare"
+      ]
+    }
+  ],
+  "uncovered": [
     {
       "code": "[2국01-01]",
       "subject": "korean",
