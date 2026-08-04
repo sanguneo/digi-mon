@@ -7,6 +7,9 @@ export const ITEM_FORMATS = new Set([
   'compare', // >, <, = 를 넣는다
   'ordering', // 순서대로 늘어놓는다
   'write-expression', // 식을 세운다
+  // 도형을 직접 그린다. 정답 문자열 대조로 채점할 수 없어 사람이 본다.
+  // 문항을 못 내는 것과 자동 채점을 못 하는 것은 다르므로 형식으로 남긴다.
+  'construction',
 ]);
 
 /**
@@ -65,6 +68,8 @@ export function finalizeItem(raw, context) {
     skill: raw.skill,
     difficulty: raw.difficulty,
     format: raw.format,
+    // 작도 문항은 문자열 대조로 채점할 수 없다. 채점 주체를 문항에 명시한다.
+    scoring: raw.format === 'construction' ? 'manual' : 'auto',
     stem: raw.stem,
     ...(raw.instruction ? { instruction: raw.instruction } : {}),
     ...(raw.choices ? { choices: raw.choices } : {}),
@@ -93,8 +98,14 @@ export function validateItem(item) {
   }
   if (!Number.isInteger(item.difficulty) || item.difficulty < 1 || item.difficulty > 3) fail(`difficulty 는 1..3: ${item.difficulty}`);
   if (!item.answer || typeof item.answer.display !== 'string' || item.answer.display.length === 0) fail('answer.display 가 비었다');
-  if (!Array.isArray(item.answer.accepts) || item.answer.accepts.length === 0) fail('answer.accepts 가 비었다');
-  if (item.answer.accepts.some((a) => typeof a !== 'string' || a.length === 0)) fail('answer.accepts 에 빈 값이 있다');
+  if (item.scoring === 'manual') {
+    // 사람이 채점하는 문항은 정답 문자열 대신 채점 기준을 싣는다.
+    if (!Array.isArray(item.answer.rubric) || item.answer.rubric.length === 0) fail('사람 채점 문항은 answer.rubric 이 필요하다');
+    if (item.answer.rubric.some((r) => typeof r !== 'string' || r.trim().length === 0)) fail('answer.rubric 에 빈 기준이 있다');
+  } else {
+    if (!Array.isArray(item.answer.accepts) || item.answer.accepts.length === 0) fail('answer.accepts 가 비었다');
+    if (item.answer.accepts.some((a) => typeof a !== 'string' || a.length === 0)) fail('answer.accepts 에 빈 값이 있다');
+  }
   if (!Array.isArray(item.solution) || item.solution.length === 0) fail('solution 이 비었다');
   if (item.solution.some((s) => typeof s !== 'string' || s.trim().length === 0)) fail('solution 에 빈 단계가 있다');
 

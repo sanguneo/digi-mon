@@ -140,6 +140,7 @@ for (const r of results) {
 console.log('');
 console.log(`커버리지: ${coverage.coveredStandards}/${coverage.autoScorableStandards} 자동채점 가능 성취기준 (${(coverage.coverageRatio * 100).toFixed(1)}%)`);
 console.log(`전체 ${coverage.totalStandards}개 중 ${coverage.manualOnlyStandards}개는 자동채점 불가(수행·작도)로 분모에서 제외`);
+console.log(`문항이 생성되는 성취기준: ${coverage.standardsWithGenerator}개 (작도 문항은 생성되지만 채점은 사람이 한다)`);
 
 for (const [, b] of Object.entries(coverage.bySubject)) {
   console.log(`\n  ${b.subjectKorean}  ${b.covered}/${b.autoScorable} 자동채점 기준  (수동전용 ${b.manualOnly}개, 생성기 ${b.generators}개)`);
@@ -166,7 +167,7 @@ for (const [key, v] of Object.entries(bands).sort()) {
 if (coverage.manualOnlyStandards > 0) {
   console.log('\n자동채점 불가 성취기준:');
   for (const m of coverage.manualOnly) {
-    console.log(`  ${m.code} ${m.domain} — ${m.manualReason}`);
+    console.log(`  ${m.code} ${m.domain} — ${m.manualReason}${m.generatorCount > 0 ? ` [문항 생성기 ${m.generatorCount}개 있음]` : " [생성기 없음]"}`);
   }
 }
 

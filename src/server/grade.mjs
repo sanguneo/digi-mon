@@ -37,6 +37,23 @@ function resolveChoiceResponse(item, raw) {
 }
 
 export function gradeItem(item, response) {
+  // 작도 문항은 기계가 정답을 판정하지 않는다. 채점 기준을 넘겨 사람이 보게 한다.
+  // 정확도를 계산할 때 이 문항을 섞으면 사람이 아직 안 본 것을 오답으로 세게 된다.
+  if (item.scoring === 'manual') {
+    return {
+      number: item.number,
+      itemId: item.id,
+      standardCode: item.standardCode,
+      skill: item.skill,
+      difficulty: item.difficulty,
+      requiresManualScoring: true,
+      answered: String(response ?? '').trim().length > 0,
+      correct: null,
+      submitted: response ?? null,
+      rubric: item.answer.rubric,
+    };
+  }
+
   const submitted = item.format === 'multiple-choice'
     ? resolveChoiceResponse(item, response)
     : response;
@@ -66,14 +83,19 @@ export function gradeItem(item, response) {
 export function gradeWorksheet(worksheet, responses) {
   const byNumber = new Map(worksheet.items.map((it) => [it.number, it]));
   const results = [];
+  // 사람이 채점하는 문항은 자동 집계에서 분리한다.
+  const manualScoring = [];
 
   for (const [key, value] of Object.entries(responses ?? {})) {
     const number = Number(key);
     const item = byNumber.get(number);
     if (!item) continue;
-    results.push(gradeItem(item, value));
+    const graded = gradeItem(item, value);
+    if (graded.requiresManualScoring) manualScoring.push(graded);
+    else results.push(graded);
   }
   results.sort((a, b) => a.number - b.number);
+  manualScoring.sort((a, b) => a.number - b.number);
 
   const byStandard = {};
   for (const r of results) {
@@ -99,10 +121,12 @@ export function gradeWorksheet(worksheet, responses) {
     seed: worksheet.seed,
     graded: results.length,
     total: worksheet.items.length,
+    manualScoringCount: manualScoring.length,
     correct,
     accuracy: results.length === 0 ? null : Number((correct / results.length).toFixed(4)),
     byStandard,
     weakStandards,
     results,
+    manualScoring,
   };
 }

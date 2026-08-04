@@ -2,13 +2,14 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 146
+    "generatorCount": 147
   },
   "totalStandards": 248,
   "autoScorableStandards": 247,
   "manualOnlyStandards": 1,
   "coveredStandards": 120,
   "uncoveredStandards": 127,
+  "standardsWithGenerator": 121,
   "coverageRatio": 0.4858,
   "bySubject": {
     "math": {
@@ -17,7 +18,7 @@
       "autoScorable": 120,
       "manualOnly": 1,
       "covered": 120,
-      "generators": 146,
+      "generators": 147,
       "byDomain": {
         "수와 연산": {
           "total": 42,
@@ -2856,9 +2857,11 @@
       "domain": "도형과 측정",
       "module": "평면도형과 그 구성 요소",
       "scoringMode": "manual",
-      "manualReason": "사각형·삼각형·원을 직접 그리는 작도 수행 과제다. 그린 결과의 정확도는 사람이 본다.",
-      "generatorCount": 0,
-      "generatorIds": []
+      "manualReason": "사각형·삼각형·원을 직접 그리는 작도 수행 과제다. 문항은 생성하지만 그린 결과는 사람이 본다.",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.sc.s04.draw"
+      ]
     }
   ]
 }

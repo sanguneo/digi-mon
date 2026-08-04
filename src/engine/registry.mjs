@@ -131,6 +131,8 @@ export function buildCoverage(spine, registry) {
   }
 
   const autoScorable = covered.length + uncovered.length;
+  // 문항 생성 여부는 채점 방식과 별개다. 작도 문항도 학습지에는 나간다.
+  const withGenerator = [...covered, ...manualOnly].filter((e) => e.generatorCount > 0).length;
 
   return {
     schema: 'digi-mon/coverage@2',
@@ -140,6 +142,8 @@ export function buildCoverage(spine, registry) {
     manualOnlyStandards: manualOnly.length,
     coveredStandards: covered.length,
     uncoveredStandards: uncovered.length,
+    // 문항이 생성되는 성취기준 수. 자동 채점 가능 여부와 구분해 센다.
+    standardsWithGenerator: withGenerator,
     // 분모는 자동 채점 가능한 성취기준이다. 수행·작도 과제를 억지로 객관식으로
     // 바꿔 100%를 만드는 것보다, 못 하는 것을 못 한다고 세는 쪽이 정확하다.
     coverageRatio: autoScorable === 0 ? 0 : Number((covered.length / autoScorable).toFixed(4)),

@@ -7,7 +7,7 @@
  * curriculum/scoring-policy.mjs 의 MANUAL_SCORING 을 보라.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEun, josaI, numEun } from '../../engine/korean-number.mjs';
+import { josaEul, josaEun, josaI, numEun } from '../../engine/korean-number.mjs';
 
 const CODE = (n) => `[2수03-${String(n).padStart(2, '0')}]`;
 const num = (n) => String(n);
@@ -302,11 +302,62 @@ const compareEstimates = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// [2수03-04] 사각형·삼각형·원 그리기 (사람 채점)
+// ---------------------------------------------------------------------------
+
+const DRAW_SHAPES = {
+  triangle: { korean: '삼각형', rubric: ['곧은 선분 3개로 둘러싸였는가', '세 선분이 모두 이어져 빈틈이 없는가'] },
+  quadrilateral: { korean: '사각형', rubric: ['곧은 선분 4개로 둘러싸였는가', '네 선분이 모두 이어져 빈틈이 없는가'] },
+  circle: { korean: '원', rubric: ['굽은 선 하나로 둥글게 닫혔는가', '뾰족한 부분이 없는가'] },
+};
+
+/**
+ * 작도 수행 과제. 그린 결과는 문자열로 채점할 수 없다.
+ *
+ * '문항을 만들 수 없다'와 '자동 채점을 할 수 없다'는 다르다. 문항은 생성해서
+ * 학습지에 싣고, 채점 기준만 실어 사람에게 넘긴다. 이 문항은 정확도 계산에서 빠진다.
+ */
+const drawPlaneShape = {
+  id: 'math.g12.sc.s04.draw',
+  standardCode: CODE(4),
+  skill: '사각형·삼각형·원 그리기',
+  format: 'construction',
+  generate(rng, { difficulty }) {
+    const key = rng.pick(difficulty === 1 ? ['triangle', 'quadrilateral'] : Object.keys(DRAW_SHAPES));
+    const shape = DRAW_SHAPES[key];
+    const count = difficulty === 3 ? rng.int(2, 3) : 1;
+    return {
+      params: { key, count },
+      instruction: '자를 사용하여 아래 빈 곳에 그리시오.',
+      stem: count === 1
+        ? `${shape.korean}${josaEul(shape.korean)} 하나 그리시오.`
+        : `크기가 서로 다른 ${shape.korean} ${count}개를 그리시오.`,
+      answer: {
+        display: `${shape.korean} ${count}개를 그린다 (사람 채점)`,
+        rubric: [
+          ...shape.rubric,
+          count > 1 ? `크기가 서로 다른 ${count}개를 그렸는가` : '한 개를 그렸는가',
+        ],
+      },
+      solution: [`${shape.korean}의 특징을 지키며 그렸는지 확인한다.`, ...shape.rubric],
+      dedupeKey: `draw-shape:${key}:${count}`,
+      difficulty,
+    };
+  },
+  verify(params, answer) {
+    // 그린 결과를 기계가 볼 수 없으므로 문항 형식과 채점 기준의 존재만 확인한다.
+    return Array.isArray(answer.rubric) && answer.rubric.length >= 3
+      && Object.hasOwn(DRAW_SHAPES, params.key) && params.count >= 1;
+  },
+};
+
 export const generators = [
   identifySolid,
   solidFromObject,
   countStackedCubes,
   planeFromObject,
+  drawPlaneShape,
   compareQuantity,
   estimateWithUnit,
   compareEstimates,

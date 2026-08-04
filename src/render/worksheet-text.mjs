@@ -1,10 +1,17 @@
 /** 학습지를 사람이 읽는 텍스트로 렌더한다. 인쇄·PDF 변환의 중간 표현이다. */
 
+/** 작도 문항은 빈 칸 대신 그릴 자리를 준다. */
+const DRAW_BOX = [
+  '    ┌──────────────────────────────┐',
+  '    │                              │',
+  '    │                              │',
+  '    │                              │',
+  '    └──────────────────────────────┘',
+];
+
 function renderItem(item, { showAnswer = false } = {}) {
-  const lines = [];
-  const head = `${String(item.number).padStart(2)}. ${item.instruction ?? ''}`.trimEnd();
-  lines.push(head);
-  lines.push(`    ${item.stem}`);
+  const lines = [`${String(item.number).padStart(2)}. ${item.instruction ?? ''}`.trimEnd()];
+  if (item.stem.trim().length > 0) lines.push(`    ${item.stem}`);
 
   if (item.figure) {
     lines.push(`    [그림 ${item.figure.kind}] ${item.figure.altText}`);
@@ -12,14 +19,23 @@ function renderItem(item, { showAnswer = false } = {}) {
   if (item.choices) {
     lines.push(`    ${item.choices.map((c) => `${c.label} ${c.text}`).join('   ')}`);
   }
+
+  if (item.scoring === 'manual') {
+    lines.push(...DRAW_BOX);
+    if (showAnswer) {
+      lines.push('    채점 기준 (사람이 확인):');
+      for (const r of item.answer.rubric) lines.push(`      · ${r}`);
+    }
+    return lines.join('\n');
+  }
+
   if (showAnswer) {
     lines.push(`    답: ${item.answer.display}`);
     for (const step of item.solution) lines.push(`      · ${step}`);
   } else {
     lines.push('    답: ______________');
   }
-  lines.push(FORMAT_HINT[item.format] ?? '');
-  return lines.filter((l) => l !== '').join('\n');
+  return lines.join('\n');
 }
 
 export function renderWorksheet(worksheet) {

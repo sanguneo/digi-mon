@@ -1,8 +1,8 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 146,
-  "totalGenerated": 175200,
+  "generatorCount": 147,
+  "totalGenerated": 176400,
   "totalFailed": 0,
   "figuresRendered": 35585,
   "coverage": {
@@ -16,7 +16,7 @@
         "autoScorable": 120,
         "manualOnly": 1,
         "covered": 120,
-        "generators": 146,
+        "generators": 147,
         "byDomain": {
           "수와 연산": {
             "total": 42,
@@ -1093,6 +1093,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.0092
+    },
+    {
+      "generatorId": "math.g12.sc.s04.draw",
+      "code": "[2수03-04]",
+      "skill": "사각형·삼각형·원 그리기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 2,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 6,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 9,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0075
     },
     {
       "generatorId": "math.g12.sc.s06.compare",
