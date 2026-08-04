@@ -31,6 +31,8 @@ server.listen(PORT, () => {
   console.log('  POST /v1/worksheets   {seed, subject, grade, domain, count, difficulty, includeAnswers}');
   console.log('  POST /v1/items        {code, count, difficulty, seed}');
   console.log('  POST /v1/grade        {seed, ...같은옵션, responses:{1:"14"}}');
+  console.log('  GET  /v1/prerequisites?code=[2수01-06]');
+  console.log('  POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}');
 });
 
 for (const signal of ['SIGINT', 'SIGTERM']) {

@@ -1,5 +1,6 @@
 import { createRng } from './rng.mjs';
 import { finalizeItem } from './item.mjs';
+import { learningOrder } from '../curriculum/prerequisites.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
 
@@ -54,6 +55,8 @@ export function buildWorksheet(spine, registry, options) {
     difficulty,
     difficultyMix = DEFAULT_DIFFICULTY_MIX,
     title,
+    // true 면 성취기준을 선수 관계 순서로 배치한다. 복습 학습지는 선수부터 풀려야 한다.
+    followLearningOrder = false,
   } = options ?? {};
 
   const targets = resolveTargets(spine, registry, { subject, gradeBands, domains, codes });
@@ -68,10 +71,16 @@ export function buildWorksheet(spine, registry, options) {
   const pool = [];
   for (const std of targets) for (const g of registry.forStandard(std.code)) pool.push({ std, g });
 
+  // 선수 순서를 따를 때는 학습 순서로 정렬해 앞쪽 기준이 먼저 나오게 한다.
+  if (followLearningOrder) {
+    const rank = new Map(learningOrder(targets.map((t) => t.code)).map((code, idx) => [code, idx]));
+    pool.sort((a, b) => (rank.get(a.std.code) ?? 0) - (rank.get(b.std.code) ?? 0));
+  }
+
   const items = [];
   const seen = new Set();
   const failures = [];
-  let cursorPool = rng.shuffle(pool);
+  let cursorPool = followLearningOrder ? pool.slice() : rng.shuffle(pool);
   let cursor = 0;
   let attempts = 0;
   const maxAttempts = count * 40;
@@ -79,7 +88,7 @@ export function buildWorksheet(spine, registry, options) {
   while (items.length < count && attempts < maxAttempts) {
     attempts += 1;
     if (cursor >= cursorPool.length) {
-      cursorPool = rng.shuffle(pool);
+      cursorPool = followLearningOrder ? pool.slice() : rng.shuffle(pool);
       cursor = 0;
     }
     const { std, g } = cursorPool[cursor];
@@ -114,7 +123,15 @@ export function buildWorksheet(spine, registry, options) {
     requested: count,
     produced: numbered.length,
     shortfall: count - numbered.length,
-    options: { subject, gradeBands: gradeBands ?? null, domains: domains ?? null, codes: codes ?? null, difficulty: difficulty ?? null, difficultyMix },
+    options: {
+      subject,
+      gradeBands: gradeBands ?? null,
+      domains: domains ?? null,
+      codes: codes ?? null,
+      difficulty: difficulty ?? null,
+      difficultyMix,
+      followLearningOrder,
+    },
     standardsUsed: [...new Set(numbered.map((it) => it.standardCode))].sort(),
     difficultyHistogram: numbered.reduce((acc, it) => ({ ...acc, [it.difficulty]: (acc[it.difficulty] ?? 0) + 1 }), {}),
     items: numbered,

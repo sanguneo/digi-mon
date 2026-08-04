@@ -3,6 +3,12 @@ import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
 import { createRng } from '../engine/rng.mjs';
 import { gradeWorksheet } from './grade.mjs';
 import { renderFigureSvg, hasSvgRenderer } from '../render/figure-svg.mjs';
+import {
+  MATH_PREREQUISITES,
+  ancestorsOf,
+  dependentsOf,
+  learningOrder,
+} from '../curriculum/prerequisites.mjs';
 
 const MAX_BODY_BYTES = 256 * 1024;
 const MAX_COUNT = 100;
@@ -231,6 +237,100 @@ export function createApp({ spine, registry }) {
         const options = parseWorksheetOptions(body);
         const worksheet = buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
         return gradeWorksheet(worksheet, body.responses);
+      },
+    },
+    {
+      method: 'GET',
+      path: '/v1/prerequisites',
+      handle: (_body, url) => {
+        const code = url.searchParams.get('code');
+        if (!code) {
+          return {
+            standardCount: Object.keys(MATH_PREREQUISITES).length,
+            note: '이 저장소가 저작한 추천 순서다. 보편 법칙이 아니다.',
+            learningOrder: learningOrder(),
+            graph: MATH_PREREQUISITES,
+          };
+        }
+        if (!Object.hasOwn(MATH_PREREQUISITES, code)) {
+          throw new HttpError(404, `선수 관계를 모르는 성취기준: ${code}`);
+        }
+        return {
+          code,
+          direct: MATH_PREREQUISITES[code],
+          // 먼 선수부터. 복습은 여기 앞쪽부터 시작한다.
+          ancestors: ancestorsOf(code),
+          dependents: dependentsOf(code),
+        };
+      },
+    },
+    {
+      method: 'POST',
+      path: '/v1/remediation',
+      /**
+       * 채점 결과의 취약 성취기준을 복습 학습지로 바꾼다.
+       *
+       * 취약 기준을 다시 내는 것만으로는 부족하다. 두 자리 덧셈이 안 되는데
+       * 분수의 덧셈을 반복시키면 같은 자리에서 계속 막힌다. 선수를 거슬러
+       * 올라가 먼저 배워야 하는 것부터 낸다.
+       */
+      handle: (body) => {
+        const weak = list(body.weakStandards ?? body.codes);
+        if (!weak || weak.length === 0) {
+          throw new HttpError(400, 'weakStandards 는 성취기준 코드 배열이어야 한다', {
+            example: { weakStandards: ['[6수01-08]'], count: 10 },
+          });
+        }
+        const unknown = weak.filter((c) => !Object.hasOwn(MATH_PREREQUISITES, c));
+        if (unknown.length > 0) {
+          throw new HttpError(404, `선수 관계를 모르는 성취기준: ${unknown.join(', ')}`);
+        }
+
+        const depth = Number(body.depth ?? 2);
+        if (!Number.isInteger(depth) || depth < 1 || depth > 6) {
+          throw new HttpError(400, 'depth 는 1..6 정수여야 한다');
+        }
+
+        // 선수를 모으고 학습 순서로 정렬한다. 생성기가 없는 기준은 낼 수 없다.
+        const prerequisiteSet = new Set();
+        for (const code of weak) {
+          for (const p of ancestorsOf(code, { maxDepth: depth })) prerequisiteSet.add(p);
+        }
+        for (const code of weak) prerequisiteSet.delete(code);
+
+        const generatable = (code) => registry.forStandard(code).length > 0;
+        const plan = learningOrder([...prerequisiteSet, ...weak]).map((code) => ({
+          code,
+          role: weak.includes(code) ? 'target' : 'prerequisite',
+          hasGenerator: generatable(code),
+          domain: standardByCode.get(code)?.domain ?? null,
+          gradeBand: standardByCode.get(code)?.gradeBand ?? null,
+        }));
+
+        const usable = plan.filter((p) => p.hasGenerator).map((p) => p.code);
+        if (usable.length === 0) {
+          throw new HttpError(409, '복습에 쓸 생성기가 없다', { plan });
+        }
+
+        const options = parseWorksheetOptions({ ...body, codes: usable });
+        const worksheet = buildWorksheet(spine, registry, {
+          ...options,
+          seed: options.seed ?? `remediation-${Date.now()}`,
+          // 복습은 선수부터 풀려야 하므로 학습 순서를 따른다.
+          followLearningOrder: true,
+          title: body.title ?? `복습 학습지 (${weak.join(', ')} 선수 포함)`,
+        });
+        const includeAnswers = String(body.includeAnswers) === 'true';
+
+        return {
+          weakStandards: weak,
+          depth,
+          plan,
+          skipped: plan.filter((p) => !p.hasGenerator).map((p) => p.code),
+          worksheet: includeAnswers
+            ? { ...worksheet, items: worksheet.items.map(attachFigureSvg) }
+            : stripAnswers(worksheet),
+        };
       },
     },
   ];
