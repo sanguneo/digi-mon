@@ -2,27 +2,27 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 47
+    "generatorCount": 68
   },
   "totalStandards": 248,
   "autoScorableStandards": 247,
   "manualOnlyStandards": 1,
-  "coveredStandards": 28,
-  "uncoveredStandards": 219,
-  "coverageRatio": 0.1134,
+  "coveredStandards": 44,
+  "uncoveredStandards": 203,
+  "coverageRatio": 0.1781,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
       "total": 121,
       "autoScorable": 120,
       "manualOnly": 1,
-      "covered": 28,
-      "generators": 47,
+      "covered": 44,
+      "generators": 68,
       "byDomain": {
         "수와 연산": {
           "total": 42,
           "autoScorable": 42,
-          "covered": 11
+          "covered": 27
         },
         "변화와 관계": {
           "total": 10,
@@ -40,7 +40,7 @@
           "covered": 3
         }
       },
-      "coverageRatio": 0.2333
+      "coverageRatio": 0.3667
     },
     "korean": {
       "subjectKorean": "국어",
@@ -463,9 +463,7 @@
       "generatorIds": [
         "math.g12.pd.s04-03.read-graph"
       ]
-    }
-  ],
-  "uncovered": [
+    },
     {
       "code": "[4수01-01]",
       "subject": "math",
@@ -473,8 +471,11 @@
       "domain": "수와 연산",
       "module": "다섯 자리 이상의 수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g34.no.s01.read-big",
+        "math.g34.no.s01.place-value"
+      ]
     },
     {
       "code": "[4수01-02]",
@@ -483,8 +484,11 @@
       "domain": "수와 연산",
       "module": "다섯 자리 이상의 수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g34.no.s02.compare",
+        "math.g34.no.s02.sequence"
+      ]
     },
     {
       "code": "[4수01-03]",
@@ -493,8 +497,10 @@
       "domain": "수와 연산",
       "module": "세 자리 수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s03.add-sub"
+      ]
     },
     {
       "code": "[4수01-04]",
@@ -503,8 +509,10 @@
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 곱셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s04.multiply"
+      ]
     },
     {
       "code": "[4수01-05]",
@@ -513,8 +521,10 @@
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s05.meaning"
+      ]
     },
     {
       "code": "[4수01-06]",
@@ -523,8 +533,10 @@
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s06.remainder"
+      ]
     },
     {
       "code": "[4수01-07]",
@@ -533,8 +545,10 @@
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s07.divide"
+      ]
     },
     {
       "code": "[4수01-08]",
@@ -543,8 +557,10 @@
       "domain": "수와 연산",
       "module": "자연수의 어림셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s08.estimate"
+      ]
     },
     {
       "code": "[4수01-09]",
@@ -553,8 +569,11 @@
       "domain": "수와 연산",
       "module": "분수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g34.no.s09.read",
+        "math.g34.no.s09.part-of-whole"
+      ]
     },
     {
       "code": "[4수01-10]",
@@ -563,8 +582,11 @@
       "domain": "수와 연산",
       "module": "분수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g34.no.s10.classify",
+        "math.g34.no.s10.to-mixed"
+      ]
     },
     {
       "code": "[4수01-11]",
@@ -573,8 +595,11 @@
       "domain": "수와 연산",
       "module": "분수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g34.no.s11.compare",
+        "math.g34.no.s11.compare-unit"
+      ]
     },
     {
       "code": "[4수01-12]",
@@ -583,8 +608,10 @@
       "domain": "수와 연산",
       "module": "소수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s12.tenths"
+      ]
     },
     {
       "code": "[4수01-13]",
@@ -593,8 +620,10 @@
       "domain": "수와 연산",
       "module": "소수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s13.place"
+      ]
     },
     {
       "code": "[4수01-14]",
@@ -603,8 +632,10 @@
       "domain": "수와 연산",
       "module": "소수",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s14.compare"
+      ]
     },
     {
       "code": "[4수01-15]",
@@ -613,8 +644,10 @@
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s15.add-sub"
+      ]
     },
     {
       "code": "[4수01-16]",
@@ -623,9 +656,13 @@
       "domain": "수와 연산",
       "module": "소수의 덧셈과 뺄셈",
       "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g34.no.s16.add-sub"
+      ]
+    }
+  ],
+  "uncovered": [
     {
       "code": "[4수02-01]",
       "subject": "math",

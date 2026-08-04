@@ -2,6 +2,7 @@ import { generators as mathG12NumberOperations } from '../generators/math/g12-nu
 import { generators as mathG12GeometryMeasurement } from '../generators/math/g12-geometry-measurement.mjs';
 import { generators as mathG12SolidsComparison } from '../generators/math/g12-solids-comparison.mjs';
 import { generators as mathG12PatternsData } from '../generators/math/g12-patterns-data.mjs';
+import { generators as mathG34NumberOperations } from '../generators/math/g34-number-operations.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 
 /**
@@ -13,6 +14,7 @@ const MODULES = [
   { file: 'math/g12-geometry-measurement.mjs', generators: mathG12GeometryMeasurement },
   { file: 'math/g12-solids-comparison.mjs', generators: mathG12SolidsComparison },
   { file: 'math/g12-patterns-data.mjs', generators: mathG12PatternsData },
+  { file: 'math/g34-number-operations.mjs', generators: mathG34NumberOperations },
 ];
 
 function assertGeneratorContract(g, file) {

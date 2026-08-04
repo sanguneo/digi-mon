@@ -1,27 +1,27 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 47,
-  "totalGenerated": 56400,
+  "generatorCount": 68,
+  "totalGenerated": 81600,
   "totalFailed": 0,
   "figuresRendered": 9600,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 28,
-    "coverageRatio": 0.1134,
+    "coveredStandards": 44,
+    "coverageRatio": 0.1781,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
         "total": 121,
         "autoScorable": 120,
         "manualOnly": 1,
-        "covered": 28,
-        "generators": 47,
+        "covered": 44,
+        "generators": 68,
         "byDomain": {
           "수와 연산": {
             "total": 42,
             "autoScorable": 42,
-            "covered": 11
+            "covered": 27
           },
           "변화와 관계": {
             "total": 10,
@@ -39,7 +39,7 @@
             "covered": 3
           }
         },
-        "coverageRatio": 0.2333
+        "coverageRatio": 0.3667
       },
       "korean": {
         "subjectKorean": "국어",
@@ -1327,6 +1327,552 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.8542
+    },
+    {
+      "generatorId": "math.g34.no.s01.read-big",
+      "code": "[4수01-01]",
+      "skill": "큰 수 읽기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g34.no.s01.place-value",
+      "code": "[4수01-01]",
+      "skill": "큰 수의 자릿값 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g34.no.s02.compare",
+      "code": "[4수01-02]",
+      "skill": "큰 수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g34.no.s02.sequence",
+      "code": "[4수01-02]",
+      "skill": "큰 수의 계열 파악하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 242,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 304,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 343,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 748,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6233
+    },
+    {
+      "generatorId": "math.g34.no.s03.add-sub",
+      "code": "[4수01-03]",
+      "skill": "세 자리 수의 덧셈과 뺄셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 1
+    },
+    {
+      "generatorId": "math.g34.no.s04.multiply",
+      "code": "[4수01-04]",
+      "skill": "세 자리 수 범위의 곱셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 310,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 388,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1097,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9142
+    },
+    {
+      "generatorId": "math.g34.no.s05.meaning",
+      "code": "[4수01-05]",
+      "skill": "곱셈과 나눗셈의 관계",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 123,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 231,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 330,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 680,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.5667
+    },
+    {
+      "generatorId": "math.g34.no.s06.remainder",
+      "code": "[4수01-06]",
+      "skill": "나머지 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 77,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 358,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 386,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 803,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6692
+    },
+    {
+      "generatorId": "math.g34.no.s07.divide",
+      "code": "[4수01-07]",
+      "skill": "세 자리 수 범위의 나눗셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 348,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 336,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 333,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 924,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.77
+    },
+    {
+      "generatorId": "math.g34.no.s08.estimate",
+      "code": "[4수01-08]",
+      "skill": "어림셈으로 계산 결과 어림하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 387,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1187,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9892
+    },
+    {
+      "generatorId": "math.g34.no.s09.read",
+      "code": "[4수01-09]",
+      "skill": "분수 읽고 쓰기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 30,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 121,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 118,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 132,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.11
+    },
+    {
+      "generatorId": "math.g34.no.s09.part-of-whole",
+      "code": "[4수01-09]",
+      "skill": "전체를 등분할한 부분을 분수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 71,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 222,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 297,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 475,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.3958
+    },
+    {
+      "generatorId": "math.g34.no.s10.classify",
+      "code": "[4수01-10]",
+      "skill": "진분수·가분수·단위분수 구별",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 75,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 76,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 79,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 84,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.07
+    },
+    {
+      "generatorId": "math.g34.no.s10.to-mixed",
+      "code": "[4수01-10]",
+      "skill": "가분수를 대분수로 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 30,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 159,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 174,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 201,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1675
+    },
+    {
+      "generatorId": "math.g34.no.s11.compare",
+      "code": "[4수01-11]",
+      "skill": "분모가 같은 분수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 39,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 223,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 224,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 332,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.2767
+    },
+    {
+      "generatorId": "math.g34.no.s11.compare-unit",
+      "code": "[4수01-11]",
+      "skill": "단위분수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 106,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 110,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 110,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0917
+    },
+    {
+      "generatorId": "math.g34.no.s12.tenths",
+      "code": "[4수01-12]",
+      "skill": "분모가 10인 분수를 소수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 79,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 80,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 90,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.075
+    },
+    {
+      "generatorId": "math.g34.no.s13.place",
+      "code": "[4수01-13]",
+      "skill": "소수의 자리 숫자 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 321,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 396,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 392,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1103,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9192
+    },
+    {
+      "generatorId": "math.g34.no.s14.compare",
+      "code": "[4수01-14]",
+      "skill": "소수의 크기 비교",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 399,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1194,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.995
+    },
+    {
+      "generatorId": "math.g34.no.s15.add-sub",
+      "code": "[4수01-15]",
+      "skill": "분모가 같은 분수의 덧셈과 뺄셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 67,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 259,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 238,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 381,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.3175
+    },
+    {
+      "generatorId": "math.g34.no.s16.add-sub",
+      "code": "[4수01-16]",
+      "skill": "소수의 덧셈과 뺄셈",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 386,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1186,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.9883
     }
   ],
   "errors": []
