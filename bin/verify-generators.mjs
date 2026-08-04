@@ -13,25 +13,47 @@ import { generateItem } from '../src/engine/worksheet.mjs';
 import { renderFigureSvg } from '../src/render/figure-svg.mjs';
 
 /**
+ * XML 정합성을 스택으로 확인한다.
+ *
+ * 태그 이름을 하드코딩해 세는 방식은 렌더러에 새 태그(path, ellipse 등)를 쓸 때마다
+ * 검사기를 따라 고쳐야 하고, 잊으면 멀쩡한 SVG를 실패로 보고한다. 태그 이름을
+ * 모르는 채로 여닫힘만 맞춰 보는 쪽이 렌더러 변경에 견딘다.
+ */
+function assertWellFormedXml(svg, kind) {
+  const stack = [];
+  // 속성값 안의 따옴표를 건너뛰어 '>' 를 태그 끝으로 오인하지 않게 한다.
+  const tagPattern = /<(\/?)([a-zA-Z][\w-]*)((?:"[^"]*"|'[^']*'|[^>"'])*?)(\/?)>/g;
+  let match = tagPattern.exec(svg);
+  while (match !== null) {
+    const [, closing, name, , selfClosing] = match;
+    if (closing) {
+      const opened = stack.pop();
+      if (opened !== name) {
+        throw new Error(`XML 태그 불일치 [${kind}]: </${name}> 앞에 <${opened ?? '없음'}>`);
+      }
+    } else if (!selfClosing) {
+      stack.push(name);
+    }
+    match = tagPattern.exec(svg);
+  }
+  if (stack.length > 0) throw new Error(`닫히지 않은 XML 태그 [${kind}]: ${stack.join(' > ')}`);
+}
+
+/**
  * figure 가 붙은 문항은 SVG 까지 실제로 그려 본다.
  * 좌표에 NaN/undefined 가 새는 것이 이런 렌더러의 대표적 실패이고,
  * 그건 파일을 열어 봐야 보이는 게 아니라 여기서 잡아야 한다.
  */
 function assertRenderableSvg(item) {
   const svg = renderFigureSvg(item.figure);
+  const kind = item.figure.kind;
   if (!svg.startsWith('<svg') || !svg.endsWith('</svg>')) {
-    throw new Error(`SVG 형식 오류 [${item.figure.kind}]`);
+    throw new Error(`SVG 루트 요소 오류 [${kind}]`);
   }
   for (const bad of ['NaN', 'undefined', 'Infinity', 'null']) {
-    if (svg.includes(bad)) throw new Error(`SVG에 ${bad} 유출 [${item.figure.kind}] params=${JSON.stringify(item.params)}`);
+    if (svg.includes(bad)) throw new Error(`SVG에 ${bad} 유출 [${kind}] params=${JSON.stringify(item.params)}`);
   }
-  // 여는 태그와 닫는 태그 수가 맞아야 파서가 읽을 수 있다.
-  const opens = (svg.match(/<(svg|g|text|circle|line|rect|polygon)\b/g) ?? []).length;
-  const selfClosing = (svg.match(/\/>/g) ?? []).length;
-  const closes = (svg.match(/<\/(svg|g|text)>/g) ?? []).length;
-  if (opens !== selfClosing + closes) {
-    throw new Error(`SVG 태그 짝이 맞지 않는다 [${item.figure.kind}] open=${opens} self=${selfClosing} close=${closes}`);
-  }
+  assertWellFormedXml(svg, kind);
 }
 
 const PER_COMBINATION = Number(process.env.SAMPLES ?? 400);
@@ -116,11 +138,35 @@ for (const r of results) {
 }
 
 console.log('');
-console.log(`커버리지: ${coverage.coveredStandards}/${coverage.totalStandards} 성취기준 (${(coverage.coverageRatio * 100).toFixed(1)}%)`);
-for (const [slug, b] of Object.entries(coverage.bySubject)) {
-  console.log(`  ${b.subjectKorean.padEnd(3)} ${String(b.covered).padStart(3)}/${String(b.total).padStart(3)} 기준  생성기 ${b.generators}개`);
+console.log(`커버리지: ${coverage.coveredStandards}/${coverage.autoScorableStandards} 자동채점 가능 성취기준 (${(coverage.coverageRatio * 100).toFixed(1)}%)`);
+console.log(`전체 ${coverage.totalStandards}개 중 ${coverage.manualOnlyStandards}개는 자동채점 불가(수행·작도)로 분모에서 제외`);
+
+for (const [, b] of Object.entries(coverage.bySubject)) {
+  console.log(`\n  ${b.subjectKorean}  ${b.covered}/${b.autoScorable} 자동채점 기준  (수동전용 ${b.manualOnly}개, 생성기 ${b.generators}개)`);
   for (const [domain, dv] of Object.entries(b.byDomain)) {
-    console.log(`      ${domain.padEnd(12)} ${dv.covered}/${dv.total}`);
+    const done = dv.autoScorable > 0 && dv.covered === dv.autoScorable;
+    console.log(`      ${domain.padEnd(12)} ${String(dv.covered).padStart(2)}/${String(dv.autoScorable).padStart(2)}${done ? '  완료' : ''}`);
+  }
+}
+
+// 학년군이 실제 진척 단위다. 한 학년군을 다 채우면 그 학년 학습지를 통째로 뽑을 수 있다.
+console.log('\n학년군별 진척 (자동채점 기준):');
+const bands = {};
+for (const entry of [...coverage.covered, ...coverage.uncovered]) {
+  const key = `${entry.subject} ${entry.gradeBand}`;
+  bands[key] ??= { covered: 0, total: 0 };
+  bands[key].total += 1;
+  if (entry.generatorCount > 0) bands[key].covered += 1;
+}
+for (const [key, v] of Object.entries(bands).sort()) {
+  const done = v.covered === v.total;
+  console.log(`  ${key.padEnd(14)} ${String(v.covered).padStart(3)}/${String(v.total).padStart(3)}${done ? '   전량 완료' : ''}`);
+}
+
+if (coverage.manualOnlyStandards > 0) {
+  console.log('\n자동채점 불가 성취기준:');
+  for (const m of coverage.manualOnly) {
+    console.log(`  ${m.code} ${m.domain} — ${m.manualReason}`);
   }
 }
 

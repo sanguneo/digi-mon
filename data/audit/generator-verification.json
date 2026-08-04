@@ -1,68 +1,82 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 34,
-  "totalGenerated": 40800,
+  "generatorCount": 47,
+  "totalGenerated": 56400,
   "totalFailed": 0,
-  "figuresRendered": 4800,
+  "figuresRendered": 9600,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 18,
-    "coverageRatio": 0.0726,
+    "coveredStandards": 28,
+    "coverageRatio": 0.1134,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
         "total": 121,
-        "covered": 18,
-        "generators": 34,
+        "autoScorable": 120,
+        "manualOnly": 1,
+        "covered": 28,
+        "generators": 47,
         "byDomain": {
           "수와 연산": {
             "total": 42,
+            "autoScorable": 42,
             "covered": 11
           },
           "변화와 관계": {
             "total": 10,
-            "covered": 0
+            "autoScorable": 10,
+            "covered": 2
           },
           "도형과 측정": {
             "total": 57,
-            "covered": 7
+            "autoScorable": 56,
+            "covered": 12
           },
           "자료와 가능성": {
             "total": 12,
-            "covered": 0
+            "autoScorable": 12,
+            "covered": 3
           }
         },
-        "coverageRatio": 0.1488
+        "coverageRatio": 0.2333
       },
       "korean": {
         "subjectKorean": "국어",
         "total": 87,
+        "autoScorable": 87,
+        "manualOnly": 0,
         "covered": 0,
         "generators": 0,
         "byDomain": {
           "듣기·말하기": {
             "total": 18,
+            "autoScorable": 18,
             "covered": 0
           },
           "읽기": {
             "total": 16,
+            "autoScorable": 16,
             "covered": 0
           },
           "쓰기": {
             "total": 15,
+            "autoScorable": 15,
             "covered": 0
           },
           "문법": {
             "total": 14,
+            "autoScorable": 14,
             "covered": 0
           },
           "문학": {
             "total": 15,
+            "autoScorable": 15,
             "covered": 0
           },
           "매체": {
             "total": 9,
+            "autoScorable": 9,
             "covered": 0
           }
         },
@@ -71,15 +85,19 @@
       "english": {
         "subjectKorean": "영어",
         "total": 40,
+        "autoScorable": 40,
+        "manualOnly": 0,
         "covered": 0,
         "generators": 0,
         "byDomain": {
           "이해": {
             "total": 20,
+            "autoScorable": 20,
             "covered": 0
           },
           "표현": {
             "total": 20,
+            "autoScorable": 20,
             "covered": 0
           }
         },
@@ -971,6 +989,344 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "math.g12.sc.s01.identify",
+      "code": "[2수03-01]",
+      "skill": "입체도형의 모양 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 18,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.015
+    },
+    {
+      "generatorId": "math.g12.sc.s01.from-object",
+      "code": "[2수03-01]",
+      "skill": "생활 속 물건의 입체도형 모양 말하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 10,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0083
+    },
+    {
+      "generatorId": "math.g12.sc.s02.count-cubes",
+      "code": "[2수03-02]",
+      "skill": "쌓기나무의 개수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 17,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 30,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 37,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0308
+    },
+    {
+      "generatorId": "math.g12.sc.s03.from-object",
+      "code": "[2수03-03]",
+      "skill": "생활 속 물건에서 평면도형 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 11,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 11,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 11,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 11,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0092
+    },
+    {
+      "generatorId": "math.g12.sc.s06.compare",
+      "code": "[2수03-06]",
+      "skill": "양을 비교하는 말 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 24,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 24,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.02
+    },
+    {
+      "generatorId": "math.g12.sc.s13.estimate-unit",
+      "code": "[2수03-13]",
+      "skill": "임의 단위로 길이 어림하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 28,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 28,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 32,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0267
+    },
+    {
+      "generatorId": "math.g12.sc.s13.compare-estimate",
+      "code": "[2수03-13]",
+      "skill": "어림한 길이 비교하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 113,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 185,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 190,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 221,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1842
+    },
+    {
+      "generatorId": "math.g12.pd.s01.shape-pattern",
+      "code": "[2수02-01]",
+      "skill": "무늬 배열의 규칙 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 99,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 300,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 362,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 678,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.565
+    },
+    {
+      "generatorId": "math.g12.pd.s01.number-pattern",
+      "code": "[2수02-01]",
+      "skill": "수 배열의 규칙 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 245,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 236,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 329,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 810,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.675
+    },
+    {
+      "generatorId": "math.g12.pd.s02.continue",
+      "code": "[2수02-02]",
+      "skill": "규칙에 따라 다음에 올 것 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 170,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 154,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 200,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.1667
+    },
+    {
+      "generatorId": "math.g12.pd.s04-01.count",
+      "code": "[2수04-01]",
+      "skill": "기준에 따라 분류하여 개수 세기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 199,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 345,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 375,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 792,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.66
+    },
+    {
+      "generatorId": "math.g12.pd.s04-02.read-table",
+      "code": "[2수04-02]",
+      "skill": "표를 읽고 답 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 205,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 382,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 389,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 918,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.765
+    },
+    {
+      "generatorId": "math.g12.pd.s04-03.read-graph",
+      "code": "[2수04-03]",
+      "skill": "그림그래프를 읽고 답 구하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 312,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 381,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 369,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 1025,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.8542
     }
   ],
   "errors": []

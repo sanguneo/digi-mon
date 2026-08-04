@@ -1,67 +1,83 @@
 {
-  "schema": "digi-mon/coverage@1",
+  "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 34
+    "generatorCount": 47
   },
   "totalStandards": 248,
-  "coveredStandards": 18,
-  "uncoveredStandards": 230,
-  "coverageRatio": 0.0726,
+  "autoScorableStandards": 247,
+  "manualOnlyStandards": 1,
+  "coveredStandards": 28,
+  "uncoveredStandards": 219,
+  "coverageRatio": 0.1134,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
       "total": 121,
-      "covered": 18,
-      "generators": 34,
+      "autoScorable": 120,
+      "manualOnly": 1,
+      "covered": 28,
+      "generators": 47,
       "byDomain": {
         "수와 연산": {
           "total": 42,
+          "autoScorable": 42,
           "covered": 11
         },
         "변화와 관계": {
           "total": 10,
-          "covered": 0
+          "autoScorable": 10,
+          "covered": 2
         },
         "도형과 측정": {
           "total": 57,
-          "covered": 7
+          "autoScorable": 56,
+          "covered": 12
         },
         "자료와 가능성": {
           "total": 12,
-          "covered": 0
+          "autoScorable": 12,
+          "covered": 3
         }
       },
-      "coverageRatio": 0.1488
+      "coverageRatio": 0.2333
     },
     "korean": {
       "subjectKorean": "국어",
       "total": 87,
+      "autoScorable": 87,
+      "manualOnly": 0,
       "covered": 0,
       "generators": 0,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
+          "autoScorable": 18,
           "covered": 0
         },
         "읽기": {
           "total": 16,
+          "autoScorable": 16,
           "covered": 0
         },
         "쓰기": {
           "total": 15,
+          "autoScorable": 15,
           "covered": 0
         },
         "문법": {
           "total": 14,
+          "autoScorable": 14,
           "covered": 0
         },
         "문학": {
           "total": 15,
+          "autoScorable": 15,
           "covered": 0
         },
         "매체": {
           "total": 9,
+          "autoScorable": 9,
           "covered": 0
         }
       },
@@ -70,15 +86,19 @@
     "english": {
       "subjectKorean": "영어",
       "total": 40,
+      "autoScorable": 40,
+      "manualOnly": 0,
       "covered": 0,
       "generators": 0,
       "byDomain": {
         "이해": {
           "total": 20,
+          "autoScorable": 20,
           "covered": 0
         },
         "표현": {
           "total": 20,
+          "autoScorable": 20,
           "covered": 0
         }
       },
@@ -92,6 +112,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "네 자리 이하의 수",
+      "scoringMode": "auto",
       "generatorCount": 4,
       "generatorIds": [
         "math.g12.no.s01.read-sino",
@@ -106,6 +127,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "네 자리 이하의 수",
+      "scoringMode": "auto",
       "generatorCount": 3,
       "generatorIds": [
         "math.g12.no.s02.place-digit",
@@ -119,6 +141,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "네 자리 이하의 수",
+      "scoringMode": "auto",
       "generatorCount": 3,
       "generatorIds": [
         "math.g12.no.s03.compare",
@@ -132,6 +155,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "네 자리 이하의 수",
+      "scoringMode": "auto",
       "generatorCount": 3,
       "generatorIds": [
         "math.g12.no.s04.decompose",
@@ -145,6 +169,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s05.story-add",
@@ -157,6 +182,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s06.add",
@@ -169,6 +195,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s07.add-to-sub",
@@ -181,6 +208,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s08.estimate",
@@ -193,6 +221,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "두 자리 수 범위의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.no.s09.box"
@@ -204,6 +233,7 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "한 자리 수의 곱셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s10.groups",
@@ -216,10 +246,75 @@
       "gradeBand": "1-2",
       "domain": "수와 연산",
       "module": "한 자리 수의 곱셈",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.no.s11.times-table",
         "math.g12.no.s11.times-blank"
+      ]
+    },
+    {
+      "code": "[2수02-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "변화와 관계",
+      "module": "규칙 찾기",
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.pd.s01.shape-pattern",
+        "math.g12.pd.s01.number-pattern"
+      ]
+    },
+    {
+      "code": "[2수02-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "변화와 관계",
+      "module": "규칙 찾기",
+      "scoringMode": "partial",
+      "partialNote": "주어진 규칙의 다음 항을 찾는 부분만 자동 채점한다. 자신이 규칙을 정해 배열하는 활동은 사람이 본다.",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.pd.s02.continue"
+      ]
+    },
+    {
+      "code": "[2수03-01]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "입체도형의 모양",
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.sc.s01.identify",
+        "math.g12.sc.s01.from-object"
+      ]
+    },
+    {
+      "code": "[2수03-02]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "입체도형의 모양",
+      "scoringMode": "partial",
+      "partialNote": "쌓기나무 개수·위치 파악만 자동 채점한다. 직접 쌓아 만들고 설명하는 활동은 사람이 본다.",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.sc.s02.count-cubes"
+      ]
+    },
+    {
+      "code": "[2수03-03]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "평면도형과 그 구성 요소",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.sc.s03.from-object"
       ]
     },
     {
@@ -228,10 +323,23 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "평면도형과 그 구성 요소",
+      "scoringMode": "auto",
       "generatorCount": 2,
       "generatorIds": [
         "math.g12.gm.s05.identify",
         "math.g12.gm.s05.count-sides"
+      ]
+    },
+    {
+      "code": "[2수03-06]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "양의 비교",
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.sc.s06.compare"
       ]
     },
     {
@@ -240,6 +348,7 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "시각과 시간",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s07.read-clock"
@@ -251,6 +360,7 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "시각과 시간",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s08.convert"
@@ -262,6 +372,7 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "시각과 시간",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s09.calendar"
@@ -273,6 +384,7 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "길이",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s10.choose-unit"
@@ -284,6 +396,7 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "길이",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s11.m-cm"
@@ -295,75 +408,11 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "길이",
+      "scoringMode": "auto",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.gm.s12.read-ruler"
       ]
-    }
-  ],
-  "uncovered": [
-    {
-      "code": "[2수02-01]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "변화와 관계",
-      "module": "규칙 찾기",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수02-02]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "변화와 관계",
-      "module": "규칙 찾기",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수03-01]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "도형과 측정",
-      "module": "입체도형의 모양",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수03-02]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "도형과 측정",
-      "module": "입체도형의 모양",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수03-03]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "도형과 측정",
-      "module": "평면도형과 그 구성 요소",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수03-04]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "도형과 측정",
-      "module": "평면도형과 그 구성 요소",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2수03-06]",
-      "subject": "math",
-      "gradeBand": "1-2",
-      "domain": "도형과 측정",
-      "module": "양의 비교",
-      "generatorCount": 0,
-      "generatorIds": []
     },
     {
       "code": "[2수03-13]",
@@ -371,8 +420,12 @@
       "gradeBand": "1-2",
       "domain": "도형과 측정",
       "module": "길이",
-      "generatorCount": 0,
-      "generatorIds": []
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "math.g12.sc.s13.estimate-unit",
+        "math.g12.sc.s13.compare-estimate"
+      ]
     },
     {
       "code": "[2수04-01]",
@@ -380,8 +433,12 @@
       "gradeBand": "1-2",
       "domain": "자료와 가능성",
       "module": "자료의 정리",
-      "generatorCount": 0,
-      "generatorIds": []
+      "scoringMode": "partial",
+      "partialNote": "정해진 기준으로 분류해 개수를 세는 부분만 자동 채점한다. 자신이 기준을 정하는 활동은 사람이 본다.",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.pd.s04-01.count"
+      ]
     },
     {
       "code": "[2수04-02]",
@@ -389,8 +446,11 @@
       "gradeBand": "1-2",
       "domain": "자료와 가능성",
       "module": "자료의 정리",
-      "generatorCount": 0,
-      "generatorIds": []
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.pd.s04-02.read-table"
+      ]
     },
     {
       "code": "[2수04-03]",
@@ -398,15 +458,21 @@
       "gradeBand": "1-2",
       "domain": "자료와 가능성",
       "module": "자료의 정리",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "math.g12.pd.s04-03.read-graph"
+      ]
+    }
+  ],
+  "uncovered": [
     {
       "code": "[4수01-01]",
       "subject": "math",
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "다섯 자리 이상의 수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -416,6 +482,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "다섯 자리 이상의 수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -425,6 +492,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "세 자리 수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -434,6 +502,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 곱셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -443,6 +512,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -452,6 +522,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -461,6 +532,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "세 자리 수 범위의 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -470,6 +542,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "자연수의 어림셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -479,6 +552,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "분수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -488,6 +562,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "분수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -497,6 +572,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "분수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -506,6 +582,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "소수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -515,6 +592,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "소수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -524,6 +602,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "소수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -533,6 +612,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -542,6 +622,7 @@
       "gradeBand": "3-4",
       "domain": "수와 연산",
       "module": "소수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -551,6 +632,7 @@
       "gradeBand": "3-4",
       "domain": "변화와 관계",
       "module": "규칙을 수나 식으로 나타내기",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -560,6 +642,7 @@
       "gradeBand": "3-4",
       "domain": "변화와 관계",
       "module": "규칙을 수나 식으로 나타내기",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -569,6 +652,7 @@
       "gradeBand": "3-4",
       "domain": "변화와 관계",
       "module": "등호와 동치 관계",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -578,6 +662,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "도형의 기초",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -587,6 +672,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "도형의 기초",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -596,6 +682,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "도형의 기초",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -605,6 +692,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "평면도형의 이동",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -614,6 +702,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "평면도형의 이동",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -623,6 +712,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "원의 구성 요소",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -632,6 +722,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "원의 구성 요소",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -641,6 +732,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "여러 가지 삼각형",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -650,6 +742,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "여러 가지 삼각형",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -659,6 +752,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "여러 가지 사각형",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -668,6 +762,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "다각형",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -677,6 +772,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "다각형",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -686,6 +782,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "시각과 시간",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -695,6 +792,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "시각과 시간",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -704,6 +802,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "길이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -713,6 +812,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "길이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -722,6 +822,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "들이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -731,6 +832,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "들이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -740,6 +842,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "들이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -749,6 +852,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "무게",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -758,6 +862,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "무게",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -767,6 +872,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "무게",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -776,6 +882,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "무게",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -785,6 +892,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "각도",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -794,6 +902,7 @@
       "gradeBand": "3-4",
       "domain": "도형과 측정",
       "module": "각도",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -803,6 +912,7 @@
       "gradeBand": "3-4",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -812,6 +922,7 @@
       "gradeBand": "3-4",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -821,6 +932,7 @@
       "gradeBand": "3-4",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -830,6 +942,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "자연수의 혼합 계산",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -839,6 +952,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "수의 범위와 올림, 버림, 반올림",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -848,6 +962,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "수의 범위와 올림, 버림, 반올림",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -857,6 +972,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "약수와 배수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -866,6 +982,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "약수와 배수",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -875,6 +992,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -884,6 +1002,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -893,6 +1012,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 덧셈과 뺄셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -902,6 +1022,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -911,6 +1032,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -920,6 +1042,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -929,6 +1052,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "분수와 소수의 관계",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -938,6 +1062,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -947,6 +1072,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -956,6 +1082,7 @@
       "gradeBand": "5-6",
       "domain": "수와 연산",
       "module": "소수의 곱셈과 나눗셈",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -965,6 +1092,7 @@
       "gradeBand": "5-6",
       "domain": "변화와 관계",
       "module": "대응 관계",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -974,6 +1102,7 @@
       "gradeBand": "5-6",
       "domain": "변화와 관계",
       "module": "비와 비율",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -983,6 +1112,7 @@
       "gradeBand": "5-6",
       "domain": "변화와 관계",
       "module": "비와 비율",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -992,6 +1122,7 @@
       "gradeBand": "5-6",
       "domain": "변화와 관계",
       "module": "비례식과 비례배분",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1001,6 +1132,7 @@
       "gradeBand": "5-6",
       "domain": "변화와 관계",
       "module": "비례식과 비례배분",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1010,6 +1142,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "합동과 대칭",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1019,6 +1152,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "합동과 대칭",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1028,6 +1162,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "직육면체와 정육면체",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1037,6 +1172,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "직육면체와 정육면체",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1046,6 +1182,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "각기둥과 각뿔",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1055,6 +1192,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "각기둥과 각뿔",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1064,6 +1202,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "원기둥, 원뿔, 구",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1073,6 +1212,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "원기둥, 원뿔, 구",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1082,6 +1222,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "입체도형의 공간 감각",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1091,6 +1232,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "입체도형의 공간 감각",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1100,6 +1242,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1109,6 +1252,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1118,6 +1262,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1127,6 +1272,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "다각형의 둘레와 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1136,6 +1282,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "원주율과 원의 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1145,6 +1292,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "원주율과 원의 넓이",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1154,6 +1302,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1163,6 +1312,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1172,6 +1322,7 @@
       "gradeBand": "5-6",
       "domain": "도형과 측정",
       "module": "입체도형의 겉넓이와 부피",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1181,6 +1332,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1190,6 +1342,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1199,6 +1352,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "자료의 수집과 정리",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1208,6 +1362,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "가능성",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1217,6 +1372,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "가능성",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1226,6 +1382,7 @@
       "gradeBand": "5-6",
       "domain": "자료와 가능성",
       "module": "가능성",
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1235,6 +1392,7 @@
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1244,6 +1402,7 @@
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1253,6 +1412,7 @@
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1262,6 +1422,7 @@
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1271,6 +1432,7 @@
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1280,6 +1442,7 @@
       "gradeBand": "1-2",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1289,6 +1452,7 @@
       "gradeBand": "1-2",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1298,6 +1462,7 @@
       "gradeBand": "1-2",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1307,6 +1472,7 @@
       "gradeBand": "1-2",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1316,6 +1482,7 @@
       "gradeBand": "1-2",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1325,6 +1492,7 @@
       "gradeBand": "1-2",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1334,6 +1502,7 @@
       "gradeBand": "1-2",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1343,6 +1512,7 @@
       "gradeBand": "1-2",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1352,6 +1522,7 @@
       "gradeBand": "1-2",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1361,6 +1532,7 @@
       "gradeBand": "1-2",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1370,6 +1542,7 @@
       "gradeBand": "1-2",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1379,6 +1552,7 @@
       "gradeBand": "1-2",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1388,6 +1562,7 @@
       "gradeBand": "1-2",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1397,6 +1572,7 @@
       "gradeBand": "1-2",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1406,6 +1582,7 @@
       "gradeBand": "1-2",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1415,6 +1592,7 @@
       "gradeBand": "1-2",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1424,6 +1602,7 @@
       "gradeBand": "1-2",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1433,6 +1612,7 @@
       "gradeBand": "1-2",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1442,6 +1622,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1451,6 +1632,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1460,6 +1642,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1469,6 +1652,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1478,6 +1662,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1487,6 +1672,7 @@
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1496,6 +1682,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1505,6 +1692,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1514,6 +1702,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1523,6 +1712,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1532,6 +1722,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1541,6 +1732,7 @@
       "gradeBand": "3-4",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1550,6 +1742,7 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1559,6 +1752,7 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1568,6 +1762,7 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1577,6 +1772,7 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1586,6 +1782,7 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1595,6 +1792,7 @@
       "gradeBand": "3-4",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1604,6 +1802,7 @@
       "gradeBand": "3-4",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1613,6 +1812,7 @@
       "gradeBand": "3-4",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1622,6 +1822,7 @@
       "gradeBand": "3-4",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1631,6 +1832,7 @@
       "gradeBand": "3-4",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1640,6 +1842,7 @@
       "gradeBand": "3-4",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1649,6 +1852,7 @@
       "gradeBand": "3-4",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1658,6 +1862,7 @@
       "gradeBand": "3-4",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1667,6 +1872,7 @@
       "gradeBand": "3-4",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1676,6 +1882,7 @@
       "gradeBand": "3-4",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1685,6 +1892,7 @@
       "gradeBand": "3-4",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1694,6 +1902,7 @@
       "gradeBand": "3-4",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1703,6 +1912,7 @@
       "gradeBand": "3-4",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1712,6 +1922,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1721,6 +1932,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1730,6 +1942,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1739,6 +1952,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1748,6 +1962,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1757,6 +1972,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1766,6 +1982,7 @@
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1775,6 +1992,7 @@
       "gradeBand": "5-6",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1784,6 +2002,7 @@
       "gradeBand": "5-6",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1793,6 +2012,7 @@
       "gradeBand": "5-6",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1802,6 +2022,7 @@
       "gradeBand": "5-6",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1811,6 +2032,7 @@
       "gradeBand": "5-6",
       "domain": "읽기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1820,6 +2042,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1829,6 +2052,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1838,6 +2062,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1847,6 +2072,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1856,6 +2082,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1865,6 +2092,7 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1874,6 +2102,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1883,6 +2112,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1892,6 +2122,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1901,6 +2132,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1910,6 +2142,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1919,6 +2152,7 @@
       "gradeBand": "5-6",
       "domain": "문법",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1928,6 +2162,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1937,6 +2172,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1946,6 +2182,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1955,6 +2192,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1964,6 +2202,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1973,6 +2212,7 @@
       "gradeBand": "5-6",
       "domain": "문학",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1982,6 +2222,7 @@
       "gradeBand": "5-6",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -1991,6 +2232,7 @@
       "gradeBand": "5-6",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2000,6 +2242,7 @@
       "gradeBand": "5-6",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2009,6 +2252,7 @@
       "gradeBand": "5-6",
       "domain": "매체",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2018,6 +2262,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2027,6 +2272,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2036,6 +2282,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2045,6 +2292,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2054,6 +2302,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2063,6 +2312,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2072,6 +2322,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2081,6 +2332,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2090,6 +2342,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2099,6 +2352,7 @@
       "gradeBand": "3-4",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2108,6 +2362,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2117,6 +2372,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2126,6 +2382,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2135,6 +2392,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2144,6 +2402,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2153,6 +2412,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2162,6 +2422,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2171,6 +2432,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2180,6 +2442,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2189,6 +2452,7 @@
       "gradeBand": "3-4",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2198,6 +2462,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2207,6 +2472,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2216,6 +2482,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2225,6 +2492,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2234,6 +2502,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2243,6 +2512,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2252,6 +2522,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2261,6 +2532,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2270,6 +2542,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2279,6 +2552,7 @@
       "gradeBand": "5-6",
       "domain": "이해",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2288,6 +2562,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2297,6 +2572,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2306,6 +2582,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2315,6 +2592,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2324,6 +2602,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2333,6 +2612,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2342,6 +2622,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2351,6 +2632,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2360,6 +2642,7 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2369,6 +2652,20 @@
       "gradeBand": "5-6",
       "domain": "표현",
       "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 0,
+      "generatorIds": []
+    }
+  ],
+  "manualOnly": [
+    {
+      "code": "[2수03-04]",
+      "subject": "math",
+      "gradeBand": "1-2",
+      "domain": "도형과 측정",
+      "module": "평면도형과 그 구성 요소",
+      "scoringMode": "manual",
+      "manualReason": "사각형·삼각형·원을 직접 그리는 작도 수행 과제다. 그린 결과의 정확도는 사람이 본다.",
       "generatorCount": 0,
       "generatorIds": []
     }

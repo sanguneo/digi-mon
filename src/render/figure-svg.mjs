@@ -174,9 +174,10 @@ function renderRuler({ maxCm, objectCm, startCm = 0 }, altText) {
 
   const x0 = left + startCm * unit;
   const x1 = left + (startCm + objectCm) * unit;
+  // 물건 막대의 양 끝이 눈금과 정확히 맞아야 문항이 성립한다.
+  // 막대 위에 별도 지시선을 덧그리면 어느 쪽을 읽어야 하는지 흐려지므로 두지 않는다.
   parts.push(
-    `<rect x="${round(x0)}" y="${top - 26}" width="${round(x1 - x0)}" height="15" rx="3" fill="#e8eaed" stroke="${STYLE.stroke}" stroke-width="1.5"/>`,
-    `<line x1="${round(x0)}" y1="${top - 34}" x2="${round(x1)}" y2="${top - 34}" stroke="${STYLE.stroke}" stroke-width="1"/>`,
+    `<rect x="${round(x0)}" y="${top - 26}" width="${round(x1 - x0)}" height="16" rx="3" fill="#e8eaed" stroke="${STYLE.stroke}" stroke-width="1.5"/>`,
   );
   return svgRoot(width, top + 40, parts.join(''), altText);
 }
@@ -204,11 +205,152 @@ function renderBundles({ groups, per }, altText) {
   return svgRoot(width, height, parts.join(''), altText);
 }
 
+// ---------------------------------------------------------------------------
+// geometry.solid-shape — 입체도형의 모양 [2수03-01], 쌓기나무 [2수03-02]
+// ---------------------------------------------------------------------------
+
+/** 등각 투상으로 직육면체를 그린다. 앞면·윗면·옆면이 모두 보여야 입체로 읽힌다. */
+function isoBox(x, y, w, h, d) {
+  const front = `${x},${y} ${x + w},${y} ${x + w},${y + h} ${x},${y + h}`;
+  const top = `${x},${y} ${x + d},${y - d} ${x + w + d},${y - d} ${x + w},${y}`;
+  const side = `${x + w},${y} ${x + w + d},${y - d} ${x + w + d},${y + h - d} ${x + w},${y + h}`;
+  return [
+    `<polygon points="${top}" fill="#f1f3f4" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+    `<polygon points="${side}" fill="#e3e6e8" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+    `<polygon points="${front}" fill="#fafafa" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+  ].join('');
+}
+
+function isoCylinder(cx, cy, rx, height) {
+  const ry = rx * 0.34;
+  return [
+    `<path d="M ${cx - rx} ${cy - height / 2} L ${cx - rx} ${cy + height / 2} A ${rx} ${ry} 0 0 0 ${cx + rx} ${cy + height / 2} L ${cx + rx} ${cy - height / 2} Z" fill="#fafafa" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+    `<ellipse cx="${cx}" cy="${round(cy - height / 2)}" rx="${rx}" ry="${round(ry)}" fill="#f1f3f4" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+  ].join('');
+}
+
+function isoSphere(cx, cy, r) {
+  return [
+    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#fafafa" stroke="${STYLE.stroke}" stroke-width="1.8"/>`,
+    `<ellipse cx="${cx}" cy="${cy}" rx="${r}" ry="${round(r * 0.32)}" fill="none" stroke="${STYLE.light}" stroke-width="1.2" stroke-dasharray="3 3"/>`,
+  ].join('');
+}
+
+/**
+ * 직육면체는 가로로 길게 그린다.
+ *
+ * 정육면체를 여기 두지 않는다. 정육면체는 직육면체의 특수한 경우여서 둘을 같은
+ * 선택지에 넣으면 '직육면체는 어느 것인가'의 정답이 둘이 된다. 게다가 [2수03-01]이
+ * 다루는 입체는 직육면체·원기둥·구뿐이고 정육면체는 이 학년군 범위가 아니다.
+ */
+const SOLID_DRAW = {
+  cuboid: (cx, cy) => isoBox(cx - 30, cy - 8, 56, 32, 14),
+  cylinder: (cx, cy) => isoCylinder(cx, cy + 2, 22, 46),
+  sphere: (cx, cy) => isoSphere(cx, cy + 2, 26),
+};
+
+/** 입체도형 여러 개를 한 줄로. '원기둥은 어느 것인가' 선택 문항용. */
+function renderSolidShape({ solids }, altText) {
+  const cell = 110;
+  const parts = [];
+  solids.forEach((solid, idx) => {
+    const draw = SOLID_DRAW[solid];
+    if (!draw) throw new Error(`알 수 없는 입체도형: ${solid}`);
+    const cx = cell * idx + cell / 2;
+    parts.push(draw(cx, cell / 2 + 4));
+    parts.push(text(cx, cell + 14, ['㉠', '㉡', '㉢', '㉣', '㉤'][idx], { size: 15, weight: '600' }));
+  });
+  return svgRoot(cell * solids.length, cell + 24, parts.join(''), altText);
+}
+
+/**
+ * 쌓기나무. 층별 개수를 받아 아래에서 위로 쌓는다.
+ * layers[0] 이 맨 아래 층이며 각 층은 앞줄에 나란히 놓인 개수다.
+ */
+function renderStackedCubes({ layers }, altText) {
+  const unit = 26;
+  const depth = 9;
+  const maxWidth = Math.max(...layers);
+  const width = maxWidth * unit + depth + 24;
+  const height = layers.length * unit + depth + 24;
+  const parts = [];
+
+  // 아래 층부터 그리면 위 층이 나중에 그려져 겹침이 자연스럽다.
+  layers.forEach((count, level) => {
+    const y = height - 14 - (level + 1) * unit;
+    for (let k = 0; k < count; k += 1) {
+      parts.push(isoBox(12 + k * unit, y, unit - 2, unit - 2, depth));
+    }
+  });
+  return svgRoot(width, height, parts.join(''), altText);
+}
+
+// ---------------------------------------------------------------------------
+// data.table / data.picture-graph — 자료의 정리 [2수04-01~03]
+// ---------------------------------------------------------------------------
+
+/** 분류 결과 표. 헤더 1행 + 값 1행. */
+function renderDataTable({ headers, values, headerLabel, valueLabel }, altText) {
+  const colWidth = 74;
+  const labelWidth = headerLabel ? 76 : 0;
+  const rowHeight = 32;
+  const width = labelWidth + headers.length * colWidth + 2;
+  const height = rowHeight * 2 + 2;
+  const parts = [];
+
+  const cell = (x, y, w, h, content, opts = {}) => {
+    parts.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${opts.shaded ? '#f1f3f4' : '#ffffff'}" stroke="${STYLE.stroke}" stroke-width="1.2"/>`);
+    parts.push(text(x + w / 2, y + h / 2 + 5, content, { size: 13, weight: opts.shaded ? '600' : 'normal' }));
+  };
+
+  if (headerLabel) {
+    cell(1, 1, labelWidth, rowHeight, headerLabel, { shaded: true });
+    cell(1, 1 + rowHeight, labelWidth, rowHeight, valueLabel ?? '', { shaded: true });
+  }
+  headers.forEach((h, idx) => {
+    const x = 1 + labelWidth + idx * colWidth;
+    cell(x, 1, colWidth, rowHeight, String(h), { shaded: true });
+    cell(x, 1 + rowHeight, colWidth, rowHeight, String(values[idx]), {});
+  });
+  return svgRoot(width, height, parts.join(''), altText);
+}
+
+/** ○ 그림그래프. 세로축이 개수, 가로축이 항목이다. */
+function renderPictureGraph({ categories, counts, mark = '○' }, altText) {
+  const colWidth = 62;
+  const cellHeight = 22;
+  const maxCount = Math.max(...counts, 1);
+  const axisWidth = 26;
+  const width = axisWidth + categories.length * colWidth + 8;
+  const height = maxCount * cellHeight + 40;
+  const parts = [];
+
+  for (let level = 1; level <= maxCount; level += 1) {
+    const y = height - 30 - (level - 1) * cellHeight;
+    parts.push(text(axisWidth - 8, y - cellHeight / 2 + 5, String(level), { size: 11, anchor: 'end' }));
+  }
+  parts.push(`<line x1="${axisWidth}" y1="8" x2="${axisWidth}" y2="${height - 28}" stroke="${STYLE.stroke}" stroke-width="1.4"/>`);
+  parts.push(`<line x1="${axisWidth}" y1="${height - 28}" x2="${width - 4}" y2="${height - 28}" stroke="${STYLE.stroke}" stroke-width="1.4"/>`);
+
+  categories.forEach((category, idx) => {
+    const cx = axisWidth + idx * colWidth + colWidth / 2;
+    for (let k = 0; k < counts[idx]; k += 1) {
+      const y = height - 30 - k * cellHeight;
+      parts.push(text(cx, y - cellHeight / 2 + 6, mark, { size: 16 }));
+    }
+    parts.push(text(cx, height - 10, String(category), { size: 12 }));
+  });
+  return svgRoot(width, height, parts.join(''), altText);
+}
+
 const RENDERERS = {
   'measure.clock': renderClock,
   'geometry.plane-shape': (spec, alt) => (spec.shapes ? renderShapeRow(spec, alt) : renderPlaneShape(spec, alt)),
   'measure.length': renderRuler,
   'array.bundles': renderBundles,
+  'geometry.solid-shape': (spec, alt) => (spec.layers ? renderStackedCubes(spec, alt) : renderSolidShape(spec, alt)),
+  'data.table': renderDataTable,
+  'data.picture-graph': renderPictureGraph,
 };
 
 /** figure 를 SVG 문자열로 만든다. 렌더러가 없는 kind 는 조용히 넘기지 않고 던진다. */

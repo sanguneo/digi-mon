@@ -1,5 +1,8 @@
 import { generators as mathG12NumberOperations } from '../generators/math/g12-number-operations.mjs';
 import { generators as mathG12GeometryMeasurement } from '../generators/math/g12-geometry-measurement.mjs';
+import { generators as mathG12SolidsComparison } from '../generators/math/g12-solids-comparison.mjs';
+import { generators as mathG12PatternsData } from '../generators/math/g12-patterns-data.mjs';
+import { MANUAL_SCORING, PARTIAL_SCORING, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 
 /**
  * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
@@ -8,6 +11,8 @@ import { generators as mathG12GeometryMeasurement } from '../generators/math/g12
 const MODULES = [
   { file: 'math/g12-number-operations.mjs', generators: mathG12NumberOperations },
   { file: 'math/g12-geometry-measurement.mjs', generators: mathG12GeometryMeasurement },
+  { file: 'math/g12-solids-comparison.mjs', generators: mathG12SolidsComparison },
+  { file: 'math/g12-patterns-data.mjs', generators: mathG12PatternsData },
 ];
 
 function assertGeneratorContract(g, file) {
@@ -59,43 +64,78 @@ export function buildCoverage(spine, registry) {
   const bySubject = {};
   const covered = [];
   const uncovered = [];
+  const manualOnly = [];
 
   for (const std of spine.standards) {
     const gens = registry.forStandard(std.code);
+    const scoringMode = scoringModeOf(std.code);
     const entry = {
       code: std.code,
       subject: std.subject,
       gradeBand: std.gradeBand,
       domain: std.domain,
       module: std.module,
+      scoringMode,
+      ...(scoringMode === 'manual' ? { manualReason: MANUAL_SCORING[std.code].reason } : {}),
+      ...(scoringMode === 'partial' ? { partialNote: PARTIAL_SCORING[std.code] } : {}),
       generatorCount: gens.length,
       generatorIds: gens.map((g) => g.id),
     };
-    (gens.length > 0 ? covered : uncovered).push(entry);
 
-    bySubject[std.subject] ??= { subjectKorean: std.subjectKorean, total: 0, covered: 0, generators: 0, byDomain: {} };
+    // 자동 채점 불가 기준은 분모에서 뺀다. 대신 목록으로 그대로 남겨 숨기지 않는다.
+    if (scoringMode === 'manual') {
+      manualOnly.push(entry);
+    } else {
+      (gens.length > 0 ? covered : uncovered).push(entry);
+    }
+
+    bySubject[std.subject] ??= {
+      subjectKorean: std.subjectKorean,
+      total: 0,
+      autoScorable: 0,
+      manualOnly: 0,
+      covered: 0,
+      generators: 0,
+      byDomain: {},
+    };
     const b = bySubject[std.subject];
     b.total += 1;
     b.generators += gens.length;
-    if (gens.length > 0) b.covered += 1;
-    b.byDomain[std.domain] ??= { total: 0, covered: 0 };
+    b.byDomain[std.domain] ??= { total: 0, autoScorable: 0, covered: 0 };
     b.byDomain[std.domain].total += 1;
-    if (gens.length > 0) b.byDomain[std.domain].covered += 1;
+
+    if (scoringMode === 'manual') {
+      b.manualOnly += 1;
+    } else {
+      b.autoScorable += 1;
+      b.byDomain[std.domain].autoScorable += 1;
+      if (gens.length > 0) {
+        b.covered += 1;
+        b.byDomain[std.domain].covered += 1;
+      }
+    }
   }
 
   for (const b of Object.values(bySubject)) {
-    b.coverageRatio = Number((b.covered / b.total).toFixed(4));
+    b.coverageRatio = b.autoScorable === 0 ? 0 : Number((b.covered / b.autoScorable).toFixed(4));
   }
 
+  const autoScorable = covered.length + uncovered.length;
+
   return {
-    schema: 'digi-mon/coverage@1',
+    schema: 'digi-mon/coverage@2',
     generatedFrom: { standardCount: spine.standardCount, generatorCount: registry.size },
     totalStandards: spine.standards.length,
+    autoScorableStandards: autoScorable,
+    manualOnlyStandards: manualOnly.length,
     coveredStandards: covered.length,
     uncoveredStandards: uncovered.length,
-    coverageRatio: Number((covered.length / spine.standards.length).toFixed(4)),
+    // 분모는 자동 채점 가능한 성취기준이다. 수행·작도 과제를 억지로 객관식으로
+    // 바꿔 100%를 만드는 것보다, 못 하는 것을 못 한다고 세는 쪽이 정확하다.
+    coverageRatio: autoScorable === 0 ? 0 : Number((covered.length / autoScorable).toFixed(4)),
     bySubject,
     covered,
     uncovered,
+    manualOnly,
   };
 }
