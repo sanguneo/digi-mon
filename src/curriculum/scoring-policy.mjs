@@ -18,6 +18,46 @@ export const MANUAL_SCORING = {
   },
 };
 
+/**
+ * 교과별 문항 생성 전략.
+ *
+ * 수학만 파라메트릭 무한 생성이 가능하다. 수·연산·도형은 파라미터를 바꾸면
+ * 새 문항이 되고 답을 계산으로 검산할 수 있다.
+ *
+ * 국어·영어는 원리적으로 안 된다. '읽기' 문항은 지문이 있어야 성립하고, 지문은
+ * 파라미터를 바꿔 만들 수 없다. 어휘·문법 문항도 어휘 목록과 예문 자산이 먼저
+ * 있어야 한다. 없는 것을 있는 척 만들면 3~4학년에게 낼 수 없는 지문이 나오거나
+ * 정답이 여러 개인 문항이 나온다. 그래서 이 저장소는 두 교과를 비워 두고,
+ * 그 사유를 커버리지 데이터에 남긴다.
+ */
+export const SUBJECT_STRATEGY = {
+  math: {
+    strategy: 'parametric',
+    generatable: true,
+    basis: '수·연산·도형·측정은 파라미터를 바꾸면 새 문항이 되고, 답을 역연산·불변식으로 검산할 수 있다.',
+  },
+  korean: {
+    strategy: 'asset-required',
+    generatable: false,
+    basis: '읽기·문학·쓰기 문항은 학년 수준에 맞는 지문이 있어야 성립한다. 지문은 파라미터로 만들 수 없다.',
+    blockedBy: [
+      '학년군별 지문 자산 (길이·어휘 수준·저작권 정리)',
+      '학년군별 어휘 목록과 예문',
+      '문법 항목별 오답 유형 정의',
+    ],
+  },
+  english: {
+    strategy: 'asset-required',
+    generatable: false,
+    basis: '듣기·읽기 문항은 음성·지문 자산이 있어야 하고, 표현 문항의 정답은 하나로 정해지지 않는 경우가 많다.',
+    blockedBy: [
+      '학년군별 어휘·표현 목록 (2022 개정 별표 기준)',
+      '듣기 문항용 음성 자산',
+      '표현 문항의 허용 답안 범위 정의',
+    ],
+  },
+};
+
 export function isManualScoring(code) {
   return Object.hasOwn(MANUAL_SCORING, code);
 }

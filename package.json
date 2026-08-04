@@ -13,6 +13,9 @@
     "audit:ontology": "node bin/audit-ontology.mjs",
     "verify:generators": "node bin/verify-generators.mjs",
     "worksheet": "node bin/worksheet.mjs",
-    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node bin/verify-generators.mjs"
+    "check:boundaries": "node tools/check-boundaries.mjs",
+    "check:trim": "node tools/check-trim.mjs",
+    "figures": "node tools/figure-gallery.mjs",
+    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/check-trim.mjs"
   }
 }

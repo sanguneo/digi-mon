@@ -7,7 +7,7 @@ import { generators as mathG34MeasurementRelations } from '../generators/math/g3
 import { generators as mathG34GeometryData } from '../generators/math/g34-geometry-data.mjs';
 import { generators as mathG56NumberOperations } from '../generators/math/g56-number-operations.mjs';
 import { generators as mathG56RelationsMeasurement } from '../generators/math/g56-relations-measurement.mjs';
-import { MANUAL_SCORING, PARTIAL_SCORING, scoringModeOf } from '../curriculum/scoring-policy.mjs';
+import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 
 /**
  * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
@@ -101,6 +101,9 @@ export function buildCoverage(spine, registry) {
 
     bySubject[std.subject] ??= {
       subjectKorean: std.subjectKorean,
+      // 왜 이 교과가 비어 있는지(또는 채워졌는지)를 데이터에 남긴다.
+      // 산문이 아니라 커버리지 산출물에서 읽혀야 한다.
+      ...(SUBJECT_STRATEGY[std.subject] ?? { strategy: 'unknown', generatable: null }),
       total: 0,
       autoScorable: 0,
       manualOnly: 0,

@@ -143,7 +143,12 @@ console.log(`전체 ${coverage.totalStandards}개 중 ${coverage.manualOnlyStand
 console.log(`문항이 생성되는 성취기준: ${coverage.standardsWithGenerator}개 (작도 문항은 생성되지만 채점은 사람이 한다)`);
 
 for (const [, b] of Object.entries(coverage.bySubject)) {
-  console.log(`\n  ${b.subjectKorean}  ${b.covered}/${b.autoScorable} 자동채점 기준  (수동전용 ${b.manualOnly}개, 생성기 ${b.generators}개)`);
+  console.log(`\n  ${b.subjectKorean}  ${b.covered}/${b.autoScorable} 자동채점 기준  (수동전용 ${b.manualOnly}개, 생성기 ${b.generators}개)  전략=${b.strategy}`);
+  if (!b.generatable) {
+    // 왜 비어 있는지를 숫자 옆에 붙여 둔다. 0 이라는 숫자만으로는 이유를 알 수 없다.
+    console.log(`      ${b.basis}`);
+    for (const need of b.blockedBy ?? []) console.log(`      선행 자산: ${need}`);
+  }
   for (const [domain, dv] of Object.entries(b.byDomain)) {
     const done = dv.autoScorable > 0 && dv.covered === dv.autoScorable;
     console.log(`      ${domain.padEnd(12)} ${String(dv.covered).padStart(2)}/${String(dv.autoScorable).padStart(2)}${done ? '  완료' : ''}`);

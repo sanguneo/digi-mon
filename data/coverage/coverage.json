@@ -14,6 +14,9 @@
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
+      "strategy": "parametric",
+      "generatable": true,
+      "basis": "수·연산·도형·측정은 파라미터를 바꾸면 새 문항이 되고, 답을 역연산·불변식으로 검산할 수 있다.",
       "total": 121,
       "autoScorable": 120,
       "manualOnly": 1,
@@ -45,6 +48,14 @@
     },
     "korean": {
       "subjectKorean": "국어",
+      "strategy": "asset-required",
+      "generatable": false,
+      "basis": "읽기·문학·쓰기 문항은 학년 수준에 맞는 지문이 있어야 성립한다. 지문은 파라미터로 만들 수 없다.",
+      "blockedBy": [
+        "학년군별 지문 자산 (길이·어휘 수준·저작권 정리)",
+        "학년군별 어휘 목록과 예문",
+        "문법 항목별 오답 유형 정의"
+      ],
       "total": 87,
       "autoScorable": 87,
       "manualOnly": 0,
@@ -86,6 +97,14 @@
     },
     "english": {
       "subjectKorean": "영어",
+      "strategy": "asset-required",
+      "generatable": false,
+      "basis": "듣기·읽기 문항은 음성·지문 자산이 있어야 하고, 표현 문항의 정답은 하나로 정해지지 않는 경우가 많다.",
+      "blockedBy": [
+        "학년군별 어휘·표현 목록 (2022 개정 별표 기준)",
+        "듣기 문항용 음성 자산",
+        "표현 문항의 허용 답안 범위 정의"
+      ],
       "total": 40,
       "autoScorable": 40,
       "manualOnly": 0,
