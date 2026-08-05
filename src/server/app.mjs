@@ -2,6 +2,13 @@ import { buildCoverage } from '../engine/registry.mjs';
 import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
 import { createRng } from '../engine/rng.mjs';
 import { gradeWorksheet } from './grade.mjs';
+import {
+  MIN_SAMPLES,
+  aggregateAccuracy,
+  aggregateByStandard,
+  findDifficultyInversions,
+  recordsFromGrading,
+} from '../engine/response-log.mjs';
 import { renderFigureSvg, hasSvgRenderer } from '../render/figure-svg.mjs';
 import {
   MATH_PREREQUISITES,
@@ -236,7 +243,27 @@ export function createApp({ spine, registry }) {
         }
         const options = parseWorksheetOptions(body);
         const worksheet = buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
-        return gradeWorksheet(worksheet, body.responses);
+        const grading = gradeWorksheet(worksheet, body.responses);
+
+        /**
+         * 응답 기록을 함께 돌려준다.
+         *
+         * 난이도를 손으로 정한 값이 아니라 실측 정답률로 보정하려면 응답이 쌓여야
+         * 한다. 저장은 엔진 밖 관심사이므로 여기서는 기록을 만들어 넘기기만 한다.
+         * records=false 로 끌 수 있다.
+         *
+         * 이 배선이 없던 동안 response-log.mjs 는 어떤 진입점에서도 도달하지 않는
+         * 죽은 모듈이었다.
+         */
+        if (String(body.records) === 'false') return grading;
+        return {
+          ...grading,
+          responseRecords: recordsFromGrading(worksheet, grading, {
+            learnerId: body.learnerId ?? null,
+            at: body.at ?? null,
+            elapsedMs: body.elapsedMs ?? null,
+          }),
+        };
       },
     },
     {
@@ -261,6 +288,37 @@ export function createApp({ spine, registry }) {
           // 먼 선수부터. 복습은 여기 앞쪽부터 시작한다.
           ancestors: ancestorsOf(code),
           dependents: dependentsOf(code),
+        };
+      },
+    },
+    {
+      method: 'POST',
+      path: '/v1/accuracy',
+      /**
+       * 누적 응답 기록에서 정답률을 집계하고 난이도 역전을 지목한다.
+       *
+       * 클라이언트가 /v1/grade 의 responseRecords 를 모아 두고 여기에 넣는다.
+       * 엔진은 저장하지 않으므로 누적은 호출자 몫이다.
+       *
+       * 값을 자동으로 바꾸지 않는다. 표본이 적을 때 자동 보정하면 우연을 난이도로
+       * 굳혀 버린다. 난이도는 파라미터 범위·받아올림 유무 같은 설계 결정이라
+       * 숫자만 고쳐서는 문항이 실제로 쉬워지지 않는다.
+       */
+      handle: (body) => {
+        if (!Array.isArray(body.records)) {
+          throw new HttpError(400, 'records 는 /v1/grade 가 준 responseRecords 배열이어야 한다');
+        }
+        const byGenerator = aggregateAccuracy(body.records);
+        const byStandard = aggregateByStandard(body.records);
+        return {
+          recordCount: body.records.length,
+          minSamplesForAccuracy: MIN_SAMPLES,
+          // 표본이 모자란 칸은 accuracy 가 null 이다. 세 번 풀어 두 번 맞은 것을
+          // 0.67 이라고 부르면 숫자가 사실보다 세 보인다.
+          byGenerator,
+          byStandard,
+          difficultyInversions: findDifficultyInversions(byGenerator),
+          weakStandards: byStandard.filter((s) => s.sufficientSamples && s.accuracy < 0.6),
         };
       },
     },

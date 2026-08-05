@@ -331,6 +331,7 @@ GET  /v1/prerequisites?code=[2수01-06]
 POST /v1/worksheets   {seed, subject, grade, domain, count, difficulty, includeAnswers}
 POST /v1/items        {code, count, difficulty, seed}
 POST /v1/grade        {seed, ...같은옵션, responses:{1:"14"}}
+POST /v1/accuracy     {records:[...]}  누적 응답 -> 정답률·난이도 역전
 POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}
 ```
 
@@ -487,15 +488,21 @@ docs/review/      전문가 검토용 표 (생성물). prerequisites.md · engli
 
 ## 14. 아직 안 된 것
 
-### 배선되지 않은 코드 1건
+### 배선되지 않은 코드 — 해소함
 
-**`src/engine/response-log.mjs`를 아무도 import 하지 않는다.** 52개 파일을 검사해 확인했다.
-난이도 실측(정답률 집계·역전 탐지)의 계약은 다 있지만 호출자가 없어 **어떤 진입점에서도
-도달하지 않는다.** 응답 데이터가 없어 지금은 부를 곳이 없는 것이 이유지만,
-"있다"고 적어 두면 검토자를 오도하므로 여기 남긴다.
+`src/engine/response-log.mjs` 를 아무도 import 하지 않았다. 난이도 실측 계약은 다 있는데
+호출자가 없어 어떤 진입점에서도 도달하지 않았다. 배선했다.
 
-같은 감사에서 쓰이지 않는 export 16개, 자기 파일 안에서만 쓰이는 export 20개를 찾았다.
-`SENTENCE_LEVEL_CANDIDATES`(§12-C의 근거 데이터)도 아직 어떤 산출물에도 실려 나가지 않는다.
+- `POST /v1/grade` 가 채점 결과와 함께 `responseRecords` 를 돌려준다(`records=false` 로 끔).
+- `POST /v1/accuracy` 가 누적 기록에서 생성기·성취기준별 정답률과 **난이도 역전**을 지목한다.
+
+저장은 하지 않는다 — 엔진 밖 관심사다. 누적은 호출자 몫이다. 값을 자동으로 바꾸지도
+않는다. 표본이 적을 때 자동 보정하면 우연을 난이도로 굳혀 버린다.
+
+실측 확인: 응답 240건을 흘려 표본 30 이상인 3칸에서 정답률이 나오고, 일부러 뒤집은
+응답에서 `math.g12.no.s06.add` 의 `d1 0.5682 → d2 0.7321` 역전을 잡아냈다.
+`src/` 에 아무도 import 하지 않는 모듈은 이제 0개다.
+
 
 ### 전문가 검토용 산출물 — 해소함
 
@@ -526,7 +533,7 @@ docs/review/      전문가 검토용 표 (생성물). prerequisites.md · engli
 ### 실측되지 않은 것
 
 - **난이도가 실제로 어려운지** 모른다. `check-difficulty`는 계산 크기 대리 지표이고 정답률이
-  아니다. 응답 데이터가 없다.
+  아니다. 집계 경로는 이제 있다(`POST /v1/accuracy`) — 남은 것은 실제 학습자 응답이다.
 - **교실 적합성** 미검증. §12-F 참조.
 
 ### 범위에서 영구 제외
