@@ -317,6 +317,8 @@ const congruence = {
 
 const symmetryAxes = {
   id: 'math.g56.rm.s03-02.symmetry',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 정다각형만, 2 이상은 대칭축 수가 변의 수와 다른 반례(직사각형·마름모·이등변삼각형)까지 낸다.',
   capacityNote: '초등에서 대칭축을 세는 도형은 정삼각형·정사각형·정오각형·정육각형과 반례인 직사각형·마름모·이등변삼각형 일곱 가지다.',
   standardCode: '[6수03-02]',
   skill: '선대칭도형의 대칭축 수 세기',

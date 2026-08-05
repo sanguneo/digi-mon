@@ -26,6 +26,64 @@ export const MANUAL_SCORING = {
     kind: 'evaluation',
     hasGenerator: false,
   },
+  // ── 영어: 태도·음성 산출·창의 수행 ───────────────────────────────────────
+  // '영어 0/40' 은 분모가 틀린 셈이다. 자산이 없어서 못 하는 것과 원리적으로
+  // 정답 대조가 안 되는 것을 섞어 세면, 자산을 다 갖춰도 100%가 되지 않는다.
+  '[4영01-08]': {
+    reason: '다양한 매체의 담화를 흥미를 가지고 듣거나 읽는 태도 기준이다. 흥미는 정답으로 대조할 수 없다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4영01-10]': {
+    reason: '문화 자료를 존중의 태도로 듣거나 읽는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6영01-08]': {
+    reason: '담화나 글을 흥미와 자신감을 가지고 듣거나 읽는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6영01-10]': {
+    reason: '문화 자료를 포용의 태도로 듣거나 읽는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4영02-10]': {
+    reason: '의사소통 활동에 흥미와 자신감을 가지고 예절을 지키며 참여하는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6영02-10]': {
+    reason: '의사소통 활동에 협력적으로 참여하는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4영02-01]': {
+    reason: '강세·리듬·억양에 맞게 따라 말하는 음성 산출 과제다. 발음은 사람이 듣고 판정한다.',
+    kind: 'speech-production',
+    hasGenerator: false,
+  },
+  '[6영02-01]': {
+    reason: '강세·리듬·억양에 맞게 말하는 음성 산출 과제다.',
+    kind: 'speech-production',
+    hasGenerator: false,
+  },
+  '[4영02-09]': {
+    reason: '매체와 전략을 활용해 창의적으로 의미를 표현하는 수행 과제다. 창의성은 정답이 하나가 아니다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6영02-09]': {
+    reason: '창의적으로 의미를 생성하고 표현하는 수행 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6영02-08]': {
+    reason: '예시문을 참고해 목적에 맞는 글을 쓰는 수행 과제다. 글은 정답 문자열로 채점할 수 없다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
 };
 
 /**
@@ -60,9 +118,13 @@ export const SUBJECT_STRATEGY = {
     ],
   },
   english: {
-    strategy: 'asset-required',
-    generatable: false,
-    basis: '듣기·읽기 문항은 음성·지문 자산이 있어야 하고, 표현 문항의 정답은 하나로 정해지지 않는 경우가 많다.',
+    // 영어도 영역마다 다르다. 문자 인식(대소문자·알파벳 순서·문장부호)은 계산으로
+    // 확정되므로 음성·지문 자산 없이 지금 된다. 듣기·읽기 이해는 자산이 있어야 한다.
+    strategy: 'mixed',
+    generatable: 'partial',
+    generatableDomains: ['이해', '표현'],
+    generatableTopics: ['알파벳 대소문자', '알파벳 순서', '문장 첫 글자 대문자', '문장 부호'],
+    basis: '문자 인식은 유니코드 계산으로 확정되어 자산이 필요 없다. 듣기·읽기 이해는 음성·지문 자산이 있어야 하고, 태도·음성 산출·창의 수행 기준 11개는 원리적으로 정답 대조가 안 되어 자동채점 분모에서 빠진다.',
     blockedBy: [
       '학년군별 어휘·표현 목록 (2022 개정 별표 기준)',
       '듣기 문항용 음성 자산',

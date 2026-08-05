@@ -1,7 +1,7 @@
 {
   "schema": "digi-mon/difficulty-check@1",
   "note": "계산 크기 대리 지표다. 실제 정답률이 아니다. 응답 데이터가 쌓이면 response-log 가 판정한다.",
-  "samplesPerLevel": 80,
+  "samplesPerLevel": 60,
   "numericGeneratorCount": 120,
   "flatCount": 0,
   "declaredSingle": [
@@ -138,6 +138,11 @@
       "note": "난이도가 오를수록 눈금을 잘게 읽는다(10도 -> 5도 -> 1도 단위)."
     },
     {
+      "generatorId": "math.g56.rm.s03-02.symmetry",
+      "code": "[6수03-02]",
+      "note": "난이도 1은 정다각형만, 2 이상은 대칭축 수가 변의 수와 다른 반례(직사각형·마름모·이등변삼각형)까지 낸다."
+    },
+    {
       "generatorId": "math.g56.rm.s03-03.cuboid",
       "code": "[6수03-03]",
       "note": "난이도 1은 직육면체, 2 이상은 정육면체까지 묻는다."
@@ -221,6 +226,31 @@
       "generatorId": "korean.g56.gr.s06.spacing",
       "code": "[6국04-06]",
       "note": "난이도 1은 조사 붙여쓰기, 2는 수와 단위 띄어쓰기, 3은 의존 명사(것·수·동안) 띄어쓰기를 다룬다."
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.match-case",
+      "code": "[4영01-02]",
+      "note": "난이도 1은 모양이 닮지 않은 글자, 2는 전체 알파벳, 3은 모양이 닮아 헷갈리는 글자(B/D, P/Q, M/N)를 낸다."
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.write-case",
+      "code": "[4영02-02]",
+      "note": "난이도 1은 네 글자 이하, 2는 여섯 글자 이하, 3은 전체 어휘에서 낸다. 글자가 길수록 바꿔 쓸 곳이 늘어난다."
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.first-letter",
+      "code": "[4영02-02]",
+      "note": "난이도 1은 3~4학년 어휘, 2 이상은 5~6학년 어휘까지 넓힌다."
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.end-mark",
+      "code": "[6영02-03]",
+      "note": "난이도 1은 마침표·물음표만, 2 이상은 느낌표까지 구별한다."
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.fix-case",
+      "code": "[6영02-03]",
+      "note": "난이도 1은 문장 첫 글자만, 2 이상은 문장 부호까지 함께 바로잡는다."
     }
   ],
   "singleAxisVariance": [],
@@ -231,22 +261,22 @@
       "skill": "수를 한자어로 읽기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.6,
+          "samples": 60,
+          "maxMagnitude": 1.617,
           "steps": 2,
-          "paramMagnitude": 10.725
+          "paramMagnitude": 10.783
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 39.913
+          "paramMagnitude": 38.883
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.013,
+          "samples": 60,
+          "maxMagnitude": 2.017,
           "steps": 2,
-          "paramMagnitude": 79.5
+          "paramMagnitude": 80.233
         }
       },
       "meaningful": true
@@ -257,22 +287,22 @@
       "skill": "읽은 수를 숫자로 쓰기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 20.012
+          "paramMagnitude": 19.6
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 50.138
+          "paramMagnitude": 49.317
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.025,
+          "samples": 60,
+          "maxMagnitude": 2.033,
           "steps": 2,
-          "paramMagnitude": 83.938
+          "paramMagnitude": 84.783
         }
       },
       "meaningful": true
@@ -283,22 +313,22 @@
       "skill": "10개씩 묶음과 낱개로 수 세기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 5.525
+          "paramMagnitude": 5.433
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 11.325
+          "paramMagnitude": 11.333
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 12.3
+          "paramMagnitude": 12.467
         }
       },
       "meaningful": true
@@ -309,22 +339,22 @@
       "skill": "고유어 수사로 개수 말하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.1,
+          "samples": 60,
+          "maxMagnitude": 1.117,
           "steps": 1,
-          "paramMagnitude": 5.987
+          "paramMagnitude": 5.833
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 20.45
+          "paramMagnitude": 20.75
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 65.638
+          "paramMagnitude": 66.067
         }
       },
       "meaningful": true
@@ -335,22 +365,22 @@
       "skill": "지정한 자리의 숫자 찾기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 564.025
+          "paramMagnitude": 566.017
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5028.413
+          "paramMagnitude": 5184.533
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5407.462
+          "paramMagnitude": 5750.367
         }
       },
       "meaningful": true
@@ -361,22 +391,22 @@
       "skill": "숫자가 나타내는 값 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 602.337
+          "paramMagnitude": 596.317
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5269.938
+          "paramMagnitude": 5436.433
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5317.775
+          "paramMagnitude": 5183.983
         }
       },
       "meaningful": true
@@ -387,22 +417,22 @@
       "skill": "네 자리 수를 자릿값으로 분해하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 587.3
+          "paramMagnitude": 573.383
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5071.15
+          "paramMagnitude": 4787.917
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5368.288
+          "paramMagnitude": 5235.117
         }
       },
       "meaningful": true
@@ -413,22 +443,22 @@
       "skill": "두 수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 115.8
+          "paramMagnitude": 117.017
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 1091.425
+          "paramMagnitude": 1128.4
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 11118.875
+          "paramMagnitude": 11087.533
         }
       },
       "meaningful": true
@@ -439,19 +469,19 @@
       "skill": "세 수를 크기 순서로 늘어놓기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
           "paramMagnitude": 0
@@ -465,22 +495,22 @@
       "skill": "뛰어 세기 규칙으로 빈칸 채우기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 3.813,
+          "samples": 60,
+          "maxMagnitude": 3.817,
           "steps": 2,
-          "paramMagnitude": 6.925
+          "paramMagnitude": 6.517
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 3.962,
+          "samples": 60,
+          "maxMagnitude": 3.95,
           "steps": 2,
-          "paramMagnitude": 52.388
+          "paramMagnitude": 51.417
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 3.938,
+          "samples": 60,
+          "maxMagnitude": 3.933,
           "steps": 2,
-          "paramMagnitude": 127.875
+          "paramMagnitude": 128.95
         }
       },
       "meaningful": true
@@ -491,22 +521,22 @@
       "skill": "한 수를 두 수로 가르기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 12.725
+          "paramMagnitude": 12.633
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 24.75
+          "paramMagnitude": 24.633
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 36.125
+          "paramMagnitude": 36.133
         }
       },
       "meaningful": true
@@ -517,22 +547,22 @@
       "skill": "두 수를 모으기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 1,
-          "paramMagnitude": 7.563
+          "paramMagnitude": 7.633
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.863,
+          "samples": 60,
+          "maxMagnitude": 1.867,
           "steps": 1,
-          "paramMagnitude": 12.088
+          "paramMagnitude": 12.217
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.8,
+          "samples": 60,
+          "maxMagnitude": 1.833,
           "steps": 1,
-          "paramMagnitude": 15.063
+          "paramMagnitude": 15.617
         }
       },
       "meaningful": true
@@ -543,22 +573,22 @@
       "skill": "10 만들기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 14.813
+          "paramMagnitude": 14.95
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 14.412
+          "paramMagnitude": 14.267
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.275,
+          "samples": 60,
+          "maxMagnitude": 2.283,
           "steps": 1,
-          "paramMagnitude": 73.237
+          "paramMagnitude": 73.467
         }
       },
       "meaningful": true
@@ -569,22 +599,22 @@
       "skill": "덧셈 상황에서 식 세우고 답 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.625,
+          "samples": 60,
+          "maxMagnitude": 1.65,
           "steps": 3,
-          "paramMagnitude": 10.8
+          "paramMagnitude": 11.083
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 3,
-          "paramMagnitude": 39.837
+          "paramMagnitude": 38.7
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.975,
+          "samples": 60,
+          "maxMagnitude": 1.967,
           "steps": 3,
-          "paramMagnitude": 71.987
+          "paramMagnitude": 69.467
         }
       },
       "meaningful": true
@@ -595,22 +625,22 @@
       "skill": "뺄셈 상황에서 식 세우고 답 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
-          "paramMagnitude": 9.012
+          "paramMagnitude": 9.033
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.813,
+          "samples": 60,
+          "maxMagnitude": 1.867,
           "steps": 3,
-          "paramMagnitude": 30.712
+          "paramMagnitude": 32.067
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.938,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 3,
-          "paramMagnitude": 81.088
+          "paramMagnitude": 82.083
         }
       },
       "meaningful": true
@@ -621,22 +651,22 @@
       "skill": "두 자리 수의 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 85.2
+          "paramMagnitude": 86.233
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 4,
-          "paramMagnitude": 89.175
+          "paramMagnitude": 90.217
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 4,
-          "paramMagnitude": 104.15
+          "paramMagnitude": 106.417
         }
       },
       "meaningful": true
@@ -647,22 +677,22 @@
       "skill": "덧셈식을 뺄셈식으로 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 15.075
+          "paramMagnitude": 15.4
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 65.25
+          "paramMagnitude": 65.833
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 144.525
+          "paramMagnitude": 142.3
         }
       },
       "meaningful": true
@@ -673,22 +703,22 @@
       "skill": "세 수로 덧셈식 만들기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 15.15
+          "paramMagnitude": 15.033
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 48.725
+          "paramMagnitude": 47.967
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.988,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 2,
-          "paramMagnitude": 147.8
+          "paramMagnitude": 143.7
         }
       },
       "meaningful": true
@@ -699,22 +729,22 @@
       "skill": "몇십으로 어림하여 계산하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.038,
+          "samples": 60,
+          "maxMagnitude": 2.017,
           "steps": 2,
-          "paramMagnitude": 63.05
+          "paramMagnitude": 61.75
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.025,
+          "samples": 60,
+          "maxMagnitude": 2.033,
           "steps": 2,
-          "paramMagnitude": 66.675
+          "paramMagnitude": 68.3
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.025,
+          "samples": 60,
+          "maxMagnitude": 2.033,
           "steps": 2,
-          "paramMagnitude": 89.737
+          "paramMagnitude": 89.667
         }
       },
       "meaningful": true
@@ -725,22 +755,22 @@
       "skill": "어림하여 두 식의 결과 비교하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 120.612
+          "paramMagnitude": 123.067
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 122.737
+          "paramMagnitude": 121.567
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 122.162
+          "paramMagnitude": 124.2
         }
       },
       "meaningful": true
@@ -751,22 +781,22 @@
       "skill": "□의 값 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.887,
+          "samples": 60,
+          "maxMagnitude": 1.883,
           "steps": 2,
-          "paramMagnitude": 22.2
+          "paramMagnitude": 21.717
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.95,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
-          "paramMagnitude": 52.8
+          "paramMagnitude": 52.45
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.988,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 2,
-          "paramMagnitude": 96.638
+          "paramMagnitude": 95.367
         }
       },
       "meaningful": true
@@ -777,22 +807,22 @@
       "skill": "묶음 상황을 곱셈식으로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.525,
+          "samples": 60,
+          "maxMagnitude": 1.583,
           "steps": 2,
-          "paramMagnitude": 6.675
+          "paramMagnitude": 6.75
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.825,
+          "samples": 60,
+          "maxMagnitude": 1.833,
           "steps": 2,
-          "paramMagnitude": 10.488
+          "paramMagnitude": 10.75
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.95,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
-          "paramMagnitude": 11.238
+          "paramMagnitude": 11.183
         }
       },
       "meaningful": true
@@ -803,22 +833,22 @@
       "skill": "같은 수의 덧셈을 곱셈식으로 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.5,
+          "samples": 60,
+          "maxMagnitude": 1.533,
           "steps": 2,
-          "paramMagnitude": 6.388
+          "paramMagnitude": 6.483
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.925,
+          "samples": 60,
+          "maxMagnitude": 1.917,
           "steps": 2,
-          "paramMagnitude": 11.2
+          "paramMagnitude": 11.117
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.9,
           "steps": 2,
-          "paramMagnitude": 10.55
+          "paramMagnitude": 10.483
         }
       },
       "meaningful": true
@@ -829,22 +859,22 @@
       "skill": "곱셈구구",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.488,
+          "samples": 60,
+          "maxMagnitude": 1.467,
           "steps": 1,
-          "paramMagnitude": 6.487
+          "paramMagnitude": 6.417
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.913,
+          "samples": 60,
+          "maxMagnitude": 1.883,
           "steps": 1,
           "paramMagnitude": 10.95
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 15.037
+          "paramMagnitude": 14.833
         }
       },
       "meaningful": true
@@ -855,22 +885,22 @@
       "skill": "곱셈구구 빈칸 채우기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.6,
+          "samples": 60,
+          "maxMagnitude": 1.65,
           "steps": 2,
-          "paramMagnitude": 18.275
+          "paramMagnitude": 18.4
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 40.462
+          "paramMagnitude": 39.5
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.913,
+          "samples": 60,
+          "maxMagnitude": 1.883,
           "steps": 2,
-          "paramMagnitude": 37.763
+          "paramMagnitude": 38.25
         }
       },
       "meaningful": true
@@ -881,22 +911,22 @@
       "skill": "시계를 보고 시각 읽기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.65,
           "steps": 3,
-          "paramMagnitude": 21.375
+          "paramMagnitude": 22.417
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.975,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 3,
-          "paramMagnitude": 39.462
+          "paramMagnitude": 38.8
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.887,
+          "samples": 60,
+          "maxMagnitude": 1.867,
           "steps": 3,
-          "paramMagnitude": 37.725
+          "paramMagnitude": 37.35
         }
       },
       "meaningful": true
@@ -907,22 +937,22 @@
       "skill": "시간과 분 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
-          "steps": 2.462,
+          "steps": 2.433,
           "paramMagnitude": 61
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.763,
-          "steps": 2.475,
-          "paramMagnitude": 179.088
+          "samples": 60,
+          "maxMagnitude": 2.733,
+          "steps": 2.45,
+          "paramMagnitude": 178.083
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.837,
-          "steps": 2.5,
-          "paramMagnitude": 182.063
+          "samples": 60,
+          "maxMagnitude": 2.867,
+          "steps": 2.467,
+          "paramMagnitude": 186.45
         }
       },
       "meaningful": true
@@ -933,22 +963,22 @@
       "skill": "날짜 단위 관계 알기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.675,
+          "samples": 60,
+          "maxMagnitude": 1.65,
           "steps": 1,
-          "paramMagnitude": 15.275
+          "paramMagnitude": 14.65
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 17.125
+          "paramMagnitude": 17.05
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.237,
+          "samples": 60,
+          "maxMagnitude": 2.25,
           "steps": 2,
-          "paramMagnitude": 19.538
+          "paramMagnitude": 19.583
         }
       },
       "meaningful": true
@@ -959,22 +989,22 @@
       "skill": "m와 cm 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 294.163
+          "paramMagnitude": 286.167
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 625.337
+          "paramMagnitude": 600.7
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 589.55
+          "paramMagnitude": 614.95
         }
       },
       "meaningful": true
@@ -985,22 +1015,22 @@
       "skill": "자를 보고 물건의 길이 재기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.113,
+          "samples": 60,
+          "maxMagnitude": 1.133,
           "steps": 2,
-          "paramMagnitude": 12.025
+          "paramMagnitude": 12.267
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.212,
+          "samples": 60,
+          "maxMagnitude": 1.2,
           "steps": 2,
-          "paramMagnitude": 18.375
+          "paramMagnitude": 18.533
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.337,
+          "samples": 60,
+          "maxMagnitude": 1.3,
           "steps": 2,
-          "paramMagnitude": 20.725
+          "paramMagnitude": 20.833
         }
       },
       "meaningful": true
@@ -1011,21 +1041,21 @@
       "skill": "쌓기나무의 개수 세기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.262,
-          "steps": 3.525,
+          "samples": 60,
+          "maxMagnitude": 1.267,
+          "steps": 3.517,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.45,
-          "steps": 4.537,
+          "samples": 60,
+          "maxMagnitude": 1.5,
+          "steps": 4.567,
           "paramMagnitude": 0
         }
       },
@@ -1037,22 +1067,22 @@
       "skill": "사각형·삼각형·원 그리기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 1
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 1
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
-          "paramMagnitude": 2.45
+          "paramMagnitude": 2.467
         }
       },
       "meaningful": true
@@ -1063,22 +1093,22 @@
       "skill": "임의 단위로 길이 어림하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.938,
+          "samples": 60,
+          "maxMagnitude": 1.917,
           "steps": 2,
-          "paramMagnitude": 20.038
+          "paramMagnitude": 21
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.4,
+          "samples": 60,
+          "maxMagnitude": 2.367,
           "steps": 2,
-          "paramMagnitude": 24.512
+          "paramMagnitude": 23.367
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2.4,
           "steps": 2,
-          "paramMagnitude": 24.325
+          "paramMagnitude": 24.5
         }
       },
       "meaningful": true
@@ -1089,22 +1119,22 @@
       "skill": "어림한 길이 비교하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 10.925
+          "paramMagnitude": 10.65
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 10.725
+          "paramMagnitude": 10.683
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 11.287
+          "paramMagnitude": 11.433
         }
       },
       "meaningful": true
@@ -1115,22 +1145,22 @@
       "skill": "무늬 배열의 규칙 찾기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 6.925
+          "paramMagnitude": 6.917
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 10.363
+          "paramMagnitude": 10.283
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 12.162
+          "paramMagnitude": 12.217
         }
       },
       "meaningful": true
@@ -1141,22 +1171,22 @@
       "skill": "수 배열의 규칙 찾기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.975,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 2,
-          "paramMagnitude": 5.513
+          "paramMagnitude": 5.233
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 7.888
+          "paramMagnitude": 7.833
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 11.975
+          "paramMagnitude": 11.95
         }
       },
       "meaningful": true
@@ -1167,22 +1197,22 @@
       "skill": "규칙에 따라 다음에 올 것 찾기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 7.563
+          "paramMagnitude": 7.6
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 9.125
+          "paramMagnitude": 9.133
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 9.25
+          "paramMagnitude": 9.167
         }
       },
       "meaningful": true
@@ -1193,20 +1223,20 @@
       "skill": "기준에 따라 분류하여 개수 세기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.175,
+          "samples": 60,
+          "maxMagnitude": 1.2,
           "steps": 1,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.613,
+          "samples": 60,
+          "maxMagnitude": 1.617,
           "steps": 1,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.875,
+          "samples": 60,
+          "maxMagnitude": 1.85,
           "steps": 1,
           "paramMagnitude": 0
         }
@@ -1219,21 +1249,21 @@
       "skill": "표를 읽고 답 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.15,
           "steps": 1,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 0.887,
-          "steps": 1.712,
+          "samples": 60,
+          "maxMagnitude": 0.883,
+          "steps": 1.717,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 0.887,
-          "steps": 1.738,
+          "samples": 60,
+          "maxMagnitude": 0.817,
+          "steps": 1.8,
           "paramMagnitude": 0
         }
       },
@@ -1245,22 +1275,22 @@
       "skill": "그림그래프를 읽고 답 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 0.975
+          "paramMagnitude": 0.983
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 0.963,
-          "steps": 1.375,
-          "paramMagnitude": 1.163
+          "samples": 60,
+          "maxMagnitude": 1,
+          "steps": 1.333,
+          "paramMagnitude": 1.133
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 0.95,
-          "steps": 1.35,
-          "paramMagnitude": 1.163
+          "samples": 60,
+          "maxMagnitude": 0.883,
+          "steps": 1.383,
+          "paramMagnitude": 1.15
         }
       },
       "meaningful": true
@@ -1271,22 +1301,22 @@
       "skill": "큰 수 읽기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 5.575,
+          "samples": 60,
+          "maxMagnitude": 5.583,
           "steps": 2,
-          "paramMagnitude": 364814.388
+          "paramMagnitude": 387160.617
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 7.55,
           "steps": 2,
-          "paramMagnitude": 31374678.813
+          "paramMagnitude": 32330692.417
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 9.55,
+          "samples": 60,
+          "maxMagnitude": 9.583,
           "steps": 2,
-          "paramMagnitude": 3097628846.387
+          "paramMagnitude": 3386697094.233
         }
       },
       "meaningful": true
@@ -1297,22 +1327,22 @@
       "skill": "큰 수의 자릿값 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 5,
           "steps": 2,
-          "paramMagnitude": 56391.887
+          "paramMagnitude": 56436.633
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 6.487,
+          "samples": 60,
+          "maxMagnitude": 6.45,
           "steps": 2,
-          "paramMagnitude": 3014353.737
+          "paramMagnitude": 2821170.05
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 8.537,
+          "samples": 60,
+          "maxMagnitude": 8.55,
           "steps": 2,
-          "paramMagnitude": 343233801.863
+          "paramMagnitude": 362305992.233
         }
       },
       "meaningful": true
@@ -1323,22 +1353,22 @@
       "skill": "큰 수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 5,
           "steps": 2,
-          "paramMagnitude": 106956.75
+          "paramMagnitude": 106696.1
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 7,
           "steps": 2,
-          "paramMagnitude": 11196663.975
+          "paramMagnitude": 11322426.65
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 9,
           "steps": 2,
-          "paramMagnitude": 1080517719.912
+          "paramMagnitude": 989713070.067
         }
       },
       "meaningful": true
@@ -1349,22 +1379,22 @@
       "skill": "큰 수의 계열 파악하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 5.975,
+          "samples": 60,
+          "maxMagnitude": 6,
           "steps": 2,
-          "paramMagnitude": 10002.563
+          "paramMagnitude": 10002.583
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 6.475,
+          "samples": 60,
+          "maxMagnitude": 6.417,
           "steps": 2,
-          "paramMagnitude": 57252.275
+          "paramMagnitude": 52002.183
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 8.338,
+          "samples": 60,
+          "maxMagnitude": 8.233,
           "steps": 2,
-          "paramMagnitude": 35402502.275
+          "paramMagnitude": 32080002.3
         }
       },
       "meaningful": true
@@ -1375,22 +1405,22 @@
       "skill": "세 자리 수 범위의 곱셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.888,
+          "samples": 60,
+          "maxMagnitude": 2.933,
           "steps": 2,
-          "paramMagnitude": 66.013
+          "paramMagnitude": 69.833
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 3.913,
+          "samples": 60,
+          "maxMagnitude": 3.917,
           "steps": 2,
-          "paramMagnitude": 590.6
+          "paramMagnitude": 598.3
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 4.838,
+          "samples": 60,
+          "maxMagnitude": 4.833,
           "steps": 4,
-          "paramMagnitude": 643.85
+          "paramMagnitude": 652.467
         }
       },
       "meaningful": true
@@ -1401,22 +1431,22 @@
       "skill": "곱셈과 나눗셈의 관계",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.95,
+          "samples": 60,
+          "maxMagnitude": 1.967,
           "steps": 2,
-          "paramMagnitude": 47.612
+          "paramMagnitude": 49.267
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.462,
+          "samples": 60,
+          "maxMagnitude": 2.433,
           "steps": 2,
-          "paramMagnitude": 149.613
+          "paramMagnitude": 146.567
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 2,
-          "paramMagnitude": 467.1
+          "paramMagnitude": 470.8
         }
       },
       "meaningful": true
@@ -1427,22 +1457,22 @@
       "skill": "나머지 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.863,
+          "samples": 60,
+          "maxMagnitude": 1.85,
           "steps": 3,
-          "paramMagnitude": 31.675
+          "paramMagnitude": 32.217
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.663,
+          "samples": 60,
+          "maxMagnitude": 2.65,
           "steps": 3,
-          "paramMagnitude": 181.887
+          "paramMagnitude": 186.617
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.962,
+          "samples": 60,
+          "maxMagnitude": 2.983,
           "steps": 3,
-          "paramMagnitude": 484.163
+          "paramMagnitude": 480.633
         }
       },
       "meaningful": true
@@ -1453,22 +1483,22 @@
       "skill": "어림셈으로 계산 결과 어림하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.237,
+          "samples": 60,
+          "maxMagnitude": 2.3,
           "steps": 2,
-          "paramMagnitude": 112.763
+          "paramMagnitude": 114.983
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3.3,
           "steps": 2,
-          "paramMagnitude": 1139.888
+          "paramMagnitude": 1129.783
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 4.3,
+          "samples": 60,
+          "maxMagnitude": 4.267,
           "steps": 2,
-          "paramMagnitude": 11311.175
+          "paramMagnitude": 10976.85
         }
       },
       "meaningful": true
@@ -1479,22 +1509,22 @@
       "skill": "분수 읽고 쓰기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 6.175
+          "paramMagnitude": 6.267
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.238,
+          "samples": 60,
+          "maxMagnitude": 1.25,
           "steps": 2,
-          "paramMagnitude": 10.863
+          "paramMagnitude": 10.95
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.3,
+          "samples": 60,
+          "maxMagnitude": 1.317,
           "steps": 2,
-          "paramMagnitude": 11.438
+          "paramMagnitude": 11.567
         }
       },
       "meaningful": true
@@ -1505,22 +1535,22 @@
       "skill": "전체를 등분할한 부분을 분수로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 4.65
+          "paramMagnitude": 4.683
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 9.363
+          "paramMagnitude": 9.083
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.512,
+          "samples": 60,
+          "maxMagnitude": 1.45,
           "steps": 2,
-          "paramMagnitude": 14.262
+          "paramMagnitude": 13.9
         }
       },
       "meaningful": true
@@ -1531,20 +1561,20 @@
       "skill": "가분수를 대분수로 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.438,
+          "samples": 60,
+          "maxMagnitude": 1.433,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.925,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.913,
+          "samples": 60,
+          "maxMagnitude": 1.883,
           "steps": 2,
           "paramMagnitude": 0
         }
@@ -1557,20 +1587,20 @@
       "skill": "분모가 같은 분수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.387,
+          "samples": 60,
+          "maxMagnitude": 1.367,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.425,
+          "samples": 60,
+          "maxMagnitude": 1.433,
           "steps": 2,
           "paramMagnitude": 0
         }
@@ -1583,20 +1613,20 @@
       "skill": "단위분수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.462,
+          "samples": 60,
+          "maxMagnitude": 1.45,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.438,
+          "samples": 60,
+          "maxMagnitude": 1.483,
           "steps": 2,
           "paramMagnitude": 0
         }
@@ -1609,22 +1639,22 @@
       "skill": "분모가 10인 분수를 소수로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 5.9
+          "paramMagnitude": 5.733
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 57.212
+          "paramMagnitude": 55.967
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 58.337
+          "paramMagnitude": 57.833
         }
       },
       "meaningful": true
@@ -1635,22 +1665,22 @@
       "skill": "소수의 자리 숫자 찾기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.925,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 527.175
+          "paramMagnitude": 550.767
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 5511.113
+          "paramMagnitude": 5440.283
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 4352.15
+          "paramMagnitude": 4309.267
         }
       },
       "meaningful": true
@@ -1661,19 +1691,19 @@
       "skill": "소수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 0
@@ -1687,20 +1717,20 @@
       "skill": "분모가 같은 분수의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.425,
+          "samples": 60,
+          "maxMagnitude": 1.45,
           "steps": 3,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.4,
+          "samples": 60,
+          "maxMagnitude": 1.367,
           "steps": 3,
           "paramMagnitude": 0
         }
@@ -1713,19 +1743,19 @@
       "skill": "소수의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.225,
+          "samples": 60,
+          "maxMagnitude": 1.25,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 0
@@ -1739,22 +1769,22 @@
       "skill": "배열의 규칙을 식으로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 10.6
+          "paramMagnitude": 10.667
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 18.413
+          "paramMagnitude": 18.417
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.175,
+          "samples": 60,
+          "maxMagnitude": 2.2,
           "steps": 2,
-          "paramMagnitude": 22.413
+          "paramMagnitude": 22.567
         }
       },
       "meaningful": true
@@ -1765,22 +1795,22 @@
       "skill": "계산식 배열의 규칙으로 결과 추측하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 3.825,
+          "samples": 60,
+          "maxMagnitude": 3.8,
           "steps": 2,
-          "paramMagnitude": 1307.5
+          "paramMagnitude": 1291.667
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 4.025,
+          "samples": 60,
+          "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 21633.625
+          "paramMagnitude": 20474.383
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 4.05,
+          "samples": 60,
+          "maxMagnitude": 4.083,
           "steps": 2,
-          "paramMagnitude": 22750.1
+          "paramMagnitude": 22588.217
         }
       },
       "meaningful": true
@@ -1791,22 +1821,22 @@
       "skill": "등호의 양쪽이 같도록 만들기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.837,
+          "samples": 60,
+          "maxMagnitude": 1.867,
           "steps": 3,
-          "paramMagnitude": 57.675
+          "paramMagnitude": 57.95
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 181.012
+          "paramMagnitude": 183.6
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.987,
+          "samples": 60,
+          "maxMagnitude": 2.983,
           "steps": 3,
-          "paramMagnitude": 791.663
+          "paramMagnitude": 799.05
         }
       },
       "meaningful": true
@@ -1817,22 +1847,22 @@
       "skill": "분과 초 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
           "paramMagnitude": 61
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.938,
+          "samples": 60,
+          "maxMagnitude": 2.95,
           "steps": 2,
-          "paramMagnitude": 340.887
+          "paramMagnitude": 351.583
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.9,
+          "samples": 60,
+          "maxMagnitude": 2.883,
           "steps": 2,
-          "paramMagnitude": 376.438
+          "paramMagnitude": 352.75
         }
       },
       "meaningful": true
@@ -1843,22 +1873,22 @@
       "skill": "시간의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 24894
+          "paramMagnitude": 24342
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.988,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 3,
-          "paramMagnitude": 32917.5
+          "paramMagnitude": 33040
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 32273.175
+          "paramMagnitude": 32441.167
         }
       },
       "meaningful": true
@@ -1869,22 +1899,22 @@
       "skill": "cm와 mm 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 31.9
+          "paramMagnitude": 30.983
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 68.5
+          "paramMagnitude": 69.15
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 63.237
+          "paramMagnitude": 60.8
         }
       },
       "meaningful": true
@@ -1895,22 +1925,22 @@
       "skill": "km와 m 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 2977.975
+          "paramMagnitude": 2986.317
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 6173.288
+          "paramMagnitude": 6181.15
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 6115.988
+          "paramMagnitude": 6143.167
         }
       },
       "meaningful": true
@@ -1921,22 +1951,22 @@
       "skill": "길이 어림하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.988,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 21.5
+          "paramMagnitude": 20.967
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.175,
+          "samples": 60,
+          "maxMagnitude": 2.133,
           "steps": 2,
-          "paramMagnitude": 22.887
+          "paramMagnitude": 22.1
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.612,
+          "samples": 60,
+          "maxMagnitude": 2.583,
           "steps": 2,
-          "paramMagnitude": 32.325
+          "paramMagnitude": 31.517
         }
       },
       "meaningful": true
@@ -1947,22 +1977,22 @@
       "skill": "L와 mL 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
           "paramMagnitude": 3203.2
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 6173.15
+          "paramMagnitude": 5869.167
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 5688.762
+          "paramMagnitude": 5519.183
         }
       },
       "meaningful": true
@@ -1973,22 +2003,22 @@
       "skill": "들이의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.938,
+          "samples": 60,
+          "maxMagnitude": 2.95,
           "steps": 3,
-          "paramMagnitude": 9061.35
+          "paramMagnitude": 9255.5
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.987,
+          "samples": 60,
+          "maxMagnitude": 2.983,
           "steps": 3,
-          "paramMagnitude": 17805.875
+          "paramMagnitude": 18031.567
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.975,
+          "samples": 60,
+          "maxMagnitude": 2.967,
           "steps": 3,
-          "paramMagnitude": 16860.05
+          "paramMagnitude": 16565.267
         }
       },
       "meaningful": true
@@ -1999,22 +2029,22 @@
       "skill": "kg와 g 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 3028.025
+          "paramMagnitude": 2986.317
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 6257
+          "paramMagnitude": 6118.283
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 4,
           "steps": 2,
-          "paramMagnitude": 6000.55
+          "paramMagnitude": 6018
         }
       },
       "meaningful": true
@@ -2025,22 +2055,22 @@
       "skill": "무게의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.987,
+          "samples": 60,
+          "maxMagnitude": 2.983,
           "steps": 3,
-          "paramMagnitude": 9127.05
+          "paramMagnitude": 9499.033
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.987,
+          "samples": 60,
+          "maxMagnitude": 2.983,
           "steps": 3,
-          "paramMagnitude": 16180.2
+          "paramMagnitude": 16594.367
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 3,
           "steps": 3,
-          "paramMagnitude": 16453.3
+          "paramMagnitude": 16880.6
         }
       },
       "meaningful": true
@@ -2051,22 +2081,22 @@
       "skill": "무게 어림하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.263,
+          "samples": 60,
+          "maxMagnitude": 2.3,
           "steps": 2,
-          "paramMagnitude": 47
+          "paramMagnitude": 52.283
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.362,
+          "samples": 60,
+          "maxMagnitude": 2.283,
           "steps": 2,
-          "paramMagnitude": 40.775
+          "paramMagnitude": 37.133
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.65,
+          "samples": 60,
+          "maxMagnitude": 2.6,
           "steps": 2,
-          "paramMagnitude": 50.837
+          "paramMagnitude": 46.117
         }
       },
       "meaningful": true
@@ -2077,20 +2107,20 @@
       "skill": "평면도형의 이동 방법 알기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 1,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 0.713,
+          "samples": 60,
+          "maxMagnitude": 0.733,
           "steps": 1,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 0.9,
+          "samples": 60,
+          "maxMagnitude": 1.033,
           "steps": 1,
           "paramMagnitude": 0
         }
@@ -2103,22 +2133,22 @@
       "skill": "이동을 반복한 무늬의 규칙 알기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 1,
-          "paramMagnitude": 6.063
+          "paramMagnitude": 6.067
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.9,
           "steps": 1,
-          "paramMagnitude": 5.975
+          "paramMagnitude": 5.85
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.913,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 1,
-          "paramMagnitude": 5.963
+          "paramMagnitude": 6.05
         }
       },
       "meaningful": true
@@ -2129,22 +2159,22 @@
       "skill": "반지름과 지름의 관계",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.65,
+          "samples": 60,
+          "maxMagnitude": 1.6,
           "steps": 2,
-          "paramMagnitude": 16.313
+          "paramMagnitude": 15.7
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.925,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
-          "paramMagnitude": 34.5
+          "paramMagnitude": 35.7
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.038,
+          "samples": 60,
+          "maxMagnitude": 2.05,
           "steps": 2,
-          "paramMagnitude": 89.063
+          "paramMagnitude": 94.9
         }
       },
       "meaningful": true
@@ -2155,22 +2185,22 @@
       "skill": "변의 수로 다각형 이름 알기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 3.837
+          "paramMagnitude": 3.783
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 5.525
+          "paramMagnitude": 5.517
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 6.95
+          "paramMagnitude": 6.883
         }
       },
       "meaningful": true
@@ -2181,22 +2211,22 @@
       "skill": "대각선의 수 세기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 6
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
-          "paramMagnitude": 12.188
+          "paramMagnitude": 12.167
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.688,
+          "samples": 60,
+          "maxMagnitude": 1.7,
           "steps": 3,
-          "paramMagnitude": 21.575
+          "paramMagnitude": 22.233
         }
       },
       "meaningful": true
@@ -2207,22 +2237,22 @@
       "skill": "삼각형·사각형의 각의 크기 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.112,
+          "samples": 60,
+          "maxMagnitude": 2.15,
           "steps": 2,
-          "paramMagnitude": 238.95
+          "paramMagnitude": 239.517
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.563,
+          "samples": 60,
+          "maxMagnitude": 2.533,
           "steps": 2,
-          "paramMagnitude": 340.512
+          "paramMagnitude": 337.267
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.538,
+          "samples": 60,
+          "maxMagnitude": 2.533,
           "steps": 2,
-          "paramMagnitude": 326.15
+          "paramMagnitude": 315.583
         }
       },
       "meaningful": true
@@ -2233,20 +2263,20 @@
       "skill": "자료를 표로 정리하고 합계 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 1,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 1,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.313,
+          "samples": 60,
+          "maxMagnitude": 2.283,
           "steps": 1,
           "paramMagnitude": 0
         }
@@ -2259,22 +2289,22 @@
       "skill": "막대그래프에서 값 읽기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 2.688
+          "paramMagnitude": 2.617
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.425,
+          "samples": 60,
+          "maxMagnitude": 1.417,
           "steps": 2,
-          "paramMagnitude": 3.188
+          "paramMagnitude": 3.15
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.65,
+          "samples": 60,
+          "maxMagnitude": 1.683,
           "steps": 2,
-          "paramMagnitude": 4.888
+          "paramMagnitude": 4.933
         }
       },
       "meaningful": true
@@ -2285,21 +2315,21 @@
       "skill": "막대그래프 해석하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 0.175,
+          "samples": 60,
+          "maxMagnitude": 0.167,
           "steps": 1,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 0.575,
-          "steps": 1.288,
+          "samples": 60,
+          "maxMagnitude": 0.617,
+          "steps": 1.317,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 0.738,
-          "steps": 1.288,
+          "samples": 60,
+          "maxMagnitude": 0.7,
+          "steps": 1.267,
           "paramMagnitude": 0
         }
       },
@@ -2311,22 +2341,22 @@
       "skill": "자연수의 혼합 계산",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2.05,
           "steps": 2,
-          "paramMagnitude": 39.513
+          "paramMagnitude": 39.9
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.112,
+          "samples": 60,
+          "maxMagnitude": 2.117,
           "steps": 2,
-          "paramMagnitude": 55.25
+          "paramMagnitude": 56.333
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2,
+          "samples": 60,
+          "maxMagnitude": 1.983,
           "steps": 3,
-          "paramMagnitude": 35.337
+          "paramMagnitude": 36.8
         }
       },
       "meaningful": true
@@ -2337,22 +2367,22 @@
       "skill": "이상·이하·초과·미만",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 20.462
+          "paramMagnitude": 20.633
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 45.7
+          "paramMagnitude": 45.583
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 48.75
+          "paramMagnitude": 50.1
         }
       },
       "meaningful": true
@@ -2363,22 +2393,22 @@
       "skill": "올림·버림·반올림",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2.95,
           "steps": 2,
-          "paramMagnitude": 503
+          "paramMagnitude": 491.567
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 3.4,
+          "samples": 60,
+          "maxMagnitude": 3.383,
           "steps": 2,
-          "paramMagnitude": 2979.925
+          "paramMagnitude": 2936.917
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 4.438,
+          "samples": 60,
+          "maxMagnitude": 4.383,
           "steps": 2,
-          "paramMagnitude": 31023.975
+          "paramMagnitude": 26162.6
         }
       },
       "meaningful": true
@@ -2389,22 +2419,22 @@
       "skill": "약수와 배수 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.925,
+          "samples": 60,
+          "maxMagnitude": 1.917,
           "steps": 2,
-          "paramMagnitude": 12.675
+          "paramMagnitude": 12.55
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 27.15
+          "paramMagnitude": 28.233
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.112,
+          "samples": 60,
+          "maxMagnitude": 2.117,
           "steps": 2,
-          "paramMagnitude": 47.862
+          "paramMagnitude": 49.133
         }
       },
       "meaningful": true
@@ -2415,22 +2445,22 @@
       "skill": "최대공약수와 최소공배수",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.063,
+          "samples": 60,
+          "maxMagnitude": 2.05,
           "steps": 2,
-          "paramMagnitude": 31.688
+          "paramMagnitude": 31.717
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.438,
+          "samples": 60,
+          "maxMagnitude": 2.433,
           "steps": 2,
-          "paramMagnitude": 91.713
+          "paramMagnitude": 95.083
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.55,
+          "samples": 60,
+          "maxMagnitude": 2.467,
           "steps": 2,
-          "paramMagnitude": 105.563
+          "paramMagnitude": 94.7
         }
       },
       "meaningful": true
@@ -2441,20 +2471,20 @@
       "skill": "분수를 약분하여 기약분수로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.613,
+          "samples": 60,
+          "maxMagnitude": 1.667,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.95,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 3,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.913,
+          "samples": 60,
+          "maxMagnitude": 1.883,
           "steps": 3,
           "paramMagnitude": 0
         }
@@ -2467,20 +2497,20 @@
       "skill": "분모가 다른 분수의 크기 비교",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.525,
+          "samples": 60,
+          "maxMagnitude": 1.567,
           "steps": 3,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.5,
+          "samples": 60,
+          "maxMagnitude": 1.567,
           "steps": 3,
           "paramMagnitude": 0
         }
@@ -2493,19 +2523,19 @@
       "skill": "분모가 다른 분수의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.45,
+          "samples": 60,
+          "maxMagnitude": 1.5,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.837,
+          "samples": 60,
+          "maxMagnitude": 1.85,
           "steps": 3,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1.9,
           "steps": 3,
           "paramMagnitude": 0
@@ -2519,20 +2549,20 @@
       "skill": "분수의 곱셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.288,
+          "samples": 60,
+          "maxMagnitude": 1.283,
           "steps": 2,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.387,
+          "samples": 60,
+          "maxMagnitude": 1.35,
           "steps": 2,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.438,
+          "samples": 60,
+          "maxMagnitude": 1.45,
           "steps": 2,
           "paramMagnitude": 0
         }
@@ -2545,22 +2575,22 @@
       "skill": "분수를 자연수로 나누기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.475,
+          "samples": 60,
+          "maxMagnitude": 1.483,
           "steps": 3,
-          "paramMagnitude": 3.538
+          "paramMagnitude": 3.517
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.887,
+          "samples": 60,
+          "maxMagnitude": 1.917,
           "steps": 3,
-          "paramMagnitude": 5.375
+          "paramMagnitude": 5.25
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.813,
+          "samples": 60,
+          "maxMagnitude": 1.833,
           "steps": 3,
-          "paramMagnitude": 5.263
+          "paramMagnitude": 5.417
         }
       },
       "meaningful": true
@@ -2571,20 +2601,20 @@
       "skill": "분수의 나눗셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.387,
+          "samples": 60,
+          "maxMagnitude": 1.383,
           "steps": 3,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.462,
+          "samples": 60,
+          "maxMagnitude": 1.433,
           "steps": 3,
           "paramMagnitude": 0
         }
@@ -2597,22 +2627,22 @@
       "skill": "분수를 소수로, 소수를 분수로",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.275,
+          "samples": 60,
+          "maxMagnitude": 1.283,
           "steps": 2,
-          "paramMagnitude": 5.963
+          "paramMagnitude": 5.85
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.1,
+          "samples": 60,
+          "maxMagnitude": 2.117,
           "steps": 2,
-          "paramMagnitude": 48.425
+          "paramMagnitude": 47
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.112,
+          "samples": 60,
+          "maxMagnitude": 2.117,
           "steps": 2,
-          "paramMagnitude": 47.462
+          "paramMagnitude": 46.933
         }
       },
       "meaningful": true
@@ -2623,22 +2653,22 @@
       "skill": "소수와 자연수의 곱셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.075,
+          "samples": 60,
+          "maxMagnitude": 2.05,
           "steps": 3,
-          "paramMagnitude": 718.25
+          "paramMagnitude": 678.267
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.688,
+          "samples": 60,
+          "maxMagnitude": 2.683,
           "steps": 3,
-          "paramMagnitude": 28694.475
+          "paramMagnitude": 27077.1
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.775,
+          "samples": 60,
+          "maxMagnitude": 2.75,
           "steps": 3,
-          "paramMagnitude": 31676.525
+          "paramMagnitude": 30354.783
         }
       },
       "meaningful": true
@@ -2649,22 +2679,22 @@
       "skill": "소수의 곱셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 79.463
+          "paramMagnitude": 79.783
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.6,
+          "samples": 60,
+          "maxMagnitude": 2.583,
           "steps": 3,
-          "paramMagnitude": 395.475
+          "paramMagnitude": 385.333
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.375,
+          "samples": 60,
+          "maxMagnitude": 2.367,
           "steps": 3,
-          "paramMagnitude": 259.175
+          "paramMagnitude": 261.783
         }
       },
       "meaningful": true
@@ -2675,22 +2705,22 @@
       "skill": "소수의 나눗셈",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.638,
+          "samples": 60,
+          "maxMagnitude": 2.6,
           "steps": 3,
-          "paramMagnitude": 1978.975
+          "paramMagnitude": 1829.45
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.725,
+          "samples": 60,
+          "maxMagnitude": 2.683,
           "steps": 3,
-          "paramMagnitude": 30326.338
+          "paramMagnitude": 28615.117
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.8,
+          "samples": 60,
+          "maxMagnitude": 2.817,
           "steps": 3,
-          "paramMagnitude": 32389.088
+          "paramMagnitude": 32759.717
         }
       },
       "meaningful": true
@@ -2701,22 +2731,22 @@
       "skill": "두 양의 대응 관계를 식으로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 10.188
+          "paramMagnitude": 10.1
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.15,
+          "samples": 60,
+          "maxMagnitude": 2.183,
           "steps": 2,
-          "paramMagnitude": 20.938
+          "paramMagnitude": 21.033
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.1,
+          "samples": 60,
+          "maxMagnitude": 2.117,
           "steps": 2,
-          "paramMagnitude": 21.35
+          "paramMagnitude": 21.367
         }
       },
       "meaningful": true
@@ -2727,22 +2757,22 @@
       "skill": "비를 쓰고 읽기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
-          "steps": 1.438,
-          "paramMagnitude": 10.875
+          "steps": 1.467,
+          "paramMagnitude": 10.3
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.938,
-          "steps": 1.538,
-          "paramMagnitude": 33.75
+          "samples": 60,
+          "maxMagnitude": 1.917,
+          "steps": 1.517,
+          "paramMagnitude": 33.233
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.975,
-          "steps": 1.475,
-          "paramMagnitude": 31.163
+          "samples": 60,
+          "maxMagnitude": 1.983,
+          "steps": 1.5,
+          "paramMagnitude": 31.05
         }
       },
       "meaningful": true
@@ -2753,22 +2783,22 @@
       "skill": "비율을 분수·소수·백분율로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.175,
+          "samples": 60,
+          "maxMagnitude": 2.167,
           "steps": 2,
-          "paramMagnitude": 55.575
+          "paramMagnitude": 53
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.188,
+          "samples": 60,
+          "maxMagnitude": 2.2,
           "steps": 2,
-          "paramMagnitude": 62.063
+          "paramMagnitude": 64.533
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.225,
+          "samples": 60,
+          "maxMagnitude": 2.183,
           "steps": 2,
-          "paramMagnitude": 63.337
+          "paramMagnitude": 58.033
         }
       },
       "meaningful": true
@@ -2779,22 +2809,22 @@
       "skill": "비례식의 성질로 빈칸 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.975,
+          "samples": 60,
+          "maxMagnitude": 1.967,
           "steps": 3,
-          "paramMagnitude": 1.55
+          "paramMagnitude": 1.567
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.112,
+          "samples": 60,
+          "maxMagnitude": 2.1,
           "steps": 3,
-          "paramMagnitude": 1.387
+          "paramMagnitude": 1.25
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.587,
+          "samples": 60,
+          "maxMagnitude": 2.617,
           "steps": 3,
-          "paramMagnitude": 1.575
+          "paramMagnitude": 1.633
         }
       },
       "meaningful": true
@@ -2805,22 +2835,22 @@
       "skill": "비례배분",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.887,
+          "samples": 60,
+          "maxMagnitude": 1.867,
           "steps": 3,
-          "paramMagnitude": 42.712
+          "paramMagnitude": 43.283
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.4,
+          "samples": 60,
+          "maxMagnitude": 2.383,
           "steps": 3,
-          "paramMagnitude": 154.225
+          "paramMagnitude": 147.317
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.337,
+          "samples": 60,
+          "maxMagnitude": 2.433,
           "steps": 3,
-          "paramMagnitude": 157.05
+          "paramMagnitude": 170.667
         }
       },
       "meaningful": true
@@ -2831,48 +2861,22 @@
       "skill": "합동인 도형의 대응변·대응각",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.625,
+          "samples": 60,
+          "maxMagnitude": 1.633,
           "steps": 2,
-          "paramMagnitude": 26.475
+          "paramMagnitude": 27.367
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.775,
+          "samples": 60,
+          "maxMagnitude": 1.783,
           "steps": 2,
-          "paramMagnitude": 40.388
+          "paramMagnitude": 41.417
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.7,
+          "samples": 60,
+          "maxMagnitude": 1.717,
           "steps": 2,
-          "paramMagnitude": 38
-        }
-      },
-      "meaningful": true
-    },
-    {
-      "generatorId": "math.g56.rm.s03-02.symmetry",
-      "code": "[6수03-02]",
-      "skill": "선대칭도형의 대칭축 수 세기",
-      "byDifficulty": {
-        "1": {
-          "samples": 80,
-          "maxMagnitude": 1,
-          "steps": 2,
-          "paramMagnitude": 3.587
-        },
-        "2": {
-          "samples": 80,
-          "maxMagnitude": 1,
-          "steps": 2,
-          "paramMagnitude": 4.638
-        },
-        "3": {
-          "samples": 80,
-          "maxMagnitude": 1,
-          "steps": 2,
-          "paramMagnitude": 4.563
+          "paramMagnitude": 39.417
         }
       },
       "meaningful": true
@@ -2883,22 +2887,22 @@
       "skill": "직육면체 모서리 길이의 합",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.063,
+          "samples": 60,
+          "maxMagnitude": 2.083,
           "steps": 2,
-          "paramMagnitude": 75.938
+          "paramMagnitude": 77.5
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.563,
+          "samples": 60,
+          "maxMagnitude": 2.583,
           "steps": 2,
-          "paramMagnitude": 136.938
+          "paramMagnitude": 141.333
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.525,
+          "samples": 60,
+          "maxMagnitude": 2.55,
           "steps": 2,
-          "paramMagnitude": 126.188
+          "paramMagnitude": 128.917
         }
       },
       "meaningful": true
@@ -2909,22 +2913,22 @@
       "skill": "각기둥과 각뿔의 이름과 구성",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 9.012
+          "paramMagnitude": 8.8
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.363,
+          "samples": 60,
+          "maxMagnitude": 1.367,
           "steps": 2,
-          "paramMagnitude": 13.125
+          "paramMagnitude": 13.133
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.387,
+          "samples": 60,
+          "maxMagnitude": 1.383,
           "steps": 2,
-          "paramMagnitude": 14.075
+          "paramMagnitude": 14.233
         }
       },
       "meaningful": true
@@ -2935,22 +2939,22 @@
       "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 3.575
+          "paramMagnitude": 3.583
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 4.625
+          "paramMagnitude": 4.583
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 0,
           "steps": 2,
-          "paramMagnitude": 4.388
+          "paramMagnitude": 4.5
         }
       },
       "meaningful": true
@@ -2961,22 +2965,22 @@
       "skill": "원기둥의 전개도 이해",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 2240.813
+          "paramMagnitude": 3302.25
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2,
+          "samples": 60,
+          "maxMagnitude": 2.017,
           "steps": 2,
-          "paramMagnitude": 3978.425
+          "paramMagnitude": 6048.883
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2,
+          "samples": 60,
+          "maxMagnitude": 2.45,
           "steps": 2,
-          "paramMagnitude": 3970.563
+          "paramMagnitude": 9435
         }
       },
       "meaningful": true
@@ -2987,21 +2991,21 @@
       "skill": "쌓기나무의 개수 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 3,
           "paramMagnitude": 0
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.613,
+          "samples": 60,
+          "maxMagnitude": 1.6,
           "steps": 4,
           "paramMagnitude": 0
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.688,
-          "steps": 4.475,
+          "samples": 60,
+          "maxMagnitude": 1.7,
+          "steps": 4.517,
           "paramMagnitude": 0
         }
       },
@@ -3013,22 +3017,22 @@
       "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.788,
+          "samples": 60,
+          "maxMagnitude": 1.783,
           "steps": 2,
-          "paramMagnitude": 20.125
+          "paramMagnitude": 20.133
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1.938,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
-          "paramMagnitude": 43.813
+          "paramMagnitude": 41.467
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 47.525
+          "paramMagnitude": 48.333
         }
       },
       "meaningful": true
@@ -3039,22 +3043,22 @@
       "skill": "넓이 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 5,
           "steps": 2,
-          "paramMagnitude": 10005.388
+          "paramMagnitude": 10005.183
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 5.825,
+          "samples": 60,
+          "maxMagnitude": 5.8,
           "steps": 2,
-          "paramMagnitude": 418379.912
+          "paramMagnitude": 406005.283
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 6.2,
+          "samples": 60,
+          "maxMagnitude": 6.1,
           "steps": 2,
-          "paramMagnitude": 604004.938
+          "paramMagnitude": 554504.817
         }
       },
       "meaningful": true
@@ -3065,22 +3069,22 @@
       "skill": "여러 도형으로 나누어 넓이 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.013,
+          "samples": 60,
+          "maxMagnitude": 2.017,
           "steps": 3,
-          "paramMagnitude": 75.725
+          "paramMagnitude": 74.133
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.45,
+          "samples": 60,
+          "maxMagnitude": 2.483,
           "steps": 3,
-          "paramMagnitude": 146.4
+          "paramMagnitude": 149.817
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.487,
+          "samples": 60,
+          "maxMagnitude": 2.45,
           "steps": 3,
-          "paramMagnitude": 148.113
+          "paramMagnitude": 143.9
         }
       },
       "meaningful": true
@@ -3091,22 +3095,22 @@
       "skill": "원주 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 2,
           "steps": 3,
-          "paramMagnitude": 3567.375
+          "paramMagnitude": 3570
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.513,
+          "samples": 60,
+          "maxMagnitude": 2.517,
           "steps": 3,
-          "paramMagnitude": 9418.5
+          "paramMagnitude": 9481.5
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.362,
+          "samples": 60,
+          "maxMagnitude": 2.383,
           "steps": 3,
-          "paramMagnitude": 8245.125
+          "paramMagnitude": 8557.5
         }
       },
       "meaningful": true
@@ -3117,22 +3121,22 @@
       "skill": "원의 넓이 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.35,
+          "samples": 60,
+          "maxMagnitude": 2.367,
           "steps": 2,
-          "paramMagnitude": 7941.025
+          "paramMagnitude": 8336.267
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.962,
+          "samples": 60,
+          "maxMagnitude": 2.933,
           "steps": 2,
-          "paramMagnitude": 43758.75
+          "paramMagnitude": 42431.933
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 3.038,
+          "samples": 60,
+          "maxMagnitude": 3.067,
           "steps": 2,
-          "paramMagnitude": 55378.325
+          "paramMagnitude": 56621.417
         }
       },
       "meaningful": true
@@ -3143,22 +3147,22 @@
       "skill": "직육면체의 겉넓이",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.625,
+          "samples": 60,
+          "maxMagnitude": 2.633,
           "steps": 2,
-          "paramMagnitude": 246.225
+          "paramMagnitude": 237.75
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.913,
+          "samples": 60,
+          "maxMagnitude": 2.9,
           "steps": 2,
-          "paramMagnitude": 385.438
+          "paramMagnitude": 393.283
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.888,
+          "samples": 60,
+          "maxMagnitude": 2.867,
           "steps": 2,
-          "paramMagnitude": 305.962
+          "paramMagnitude": 313.767
         }
       },
       "meaningful": true
@@ -3169,22 +3173,22 @@
       "skill": "직육면체의 부피",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.612,
+          "samples": 60,
+          "maxMagnitude": 2.533,
           "steps": 2,
-          "paramMagnitude": 266.275
+          "paramMagnitude": 233.433
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 3.212,
+          "samples": 60,
+          "maxMagnitude": 3.183,
           "steps": 2,
-          "paramMagnitude": 990.875
+          "paramMagnitude": 998
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 3.188,
+          "samples": 60,
+          "maxMagnitude": 3.117,
           "steps": 2,
-          "paramMagnitude": 930.538
+          "paramMagnitude": 892.833
         }
       },
       "meaningful": true
@@ -3195,22 +3199,22 @@
       "skill": "부피 단위 바꾸기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 7,
           "steps": 2,
-          "paramMagnitude": 1000003
+          "paramMagnitude": 1000003.117
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 7,
           "steps": 2,
-          "paramMagnitude": 1000004.9
+          "paramMagnitude": 1000004.933
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 7,
           "steps": 2,
-          "paramMagnitude": 1000004.875
+          "paramMagnitude": 1000005.1
         }
       },
       "meaningful": true
@@ -3221,22 +3225,22 @@
       "skill": "평균 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
+          "samples": 60,
+          "maxMagnitude": 1.95,
           "steps": 2,
-          "paramMagnitude": 61.575
+          "paramMagnitude": 60.683
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.038,
+          "samples": 60,
+          "maxMagnitude": 2.033,
           "steps": 2,
-          "paramMagnitude": 189.75
+          "paramMagnitude": 193.517
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.025,
+          "samples": 60,
+          "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 185.35
+          "paramMagnitude": 179.017
         }
       },
       "meaningful": true
@@ -3247,22 +3251,22 @@
       "skill": "평균을 이용해 빠진 값 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 1.938,
+          "samples": 60,
+          "maxMagnitude": 1.933,
           "steps": 2,
-          "paramMagnitude": 29.2
+          "paramMagnitude": 28.8
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.038,
+          "samples": 60,
+          "maxMagnitude": 2.05,
           "steps": 2,
-          "paramMagnitude": 54.587
+          "paramMagnitude": 57.167
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.025,
+          "samples": 60,
+          "maxMagnitude": 2.017,
           "steps": 2,
-          "paramMagnitude": 55.837
+          "paramMagnitude": 53.95
         }
       },
       "meaningful": true
@@ -3273,22 +3277,22 @@
       "skill": "띠그래프·원그래프의 백분율 구하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
-          "maxMagnitude": 2.875,
+          "samples": 60,
+          "maxMagnitude": 2.85,
           "steps": 2,
-          "paramMagnitude": 119.1
+          "paramMagnitude": 119.117
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 2.9,
+          "samples": 60,
+          "maxMagnitude": 2.917,
           "steps": 2,
-          "paramMagnitude": 171.338
+          "paramMagnitude": 175.35
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 2.925,
+          "samples": 60,
+          "maxMagnitude": 2.917,
           "steps": 2,
-          "paramMagnitude": 173.025
+          "paramMagnitude": 167.95
         }
       },
       "meaningful": true
@@ -3299,22 +3303,22 @@
       "skill": "가능성을 수로 나타내기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 1.462
+          "paramMagnitude": 1.483
         },
         "2": {
-          "samples": 80,
-          "maxMagnitude": 1,
+          "samples": 60,
+          "maxMagnitude": 1.05,
           "steps": 2,
-          "paramMagnitude": 1.913
+          "paramMagnitude": 2.317
         },
         "3": {
-          "samples": 80,
-          "maxMagnitude": 1,
+          "samples": 60,
+          "maxMagnitude": 1.067,
           "steps": 2,
-          "paramMagnitude": 1.863
+          "paramMagnitude": 2.167
         }
       },
       "meaningful": true
@@ -3325,22 +3329,48 @@
       "skill": "가능성 비교하기",
       "byDifficulty": {
         "1": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 18.538
+          "paramMagnitude": 18.883
         },
         "2": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 20.337
+          "paramMagnitude": 20.95
         },
         "3": {
-          "samples": 80,
+          "samples": 60,
           "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 20.475
+          "paramMagnitude": 20.6
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.alphabet-order",
+      "code": "[4영01-02]",
+      "skill": "알파벳 순서 알기",
+      "byDifficulty": {
+        "1": {
+          "samples": 60,
+          "maxMagnitude": 0,
+          "steps": 1,
+          "paramMagnitude": 7.267
+        },
+        "2": {
+          "samples": 60,
+          "maxMagnitude": 0,
+          "steps": 1,
+          "paramMagnitude": 14.35
+        },
+        "3": {
+          "samples": 60,
+          "maxMagnitude": 0,
+          "steps": 1,
+          "paramMagnitude": 13.7
         }
       },
       "meaningful": true

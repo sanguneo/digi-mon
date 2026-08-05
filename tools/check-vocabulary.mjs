@@ -20,6 +20,7 @@ import { createRegistry } from '../src/engine/registry.mjs';
 import { createRng } from '../src/engine/rng.mjs';
 import { generateItem } from '../src/engine/worksheet.mjs';
 import { vocabularyFor } from '../src/curriculum/korean-vocab.mjs';
+import { englishWordsFor } from '../src/curriculum/english-vocab.mjs';
 import { isSyllable } from '../src/engine/hangul.mjs';
 
 const SAMPLES = Number(process.env.SAMPLES ?? 60);
@@ -95,10 +96,29 @@ const offenders = [];
 let checkedItems = 0;
 let checkedWords = 0;
 
+/**
+ * 영어 문항에서 학습 대상 낱말을 뽑는다.
+ * 알파벳 한 글자와 문장은 어휘 목록으로 재지 않는다. 낱말 단위만 본다.
+ */
+function englishWordsOf(item) {
+  const out = new Set();
+  const isWord = (t) => typeof t === 'string' && /^[A-Za-z]{2,}$/.test(t);
+  // params 는 내부 메타데이터다('statement', 'question' 같은 문항 종류가 들어 있다).
+  // 학습 대상 낱말은 아이가 읽는 문면에만 있으므로 stem·선택지·정답만 본다.
+  for (const choice of item.choices ?? []) if (isWord(choice.text)) out.add(choice.text.toLowerCase());
+  if (isWord(item.stem)) out.add(item.stem.toLowerCase());
+  if (isWord(item.answer.value)) out.add(item.answer.value.toLowerCase());
+  return [...out];
+}
+
 for (const g of registry.all()) {
   const standard = standardByCode.get(g.standardCode);
-  if (standard.subject !== 'korean') continue;
-  const allowed = new Set(vocabularyFor(standard.gradeBand));
+  if (standard.subject !== 'korean' && standard.subject !== 'english') continue;
+  const allowed = new Set(
+    standard.subject === 'korean'
+      ? vocabularyFor(standard.gradeBand)
+      : englishWordsFor(standard.gradeBand).map((w) => w.toLowerCase()),
+  );
 
   for (let n = 0; n < SAMPLES; n += 1) {
     let item;
@@ -108,13 +128,15 @@ for (const g of registry.all()) {
       continue;
     }
     checkedItems += 1;
-    for (const word of learnedWordsOf(item, allowed)) {
+    const words = standard.subject === 'korean' ? learnedWordsOf(item, allowed) : englishWordsOf(item);
+    for (const word of words) {
       checkedWords += 1;
       if (!allowed.has(word)) {
         offenders.push({
           generatorId: g.id,
           code: g.standardCode,
           gradeBand: standard.gradeBand,
+          subject: standard.subject,
           word,
         });
       }
@@ -135,21 +157,21 @@ writeJson(path.join(REPO_ROOT, 'data', 'audit', 'vocabulary-check.json'), {
   schema: 'digi-mon/vocabulary-check@1',
   note: '어휘 목록은 이 저장소가 시드한 것이고 공식 목록이 아니다. 교과 전문가 검토 대상이다.',
   samplesPerGenerator: SAMPLES,
-  koreanItemsChecked: checkedItems,
+  itemsChecked: checkedItems,
   wordsChecked: checkedWords,
   violationCount: offenders.length,
   uniqueViolations: unique.length,
   violations: unique,
   vocabularySize: {
-    '1-2': vocabularyFor('1-2').length,
-    '3-4': vocabularyFor('3-4').length,
-    '5-6': vocabularyFor('5-6').length,
+    korean: { '1-2': vocabularyFor('1-2').length, '3-4': vocabularyFor('3-4').length, '5-6': vocabularyFor('5-6').length },
+    english: { '3-4': englishWordsFor('3-4').length, '5-6': englishWordsFor('5-6').length },
   },
 });
 
-console.log(`어휘 화이트리스트 검사: 국어 문항 ${checkedItems}개, 학습 대상 낱말 ${checkedWords}건`);
+console.log(`어휘 화이트리스트 검사: 국어·영어 문항 ${checkedItems}개, 학습 대상 낱말 ${checkedWords}건`);
 console.log(`목록 밖 낱말: ${offenders.length}건 (고유 ${unique.length}종)`);
-console.log(`어휘 목록 크기: 1-2 ${vocabularyFor('1-2').length} / 3-4 ${vocabularyFor('3-4').length} / 5-6 ${vocabularyFor('5-6').length}`);
+console.log(`국어 어휘: 1-2 ${vocabularyFor('1-2').length} / 3-4 ${vocabularyFor('3-4').length} / 5-6 ${vocabularyFor('5-6').length}`);
+console.log(`영어 어휘: 3-4 ${englishWordsFor('3-4').length} / 5-6 ${englishWordsFor('5-6').length}`);
 
 if (unique.length > 0) {
   console.log('');

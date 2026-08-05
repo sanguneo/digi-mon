@@ -1,8 +1,8 @@
 {
   "schema": "digi-mon/mutation-test@1",
   "samplesPerGenerator": 40,
-  "generatorCount": 163,
-  "totalMutants": 18039,
+  "generatorCount": 169,
+  "totalMutants": 18639,
   "totalEscaped": 0,
   "weakGeneratorCount": 0,
   "manualScoringGenerators": [
@@ -1796,6 +1796,72 @@
       "code": "[6국04-06]",
       "skill": "띄어쓰기가 바른 문장 고르기",
       "mutants": 80,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.match-case",
+      "code": "[4영01-02]",
+      "skill": "대문자에 맞는 소문자 찾기",
+      "mutants": 80,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.alphabet-order",
+      "code": "[4영01-02]",
+      "skill": "알파벳 순서 알기",
+      "mutants": 80,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.write-case",
+      "code": "[4영02-02]",
+      "skill": "낱말을 대문자로 또는 소문자로 바꿔 쓰기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.first-letter",
+      "code": "[4영02-02]",
+      "skill": "낱말의 첫 글자를 대문자로 쓰기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.end-mark",
+      "code": "[6영02-03]",
+      "skill": "문장 끝에 알맞은 부호 넣기",
+      "mutants": 80,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.fix-case",
+      "code": "[6영02-03]",
+      "skill": "문장 첫 글자를 대문자로 바르게 쓰기",
+      "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],

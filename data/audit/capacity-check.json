@@ -3,8 +3,8 @@
   "note": "포화 기준 용량이다. 고정 문턱은 개념이 작은 것과 덜 쓴 것을 구분하지 못해 쓰지 않는다.",
   "baseSamples": 300,
   "minCeiling": 12,
-  "generatorCount": 163,
-  "saturatedCount": 74,
+  "generatorCount": 169,
+  "saturatedCount": 80,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -58,7 +58,7 @@
       "capacityNote": "가능성을 나타내는 말은 불가능하다·낮다·반반이다·높다·확실하다 다섯 단계가 전부다."
     }
   ],
-  "observedCapacity": 113663,
+  "observedCapacity": 114040,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1417,7 +1417,7 @@
       "generatorId": "math.g56.rm.s03-02.symmetry",
       "code": "[6수03-02]",
       "skill": "선대칭도형의 대칭축 수 세기",
-      "axis": "numeric",
+      "axis": "categorical",
       "capacityNote": "초등에서 대칭축을 세는 도형은 정삼각형·정사각형·정오각형·정육각형과 반례인 직사각형·마름모·이등변삼각형 일곱 가지다.",
       "uniqueAtBase": 7,
       "uniqueAtDouble": 7,
@@ -1852,6 +1852,72 @@
       "uniqueAtDouble": 29,
       "saturated": true,
       "ceiling": 29
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.match-case",
+      "code": "[4영01-02]",
+      "skill": "대문자에 맞는 소문자 찾기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 104,
+      "uniqueAtDouble": 104,
+      "saturated": true,
+      "ceiling": 104
+    },
+    {
+      "generatorId": "english.g34.lt.s01-02.alphabet-order",
+      "code": "[4영01-02]",
+      "skill": "알파벳 순서 알기",
+      "axis": "numeric",
+      "capacityNote": null,
+      "uniqueAtBase": 142,
+      "uniqueAtDouble": 144,
+      "saturated": true,
+      "ceiling": 144
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.write-case",
+      "code": "[4영02-02]",
+      "skill": "낱말을 대문자로 또는 소문자로 바꿔 쓰기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 60,
+      "uniqueAtDouble": 60,
+      "saturated": true,
+      "ceiling": 60
+    },
+    {
+      "generatorId": "english.g34.lt.s02-02.first-letter",
+      "code": "[4영02-02]",
+      "skill": "낱말의 첫 글자를 대문자로 쓰기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 30,
+      "uniqueAtDouble": 30,
+      "saturated": true,
+      "ceiling": 30
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.end-mark",
+      "code": "[6영02-03]",
+      "skill": "문장 끝에 알맞은 부호 넣기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 13,
+      "uniqueAtDouble": 13,
+      "saturated": true,
+      "ceiling": 13
+    },
+    {
+      "generatorId": "english.g56.lt.s02-03.fix-case",
+      "code": "[6영02-03]",
+      "skill": "문장 첫 글자를 대문자로 바르게 쓰기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 26,
+      "uniqueAtDouble": 26,
+      "saturated": true,
+      "ceiling": 26
     }
   ]
 }

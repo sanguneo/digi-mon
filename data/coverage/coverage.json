@@ -2,15 +2,15 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 163
+    "generatorCount": 169
   },
   "totalStandards": 248,
-  "autoScorableStandards": 245,
-  "manualOnlyStandards": 3,
-  "coveredStandards": 132,
-  "uncoveredStandards": 113,
-  "standardsWithGenerator": 133,
-  "coverageRatio": 0.5388,
+  "autoScorableStandards": 234,
+  "manualOnlyStandards": 14,
+  "coveredStandards": 135,
+  "uncoveredStandards": 99,
+  "standardsWithGenerator": 136,
+  "coverageRatio": 0.5769,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -107,32 +107,42 @@
     },
     "english": {
       "subjectKorean": "영어",
-      "strategy": "asset-required",
-      "generatable": false,
-      "basis": "듣기·읽기 문항은 음성·지문 자산이 있어야 하고, 표현 문항의 정답은 하나로 정해지지 않는 경우가 많다.",
+      "strategy": "mixed",
+      "generatable": "partial",
+      "generatableDomains": [
+        "이해",
+        "표현"
+      ],
+      "generatableTopics": [
+        "알파벳 대소문자",
+        "알파벳 순서",
+        "문장 첫 글자 대문자",
+        "문장 부호"
+      ],
+      "basis": "문자 인식은 유니코드 계산으로 확정되어 자산이 필요 없다. 듣기·읽기 이해는 음성·지문 자산이 있어야 하고, 태도·음성 산출·창의 수행 기준 11개는 원리적으로 정답 대조가 안 되어 자동채점 분모에서 빠진다.",
       "blockedBy": [
         "학년군별 어휘·표현 목록 (2022 개정 별표 기준)",
         "듣기 문항용 음성 자산",
         "표현 문항의 허용 답안 범위 정의"
       ],
       "total": 40,
-      "autoScorable": 40,
-      "manualOnly": 0,
-      "covered": 0,
-      "generators": 0,
+      "autoScorable": 29,
+      "manualOnly": 11,
+      "covered": 3,
+      "generators": 6,
       "byDomain": {
         "이해": {
           "total": 20,
-          "autoScorable": 20,
-          "covered": 0
+          "autoScorable": 16,
+          "covered": 1
         },
         "표현": {
           "total": 20,
-          "autoScorable": 20,
-          "covered": 0
+          "autoScorable": 13,
+          "covered": 2
         }
       },
-      "coverageRatio": 0
+      "coverageRatio": 0.1034
     }
   },
   "covered": [
@@ -1752,6 +1762,45 @@
       "generatorIds": [
         "korean.g56.gr.s06.spacing"
       ]
+    },
+    {
+      "code": "[4영01-02]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "english.g34.lt.s01-02.match-case",
+        "english.g34.lt.s01-02.alphabet-order"
+      ]
+    },
+    {
+      "code": "[4영02-02]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "english.g34.lt.s02-02.write-case",
+        "english.g34.lt.s02-02.first-letter"
+      ]
+    },
+    {
+      "code": "[6영02-03]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "english.g56.lt.s02-03.end-mark",
+        "english.g56.lt.s02-03.fix-case"
+      ]
     }
   ],
   "uncovered": [
@@ -2496,16 +2545,6 @@
       "generatorIds": []
     },
     {
-      "code": "[4영01-02]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4영01-03]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -2556,50 +2595,10 @@
       "generatorIds": []
     },
     {
-      "code": "[4영01-08]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4영01-09]",
       "subject": "english",
       "gradeBand": "3-4",
       "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영01-10]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영02-01]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영02-02]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -2657,26 +2656,6 @@
     },
     {
       "code": "[4영02-08]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영02-09]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영02-10]",
       "subject": "english",
       "gradeBand": "3-4",
       "domain": "표현",
@@ -2756,16 +2735,6 @@
       "generatorIds": []
     },
     {
-      "code": "[6영01-08]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6영01-09]",
       "subject": "english",
       "gradeBand": "5-6",
@@ -2776,37 +2745,7 @@
       "generatorIds": []
     },
     {
-      "code": "[6영01-10]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-01]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6영02-02]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-03]",
       "subject": "english",
       "gradeBand": "5-6",
       "domain": "표현",
@@ -2854,36 +2793,6 @@
       "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
-    },
-    {
-      "code": "[6영02-08]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-09]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-10]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
     }
   ],
   "manualOnly": [
@@ -2919,6 +2828,127 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "매체 표현의 효과를 평가하는 기준이다. 평가는 근거가 여러 갈래로 갈려 정답 대조로 채점할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-08]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "다양한 매체의 담화를 흥미를 가지고 듣거나 읽는 태도 기준이다. 흥미는 정답으로 대조할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-10]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "문화 자료를 존중의 태도로 듣거나 읽는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-01]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "강세·리듬·억양에 맞게 따라 말하는 음성 산출 과제다. 발음은 사람이 듣고 판정한다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-09]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "매체와 전략을 활용해 창의적으로 의미를 표현하는 수행 과제다. 창의성은 정답이 하나가 아니다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영02-10]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "의사소통 활동에 흥미와 자신감을 가지고 예절을 지키며 참여하는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "담화나 글을 흥미와 자신감을 가지고 듣거나 읽는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-10]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "문화 자료를 포용의 태도로 듣거나 읽는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-01]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "강세·리듬·억양에 맞게 말하는 음성 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "예시문을 참고해 목적에 맞는 글을 쓰는 수행 과제다. 글은 정답 문자열로 채점할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-09]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "창의적으로 의미를 생성하고 표현하는 수행 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-10]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "의사소통 활동에 협력적으로 참여하는 태도 기준이다.",
       "generatorCount": 0,
       "generatorIds": []
     }
