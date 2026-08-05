@@ -124,7 +124,10 @@ export function buildCoverage(spine, registry) {
       module: std.module,
       scoringMode,
       ...(scoringMode === 'manual' ? { manualReason: MANUAL_SCORING[std.code].reason } : {}),
-      ...(scoringMode === 'partial' ? { partialNote: PARTIAL_SCORING[std.code] } : {}),
+      ...(scoringMode === 'partial' ? {
+        partialScored: PARTIAL_SCORING[std.code].scored,
+        partialNotScored: PARTIAL_SCORING[std.code].notScored,
+      } : {}),
       generatorCount: gens.length,
       generatorIds: gens.map((g) => g.id),
     };

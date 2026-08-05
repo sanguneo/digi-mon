@@ -5,12 +5,12 @@
     "generatorCount": 170
   },
   "totalStandards": 248,
-  "autoScorableStandards": 196,
-  "manualOnlyStandards": 52,
+  "autoScorableStandards": 198,
+  "manualOnlyStandards": 50,
   "coveredStandards": 136,
-  "uncoveredStandards": 60,
+  "uncoveredStandards": 62,
   "standardsWithGenerator": 137,
-  "coverageRatio": 0.6939,
+  "coverageRatio": 0.6869,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -67,8 +67,8 @@
         "문법 항목별 오답 유형 정의"
       ],
       "total": 87,
-      "autoScorable": 47,
-      "manualOnly": 40,
+      "autoScorable": 48,
+      "manualOnly": 39,
       "covered": 13,
       "generators": 17,
       "byDomain": {
@@ -84,7 +84,7 @@
         },
         "쓰기": {
           "total": 15,
-          "autoScorable": 5,
+          "autoScorable": 6,
           "covered": 1
         },
         "문법": {
@@ -103,7 +103,7 @@
           "covered": 0
         }
       },
-      "coverageRatio": 0.2766
+      "coverageRatio": 0.2708
     },
     "english": {
       "subjectKorean": "영어",
@@ -126,8 +126,8 @@
         "표현 문항의 허용 답안 범위 정의"
       ],
       "total": 40,
-      "autoScorable": 29,
-      "manualOnly": 11,
+      "autoScorable": 30,
+      "manualOnly": 10,
       "covered": 3,
       "generators": 6,
       "byDomain": {
@@ -138,11 +138,11 @@
         },
         "표현": {
           "total": 20,
-          "autoScorable": 13,
+          "autoScorable": 14,
           "covered": 2
         }
       },
-      "coverageRatio": 0.1034
+      "coverageRatio": 0.1
     }
   },
   "covered": [
@@ -313,7 +313,8 @@
       "domain": "변화와 관계",
       "module": "규칙 찾기",
       "scoringMode": "partial",
-      "partialNote": "주어진 규칙의 다음 항을 찾는 부분만 자동 채점한다. 자신이 규칙을 정해 배열하는 활동은 사람이 본다.",
+      "partialScored": "주어진 규칙의 다음 항을 찾는 문항",
+      "partialNotScored": "자신이 규칙을 정해 배열하는 활동",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.pd.s02.continue"
@@ -339,7 +340,8 @@
       "domain": "도형과 측정",
       "module": "입체도형의 모양",
       "scoringMode": "partial",
-      "partialNote": "쌓기나무 개수·위치 파악만 자동 채점한다. 직접 쌓아 만들고 설명하는 활동은 사람이 본다.",
+      "partialScored": "쌓기나무의 개수와 위치를 묻는 문항",
+      "partialNotScored": "직접 쌓아 만들고 그 모양을 설명하는 활동",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.sc.s02.count-cubes"
@@ -474,7 +476,8 @@
       "domain": "자료와 가능성",
       "module": "자료의 정리",
       "scoringMode": "partial",
-      "partialNote": "정해진 기준으로 분류해 개수를 세는 부분만 자동 채점한다. 자신이 기준을 정하는 활동은 사람이 본다.",
+      "partialScored": "정해진 기준으로 분류해 개수를 세는 문항",
+      "partialNotScored": "자신이 분류 기준을 정하는 활동",
       "generatorCount": 1,
       "generatorIds": [
         "math.g12.pd.s04-01.count"
@@ -1942,7 +1945,21 @@
       "gradeBand": "3-4",
       "domain": "쓰기",
       "module": null,
-      "scoringMode": "auto",
+      "scoringMode": "partial",
+      "partialScored": "주어진 문단에서 중심 문장과 뒷받침 문장을 가려내는 문항",
+      "partialNotScored": "문단을 직접 쓰는 활동",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "주어진 글에서 의견과 그 이유를 가려내는 문항",
+      "partialNotScored": "의견을 담은 글을 직접 쓰는 활동",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2092,7 +2109,9 @@
       "gradeBand": "5-6",
       "domain": "쓰기",
       "module": null,
-      "scoringMode": "auto",
+      "scoringMode": "partial",
+      "partialScored": "맞춤법·띄어쓰기가 틀린 문장을 바르게 고치는 문항",
+      "partialNotScored": "글 전체의 흐름을 고쳐 쓰는 활동",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2415,6 +2434,18 @@
       "scoringMode": "auto",
       "generatorCount": 0,
       "generatorIds": []
+    },
+    {
+      "code": "[6영02-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "예시문의 빈칸을 채워 목적에 맞는 문장을 완성하는 문항",
+      "partialNotScored": "글을 직접 구성해 쓰는 활동",
+      "generatorCount": 0,
+      "generatorIds": []
     }
   ],
   "manualOnly": [
@@ -2648,17 +2679,6 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "절차와 결과가 드러나는 보고 글쓰기 산출 과제다.",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국03-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "manual",
-      "manualReason": "의견과 이유가 드러나는 글쓰기 산출 과제다.",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2956,17 +2976,6 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "강세·리듬·억양에 맞게 말하는 음성 산출 과제다.",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-08]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "manual",
-      "manualReason": "예시문을 참고해 목적에 맞는 글을 쓰는 수행 과제다. 글은 정답 문자열로 채점할 수 없다.",
       "generatorCount": 0,
       "generatorIds": []
     },
