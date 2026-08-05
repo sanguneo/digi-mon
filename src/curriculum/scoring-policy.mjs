@@ -107,11 +107,6 @@ export const MANUAL_SCORING = {
     kind: 'open-production',
     hasGenerator: false,
   },
-  '[4국03-02]': {
-    reason: '절차와 결과가 드러나는 보고 글쓰기 산출 과제다.',
-    kind: 'open-production',
-    hasGenerator: false,
-  },
   '[4국03-04]': {
     reason: '마음을 전하는 글쓰기 산출 과제다.',
     kind: 'open-production',
@@ -368,6 +363,11 @@ export const PARTIAL_SCORING = {
   '[4국03-01]': {
     scored: '주어진 문단에서 중심 문장과 뒷받침 문장을 가려내는 문항',
     notScored: '문단을 직접 쓰는 활동',
+  },
+  '[4국03-02]': {
+    // ordering 형식이 이미 있으므로 절차 배열은 문자열로 대조된다.
+    scored: '주어진 절차를 순서대로 배열하는 문항',
+    notScored: '절차와 결과가 드러나는 글을 직접 쓰는 활동',
   },
   '[4국03-03]': {
     scored: '주어진 글에서 의견과 그 이유를 가려내는 문항',

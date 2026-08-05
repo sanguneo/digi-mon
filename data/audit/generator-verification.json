@@ -8,7 +8,7 @@
   "coverage": {
     "totalStandards": 248,
     "coveredStandards": 139,
-    "coverageRatio": 0.702,
+    "coverageRatio": 0.6985,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -65,8 +65,8 @@
           "문법 항목별 오답 유형 정의"
         ],
         "total": 87,
-        "autoScorable": 48,
-        "manualOnly": 39,
+        "autoScorable": 49,
+        "manualOnly": 38,
         "covered": 16,
         "generators": 22,
         "byDomain": {
@@ -82,7 +82,7 @@
           },
           "쓰기": {
             "total": 15,
-            "autoScorable": 6,
+            "autoScorable": 7,
             "covered": 1
           },
           "문법": {
@@ -101,7 +101,7 @@
             "covered": 0
           }
         },
-        "coverageRatio": 0.3333
+        "coverageRatio": 0.3265
       },
       "english": {
         "subjectKorean": "영어",
