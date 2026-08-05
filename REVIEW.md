@@ -328,7 +328,9 @@ tools/            게이트 9종 (check-boundaries · mutation-test · check-kor
                   · check-vocabulary · check-difficulty · check-capacity · check-trim
                   · check-review-doc)
                   + 검증 도구 3종 (sample-items · figure-gallery · shot)
+                  + export-review-tables (전문가 검토용 표 생성)
 data/             spine · curriculum · coverage · audit (모두 생성물, 커밋됨)
+docs/review/      전문가 검토용 표 (생성물). prerequisites.md · english.md
 ```
 
 `data/*.json`은 전부 `schema` 필드를 갖는다. 게이트가 생성하며 손으로 고치지 않는다.
@@ -354,6 +356,9 @@ data/             spine · curriculum · coverage · audit (모두 생성물, �
 
 "말하거나 쓰는"이 섞인 기준은 음성 산출과 개방 산출이 함께 있어 판정이 갈린다.
 
+**판정표: [`docs/review/english.md`](docs/review/english.md)** — 40개 전체의 성취기준 내용과
+현재 분류가 표로 있다. 판정 대상 26개가 표시돼 있다. 저장소를 파지 않고 표만 보면 된다.
+
 ### B. 국어 재분류 38개가 옳은가, 과했는가
 
 `disposition` 11 · `open-production` 13 · `speech-interaction` 14로 나눴다.
@@ -375,6 +380,10 @@ data/             spine · curriculum · coverage · audit (모두 생성물, �
 
 교육과정상 틀린 간선이 있는가? 특히 영역을 넘는 51개. 예: `[6수03-15]` 원주가
 `[4수03-07]` 반지름·지름 관계와 `[6수01-14]` 소수의 곱셈을 함께 선수로 둔다.
+
+**검토표: [`docs/review/prerequisites.md`](docs/review/prerequisites.md)** — 간선 154개를
+학습 순서로 정렬하고 양끝 기준의 소주제·학년군을 붙였다. `넘김` 열이 영역·학년군을 넘는
+간선을 표시한다. 선수가 깊은 기준과 후속을 많이 막는 기준도 따로 냈다.
 
 ### E. 난이도 축 배정
 
@@ -456,11 +465,18 @@ data/             spine · curriculum · coverage · audit (모두 생성물, �
 같은 감사에서 쓰이지 않는 export 16개, 자기 파일 안에서만 쓰이는 export 20개를 찾았다.
 `SENTENCE_LEVEL_CANDIDATES`(§12-C의 근거 데이터)도 아직 어떤 산출물에도 실려 나가지 않는다.
 
-### 전문가 검토용 산출물이 없다
+### 전문가 검토용 산출물 — 해소함
 
-§12-D에서 선수 관계 154개 간선의 검토를 요청하지만, 지금은 `prerequisites.mjs` 코드로만 있다.
-**"간선 + 양끝 기준의 한 줄 요약 + 학년군" 표로 내보내야** 교과 전문가가 읽을 수 있다.
-검토 요청을 문서에 적는 것과 검토 가능한 산출물을 주는 것은 다르다.
+1차 검토에서 "검토 요청을 문서에 적는 것과 검토 가능한 산출물을 주는 것은 다르다"는 지적을
+받았다. `tools/export-review-tables.mjs`가 두 표를 낸다.
+
+- [`docs/review/prerequisites.md`](docs/review/prerequisites.md) — 간선 154개. 학습 순서 정렬,
+  양끝 기준의 소주제·학년군, 영역·학년군 넘김 표시. 선수 최대 28개인 기준과 후속을 5개 막는
+  병목 두 개도 따로 냈다.
+- [`docs/review/english.md`](docs/review/english.md) — 영어 40개. 성취기준 내용과 현재 분류,
+  판정 대상 26개 표시.
+
+게이트가 생성하며 손으로 고치지 않는다. 남은 것은 이 표를 사람 전문가에게 실제로 돌리는 일이다.
 
 ### 자산이 필요해서 막힌 것
 
@@ -507,6 +523,7 @@ PDF·인쇄 레이아웃·DOM·브라우저 렌더. `check-boundaries`가 `src/`
 | 후속 실행 | 국어 73개 전수 재분류, 문장/지문 자산 구분, `[2국03-01]` 맞춤법 생성기 | 국어 12/85 → 13/47. 전체 57.7% → **69.4%** |
 | 2차 (외부) | 문서 재작성판 검토 | **`check-review-doc`의 구멍 1건 발견** — 체인 등록을 검사하지 않아 게이트를 지워도 통과 |
 | 2차 수리 (저작자) | 구멍을 실험으로 재현하고 체인 등록·총수 대조 추가 | 게이트를 지운 상태에서 exit 1 확인. 미등록 0 |
+| 넘기기 전 정비 | 최우선 질문 두 개(§12-A·D)의 검토 자료를 표로 내보냄 | `docs/review/` 2표. 저장소를 파지 않고 판정 가능 |
 | 2차 (외부) | 12게이트 재실행 + 신규 주장 실물 대조(`check-review-doc` 소스 · `response-log` 미배선 · `nonWords` · `PARTIAL_SCORING` 3건 · `SENTENCE_LEVEL_CANDIDATES` · tools 구성) | exit 0 재현, 수치 오류 0건. **구조적 허점 1건** — `check-review-doc`가 게이트 **파일 수**만 세고 **체인 등록**은 검사하지 않는다. §13의 미등록 사고(파일은 있는데 `verify`에 없음)가 지금도 이 게이트를 통과한다 |
 
 **2차에서 남긴 것:** **2차 검토 지적 — 수리 완료.** `check-review-doc`가 `tools/`의 파일 수만 세고
@@ -528,6 +545,15 @@ PDF·인쇄 레이아웃·DOM·브라우저 렌더. `check-boundaries`가 `src/`
 않았다. 검토 요청 범위 밖의 수치가 낡아 있을 수 있다. 그래서 12번 게이트
 (`check-review-doc`)를 만들어 문서 수치·게이트 수 주장까지 기계로 대조한다.
 §16을 붙인 직후 §2의 13개 수치가 동시에 낡았고 그 게이트가 잡았다.
+
+**넘기기 전에 정비한 것.** §12-A(영어 26개 재분류)와 §12-D(선수 154간선)는 판정 자료가
+코드와 391KB JSON 안에만 있어, 그대로 넘기면 검토가 얕게 나올 수밖에 없었다.
+`tools/export-review-tables.mjs`가 두 표를 내고 `verify` 체인에 들어가 낡지 않는다.
+
+그 등록 과정에서 **방금 만든 검사기가 바로 잡았다.** 표 생성 스크립트를 체인에 넣자
+"체인에 있지만 게이트로 인식되지 않는 항목"으로 지목하고 총수 주장이 어긋났다고 실패했다.
+산출물 생성기는 실패할 수 없으니 게이트가 아니다. 체인 단계 수와 게이트 수를 나눠 세도록
+고쳤다(현재 13단계 = 게이트 12 + 산출물 생성 1). 게이트를 지우는 실험을 다시 해도 여전히 잡는다.
 
 **분모가 줄어든 것은 진척이 아니다.** 국어 재분류로 커버리지가 57.7%에서 69.4%로 올랐지만
 이는 **분모가 틀려 있었다**는 뜻이다. 자산 투자로 채울 수 있는 국어 기준이 73개가 아니라

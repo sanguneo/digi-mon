@@ -84,8 +84,16 @@ const toolGates = toolFiles
 const binGates = ['bin/build-spine.mjs', 'bin/audit-ontology.mjs', 'bin/verify-generators.mjs'];
 const allGates = [...binGates, ...toolGates];
 
+/**
+ * 체인에 있지만 게이트가 아닌 항목.
+ * 산출물을 만드는 스크립트는 실패할 수 없으므로 게이트가 아니다. 게이트로 세면
+ * 문서의 '열두 게이트' 총수가 어긋난다.
+ */
+const chainNonGates = ['tools/export-review-tables.mjs'];
+
 const notInChain = allGates.filter((g) => !chain.includes(g));
-const extraInChain = chain.filter((c) => !allGates.includes(c));
+const extraInChain = chain.filter((c) => !allGates.includes(c) && !chainNonGates.includes(c));
+const gateChain = chain.filter((c) => allGates.includes(c));
 
 // tools/ 게이트 수 주장 (파일 지도 §11)
 const gateClaim = `게이트 ${toolGates.length}종`;
@@ -95,14 +103,14 @@ const gateStale = !doc.includes(gateClaim);
 const COUNT_WORDS = {
   9: '아홉', 10: '열', 11: '열한', 12: '열두', 13: '열세', 14: '열네', 15: '열다섯',
 };
-const totalWord = COUNT_WORDS[chain.length];
+const totalWord = COUNT_WORDS[gateChain.length];
 const totalClaim = totalWord ? `${totalWord} 게이트` : null;
 const totalStale = totalClaim === null || !doc.includes(totalClaim);
 
 console.log(`REVIEW.md 대조: 필수 문자열 ${expected.length - missing.length}/${expected.length} 일치`);
 console.log(`0이어야 하는 값: ${mustBeZero.length - nonZero.length}/${mustBeZero.length} 정상`);
 console.log(`tools/ 게이트 수 주장(${gateClaim}): ${gateStale ? '문서에 없음' : '일치'}`);
-console.log(`verify 체인: ${chain.length}개 · 게이트 파일 ${allGates.length}개 · 미등록 ${notInChain.length}개`);
+console.log(`verify 체인 ${chain.length}단계 (게이트 ${gateChain.length} + 산출물 생성 ${chain.length - gateChain.length}) · 게이트 파일 ${allGates.length}개 · 미등록 ${notInChain.length}개`);
 console.log(`문서 게이트 총수 주장(${totalClaim ?? '수사 없음'}): ${totalStale ? '불일치' : '일치'}`);
 
 if (missing.length > 0) {
@@ -123,7 +131,7 @@ if (extraInChain.length > 0) {
   for (const c of extraInChain) console.log(`  ${c}`);
 }
 if (totalStale) {
-  console.log(`\n문서의 게이트 총수 주장이 체인 길이(${chain.length})와 맞지 않는다.`);
+  console.log(`\n문서의 게이트 총수 주장이 체인 안 게이트 수(${gateChain.length})와 맞지 않는다.`);
   console.log(`  문서에 '${totalClaim ?? `${chain.length}개 게이트`}' 가 있어야 한다.`);
 }
 
