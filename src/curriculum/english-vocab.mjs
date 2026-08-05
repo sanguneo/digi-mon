@@ -66,9 +66,19 @@ export const SENTENCE_CASES = [
   { correct: 'Where is the library?', kind: 'question', rule: '묻는 문장 끝에 물음표를 쓴다' },
   { correct: 'Do you like music?', kind: 'question', rule: '묻는 문장 끝에 물음표를 쓴다' },
   { correct: 'Can you help me?', kind: 'question', rule: '묻는 문장 끝에 물음표를 쓴다' },
-  { correct: 'Look at the sun!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
-  { correct: 'What a nice day!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
-  { correct: 'Be careful!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
+  /**
+   * 감탄문만 느낌표가 확정된다.
+   *
+   * 처음에는 'Look at the sun!' 과 'Be careful!' 을 썼는데 둘 다 명령문이라
+   * 마침표도 옳다. 문장 부호 문항에서 정답이 둘이 되는 것을 4차 검토가 잡았다.
+   * What/How 로 시작하는 감탄문형만 쓴다. accepts 에 마침표를 더하는 방식은 쓰지
+   * 않는다 — kind 라벨과 rule 문구가 거짓이 된다.
+   *
+   * 낱말은 학년군 목록 안에서만 고른다(check-vocabulary 가 판정한다).
+   */
+  { correct: 'What a picture!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
+  { correct: 'What a garden!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
+  { correct: 'What a friend!', kind: 'exclamation', rule: '느낌을 나타내는 문장 끝에 느낌표를 쓴다' },
 ];
 
 /** 문장 끝 부호와 이름. */
