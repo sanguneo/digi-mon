@@ -36,8 +36,8 @@ const LINE_KINDS = {
 
 const identifyLine = {
   id: 'math.g34.gd.s01.identify-line',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 선분·직선만, 2 이상은 반직선까지 구별한다.',
   standardCode: '[4수03-01]',
   skill: '직선·선분·반직선 구별하기',
   format: 'multiple-choice',
@@ -232,8 +232,8 @@ const patternByTransform = {
 
 const circleParts = {
   id: 'math.g34.gd.s06.parts',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 원의 중심·반지름, 2 이상은 지름까지 구별한다.',
   standardCode: '[4수03-06]',
   skill: '원의 구성 요소 알기',
   format: 'multiple-choice',

@@ -365,8 +365,8 @@ const cuboidElements = {
   skill: '직육면체의 면·모서리·꼭짓점 수',
   format: 'short-answer',
   // 면 6, 모서리 12, 꼭짓점 8 은 고정값이다. 어려운 버전이 없다.
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 직육면체, 2 이상은 정육면체까지 묻는다.',
   generate(rng, { difficulty }) {
     const FACTS = [
       { part: '면', count: 6, basis: '직육면체는 직사각형 모양의 면 6개로 둘러싸여 있다.' },
@@ -1189,8 +1189,8 @@ const LIKELIHOOD_WORDS = ['불가능하다', '~아닐 것 같다', '반반이다
 
 const likelihoodWord = {
   id: 'math.g56.rm.s04-04.likelihood-word',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 확실함·불가능함, 2 이상은 반반·가능성이 낮음까지 구별한다.',
   standardCode: '[6수04-04]',
   skill: '일이 일어날 가능성을 말로 표현하기',
   format: 'multiple-choice',

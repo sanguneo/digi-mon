@@ -849,19 +849,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         }
       },
-      "uniqueTotal": 4,
+      "uniqueTotal": 8,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0033
+      "uniqueRatio": 0.0067
     },
     {
       "generatorId": "math.g12.gm.s07.read-clock",
@@ -2357,19 +2357,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 2,
+          "unique": 3,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 2,
+          "unique": 3,
           "failed": 0
         }
       },
-      "uniqueTotal": 2,
+      "uniqueTotal": 3,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0017
+      "uniqueRatio": 0.0025
     },
     {
       "generatorId": "math.g34.gd.s02.right-angle",
@@ -2487,19 +2487,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 2,
+          "unique": 3,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 2,
+          "unique": 3,
           "failed": 0
         }
       },
-      "uniqueTotal": 2,
+      "uniqueTotal": 3,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0017
+      "uniqueRatio": 0.0025
     },
     {
       "generatorId": "math.g34.gd.s07.radius-diameter",
@@ -3371,19 +3371,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 3,
+          "unique": 6,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 3,
+          "unique": 6,
           "failed": 0
         }
       },
-      "uniqueTotal": 3,
+      "uniqueTotal": 6,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0025
+      "uniqueRatio": 0.005
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
@@ -3891,19 +3891,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         }
       },
-      "uniqueTotal": 4,
+      "uniqueTotal": 8,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0033
+      "uniqueRatio": 0.0067
     },
     {
       "generatorId": "math.g56.rm.s04-05.likelihood-number",
@@ -3969,19 +3969,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 10,
+          "unique": 14,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 9,
+          "unique": 10,
           "failed": 0
         }
       },
-      "uniqueTotal": 24,
+      "uniqueTotal": 38,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.02
+      "uniqueRatio": 0.0317
     },
     {
       "generatorId": "korean.g12.gr.s01.count-letters",
@@ -3990,24 +3990,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 29,
+          "unique": 41,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 58,
+          "unique": 82,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 17,
+          "unique": 29,
           "failed": 0
         }
       },
-      "uniqueTotal": 76,
+      "uniqueTotal": 113,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0633
+      "uniqueRatio": 0.0942
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -4016,24 +4016,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 36,
+          "unique": 49,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 36,
+          "unique": 49,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 36,
+          "unique": 49,
           "failed": 0
         }
       },
-      "uniqueTotal": 36,
+      "uniqueTotal": 49,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.03
+      "uniqueRatio": 0.0408
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -4042,24 +4042,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 75,
+          "unique": 109,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 76,
+          "unique": 112,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 75,
+          "unique": 109,
           "failed": 0
         }
       },
-      "uniqueTotal": 76,
+      "uniqueTotal": 113,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0633
+      "uniqueRatio": 0.0942
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -4120,24 +4120,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 20,
+          "unique": 40,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 84,
+          "unique": 114,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 82,
+          "unique": 120,
           "failed": 0
         }
       },
-      "uniqueTotal": 95,
+      "uniqueTotal": 139,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0792
+      "uniqueRatio": 0.1158
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-order",
@@ -4146,7 +4146,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 399,
+          "unique": 400,
           "failed": 0
         },
         "2": {
@@ -4156,14 +4156,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 350,
+          "unique": 236,
           "failed": 0
         }
       },
-      "uniqueTotal": 1149,
+      "uniqueTotal": 1036,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9575
+      "uniqueRatio": 0.8633
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-first",
@@ -4198,24 +4198,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 12,
+          "unique": 32,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 12,
+          "unique": 32,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 12,
+          "unique": 32,
           "failed": 0
         }
       },
-      "uniqueTotal": 36,
+      "uniqueTotal": 96,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.03
+      "uniqueRatio": 0.08
     },
     {
       "generatorId": "korean.g34.gr.s04.honorific",
@@ -4224,24 +4224,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 6,
+          "unique": 14,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 6,
+          "unique": 14,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 16,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 16,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.0133
     },
     {
       "generatorId": "korean.g56.gr.s02.standard-word",
@@ -4250,24 +4250,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 8,
+          "unique": 24,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 24,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 24,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 24,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.02
     },
     {
       "generatorId": "korean.g56.gr.s03.idiom",
@@ -4276,7 +4276,59 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 6,
+          "unique": 20,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 40,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 40,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0333
+    },
+    {
+      "generatorId": "korean.g56.gr.s04.agreement",
+      "code": "[6국04-04]",
+      "skill": "호응 관계가 바른 문장 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 14,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 27,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0225
+    },
+    {
+      "generatorId": "korean.g56.gr.s05.tense",
+      "code": "[6국04-05]",
+      "skill": "시간 표현에 맞는 서술어 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 12,
           "failed": 0
         },
         "2": {
@@ -4296,58 +4348,6 @@
       "uniqueRatio": 0.01
     },
     {
-      "generatorId": "korean.g56.gr.s04.agreement",
-      "code": "[6국04-04]",
-      "skill": "호응 관계가 바른 문장 고르기",
-      "byDifficulty": {
-        "1": {
-          "generated": 400,
-          "unique": 5,
-          "failed": 0
-        },
-        "2": {
-          "generated": 400,
-          "unique": 5,
-          "failed": 0
-        },
-        "3": {
-          "generated": 400,
-          "unique": 5,
-          "failed": 0
-        }
-      },
-      "uniqueTotal": 5,
-      "generated": 1200,
-      "failed": 0,
-      "uniqueRatio": 0.0042
-    },
-    {
-      "generatorId": "korean.g56.gr.s05.tense",
-      "code": "[6국04-05]",
-      "skill": "시간 표현에 맞는 서술어 고르기",
-      "byDifficulty": {
-        "1": {
-          "generated": 400,
-          "unique": 4,
-          "failed": 0
-        },
-        "2": {
-          "generated": 400,
-          "unique": 4,
-          "failed": 0
-        },
-        "3": {
-          "generated": 400,
-          "unique": 4,
-          "failed": 0
-        }
-      },
-      "uniqueTotal": 4,
-      "generated": 1200,
-      "failed": 0,
-      "uniqueRatio": 0.0033
-    },
-    {
       "generatorId": "korean.g56.gr.s06.spacing",
       "code": "[6국04-06]",
       "skill": "띄어쓰기가 바른 문장 고르기",
@@ -4359,19 +4359,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 5,
+          "unique": 10,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 5,
+          "unique": 14,
           "failed": 0
         }
       },
-      "uniqueTotal": 5,
+      "uniqueTotal": 29,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0042
+      "uniqueRatio": 0.0242
     }
   ],
   "errors": []

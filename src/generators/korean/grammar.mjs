@@ -79,8 +79,8 @@ const letterName = {
     const pool = difficulty === 1
       ? BASIC_CONSONANTS
       : difficulty === 2
-        ? BASIC_VOWELS
-        : ['ㄱ', 'ㄷ', 'ㅅ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+        ? [...BASIC_VOWELS, 'ㅐ', 'ㅔ', 'ㅚ', 'ㅟ']
+        : ['ㄲ', 'ㄸ', 'ㅃ', 'ㅆ', 'ㅉ', 'ㅘ', 'ㅙ', 'ㅝ', 'ㅞ', 'ㅢ'];
     const letter = rng.pick(pool);
     const correct = LETTER_NAMES[letter];
     const wrong = rng.shuffle(pool.filter((l) => l !== letter)).slice(0, 3).map((l) => LETTER_NAMES[l]);
@@ -374,7 +374,9 @@ const dictionaryOrder = {
       solution: [
         '국어사전은 첫 자음, 모음, 받침 순서로 낱말을 싣는다.',
         `${sorted[0]}${josaI(sorted[0])} ${sorted[1]}보다 앞에 오는 까닭은 ${diff.position}번째 글자의 ${PART_NAMES[diff.part]}이 앞서기 때문이다.`,
-        `순서대로 쓰면 ${display}이다.`,
+        // 목록 끝에 서술격 조사를 붙이면 '나이'+'이다' 가 '나이이다' 가 된다.
+        // 낱말이 무엇으로 끝나든 읽히게 문장 구조를 바꾼다.
+        `순서대로 쓰면 ${display} 순서다.`,
       ],
       dedupeKey: `dict-order:${sorted.join('-')}`,
       difficulty,
@@ -529,8 +531,8 @@ const honorificExpression = {
 
 const standardWord = {
   id: 'korean.g56.gr.s02.standard-word',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 방언에서 표준어를 찾고, 2 이상은 표준어에서 지역 방언을 거꾸로 찾는다.',
   standardCode: '[6국04-02]',
   skill: '표준어와 방언 구별하기',
   format: 'multiple-choice',
@@ -620,17 +622,29 @@ const AGREEMENT_CASES = [
   { wrong: '나는 결코 그 일을 했다', right: '나는 결코 그 일을 하지 않았다', rule: "'결코'는 부정하는 말과 어울린다" },
   { wrong: '나는 별로 좋아한다', right: '나는 별로 좋아하지 않는다', rule: "'별로'는 부정하는 말과 어울린다" },
   { wrong: '왜냐하면 비가 왔다', right: '왜냐하면 비가 왔기 때문이다', rule: "'왜냐하면'은 '때문이다'와 짝을 이룬다" },
+  { wrong: '나는 절대 그렇게 하겠다', right: '나는 절대 그렇게 하지 않겠다', rule: "'절대'는 부정하는 말과 어울린다" },
+  { wrong: '비록 늦었으니 끝까지 하겠다', right: '비록 늦었지만 끝까지 하겠다', rule: "'비록'은 '-지만'과 짝을 이룬다" },
+  { wrong: '만약 비가 오면 좋겠다', right: '만약 비가 온다면 좋겠다', rule: "'만약'은 '-다면'과 짝을 이룬다" },
+  { wrong: '전혀 문제가 있다', right: '전혀 문제가 없다', rule: "'전혀'는 부정하는 말과 어울린다" },
+  { wrong: '아마 내일은 맑다', right: '아마 내일은 맑을 것이다', rule: "'아마'는 추측하는 말과 어울린다" },
+  { wrong: '반드시 약속을 지키지 않겠다', right: '반드시 약속을 지키겠다', rule: "'반드시'는 긍정하는 말과 어울린다" },
+  { wrong: '차라리 걸어가지 않겠다', right: '차라리 걸어가겠다', rule: "'차라리'는 선택하는 말과 어울린다" },
+  { wrong: '결국 답을 찾지 못했지만 기뻤다', right: '결국 답을 찾아서 기뻤다', rule: '앞뒤 내용이 서로 이어져야 한다' },
+  { wrong: '설마 그 말이 사실이다', right: '설마 그 말이 사실일까', rule: "'설마'는 의심하는 말과 어울린다" },
 ];
 
 const agreementFix = {
   id: 'korean.g56.gr.s04.agreement',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 시간 호응, 2는 부정 호응(결코·별로·전혀), 3은 접속 호응(왜냐하면·비록·만약)까지 다룬다.',
   standardCode: '[6국04-04]',
   skill: '호응 관계가 바른 문장 고르기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
-    const spec = rng.pick(AGREEMENT_CASES);
+    // 난이도가 오를수록 뒤쪽 사례(부정 호응 -> 접속 호응)까지 넓힌다.
+    const upTo = difficulty === 1 ? 4 : difficulty === 2 ? 9 : AGREEMENT_CASES.length;
+    const pool = AGREEMENT_CASES.slice(0, upTo);
+    const spec = rng.pick(pool);
     const others = rng.shuffle(AGREEMENT_CASES.filter((c) => c.right !== spec.right)).slice(0, 3);
     return {
       params: { right: spec.right },
@@ -639,7 +653,7 @@ const agreementFix = {
       choices: buildChoices(rng, `${spec.right}.`, [`${spec.wrong}.`, ...others.map((c) => `${c.wrong}.`)].slice(0, 3)),
       answer: { value: `${spec.right}.`, display: `${spec.right}.`, accepts: [`${spec.right}.`, spec.right] },
       solution: [spec.rule, `바른 문장은 '${spec.right}.'이다.`],
-      dedupeKey: `agreement:${spec.right}`,
+      dedupeKey: `agreement:${spec.right}:${difficulty}`,
       difficulty,
     };
   },
@@ -700,17 +714,29 @@ const SPACING_CASES = [
   { wrong: '한 번더 해 봅시다', right: '한 번 더 해 봅시다', rule: '단위를 나타내는 말은 앞말과 띄어 쓴다' },
   { wrong: '사과세개를 샀습니다', right: '사과 세 개를 샀습니다', rule: '수를 나타내는 말과 단위는 띄어 쓴다' },
   { wrong: '함께가면 좋겠습니다', right: '함께 가면 좋겠습니다', rule: '단어 사이는 띄어 쓴다' },
+  { wrong: '연필 이 없습니다', right: '연필이 없습니다', rule: '조사는 앞말에 붙여 쓴다' },
+  { wrong: '나무한그루를 심었습니다', right: '나무 한 그루를 심었습니다', rule: '수를 나타내는 말과 단위는 띄어 쓴다' },
+  { wrong: '먹을것을 챙겼습니다', right: '먹을 것을 챙겼습니다', rule: "'것'은 앞말과 띄어 쓰는 의존 명사다" },
+  { wrong: '할수있습니다', right: '할 수 있습니다', rule: "'수'는 앞말과 띄어 쓰는 의존 명사다" },
+  { wrong: '동생 과 놀았습니다', right: '동생과 놀았습니다', rule: '조사는 앞말에 붙여 쓴다' },
+  { wrong: '두시간동안 기다렸습니다', right: '두 시간 동안 기다렸습니다', rule: '수와 단위, 의존 명사는 띄어 쓴다' },
+  { wrong: '아는 것이많습니다', right: '아는 것이 많습니다', rule: '조사 뒤에서 다음 단어와 띄어 쓴다' },
+  { wrong: '오늘은날씨가 좋습니다', right: '오늘은 날씨가 좋습니다', rule: '단어 사이는 띄어 쓴다' },
+  { wrong: '한 개 씩 나누었습니다', right: '한 개씩 나누었습니다', rule: "'씩'은 앞말에 붙여 쓴다" },
 ];
 
 const spacingFix = {
   id: 'korean.g56.gr.s06.spacing',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 조사 붙여쓰기, 2는 수와 단위 띄어쓰기, 3은 의존 명사(것·수·동안) 띄어쓰기를 다룬다.',
   standardCode: '[6국04-06]',
   skill: '띄어쓰기가 바른 문장 고르기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
-    const spec = rng.pick(SPACING_CASES);
+    // 난이도가 오를수록 뒤쪽 사례(의존 명사 띄어쓰기)까지 넓힌다.
+    const upTo = difficulty === 1 ? 5 : difficulty === 2 ? 10 : SPACING_CASES.length;
+    const pool = SPACING_CASES.slice(0, upTo);
+    const spec = rng.pick(pool);
     const others = rng.shuffle(SPACING_CASES.filter((c) => c.right !== spec.right)).slice(0, 3);
     return {
       params: { right: spec.right },
@@ -719,7 +745,7 @@ const spacingFix = {
       choices: buildChoices(rng, `${spec.right}.`, [`${spec.wrong}.`, ...others.map((c) => `${c.wrong}.`)].slice(0, 3)),
       answer: { value: `${spec.right}.`, display: `${spec.right}.`, accepts: [`${spec.right}.`, spec.right] },
       solution: [spec.rule, `바르게 띄어 쓰면 '${spec.right}.'이다.`],
-      dedupeKey: `spacing:${spec.right}`,
+      dedupeKey: `spacing:${spec.right}:${difficulty}`,
       difficulty,
     };
   },

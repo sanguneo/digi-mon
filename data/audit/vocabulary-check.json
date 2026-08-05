@@ -3,13 +3,13 @@
   "note": "어휘 목록은 이 저장소가 시드한 것이고 공식 목록이 아니다. 교과 전문가 검토 대상이다.",
   "samplesPerGenerator": 60,
   "koreanItemsChecked": 960,
-  "wordsChecked": 2008,
+  "wordsChecked": 1930,
   "violationCount": 0,
   "uniqueViolations": 0,
   "violations": [],
   "vocabularySize": {
-    "1-2": 78,
-    "3-4": 175,
-    "5-6": 236
+    "1-2": 118,
+    "3-4": 306,
+    "5-6": 452
   }
 }

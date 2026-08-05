@@ -43,6 +43,43 @@ const spine = buildSpine(loadOntology());
 const registry = createRegistry();
 const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
 
+/**
+ * single 축으로 선언한 생성기가 실제로 난이도와 무관한지 런타임으로 확인한다.
+ *
+ * 난이도 구분이 없다고 선언하면 generateItem 이 요청을 난이도 1로 잠근다.
+ * 그런데 코드가 난이도 1에서만 후보를 좁혀 놓았으면 나머지 후보가 영원히
+ * 나오지 않는다. 실제로 identify-line 이 세 종류 중 두 종류만 내게 되었다.
+ *
+ * 처음에는 소스에서 'difficulty ===' 를 찾는 정적 검사로 만들었는데, 생성기를
+ * 팩토리 함수로 만드는 파일에서 블록 경계를 잘못 잡아 선언하지도 않은 생성기를
+ * 위반으로 보고했다. 옳은 코드를 위반이라 부르는 게이트는 꺼지게 된다.
+ * 그래서 같은 시드로 난이도만 바꿔 직접 호출하고 결과가 갈리는지 본다.
+ */
+function findSingleAxisVariance(generator, standard) {
+  const keysAt = (difficulty) => {
+    const keys = new Set();
+    for (let n = 0; n < 60; n += 1) {
+      try {
+        // generateItem 의 잠금을 지나 생성기를 직접 부른다.
+        // 선언이 사실인지 보려면 잠금 이전의 행동을 봐야 한다.
+        keys.add(generator.generate(createRng(`${generator.id}|sv|${n}`), { difficulty, standard }).dedupeKey);
+      } catch {
+        // 생성 실패는 verify-generators 가 잡는다.
+      }
+    }
+    return keys;
+  };
+
+  const base = keysAt(1);
+  const varied = [];
+  for (const difficulty of [2, 3]) {
+    for (const key of keysAt(difficulty)) {
+      if (!base.has(key)) varied.push({ difficulty, key });
+    }
+  }
+  return varied;
+}
+
 const rows = [];
 const skipped = { single: [], categorical: [] };
 
@@ -55,7 +92,12 @@ for (const g of registry.all()) {
   //   categorical  범주로 갈린다고 선언하고 무엇이 달라지는지 difficultyNote 에 적었다.
   // 계산 크기로 재는 이 지표는 numeric 축만 판정할 수 있다.
   if (axis !== 'numeric') {
-    skipped[axis].push({ generatorId: g.id, code: g.standardCode, note: g.difficultyNote ?? null });
+    const entry = { generatorId: g.id, code: g.standardCode, note: g.difficultyNote ?? null };
+    if (axis === 'single') {
+      const varied = findSingleAxisVariance(g, standard);
+      if (varied.length > 0) entry.variesByDifficulty = varied.slice(0, 3);
+    }
+    skipped[axis].push(entry);
     continue;
   }
 
@@ -101,6 +143,7 @@ for (const g of registry.all()) {
 }
 
 const flat = rows.filter((r) => !r.meaningful);
+const singleBranching = skipped.single.filter((s) => s.variesByDifficulty);
 
 writeJson(path.join(REPO_ROOT, 'data', 'audit', 'difficulty-check.json'), {
   schema: 'digi-mon/difficulty-check@1',
@@ -110,6 +153,7 @@ writeJson(path.join(REPO_ROOT, 'data', 'audit', 'difficulty-check.json'), {
   flatCount: flat.length,
   declaredSingle: skipped.single,
   declaredCategorical: skipped.categorical,
+  singleAxisVariance: singleBranching,
   rows,
 });
 
@@ -117,6 +161,18 @@ console.log(`난이도 지표 검사: numeric 축 ${rows.length}개 (난이도�
 console.log(`난이도 구분 없음(single) 선언: ${skipped.single.length}개`);
 console.log(`범주형(categorical) 선언: ${skipped.categorical.length}개 — 무엇이 달라지는지 difficultyNote 에 적혀 있다`);
 console.log(`난이도가 올라도 계산 크기가 움직이지 않는 numeric 생성기: ${flat.length}개`);
+console.log(`single 선언인데 난이도로 결과가 갈리는 생성기: ${singleBranching.length}개`);
+
+if (singleBranching.length > 0) {
+  console.log('');
+  console.log('계약 위반 — 난이도가 없다고 선언했으면 난이도로 분기하면 안 된다:');
+  console.log('(난이도 1에서만 후보를 좁혀 두면 나머지 후보가 영원히 나오지 않는다)');
+  for (const o of singleBranching) {
+    console.log(`  ${o.generatorId}  ${o.code}`);
+    for (const v of o.variesByDifficulty) console.log(`    난이도 ${v.difficulty} 에서만 나오는 문항: ${v.key}`);
+  }
+  process.exitCode = 1;
+}
 
 if (flat.length > 0) {
   console.log('');

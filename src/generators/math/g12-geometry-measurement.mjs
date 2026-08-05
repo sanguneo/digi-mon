@@ -81,8 +81,8 @@ const identifyPolygon = {
 
 const countSides = {
   id: 'math.g12.gm.s05.count-sides',
-  difficultyAxis: 'single',
-  difficulties: [1],
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 삼각형·사각형, 2 이상은 오각형·육각형까지 센다.',
   standardCode: CODE(5),
   skill: '다각형의 변과 꼭짓점 수 세기',
   format: 'short-answer',
