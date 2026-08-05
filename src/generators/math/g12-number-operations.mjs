@@ -20,6 +20,7 @@ import {
   numI,
   parseSinoKorean,
   placeDecompose,
+  numRo,
   sinoKorean,
 } from '../../engine/korean-number.mjs';
 
@@ -380,7 +381,7 @@ const decomposeNumber = {
       instruction: '□에 알맞은 수를 써넣으시오.',
       stem: hideRight
         ? `${numEun(total)} ${numGwa(left)} □로 가를 수 있습니다.`
-        : `${numEun(total)} □와 ${right}로 가를 수 있습니다.`,
+        : `${numEun(total)} □와 ${numRo(right)} 가를 수 있습니다.`,
       answer: { value: hidden, display: num(hidden), accepts: [num(hidden)] },
       solution: [`${total}에서 ${numEul(known)} 덜어 낸다.`, `${total} - ${known} = ${hidden}`],
       dedupeKey: `decompose-number:${total}:${left}:${hideRight ? 'r' : 'l'}`,

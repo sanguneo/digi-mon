@@ -5,7 +5,7 @@
  * 소수의 곱셈·나눗셈은 자리수가 늘어나므로 고정소수점 정수 연산이 특히 중요하다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { fracEul, josaEul, josaEun, josaI, numEun, numEul, numGwa, numI, numberParticle } from '../../engine/korean-number.mjs';
+import { fracEul, josaEul, josaEun, josaI, numEun, numEul, numGwa, numI, numRo, numberParticle } from '../../engine/korean-number.mjs';
 import {
   addFractions,
   compareFractions,
@@ -454,7 +454,7 @@ const compareDifferentDenominators = {
       stem: `${formatFraction(a)} □ ${formatFraction(b)}`,
       answer: { value: sign, display: sign, accepts: [sign] },
       solution: [
-        `두 분모의 최소공배수 ${common}으로 통분한다.`,
+        `두 분모의 최소공배수 ${numRo(common)} 통분한다.`,
         `${formatFraction({ n: (a.n * common) / a.d, d: common })} ${sign} ${formatFraction({ n: (b.n * common) / b.d, d: common })}`,
         `그러므로 ${formatFraction(a)} ${sign} ${formatFraction(b)}이다.`,
       ],
@@ -494,7 +494,7 @@ const addSubDifferentDenominators = {
       stem: `${formatFraction(x)} ${isAdd ? '+' : '-'} ${formatFraction(y)}`,
       answer: { value: display, display, accepts: [display, formatFraction(result)] },
       solution: [
-        `최소공배수 ${common}으로 통분한다.`,
+        `최소공배수 ${numRo(common)} 통분한다.`,
         `${(x.n * common) / x.d}/${common} ${isAdd ? '+' : '-'} ${(y.n * common) / y.d}/${common}`,
         `답을 기약분수로 나타내면 ${display}이다.`,
       ],

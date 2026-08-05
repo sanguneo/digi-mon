@@ -18,7 +18,7 @@ import { buildSpine } from '../src/ontology/spine.mjs';
 import { createRegistry } from '../src/engine/registry.mjs';
 import { createRng } from '../src/engine/rng.mjs';
 import { generateItem } from '../src/engine/worksheet.mjs';
-import { particle, sinoKoreanLarge } from '../src/engine/korean-number.mjs';
+import { particle, particleRo, sinoKoreanLarge } from '../src/engine/korean-number.mjs';
 
 const SAMPLES = Number(process.env.SAMPLES ?? 60);
 
@@ -29,7 +29,13 @@ const JOSA_PAIRS = [
   ['을', '를'],
   ['과', '와'],
 ];
-const ALL_JOSA = JOSA_PAIRS.flat();
+const ALL_JOSA = [...JOSA_PAIRS.flat(), '으로', '로'];
+/**
+ * 중복 조사 검사에서 쓰는 목록. 로는 넣지 않는다.
+ * 한국어에 로로 끝나는 명사가 많아('세로', '가로', '도로') '세로로'가 정상인데
+ * '로로' 중복으로 잡힌다.
+ */
+const DUPLICABLE_JOSA = JOSA_PAIRS.flat();
 
 /** 단위 기호를 한국어로 읽은 소리. 조사는 읽는 소리가 정한다. */
 const UNIT_READING = {
@@ -48,6 +54,9 @@ const UNIT_READING = {
 
 /** 종성 규칙으로 옳은 조사를 고른다. */
 function expectedJosa(readingLastWord, josa) {
+  // 로/으로는 받침 ㄹ 예외가 있어 2항 판정이 안 된다. 이걸 빼놓아서
+  // '1 : 3로' 가 문면 62,255건 위반 0을 통과했다. 외부 검토가 잡았다.
+  if (josa === '로' || josa === '으로') return particleRo(readingLastWord);
   const pair = JOSA_PAIRS.find((p) => p.includes(josa));
   if (!pair) return null;
   return particle(readingLastWord, pair[0], pair[1]);
@@ -69,7 +78,7 @@ const CHECKS = [
       const fractionSpans = [];
 
       // 분수 표기를 먼저 처리하고 그 구간을 기록해 두어 중복 판정을 막는다.
-      const fracRe = /(\d+)\/(\d+)(은|는|이|가|을|를|과|와)(?=[\s.,)?]|$)/g;
+      const fracRe = /(\d+)\/(\d+)(으로|로|은|는|이|가|을|를|과|와)(?=[\s.,)?]|$)/g;
       let fm = fracRe.exec(text);
       while (fm !== null) {
         fractionSpans.push([fm.index, fm.index + fm[0].length]);
@@ -81,7 +90,7 @@ const CHECKS = [
         fm = fracRe.exec(text);
       }
 
-      const re = /(\d+)(은|는|이|가|을|를|과|와)(?=[\s.,)?]|$)/g;
+      const re = /(\d+)(으로|로|은|는|이|가|을|를|과|와)(?=[\s.,)?]|$)/g;
       let m = re.exec(text);
       while (m !== null) {
         const start = m.index;
@@ -106,7 +115,7 @@ const CHECKS = [
       const units = Object.keys(UNIT_READING).sort((a, b) => b.length - a.length);
       for (const unit of units) {
         const escaped = unit.replace(/[.*+?^${}()|[\]\\%°]/g, '\\$&');
-        const re = new RegExp(`\\d${escaped}(은|는|이|가|을|를|과|와)(?=[\\s.,)?]|$)`, 'g');
+        const re = new RegExp(`\\d${escaped}(으로|로|은|는|이|가|을|를|과|와)(?=[\\s.,)?]|$)`, 'g');
         let m = re.exec(text);
         while (m !== null) {
           const want = expectedJosa(UNIT_READING[unit], m[1]);
@@ -126,7 +135,7 @@ const CHECKS = [
       const found = [];
       const counters = ['개', '권', '장', '자루', '마리', '송이', '명', '번', '조각', '묶음', '층'];
       for (const counter of counters) {
-        const re = new RegExp(`\\d+${counter}(은|는|이|가|을|를|과|와)(?=[\\s.,)?]|$)`, 'g');
+        const re = new RegExp(`\\d+${counter}(으로|로|은|는|이|가|을|를|과|와)(?=[\\s.,)?]|$)`, 'g');
         let m = re.exec(text);
         while (m !== null) {
           const want = expectedJosa(counter, m[1]);
@@ -144,7 +153,7 @@ const CHECKS = [
     label: '조사 중복',
     scan(text) {
       const found = [];
-      for (const j of ALL_JOSA) {
+      for (const j of DUPLICABLE_JOSA) {
         if (text.includes(`${j}${j}`)) found.push(`'${j}${j}'`);
       }
       return found;

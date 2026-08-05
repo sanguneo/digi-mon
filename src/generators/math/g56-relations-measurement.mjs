@@ -8,7 +8,7 @@
  * 원주율은 교육과정 표기대로 3.14 를 쓰고, 3.14 를 100분의 314 정수로 다룬다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { fracEul, josaEul, josaEun, josaI, numEul, numEun, numI } from '../../engine/korean-number.mjs';
+import { fracEul, josaEul, josaEun, josaI, numEul, numEun, numI, numRo } from '../../engine/korean-number.mjs';
 import {
   formatDecimal,
   formatDecimalTrimmed,
@@ -250,7 +250,7 @@ const proportionalDistribution = {
     return {
       params: { r1, r2, total, share },
       instruction: '□에 알맞은 수를 구하시오.',
-      stem: `${thing} ${total}개를 ${r1} : ${r2}로 나누어 가지려고 합니다. 앞사람이 가지는 ${thing}${josaEun(thing)} 몇 개입니까?`,
+      stem: `${thing} ${total}개를 ${r1} : ${numRo(r2)} 나누어 가지려고 합니다. 앞사람이 가지는 ${thing}${josaEun(thing)} 몇 개입니까?`,
       answer: { value: share, display: `${share}개`, accepts: [num(share), `${share}개`] },
       solution: [
         `전체를 ${r1} + ${r2} = ${r1 + r2}묶음으로 나눈다.`,

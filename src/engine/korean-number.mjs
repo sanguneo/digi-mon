@@ -143,6 +143,30 @@ export const josaI = (w) => particle(w, '이', '가');
 export const josaEul = (w) => particle(w, '을', '를');
 
 /**
+ * 로/으로는 2항 판정이 안 된다.
+ *
+ * 은/는·이/가는 받침 유무로 갈리지만 로/으로는 셋으로 갈린다.
+ *   받침 없음  -> 로   (2로, 사과로)
+ *   받침 ㄹ    -> 로   (1로 '일', 8로 '팔', 연필로)
+ *   그 밖 받침 -> 으로 (3으로 '삼', 6으로 '육', 책으로)
+ * ㄹ 예외를 빼면 '1으로'가 나온다.
+ */
+export function particleRo(word) {
+  const last = String(word).at(-1);
+  const code = last?.codePointAt(0) ?? 0;
+  if (code < 0xac00 || code > 0xd7a3) return '로';
+  const finalIndex = (code - 0xac00) % 28;
+  const RIEUL = 8; // 종성 배열에서 ㄹ의 위치
+  if (finalIndex === 0 || finalIndex === RIEUL) return '로';
+  return '으로';
+}
+
+export const josaRo = (w) => `${w}${particleRo(w)}`;
+
+/** 숫자 뒤 로/으로. 조사는 읽는 소리가 정한다. numRo(3) -> '3으로', numRo(1) -> '1로' */
+export const numRo = (n) => `${n}${particleRo(sinoKoreanLarge(n))}`;
+
+/**
  * 숫자 뒤의 조사는 표기가 아니라 '읽는 소리'로 결정된다.
  *   27(이십칠) -> 은 / 52(오십이) -> 는 / 3(삼) -> 과 / 4(사) -> 와
  */
@@ -193,6 +217,8 @@ export function unitParticle(unitSymbol, withJong, withoutJong) {
 /** 수치와 단위 뒤의 조사. unitEun(2, 'kg') -> '2kg은' */
 export const unitEun = (value, unit) => `${value}${unit}${unitParticle(unit, '은', '는')}`;
 export const unitI = (value, unit) => `${value}${unit}${unitParticle(unit, '이', '가')}`;
+/** 수치+단위 뒤 로/으로. unitRo(1, 'kg') -> '1kg으로' (킬로그램 -> 램, 받침 ㅁ) */
+export const unitRo = (value, unit) => `${value}${unit}${particleRo(UNIT_READING[unit] ?? unit)}`;
 export const unitEul = (value, unit) => `${value}${unit}${unitParticle(unit, '을', '를')}`;
 
 /**

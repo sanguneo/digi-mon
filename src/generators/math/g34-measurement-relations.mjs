@@ -7,7 +7,7 @@
  * 단위 계산은 기준 단위 정수값으로만 처리한다(curriculum/units.mjs).
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEul, josaEun, josaI, numEun, numEul, numI, sinoKorean, unitEun, unitI } from '../../engine/korean-number.mjs';
+import { josaEul, josaEun, josaI, numEun, numEul, numI, sinoKorean, unitEun, unitI, unitRo } from '../../engine/korean-number.mjs';
 import { UNIT_SYSTEMS, formatCompound, formatCompoundPair, ratioBetween, unitOf } from '../../curriculum/units.mjs';
 
 const num = (n) => String(n);
@@ -410,7 +410,7 @@ function makeUnitArithmetic(system, code, idSuffix, bigSymbol) {
         answer: { value: display, display, accepts: [display] },
         solution: [
           `${sys.base} 단위끼리, ${bigSymbol} 단위끼리 자리를 맞추어 계산한다.`,
-          `${unitI(big.factor, sys.base)} 되면 1${bigSymbol}로 ${isAdd ? '올린다' : '바꾸어 내린다'}.`,
+          `${unitI(big.factor, sys.base)} 되면 ${unitRo(1, bigSymbol)} ${isAdd ? '올린다' : '바꾸어 내린다'}.`,
           `답은 ${display}이다.`,
         ],
         dedupeKey: `unit-arith-${system}:${a}:${b}:${isAdd ? 'a' : 's'}`,

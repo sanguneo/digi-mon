@@ -1,0 +1,46 @@
+{
+  "schema": "digi-mon/fact-tables-check@1",
+  "note": "구조만 검사한다. 내용의 참·거짓은 사람이 봐야 한다. verify 가 같은 표를 되읽으므로 뮤테이션도 표의 오류를 못 잡는다.",
+  "tableCount": 6,
+  "pairCount": 116,
+  "problemCount": 0,
+  "tables": [
+    {
+      "id": "HONORIFICS",
+      "label": "높임 표현",
+      "pairs": 14,
+      "note": "표제어의 높임말이 답이다. 답이 두 표제어에 걸치면 한 답이 두 문제의 정답이 된다."
+    },
+    {
+      "id": "ANTONYMS",
+      "label": "반대말",
+      "pairs": 20,
+      "note": "반대말은 대칭이라 같은 낱말이 여러 짝에 나올 수 있다. 같은 짝의 중복만 본다."
+    },
+    {
+      "id": "DIALECTS",
+      "label": "표준어와 방언",
+      "pairs": 12,
+      "note": "방언의 표준어가 답이다. 여러 방언이 같은 표준어를 가질 수 있다."
+    },
+    {
+      "id": "IDIOMS",
+      "label": "관용 표현",
+      "pairs": 20,
+      "note": "관용 표현의 뜻이 답이다. 두 표현이 같은 뜻이면 선택형에서 정답이 둘이 된다."
+    },
+    {
+      "id": "SPELLING_PAIRS",
+      "label": "맞춤법",
+      "pairs": 18,
+      "note": "오표기의 바른 표기가 답이다. 오표기가 다른 항목의 정답과 겹치면 안 된다."
+    },
+    {
+      "id": "HYPERNYMS",
+      "label": "포함 관계",
+      "pairs": 32,
+      "note": "하위어의 상위어가 답이다. 여러 하위어가 같은 상위어를 갖는 것이 정상이다."
+    }
+  ],
+  "problems": []
+}

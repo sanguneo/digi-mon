@@ -88,7 +88,7 @@ export const HYPERNYMS = [
 /** [4국04-04] 높임 표현 짝. */
 export const HONORIFICS = [
   { plain: '먹다', honorific: '드시다' },
-  { plain: '자다', honorific: '자시다' },
+  { plain: '자다', honorific: '주무시다' },
   { plain: '있다', honorific: '계시다' },
   { plain: '말하다', honorific: '말씀하시다' },
   { plain: '주다', honorific: '드리다' },

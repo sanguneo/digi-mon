@@ -17,6 +17,7 @@ import {
   numI,
   parseSinoKoreanLarge,
   sinoKorean,
+  numRo,
   sinoKoreanLarge,
 } from '../../engine/korean-number.mjs';
 import {
@@ -302,7 +303,7 @@ const multiplyThreeDigit = {
       solution: b < 10
         ? [`${a}${josaEul(sinoKorean(a))} ${b}번 더한 값이다.`, `${a} × ${b} = ${product}`]
         : [
-            `${b}${josaEul(sinoKorean(b))} ${Math.floor(b / 10) * 10}${josaEnd(b)} ${b % 10}로 나누어 곱한다.`,
+            `${b}${josaEul(sinoKorean(b))} ${Math.floor(b / 10) * 10}${josaEnd(b)} ${numRo(b % 10)} 나누어 곱한다.`,
             `${a} × ${Math.floor(b / 10) * 10} = ${a * Math.floor(b / 10) * 10}`,
             `${a} × ${b % 10} = ${a * (b % 10)}`,
             `${a * Math.floor(b / 10) * 10} + ${a * (b % 10)} = ${product}`,
