@@ -11,6 +11,7 @@ import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { generators as englishLetters } from '../generators/english/letters.mjs';
 import { generators as koreanSentences } from '../generators/korean/sentences.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
+import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
 
 /**
  * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
@@ -132,6 +133,15 @@ export function buildCoverage(spine, registry) {
       } : {}),
       generatorCount: gens.length,
       generatorIds: gens.map((g) => g.id),
+      /**
+       * 생성기가 없는 기준은 무엇이 없어서 못 하는지 밝힌다.
+       *
+       * 이 필드가 없던 동안 REVIEW.md 는 "blockedBy 에 무엇이 필요한지 적혀 있다"고
+       * 주장했지만 미충족 55개 전부가 비어 있었다. 문서가 없는 것을 있다고 한 것이다.
+       */
+      ...(gens.length === 0 && ASSET_REQUIREMENTS[std.code]
+        ? { blockedBy: ASSET_REQUIREMENTS[std.code] }
+        : {}),
     };
 
     // 자동 채점 불가 기준은 분모에서 뺀다. 대신 목록으로 그대로 남겨 숨기지 않는다.

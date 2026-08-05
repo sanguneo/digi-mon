@@ -20,13 +20,14 @@
     "check:prerequisites": "node tools/check-prerequisites.mjs",
     "check:vocabulary": "node tools/check-vocabulary.mjs",
     "figures": "node tools/figure-gallery.mjs",
-    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/check-vocabulary.mjs && node tools/check-vocab-selfapproval.mjs && node tools/check-fact-tables.mjs && node tools/check-difficulty.mjs && node tools/check-difficulty-notes.mjs && node tools/check-capacity.mjs && node tools/check-trim.mjs && node tools/export-review-tables.mjs && node tools/check-review-doc.mjs",
+    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/check-vocabulary.mjs && node tools/check-asset-requirements.mjs && node tools/check-vocab-selfapproval.mjs && node tools/check-fact-tables.mjs && node tools/check-difficulty.mjs && node tools/check-difficulty-notes.mjs && node tools/check-capacity.mjs && node tools/check-trim.mjs && node tools/export-review-tables.mjs && node tools/check-review-doc.mjs",
     "check:capacity": "node tools/check-capacity.mjs",
     "check:difficulty": "node tools/check-difficulty.mjs",
     "check:review-doc": "node tools/check-review-doc.mjs",
     "export:review": "node tools/export-review-tables.mjs",
     "check:fact-tables": "node tools/check-fact-tables.mjs",
     "check:difficulty-notes": "node tools/check-difficulty-notes.mjs",
-    "check:vocab-selfapproval": "node tools/check-vocab-selfapproval.mjs"
+    "check:vocab-selfapproval": "node tools/check-vocab-selfapproval.mjs",
+    "check:asset-requirements": "node tools/check-asset-requirements.mjs"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "schema": "digi-mon/asset-requirements-check@1",
+  "note": "적어 둔 자산 요구가 그 기준을 열기에 충분한지는 이 게이트가 판정하지 않는다.",
+  "uncoveredCount": 55,
+  "declaredCount": 59,
+  "byKind": {
+    "audio": 6,
+    "dialogue": 5,
+    "sentence": 10,
+    "passage": 25,
+    "procedure": 1,
+    "media": 10,
+    "wordlist": 2
+  },
+  "problemCount": 0,
+  "problems": []
+}

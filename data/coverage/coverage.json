@@ -1866,7 +1866,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "짧은 이야기 음성과 사건 순서 정답",
+        "note": "듣고 순서를 잡는 기준이라 음성이 없으면 성립하지 않는다."
+      }
     },
     {
       "code": "[2국02-03]",
@@ -1876,7 +1881,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "인물의 마음이 드러나는 짧은 문장 목록",
+        "note": "문장 단위로 성립한다. 지문이 필요 없다."
+      }
     },
     {
       "code": "[2국02-04]",
@@ -1886,7 +1896,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "학년 수준 짧은 글과 중심 내용 정답"
+      }
     },
     {
       "code": "[2국05-01]",
@@ -1896,7 +1910,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "학년 수준 이야기·시와 인물·장면 정답"
+      }
     },
     {
       "code": "[2국05-02]",
@@ -1906,7 +1924,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "반복·리듬이 있는 노래·시"
+      }
     },
     {
       "code": "[4국01-01]",
@@ -1916,7 +1938,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "설명 담화 음성과 핵심 내용 정답"
+      }
     },
     {
       "code": "[4국01-02]",
@@ -1926,7 +1952,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "주장 담화 음성과 근거 목록"
+      }
     },
     {
       "code": "[4국02-02]",
@@ -1936,7 +1966,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "문단 구조가 뚜렷한 글과 중심 문장 위치"
+      }
     },
     {
       "code": "[4국02-03]",
@@ -1946,7 +1980,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "설명 글과 내용 요약 정답"
+      }
     },
     {
       "code": "[4국02-05]",
@@ -1956,7 +1994,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "읽기 목적이 다른 글 두 편"
+      }
     },
     {
       "code": "[4국03-01]",
@@ -1968,7 +2010,12 @@
       "partialScored": "주어진 문단에서 중심 문장과 뒷받침 문장을 가려내는 문항",
       "partialNotScored": "문단을 직접 쓰는 활동",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "중심 문장과 뒷받침 문장이 든 문단 목록",
+        "note": "PARTIAL — 찾기는 자동채점된다. 문단 자산만 있으면 열린다."
+      }
     },
     {
       "code": "[4국03-02]",
@@ -1980,7 +2027,12 @@
       "partialScored": "주어진 절차를 순서대로 배열하는 문항",
       "partialNotScored": "절차와 결과가 드러나는 글을 직접 쓰는 활동",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "procedure",
+        "need": "절차 3~5단계와 올바른 순서",
+        "note": "PARTIAL — 지문이 아니라 단계 목록이면 된다. ordering 형식이 이미 있다."
+      }
     },
     {
       "code": "[4국03-03]",
@@ -1992,7 +2044,12 @@
       "partialScored": "주어진 글에서 의견과 그 이유를 가려내는 문항",
       "partialNotScored": "의견을 담은 글을 직접 쓰는 활동",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "의견과 이유가 짝을 이룬 문장 목록",
+        "note": "PARTIAL — 문장 단위로 성립한다."
+      }
     },
     {
       "code": "[4국05-01]",
@@ -2002,7 +2059,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "인물·사건·배경이 뚜렷한 이야기"
+      }
     },
     {
       "code": "[4국05-02]",
@@ -2012,7 +2073,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "현실과 견줄 수 있는 작품"
+      }
     },
     {
       "code": "[4국05-03]",
@@ -2022,7 +2087,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "소개할 작품 목록과 소개 요소"
+      }
     },
     {
       "code": "[4국05-04]",
@@ -2032,7 +2101,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "감각적 표현이 든 문장 목록",
+        "note": "비유 문장 자산과 같은 방식으로 성립한다."
+      }
     },
     {
       "code": "[4국06-01]",
@@ -2042,7 +2116,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "검색 결과 화면 모의 자료와 선택 기준"
+      }
     },
     {
       "code": "[4국06-03]",
@@ -2052,7 +2130,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "출처 표기 사례와 윤리 판정 근거"
+      }
     },
     {
       "code": "[6국01-01]",
@@ -2062,7 +2144,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "dialogue",
+        "need": "생략된 내용이 있는 대화 두세 줄과 추론 정답",
+        "note": "음성 없이 글 대화로도 성립한다. 복수 해석 위험이 있어 정답 유일성 설계가 필요하다."
+      }
     },
     {
       "code": "[6국01-02]",
@@ -2072,7 +2159,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "dialogue",
+        "need": "주장과 근거가 든 대화와 타당성 판정 근거"
+      }
     },
     {
       "code": "[6국02-01]",
@@ -2082,7 +2173,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "구조가 뚜렷한 글과 요약 정답"
+      }
     },
     {
       "code": "[6국02-02]",
@@ -2092,7 +2187,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "dialogue",
+        "need": "생략·함축이 있는 짧은 대화",
+        "note": "복수 해석 위험이 가장 높다. 4차 검토가 최후순위로 조정했다."
+      }
     },
     {
       "code": "[6국02-03]",
@@ -2102,7 +2202,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "타당성·적절성 판정 대상 글과 판정 근거"
+      }
     },
     {
       "code": "[6국02-04]",
@@ -2112,7 +2216,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "관점이 다른 글 두 편 이상"
+      }
     },
     {
       "code": "[6국03-01]",
@@ -2122,7 +2230,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "대상 특성 설명 글 예시"
+      }
     },
     {
       "code": "[6국03-02]",
@@ -2132,7 +2244,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "근거와 출처가 든 주장 글 예시"
+      }
     },
     {
       "code": "[6국03-05]",
@@ -2144,7 +2260,12 @@
       "partialScored": "맞춤법·띄어쓰기가 틀린 문장을 바르게 고치는 문항",
       "partialNotScored": "글 전체의 흐름을 고쳐 쓰는 활동",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "맞춤법·띄어쓰기가 틀린 문장과 고친 문장 짝",
+        "note": "PARTIAL — 문장 단위로 성립한다. 기존 SPELLING_PAIRS 를 문장으로 확장하면 열린다."
+      }
     },
     {
       "code": "[6국05-01]",
@@ -2154,7 +2275,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "갈등 구조가 있는 작품"
+      }
     },
     {
       "code": "[6국05-03]",
@@ -2164,7 +2289,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "인물의 삶과 견줄 작품"
+      }
     },
     {
       "code": "[6국05-04]",
@@ -2174,7 +2303,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "해석이 갈리는 작품과 근거"
+      }
     },
     {
       "code": "[6국06-01]",
@@ -2184,7 +2317,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "복합양식 자료와 의미 구성 요소"
+      }
     },
     {
       "code": "[6국06-02]",
@@ -2194,7 +2331,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "매체 자료의 신뢰성 판정 사례"
+      }
     },
     {
       "code": "[4영01-01]",
@@ -2204,7 +2345,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "음소·음절 구별 음성"
+      }
     },
     {
       "code": "[4영01-03]",
@@ -2214,7 +2359,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "낱말·어구 음성과 표기 짝"
+      }
     },
     {
       "code": "[4영01-05]",
@@ -2224,7 +2373,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "쉬운 문장과 뜻 짝",
+        "note": "문장 목록이면 성립한다. 음성이 필요 없다."
+      }
     },
     {
       "code": "[4영01-06]",
@@ -2234,7 +2388,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "짧은 담화와 주요 정보 정답"
+      }
     },
     {
       "code": "[4영01-07]",
@@ -2244,7 +2402,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "단서가 든 담화·문장"
+      }
     },
     {
       "code": "[4영02-03]",
@@ -2254,7 +2416,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "따라 말할 문장 목록과 허용 답안 범위"
+      }
     },
     {
       "code": "[4영02-04]",
@@ -2264,7 +2430,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "실물·그림 자료",
+        "note": "답을 제약하는 그림이 있으면 채점된다. blockedBy 의 선행 조건이 이것이다."
+      }
     },
     {
       "code": "[4영02-05]",
@@ -2274,7 +2445,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "소개 대상 그림·실물과 허용 답안 틀"
+      }
     },
     {
       "code": "[4영02-06]",
@@ -2284,7 +2459,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "행동 지시 문장 목록"
+      }
     },
     {
       "code": "[4영02-07]",
@@ -2294,7 +2473,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "감정 그림 카드와 허용 답안 목록"
+      }
     },
     {
       "code": "[4영02-08]",
@@ -2304,7 +2487,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "dialogue",
+        "need": "묻고 답하는 짧은 대화"
+      }
     },
     {
       "code": "[6영01-01]",
@@ -2314,7 +2501,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "audio",
+        "need": "연음·억양이 든 음성"
+      }
     },
     {
       "code": "[6영01-03]",
@@ -2324,7 +2515,12 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "wordlist",
+        "need": "5~6학년 공식 어휘 목록",
+        "note": "현재 목록은 이 저장소가 지은 시드다(54낱말)."
+      }
     },
     {
       "code": "[6영01-04]",
@@ -2334,7 +2530,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "담화·글과 세부 정보 정답"
+      }
     },
     {
       "code": "[6영01-05]",
@@ -2344,7 +2544,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "중심 내용을 묻는 글"
+      }
     },
     {
       "code": "[6영01-06]",
@@ -2354,7 +2558,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "사건 순서가 있는 글"
+      }
     },
     {
       "code": "[6영01-07]",
@@ -2364,7 +2572,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "맥락 추론 대상 글"
+      }
     },
     {
       "code": "[6영02-02]",
@@ -2374,7 +2586,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "wordlist",
+        "need": "5~6학년 공식 어휘 목록"
+      }
     },
     {
       "code": "[6영02-04]",
@@ -2384,7 +2600,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "상황별 문장 목록과 허용 답안 범위"
+      }
     },
     {
       "code": "[6영02-05]",
@@ -2394,7 +2614,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "passage",
+        "need": "요약 대상 글과 정답"
+      }
     },
     {
       "code": "[6영02-07]",
@@ -2404,7 +2628,11 @@
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "dialogue",
+        "need": "의견을 주고받는 대화"
+      }
     },
     {
       "code": "[6영02-08]",
@@ -2416,7 +2644,12 @@
       "partialScored": "예시문의 빈칸을 채워 목적에 맞는 문장을 완성하는 문항",
       "partialNotScored": "글을 직접 구성해 쓰는 활동",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "예시문과 빈칸 정답 목록",
+        "note": "PARTIAL — 글 구성은 채점 못 하지만 빈칸 채우기는 된다. 예시문 목록이면 열린다."
+      }
     }
   ],
   "manualOnly": [
@@ -2563,7 +2796,11 @@
       "scoringMode": "manual",
       "manualReason": "일상 매체와 매체 자료에 관심을 갖는 태도 기준이다.",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "그림·사진 자료와 내용 정답"
+      }
     },
     {
       "code": "[2국06-02]",
@@ -2574,7 +2811,11 @@
       "scoringMode": "manual",
       "manualReason": "일상 경험과 생각을 글과 그림으로 표현하는 산출 과제다.",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "학습 매체 화면 예시"
+      }
     },
     {
       "code": "[4국01-03]",
@@ -2662,7 +2903,11 @@
       "scoringMode": "manual",
       "manualReason": "쓰기 과정을 점검하며 자신감을 갖는 태도 기준이다.",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "sentence",
+        "need": "고쳐 쓸 문장과 고친 문장 짝"
+      }
     },
     {
       "code": "[4국04-05]",
@@ -2838,7 +3083,11 @@
       "scoringMode": "manual",
       "manualReason": "복합양식 자료를 제작하는 산출 과제다.",
       "generatorCount": 0,
-      "generatorIds": []
+      "generatorIds": [],
+      "blockedBy": {
+        "kind": "media",
+        "need": "매체 소통 참여 사례"
+      }
     },
     {
       "code": "[6국06-04]",

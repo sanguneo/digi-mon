@@ -5,8 +5,8 @@
 
 - 저장소: `git@github.com:sanguneo/digi-mon.git`
 - 런타임: Node 24, ESM, **의존성 0개**
-- 실행: `npm run verify` (열다섯 게이트, 전부 통과 시 exit 0)
-- 이 문서 자체가 게이트의 검사 대상이다(§3의 15번). 수치가 낡으면 `verify`가 실패한다.
+- 실행: `npm run verify` (열여섯 게이트, 전부 통과 시 exit 0)
+- 이 문서 자체가 게이트의 검사 대상이다(§3의 16번). 수치가 낡으면 `verify`가 실패한다.
 - 검토 이력은 §16에 짧게 있다. 이번이 4차다.
 
 ---
@@ -65,7 +65,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 ---
 
-## 3. 열다섯 게이트 — 각각 무엇을 왜 잡는가
+## 3. 열여섯 게이트 — 각각 무엇을 왜 잡는가
 
 `npm run verify`가 이 순서로 돈다. 각 게이트는 **실제로 버그를 잡은 뒤에** 만들어졌다.
 괄호 안은 그 게이트가 처음 실행됐을 때 적발한 건수다.
@@ -80,15 +80,16 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 | 6 | `tools/check-korean.mjs` | 숫자·단위·단위명사 뒤 조사, 조사 중복, 미치환 흔적, 공백 (**656건 적발**, 로/으로 추가로 **222건 더**) | §6 |
 | 7 | `tools/check-prerequisites.mjs` | 선수 관계 그래프의 누락·허깨비 참조·순환·학년군 역행 | DAG가 아니면 복습 순서가 무한 루프한다 |
 | 8 | `tools/check-vocabulary.mjs` | 국어·영어 문항의 학습 대상 낱말이 학년군 어휘 목록 안에 있는지 (**722건 적발**) | "3학년 수준으로 써라"는 지시로는 통제되지 않는다 |
-| 9 | `tools/check-vocab-selfapproval.mjs` | **어휘 목록이 자산을 자기승인하는지.** 목록 안에서 `토큰 = 다른 토큰 + 조사` 꼴을 찾는다 (**1건 적발**) | §8 — 4차 검토가 지적한 구멍 |
-| 10 | `tools/check-fact-tables.mjs` | 높임말·반대말·방언·맞춤법처럼 **정답이 사실인 표**의 구조. 한 답이 두 표제어에 걸치는지, 방향이 꼬였는지 | §5 — 검산이 못 닿는 영역 |
-| 11 | `tools/check-difficulty.mjs` | 난이도 축 선언과 실제 행동. numeric은 계산 크기 측정, single은 난이도로 결과가 갈리지 않는지 런타임 확인 (**5개 적발**) | §7 |
-| 12 | `tools/check-difficulty-notes.mjs` | `difficultyNote`가 말한 난이도가 지원되는지, categorical인데 난이도가 문항을 전혀 바꾸지 않는지 (**3개 적발**) | §7 — 3차 검토가 지적한 공백 |
-| 13 | `tools/check-capacity.mjs` | 표본을 두 배로 늘려 포화를 재고, 상한이 낮은데 이유를 밝히지 않은 생성기를 잡는다 | §7 |
-| 14 | `tools/check-trim.mjs` | 계산 결과 표기(`157.00` vs `157`)가 채점에서 오답 처리되는지 | §5 |
-| 15 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 파일이 `verify` 체인에 실제로 등록됐는지, 게이트 수 주장이 맞는지 | 문서는 게이트가 갱신해 주지 않는다. §16 |
+| 9 | `tools/check-asset-requirements.mjs` | **미충족 기준이 무엇 때문에 막혔는지 밝히는지.** 조달 성격·필요 자산을 성취기준마다 요구한다 (**3건 적발**) | §14 — 문서가 없는 것을 있다고 했다 |
+| 10 | `tools/check-vocab-selfapproval.mjs` | **어휘 목록이 자산을 자기승인하는지.** 목록 안에서 `토큰 = 다른 토큰 + 조사` 꼴을 찾는다 (**1건 적발**) | §8 — 4차 검토가 지적한 구멍 |
+| 11 | `tools/check-fact-tables.mjs` | 높임말·반대말·방언·맞춤법처럼 **정답이 사실인 표**의 구조. 한 답이 두 표제어에 걸치는지, 방향이 꼬였는지 | §5 — 검산이 못 닿는 영역 |
+| 12 | `tools/check-difficulty.mjs` | 난이도 축 선언과 실제 행동. numeric은 계산 크기 측정, single은 난이도로 결과가 갈리지 않는지 런타임 확인 (**5개 적발**) | §7 |
+| 13 | `tools/check-difficulty-notes.mjs` | `difficultyNote`가 말한 난이도가 지원되는지, categorical인데 난이도가 문항을 전혀 바꾸지 않는지 (**3개 적발**) | §7 — 3차 검토가 지적한 공백 |
+| 14 | `tools/check-capacity.mjs` | 표본을 두 배로 늘려 포화를 재고, 상한이 낮은데 이유를 밝히지 않은 생성기를 잡는다 | §7 |
+| 15 | `tools/check-trim.mjs` | 계산 결과 표기(`157.00` vs `157`)가 채점에서 오답 처리되는지 | §5 |
+| 16 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 파일이 `verify` 체인에 실제로 등록됐는지, 게이트 수 주장이 맞는지 | 문서는 게이트가 갱신해 주지 않는다. §16 |
 
-체인은 16단계다 — 게이트 15개 + 산출물 생성 1개(`export-review-tables`). 산출물 생성기는
+체인은 17단계다 — 게이트 16개 + 산출물 생성 1개(`export-review-tables`). 산출물 생성기는
 실패할 수 없으므로 게이트로 세지 않는다.
 
 ---
@@ -366,10 +367,11 @@ src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · w
 src/server/       app(라우터) · grade(무상태 채점)
 bin/              게이트 3종 (build-spine · audit-ontology · verify-generators)
                   + serve · worksheet
-tools/            게이트 12종 (check-boundaries · mutation-test · check-korean
+tools/            게이트 13종 (check-boundaries · mutation-test · check-korean
                   · check-prerequisites · check-vocabulary · check-fact-tables
                   · check-difficulty · check-difficulty-notes · check-capacity
-                  · check-trim · check-review-doc · check-vocab-selfapproval)
+                  · check-trim · check-review-doc · check-vocab-selfapproval
+                  · check-asset-requirements)
                   + 도구 4종 (export-review-tables · sample-items · figure-gallery · shot)
 data/             spine · curriculum · coverage · audit (모두 생성물, 커밋됨)
 docs/review/      전문가 검토용 표 (생성물). prerequisites.md · english.md
@@ -536,8 +538,26 @@ partial로 둘 수 있는 기준이 더 있는가? 반대로 partial이 과한 �
 
 ### 자산이 필요해서 막힌 것 — 이게 남은 전부다
 
-**자산 없이 열 수 있는 것은 거의 다 열었다.** `coverage.json`의 `blockedBy`에 무엇이 필요한지
-적혀 있다.
+**자산 없이 열 수 있는 것은 거의 다 열었다.**
+
+전 판본은 "`coverage.json`의 `blockedBy`에 무엇이 필요한지 적혀 있다"고 했는데 **거짓이었다.**
+미충족 55개 전부가 비어 있었고 `registry`에 그 필드가 아예 없었다. 검토자가 그 지시를
+따라가면 아무것도 못 본다. `src/curriculum/asset-requirements.mjs`를 만들어 성취기준마다
+조달 성격과 필요 자산을 적었고, 9번 게이트가 누락을 잡는다.
+
+조달 성격별 개수 — 비용이 다르므로 뭉뚱그리지 않는다.
+
+| 성격 | 개수 | 무엇인가 |
+|---|---:|---|
+| `passage` | 25 | 지문. **저작권 판단이 선행한다.** 가장 비싸다 |
+| `sentence` | 10 | 짧은 문장 목록. 저작 가능, 저작권 정리 불필요. **가장 싸다** |
+| `media` | 10 | 매체 화면·그림 자료 |
+| `audio` | 6 | 음성. 녹음 또는 합성. 엔진 밖 자산 |
+| `dialogue` | 5 | 짧은 대화. 화자·맥락 설계 필요 |
+| `wordlist` | 2 | 공식 어휘 목록(2022 개정 별표) |
+| `procedure` | 1 | 절차 단계 목록. 저작 가능 |
+
+**`sentence`·`procedure` 11개가 다음에 열 수 있는 것이다** — 저작권 정리를 기다리지 않는다.
 
 - **국어 33개** — 읽기 9 · 문학 9 · 쓰기 6 · 듣기말하기 5 · 매체 4.
   학년군별 지문 자산(저작권 정리 포함), 음성 자산, 문법 항목별 오답 유형.

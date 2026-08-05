@@ -102,6 +102,7 @@ const gateStale = !doc.includes(gateClaim);
 /** 게이트 총수는 문서에 한국어 수사로 적혀 있다. */
 const COUNT_WORDS = {
   9: '아홉', 10: '열', 11: '열한', 12: '열두', 13: '열세', 14: '열네', 15: '열다섯',
+  16: '열여섯', 17: '열일곱', 18: '열여덟', 19: '열아홉', 20: '스무',
 };
 const totalWord = COUNT_WORDS[gateChain.length];
 const totalClaim = totalWord ? `${totalWord} 게이트` : null;
