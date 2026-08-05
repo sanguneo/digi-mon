@@ -1,8 +1,0 @@
-{"type":"transition_applied","payload":{"type":"transition_applied","status":"running","residency_state":"resident"}}
-{"type":"child_error","payload":{"message":"Claude Code returned an error result: You've hit your session limit · resets 6pm (Asia/Seoul)","stop_reason":"error"}}
-{"type":"transition_applied","payload":{"type":"transition_applied","status":"error","residency_state":"resident"}}
-{"type":"transition_applied","payload":{"type":"transition_applied","status":"error","residency_state":"persisted_only"}}
-{"type":"suspended","payload":{"reason":"reload"}}
-{"type":"reconcile_reattached","payload":{"session_path":"C:\\Users\\USER\\WebstormProjects\\digi-mon\\.omo\\senpi-task\\children\\st_019fd0e1\\sessions\\st_019fd0e1\\2026-08-05T07-43-58-103Z_019fd0e1-0e96-78fa-80fe-a1109a97b572.jsonl"}}
-{"type":"transition_applied","payload":{"type":"transition_applied","status":"error","residency_state":"persisted_only"}}
-{"type":"suspended","payload":{"reason":"quit"}}
