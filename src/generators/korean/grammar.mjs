@@ -539,7 +539,9 @@ const standardWord = {
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
     const spec = rng.pick(DIALECTS);
-    const askStandard = rng.bool();
+    // 노트가 약속한 대로 난이도가 방향을 정한다. rng.bool() 로 무작위로 정하면
+    // 난이도가 아무것도 바꾸지 않아 categorical 선언이 거짓이 된다.
+    const askStandard = difficulty === 1;
     const correct = askStandard ? spec.standard : spec.dialect;
     const wrong = rng.shuffle(
       DIALECTS.filter((d) => d.standard !== spec.standard).map((d) => (askStandard ? d.standard : d.dialect)),
@@ -694,7 +696,9 @@ const tenseAgreement = {
         `'${spec.adverb}'는 ${spec.tense}를 나타내는 말이다.`,
         `${spec.tense} 표현인 '${spec.form}'이 알맞다.`,
       ],
-      dedupeKey: `tense:${spec.adverb}`,
+      // 난이도 3은 오답 선택지를 더 섞으므로 같은 부사라도 다른 문항이다.
+      // 키에 난이도를 넣지 않으면 학습지 중복 제거가 서로 다른 문항을 같다고 본다.
+      dedupeKey: `tense:${spec.adverb}:${difficulty}`,
       difficulty,
     };
   },

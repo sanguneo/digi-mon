@@ -5,7 +5,7 @@
 
 - 저장소: `git@github.com:sanguneo/digi-mon.git`
 - 런타임: Node 24, ESM, **의존성 0개**
-- 실행: `npm run verify` (열세 게이트, 전부 통과 시 exit 0)
+- 실행: `npm run verify` (열네 게이트, 전부 통과 시 exit 0)
 - 검토 이력은 §16에 짧게 있다. 이 문서 자체가 게이트의 검사 대상이다(§3의 12번).
 
 ---
@@ -42,8 +42,8 @@ verify-generators   문항 생성 검산 실패 0건 · SVG 렌더 35,585건
 mutation-test       틀린 답 18,759개 주입 → 통과 0개 · 무력한 검산 0개
 check-korean        문면 62,255건 → 조사·표기 위반 0건
 check-vocabulary    문항 1,380개 / 낱말 2,110건 → 학년 어휘 위반 0건
-check-capacity      포화 81/170 · 관측 문항 용량 114,153개 · 상한 미신고 0건
-check-difficulty    numeric 120 / single 11 / categorical 39 · 평평 0 · 축 불일치 0
+check-capacity      포화 81/170 · 관측 문항 용량 114,177개 · 상한 미신고 0건
+check-difficulty    numeric 120 / single 12 / categorical 38 · 평평 0 · 축 불일치 0
 check-prerequisites 성취기준 121/121 · 간선 158 (학년군 넘김 54) · 순환·역행 0
 ```
 
@@ -64,7 +64,7 @@ check-prerequisites 성취기준 121/121 · 간선 158 (학년군 넘김 54) · 
 
 ---
 
-## 3. 열세 게이트 — 각각 무엇을 왜 잡는가
+## 3. 열네 게이트 — 각각 무엇을 왜 잡는가
 
 `npm run verify`가 이 순서로 돈다. 각 게이트는 **실제로 버그를 잡은 뒤에** 만들어졌다.
 괄호 안은 그 게이트가 처음 실행됐을 때 적발한 건수다.
@@ -82,8 +82,9 @@ check-prerequisites 성취기준 121/121 · 간선 158 (학년군 넘김 54) · 
 | 9 | `tools/check-difficulty.mjs` | 난이도 축 선언과 실제 행동의 일치. numeric은 계산 크기 측정, single은 난이도로 결과가 갈리지 않는지 런타임 확인 (**5개 적발**) | §7 |
 | 10 | `tools/check-capacity.mjs` | 표본을 두 배로 늘려 포화를 재고, 상한이 낮은데 이유를 밝히지 않은 생성기를 잡는다 | §7 |
 | 11 | `tools/check-trim.mjs` | 계산 결과 표기(`157.00` vs `157`)가 채점에서 오답 처리되는지 | §5 |
-| 12 | `tools/check-fact-tables.mjs` | 높임말·반대말·방언·맞춤법처럼 **정답이 사실인 표**의 구조. 한 답이 두 표제어에 걸치는지, 방향이 꼬였는지 | §5 — 검산이 못 닿는 영역 |
-| 13 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 수 주장까지 대조한다 | 문서는 게이트가 갱신해 주지 않는다. §16 |
+| 12 | `tools/check-difficulty-notes.mjs` | `difficultyNote` 가 실제 문항 행동과 맞는지. 노트가 말한 난이도가 지원되는지, categorical 인데 난이도가 문항을 전혀 바꾸지 않는지 (**3개 적발**) | §7 — 3차 검토가 지적한 공백 |
+| 13 | `tools/check-fact-tables.mjs` | 높임말·반대말·방언·맞춤법처럼 **정답이 사실인 표**의 구조. 한 답이 두 표제어에 걸치는지, 방향이 꼬였는지 | §5 — 검산이 못 닿는 영역 |
+| 14 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 수 주장까지 대조한다 | 문서는 게이트가 갱신해 주지 않는다. §16 |
 
 ---
 
@@ -353,9 +354,10 @@ src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · w
 src/server/       app(라우터) · grade(무상태 채점)
 bin/              게이트 3종 (build-spine · audit-ontology · verify-generators)
                   + serve · worksheet
-tools/            게이트 10종 (check-boundaries · mutation-test · check-korean · check-prerequisites
+tools/            게이트 11종 (check-boundaries · mutation-test · check-korean · check-prerequisites
                   · check-vocabulary · check-difficulty · check-capacity · check-trim
-                  · check-review-doc · check-fact-tables)
+                  · check-review-doc · check-fact-tables
+                  · check-difficulty-notes)
                   + 검증 도구 3종 (sample-items · figure-gallery · shot)
                   + export-review-tables (전문가 검토용 표 생성)
 data/             spine · curriculum · coverage · audit (모두 생성물, 커밋됨)
@@ -416,7 +418,8 @@ docs/review/      전문가 검토용 표 (생성물). prerequisites.md · engli
 
 ### E. 난이도 축 배정
 
-`categorical` 39개의 `difficultyNote`가 실제 문항 행동과 맞는가?
+`categorical` 38개의 `difficultyNote`가 실제 문항 행동과 맞는가?
+(3차 검토가 지적한 "노트↔코드 일치를 기계가 안 본다"는 공백은 12번 게이트로 메웠다. §7 참조)
 `numeric` 120개의 난이도가 정말 아이에게 더 어려운가? (실제 정답률로 검증 안 됨 — §14)
 
 ### F. 문항 내용의 교육과정 적합성
@@ -456,7 +459,7 @@ docs/review/      전문가 검토용 표 (생성물). prerequisites.md · engli
 - 176,400문항 "검산 0실패"로 커밋 → 검산 5개가 **아무것도 검증하지 않고** 있었다.
 - 미사용 상수를 지우고 커밋 → 사용부를 남겨 `renderWorksheet`가 **ReferenceError로 죽어** 있었다.
   문항 생성 검산은 렌더를 거치지 않으므로 하네스도 못 잡았다. CLI를 한 번도 안 돌린 탓이다.
-- `check-difficulty`를 **`verify` 체인에 등록하지 않은 채** "열세 게이트 통과"라고 두 번 커밋했다.
+- `check-difficulty`를 **`verify` 체인에 등록하지 않은 채** "열네 게이트 통과"라고 두 번 커밋했다.
   `sed`로 체인을 고칠 때 뒤 패치가 앞 패치를 덮어썼다. 게이트 등록 주장 자체도 검증 대상이다.
 
 ### 문항이 깨려는 오개념을 검산기가 전제할 수 있다
@@ -568,10 +571,10 @@ PDF·인쇄 레이아웃·DOM·브라우저 렌더. `check-boundaries`가 `src/`
 
 1. 게이트 파일 12개(bin 3 + tools 9)가 전부 체인에 있는가
 2. 체인에 게이트가 아닌 것이 섞여 있지 않은가
-3. 문서의 게이트 총수 주장("열세 게이트")이 체인 길이와 맞는가
+3. 문서의 게이트 총수 주장("열네 게이트")이 체인 길이와 맞는가
 
 같은 실험을 다시 하면 `미등록 1개 → tools/check-capacity.mjs`를 지목하고 exit 1 이다.
-§1·§3의 "열세 게이트"는 이제 검사되는 주장이다.
+§1·§3의 "열네 게이트"는 이제 검사되는 주장이다.
 
 **1차에서 배운 것:** 검토자는 검증을 요청한 §2는 전수 확인했지만 §11의 파생 수치는 대조하지
 않았다. 검토 요청 범위 밖의 수치가 낡아 있을 수 있다. 그래서 12번 게이트

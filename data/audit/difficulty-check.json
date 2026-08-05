@@ -11,6 +11,11 @@
       "note": null
     },
     {
+      "generatorId": "math.g12.sc.s01.identify",
+      "code": "[2수03-01]",
+      "note": null
+    },
+    {
       "generatorId": "math.g12.sc.s01.from-object",
       "code": "[2수03-01]",
       "note": null
@@ -76,11 +81,6 @@
       "generatorId": "math.g12.gm.s05.count-sides",
       "code": "[2수03-05]",
       "note": "난이도 1은 삼각형·사각형, 2 이상은 오각형·육각형까지 센다."
-    },
-    {
-      "generatorId": "math.g12.sc.s01.identify",
-      "code": "[2수03-01]",
-      "note": "난이도 1은 세 종류 중 고르고, 2 이상은 나열 순서를 섞어 위치로 외우지 못하게 한다."
     },
     {
       "generatorId": "math.g12.sc.s06.compare",

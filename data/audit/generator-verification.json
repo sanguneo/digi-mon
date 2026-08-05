@@ -4286,17 +4286,17 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 24,
+          "unique": 12,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 24,
+          "unique": 12,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 24,
+          "unique": 12,
           "failed": 0
         }
       },
@@ -4378,10 +4378,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 12,
+      "uniqueTotal": 36,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.01
+      "uniqueRatio": 0.03
     },
     {
       "generatorId": "korean.g56.gr.s06.spacing",

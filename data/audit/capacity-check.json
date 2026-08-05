@@ -13,6 +13,11 @@
       "capacityNote": "삼각형부터 육각형까지 네 도형의 변과 꼭짓점을 묻는 여덟 경우가 전부다."
     },
     {
+      "generatorId": "math.g12.sc.s01.identify",
+      "ceiling": 18,
+      "capacityNote": "[2수03-01]이 다루는 입체는 직육면체·원기둥·구 셋이 전부다."
+    },
+    {
       "generatorId": "math.g12.sc.s04.draw",
       "ceiling": 9,
       "capacityNote": "[2수03-04]가 다루는 도형은 사각형·삼각형·원 셋이고, 그리는 개수는 한 개에서 세 개까지다."
@@ -58,7 +63,7 @@
       "capacityNote": "가능성을 나타내는 말은 불가능하다·낮다·반반이다·높다·확실하다 다섯 단계가 전부다."
     }
   ],
-  "observedCapacity": 114153,
+  "observedCapacity": 114177,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -438,8 +443,8 @@
       "generatorId": "math.g12.sc.s01.identify",
       "code": "[2수03-01]",
       "skill": "입체도형의 모양 구별하기",
-      "axis": "categorical",
-      "capacityNote": null,
+      "axis": "single",
+      "capacityNote": "[2수03-01]이 다루는 입체는 직육면체·원기둥·구 셋이 전부다.",
       "uniqueAtBase": 18,
       "uniqueAtDouble": 18,
       "saturated": true,
@@ -1848,10 +1853,10 @@
       "skill": "시간 표현에 맞는 서술어 고르기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 12,
-      "uniqueAtDouble": 12,
+      "uniqueAtBase": 36,
+      "uniqueAtDouble": 36,
       "saturated": true,
-      "ceiling": 12
+      "ceiling": 36
     },
     {
       "generatorId": "korean.g56.gr.s06.spacing",

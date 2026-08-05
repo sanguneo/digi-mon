@@ -33,8 +33,12 @@ const SOLID_OBJECTS = {
 
 const identifySolid = {
   id: 'math.g12.sc.s01.identify',
-  difficultyAxis: 'categorical',
-  difficultyNote: '난이도 1은 세 종류 중 고르고, 2 이상은 나열 순서를 섞어 위치로 외우지 못하게 한다.',
+  // 직육면체·원기둥·구 셋이 전부이고 나열 순서는 늘 섞는다. 난이도를 나눌 실질이 없다.
+  // 노트에 '난이도 1은 …, 2 이상은 …' 이라 적어 두었지만 코드는 difficulty 를 쓰지
+  // 않았다. check-difficulty-notes 가 잡았다.
+  difficultyAxis: 'single',
+  difficulties: [1],
+  capacityNote: '[2수03-01]이 다루는 입체는 직육면체·원기둥·구 셋이 전부다.',
   standardCode: CODE(1),
   skill: '입체도형의 모양 구별하기',
   format: 'multiple-choice',
