@@ -128,7 +128,12 @@ for (const g of registry.all()) {
       continue;
     }
     checkedItems += 1;
-    const words = standard.subject === 'korean' ? learnedWordsOf(item, allowed) : englishWordsOf(item);
+    // 문항이 '일부러 틀린 표기' 라고 선언한 문자열은 학습 어휘가 아니다.
+    // 맞춤법 문항의 오답 선택지('꼬치', '조타')를 어휘 목록에 넣으면 틀린 표기를
+    // 학년 어휘로 승인하는 셈이 되므로, 목록에 넣는 대신 검사에서 뺀다.
+    const declaredNonWords = new Set(item.nonWords ?? []);
+    const words = (standard.subject === 'korean' ? learnedWordsOf(item, allowed) : englishWordsOf(item))
+      .filter((w) => !declaredNonWords.has(w));
     for (const word of words) {
       checkedWords += 1;
       if (!allowed.has(word)) {

@@ -26,6 +26,198 @@ export const MANUAL_SCORING = {
     kind: 'evaluation',
     hasGenerator: false,
   },
+  // ── 국어: 태도·글 산출·음성 상호작용 ─────────────────────────────────────
+  '[2국01-05]': {
+    reason: '듣기·말하기에 대한 흥미와 관심을 갖는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[2국02-05]': {
+    reason: '읽기에 흥미를 가지고 즐겨 읽는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[2국05-04]': {
+    reason: '시·노래·이야기에 흥미를 갖는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[2국06-01]': {
+    reason: '일상 매체와 매체 자료에 관심을 갖는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4국02-06]': {
+    reason: '바람직한 읽기 습관과 읽기 자신감을 갖는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4국03-05]': {
+    reason: '쓰기 과정을 점검하며 자신감을 갖는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[4국05-05]': {
+    reason: '재미와 감동을 느끼며 작품을 즐기는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6국02-05]': {
+    reason: '긍정적 읽기 동기와 적극적 읽기 참여의 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6국03-06]': {
+    reason: '글을 독자와 공유하는 적극적 쓰기 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6국05-06]': {
+    reason: '작품을 삶과 연관 지어 성찰하는 태도 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6국06-04]': {
+    reason: '자신의 매체 이용 양상을 성찰하는 기준이다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[2국03-02]': {
+    reason: '생각과 느낌을 문장으로 표현하는 산출 과제다. 정답이 하나가 아니다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[2국03-03]': {
+    reason: '주변 소재를 소개하는 글쓰기 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[2국03-04]': {
+    reason: '겪은 일을 자유롭게 쓰는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[2국05-03]': {
+    reason: '작품 속 인물을 상상해 다양한 방식으로 표현하는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[2국06-02]': {
+    reason: '일상 경험과 생각을 글과 그림으로 표현하는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[4국03-02]': {
+    reason: '절차와 결과가 드러나는 보고 글쓰기 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[4국03-03]': {
+    reason: '의견과 이유가 드러나는 글쓰기 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[4국03-04]': {
+    reason: '마음을 전하는 글쓰기 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[4국06-02]': {
+    reason: '매체를 활용해 발표 자료를 만드는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6국03-03]': {
+    reason: '체험한 일에 대한 감상 글쓰기 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6국03-04]': {
+    reason: '독자와 매체를 고려한 내용 생성과 표현 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6국05-05]': {
+    reason: '경험을 시·소설·극·수필로 표현하는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[6국06-03]': {
+    reason: '복합양식 자료를 제작하는 산출 과제다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
+  '[2국01-02]': {
+    reason: '바르고 고운 말로 감정을 나누는 대화 수행이다. 상호작용은 정답 대조가 안 된다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[2국01-03]': {
+    reason: '집중해서 듣고 말차례를 지키는 대화 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[2국01-04]': {
+    reason: '경험과 생각을 바른 자세로 발표하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[2국02-01]': {
+    reason: '글자·단어·문장을 정확히 소리 내어 읽는 음성 산출 과제다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[4국01-03]': {
+    reason: '준언어·비언어 표현을 활용하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[4국01-04]': {
+    reason: '상대 입장을 이해하고 예의를 지키는 대화 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[4국01-05]': {
+    reason: '자료를 정리해 발표하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[4국01-06]': {
+    reason: '의견과 이유를 제시하며 생각을 교환하는 토의 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[4국02-01]': {
+    reason: '글의 의미를 파악하며 유창하게 읽는 음성 산출 과제다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[6국01-03]': {
+    reason: '질문하며 적극적으로 듣고 말하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[6국01-04]': {
+    reason: '면담 절차와 상대·매체를 고려한 면담 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[6국01-05]': {
+    reason: '핵심 정보를 선별해 매체를 활용하여 발표하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[6국01-06]': {
+    reason: '협력적 토의에서 의견을 비교하고 조정하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+  '[6국01-07]': {
+    reason: '절차와 규칙을 지키며 토론하는 수행이다.',
+    kind: 'speech-interaction',
+    hasGenerator: false,
+  },
+
   // ── 영어: 태도·음성 산출·창의 수행 ───────────────────────────────────────
   // '영어 0/40' 은 분모가 틀린 셈이다. 자산이 없어서 못 하는 것과 원리적으로
   // 정답 대조가 안 되는 것을 섞어 세면, 자산을 다 갖춰도 100%가 되지 않는다.
@@ -131,6 +323,25 @@ export const SUBJECT_STRATEGY = {
       '표현 문항의 허용 답안 범위 정의',
     ],
   },
+};
+
+
+/**
+ * 문장 단위 자산으로 열 수 있는 후보.
+ *
+ * 지문 자산과 문장 자산은 비용이 다르다. '다음 문장은 사실인가 의견인가' 는 문장
+ * 하나면 성립하고 저작권 정리도 필요 없다. '글을 읽고 중심 생각 파악' 은 지문이 필요하다.
+ * 이 구분을 하지 않으면 자산 투자 우선순위를 정할 수 없다.
+ *
+ * 여기 있다는 것은 '가능성 있는 후보' 라는 뜻이고, 실제로 열린 것은 covered 에 나타난다.
+ */
+export const SENTENCE_LEVEL_CANDIDATES = {
+  '[2국03-01]': '글자와 단어를 바르게 쓰기 — 맞춤법·받침 표기는 규칙과 어휘 목록으로 판정된다. 자산 없이 가능.',
+  '[2국02-02]': '알맞게 띄어 읽기 — 띄어 읽을 자리를 문장 구조로 판정할 수 있다. 짧은 문장 자산이면 된다.',
+  '[4국02-04]': '사실과 의견 구분 — 문장 하나로 성립한다. 지문이 아니라 문장 목록이면 된다.',
+  '[6국05-02]': '비유적 표현 — 비유가 쓰인 문장을 고르는 형태면 문장 목록으로 가능하다.',
+  '[4국03-01]': '중심 문장과 뒷받침 문장 — 쓰기는 불가하지만 주어진 문단에서 중심 문장을 찾는 것은 자동채점된다. 부분 자동화 후보.',
+  '[6국02-02]': '생략·함축 추론 — 짧은 대화 두세 줄이면 성립한다. 긴 지문이 아니다.',
 };
 
 export function isManualScoring(code) {

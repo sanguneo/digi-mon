@@ -2,15 +2,15 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 169
+    "generatorCount": 170
   },
   "totalStandards": 248,
-  "autoScorableStandards": 234,
-  "manualOnlyStandards": 14,
-  "coveredStandards": 135,
-  "uncoveredStandards": 99,
-  "standardsWithGenerator": 136,
-  "coverageRatio": 0.5769,
+  "autoScorableStandards": 196,
+  "manualOnlyStandards": 52,
+  "coveredStandards": 136,
+  "uncoveredStandards": 60,
+  "standardsWithGenerator": 137,
+  "coverageRatio": 0.6939,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -67,25 +67,25 @@
         "문법 항목별 오답 유형 정의"
       ],
       "total": 87,
-      "autoScorable": 85,
-      "manualOnly": 2,
-      "covered": 12,
-      "generators": 16,
+      "autoScorable": 47,
+      "manualOnly": 40,
+      "covered": 13,
+      "generators": 17,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
-          "autoScorable": 18,
+          "autoScorable": 5,
           "covered": 0
         },
         "읽기": {
           "total": 16,
-          "autoScorable": 16,
+          "autoScorable": 11,
           "covered": 0
         },
         "쓰기": {
           "total": 15,
-          "autoScorable": 15,
-          "covered": 0
+          "autoScorable": 5,
+          "covered": 1
         },
         "문법": {
           "total": 14,
@@ -94,16 +94,16 @@
         },
         "문학": {
           "total": 15,
-          "autoScorable": 15,
+          "autoScorable": 10,
           "covered": 0
         },
         "매체": {
           "total": 9,
-          "autoScorable": 9,
+          "autoScorable": 4,
           "covered": 0
         }
       },
-      "coverageRatio": 0.1412
+      "coverageRatio": 0.2766
     },
     "english": {
       "subjectKorean": "영어",
@@ -1616,6 +1616,18 @@
       ]
     },
     {
+      "code": "[2국03-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g12.gr.s03-01.spelling"
+      ]
+    },
+    {
       "code": "[2국04-01]",
       "subject": "korean",
       "gradeBand": "1-2",
@@ -1815,56 +1827,6 @@
       "generatorIds": []
     },
     {
-      "code": "[2국01-02]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국01-03]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국01-04]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국01-05]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국02-01]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[2국02-02]",
       "subject": "korean",
       "gradeBand": "1-2",
@@ -1895,56 +1857,6 @@
       "generatorIds": []
     },
     {
-      "code": "[2국02-05]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국03-01]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국03-02]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국03-03]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국03-04]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[2국05-01]",
       "subject": "korean",
       "gradeBand": "1-2",
@@ -1965,46 +1877,6 @@
       "generatorIds": []
     },
     {
-      "code": "[2국05-03]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국05-04]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국06-01]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "매체",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국06-02]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "매체",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4국01-01]",
       "subject": "korean",
       "gradeBand": "3-4",
@@ -2019,56 +1891,6 @@
       "subject": "korean",
       "gradeBand": "3-4",
       "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국01-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국01-04]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국01-05]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국01-06]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국02-01]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -2115,57 +1937,7 @@
       "generatorIds": []
     },
     {
-      "code": "[4국02-06]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4국03-01]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국03-02]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국03-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국03-04]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국03-05]",
       "subject": "korean",
       "gradeBand": "3-4",
       "domain": "쓰기",
@@ -2215,27 +1987,7 @@
       "generatorIds": []
     },
     {
-      "code": "[4국05-05]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4국06-01]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "매체",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국06-02]",
       "subject": "korean",
       "gradeBand": "3-4",
       "domain": "매체",
@@ -2266,56 +2018,6 @@
     },
     {
       "code": "[6국01-02]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국01-03]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국01-04]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국01-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국01-06]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국01-07]",
       "subject": "korean",
       "gradeBand": "5-6",
       "domain": "듣기·말하기",
@@ -2365,16 +2067,6 @@
       "generatorIds": []
     },
     {
-      "code": "[6국02-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6국03-01]",
       "subject": "korean",
       "gradeBand": "5-6",
@@ -2395,37 +2087,7 @@
       "generatorIds": []
     },
     {
-      "code": "[6국03-03]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국03-04]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6국03-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국03-06]",
       "subject": "korean",
       "gradeBand": "5-6",
       "domain": "쓰기",
@@ -2475,26 +2137,6 @@
       "generatorIds": []
     },
     {
-      "code": "[6국05-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국05-06]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6국06-01]",
       "subject": "korean",
       "gradeBand": "5-6",
@@ -2506,26 +2148,6 @@
     },
     {
       "code": "[6국06-02]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "매체",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국06-03]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "매체",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국06-04]",
       "subject": "korean",
       "gradeBand": "5-6",
       "domain": "매체",
@@ -2810,6 +2432,259 @@
       ]
     },
     {
+      "code": "[2국01-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "바르고 고운 말로 감정을 나누는 대화 수행이다. 상호작용은 정답 대조가 안 된다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "집중해서 듣고 말차례를 지키는 대화 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "경험과 생각을 바른 자세로 발표하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국01-05]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "듣기·말하기에 대한 흥미와 관심을 갖는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "글자·단어·문장을 정확히 소리 내어 읽는 음성 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국02-05]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "읽기에 흥미를 가지고 즐겨 읽는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "생각과 느낌을 문장으로 표현하는 산출 과제다. 정답이 하나가 아니다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "주변 소재를 소개하는 글쓰기 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국03-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "겪은 일을 자유롭게 쓰는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "작품 속 인물을 상상해 다양한 방식으로 표현하는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국05-04]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "시·노래·이야기에 흥미를 갖는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국06-01]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "매체",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "일상 매체와 매체 자료에 관심을 갖는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[2국06-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "매체",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "일상 경험과 생각을 글과 그림으로 표현하는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "준언어·비언어 표현을 활용하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "상대 입장을 이해하고 예의를 지키는 대화 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "자료를 정리해 발표하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국01-06]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "의견과 이유를 제시하며 생각을 교환하는 토의 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-01]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "글의 의미를 파악하며 유창하게 읽는 음성 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국02-06]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "바람직한 읽기 습관과 읽기 자신감을 갖는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "절차와 결과가 드러나는 보고 글쓰기 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "의견과 이유가 드러나는 글쓰기 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "마음을 전하는 글쓰기 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국03-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "쓰기 과정을 점검하며 자신감을 갖는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
       "code": "[4국04-05]",
       "subject": "korean",
       "gradeBand": "3-4",
@@ -2821,6 +2696,127 @@
       "generatorIds": []
     },
     {
+      "code": "[4국05-05]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "재미와 감동을 느끼며 작품을 즐기는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4국06-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "매체",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "매체를 활용해 발표 자료를 만드는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "질문하며 적극적으로 듣고 말하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "면담 절차와 상대·매체를 고려한 면담 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "핵심 정보를 선별해 매체를 활용하여 발표하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "협력적 토의에서 의견을 비교하고 조정하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국01-07]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "절차와 규칙을 지키며 토론하는 수행이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국02-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "긍정적 읽기 동기와 적극적 읽기 참여의 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "체험한 일에 대한 감상 글쓰기 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "독자와 매체를 고려한 내용 생성과 표현 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국03-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "글을 독자와 공유하는 적극적 쓰기 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
       "code": "[6국04-01]",
       "subject": "korean",
       "gradeBand": "5-6",
@@ -2828,6 +2824,50 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "매체 표현의 효과를 평가하는 기준이다. 평가는 근거가 여러 갈래로 갈려 정답 대조로 채점할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "경험을 시·소설·극·수필로 표현하는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국05-06]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "작품을 삶과 연관 지어 성찰하는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-03]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "복합양식 자료를 제작하는 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6국06-04]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "매체",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "자신의 매체 이용 양상을 성찰하는 기준이다.",
       "generatorCount": 0,
       "generatorIds": []
     },

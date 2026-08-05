@@ -45,6 +45,7 @@ import {
   HYPERNYMS,
   IDIOMS,
   SENTENCE_FRAMES,
+  SPELLING_PAIRS,
   TENSE_CASES,
   plainNouns,
   vocabularyFor,
@@ -757,7 +758,54 @@ const spacingFix = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// [2국03-01] 글자와 단어를 바르게 쓰기 (맞춤법)
+// ---------------------------------------------------------------------------
+
+/**
+ * 소리와 표기가 다른 낱말을 바르게 고른다.
+ *
+ * 지문 자산이 필요 없다. 낱말 짝 목록만 있으면 성립하고 정답이 목록으로 확정된다.
+ * 이 성취기준을 열 수 있다는 판단은 국어 73개 재분류에서 나왔다. 쓰기 영역이
+ * 전부 개방 산출이라고 뭉갰다면 놓쳤을 기준이다.
+ */
+const spellCorrectly = {
+  id: 'korean.g12.gr.s03-01.spelling',
+  standardCode: '[2국03-01]',
+  skill: '소리와 표기가 다른 낱말 바르게 쓰기',
+  format: 'multiple-choice',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 받침 하나(꽃이·옷이), 2는 뜻이 살아 있는 표기(같이·많이), 3은 겹받침과 ㅎ 받침(앉다·좋다)까지 낸다.',
+  generate(rng, { difficulty }) {
+    const upTo = difficulty === 1 ? 8 : difficulty === 2 ? 11 : SPELLING_PAIRS.length;
+    const spec = rng.pick(SPELLING_PAIRS.slice(0, upTo));
+    const others = rng.shuffle(SPELLING_PAIRS.filter((p) => p.correct !== spec.correct))
+      .slice(0, 2)
+      .map((p) => p.wrong);
+    return {
+      params: { correct: spec.correct, wrong: spec.wrong },
+      // 오답 선택지는 일부러 틀리게 적은 비표기다. 학년 어휘로 검사하면 안 된다.
+      nonWords: [spec.wrong, ...others],
+      instruction: '바르게 쓴 것을 고르시오.',
+      stem: `소리대로 적으면 '${spec.wrong}'이지만 바르게 쓴 것은 어느 것입니까?`,
+      choices: buildChoices(rng, spec.correct, [spec.wrong, ...others]),
+      answer: { value: spec.correct, display: spec.correct, accepts: [spec.correct] },
+      solution: [spec.note],
+      dedupeKey: `spelling:${spec.correct}`,
+      difficulty,
+    };
+  },
+  verify({ correct, wrong }, answer) {
+    // 맞춤법 짝 목록에서 되짚는다. 오표기가 정답으로 통과하면 안 된다.
+    const found = SPELLING_PAIRS.find((p) => p.correct === answer.value);
+    if (!found) return false;
+    return found.correct === correct && answer.value !== wrong
+      && SPELLING_PAIRS.every((p) => p.wrong !== answer.value);
+  },
+};
+
 export const generators = [
+  spellCorrectly,
   letterName,
   countLetters,
   finalConsonant,

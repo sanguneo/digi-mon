@@ -1,8 +1,8 @@
 {
   "schema": "digi-mon/mutation-test@1",
   "samplesPerGenerator": 40,
-  "generatorCount": 169,
-  "totalMutants": 18639,
+  "generatorCount": 170,
+  "totalMutants": 18759,
   "totalEscaped": 0,
   "weakGeneratorCount": 0,
   "manualScoringGenerators": [
@@ -1619,6 +1619,17 @@
       "generatorId": "math.g56.rm.s04-06.likelihood-compare",
       "code": "[6수04-06]",
       "skill": "가능성 비교하기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g12.gr.s03-01.spelling",
+      "code": "[2국03-01]",
+      "skill": "소리와 표기가 다른 낱말 바르게 쓰기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,

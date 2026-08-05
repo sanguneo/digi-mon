@@ -74,6 +74,15 @@ export function finalizeItem(raw, context) {
     ...(raw.instruction ? { instruction: raw.instruction } : {}),
     ...(raw.choices ? { choices: raw.choices } : {}),
     ...(raw.figure ? { figure: raw.figure } : {}),
+    /**
+     * 일부러 틀리게 적은 문자열.
+     *
+     * 맞춤법·오류찾기 문항의 오답 선택지는 낱말이 아니라 비표기다('꼬치', '조타').
+     * 어휘 게이트가 이것을 학습 어휘로 취급하면 목록에 없다고 실패하는데, 목록에
+     * 넣으면 틀린 표기를 학년 어휘로 승인하는 셈이 된다. 그래서 문항이 스스로
+     * '이건 일부러 틀린 것' 이라고 선언한다.
+     */
+    ...(raw.nonWords ? { nonWords: raw.nonWords } : {}),
     answer: raw.answer,
     solution: raw.solution,
     params: raw.params,
@@ -108,6 +117,13 @@ export function validateItem(item) {
   }
   if (!Array.isArray(item.solution) || item.solution.length === 0) fail('solution 이 비었다');
   if (item.solution.some((s) => typeof s !== 'string' || s.trim().length === 0)) fail('solution 에 빈 단계가 있다');
+
+  if (item.nonWords !== undefined) {
+    if (!Array.isArray(item.nonWords) || item.nonWords.length === 0) fail('nonWords 가 비었다');
+    if (item.nonWords.some((w) => typeof w !== 'string' || w.trim().length === 0)) fail('nonWords 에 빈 값이 있다');
+    // 정답이 비표기로 선언되면 문항이 스스로 모순이다.
+    if (item.nonWords.includes(item.answer.value)) fail('정답이 nonWords 에 들어 있다');
+  }
 
   if (item.figure) {
     const f = item.figure;

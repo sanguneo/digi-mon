@@ -1,14 +1,14 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 169,
-  "totalGenerated": 202800,
+  "generatorCount": 170,
+  "totalGenerated": 204000,
   "totalFailed": 0,
   "figuresRendered": 35585,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 135,
-    "coverageRatio": 0.5769,
+    "coveredStandards": 136,
+    "coverageRatio": 0.6939,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -65,25 +65,25 @@
           "문법 항목별 오답 유형 정의"
         ],
         "total": 87,
-        "autoScorable": 85,
-        "manualOnly": 2,
-        "covered": 12,
-        "generators": 16,
+        "autoScorable": 47,
+        "manualOnly": 40,
+        "covered": 13,
+        "generators": 17,
         "byDomain": {
           "듣기·말하기": {
             "total": 18,
-            "autoScorable": 18,
+            "autoScorable": 5,
             "covered": 0
           },
           "읽기": {
             "total": 16,
-            "autoScorable": 16,
+            "autoScorable": 11,
             "covered": 0
           },
           "쓰기": {
             "total": 15,
-            "autoScorable": 15,
-            "covered": 0
+            "autoScorable": 5,
+            "covered": 1
           },
           "문법": {
             "total": 14,
@@ -92,16 +92,16 @@
           },
           "문학": {
             "total": 15,
-            "autoScorable": 15,
+            "autoScorable": 10,
             "covered": 0
           },
           "매체": {
             "total": 9,
-            "autoScorable": 9,
+            "autoScorable": 4,
             "covered": 0
           }
         },
-        "coverageRatio": 0.1412
+        "coverageRatio": 0.2766
       },
       "english": {
         "subjectKorean": "영어",
@@ -3968,6 +3968,32 @@
       "uniqueRatio": 0.9133
     },
     {
+      "generatorId": "korean.g12.gr.s03-01.spelling",
+      "code": "[2국03-01]",
+      "skill": "소리와 표기가 다른 낱말 바르게 쓰기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 11,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 18,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 18,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.015
+    },
+    {
       "generatorId": "korean.g12.gr.s01.letter-name",
       "code": "[2국04-01]",
       "skill": "자모의 이름 알기",
@@ -4000,12 +4026,12 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 41,
+          "unique": 57,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 82,
+          "unique": 94,
           "failed": 0
         },
         "3": {
@@ -4014,10 +4040,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 113,
+      "uniqueTotal": 131,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0942
+      "uniqueRatio": 0.1092
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -4026,24 +4052,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 49,
+          "unique": 51,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 49,
+          "unique": 51,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 49,
+          "unique": 51,
           "failed": 0
         }
       },
-      "uniqueTotal": 49,
+      "uniqueTotal": 51,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0408
+      "uniqueRatio": 0.0425
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -4052,24 +4078,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 109,
+          "unique": 120,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 112,
+          "unique": 124,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 109,
+          "unique": 125,
           "failed": 0
         }
       },
-      "uniqueTotal": 113,
+      "uniqueTotal": 131,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0942
+      "uniqueRatio": 0.1092
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -4166,14 +4192,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 236,
+          "unique": 259,
           "failed": 0
         }
       },
-      "uniqueTotal": 1036,
+      "uniqueTotal": 1059,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.8633
+      "uniqueRatio": 0.8825
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-first",

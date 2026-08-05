@@ -183,6 +183,47 @@ export const TENSE_CASES = [
  * 어휘 묶음에서 낱말만 뽑아 학년군 목록에 더한다.
  * 문항이 가르치는 낱말은 그 학년군의 어휘다.
  */
+/**
+ * [2국03-01] 글자와 단어를 바르게 쓰기 — 맞춤법 짝.
+ *
+ * 소리와 표기가 다른 낱말이다. 규칙이 아니라 사실이므로 목록으로 둔다.
+ * 지문 자산이 필요 없어 자산 없이 열 수 있다. `wrong` 은 소리대로 적은 흔한 오표기다.
+ *
+ * 앞쪽 8개가 받침 하나, 뒤쪽이 겹받침과 ㅎ 받침이다. 난이도가 이 순서를 쓴다.
+ */
+export const SPELLING_PAIRS = [
+  { correct: '꽃이', wrong: '꼬치', note: "낱말 '꽃'에 조사 '이'가 붙은 것이므로 '꽃이'로 적는다" },
+  { correct: '옷이', wrong: '오시', note: "낱말 '옷'에 조사 '이'가 붙은 것이므로 '옷이'로 적는다" },
+  { correct: '밥을', wrong: '바블', note: "낱말 '밥'에 조사 '을'이 붙은 것이므로 '밥을'로 적는다" },
+  { correct: '눈이', wrong: '누니', note: "낱말 '눈'에 조사 '이'가 붙은 것이므로 '눈이'로 적는다" },
+  { correct: '책을', wrong: '채글', note: "낱말 '책'에 조사 '을'이 붙은 것이므로 '책을'로 적는다" },
+  { correct: '밭에', wrong: '바테', note: "낱말 '밭'에 조사 '에'가 붙은 것이므로 '밭에'로 적는다" },
+  { correct: '빛이', wrong: '비치', note: "낱말 '빛'에 조사 '이'가 붙은 것이므로 '빛이'로 적는다" },
+  { correct: '숲에', wrong: '수페', note: "낱말 '숲'에 조사 '에'가 붙은 것이므로 '숲에'로 적는다" },
+  { correct: '같이', wrong: '가치', note: "'같다'의 뜻이 살아 있으므로 '같이'로 적는다" },
+  { correct: '많이', wrong: '마니', note: "'많다'의 뜻이 살아 있으므로 '많이'로 적는다" },
+  { correct: '깊이', wrong: '기피', note: "'깊다'의 뜻이 살아 있으므로 '깊이'로 적는다" },
+  { correct: '앉다', wrong: '안따', note: '겹받침 ㄴㅈ 을 그대로 적는다' },
+  { correct: '읽다', wrong: '익따', note: '겹받침 ㄹㄱ 을 그대로 적는다' },
+  { correct: '없다', wrong: '업따', note: '겹받침 ㅂㅅ 을 그대로 적는다' },
+  { correct: '많다', wrong: '만타', note: '겹받침 ㄴㅎ 을 그대로 적는다' },
+  { correct: '좋다', wrong: '조타', note: '받침 ㅎ 을 그대로 적는다' },
+  { correct: '놓다', wrong: '노타', note: '받침 ㅎ 을 그대로 적는다' },
+  { correct: '같다', wrong: '갓다', note: '받침 ㅌ 을 그대로 적는다' },
+];
+
+/**
+ * 맞춤법 문항이 가르치는 낱말과 그 기본형.
+ *
+ * 정답 표기('꽃이', '앉다')와 조사를 뗀 기본 낱말('꽃', '옷')이 모두 1~2학년 어휘다.
+ * 오표기(wrong)는 여기 넣지 않는다. 틀린 표기를 학년 어휘로 승인하는 셈이 되므로,
+ * 문항이 nonWords 로 선언하고 어휘 게이트가 검사에서 뺀다.
+ */
+const TAUGHT_SPELLING = [
+  ...SPELLING_PAIRS.map((p) => p.correct),
+  '꽃', '옷', '밥', '눈', '책', '밭', '빛', '숲',
+];
+
 const TAUGHT_G34 = [
   ...ANTONYMS.flat(),
   ...HYPERNYMS.flatMap((h) => [h.general, ...h.specific]),
@@ -198,9 +239,9 @@ const TAUGHT_G56 = [
 const dedupe = (list) => [...new Set(list)];
 
 export const VOCAB_BY_BAND = {
-  '1-2': dedupe(LIFE_G12),
-  '3-4': dedupe([...LIFE_G12, ...LIFE_G34, ...TAUGHT_G34]),
-  '5-6': dedupe([...LIFE_G12, ...LIFE_G34, ...TAUGHT_G34, ...LIFE_G56, ...TAUGHT_G56]),
+  '1-2': dedupe([...LIFE_G12, ...TAUGHT_SPELLING]),
+  '3-4': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...LIFE_G34, ...TAUGHT_G34]),
+  '5-6': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...LIFE_G34, ...TAUGHT_G34, ...LIFE_G56, ...TAUGHT_G56]),
 };
 
 export function vocabularyFor(gradeBand) {
@@ -233,3 +274,4 @@ export function plainNouns(gradeBand) {
   return vocabularyFor(gradeBand).filter((w) =>
     [...w].length >= 2 && !w.includes(' ') && !/다$/.test(w) && !/니다$/.test(w));
 }
+
