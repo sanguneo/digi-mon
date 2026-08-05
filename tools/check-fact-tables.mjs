@@ -26,6 +26,7 @@ import {
   IDIOMS,
   SPELLING_PAIRS,
 } from '../src/curriculum/korean-vocab.mjs';
+import { INFERENCE_DIALOGUES } from '../src/curriculum/korean-sentences.mjs';
 
 /** 표마다 [표제어, 답] 쌍으로 정규화한다. */
 const TABLES = [
@@ -72,6 +73,50 @@ const TABLES = [
 
 const problems = [];
 let pairCount = 0;
+
+/**
+ * 추론 문항의 정답이 대화에 이미 있으면 추론이 아니라 베끼기다.
+ *
+ * [6국01-01] 은 '생략된 내용' 을 추론하는 기준이다. 정답의 핵심어가 대화에 그대로
+ * 나오면 아이는 추론하지 않고 베낀다. 5차 저작분 4개 중 2개가 그랬다 —
+ * '숙제를 아직 다 못 했어' 라고 말해 놓고 '숙제를 끝내지 못했기 때문' 이 정답이었다.
+ * 그 표의 basis 가 스스로 자백하고 있었다: 진짜 추론은 '…했으므로' 인데 둘은
+ * '말했다·답했다' 였다.
+ *
+ * 문자열 검사라 의미 재진술까지는 못 잡는다. 핵심어가 겹치는 것만 본다.
+ */
+function checkInferenceNotRestatement() {
+  const found = [];
+  for (const d of INFERENCE_DIALOGUES) {
+    const text = d.lines.join(' ');
+    // 정답에서 조사·어미를 걷어낸 핵심 낱말을 뽑는다.
+    const stems = String(d.answer)
+      .split(/\s+/)
+      .map((w) => w.replace(/(이다|입니다|때문이다|합니다|한다|다)$/, ''))
+      .map((w) => w.replace(/(이|가|은|는|을|를|의|에|도|만)$/, ''))
+      .filter((w) => [...w].length >= 2);
+    for (const stem of stems) {
+      if (text.includes(stem)) {
+        found.push({ answer: d.answer, stem, lines: text });
+        break;
+      }
+    }
+    // basis 가 추론이 아니라 진술을 가리키면 신호다.
+    if (/말했다|답했다|라고 했다$/.test(d.basis) && !/므로|때문에|따라서/.test(d.basis)) {
+      found.push({ answer: d.answer, stem: '(basis 가 추론이 아니라 진술을 가리킨다)', lines: d.basis });
+    }
+  }
+  return found;
+}
+
+const inferenceProblems = checkInferenceNotRestatement();
+for (const p of inferenceProblems) {
+  problems.push({
+    table: 'INFERENCE_DIALOGUES',
+    kind: 'restatement',
+    message: `정답 '${p.answer}' 의 '${p.stem}' 가 대화에 이미 있다 — 추론이 아니라 베끼기다: ${p.lines}`,
+  });
+}
 
 for (const table of TABLES) {
   pairCount += table.pairs.length;

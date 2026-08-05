@@ -3,8 +3,8 @@
   "note": "포화 기준 용량이다. 고정 문턱은 개념이 작은 것과 덜 쓴 것을 구분하지 못해 쓰지 않는다.",
   "baseSamples": 300,
   "minCeiling": 12,
-  "generatorCount": 175,
-  "saturatedCount": 85,
+  "generatorCount": 189,
+  "saturatedCount": 99,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -63,6 +63,11 @@
       "capacityNote": "가능성을 나타내는 말은 불가능하다·낮다·반반이다·높다·확실하다 다섯 단계가 전부다."
     },
     {
+      "generatorId": "korean.g56.gr.s05.tense",
+      "ceiling": 27,
+      "capacityNote": "판정이 갈리지 않는 시간 부사어가 아홉이 전부다. 현재 행은 과거·미래와 다 호응해 뺐다(5차)."
+    },
+    {
       "generatorId": "korean.g34.st.s02-04.opinion-word",
       "ceiling": 8,
       "capacityNote": "의견 문장 8개에서 판단을 나타내는 말을 고르는 문항이라 문장 수가 상한이다."
@@ -76,9 +81,79 @@
       "generatorId": "korean.g12.st.s02-02.reading-break",
       "ceiling": 8,
       "capacityNote": "띄어 읽기 문장 자산 8개가 상한이다. 문장을 늘리면 함께 늘어난다 — 지문 자산이 아니라 짧은 문장 목록이므로 확장이 싸다."
+    },
+    {
+      "generatorId": "korean.g34.st.s05-04.sensory",
+      "ceiling": 10,
+      "capacityNote": "감각 표현 문장 자산 10개가 상한이다. 문장을 늘리면 함께 늘어난다."
+    },
+    {
+      "generatorId": "korean.g12.st.s02-03.mind",
+      "ceiling": 8,
+      "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다."
+    },
+    {
+      "generatorId": "korean.g34.st.s03-03.reason",
+      "ceiling": 6,
+      "capacityNote": "의견-이유 짝 6개가 상한이다. 이유끼리 주제가 겹치면 판정이 갈려 짝을 함부로 늘릴 수 없다."
+    },
+    {
+      "generatorId": "korean.g56.st.s03-05.fix",
+      "ceiling": 6,
+      "capacityNote": "고쳐쓰기 문장 짝 6개가 상한이다. 오표기가 실제 낱말이 되지 않게 지어야 해서 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "korean.g34.st.s03-02.procedure",
+      "ceiling": 56,
+      "capacityNote": "순서가 상식으로 확정되는 절차 4개 × 뒤섞기가 상한이다. 순서가 갈리는 절차는 넣을 수 없다."
+    },
+    {
+      "generatorId": "korean.g56.st.s01-01.inference",
+      "ceiling": 4,
+      "capacityNote": "추론 대화 4개가 상한이다. 복수 해석이 없는 대화만 담을 수 있어 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "korean.g56.st.s01-02.claim-reason",
+      "ceiling": 4,
+      "capacityNote": "주장-근거 짝 4개가 상한이다. 무관 진술이 다른 주장을 뒷받침하지 않아야 해서 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "english.g34.st.s01-05.meaning",
+      "ceiling": 8,
+      "capacityNote": "문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "english.g34.st.s02-03.write-word",
+      "ceiling": 12,
+      "capacityNote": "뜻이 유일한 단어 12개가 상한이다. 어휘 목록이 공식 자료로 교체되면 함께 늘어난다."
+    },
+    {
+      "generatorId": "english.g34.st.s02-06.command",
+      "ceiling": 8,
+      "capacityNote": "상황-지시문 짝 8개가 상한이다. 상황이 겹치지 않아야 해서 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "english.g56.st.s02-04.expression",
+      "ceiling": 8,
+      "capacityNote": "상황-문장 짝 8개가 상한이다."
+    },
+    {
+      "generatorId": "english.g56.st.s02-08.blank",
+      "ceiling": 6,
+      "capacityNote": "빈칸 예시문 6개가 상한이다. 목록 안 낱말 중 문맥에 맞는 것이 정답뿐이어야 해서 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "english.g34.st.s02-08.qa",
+      "ceiling": 5,
+      "capacityNote": "질문-응답 짝 5개가 상한이다. 오답을 짝마다 손으로 골라야 해서 확장에 검토가 필요하다."
+    },
+    {
+      "generatorId": "english.g56.st.s02-07.qa",
+      "ceiling": 5,
+      "capacityNote": "질문-응답 짝 5개가 상한이다."
     }
   ],
-  "observedCapacity": 114384,
+  "observedCapacity": 114712,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1725,10 +1800,10 @@
       "skill": "낱말을 자모로 나누어 세기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 169,
-      "uniqueAtDouble": 172,
+      "uniqueAtBase": 227,
+      "uniqueAtDouble": 247,
       "saturated": true,
-      "ceiling": 172
+      "ceiling": 247
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -1736,10 +1811,10 @@
       "skill": "낱말의 받침 찾기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 76,
-      "uniqueAtDouble": 77,
+      "uniqueAtBase": 112,
+      "uniqueAtDouble": 117,
       "saturated": true,
-      "ceiling": 77
+      "ceiling": 117
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -1747,8 +1822,8 @@
       "skill": "받침이 있는 낱말 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 159,
-      "uniqueAtDouble": 199,
+      "uniqueAtBase": 199,
+      "uniqueAtDouble": 272,
       "saturated": false,
       "ceiling": null
     },
@@ -1780,10 +1855,10 @@
       "skill": "뜻이 반대인 낱말과 포함 관계 알기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 131,
-      "uniqueAtDouble": 144,
+      "uniqueAtBase": 123,
+      "uniqueAtDouble": 136,
       "saturated": true,
-      "ceiling": 144
+      "ceiling": 136
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-order",
@@ -1791,8 +1866,8 @@
       "skill": "국어사전에서 낱말 찾는 순서 알기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 779,
-      "uniqueAtDouble": 1562,
+      "uniqueAtBase": 790,
+      "uniqueAtDouble": 1573,
       "saturated": false,
       "ceiling": null
     },
@@ -1867,11 +1942,11 @@
       "code": "[6국04-05]",
       "skill": "시간 표현에 맞는 서술어 고르기",
       "axis": "categorical",
-      "capacityNote": null,
-      "uniqueAtBase": 36,
-      "uniqueAtDouble": 36,
+      "capacityNote": "판정이 갈리지 않는 시간 부사어가 아홉이 전부다. 현재 행은 과거·미래와 다 호응해 뺐다(5차).",
+      "uniqueAtBase": 27,
+      "uniqueAtDouble": 27,
       "saturated": true,
-      "ceiling": 36
+      "ceiling": 27
     },
     {
       "generatorId": "korean.g56.gr.s06.spacing",
@@ -2004,6 +2079,160 @@
       "uniqueAtDouble": 8,
       "saturated": true,
       "ceiling": 8
+    },
+    {
+      "generatorId": "korean.g34.st.s05-04.sensory",
+      "code": "[4국05-04]",
+      "skill": "감각적 표현 찾기",
+      "axis": "categorical",
+      "capacityNote": "감각 표현 문장 자산 10개가 상한이다. 문장을 늘리면 함께 늘어난다.",
+      "uniqueAtBase": 10,
+      "uniqueAtDouble": 10,
+      "saturated": true,
+      "ceiling": 10
+    },
+    {
+      "generatorId": "korean.g12.st.s02-03.mind",
+      "code": "[2국02-03]",
+      "skill": "인물의 마음 짐작하기",
+      "axis": "single",
+      "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
+    },
+    {
+      "generatorId": "korean.g34.st.s03-03.reason",
+      "code": "[4국03-03]",
+      "skill": "의견에 알맞은 이유 고르기",
+      "axis": "single",
+      "capacityNote": "의견-이유 짝 6개가 상한이다. 이유끼리 주제가 겹치면 판정이 갈려 짝을 함부로 늘릴 수 없다.",
+      "uniqueAtBase": 6,
+      "uniqueAtDouble": 6,
+      "saturated": true,
+      "ceiling": 6
+    },
+    {
+      "generatorId": "korean.g56.st.s03-05.fix",
+      "code": "[6국03-05]",
+      "skill": "바르게 쓴 문장 고르기",
+      "axis": "single",
+      "capacityNote": "고쳐쓰기 문장 짝 6개가 상한이다. 오표기가 실제 낱말이 되지 않게 지어야 해서 확장에 검토가 필요하다.",
+      "uniqueAtBase": 6,
+      "uniqueAtDouble": 6,
+      "saturated": true,
+      "ceiling": 6
+    },
+    {
+      "generatorId": "korean.g34.st.s03-02.procedure",
+      "code": "[4국03-02]",
+      "skill": "절차를 순서대로 배열하기",
+      "axis": "categorical",
+      "capacityNote": "순서가 상식으로 확정되는 절차 4개 × 뒤섞기가 상한이다. 순서가 갈리는 절차는 넣을 수 없다.",
+      "uniqueAtBase": 56,
+      "uniqueAtDouble": 56,
+      "saturated": true,
+      "ceiling": 56
+    },
+    {
+      "generatorId": "korean.g56.st.s01-01.inference",
+      "code": "[6국01-01]",
+      "skill": "대화에서 생략된 내용 추론하기",
+      "axis": "single",
+      "capacityNote": "추론 대화 4개가 상한이다. 복수 해석이 없는 대화만 담을 수 있어 확장에 검토가 필요하다.",
+      "uniqueAtBase": 4,
+      "uniqueAtDouble": 4,
+      "saturated": true,
+      "ceiling": 4
+    },
+    {
+      "generatorId": "korean.g56.st.s01-02.claim-reason",
+      "code": "[6국01-02]",
+      "skill": "주장을 뒷받침하는 타당한 근거 고르기",
+      "axis": "single",
+      "capacityNote": "주장-근거 짝 4개가 상한이다. 무관 진술이 다른 주장을 뒷받침하지 않아야 해서 확장에 검토가 필요하다.",
+      "uniqueAtBase": 4,
+      "uniqueAtDouble": 4,
+      "saturated": true,
+      "ceiling": 4
+    },
+    {
+      "generatorId": "english.g34.st.s01-05.meaning",
+      "code": "[4영01-05]",
+      "skill": "문장의 뜻 알기",
+      "axis": "categorical",
+      "capacityNote": "문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
+    },
+    {
+      "generatorId": "english.g34.st.s02-03.write-word",
+      "code": "[4영02-03]",
+      "skill": "뜻에 맞는 영어 단어 쓰기",
+      "axis": "categorical",
+      "capacityNote": "뜻이 유일한 단어 12개가 상한이다. 어휘 목록이 공식 자료로 교체되면 함께 늘어난다.",
+      "uniqueAtBase": 12,
+      "uniqueAtDouble": 12,
+      "saturated": true,
+      "ceiling": 12
+    },
+    {
+      "generatorId": "english.g34.st.s02-06.command",
+      "code": "[4영02-06]",
+      "skill": "행동 지시 문장 고르기",
+      "axis": "single",
+      "capacityNote": "상황-지시문 짝 8개가 상한이다. 상황이 겹치지 않아야 해서 확장에 검토가 필요하다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
+    },
+    {
+      "generatorId": "english.g56.st.s02-04.expression",
+      "code": "[6영02-04]",
+      "skill": "소개·묘사 문장 고르기",
+      "axis": "single",
+      "capacityNote": "상황-문장 짝 8개가 상한이다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
+    },
+    {
+      "generatorId": "english.g56.st.s02-08.blank",
+      "code": "[6영02-08]",
+      "skill": "예시문의 빈칸 채우기",
+      "axis": "single",
+      "capacityNote": "빈칸 예시문 6개가 상한이다. 목록 안 낱말 중 문맥에 맞는 것이 정답뿐이어야 해서 확장에 검토가 필요하다.",
+      "uniqueAtBase": 6,
+      "uniqueAtDouble": 6,
+      "saturated": true,
+      "ceiling": 6
+    },
+    {
+      "generatorId": "english.g34.st.s02-08.qa",
+      "code": "[4영02-08]",
+      "skill": "묻고 답하기",
+      "axis": "single",
+      "capacityNote": "질문-응답 짝 5개가 상한이다. 오답을 짝마다 손으로 골라야 해서 확장에 검토가 필요하다.",
+      "uniqueAtBase": 5,
+      "uniqueAtDouble": 5,
+      "saturated": true,
+      "ceiling": 5
+    },
+    {
+      "generatorId": "english.g56.st.s02-07.qa",
+      "code": "[6영02-07]",
+      "skill": "세부 정보를 묻고 답하기",
+      "axis": "single",
+      "capacityNote": "질문-응답 짝 5개가 상한이다.",
+      "uniqueAtBase": 5,
+      "uniqueAtDouble": 5,
+      "saturated": true,
+      "ceiling": 5
     }
   ]
 }

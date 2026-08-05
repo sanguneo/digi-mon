@@ -2,7 +2,7 @@
   "schema": "digi-mon/fact-tables-check@1",
   "note": "구조만 검사한다. 내용의 참·거짓은 사람이 봐야 한다. verify 가 같은 표를 되읽으므로 뮤테이션도 표의 오류를 못 잡는다.",
   "tableCount": 6,
-  "pairCount": 116,
+  "pairCount": 114,
   "problemCount": 0,
   "tables": [
     {
@@ -38,7 +38,7 @@
     {
       "id": "HYPERNYMS",
       "label": "포함 관계",
-      "pairs": 32,
+      "pairs": 30,
       "note": "하위어의 상위어가 답이다. 여러 하위어가 같은 상위어를 갖는 것이 정상이다."
     }
   ],

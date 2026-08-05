@@ -677,19 +677,26 @@ const agreementFix = {
 const tenseAgreement = {
   id: 'korean.g56.gr.s05.tense',
   difficultyAxis: 'categorical',
-  difficultyNote: '난이도 3은 다른 시간 표현의 서술어를 오답으로 더 섞는다.',
+  difficultyNote: '난이도 3은 반대 시제의 서술어를 오답으로 더 섞는다.',
+  capacityNote: '판정이 갈리지 않는 시간 부사어가 아홉이 전부다. 현재 행은 과거·미래와 다 호응해 뺐다(5차).',
   standardCode: '[6국04-05]',
   skill: '시간 표현에 맞는 서술어 고르기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
     const spec = rng.pick(TENSE_CASES);
+    /**
+     * 추가 오답은 반대 시제의 서술어에서만 뽑는다. 같은 시제에서 뽑으면
+     * '아까 책을 끝냈습니다'처럼 시제가 맞아 판정이 갈리는 선택지가 생긴다(5차 적발).
+     * 자기 행의 오답과 겹치면 선택지 중복으로 계약 위반이라 함께 거른다.
+     */
     const extra = difficulty === 3
-      ? rng.shuffle(TENSE_CASES.filter((c) => c.form !== spec.form)).slice(0, 1).map((c) => c.form)
+      ? rng.shuffle(TENSE_CASES.filter((c) => c.tense !== spec.tense && c.form !== spec.form && !spec.wrong.includes(c.form)))
+        .slice(0, 1).map((c) => c.form)
       : [];
     return {
       params: { adverb: spec.adverb, form: spec.form, tense: spec.tense },
       instruction: '□에 알맞은 말을 고르시오.',
-      stem: `${spec.adverb} 도서관에 □`,
+      stem: `${spec.adverb} ${spec.frame} □`,
       choices: buildChoices(rng, spec.form, [...spec.wrong, ...extra].slice(0, 3)),
       answer: { value: spec.form, display: spec.form, accepts: [spec.form] },
       solution: [

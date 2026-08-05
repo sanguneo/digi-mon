@@ -36,22 +36,28 @@ for (const f of files.filter((x) => x.includes('/generators/'))) {
  * tools/ 는 제외한다. 개발자가 눈으로 확인하는 도구라서 브라우저를 써도 된다.
  * 검증용 스크린샷은 산출물이 아니다.
  */
+/**
+ * document./window. 는 문자열 포함으로 찾으면 오탐한다 — 영어 예문 'Close the
+ * window.' 의 'window.'(마침표가 문장 부호)를 브라우저 전역으로 오인했다(5차).
+ * 전역 접근은 반드시 뒤에 속성 이름이 오므로 식별자가 따라올 때만 위반이다.
+ */
 const CLIENT_CONCERNS = [
   ['page.pdf', 'PDF 생성'],
   ['printToPDF', 'PDF 생성'],
   ['puppeteer', '브라우저 자동화'],
   ['playwright', '브라우저 자동화'],
   ['@media print', '인쇄 레이아웃'],
-  ['document.', 'DOM 접근'],
-  ['window.', '브라우저 전역'],
+  [/document\.[A-Za-z_$]/, 'DOM 접근', 'document.'],
+  [/window\.[A-Za-z_$]/, '브라우저 전역', 'window.'],
 ];
 
 const engineFiles = files.filter((f) => f.startsWith('src/') || f.startsWith('bin/'));
 for (const f of engineFiles) {
   const text = fs.readFileSync(f, 'utf8');
-  for (const [token, label] of CLIENT_CONCERNS) {
-    if (text.includes(token)) {
-      violations.push(`${f}: 엔진에서 영구 제외한 클라이언트 관심사 '${token}' (${label})`);
+  for (const [token, label, display] of CLIENT_CONCERNS) {
+    const hit = token instanceof RegExp ? token.test(text) : text.includes(token);
+    if (hit) {
+      violations.push(`${f}: 엔진에서 영구 제외한 클라이언트 관심사 '${display ?? token}' (${label})`);
     }
   }
 }

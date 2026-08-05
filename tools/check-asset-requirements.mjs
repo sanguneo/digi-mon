@@ -42,14 +42,20 @@ for (const e of coverage.uncovered) {
 }
 
 // 표에는 있는데 이미 열린 기준을 가리키는 항목은 낡은 것이다.
+// 미충족도 아니고 열린 것도 아니면 자동채점 불가로 분류된 기준이다 — 자산 요구가
+// 있으면 분류와 조달 선언이 모순이다. 5차 검토가 이 부류 4건([4국03-05] 등)을
+// 잡았다. 앞 루프는 '미충족 → 선언'만 봐서 반대 방향의 과잉 선언을 놓쳤다.
+const uncoveredCodes = new Set(coverage.uncovered.map((e) => e.code));
+const coveredCodes = new Set(coverage.covered.map((e) => e.code));
 for (const code of Object.keys(ASSET_REQUIREMENTS)) {
   if (!codes.has(code)) {
     problems.push({ code, kind: 'unknown-code', message: '스파인에 없는 성취기준이다' });
     continue;
   }
-  const covered = coverage.covered.some((e) => e.code === code);
-  if (covered) {
+  if (coveredCodes.has(code)) {
     problems.push({ code, kind: 'stale', message: '이미 생성기가 있는데 자산 요구가 남아 있다' });
+  } else if (!uncoveredCodes.has(code)) {
+    problems.push({ code, kind: 'not-openable', message: '자동채점 불가로 분류된 기준인데 자산 요구가 있다 — 분류와 선언이 모순이다' });
   }
 }
 

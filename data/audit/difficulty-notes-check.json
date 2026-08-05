@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 41,
+  "categoricalCount": 45,
   "problemCount": 0,
   "problems": [],
   "rows": [
@@ -307,9 +307,9 @@
         3
       ],
       "uniqueByLevel": {
-        "1": 59,
-        "2": 79,
-        "3": 37
+        "1": 67,
+        "2": 92,
+        "3": 59
       }
     },
     {
@@ -336,8 +336,8 @@
       ],
       "uniqueByLevel": {
         "1": 40,
-        "2": 66,
-        "3": 66
+        "2": 64,
+        "3": 64
       }
     },
     {
@@ -352,7 +352,7 @@
       "uniqueByLevel": {
         "1": 120,
         "2": 120,
-        "3": 86
+        "3": 89
       }
     },
     {
@@ -444,14 +444,14 @@
     {
       "generatorId": "korean.g56.gr.s05.tense",
       "code": "[6국04-05]",
-      "note": "난이도 3은 다른 시간 표현의 서술어를 오답으로 더 섞는다.",
+      "note": "난이도 3은 반대 시제의 서술어를 오답으로 더 섞는다.",
       "mentionedLevels": [
         3
       ],
       "uniqueByLevel": {
-        "1": 12,
-        "2": 12,
-        "3": 12
+        "1": 9,
+        "2": 9,
+        "3": 9
       }
     },
     {
@@ -582,6 +582,62 @@
         "1": 3,
         "2": 5,
         "3": 5
+      }
+    },
+    {
+      "generatorId": "korean.g34.st.s05-04.sensory",
+      "code": "[4국05-04]",
+      "note": "난이도 1은 소리를 흉내 낸 말(의성어), 2 이상은 모양·촉감을 나타낸 말(의태어)까지 낸다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 4,
+        "2": 10,
+        "3": 10
+      }
+    },
+    {
+      "generatorId": "korean.g34.st.s03-02.procedure",
+      "code": "[4국03-02]",
+      "note": "난이도 1은 세 단계 절차, 2 이상은 네 단계 절차를 낸다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 10,
+        "2": 43,
+        "3": 43
+      }
+    },
+    {
+      "generatorId": "english.g34.st.s01-05.meaning",
+      "code": "[4영01-05]",
+      "note": "난이도 1은 세 단어 문장, 2 이상은 더 긴 문장까지 낸다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 3,
+        "2": 8,
+        "3": 8
+      }
+    },
+    {
+      "generatorId": "english.g34.st.s02-03.write-word",
+      "code": "[4영02-03]",
+      "note": "난이도 1은 세 글자 단어, 2 이상은 네 글자 단어까지 낸다. 글자가 길수록 틀릴 자리가 늘어난다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 7,
+        "2": 12,
+        "3": 12
       }
     }
   ]

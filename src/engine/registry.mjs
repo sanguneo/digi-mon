@@ -10,6 +10,7 @@ import { generators as mathG56RelationsMeasurement } from '../generators/math/g5
 import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { generators as englishLetters } from '../generators/english/letters.mjs';
 import { generators as koreanSentences } from '../generators/korean/sentences.mjs';
+import { generators as englishSentences } from '../generators/english/sentences.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
 
@@ -30,6 +31,7 @@ const MODULES = [
   { file: 'korean/grammar.mjs', generators: koreanGrammar },
   { file: 'english/letters.mjs', generators: englishLetters },
   { file: 'korean/sentences.mjs', generators: koreanSentences },
+  { file: 'english/sentences.mjs', generators: englishSentences },
 ];
 
 function assertGeneratorContract(g, file) {

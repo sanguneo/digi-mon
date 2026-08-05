@@ -74,6 +74,56 @@
       "generatorId": "korean.g56.st.s05-02.vehicle",
       "code": "[6국05-02]",
       "note": null
+    },
+    {
+      "generatorId": "korean.g12.st.s02-03.mind",
+      "code": "[2국02-03]",
+      "note": null
+    },
+    {
+      "generatorId": "korean.g34.st.s03-03.reason",
+      "code": "[4국03-03]",
+      "note": null
+    },
+    {
+      "generatorId": "korean.g56.st.s03-05.fix",
+      "code": "[6국03-05]",
+      "note": null
+    },
+    {
+      "generatorId": "korean.g56.st.s01-01.inference",
+      "code": "[6국01-01]",
+      "note": null
+    },
+    {
+      "generatorId": "korean.g56.st.s01-02.claim-reason",
+      "code": "[6국01-02]",
+      "note": null
+    },
+    {
+      "generatorId": "english.g34.st.s02-06.command",
+      "code": "[4영02-06]",
+      "note": null
+    },
+    {
+      "generatorId": "english.g56.st.s02-04.expression",
+      "code": "[6영02-04]",
+      "note": null
+    },
+    {
+      "generatorId": "english.g56.st.s02-08.blank",
+      "code": "[6영02-08]",
+      "note": null
+    },
+    {
+      "generatorId": "english.g34.st.s02-08.qa",
+      "code": "[4영02-08]",
+      "note": null
+    },
+    {
+      "generatorId": "english.g56.st.s02-07.qa",
+      "code": "[6영02-07]",
+      "note": null
     }
   ],
   "declaredCategorical": [
@@ -235,7 +285,7 @@
     {
       "generatorId": "korean.g56.gr.s05.tense",
       "code": "[6국04-05]",
-      "note": "난이도 3은 다른 시간 표현의 서술어를 오답으로 더 섞는다."
+      "note": "난이도 3은 반대 시제의 서술어를 오답으로 더 섞는다."
     },
     {
       "generatorId": "korean.g56.gr.s06.spacing",
@@ -281,6 +331,26 @@
       "generatorId": "korean.g12.st.s02-02.reading-break",
       "code": "[2국02-02]",
       "note": "난이도 1은 세 어절 문장, 2 이상은 네 어절 이상 문장을 낸다. 어절이 늘면 끊어 읽을 자리를 고르기 어렵다."
+    },
+    {
+      "generatorId": "korean.g34.st.s05-04.sensory",
+      "code": "[4국05-04]",
+      "note": "난이도 1은 소리를 흉내 낸 말(의성어), 2 이상은 모양·촉감을 나타낸 말(의태어)까지 낸다."
+    },
+    {
+      "generatorId": "korean.g34.st.s03-02.procedure",
+      "code": "[4국03-02]",
+      "note": "난이도 1은 세 단계 절차, 2 이상은 네 단계 절차를 낸다."
+    },
+    {
+      "generatorId": "english.g34.st.s01-05.meaning",
+      "code": "[4영01-05]",
+      "note": "난이도 1은 세 단어 문장, 2 이상은 더 긴 문장까지 낸다."
+    },
+    {
+      "generatorId": "english.g34.st.s02-03.write-word",
+      "code": "[4영02-03]",
+      "note": "난이도 1은 세 글자 단어, 2 이상은 네 글자 단어까지 낸다. 글자가 길수록 틀릴 자리가 늘어난다."
     }
   ],
   "singleAxisVariance": [],

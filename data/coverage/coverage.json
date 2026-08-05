@@ -2,15 +2,15 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 175
+    "generatorCount": 189
   },
   "totalStandards": 248,
   "autoScorableStandards": 194,
   "manualOnlyStandards": 54,
-  "coveredStandards": 139,
-  "uncoveredStandards": 55,
-  "standardsWithGenerator": 140,
-  "coverageRatio": 0.7165,
+  "coveredStandards": 153,
+  "uncoveredStandards": 41,
+  "standardsWithGenerator": 154,
+  "coverageRatio": 0.7887,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -69,23 +69,23 @@
       "total": 87,
       "autoScorable": 49,
       "manualOnly": 38,
-      "covered": 16,
-      "generators": 22,
+      "covered": 23,
+      "generators": 29,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
           "autoScorable": 5,
-          "covered": 0
+          "covered": 2
         },
         "읽기": {
           "total": 16,
           "autoScorable": 11,
-          "covered": 2
+          "covered": 3
         },
         "쓰기": {
           "total": 15,
           "autoScorable": 7,
-          "covered": 1
+          "covered": 4
         },
         "문법": {
           "total": 14,
@@ -95,7 +95,7 @@
         "문학": {
           "total": 15,
           "autoScorable": 10,
-          "covered": 1
+          "covered": 2
         },
         "매체": {
           "total": 9,
@@ -103,7 +103,7 @@
           "covered": 0
         }
       },
-      "coverageRatio": 0.3265
+      "coverageRatio": 0.4694
     },
     "english": {
       "subjectKorean": "영어",
@@ -129,21 +129,21 @@
       "total": 40,
       "autoScorable": 25,
       "manualOnly": 15,
-      "covered": 3,
-      "generators": 6,
+      "covered": 10,
+      "generators": 13,
       "byDomain": {
         "이해": {
           "total": 20,
           "autoScorable": 12,
-          "covered": 1
+          "covered": 2
         },
         "표현": {
           "total": 20,
           "autoScorable": 13,
-          "covered": 2
+          "covered": 8
         }
       },
-      "coverageRatio": 0.12
+      "coverageRatio": 0.4
     }
   },
   "covered": [
@@ -1632,6 +1632,18 @@
       ]
     },
     {
+      "code": "[2국02-03]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g12.st.s02-03.mind"
+      ]
+    },
+    {
       "code": "[2국03-01]",
       "subject": "korean",
       "gradeBand": "1-2",
@@ -1696,6 +1708,34 @@
       ]
     },
     {
+      "code": "[4국03-02]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "주어진 절차를 순서대로 배열하는 문항",
+      "partialNotScored": "절차와 결과가 드러나는 글을 직접 쓰는 활동",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.st.s03-02.procedure"
+      ]
+    },
+    {
+      "code": "[4국03-03]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "주어진 글에서 의견과 그 이유를 가려내는 문항",
+      "partialNotScored": "의견을 담은 글을 직접 쓰는 활동",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.st.s03-03.reason"
+      ]
+    },
+    {
       "code": "[4국04-01]",
       "subject": "korean",
       "gradeBand": "3-4",
@@ -1742,6 +1782,60 @@
       "generatorCount": 1,
       "generatorIds": [
         "korean.g34.gr.s04.honorific"
+      ]
+    },
+    {
+      "code": "[4국05-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g34.st.s05-04.sensory"
+      ]
+    },
+    {
+      "code": "[6국01-01]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "글로 적힌 대화에서 생략된 내용을 추론하는 문항",
+      "partialNotScored": "실제로 듣고 추론하며 말로 반응하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.st.s01-01.inference"
+      ]
+    },
+    {
+      "code": "[6국01-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "듣기·말하기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "글로 적힌 대화·주장에서 근거의 타당성을 판정하는 문항",
+      "partialNotScored": "실제 담화를 들으며 판단하고 말로 참여하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.st.s01-02.claim-reason"
+      ]
+    },
+    {
+      "code": "[6국03-05]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "쓰기",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "맞춤법·띄어쓰기가 틀린 문장을 바르게 고치는 문항",
+      "partialNotScored": "글 전체의 흐름을 고쳐 쓰는 활동",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g56.st.s03-05.fix"
       ]
     },
     {
@@ -1831,6 +1925,18 @@
       ]
     },
     {
+      "code": "[4영01-05]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g34.st.s01-05.meaning"
+      ]
+    },
+    {
       "code": "[4영02-02]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -1844,6 +1950,46 @@
       ]
     },
     {
+      "code": "[4영02-03]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g34.st.s02-03.write-word"
+      ]
+    },
+    {
+      "code": "[4영02-06]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "상황에 알맞은 행동 지시 문장을 고르는 문항",
+      "partialNotScored": "지시문을 실제로 말하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g34.st.s02-06.command"
+      ]
+    },
+    {
+      "code": "[4영02-08]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "물음에 알맞은 응답을 고르는 문항",
+      "partialNotScored": "실제로 묻고 답하며 말하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g34.st.s02-08.qa"
+      ]
+    },
+    {
       "code": "[6영02-03]",
       "subject": "english",
       "gradeBand": "5-6",
@@ -1854,6 +2000,48 @@
       "generatorIds": [
         "english.g56.lt.s02-03.end-mark",
         "english.g56.lt.s02-03.fix-case"
+      ]
+    },
+    {
+      "code": "[6영02-04]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "상황에 알맞은 소개·묘사 문장을 고르는 문항",
+      "partialNotScored": "소개·묘사를 실제로 말하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g56.st.s02-04.expression"
+      ]
+    },
+    {
+      "code": "[6영02-07]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "세부 정보를 묻는 말에 알맞은 응답을 고르는 문항",
+      "partialNotScored": "실제로 묻고 답하며 말하는 수행",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g56.st.s02-07.qa"
+      ]
+    },
+    {
+      "code": "[6영02-08]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "partial",
+      "partialScored": "예시문의 빈칸을 채워 목적에 맞는 문장을 완성하는 문항",
+      "partialNotScored": "글을 직접 구성해 쓰는 활동",
+      "generatorCount": 1,
+      "generatorIds": [
+        "english.g56.st.s02-08.blank"
       ]
     }
   ],
@@ -1871,21 +2059,6 @@
         "kind": "audio",
         "need": "짧은 이야기 음성과 사건 순서 정답",
         "note": "듣고 순서를 잡는 기준이라 음성이 없으면 성립하지 않는다."
-      }
-    },
-    {
-      "code": "[2국02-03]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "인물의 마음이 드러나는 짧은 문장 목록",
-        "note": "문장 단위로 성립한다. 지문이 필요 없다."
       }
     },
     {
@@ -2018,40 +2191,6 @@
       }
     },
     {
-      "code": "[4국03-02]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "partial",
-      "partialScored": "주어진 절차를 순서대로 배열하는 문항",
-      "partialNotScored": "절차와 결과가 드러나는 글을 직접 쓰는 활동",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "procedure",
-        "need": "절차 3~5단계와 올바른 순서",
-        "note": "PARTIAL — 지문이 아니라 단계 목록이면 된다. ordering 형식이 이미 있다."
-      }
-    },
-    {
-      "code": "[4국03-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "partial",
-      "partialScored": "주어진 글에서 의견과 그 이유를 가려내는 문항",
-      "partialNotScored": "의견을 담은 글을 직접 쓰는 활동",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "의견과 이유가 짝을 이룬 문장 목록",
-        "note": "PARTIAL — 문장 단위로 성립한다."
-      }
-    },
-    {
       "code": "[4국05-01]",
       "subject": "korean",
       "gradeBand": "3-4",
@@ -2094,21 +2233,6 @@
       }
     },
     {
-      "code": "[4국05-04]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "감각적 표현이 든 문장 목록",
-        "note": "비유 문장 자산과 같은 방식으로 성립한다."
-      }
-    },
-    {
       "code": "[4국06-01]",
       "subject": "korean",
       "gradeBand": "3-4",
@@ -2134,35 +2258,6 @@
       "blockedBy": {
         "kind": "media",
         "need": "출처 표기 사례와 윤리 판정 근거"
-      }
-    },
-    {
-      "code": "[6국01-01]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "dialogue",
-        "need": "생략된 내용이 있는 대화 두세 줄과 추론 정답",
-        "note": "음성 없이 글 대화로도 성립한다. 복수 해석 위험이 있어 정답 유일성 설계가 필요하다."
-      }
-    },
-    {
-      "code": "[6국01-02]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "dialogue",
-        "need": "주장과 근거가 든 대화와 타당성 판정 근거"
       }
     },
     {
@@ -2248,23 +2343,6 @@
       "blockedBy": {
         "kind": "passage",
         "need": "근거와 출처가 든 주장 글 예시"
-      }
-    },
-    {
-      "code": "[6국03-05]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "쓰기",
-      "module": null,
-      "scoringMode": "partial",
-      "partialScored": "맞춤법·띄어쓰기가 틀린 문장을 바르게 고치는 문항",
-      "partialNotScored": "글 전체의 흐름을 고쳐 쓰는 활동",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "맞춤법·띄어쓰기가 틀린 문장과 고친 문장 짝",
-        "note": "PARTIAL — 문장 단위로 성립한다. 기존 SPELLING_PAIRS 를 문장으로 확장하면 열린다."
       }
     },
     {
@@ -2366,21 +2444,6 @@
       }
     },
     {
-      "code": "[4영01-05]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "쉬운 문장과 뜻 짝",
-        "note": "문장 목록이면 성립한다. 음성이 필요 없다."
-      }
-    },
-    {
       "code": "[4영01-06]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -2406,20 +2469,6 @@
       "blockedBy": {
         "kind": "passage",
         "need": "단서가 든 담화·문장"
-      }
-    },
-    {
-      "code": "[4영02-03]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "따라 말할 문장 목록과 허용 답안 범위"
       }
     },
     {
@@ -2452,20 +2501,6 @@
       }
     },
     {
-      "code": "[4영02-06]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "행동 지시 문장 목록"
-      }
-    },
-    {
       "code": "[4영02-07]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -2477,20 +2512,6 @@
       "blockedBy": {
         "kind": "media",
         "need": "감정 그림 카드와 허용 답안 목록"
-      }
-    },
-    {
-      "code": "[4영02-08]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "dialogue",
-        "need": "묻고 답하는 짧은 대화"
       }
     },
     {
@@ -2588,22 +2609,8 @@
       "generatorCount": 0,
       "generatorIds": [],
       "blockedBy": {
-        "kind": "wordlist",
-        "need": "5~6학년 공식 어휘 목록"
-      }
-    },
-    {
-      "code": "[6영02-04]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "상황별 문장 목록과 허용 답안 범위"
+        "kind": "media",
+        "need": "실물·그림 자료와 단어·어구 허용 답안"
       }
     },
     {
@@ -2616,39 +2623,8 @@
       "generatorCount": 0,
       "generatorIds": [],
       "blockedBy": {
-        "kind": "passage",
-        "need": "요약 대상 글과 정답"
-      }
-    },
-    {
-      "code": "[6영02-07]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "dialogue",
-        "need": "의견을 주고받는 대화"
-      }
-    },
-    {
-      "code": "[6영02-08]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "partial",
-      "partialScored": "예시문의 빈칸을 채워 목적에 맞는 문장을 완성하는 문항",
-      "partialNotScored": "글을 직접 구성해 쓰는 활동",
-      "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "예시문과 빈칸 정답 목록",
-        "note": "PARTIAL — 글 구성은 채점 못 하지만 빈칸 채우기는 된다. 예시문 목록이면 열린다."
+        "kind": "media",
+        "need": "장소·위치·순서를 보여 주는 그림과 허용 답안 틀"
       }
     }
   ],
@@ -2796,11 +2772,7 @@
       "scoringMode": "manual",
       "manualReason": "일상 매체와 매체 자료에 관심을 갖는 태도 기준이다.",
       "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "media",
-        "need": "그림·사진 자료와 내용 정답"
-      }
+      "generatorIds": []
     },
     {
       "code": "[2국06-02]",
@@ -2811,11 +2783,7 @@
       "scoringMode": "manual",
       "manualReason": "일상 경험과 생각을 글과 그림으로 표현하는 산출 과제다.",
       "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "media",
-        "need": "학습 매체 화면 예시"
-      }
+      "generatorIds": []
     },
     {
       "code": "[4국01-03]",
@@ -2903,11 +2871,7 @@
       "scoringMode": "manual",
       "manualReason": "쓰기 과정을 점검하며 자신감을 갖는 태도 기준이다.",
       "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "sentence",
-        "need": "고쳐 쓸 문장과 고친 문장 짝"
-      }
+      "generatorIds": []
     },
     {
       "code": "[4국04-05]",
@@ -3083,11 +3047,7 @@
       "scoringMode": "manual",
       "manualReason": "복합양식 자료를 제작하는 산출 과제다.",
       "generatorCount": 0,
-      "generatorIds": [],
-      "blockedBy": {
-        "kind": "media",
-        "need": "매체 소통 참여 사례"
-      }
+      "generatorIds": []
     },
     {
       "code": "[6국06-04]",

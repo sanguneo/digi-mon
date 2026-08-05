@@ -2,16 +2,16 @@
   "schema": "digi-mon/vocabulary-check@1",
   "note": "어휘 목록은 이 저장소가 시드한 것이고 공식 목록이 아니다. 교과 전문가 검토 대상이다.",
   "samplesPerGenerator": 60,
-  "itemsChecked": 1680,
-  "wordsChecked": 2920,
+  "itemsChecked": 2520,
+  "wordsChecked": 3607,
   "violationCount": 0,
   "uniqueViolations": 0,
   "violations": [],
   "vocabularySize": {
     "korean": {
-      "1-2": 251,
-      "3-4": 430,
-      "5-6": 570
+      "1-2": 377,
+      "3-4": 545,
+      "5-6": 679
     },
     "english": {
       "3-4": 30,
