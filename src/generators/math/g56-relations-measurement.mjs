@@ -317,41 +317,67 @@ const congruence = {
 
 const symmetryAxes = {
   id: 'math.g56.rm.s03-02.symmetry',
+  capacityNote: '초등에서 대칭축을 세는 도형은 정삼각형·정사각형·정오각형·정육각형과 반례인 직사각형·마름모·이등변삼각형 일곱 가지다.',
   standardCode: '[6수03-02]',
   skill: '선대칭도형의 대칭축 수 세기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
     // 정n각형의 대칭축은 n개다. 원은 무수히 많으므로 문항에 넣지 않는다.
+    /**
+     * 정다각형만 내면 '대칭축의 수 = 변의 수' 라는 오개념이 굳는다.
+     * 직사각형은 변이 4개인데 대칭축이 2개이고, 이등변삼각형은 1개다.
+     * 반례를 반드시 섞는다.
+     */
     const SHAPES = [
-      { name: '정삼각형', axes: 3, sides: 'triangle' },
-      { name: '정사각형', axes: 4, sides: 'quadrilateral' },
-      { name: '정오각형', axes: 5, sides: 'pentagon' },
-      { name: '정육각형', axes: 6, sides: 'hexagon' },
+      { name: '정삼각형', axes: 3, regular: true, figure: { kind: 'geometry.triangle', spec: { angles: [60, 60, 60], markSides: true } } },
+      { name: '정사각형', axes: 4, regular: true, figure: { kind: 'geometry.quadrilateral', spec: { kind: 'square' } } },
+      { name: '정오각형', axes: 5, regular: true, figure: { kind: 'geometry.plane-shape', spec: { shape: 'pentagon' } } },
+      { name: '정육각형', axes: 6, regular: true, figure: { kind: 'geometry.plane-shape', spec: { shape: 'hexagon' } } },
+      { name: '직사각형', axes: 2, regular: false, figure: { kind: 'geometry.quadrilateral', spec: { kind: 'rectangle' } } },
+      { name: '마름모', axes: 2, regular: false, figure: { kind: 'geometry.quadrilateral', spec: { kind: 'rhombus' } } },
+      { name: '이등변삼각형', axes: 1, regular: false, figure: { kind: 'geometry.triangle', spec: { angles: [40, 70, 70], markSides: true } } },
     ];
-    const shape = rng.pick(difficulty === 1 ? SHAPES.slice(0, 2) : SHAPES);
+    // 난이도 1은 정다각형, 2 이상은 반례까지 낸다.
+    const pool = difficulty === 1 ? SHAPES.filter((x) => x.regular) : SHAPES;
+    const shape = rng.pick(pool);
     return {
-      params: { axes: shape.axes, name: shape.name },
+      params: { axes: shape.axes, name: shape.name, regular: shape.regular },
       instruction: '대칭축은 모두 몇 개입니까?',
       stem: `${shape.name}의 대칭축의 수를 구하시오.`,
       figure: {
-        kind: 'geometry.plane-shape',
-        spec: { shape: shape.sides },
+        kind: shape.figure.kind,
+        spec: shape.figure.spec,
         altText: `${shape.name} 한 개가 그려져 있다.`,
         prompt: { ko: `흰 배경에 검은 윤곽선만으로 그린 ${shape.name}. 초등 수학 교재용 단순 도해. AR 1:1` },
       },
       answer: { value: shape.axes, display: `${shape.axes}개`, accepts: [num(shape.axes), `${shape.axes}개`] },
       solution: [
         '선대칭도형을 접어서 완전히 겹치게 하는 직선이 대칭축이다.',
-        `${shape.name}은 변의 수와 같은 ${shape.axes}개의 대칭축을 가진다.`,
+        shape.regular
+          ? `${shape.name}은 변의 수와 같은 ${shape.axes}개의 대칭축을 가진다.`
+          : `${shape.name}의 대칭축은 ${shape.axes}개다. 변의 수와 대칭축의 수는 늘 같지는 않다.`,
       ],
       dedupeKey: `symmetry-axes:${shape.name}`,
       difficulty,
     };
   },
-  verify({ axes, name }, answer) {
-    // 정n각형의 대칭축 수는 n이다. 이름에서 변의 수를 되짚는다.
-    const SIDES = { 정삼각형: 3, 정사각형: 4, 정오각형: 5, 정육각형: 6 };
-    return answer.value === SIDES[name] && answer.value === axes;
+  verify({ axes, name, regular }, answer) {
+    /**
+     * 도형 이름에서 대칭축 수를 되짚는다.
+     *
+     * 처음 검산은 정n각형만 알고 '대칭축 수 = 변의 수'로 확인했다. 그 전제가
+     * 곧 이 문항이 깨려는 오개념이어서, 반례를 넣자마자 옳은 답을 틀렸다고 했다.
+     * 도형별 대칭축 수는 규칙이 아니라 사실이므로 표로 둔다.
+     */
+    const AXES_BY_NAME = {
+      정삼각형: 3, 정사각형: 4, 정오각형: 5, 정육각형: 6,
+      직사각형: 2, 마름모: 2, 이등변삼각형: 1,
+    };
+    const REGULAR = new Set(['정삼각형', '정사각형', '정오각형', '정육각형']);
+    const expected = AXES_BY_NAME[name];
+    if (expected === undefined) return false;
+    if (regular !== REGULAR.has(name)) return false;
+    return answer.value === expected && answer.value === axes;
   },
 };
 
@@ -361,6 +387,7 @@ const symmetryAxes = {
 
 const cuboidElements = {
   id: 'math.g56.rm.s03-03.cuboid',
+  capacityNote: '면·모서리·꼭짓점 세 가지를 직육면체와 정육면체에 대해 묻는 여섯 경우가 전부다.',
   standardCode: '[6수03-03]',
   skill: '직육면체의 면·모서리·꼭짓점 수',
   format: 'short-answer',
@@ -483,6 +510,7 @@ const prismPyramid = {
 
 const prismName = {
   id: 'math.g56.rm.s03-06.prism-name',
+  capacityNote: '밑면이 삼각형·사각형·오각형·육각형인 각기둥과 각뿔 여덟 경우가 전부다.',
   standardCode: '[6수03-06]',
   skill: '밑면의 모양으로 각기둥·각뿔 이름 정하기',
   format: 'multiple-choice',
@@ -559,7 +587,7 @@ const cylinderParts = {
   skill: '원기둥의 전개도 이해',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const radius = difficulty === 1 ? rng.int(2, 5) : rng.int(3, 10);
+    const radius = difficulty === 1 ? rng.int(2, 8) : difficulty === 2 ? rng.int(4, 16) : rng.int(6, 25);
     // 전개도에서 옆면 직사각형의 가로는 밑면의 원주와 같다.
     const circumferenceHundredths = 2 * radius * PI_HUNDREDTHS;
     const value = makeDecimal(circumferenceHundredths, 2);
@@ -1189,6 +1217,7 @@ const LIKELIHOOD_WORDS = ['불가능하다', '~아닐 것 같다', '반반이다
 
 const likelihoodWord = {
   id: 'math.g56.rm.s04-04.likelihood-word',
+  capacityNote: '가능성을 나타내는 말은 불가능하다·낮다·반반이다·높다·확실하다 다섯 단계가 전부다.',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 확실함·불가능함, 2 이상은 반반·가능성이 낮음까지 구별한다.',
   standardCode: '[6수04-04]',
@@ -1234,10 +1263,22 @@ const likelihoodNumber = {
     const CASES = [
       { situation: '흰 공만 들어 있는 주머니에서 흰 공을 꺼낼', n: 1, d: 1, display: '1' },
       { situation: '흰 공만 들어 있는 주머니에서 검은 공을 꺼낼', n: 0, d: 1, display: '0' },
-      { situation: '흰 공 1개와 검은 공 1개가 들어 있는 주머니에서 흰 공을 꺼낼', n: 1, d: 2, display: '1/2' },
-      { situation: '동전을 한 번 던져 숫자 면이 나올', n: 1, d: 2, display: '1/2' },
+      { situation: '검은 공만 들어 있는 주머니에서 검은 공을 꺼낼', n: 1, d: 1, display: '1' },
+      { situation: '검은 공만 들어 있는 주머니에서 흰 공을 꺼낼', n: 0, d: 1, display: '0' },
       { situation: '주사위를 굴려 7이 나올', n: 0, d: 1, display: '0' },
       { situation: '주사위를 굴려 6 이하의 수가 나올', n: 1, d: 1, display: '1' },
+      { situation: '주사위를 굴려 0이 나올', n: 0, d: 1, display: '0' },
+      { situation: '주사위를 굴려 1 이상의 수가 나올', n: 1, d: 1, display: '1' },
+      { situation: '오늘이 지나면 내일이 올', n: 1, d: 1, display: '1' },
+      { situation: '해가 서쪽에서 뜰', n: 0, d: 1, display: '0' },
+      { situation: '흰 공 1개와 검은 공 1개가 들어 있는 주머니에서 흰 공을 꺼낼', n: 1, d: 2, display: '1/2' },
+      { situation: '흰 공 3개와 검은 공 3개가 들어 있는 주머니에서 검은 공을 꺼낼', n: 1, d: 2, display: '1/2' },
+      { situation: '동전을 한 번 던져 숫자 면이 나올', n: 1, d: 2, display: '1/2' },
+      { situation: '동전을 한 번 던져 그림 면이 나올', n: 1, d: 2, display: '1/2' },
+      { situation: '주사위를 굴려 짝수가 나올', n: 1, d: 2, display: '1/2' },
+      { situation: '주사위를 굴려 3 이하의 수가 나올', n: 1, d: 2, display: '1/2' },
+      { situation: '번호가 1부터 10까지인 공에서 짝수 번호를 꺼낼', n: 1, d: 2, display: '1/2' },
+      { situation: '가위바위보에서 한 판을 이기거나 질', n: 1, d: 2, display: '1/2' },
     ];
     const c = rng.pick(difficulty === 1 ? CASES.filter((x) => x.d === 1) : CASES);
     return {

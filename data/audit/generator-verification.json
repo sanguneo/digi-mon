@@ -3340,24 +3340,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 2,
+          "unique": 4,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 4,
+          "unique": 7,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 4,
+          "unique": 7,
           "failed": 0
         }
       },
-      "uniqueTotal": 4,
+      "uniqueTotal": 7,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0033
+      "uniqueRatio": 0.0058
     },
     {
       "generatorId": "math.g56.rm.s03-03.cuboid",
@@ -3496,24 +3496,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 4,
+          "unique": 7,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 13,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 20,
           "failed": 0
         }
       },
-      "uniqueTotal": 9,
+      "uniqueTotal": 24,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0075
+      "uniqueRatio": 0.02
     },
     {
       "generatorId": "math.g56.rm.s03-09.cube-count",
@@ -3912,24 +3912,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 4,
+          "unique": 10,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 6,
+          "unique": 18,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 6,
+          "unique": 18,
           "failed": 0
         }
       },
-      "uniqueTotal": 6,
+      "uniqueTotal": 18,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.005
+      "uniqueRatio": 0.015
     },
     {
       "generatorId": "math.g56.rm.s04-06.likelihood-compare",
@@ -4068,24 +4068,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 4,
+          "unique": 10,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 6,
+          "unique": 15,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 6,
+          "unique": 15,
           "failed": 0
         }
       },
-      "uniqueTotal": 6,
+      "uniqueTotal": 15,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.005
+      "uniqueRatio": 0.0125
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation-name",

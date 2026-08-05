@@ -58,6 +58,17 @@ function assertGeneratorContract(g, file) {
   if (axis === 'categorical' && (typeof g.difficultyNote !== 'string' || g.difficultyNote.length === 0)) {
     fail("difficultyAxis 'categorical' 은 무엇이 달라지는지 difficultyNote 에 적어야 한다");
   }
+
+  /**
+   * 파라미터 공간이 좁으면 왜 좁은지 적는다.
+   *
+   * 개념이 원래 유한한 것(평면도형의 이동은 다섯 가지가 전부)과 파라미터를 덜 쓴 것은
+   * 다르다. check-capacity 가 포화 상한이 낮은 생성기를 잡는데, 전자라면 이 문구가
+   * 있어야 통과한다. 문턱을 낮추는 대신 한계를 드러내게 한다.
+   */
+  if (g.capacityNote !== undefined && (typeof g.capacityNote !== 'string' || g.capacityNote.length === 0)) {
+    fail('capacityNote 가 빈 문자열이다');
+  }
 }
 
 export function createRegistry() {

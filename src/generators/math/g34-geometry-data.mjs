@@ -36,6 +36,7 @@ const LINE_KINDS = {
 
 const identifyLine = {
   id: 'math.g34.gd.s01.identify-line',
+  capacityNote: '[4수03-01]이 다루는 것은 직선·선분·반직선 셋이 전부다.',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 선분·직선만, 2 이상은 반직선까지 구별한다.',
   standardCode: '[4수03-01]',
@@ -155,6 +156,7 @@ const rightAngleFigures = {
 
 const identifyTransform = {
   id: 'math.g34.gd.s04.transform',
+  capacityNote: '평면도형의 이동은 밀기·좌우 뒤집기·위아래 뒤집기·90도 돌리기·180도 돌리기 다섯 가지가 전부다.',
   standardCode: '[4수03-04]',
   skill: '평면도형의 이동 방법 알기',
   format: 'multiple-choice',
@@ -232,6 +234,7 @@ const patternByTransform = {
 
 const circleParts = {
   id: 'math.g34.gd.s06.parts',
+  capacityNote: '원의 구성 요소는 중심·반지름·지름 셋이 전부다.',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 원의 중심·반지름, 2 이상은 지름까지 구별한다.',
   standardCode: '[4수03-06]',
@@ -527,6 +530,7 @@ const namePolygon = {
 
 const countDiagonals = {
   id: 'math.g34.gd.s12.diagonals',
+  capacityNote: '초등에서 다루는 다각형은 사각형부터 팔각형까지 다섯 가지다.',
   standardCode: '[4수03-12]',
   skill: '대각선의 수 세기',
   format: 'short-answer',

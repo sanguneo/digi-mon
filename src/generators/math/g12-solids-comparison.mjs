@@ -328,6 +328,7 @@ const DRAW_SHAPES = {
  */
 const drawPlaneShape = {
   id: 'math.g12.sc.s04.draw',
+  capacityNote: '[2수03-04]가 다루는 도형은 사각형·삼각형·원 셋이고, 그리는 개수는 한 개에서 세 개까지다.',
   standardCode: CODE(4),
   skill: '사각형·삼각형·원 그리기',
   format: 'construction',

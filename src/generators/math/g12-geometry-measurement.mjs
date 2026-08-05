@@ -81,6 +81,7 @@ const identifyPolygon = {
 
 const countSides = {
   id: 'math.g12.gm.s05.count-sides',
+  capacityNote: '삼각형부터 육각형까지 네 도형의 변과 꼭짓점을 묻는 여덟 경우가 전부다.',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 삼각형·사각형, 2 이상은 오각형·육각형까지 센다.',
   standardCode: CODE(5),
