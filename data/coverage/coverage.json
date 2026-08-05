@@ -2,15 +2,15 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 170
+    "generatorCount": 175
   },
   "totalStandards": 248,
   "autoScorableStandards": 198,
   "manualOnlyStandards": 50,
-  "coveredStandards": 136,
-  "uncoveredStandards": 62,
-  "standardsWithGenerator": 137,
-  "coverageRatio": 0.6869,
+  "coveredStandards": 139,
+  "uncoveredStandards": 59,
+  "standardsWithGenerator": 140,
+  "coverageRatio": 0.702,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -69,8 +69,8 @@
       "total": 87,
       "autoScorable": 48,
       "manualOnly": 39,
-      "covered": 13,
-      "generators": 17,
+      "covered": 16,
+      "generators": 22,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
@@ -80,7 +80,7 @@
         "읽기": {
           "total": 16,
           "autoScorable": 11,
-          "covered": 0
+          "covered": 2
         },
         "쓰기": {
           "total": 15,
@@ -95,7 +95,7 @@
         "문학": {
           "total": 15,
           "autoScorable": 10,
-          "covered": 0
+          "covered": 1
         },
         "매체": {
           "total": 9,
@@ -103,7 +103,7 @@
           "covered": 0
         }
       },
-      "coverageRatio": 0.2708
+      "coverageRatio": 0.3333
     },
     "english": {
       "subjectKorean": "영어",
@@ -1619,6 +1619,18 @@
       ]
     },
     {
+      "code": "[2국02-02]",
+      "subject": "korean",
+      "gradeBand": "1-2",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 1,
+      "generatorIds": [
+        "korean.g12.st.s02-02.reading-break"
+      ]
+    },
+    {
       "code": "[2국03-01]",
       "subject": "korean",
       "gradeBand": "1-2",
@@ -1667,6 +1679,19 @@
       "generatorIds": [
         "korean.g12.gr.s03.punctuation",
         "korean.g12.gr.s03.punctuation-name"
+      ]
+    },
+    {
+      "code": "[4국02-04]",
+      "subject": "korean",
+      "gradeBand": "3-4",
+      "domain": "읽기",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g34.st.s02-04.fact-opinion",
+        "korean.g34.st.s02-04.opinion-word"
       ]
     },
     {
@@ -1779,6 +1804,19 @@
       ]
     },
     {
+      "code": "[6국05-02]",
+      "subject": "korean",
+      "gradeBand": "5-6",
+      "domain": "문학",
+      "module": null,
+      "scoringMode": "auto",
+      "generatorCount": 2,
+      "generatorIds": [
+        "korean.g56.st.s05-02.figurative",
+        "korean.g56.st.s05-02.vehicle"
+      ]
+    },
+    {
       "code": "[4영01-02]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -1824,16 +1862,6 @@
       "subject": "korean",
       "gradeBand": "1-2",
       "domain": "듣기·말하기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[2국02-02]",
-      "subject": "korean",
-      "gradeBand": "1-2",
-      "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
       "generatorCount": 0,
@@ -1911,16 +1939,6 @@
     },
     {
       "code": "[4국02-03]",
-      "subject": "korean",
-      "gradeBand": "3-4",
-      "domain": "읽기",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4국02-04]",
       "subject": "korean",
       "gradeBand": "3-4",
       "domain": "읽기",
@@ -2117,16 +2135,6 @@
     },
     {
       "code": "[6국05-01]",
-      "subject": "korean",
-      "gradeBand": "5-6",
-      "domain": "문학",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6국05-02]",
       "subject": "korean",
       "gradeBand": "5-6",
       "domain": "문학",

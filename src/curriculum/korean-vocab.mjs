@@ -1,4 +1,5 @@
 import { finalOf } from '../engine/hangul.mjs';
+import { sentenceAssetWords } from './korean-sentences.mjs';
 
 /**
  * 학년군 어휘의 단일 출처.
@@ -219,6 +220,15 @@ export const SPELLING_PAIRS = [
  * 오표기(wrong)는 여기 넣지 않는다. 틀린 표기를 학년 어휘로 승인하는 셈이 되므로,
  * 문항이 nonWords 로 선언하고 어휘 게이트가 검사에서 뺀다.
  */
+/**
+ * 문장 단위 자산이 쓰는 낱말.
+ *
+ * 사실·의견 문장, 비유 문장, 띄어 읽기 문장에 나오는 어절이다. 문항에 실려 나가므로
+ * 학년군 어휘 목록 안에 있어야 한다(check-vocabulary). 활용형이 섞여 있는 것이
+ * 정상이다 — 문장 자산은 낱말이 아니라 문장이기 때문이다.
+ */
+const SENTENCE_WORDS = sentenceAssetWords();
+
 const TAUGHT_SPELLING = [
   ...SPELLING_PAIRS.map((p) => p.correct),
   '꽃', '옷', '밥', '눈', '책', '밭', '빛', '숲',
@@ -239,9 +249,9 @@ const TAUGHT_G56 = [
 const dedupe = (list) => [...new Set(list)];
 
 export const VOCAB_BY_BAND = {
-  '1-2': dedupe([...LIFE_G12, ...TAUGHT_SPELLING]),
-  '3-4': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...LIFE_G34, ...TAUGHT_G34]),
-  '5-6': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...LIFE_G34, ...TAUGHT_G34, ...LIFE_G56, ...TAUGHT_G56]),
+  '1-2': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...SENTENCE_WORDS]),
+  '3-4': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...SENTENCE_WORDS, ...LIFE_G34, ...TAUGHT_G34]),
+  '5-6': dedupe([...LIFE_G12, ...TAUGHT_SPELLING, ...SENTENCE_WORDS, ...LIFE_G34, ...TAUGHT_G34, ...LIFE_G56, ...TAUGHT_G56]),
 };
 
 export function vocabularyFor(gradeBand) {
@@ -269,9 +279,22 @@ export function wordsOfLength(gradeBand, length) {
   return vocabularyFor(gradeBand).filter((w) => [...w].length === length && !w.includes(' '));
 }
 
-/** 자모·표기 문항에 쓸 수 있는 순수 명사. 용언(다로 끝나는 말)과 띄어쓴 말을 뺀다. */
+/**
+ * 자모·표기 문항에 쓸 수 있는 순수 명사.
+ *
+ * 용언(다로 끝나는 말)과 띄어쓴 말을 뺀다. 그리고 모든 글자가 한글 음절이어야 한다 —
+ * 문장 자산의 낱말을 어휘 목록에 넣자 '2층' 처럼 숫자가 섞인 어절이 들어와 자모 세기
+ * 문항이 '한글 음절이 아니다' 로 죽었다.
+ */
 export function plainNouns(gradeBand) {
-  return vocabularyFor(gradeBand).filter((w) =>
-    [...w].length >= 2 && !w.includes(' ') && !/다$/.test(w) && !/니다$/.test(w));
+  return vocabularyFor(gradeBand).filter((w) => {
+    if ([...w].length < 2) return false;
+    if (w.includes(' ')) return false;
+    if (/다$/.test(w)) return false;
+    return [...w].every((ch) => {
+      const code = ch.codePointAt(0);
+      return code >= 0xac00 && code <= 0xd7a3;
+    });
+  });
 }
 

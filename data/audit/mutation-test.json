@@ -1,8 +1,8 @@
 {
   "schema": "digi-mon/mutation-test@1",
   "samplesPerGenerator": 40,
-  "generatorCount": 170,
-  "totalMutants": 18759,
+  "generatorCount": 175,
+  "totalMutants": 19348,
   "totalEscaped": 0,
   "weakGeneratorCount": 0,
   "manualScoringGenerators": [
@@ -1872,6 +1872,61 @@
       "generatorId": "english.g56.lt.s02-03.fix-case",
       "code": "[6영02-03]",
       "skill": "문장 첫 글자를 대문자로 바르게 쓰기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.fact-opinion",
+      "code": "[4국02-04]",
+      "skill": "사실과 의견 구별하기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.opinion-word",
+      "code": "[4국02-04]",
+      "skill": "의견을 나타내는 말 고르기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.figurative",
+      "code": "[6국05-02]",
+      "skill": "비유적 표현 가려내기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.vehicle",
+      "code": "[6국05-02]",
+      "skill": "무엇에 견주었는지 찾기",
+      "mutants": 109,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "code": "[2국02-02]",
+      "skill": "띄어 읽을 자리 찾기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,

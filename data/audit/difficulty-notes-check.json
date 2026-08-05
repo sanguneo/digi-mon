@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 38,
+  "categoricalCount": 41,
   "problemCount": 0,
   "problems": [],
   "rows": [
@@ -307,9 +307,9 @@
         3
       ],
       "uniqueByLevel": {
-        "1": 53,
-        "2": 68,
-        "3": 29
+        "1": 64,
+        "2": 81,
+        "3": 39
       }
     },
     {
@@ -352,7 +352,7 @@
       "uniqueByLevel": {
         "1": 120,
         "2": 120,
-        "3": 96
+        "3": 87
       }
     },
     {
@@ -540,6 +540,48 @@
         "1": 13,
         "2": 13,
         "3": 13
+      }
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.fact-opinion",
+      "code": "[4국02-04]",
+      "note": "난이도 1은 수를 세거나 재어 확인하는 사실과 느낌을 나타내는 의견처럼 판정이 뚜렷한 문장을 낸다. 2 이상은 주장·비교가 섞인 문장까지 낸다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 10,
+        "2": 12,
+        "3": 16
+      }
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.figurative",
+      "code": "[6국05-02]",
+      "note": "난이도 1은 비유인지 아닌지만 가른다. 2 이상은 직유와 은유까지 구별한다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 14,
+        "2": 14,
+        "3": 14
+      }
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "code": "[2국02-02]",
+      "note": "난이도 1은 세 어절 문장, 2 이상은 네 어절 이상 문장을 낸다. 어절이 늘면 끊어 읽을 자리를 고르기 어렵다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 3,
+        "2": 5,
+        "3": 5
       }
     }
   ]

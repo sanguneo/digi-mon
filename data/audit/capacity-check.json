@@ -3,8 +3,8 @@
   "note": "포화 기준 용량이다. 고정 문턱은 개념이 작은 것과 덜 쓴 것을 구분하지 못해 쓰지 않는다.",
   "baseSamples": 300,
   "minCeiling": 12,
-  "generatorCount": 170,
-  "saturatedCount": 81,
+  "generatorCount": 175,
+  "saturatedCount": 85,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -61,9 +61,24 @@
       "generatorId": "math.g56.rm.s04-04.likelihood-word",
       "ceiling": 8,
       "capacityNote": "가능성을 나타내는 말은 불가능하다·낮다·반반이다·높다·확실하다 다섯 단계가 전부다."
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.opinion-word",
+      "ceiling": 8,
+      "capacityNote": "의견 문장 8개에서 판단을 나타내는 말을 고르는 문항이라 문장 수가 상한이다."
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.vehicle",
+      "ceiling": 9,
+      "capacityNote": "비유 문장 10개에서 견준 대상을 찾는 문항이라 문장 수가 상한이다."
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "ceiling": 8,
+      "capacityNote": "띄어 읽기 문장 자산 8개가 상한이다. 문장을 늘리면 함께 늘어난다 — 지문 자산이 아니라 짧은 문장 목록이므로 확장이 싸다."
     }
   ],
-  "observedCapacity": 114177,
+  "observedCapacity": 114428,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1710,10 +1725,10 @@
       "skill": "낱말을 자모로 나누어 세기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 127,
-      "uniqueAtDouble": 131,
+      "uniqueAtBase": 177,
+      "uniqueAtDouble": 183,
       "saturated": true,
-      "ceiling": 131
+      "ceiling": 183
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -1721,10 +1736,10 @@
       "skill": "낱말의 받침 찾기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 51,
-      "uniqueAtDouble": 51,
+      "uniqueAtBase": 84,
+      "uniqueAtDouble": 86,
       "saturated": true,
-      "ceiling": 51
+      "ceiling": 86
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -1732,10 +1747,10 @@
       "skill": "받침이 있는 낱말 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 116,
-      "uniqueAtDouble": 130,
-      "saturated": true,
-      "ceiling": 130
+      "uniqueAtBase": 166,
+      "uniqueAtDouble": 213,
+      "saturated": false,
+      "ceiling": null
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -1777,7 +1792,7 @@
       "axis": "categorical",
       "capacityNote": null,
       "uniqueAtBase": 782,
-      "uniqueAtDouble": 1560,
+      "uniqueAtDouble": 1572,
       "saturated": false,
       "ceiling": null
     },
@@ -1934,6 +1949,61 @@
       "uniqueAtDouble": 26,
       "saturated": true,
       "ceiling": 26
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.fact-opinion",
+      "code": "[4국02-04]",
+      "skill": "사실과 의견 구별하기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 16,
+      "uniqueAtDouble": 16,
+      "saturated": true,
+      "ceiling": 16
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.opinion-word",
+      "code": "[4국02-04]",
+      "skill": "의견을 나타내는 말 고르기",
+      "axis": "single",
+      "capacityNote": "의견 문장 8개에서 판단을 나타내는 말을 고르는 문항이라 문장 수가 상한이다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.figurative",
+      "code": "[6국05-02]",
+      "skill": "비유적 표현 가려내기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 28,
+      "uniqueAtDouble": 28,
+      "saturated": true,
+      "ceiling": 28
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.vehicle",
+      "code": "[6국05-02]",
+      "skill": "무엇에 견주었는지 찾기",
+      "axis": "single",
+      "capacityNote": "비유 문장 10개에서 견준 대상을 찾는 문항이라 문장 수가 상한이다.",
+      "uniqueAtBase": 9,
+      "uniqueAtDouble": 9,
+      "saturated": true,
+      "ceiling": 9
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "code": "[2국02-02]",
+      "skill": "띄어 읽을 자리 찾기",
+      "axis": "categorical",
+      "capacityNote": "띄어 읽기 문장 자산 8개가 상한이다. 문장을 늘리면 함께 늘어난다 — 지문 자산이 아니라 짧은 문장 목록이므로 확장이 싸다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
+      "saturated": true,
+      "ceiling": 8
     }
   ]
 }

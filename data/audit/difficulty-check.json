@@ -64,6 +64,16 @@
       "generatorId": "korean.g12.gr.s03.punctuation-name",
       "code": "[2국04-03]",
       "note": null
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.opinion-word",
+      "code": "[4국02-04]",
+      "note": null
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.vehicle",
+      "code": "[6국05-02]",
+      "note": null
     }
   ],
   "declaredCategorical": [
@@ -256,6 +266,21 @@
       "generatorId": "english.g56.lt.s02-03.fix-case",
       "code": "[6영02-03]",
       "note": "난이도 1은 문장 첫 글자만, 2 이상은 문장 부호까지 함께 바로잡는다."
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.fact-opinion",
+      "code": "[4국02-04]",
+      "note": "난이도 1은 수를 세거나 재어 확인하는 사실과 느낌을 나타내는 의견처럼 판정이 뚜렷한 문장을 낸다. 2 이상은 주장·비교가 섞인 문장까지 낸다."
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.figurative",
+      "code": "[6국05-02]",
+      "note": "난이도 1은 비유인지 아닌지만 가른다. 2 이상은 직유와 은유까지 구별한다."
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "code": "[2국02-02]",
+      "note": "난이도 1은 세 어절 문장, 2 이상은 네 어절 이상 문장을 낸다. 어절이 늘면 끊어 읽을 자리를 고르기 어렵다."
     }
   ],
   "singleAxisVariance": [],

@@ -1,14 +1,14 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 170,
-  "totalGenerated": 204000,
+  "generatorCount": 175,
+  "totalGenerated": 210000,
   "totalFailed": 0,
   "figuresRendered": 35585,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 136,
-    "coverageRatio": 0.6869,
+    "coveredStandards": 139,
+    "coverageRatio": 0.702,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -67,8 +67,8 @@
         "total": 87,
         "autoScorable": 48,
         "manualOnly": 39,
-        "covered": 13,
-        "generators": 17,
+        "covered": 16,
+        "generators": 22,
         "byDomain": {
           "듣기·말하기": {
             "total": 18,
@@ -78,7 +78,7 @@
           "읽기": {
             "total": 16,
             "autoScorable": 11,
-            "covered": 0
+            "covered": 2
           },
           "쓰기": {
             "total": 15,
@@ -93,7 +93,7 @@
           "문학": {
             "total": 15,
             "autoScorable": 10,
-            "covered": 0
+            "covered": 1
           },
           "매체": {
             "total": 9,
@@ -101,7 +101,7 @@
             "covered": 0
           }
         },
-        "coverageRatio": 0.2708
+        "coverageRatio": 0.3333
       },
       "english": {
         "subjectKorean": "영어",
@@ -4026,24 +4026,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 57,
+          "unique": 74,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 94,
+          "unique": 129,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 29,
+          "unique": 40,
           "failed": 0
         }
       },
-      "uniqueTotal": 131,
+      "uniqueTotal": 178,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1092
+      "uniqueRatio": 0.1483
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -4052,24 +4052,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 51,
+          "unique": 85,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 51,
+          "unique": 84,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 51,
+          "unique": 86,
           "failed": 0
         }
       },
-      "uniqueTotal": 51,
+      "uniqueTotal": 86,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0425
+      "uniqueRatio": 0.0717
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -4078,24 +4078,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 120,
+          "unique": 179,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 124,
+          "unique": 183,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 125,
+          "unique": 192,
           "failed": 0
         }
       },
-      "uniqueTotal": 131,
+      "uniqueTotal": 230,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1092
+      "uniqueRatio": 0.1917
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -4192,14 +4192,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 259,
+          "unique": 273,
           "failed": 0
         }
       },
-      "uniqueTotal": 1059,
+      "uniqueTotal": 1073,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.8825
+      "uniqueRatio": 0.8942
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-first",
@@ -4564,6 +4564,136 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.0217
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.fact-opinion",
+      "code": "[4국02-04]",
+      "skill": "사실과 의견 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 10,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 12,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 16,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 16,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0133
+    },
+    {
+      "generatorId": "korean.g34.st.s02-04.opinion-word",
+      "code": "[4국02-04]",
+      "skill": "의견을 나타내는 말 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 8,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.figurative",
+      "code": "[6국05-02]",
+      "skill": "비유적 표현 가려내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 14,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 14,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 14,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 28,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0233
+    },
+    {
+      "generatorId": "korean.g56.st.s05-02.vehicle",
+      "code": "[6국05-02]",
+      "skill": "무엇에 견주었는지 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 9,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 9,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0075
+    },
+    {
+      "generatorId": "korean.g12.st.s02-02.reading-break",
+      "code": "[2국02-02]",
+      "skill": "띄어 읽을 자리 찾기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 3,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 8,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0067
     }
   ],
   "errors": []
