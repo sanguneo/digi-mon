@@ -2,7 +2,7 @@
   "schema": "digi-mon/mutation-test@1",
   "samplesPerGenerator": 40,
   "generatorCount": 175,
-  "totalMutants": 19348,
+  "totalMutants": 19347,
   "totalEscaped": 0,
   "weakGeneratorCount": 0,
   "manualScoringGenerators": [
@@ -1674,7 +1674,7 @@
       "generatorId": "korean.g12.gr.s02.has-final",
       "code": "[2국04-02]",
       "skill": "받침이 있는 낱말 고르기",
-      "mutants": 120,
+      "mutants": 119,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],

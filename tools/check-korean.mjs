@@ -19,8 +19,19 @@ import { createRegistry } from '../src/engine/registry.mjs';
 import { createRng } from '../src/engine/rng.mjs';
 import { generateItem } from '../src/engine/worksheet.mjs';
 import { particle, particleRo, sinoKoreanLarge } from '../src/engine/korean-number.mjs';
+import { vocabularyFor } from '../src/curriculum/korean-vocab.mjs';
 
 const SAMPLES = Number(process.env.SAMPLES ?? 60);
+
+/**
+ * 조사 중복 검사가 낱말을 알아야 하는 이유.
+ *
+ * '가을을'은 낱말 '가을'에 조사 '을'이 붙은 정상 표기인데 문자열로만 보면 '을을'
+ * 중복이다('세로로'와 같은 부류). '로'는 목록에서 뺐지만 '을'은 뺄 수 없다 —
+ * 빼면 진짜 중복('공을을')을 놓친다. 그래서 겹침의 앞부분이 학년군 어휘의 낱말이면
+ * 정상으로 본다. 낱말이 아닌데 겹치면 그대로 위반이다.
+ */
+const KNOWN_WORDS = new Set([...vocabularyFor('1-2'), ...vocabularyFor('3-4'), ...vocabularyFor('5-6')]);
 
 /** 종성 유무로 갈리는 조사 짝. [받침있음, 받침없음] */
 const JOSA_PAIRS = [
@@ -154,7 +165,14 @@ const CHECKS = [
     scan(text) {
       const found = [];
       for (const j of DUPLICABLE_JOSA) {
-        if (text.includes(`${j}${j}`)) found.push(`'${j}${j}'`);
+        let at = text.indexOf(`${j}${j}`);
+        while (at !== -1) {
+          // 겹침의 첫 글자까지가 낱말이면 정상 표기다('가을' + '을' = '가을을').
+          const wordStart = Math.max(text.lastIndexOf(' ', at), -1) + 1;
+          const stem = text.slice(wordStart, at + j.length);
+          if (!KNOWN_WORDS.has(stem)) found.push(`'${j}${j}' (${text.slice(wordStart, at + j.length * 2)})`);
+          at = text.indexOf(`${j}${j}`, at + 1);
+        }
       }
       return found;
     },

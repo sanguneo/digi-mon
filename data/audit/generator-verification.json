@@ -4026,24 +4026,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 74,
+          "unique": 70,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 129,
+          "unique": 123,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 40,
+          "unique": 37,
           "failed": 0
         }
       },
-      "uniqueTotal": 178,
+      "uniqueTotal": 170,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1483
+      "uniqueRatio": 0.1417
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -4052,24 +4052,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 85,
+          "unique": 76,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 84,
+          "unique": 77,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 86,
+          "unique": 77,
           "failed": 0
         }
       },
-      "uniqueTotal": 86,
+      "uniqueTotal": 77,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0717
+      "uniqueRatio": 0.0642
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -4078,24 +4078,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 179,
+          "unique": 174,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 183,
+          "unique": 177,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 192,
+          "unique": 190,
           "failed": 0
         }
       },
-      "uniqueTotal": 230,
+      "uniqueTotal": 217,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1917
+      "uniqueRatio": 0.1808
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -4192,14 +4192,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 273,
+          "unique": 258,
           "failed": 0
         }
       },
-      "uniqueTotal": 1073,
+      "uniqueTotal": 1058,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.8942
+      "uniqueRatio": 0.8817
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-first",

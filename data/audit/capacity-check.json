@@ -78,7 +78,7 @@
       "capacityNote": "띄어 읽기 문장 자산 8개가 상한이다. 문장을 늘리면 함께 늘어난다 — 지문 자산이 아니라 짧은 문장 목록이므로 확장이 싸다."
     }
   ],
-  "observedCapacity": 114428,
+  "observedCapacity": 114384,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1725,10 +1725,10 @@
       "skill": "낱말을 자모로 나누어 세기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 177,
-      "uniqueAtDouble": 183,
+      "uniqueAtBase": 169,
+      "uniqueAtDouble": 172,
       "saturated": true,
-      "ceiling": 183
+      "ceiling": 172
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -1736,10 +1736,10 @@
       "skill": "낱말의 받침 찾기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 84,
-      "uniqueAtDouble": 86,
+      "uniqueAtBase": 76,
+      "uniqueAtDouble": 77,
       "saturated": true,
-      "ceiling": 86
+      "ceiling": 77
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -1747,8 +1747,8 @@
       "skill": "받침이 있는 낱말 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 166,
-      "uniqueAtDouble": 213,
+      "uniqueAtBase": 159,
+      "uniqueAtDouble": 199,
       "saturated": false,
       "ceiling": null
     },
@@ -1791,8 +1791,8 @@
       "skill": "국어사전에서 낱말 찾는 순서 알기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 782,
-      "uniqueAtDouble": 1572,
+      "uniqueAtBase": 779,
+      "uniqueAtDouble": 1562,
       "saturated": false,
       "ceiling": null
     },

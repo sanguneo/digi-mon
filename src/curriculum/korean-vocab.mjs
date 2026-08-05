@@ -125,7 +125,7 @@ export const IDIOMS = [
   { idiom: '발이 넓다', meaning: '아는 사람이 많다' },
   { idiom: '손이 크다', meaning: '무엇이든 넉넉하게 준비한다' },
   { idiom: '귀가 얇다', meaning: '남의 말을 쉽게 믿는다' },
-  { idiom: '입이 무겁다', meaning: '말을 조심해서 옮긴다' },
+  { idiom: '입이 무겁다', meaning: '말을 함부로 옮기지 않는다' },
   { idiom: '눈이 높다', meaning: '고르는 기준이 까다롭다' },
   { idiom: '어깨가 무겁다', meaning: '책임이 크다' },
   { idiom: '코가 납작해지다', meaning: '창피를 당해 기가 죽다' },
@@ -139,7 +139,7 @@ export const IDIOMS = [
   { idiom: '하늘을 찌르다', meaning: '기세가 매우 높다' },
   { idiom: '땅을 치다', meaning: '몹시 후회하다' },
   { idiom: '시치미를 떼다', meaning: '알고도 모르는 척하다' },
-  { idiom: '바가지를 긁다', meaning: '불평을 늘어놓다' },
+  { idiom: '눈코 뜰 새 없다', meaning: '몹시 바쁘다' },
   { idiom: '손발이 맞다', meaning: '함께 일하는 호흡이 잘 맞다' },
   { idiom: '가슴이 뜨끔하다', meaning: '자기 잘못이 생각나 놀라다' },
 ];
