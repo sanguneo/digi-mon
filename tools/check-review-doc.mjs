@@ -89,7 +89,11 @@ const allGates = [...binGates, ...toolGates];
  * 산출물을 만드는 스크립트는 실패할 수 없으므로 게이트가 아니다. 게이트로 세면
  * 문서의 '열두 게이트' 총수가 어긋난다.
  */
-const chainNonGates = ['tools/export-review-tables.mjs', 'tools/export-asset-tables.mjs'];
+const chainNonGates = [
+  'tools/export-review-tables.mjs',
+  'tools/export-asset-tables.mjs',
+  'tools/export-math-tables.mjs',
+];
 
 const notInChain = allGates.filter((g) => !chain.includes(g));
 const extraInChain = chain.filter((c) => !allGates.includes(c) && !chainNonGates.includes(c));
