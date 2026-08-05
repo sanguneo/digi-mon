@@ -8,7 +8,7 @@
   "coverage": {
     "totalStandards": 248,
     "coveredStandards": 139,
-    "coverageRatio": 0.6985,
+    "coverageRatio": 0.7165,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -119,28 +119,29 @@
         ],
         "basis": "문자 인식은 유니코드 계산으로 확정되어 자산이 필요 없다. 듣기·읽기 이해는 음성·지문 자산이 있어야 하고, 태도·음성 산출·창의 수행 기준 11개는 원리적으로 정답 대조가 안 되어 자동채점 분모에서 빠진다.",
         "blockedBy": [
+          "표현 문항은 그림·실물을 제시해 답을 제약하는 설계가 선행 조건이다",
           "학년군별 어휘·표현 목록 (2022 개정 별표 기준)",
           "듣기 문항용 음성 자산",
           "표현 문항의 허용 답안 범위 정의"
         ],
         "total": 40,
-        "autoScorable": 30,
-        "manualOnly": 10,
+        "autoScorable": 25,
+        "manualOnly": 15,
         "covered": 3,
         "generators": 6,
         "byDomain": {
           "이해": {
             "total": 20,
-            "autoScorable": 16,
+            "autoScorable": 12,
             "covered": 1
           },
           "표현": {
             "total": 20,
-            "autoScorable": 14,
+            "autoScorable": 13,
             "covered": 2
           }
         },
-        "coverageRatio": 0.1
+        "coverageRatio": 0.12
       }
     }
   },

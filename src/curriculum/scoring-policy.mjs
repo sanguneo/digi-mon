@@ -236,6 +236,31 @@ export const MANUAL_SCORING = {
     kind: 'disposition',
     hasGenerator: false,
   },
+  '[4영01-04]': {
+    reason: '소리 내어 읽기는 음성 산출이다. 발음의 정확성은 사람이 듣고 판정한다. 국어 [2국02-01] 과 같은 분류다.',
+    kind: 'speech-production',
+    hasGenerator: false,
+  },
+  '[6영01-02]': {
+    reason: '강세·리듬·억양에 맞게 소리 내어 읽는 음성 산출이다. 국어 [4국02-01] 과 같은 분류다.',
+    kind: 'speech-production',
+    hasGenerator: false,
+  },
+  '[4영01-09]': {
+    reason: '공감하며 듣기는 정서 태도 기준이다. 공감했는지를 정답 문자열로 대조할 수 없다. 국어 [2국05-04] 와 같은 분류다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6영01-09]': {
+    reason: '공감하며 듣거나 읽는 정서 태도 기준이다. 국어 [4국05-05] 와 같은 분류다.',
+    kind: 'disposition',
+    hasGenerator: false,
+  },
+  '[6영02-06]': {
+    reason: '자신의 감정·의견·경험·계획에는 정답이 없다. 개방 산출이다. 국어 [2국03-02] 와 같은 분류다.',
+    kind: 'open-production',
+    hasGenerator: false,
+  },
   '[6영02-10]': {
     reason: '의사소통 활동에 협력적으로 참여하는 태도 기준이다.',
     kind: 'disposition',
@@ -303,6 +328,9 @@ export const SUBJECT_STRATEGY = {
     generatableTopics: ['알파벳 대소문자', '알파벳 순서', '문장 첫 글자 대문자', '문장 부호'],
     basis: '문자 인식은 유니코드 계산으로 확정되어 자산이 필요 없다. 듣기·읽기 이해는 음성·지문 자산이 있어야 하고, 태도·음성 산출·창의 수행 기준 11개는 원리적으로 정답 대조가 안 되어 자동채점 분모에서 빠진다.',
     blockedBy: [
+      // [4영02-05]·[4영02-07] 은 자동채점 불가로 옮기지 않았다. 다만 답을 제약하는
+      // 설계가 없으면 개방 산출이 되어 재분류 대상이 된다. 이 조건이 선행이다.
+      '표현 문항은 그림·실물을 제시해 답을 제약하는 설계가 선행 조건이다',
       '학년군별 어휘·표현 목록 (2022 개정 별표 기준)',
       '듣기 문항용 음성 자산',
       '표현 문항의 허용 답안 범위 정의',

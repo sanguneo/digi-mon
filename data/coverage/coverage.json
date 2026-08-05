@@ -5,12 +5,12 @@
     "generatorCount": 175
   },
   "totalStandards": 248,
-  "autoScorableStandards": 199,
-  "manualOnlyStandards": 49,
+  "autoScorableStandards": 194,
+  "manualOnlyStandards": 54,
   "coveredStandards": 139,
-  "uncoveredStandards": 60,
+  "uncoveredStandards": 55,
   "standardsWithGenerator": 140,
-  "coverageRatio": 0.6985,
+  "coverageRatio": 0.7165,
   "bySubject": {
     "math": {
       "subjectKorean": "수학",
@@ -121,28 +121,29 @@
       ],
       "basis": "문자 인식은 유니코드 계산으로 확정되어 자산이 필요 없다. 듣기·읽기 이해는 음성·지문 자산이 있어야 하고, 태도·음성 산출·창의 수행 기준 11개는 원리적으로 정답 대조가 안 되어 자동채점 분모에서 빠진다.",
       "blockedBy": [
+        "표현 문항은 그림·실물을 제시해 답을 제약하는 설계가 선행 조건이다",
         "학년군별 어휘·표현 목록 (2022 개정 별표 기준)",
         "듣기 문항용 음성 자산",
         "표현 문항의 허용 답안 범위 정의"
       ],
       "total": 40,
-      "autoScorable": 30,
-      "manualOnly": 10,
+      "autoScorable": 25,
+      "manualOnly": 15,
       "covered": 3,
       "generators": 6,
       "byDomain": {
         "이해": {
           "total": 20,
-          "autoScorable": 16,
+          "autoScorable": 12,
           "covered": 1
         },
         "표현": {
           "total": 20,
-          "autoScorable": 14,
+          "autoScorable": 13,
           "covered": 2
         }
       },
-      "coverageRatio": 0.1
+      "coverageRatio": 0.12
     }
   },
   "covered": [
@@ -2216,16 +2217,6 @@
       "generatorIds": []
     },
     {
-      "code": "[4영01-04]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[4영01-05]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -2247,16 +2238,6 @@
     },
     {
       "code": "[4영01-07]",
-      "subject": "english",
-      "gradeBand": "3-4",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[4영01-09]",
       "subject": "english",
       "gradeBand": "3-4",
       "domain": "이해",
@@ -2336,16 +2317,6 @@
       "generatorIds": []
     },
     {
-      "code": "[6영01-02]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6영01-03]",
       "subject": "english",
       "gradeBand": "5-6",
@@ -2396,16 +2367,6 @@
       "generatorIds": []
     },
     {
-      "code": "[6영01-09]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "이해",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
       "code": "[6영02-02]",
       "subject": "english",
       "gradeBand": "5-6",
@@ -2427,16 +2388,6 @@
     },
     {
       "code": "[6영02-05]",
-      "subject": "english",
-      "gradeBand": "5-6",
-      "domain": "표현",
-      "module": null,
-      "scoringMode": "auto",
-      "generatorCount": 0,
-      "generatorIds": []
-    },
-    {
-      "code": "[6영02-06]",
       "subject": "english",
       "gradeBand": "5-6",
       "domain": "표현",
@@ -2901,6 +2852,17 @@
       "generatorIds": []
     },
     {
+      "code": "[4영01-04]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "소리 내어 읽기는 음성 산출이다. 발음의 정확성은 사람이 듣고 판정한다. 국어 [2국02-01] 과 같은 분류다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
       "code": "[4영01-08]",
       "subject": "english",
       "gradeBand": "3-4",
@@ -2908,6 +2870,17 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "다양한 매체의 담화를 흥미를 가지고 듣거나 읽는 태도 기준이다. 흥미는 정답으로 대조할 수 없다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[4영01-09]",
+      "subject": "english",
+      "gradeBand": "3-4",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "공감하며 듣기는 정서 태도 기준이다. 공감했는지를 정답 문자열로 대조할 수 없다. 국어 [2국05-04] 와 같은 분류다.",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2956,6 +2929,17 @@
       "generatorIds": []
     },
     {
+      "code": "[6영01-02]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "강세·리듬·억양에 맞게 소리 내어 읽는 음성 산출이다. 국어 [4국02-01] 과 같은 분류다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
       "code": "[6영01-08]",
       "subject": "english",
       "gradeBand": "5-6",
@@ -2963,6 +2947,17 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "담화나 글을 흥미와 자신감을 가지고 듣거나 읽는 태도 기준이다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영01-09]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "이해",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "공감하며 듣거나 읽는 정서 태도 기준이다. 국어 [4국05-05] 와 같은 분류다.",
       "generatorCount": 0,
       "generatorIds": []
     },
@@ -2985,6 +2980,17 @@
       "module": null,
       "scoringMode": "manual",
       "manualReason": "강세·리듬·억양에 맞게 말하는 음성 산출 과제다.",
+      "generatorCount": 0,
+      "generatorIds": []
+    },
+    {
+      "code": "[6영02-06]",
+      "subject": "english",
+      "gradeBand": "5-6",
+      "domain": "표현",
+      "module": null,
+      "scoringMode": "manual",
+      "manualReason": "자신의 감정·의견·경험·계획에는 정답이 없다. 개방 산출이다. 국어 [2국03-02] 와 같은 분류다.",
       "generatorCount": 0,
       "generatorIds": []
     },
