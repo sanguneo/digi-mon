@@ -203,14 +203,26 @@ const readingBreak = {
       .join(' ');
 
     const correct = withBreak(spec.breakAfter);
+    /**
+     * 오답은 **명백히 틀린 자리**만 쓴다.
+     *
+     * `alsoAcceptable` 에 적힌 자리는 선언한 세 기준 밖이지만 교육 관행상 허용된다
+     * (문두 부사어 뒤 '아침에 ∨', 주어부 뒤 '비가 ∨'). 그것을 오답으로 내면 판정이
+     * 갈리는 자리를 틀렸다고 가르치게 된다. 4차 검토가 잡았다.
+     */
+    const acceptable = new Set([spec.breakAfter, ...(spec.alsoAcceptable ?? [])]);
     const wrong = spec.words
       .slice(0, -1)
       .map((_, i) => i)
-      .filter((i) => i !== spec.breakAfter)
+      .filter((i) => !acceptable.has(i))
       .map(withBreak);
-    // 자리가 둘뿐이면 끊지 않은 표기와 끝에서 끊은 표기를 오답으로 더 쓴다.
+    // 끊지 않은 표기와 문장 끝에서 끊은 표기는 어느 문장에서도 틀린 자리다.
     wrong.push(spec.words.join(' '));
     wrong.push(`${spec.words.slice(0, -1).join(' ')} ${spec.words.at(-1)} ∨`);
+    // 그래도 셋을 못 채우면 두 곳에서 끊은 표기를 쓴다. 한 번 끊으라고 했으므로 틀렸다.
+    if ([...new Set(wrong)].length < 3 && spec.words.length >= 3) {
+      wrong.push(spec.words.map((w, i) => (i === 0 || i === 1 ? `${w} ∨` : w)).join(' '));
+    }
 
     return {
       params: { words: spec.words, breakAfter: spec.breakAfter },
