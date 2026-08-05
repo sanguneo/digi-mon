@@ -199,7 +199,7 @@ const placeValueAmount = {
   skill: '숫자가 나타내는 값 구하기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
-    const n = pick4Digit(rng, Math.max(2, difficulty));
+    const n = pick4Digit(rng, difficulty);
     const places = [0, 1, 2, 3].filter((p) => p < String(n).length && digitAt(n, p) !== 0);
     const place = rng.pick(places);
     const d = digitAt(n, place);
@@ -232,7 +232,7 @@ const placeDecomposeBlank = {
   skill: '네 자리 수를 자릿값으로 분해하기',
   format: 'fill-blank',
   generate(rng, { difficulty }) {
-    const n = pick4Digit(rng, Math.max(2, difficulty));
+    const n = pick4Digit(rng, difficulty);
     const parts = placeDecompose(n);
     const hideIndex = rng.int(0, parts.length - 1);
     const hidden = parts[hideIndex];
@@ -512,6 +512,8 @@ const storySub = {
 
 const addTwoDigit = {
   id: 'math.g12.no.s06.add',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 받아올림 없음, 2 이상은 일의 자리에서 받아올림이 생긴다.',
   standardCode: CODE(6),
   skill: '두 자리 수의 덧셈',
   format: 'short-answer',

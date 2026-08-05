@@ -221,6 +221,10 @@ const addSubThreeDigit = {
   standardCode: CODE(3),
   skill: '세 자리 수의 덧셈과 뺄셈',
   format: 'short-answer',
+  // 세 자리 수 범위는 학년에서 고정이다. 난이도는 수의 크기가 아니라
+  // 받아올림·받아내림이 생기는지로 갈린다.
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 받아올림·받아내림이 없고, 2 이상은 일의 자리에서 생긴다.',
   generate(rng, { difficulty }) {
     const isAdd = rng.bool();
     // 받아올림·받아내림 여부를 거부 표집으로 맞추면 조건이 영구 불가능해질 수 있다.
@@ -408,6 +412,8 @@ const remainderMeaning = {
 
 const divideThreeDigit = {
   id: 'math.g34.no.s07.divide',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 나머지가 없고, 2 이상은 나머지가 생긴다.',
   standardCode: CODE(7),
   skill: '세 자리 수 범위의 나눗셈',
   format: 'short-answer',
@@ -571,6 +577,8 @@ const partOfWhole = {
 
 const classifyFraction = {
   id: 'math.g34.no.s10.classify',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 진분수·가분수, 2 이상은 단위분수까지 구별한다.',
   standardCode: CODE(10),
   skill: '진분수·가분수·단위분수 구별',
   format: 'multiple-choice',

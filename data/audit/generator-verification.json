@@ -272,7 +272,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 395,
+          "unique": 366,
           "failed": 0
         },
         "2": {
@@ -286,10 +286,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1170,
+      "uniqueTotal": 1150,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.975
+      "uniqueRatio": 0.9583
     },
     {
       "generatorId": "math.g12.no.s02.decompose",
@@ -298,7 +298,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 399,
+          "unique": 374,
           "failed": 0
         },
         "2": {
@@ -312,10 +312,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1165,
+      "uniqueTotal": 1150,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9708
+      "uniqueRatio": 0.9583
     },
     {
       "generatorId": "math.g12.no.s03.compare",
@@ -849,19 +849,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 4,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 4,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 4,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.0033
     },
     {
       "generatorId": "math.g12.gm.s07.read-clock",
@@ -2357,19 +2357,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 3,
+          "unique": 2,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 3,
+          "unique": 2,
           "failed": 0
         }
       },
-      "uniqueTotal": 3,
+      "uniqueTotal": 2,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0025
+      "uniqueRatio": 0.0017
     },
     {
       "generatorId": "math.g34.gd.s02.right-angle",
@@ -2487,19 +2487,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 3,
+          "unique": 2,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 3,
+          "unique": 2,
           "failed": 0
         }
       },
-      "uniqueTotal": 3,
+      "uniqueTotal": 2,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0025
+      "uniqueRatio": 0.0017
     },
     {
       "generatorId": "math.g34.gd.s07.radius-diameter",
@@ -3272,14 +3272,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 371,
+          "unique": 381,
           "failed": 0
         }
       },
-      "uniqueTotal": 941,
+      "uniqueTotal": 1039,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.7842
+      "uniqueRatio": 0.8658
     },
     {
       "generatorId": "math.g56.rm.s02-05.distribution",
@@ -3371,19 +3371,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 6,
+          "unique": 3,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 6,
+          "unique": 3,
           "failed": 0
         }
       },
-      "uniqueTotal": 6,
+      "uniqueTotal": 3,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.005
+      "uniqueRatio": 0.0025
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
@@ -3891,19 +3891,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 4,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 4,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 4,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.0033
     },
     {
       "generatorId": "math.g56.rm.s04-05.likelihood-number",

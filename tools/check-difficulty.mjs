@@ -44,8 +44,21 @@ const registry = createRegistry();
 const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
 
 const rows = [];
+const skipped = { single: [], categorical: [] };
+
 for (const g of registry.all()) {
   const standard = standardByCode.get(g.standardCode);
+  const axis = g.difficultyAxis ?? 'numeric';
+
+  // 난이도 축을 선언한 생성기는 이 게이트의 판정 대상이 아니다.
+  //   single       난이도 구분이 없다고 선언했다.
+  //   categorical  범주로 갈린다고 선언하고 무엇이 달라지는지 difficultyNote 에 적었다.
+  // 계산 크기로 재는 이 지표는 numeric 축만 판정할 수 있다.
+  if (axis !== 'numeric') {
+    skipped[axis].push({ generatorId: g.id, code: g.standardCode, note: g.difficultyNote ?? null });
+    continue;
+  }
+
   const byDifficulty = {};
 
   for (const difficulty of [1, 2, 3]) {
@@ -93,13 +106,17 @@ writeJson(path.join(REPO_ROOT, 'data', 'audit', 'difficulty-check.json'), {
   schema: 'digi-mon/difficulty-check@1',
   note: '계산 크기 대리 지표다. 실제 정답률이 아니다. 응답 데이터가 쌓이면 response-log 가 판정한다.',
   samplesPerLevel: SAMPLES,
-  generatorCount: rows.length,
+  numericGeneratorCount: rows.length,
   flatCount: flat.length,
+  declaredSingle: skipped.single,
+  declaredCategorical: skipped.categorical,
   rows,
 });
 
-console.log(`난이도 지표 검사: 생성기 ${rows.length}개 (난이도별 표본 ${SAMPLES})`);
-console.log(`난이도가 올라도 계산 크기가 움직이지 않는 생성기: ${flat.length}개`);
+console.log(`난이도 지표 검사: numeric 축 ${rows.length}개 (난이도별 표본 ${SAMPLES})`);
+console.log(`난이도 구분 없음(single) 선언: ${skipped.single.length}개`);
+console.log(`범주형(categorical) 선언: ${skipped.categorical.length}개 — 무엇이 달라지는지 difficultyNote 에 적혀 있다`);
+console.log(`난이도가 올라도 계산 크기가 움직이지 않는 numeric 생성기: ${flat.length}개`);
 
 if (flat.length > 0) {
   console.log('');

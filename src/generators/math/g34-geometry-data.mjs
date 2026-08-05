@@ -36,6 +36,8 @@ const LINE_KINDS = {
 
 const identifyLine = {
   id: 'math.g34.gd.s01.identify-line',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[4수03-01]',
   skill: '직선·선분·반직선 구별하기',
   format: 'multiple-choice',
@@ -73,6 +75,8 @@ const identifyLine = {
 
 const identifyRightAngle = {
   id: 'math.g34.gd.s02.right-angle',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도가 오를수록 직각이 아닌 각을 90도에 가깝게 둔다(30도 -> 20도 -> 12도 차이).',
   standardCode: '[4수03-02]',
   skill: '직각 찾기',
   format: 'multiple-choice',
@@ -120,6 +124,8 @@ const RIGHT_FIGURE_FACTS = {
 
 const rightAngleFigures = {
   id: 'math.g34.gd.s03.right-figures',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[4수03-03]',
   skill: '직각이 있는 도형의 성질',
   format: 'multiple-choice',
@@ -226,6 +232,8 @@ const patternByTransform = {
 
 const circleParts = {
   id: 'math.g34.gd.s06.parts',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[4수03-06]',
   skill: '원의 구성 요소 알기',
   format: 'multiple-choice',
@@ -311,6 +319,8 @@ const radiusDiameter = {
 
 const isoscelesEquilateral = {
   id: 'math.g34.gd.s08.by-sides',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 정삼각형·이등변삼각형, 2 이상은 세 변이 모두 다른 삼각형까지 넣는다.',
   standardCode: '[4수03-08]',
   skill: '변의 길이로 삼각형 분류하기',
   format: 'multiple-choice',
@@ -371,6 +381,8 @@ const isoscelesEquilateral = {
 
 const triangleByAngles = {
   id: 'math.g34.gd.s09.by-angles',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 직각·둔각삼각형, 2 이상은 예각삼각형까지 구별한다.',
   standardCode: '[4수03-09]',
   skill: '각의 크기로 삼각형 분류하기',
   format: 'multiple-choice',
@@ -436,6 +448,8 @@ const triangleByAngles = {
 
 const identifyQuadrilateral = {
   id: 'math.g34.gd.s10.quadrilateral',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 정사각형·직사각형, 2 이상은 마름모·평행사변형·사다리꼴까지 넣는다.',
   standardCode: '[4수03-10]',
   skill: '여러 가지 사각형 구별하기',
   format: 'multiple-choice',
@@ -559,6 +573,8 @@ const countDiagonals = {
 
 const measureAngle = {
   id: 'math.g34.gd.s24.measure',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도가 오를수록 눈금을 잘게 읽는다(10도 -> 5도 -> 1도 단위).',
   standardCode: '[4수03-24]',
   skill: '각의 크기 읽기',
   format: 'multiple-choice',

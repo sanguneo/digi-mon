@@ -33,6 +33,8 @@ const SOLID_OBJECTS = {
 
 const identifySolid = {
   id: 'math.g12.sc.s01.identify',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 세 종류 중 고르고, 2 이상은 나열 순서를 섞어 위치로 외우지 못하게 한다.',
   standardCode: CODE(1),
   skill: '입체도형의 모양 구별하기',
   format: 'multiple-choice',
@@ -68,6 +70,8 @@ const identifySolid = {
 
 const solidFromObject = {
   id: 'math.g12.sc.s01.from-object',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: CODE(1),
   skill: '생활 속 물건의 입체도형 모양 말하기',
   format: 'multiple-choice',
@@ -154,6 +158,8 @@ const PLANE_OBJECTS = {
 
 const planeFromObject = {
   id: 'math.g12.sc.s03.from-object',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: CODE(3),
   skill: '생활 속 물건에서 평면도형 찾기',
   format: 'multiple-choice',
@@ -195,6 +201,8 @@ const QUANTITY_PAIRS = [
 
 const compareQuantity = {
   id: 'math.g12.sc.s06.compare',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 길이 비교, 2 이상은 들이·무게·넓이 비교까지 넓힌다.',
   standardCode: CODE(6),
   skill: '양을 비교하는 말 고르기',
   format: 'multiple-choice',

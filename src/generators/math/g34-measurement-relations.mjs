@@ -295,6 +295,10 @@ function makeUnitChoice(system, code, idSuffix) {
     standardCode: code,
     skill: `${sys.korean} 단위 고르기`,
     format: 'multiple-choice',
+    // 상황에 맞는 단위를 고르는 문항은 난이도 구분이 없다.
+    // 'mm 로 재는가 km 로 재는가' 는 쉬움·어려움이 아니라 같은 판단 하나다.
+    difficultyAxis: 'single',
+    difficulties: [1],
     generate(rng, { difficulty }) {
       const context = rng.pick(sys.contexts);
       const phrase = `${context.object}의 ${context.attribute}`;

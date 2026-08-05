@@ -1,7 +1,7 @@
 {
   "schema": "digi-mon/korean-check@1",
   "samplesPerGenerator": 60,
-  "textsScanned": 59626,
+  "textsScanned": 59624,
   "checks": {
     "josa-after-number": {
       "label": "숫자 뒤 조사",

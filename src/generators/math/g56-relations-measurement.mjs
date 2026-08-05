@@ -207,7 +207,7 @@ const proportionEquation = {
   generate(rng, { difficulty }) {
     const a = rng.int(2, 9);
     const b = rng.int(2, 9);
-    const k = difficulty === 1 ? rng.int(2, 5) : rng.int(2, 12);
+    const k = difficulty === 1 ? rng.int(2, 5) : difficulty === 2 ? rng.int(4, 14) : rng.int(8, 25);
     const c = a * k;
     const d = b * k;
     const hide = rng.int(0, 3);
@@ -364,6 +364,9 @@ const cuboidElements = {
   standardCode: '[6수03-03]',
   skill: '직육면체의 면·모서리·꼭짓점 수',
   format: 'short-answer',
+  // 면 6, 모서리 12, 꼭짓점 8 은 고정값이다. 어려운 버전이 없다.
+  difficultyAxis: 'single',
+  difficulties: [1],
   generate(rng, { difficulty }) {
     const FACTS = [
       { part: '면', count: 6, basis: '직육면체는 직사각형 모양의 면 6개로 둘러싸여 있다.' },
@@ -520,6 +523,8 @@ const prismName = {
 
 const roundSolids = {
   id: 'math.g56.rm.s03-07.round-solids',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[6수03-07]',
   skill: '원기둥·원뿔·구 구별',
   format: 'multiple-choice',
@@ -663,6 +668,8 @@ const cubeVolumeCount = {
 
 const perimeter = {
   id: 'math.g56.rm.s03-11.perimeter',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 정사각형·직사각형, 2 이상은 정다각형·평행사변형까지 넣는다.',
   standardCode: '[6수03-11]',
   skill: '다각형의 둘레 구하기',
   format: 'short-answer',
@@ -713,6 +720,8 @@ const AREA_FORMULAS = {
 
 const areaOfPolygon = {
   id: 'math.g56.rm.s03-12.area',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 직사각형, 2는 삼각형·평행사변형, 3은 마름모·사다리꼴까지 넣는다.',
   standardCode: '[6수03-12]',
   skill: '사각형·삼각형의 넓이 구하기',
   format: 'short-answer',
@@ -1180,6 +1189,8 @@ const LIKELIHOOD_WORDS = ['불가능하다', '~아닐 것 같다', '반반이다
 
 const likelihoodWord = {
   id: 'math.g56.rm.s04-04.likelihood-word',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: '[6수04-04]',
   skill: '일이 일어날 가능성을 말로 표현하기',
   format: 'multiple-choice',

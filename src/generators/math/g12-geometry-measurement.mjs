@@ -34,6 +34,8 @@ const SIDE_COUNT = { triangle: 3, quadrilateral: 4, pentagon: 5, hexagon: 6 };
 
 const identifyPolygon = {
   id: 'math.g12.gm.s05.identify',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 삼각형·사각형, 2 이상은 오각형·육각형까지 넣는다.',
   standardCode: CODE(5),
   skill: '변의 수로 다각형 이름 찾기',
   format: 'multiple-choice',
@@ -79,6 +81,8 @@ const identifyPolygon = {
 
 const countSides = {
   id: 'math.g12.gm.s05.count-sides',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: CODE(5),
   skill: '다각형의 변과 꼭짓점 수 세기',
   format: 'short-answer',
@@ -351,6 +355,8 @@ const LENGTH_CONTEXTS = [
 
 const chooseLengthUnit = {
   id: 'math.g12.gm.s10.choose-unit',
+  difficultyAxis: 'single',
+  difficulties: [1],
   standardCode: CODE(10),
   skill: '상황에 알맞은 길이 단위 고르기',
   format: 'multiple-choice',
