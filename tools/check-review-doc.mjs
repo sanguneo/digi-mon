@@ -61,17 +61,49 @@ const mustBeZero = [
 const missing = expected.filter(([, s]) => !doc.includes(s));
 const nonZero = mustBeZero.filter(([, n]) => n !== 0);
 
-// 파일 지도의 게이트 수도 대조한다. 이 숫자가 낡아 외부 검토를 통과했다.
+/**
+ * 게이트가 실제로 verify 체인에 등록됐는지 본다.
+ *
+ * 파일 수만 세면 뚫린다. 체인에서 게이트 하나를 지워도 tools/ 의 파일 수는 그대로라
+ * 통과하고, 그 게이트가 돌지 않으니 낡은 data/audit/*.json 이 수치 대조까지 계속
+ * 만족시킨다. check-difficulty 를 등록하지 않은 채 '열두 게이트 통과'라고 두 번
+ * 커밋한 사고의 재발 경로가 검사기 안에 남아 있었다.
+ *
+ * 그래서 세 가지를 함께 본다.
+ *   1. 게이트 파일 전부가 체인에 있는가
+ *   2. 체인에 게이트가 아닌 것이 섞여 있지 않은가
+ *   3. 문서의 게이트 총수 주장이 체인 길이와 맞는가
+ */
+const pkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8'));
+const chain = pkg.scripts.verify.split('&&').map((c) => c.trim().replace(/^node\s+/, ''));
+
 const toolFiles = fs.readdirSync(path.join(REPO_ROOT, 'tools')).filter((f) => f.endsWith('.mjs'));
-// 자기 자신도 게이트이므로 함께 센다. 검사기가 스스로를 빼면 그 수치가 또 낡는다.
-const gateFiles = toolFiles.filter((f) => f.startsWith('check-') || f === 'mutation-test.mjs');
-const gateCount = gateFiles.length;
-const gateClaim = `게이트 ${gateCount}종`;
+const toolGates = toolFiles
+  .filter((f) => f.startsWith('check-') || f === 'mutation-test.mjs')
+  .map((f) => `tools/${f}`);
+const binGates = ['bin/build-spine.mjs', 'bin/audit-ontology.mjs', 'bin/verify-generators.mjs'];
+const allGates = [...binGates, ...toolGates];
+
+const notInChain = allGates.filter((g) => !chain.includes(g));
+const extraInChain = chain.filter((c) => !allGates.includes(c));
+
+// tools/ 게이트 수 주장 (파일 지도 §11)
+const gateClaim = `게이트 ${toolGates.length}종`;
 const gateStale = !doc.includes(gateClaim);
+
+/** 게이트 총수는 문서에 한국어 수사로 적혀 있다. */
+const COUNT_WORDS = {
+  9: '아홉', 10: '열', 11: '열한', 12: '열두', 13: '열세', 14: '열네', 15: '열다섯',
+};
+const totalWord = COUNT_WORDS[chain.length];
+const totalClaim = totalWord ? `${totalWord} 게이트` : null;
+const totalStale = totalClaim === null || !doc.includes(totalClaim);
 
 console.log(`REVIEW.md 대조: 필수 문자열 ${expected.length - missing.length}/${expected.length} 일치`);
 console.log(`0이어야 하는 값: ${mustBeZero.length - nonZero.length}/${mustBeZero.length} 정상`);
 console.log(`tools/ 게이트 수 주장(${gateClaim}): ${gateStale ? '문서에 없음' : '일치'}`);
+console.log(`verify 체인: ${chain.length}개 · 게이트 파일 ${allGates.length}개 · 미등록 ${notInChain.length}개`);
+console.log(`문서 게이트 총수 주장(${totalClaim ?? '수사 없음'}): ${totalStale ? '불일치' : '일치'}`);
 
 if (missing.length > 0) {
   console.log('\n문서에 없는(낡은) 수치:');
@@ -82,4 +114,20 @@ if (nonZero.length > 0) {
   for (const [label, n] of nonZero) console.log(`  ${label} = ${n}`);
 }
 
-if (missing.length > 0 || nonZero.length > 0 || gateStale) process.exitCode = 1;
+if (notInChain.length > 0) {
+  console.log('\nverify 체인에 등록되지 않은 게이트 (돌지 않으므로 낡은 산출물이 대조를 통과시킨다):');
+  for (const g of notInChain) console.log(`  ${g}`);
+}
+if (extraInChain.length > 0) {
+  console.log('\n체인에 있지만 게이트로 인식되지 않는 항목:');
+  for (const c of extraInChain) console.log(`  ${c}`);
+}
+if (totalStale) {
+  console.log(`\n문서의 게이트 총수 주장이 체인 길이(${chain.length})와 맞지 않는다.`);
+  console.log(`  문서에 '${totalClaim ?? `${chain.length}개 게이트`}' 가 있어야 한다.`);
+}
+
+if (missing.length > 0 || nonZero.length > 0 || gateStale
+  || notInChain.length > 0 || extraInChain.length > 0 || totalStale) {
+  process.exitCode = 1;
+}
