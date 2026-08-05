@@ -291,9 +291,6 @@ export function vocabularyFor(gradeBand) {
   return list;
 }
 
-export function isAllowedWord(word, gradeBand) {
-  return vocabularyFor(gradeBand).includes(word);
-}
 
 /**
  * 받침이 있는/없는 낱말. 표기·조사 문항은 받침 유무로 갈린다.

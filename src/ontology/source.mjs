@@ -16,9 +16,7 @@ export const SUBJECTS = [
   { slug: 'english', korean: '영어', curriculumId: 'kr-2022-elem-english-efl' },
 ];
 
-export const SUBJECT_BY_SLUG = new Map(SUBJECTS.map((s) => [s.slug, s]));
 export const SUBJECT_BY_KOREAN = new Map(SUBJECTS.map((s) => [s.korean, s]));
-export const SUBJECT_BY_CURRICULUM = new Map(SUBJECTS.map((s) => [s.curriculumId, s]));
 
 const DATA_FILES = ['curriculum-standards.json', 'topics.json', 'dependencies.json', 'clusters.json'];
 

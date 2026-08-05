@@ -161,7 +161,6 @@ export function particleRo(word) {
   return '으로';
 }
 
-export const josaRo = (w) => `${w}${particleRo(w)}`;
 
 /** 숫자 뒤 로/으로. 조사는 읽는 소리가 정한다. numRo(3) -> '3으로', numRo(1) -> '1로' */
 export const numRo = (n) => `${n}${particleRo(sinoKoreanLarge(n))}`;
@@ -219,7 +218,6 @@ export const unitEun = (value, unit) => `${value}${unit}${unitParticle(unit, '�
 export const unitI = (value, unit) => `${value}${unit}${unitParticle(unit, '이', '가')}`;
 /** 수치+단위 뒤 로/으로. unitRo(1, 'kg') -> '1kg으로' (킬로그램 -> 램, 받침 ㅁ) */
 export const unitRo = (value, unit) => `${value}${unit}${particleRo(UNIT_READING[unit] ?? unit)}`;
-export const unitEul = (value, unit) => `${value}${unit}${unitParticle(unit, '을', '를')}`;
 
 /**
  * 분수 표기 뒤의 조사.
@@ -239,5 +237,4 @@ export function fractionParticle(text, withJong, withoutJong) {
 }
 
 export const fracEun = (t) => `${t}${fractionParticle(t, '은', '는')}`;
-export const fracI = (t) => `${t}${fractionParticle(t, '이', '가')}`;
 export const fracEul = (t) => `${t}${fractionParticle(t, '을', '를')}`;

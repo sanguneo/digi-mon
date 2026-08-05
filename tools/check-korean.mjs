@@ -19,6 +19,7 @@ import { createRegistry } from '../src/engine/registry.mjs';
 import { createRng } from '../src/engine/rng.mjs';
 import { generateItem } from '../src/engine/worksheet.mjs';
 import { particle, particleRo, sinoKoreanLarge } from '../src/engine/korean-number.mjs';
+import { composeSyllable, decomposeSyllable } from '../src/engine/hangul.mjs';
 import { vocabularyFor } from '../src/curriculum/korean-vocab.mjs';
 
 const SAMPLES = Number(process.env.SAMPLES ?? 60);
@@ -264,10 +265,37 @@ for (const g of registry.all()) {
   }
 }
 
+/**
+ * 한글 음절 전량 분해 -> 조합 왕복 검증.
+ *
+ * REVIEW.md 가 "한글 음절 11,172자 전량 분해→조합 왕복 검증 통과" 를 주장해 왔는데,
+ * 그 검증은 일회용 스크립트로 한 번 돌린 것이고 게이트에 없었다. composeSyllable 을
+ * 아무도 부르지 않아 죽은 export 로 남아 있었다 — 주장만 있고 근거가 사라진 상태다.
+ *
+ * 자모 계산이 틀리면 자모 세기·사전 순서·맞춤법 문항이 조용히 어긋난다. 문면 검사보다
+ * 아래층 불변식이므로 여기서 함께 본다.
+ */
+function checkHangulRoundTrip() {
+  const FIRST = 0xac00;
+  const LAST = 0xd7a3;
+  const failures = [];
+  for (let code = FIRST; code <= LAST; code += 1) {
+    const ch = String.fromCodePoint(code);
+    const parts = decomposeSyllable(ch);
+    if (!parts) { failures.push({ ch, reason: '분해 실패' }); continue; }
+    const back = composeSyllable(parts.initial, parts.medial, parts.final);
+    if (back !== ch) failures.push({ ch, reason: `재조합 불일치: ${back}` });
+  }
+  return { checked: LAST - FIRST + 1, failures };
+}
+
+const hangul = checkHangulRoundTrip();
+
 const report = {
   schema: 'digi-mon/korean-check@1',
   samplesPerGenerator: SAMPLES,
   textsScanned: scanned,
+  hangulRoundTrip: { checked: hangul.checked, failures: hangul.failures.length },
   checks: Object.fromEntries(
     Object.entries(byCheck).map(([id, v]) => [id, {
       label: v.label,
@@ -282,8 +310,16 @@ writeJson(path.join(REPO_ROOT, 'data', 'audit', 'korean-check.json'), report);
 
 const total = Object.values(byCheck).reduce((s, v) => s + v.count, 0);
 console.log(`한국어 표기 검사: 문면 ${scanned}건 검사, 위반 ${total}건`);
+console.log(`한글 음절 왕복: ${hangul.checked.toLocaleString('en-US')}자 분해→조합, 불일치 ${hangul.failures.length}건`);
 for (const [, v] of Object.entries(byCheck)) {
   console.log(`  ${v.label.padEnd(18)} ${String(v.count).padStart(5)}건  생성기 ${v.generators.size}개`);
+}
+
+if (hangul.failures.length > 0) {
+  console.log('');
+  console.log('한글 자모 왕복 실패 — 자모 세기·사전 순서·맞춤법 문항이 어긋난다:');
+  for (const f of hangul.failures.slice(0, 10)) console.log(`  ${f.ch}: ${f.reason}`);
+  process.exitCode = 1;
 }
 
 if (total > 0) {

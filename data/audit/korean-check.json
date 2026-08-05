@@ -2,6 +2,10 @@
   "schema": "digi-mon/korean-check@1",
   "samplesPerGenerator": 60,
   "textsScanned": 64675,
+  "hangulRoundTrip": {
+    "checked": 11172,
+    "failures": 0
+  },
   "checks": {
     "josa-after-number": {
       "label": "숫자 뒤 조사",

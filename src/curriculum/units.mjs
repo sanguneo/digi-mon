@@ -104,6 +104,3 @@ export function formatCompound(system, baseValue, bigSymbol) {
   return formatCompoundPair(system, baseValue, bigSymbol, UNIT_SYSTEMS[system].base);
 }
 
-export function toBase(system, value, symbol) {
-  return value * unitOf(system, symbol).factor;
-}

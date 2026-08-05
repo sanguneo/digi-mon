@@ -45,17 +45,9 @@ export function reduceFraction({ n, d }) {
   return { n: n / g, d: d / g };
 }
 
-export function isReduced({ n, d }) {
-  return gcd(n, d) === 1;
-}
-
 /** 가분수 -> 대분수. 3보다 작은 몫이면 whole 이 0 이다. */
 export function toMixed({ n, d }) {
   return { whole: Math.floor(n / d), n: n % d, d };
-}
-
-export function fromMixed({ whole, n, d }) {
-  return { n: whole * d + n, d };
 }
 
 /** 분모를 통일해 정수 분자끼리만 비교한다. 나눗셈을 쓰지 않으므로 오차가 없다. */
@@ -244,14 +236,4 @@ export function fractionToDecimal({ n, d }) {
   if (d === 100) return makeDecimal(n, 2);
   if (d === 1000) return makeDecimal(n, 3);
   throw new Error(`10의 거듭제곱 분모만 소수로 바꾼다: 분모 ${d}`);
-}
-
-export function decimalToFraction({ units, scale }) {
-  return reduceFraction({ n: units, d: 10 ** scale });
-}
-
-/** 소수를 자연수 부분과 소수 부분으로. '자연수와 소수의 관계' 문항에 쓴다. */
-export function splitDecimal({ units, scale }) {
-  const power = 10 ** scale;
-  return { whole: Math.floor(units / power), fractionUnits: units % power, scale };
 }
