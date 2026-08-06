@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digi-mon.local/schema/generator-topic-alignment.schema.json",
+  "title": "Generator to assessment-topic alignment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["topicId", "confidence", "note", "reviewStatus"],
+  "properties": {
+    "topicId": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "string", "minLength": 1 },
+    "note": { "type": "string", "minLength": 1 },
+    "reviewStatus": { "enum": ["approved", "candidate"] }
+  },
+  "description": "A generator may only align to an upstream standardMapping whose relationship is assesses. Absence means unknown semantic coverage, never implicit coverage of every topic under the standard."
+}

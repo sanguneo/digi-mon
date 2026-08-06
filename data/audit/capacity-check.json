@@ -3,8 +3,8 @@
   "note": "포화 기준 용량이다. 고정 문턱은 개념이 작은 것과 덜 쓴 것을 구분하지 못해 쓰지 않는다.",
   "baseSamples": 300,
   "minCeiling": 12,
-  "generatorCount": 189,
-  "saturatedCount": 99,
+  "generatorCount": 188,
+  "saturatedCount": 98,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -88,7 +88,7 @@
       "capacityNote": "감각 표현 문장 자산 10개가 상한이다. 문장을 늘리면 함께 늘어난다."
     },
     {
-      "generatorId": "korean.g12.st.s02-03.mind",
+      "generatorId": "korean.g12.st.s02-04.mind",
       "ceiling": 8,
       "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다."
     },
@@ -123,11 +123,6 @@
       "capacityNote": "문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다."
     },
     {
-      "generatorId": "english.g34.st.s02-03.write-word",
-      "ceiling": 12,
-      "capacityNote": "뜻이 유일한 단어 12개가 상한이다. 어휘 목록이 공식 자료로 교체되면 함께 늘어난다."
-    },
-    {
       "generatorId": "english.g34.st.s02-06.command",
       "ceiling": 8,
       "capacityNote": "상황-지시문 짝 8개가 상한이다. 상황이 겹치지 않아야 해서 확장에 검토가 필요하다."
@@ -153,7 +148,7 @@
       "capacityNote": "질문-응답 짝 5개가 상한이다."
     }
   ],
-  "observedCapacity": 114712,
+  "observedCapacity": 114700,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -2092,8 +2087,8 @@
       "ceiling": 10
     },
     {
-      "generatorId": "korean.g12.st.s02-03.mind",
-      "code": "[2국02-03]",
+      "generatorId": "korean.g12.st.s02-04.mind",
+      "code": "[2국02-04]",
       "skill": "인물의 마음 짐작하기",
       "axis": "single",
       "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다.",
@@ -2167,17 +2162,6 @@
       "uniqueAtDouble": 8,
       "saturated": true,
       "ceiling": 8
-    },
-    {
-      "generatorId": "english.g34.st.s02-03.write-word",
-      "code": "[4영02-03]",
-      "skill": "뜻에 맞는 영어 단어 쓰기",
-      "axis": "categorical",
-      "capacityNote": "뜻이 유일한 단어 12개가 상한이다. 어휘 목록이 공식 자료로 교체되면 함께 늘어난다.",
-      "uniqueAtBase": 12,
-      "uniqueAtDouble": 12,
-      "saturated": true,
-      "ceiling": 12
     },
     {
       "generatorId": "english.g34.st.s02-06.command",

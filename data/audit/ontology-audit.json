@@ -20,7 +20,9 @@
       "eolNormalized": true,
       "sha256": "aaaebb939c17fcc11a808fef3ae8164823425f74bfe8092a4a66941cb8c33335",
       "manifestSha256": "aaaebb939c17fcc11a808fef3ae8164823425f74bfe8092a4a66941cb8c33335",
-      "matchesManifest": true
+      "pinSha256": "aaaebb939c17fcc11a808fef3ae8164823425f74bfe8092a4a66941cb8c33335",
+      "matchesManifest": true,
+      "matchesPin": true
     },
     {
       "file": "topics.json",
@@ -29,7 +31,9 @@
       "eolNormalized": true,
       "sha256": "80aa059ed305ce4cbeb0df45436c0b204a42cd208204c1cc1e5332c70c4bf5f3",
       "manifestSha256": "80aa059ed305ce4cbeb0df45436c0b204a42cd208204c1cc1e5332c70c4bf5f3",
-      "matchesManifest": true
+      "pinSha256": "80aa059ed305ce4cbeb0df45436c0b204a42cd208204c1cc1e5332c70c4bf5f3",
+      "matchesManifest": true,
+      "matchesPin": true
     },
     {
       "file": "dependencies.json",
@@ -38,7 +42,9 @@
       "eolNormalized": true,
       "sha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c",
       "manifestSha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c",
-      "matchesManifest": true
+      "pinSha256": "e09a6137bb70edf2a0b0928c05a4bd3f102c80845846ff13b10767ef4ceafe2c",
+      "matchesManifest": true,
+      "matchesPin": true
     },
     {
       "file": "clusters.json",
@@ -47,7 +53,9 @@
       "eolNormalized": true,
       "sha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb",
       "manifestSha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb",
-      "matchesManifest": true
+      "pinSha256": "6f98f583fa1f9afa1ae4498e9e49cfa6ebbda845701ba161fdae0daaa1e03fdb",
+      "matchesManifest": true,
+      "matchesPin": true
     }
   ],
   "thresholds": {

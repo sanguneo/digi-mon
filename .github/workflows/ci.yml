@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout digi-mon
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: digi-mon
+
+      - name: Checkout reference ontology
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: DECK6/korean-elementary-learning-map
+          ref: 3ef0563084aa2a9baaa47da2c1ec0ebf5d7edc5c
+          path: korean-elementary-learning-map
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: digi-mon/package-lock.json
+
+      - name: Install
+        working-directory: digi-mon
+        run: npm ci
+
+      - name: Dependency audit
+        working-directory: digi-mon
+        run: npm audit --omit=dev
+
+      - name: Unit and regression tests
+        working-directory: digi-mon
+        run: npm test
+
+      - name: Full verification
+        working-directory: digi-mon
+        run: npm run verify
+
+      - name: Generated artifact freshness
+        working-directory: digi-mon
+        run: npm run check:artifacts
+
+      - name: Patch hygiene
+        working-directory: digi-mon
+        run: git diff --check
+

@@ -3,7 +3,6 @@
  *
  * 음성·지문 자산 없이 성립하는 것만 다룬다. 5차 수리에서 저작했다.
  *   [4영01-05] 문장의 뜻 이해     — 문장-뜻 짝이면 성립한다
- *   [4영02-03] 소리-철자로 단어 쓰기 — 뜻 단서로 철자를 잰다
  *   [4영02-06] 행동 지시          — 상황-지시문 짝 (PARTIAL: 말하기는 사람이 본다)
  *   [6영02-04] 소개·묘사 문장      — 상황-문장 짝 (PARTIAL)
  *   [6영02-07] 세부 정보 묻고 답하기 — 질문-응답 짝 (PARTIAL)
@@ -22,8 +21,6 @@ import {
   QA_PAIRS_G56,
   SENTENCE_MEANINGS,
   TEMPLATE_BLANKS,
-  WORD_CLUES,
-  WORDS_G34,
 } from '../../curriculum/english-vocab.mjs';
 
 // ---------------------------------------------------------------------------
@@ -63,46 +60,6 @@ const sentenceMeaning = {
     const found = SENTENCE_MEANINGS.find((s) => s.en === en);
     if (!found || found.ko !== ko) return false;
     return answer.value === ko;
-  },
-};
-
-// ---------------------------------------------------------------------------
-// [4영02-03] 소리-철자로 단어 쓰기
-// ---------------------------------------------------------------------------
-
-const writeWord = {
-  id: 'english.g34.st.s02-03.write-word',
-  standardCode: '[4영02-03]',
-  skill: '뜻에 맞는 영어 단어 쓰기',
-  format: 'short-answer',
-  difficultyAxis: 'categorical',
-  difficultyNote: '난이도 1은 세 글자 단어, 2 이상은 네 글자 단어까지 낸다. 글자가 길수록 틀릴 자리가 늘어난다.',
-  capacityNote: '뜻이 유일한 단어 12개가 상한이다. 어휘 목록이 공식 자료로 교체되면 함께 늘어난다.',
-  generate(rng, { difficulty }) {
-    const pool = difficulty === 1
-      ? WORD_CLUES.filter((c) => c.word.length <= 3)
-      : WORD_CLUES;
-    const spec = rng.pick(pool);
-    const capitalized = spec.word[0].toUpperCase() + spec.word.slice(1);
-    return {
-      params: { word: spec.word, ko: spec.ko },
-      instruction: '뜻에 맞는 영어 단어를 쓰시오.',
-      stem: `우리말 뜻: ${spec.ko}`,
-      answer: {
-        value: spec.word,
-        display: spec.word,
-        accepts: [spec.word, spec.word.toUpperCase(), capitalized],
-      },
-      solution: [`'${spec.ko}'는 영어로 '${spec.word}'이다.`],
-      dedupeKey: `write-word:${spec.word}`,
-      difficulty,
-    };
-  },
-  verify({ word, ko }, answer) {
-    // 표를 되짚고, 단어가 학년군 목록 안인지도 본다.
-    const found = WORD_CLUES.find((c) => c.ko === ko);
-    if (!found || found.word !== word) return false;
-    return String(answer.value).toLowerCase() === word && WORDS_G34.includes(word);
   },
 };
 
@@ -243,7 +200,6 @@ const qaG56 = qaGenerator({
 
 export const generators = [
   sentenceMeaning,
-  writeWord,
   commandChoice,
   expressionChoice,
   templateBlank,

@@ -183,24 +183,30 @@ const readDataTable = {
     let stem;
     let value;
     let display;
+    let accepts;
     let solution;
     if (mode === 'total') {
       stem = `표를 보고 ${c.thing} 수의 합계를 구하시오.`;
       value = total;
       display = `${total}${c.counter}`;
+      accepts = [String(total), display];
       solution = [`${c.counts.join(' + ')} = ${total}${c.counter}이다.`];
     } else if (mode === 'most') {
-      const maxIdx = c.counts.indexOf(Math.max(...c.counts));
+      const max = Math.max(...c.counts);
+      const maxIdx = c.counts.indexOf(max);
+      const tied = c.categories.filter((_, idx) => c.counts[idx] === max);
       stem = `표에서 가장 많은 것은 무엇입니까?`;
       value = c.categories[maxIdx];
       display = c.categories[maxIdx];
-      solution = [`가장 큰 수는 ${c.counts[maxIdx]}${c.counter}이다.`, `그러므로 ${c.categories[maxIdx]}이 가장 많다.`];
+      accepts = tied;
+      solution = [`가장 큰 수는 ${max}${c.counter}이다.`, `그러므로 ${tied.join(', ')}이 가장 많다.`];
     } else {
       const maxIdx = c.counts.indexOf(Math.max(...c.counts));
       const minIdx = c.counts.indexOf(Math.min(...c.counts));
       stem = `표에서 가장 많은 것과 가장 적은 것의 차는 몇 ${c.counter}입니까?`;
       value = c.counts[maxIdx] - c.counts[minIdx];
       display = `${value}${c.counter}`;
+      accepts = [String(value), display];
       solution = [`가장 많은 것은 ${c.counts[maxIdx]}${c.counter}, 가장 적은 것은 ${c.counts[minIdx]}${c.counter}이다.`, `${c.counts[maxIdx]} - ${c.counts[minIdx]} = ${value}${c.counter}이다.`];
     }
 
@@ -214,7 +220,7 @@ const readDataTable = {
         altText: `${c.criterion}별 ${c.thing} 수를 정리한 표. ${c.categories.map((cat, idx) => `${cat} ${c.counts[idx]}`).join(', ')}.`,
         prompt: { ko: `흰 배경에 검은 선으로 그린 2행 표. 첫 행은 ${c.categories.join(', ')} 머리글, 둘째 행은 ${c.counts.join(', ')} 값. 초등 수학 교재용. AR 16:9` },
       },
-      answer: { value, display, accepts: [String(value), display] },
+      answer: { value, display, accepts },
       solution,
       dedupeKey: `read-table:${c.criterion}:${c.counts.join('-')}:${mode}`,
       difficulty,
@@ -251,23 +257,29 @@ const readPictureGraph = {
     let stem;
     let value;
     let display;
+    let accepts;
     let solution;
     if (mode === 'read-one') {
       stem = `그래프에서 ${c.categories[askIndex]}${josaEun(c.categories[askIndex])} 몇 ${c.counter}입니까?`;
       value = counts[askIndex];
       display = `${value}${c.counter}`;
+      accepts = [String(value), display];
       solution = [`${c.categories[askIndex]} 칸에 ○이 ${counts[askIndex]}개 있다.`, `${value}${c.counter}이다.`];
     } else if (mode === 'most') {
-      const maxIdx = counts.indexOf(Math.max(...counts));
+      const max = Math.max(...counts);
+      const maxIdx = counts.indexOf(max);
+      const tied = c.categories.filter((_, idx) => counts[idx] === max);
       stem = '그래프에서 가장 많은 것은 무엇입니까?';
       value = c.categories[maxIdx];
       display = value;
-      solution = [`○이 가장 높이 쌓인 칸은 ${c.categories[maxIdx]}이다.`];
+      accepts = tied;
+      solution = [`○이 가장 높이 쌓인 칸은 ${tied.join(', ')}이다.`];
     } else {
       const total = counts.reduce((s, v) => s + v, 0);
       stem = `그래프의 ○을 모두 세면 몇 개입니까?`;
       value = total;
       display = `${total}개`;
+      accepts = [String(total), display];
       solution = [`${counts.join(' + ')} = ${total}개이다.`];
     }
 
@@ -281,7 +293,7 @@ const readPictureGraph = {
         altText: `${c.criterion}별 ${c.thing} 수를 ○로 나타낸 그림그래프. ${c.categories.map((cat, idx) => `${cat} ${counts[idx]}개`).join(', ')}.`,
         prompt: { ko: `흰 배경에 검은 선으로 그린 그림그래프. 가로축에 ${c.categories.join(', ')}, 세로축은 개수이며 각 칸에 ○ 기호가 ${counts.join(', ')}개씩 쌓여 있다. 초등 수학 교재용. AR 16:9` },
       },
-      answer: { value, display, accepts: [String(value), display] },
+      answer: { value, display, accepts },
       solution,
       dedupeKey: `read-graph:${c.criterion}:${counts.join('-')}:${mode}:${mode === 'read-one' ? askIndex : ''}`,
       difficulty,

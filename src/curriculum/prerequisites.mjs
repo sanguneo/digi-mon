@@ -171,6 +171,62 @@ export const MATH_PREREQUISITES = {
   '[6수04-06]': ['[6수04-05]', '[6수01-07]'],
 };
 
+const PREREQUISITE_ASSERTION_BASIS = 'digi-mon-authored-remediation-graph@1';
+const PREREQUISITE_ASSERTION_SOURCE = 'src/curriculum/prerequisites.mjs';
+
+function prerequisiteAssertion(dependent, prerequisite) {
+  return {
+    id: `math-prerequisite:${dependent}:${prerequisite}`,
+    subject: 'math',
+    dependent,
+    prerequisite,
+    strength: 'recommended',
+    reason: '복습 순서를 위한 직접 선수 추천이다. 교과 전문가 검토 전에는 보편적 필수 순서로 해석하지 않는다.',
+    basis: PREREQUISITE_ASSERTION_BASIS,
+    source: PREREQUISITE_ASSERTION_SOURCE,
+    reviewStatus: 'needs-subject-expert-review',
+  };
+}
+
+export function directPrerequisiteAssertions(code) {
+  return (MATH_PREREQUISITES[code] ?? []).map((prerequisite) =>
+    prerequisiteAssertion(code, prerequisite));
+}
+
+export function prerequisiteGraphAssertions(codes = Object.keys(MATH_PREREQUISITES)) {
+  return codes.flatMap((code) => directPrerequisiteAssertions(code));
+}
+
+export function approvedPrerequisiteAssertions(codes = Object.keys(MATH_PREREQUISITES)) {
+  return prerequisiteGraphAssertions(codes)
+    .filter((assertion) => assertion.reviewStatus === 'approved');
+}
+
+export function approvedAncestorsOf(code, { maxDepth = 99 } = {}) {
+  const approvedByDependent = new Map();
+  for (const assertion of approvedPrerequisiteAssertions()) {
+    if (!approvedByDependent.has(assertion.dependent)) {
+      approvedByDependent.set(assertion.dependent, []);
+    }
+    approvedByDependent.get(assertion.dependent).push(assertion.prerequisite);
+  }
+  const found = new Set();
+  let frontier = [code];
+  for (let depth = 0; depth < maxDepth; depth += 1) {
+    const next = [];
+    for (const current of frontier) {
+      for (const prerequisite of approvedByDependent.get(current) ?? []) {
+        if (found.has(prerequisite)) continue;
+        found.add(prerequisite);
+        next.push(prerequisite);
+      }
+    }
+    if (next.length === 0) break;
+    frontier = next;
+  }
+  return [...found];
+}
+
 /** 학년군 순서. 선수는 후속과 같거나 낮은 학년군이어야 한다. */
 const BAND_ORDER = { '1-2': 1, '3-4': 2, '5-6': 3 };
 

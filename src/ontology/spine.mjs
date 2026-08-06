@@ -69,6 +69,9 @@ function normalizeSource(std) {
     section: loc?.section ?? std.sourceSection ?? null,
     locator: loc?.locator ?? firstEvidence?.locator ?? null,
     officialTextIncluded: false,
+    sourceBasis: std.sourceBasis ?? null,
+    verificationNotes: std.verificationNotes ?? null,
+    evidence: std.evidence ?? std.sourceEvidence ?? [],
   };
 }
 
@@ -84,6 +87,17 @@ export function buildSpine(ontology) {
       if (!topicsByStandardKey.has(key)) topicsByStandardKey.set(key, []);
       topicsByStandardKey.get(key).push(t.id);
     }
+  }
+  const mappingsByStandardKey = new Map();
+  for (const mapping of ontology.standards.standardMappings) {
+    if (!mappingsByStandardKey.has(mapping.standardKey)) mappingsByStandardKey.set(mapping.standardKey, []);
+    mappingsByStandardKey.get(mapping.standardKey).push({
+      topicId: mapping.microTopicId,
+      role: mapping.relationship,
+      confidence: mapping.confidence ?? null,
+      note: mapping.note ?? null,
+      workstreamFile: mapping.workstreamFile ?? null,
+    });
   }
 
   const conflicts = [];
@@ -110,6 +124,7 @@ export function buildSpine(ontology) {
       }
 
       const topicIds = (topicsByStandardKey.get(std.key) ?? []).slice().sort();
+      const topicMappings = (mappingsByStandardKey.get(std.key) ?? []).slice();
 
       standards.push({
         specId: `${subject.slug}.g${parsed.gradeStart}-${parsed.gradeEnd}.d${parsed.domainNumber}.s${String(parsed.sequence).padStart(2, '0')}`,
@@ -146,6 +161,7 @@ export function buildSpine(ontology) {
           workstreamFile: std.workstreamFile ?? null,
           topicIds,
           topicCount: topicIds.length,
+          topicMappings,
         },
       });
     }
@@ -167,13 +183,36 @@ export function buildSpine(ontology) {
     if (s.module) b.modules[`${s.gradeBand} / ${s.domain} / ${s.module}`] = (b.modules[`${s.gradeBand} / ${s.domain} / ${s.module}`] ?? 0) + 1;
   }
 
+  const scopedCurricula = selectSubjectCurricula(ontology).map(({ curriculum }) => curriculum);
+  const scopedWorkstreams = new Set(scopedCurricula.flatMap((curriculum) => curriculum.standards.map((standard) => standard.workstreamFile).filter(Boolean)));
+  const scopedStandardKeys = new Set(standards.map((standard) => standard.standardKey));
+  const scopedSubjectNames = new Set(scopedCurricula.flatMap((curriculum) => [curriculum.subject, curriculum.subjectKorean]));
+  const coverageGaps = ontology.standards.coverageGaps.filter((gap) =>
+    scopedWorkstreams.has(gap.workstreamFile)
+    || scopedSubjectNames.has(gap.subject)
+    || scopedSubjectNames.has(gap.subjectKorean)
+    || gap.standardKeys?.some((key) => scopedStandardKeys.has(key)));
+  const sourceIds = new Set(scopedCurricula.flatMap((curriculum) => [
+    ...(curriculum.sourceIds ?? []),
+    ...curriculum.standards.flatMap((standard) => standard.sourceRefs ?? []),
+  ]));
+  for (const gap of coverageGaps) for (const sourceId of gap.sourceRefs ?? []) sourceIds.add(sourceId);
+  const sourceDocuments = ontology.standards.sources.filter((source) => sourceIds.has(source.id));
+
   return {
-    schema: 'digi-mon/spine@1',
+    schema: 'digi-mon/spine@2',
     scope: {
       subjects: ['math', 'korean', 'english'],
       note: '2022 개정 초등 국어·수학·영어. 과학·사회 등 타 교과는 범위 밖이다.',
     },
-    upstream: { ...ontology.upstream, dir: null, integrity: ontology.integrity },
+    upstream: {
+      ...ontology.upstream,
+      dir: null,
+      integrity: ontology.integrity,
+      sourceDocuments,
+      coverageGaps,
+      coverageGapCount: coverageGaps.length,
+    },
     standardCount: standards.length,
     conflictCount: conflicts.length,
     conflicts,

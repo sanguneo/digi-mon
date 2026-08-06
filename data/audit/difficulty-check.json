@@ -76,8 +76,8 @@
       "note": null
     },
     {
-      "generatorId": "korean.g12.st.s02-03.mind",
-      "code": "[2국02-03]",
+      "generatorId": "korean.g12.st.s02-04.mind",
+      "code": "[2국02-04]",
       "note": null
     },
     {
@@ -346,11 +346,6 @@
       "generatorId": "english.g34.st.s01-05.meaning",
       "code": "[4영01-05]",
       "note": "난이도 1은 세 단어 문장, 2 이상은 더 긴 문장까지 낸다."
-    },
-    {
-      "generatorId": "english.g34.st.s02-03.write-word",
-      "code": "[4영02-03]",
-      "note": "난이도 1은 세 글자 단어, 2 이상은 네 글자 단어까지 낸다. 글자가 길수록 틀릴 자리가 늘어난다."
     }
   ],
   "singleAxisVariance": [],
@@ -3412,13 +3407,13 @@
           "samples": 80,
           "maxMagnitude": 1.05,
           "steps": 2,
-          "paramMagnitude": 2.325
+          "paramMagnitude": 2.575
         },
         "3": {
           "samples": 80,
           "maxMagnitude": 1.05,
           "steps": 2,
-          "paramMagnitude": 2.112
+          "paramMagnitude": 2.188
         }
       },
       "meaningful": true

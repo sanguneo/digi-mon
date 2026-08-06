@@ -760,26 +760,33 @@ const interpretBarGraph = {
   generate(rng, { difficulty }) {
     const s = pickSurvey(rng, difficulty);
     const mode = difficulty === 1 ? 'most' : rng.pick(['most', 'least', 'diff']);
-    const maxIdx = s.counts.indexOf(Math.max(...s.counts));
-    const minIdx = s.counts.indexOf(Math.min(...s.counts));
+    const max = Math.max(...s.counts);
+    const min = Math.min(...s.counts);
+    const maxIdx = s.counts.indexOf(max);
+    const minIdx = s.counts.indexOf(min);
+    const most = s.categories.filter((_, idx) => s.counts[idx] === max);
+    const least = s.categories.filter((_, idx) => s.counts[idx] === min);
 
     const spec = {
       most: {
         stem: '가장 많은 것은 무엇입니까?',
         value: s.categories[maxIdx],
         display: s.categories[maxIdx],
-        solution: [`막대가 가장 높은 것은 ${s.categories[maxIdx]}이다.`],
+        accepts: most,
+        solution: [`막대가 가장 높은 것은 ${most.join(', ')}이다.`],
       },
       least: {
         stem: '가장 적은 것은 무엇입니까?',
         value: s.categories[minIdx],
         display: s.categories[minIdx],
-        solution: [`막대가 가장 낮은 것은 ${s.categories[minIdx]}이다.`],
+        accepts: least,
+        solution: [`막대가 가장 낮은 것은 ${least.join(', ')}이다.`],
       },
       diff: {
         stem: `가장 많은 것과 가장 적은 것의 차는 몇 ${s.unit}입니까?`,
         value: s.counts[maxIdx] - s.counts[minIdx],
         display: `${s.counts[maxIdx] - s.counts[minIdx]}${s.unit}`,
+        accepts: [String(s.counts[maxIdx] - s.counts[minIdx]), `${s.counts[maxIdx] - s.counts[minIdx]}${s.unit}`],
         solution: [
           `가장 많은 것은 ${s.counts[maxIdx]}${s.unit}, 가장 적은 것은 ${s.counts[minIdx]}${s.unit}이다.`,
           `${s.counts[maxIdx]} - ${s.counts[minIdx]} = ${s.counts[maxIdx] - s.counts[minIdx]}${s.unit}`,
@@ -797,7 +804,7 @@ const interpretBarGraph = {
         altText: `${s.topic} 막대그래프. ${s.categories.map((c, i) => `${c} ${s.counts[i]}`).join(', ')}.`,
         prompt: { ko: `흰 배경에 검은 선으로 그린 막대그래프. 가로축에 ${s.categories.join(', ')}, 막대 높이는 ${s.counts.join(', ')}. 초등 수학 교재용. AR 16:9` },
       },
-      answer: { value: spec.value, display: spec.display, accepts: [String(spec.value), spec.display] },
+      answer: { value: spec.value, display: spec.display, accepts: spec.accepts },
       solution: spec.solution,
       dedupeKey: `interpret-bar:${s.topic}:${s.counts.join('-')}:${mode}`,
       difficulty,

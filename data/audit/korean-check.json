@@ -1,7 +1,7 @@
 {
   "schema": "digi-mon/korean-check@1",
   "samplesPerGenerator": 60,
-  "textsScanned": 71216,
+  "textsScanned": 70976,
   "hangulRoundTrip": {
     "checked": 11172,
     "failures": 0

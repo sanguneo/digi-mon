@@ -3,6 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { validateOntologyDocuments } from './contracts.mjs';
+import { EXPECTED_UPSTREAM_PIN, assertPinnedManifest } from './pin.mjs';
+
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = path.resolve(HERE, '..', '..');
 
@@ -63,7 +66,8 @@ export function loadOntology(explicitDir) {
   const dir = resolveOntologyDir(explicitDir);
   const krDir = path.join(dir, 'data', 'kr');
   const manifest = JSON.parse(fs.readFileSync(path.join(krDir, 'manifest.json'), 'utf8'));
-  const files = manifest.files ?? manifest;
+  assertPinnedManifest(manifest);
+  const files = manifest.files;
 
   const raw = {};
   const integrity = [];
@@ -71,7 +75,8 @@ export function loadOntology(explicitDir) {
     const onDisk = fs.readFileSync(path.join(krDir, name));
     const canonical = normalizeEol(onDisk);
     const actual = sha256(canonical);
-    const expected = files[name]?.sha256 ?? null;
+    const expected = files[name].sha256;
+    const pinned = EXPECTED_UPSTREAM_PIN.files[name].sha256;
     integrity.push({
       file: name,
       bytes: canonical.byteLength,
@@ -79,17 +84,27 @@ export function loadOntology(explicitDir) {
       eolNormalized: canonical.byteLength !== onDisk.byteLength,
       sha256: actual,
       manifestSha256: expected,
-      matchesManifest: expected === null ? null : expected === actual,
+      pinSha256: pinned,
+      matchesManifest: expected === actual,
+      matchesPin: pinned === actual,
     });
     raw[name.replace(/\.json$/, '')] = JSON.parse(canonical.toString('utf8'));
   }
 
-  const mismatched = integrity.filter((f) => f.matchesManifest === false);
+  const mismatched = integrity.filter((f) => !f.matchesManifest || !f.matchesPin);
   if (mismatched.length > 0) {
     throw new Error(
       `업스트림 데이터가 manifest 해시와 불일치한다: ${mismatched.map((f) => f.file).join(', ')}`,
     );
   }
+
+  validateOntologyDocuments({
+    manifest,
+    standards: raw['curriculum-standards'],
+    topics: raw.topics,
+    dependencies: raw.dependencies,
+    clusters: raw.clusters,
+  });
 
   return {
     dir,
@@ -98,6 +113,7 @@ export function loadOntology(explicitDir) {
       taxonomyVersion: raw.topics.taxonomyVersion ?? null,
       generatedAt: raw['curriculum-standards'].generatedAt ?? null,
     },
+    manifest,
     integrity,
     standards: raw['curriculum-standards'],
     topics: raw.topics,

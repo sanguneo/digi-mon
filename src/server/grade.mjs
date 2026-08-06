@@ -10,6 +10,7 @@ const CHOICE_LABELS = ['①', '②', '③', '④', '⑤'];
 /** 표기 차이를 흡수한다. 정답 판정이 전각/공백/쉼표 때문에 갈리면 안 된다. */
 export function normalizeResponse(value) {
   return String(value ?? '')
+    .normalize('NFKC')
     .trim()
     .replace(/[＞]/g, '>')
     .replace(/[＜]/g, '<')
@@ -25,6 +26,8 @@ export function normalizeResponse(value) {
  */
 function resolveChoiceResponse(item, raw) {
   const trimmed = String(raw ?? '').trim();
+  const byText = item.choices.find((c) => c.text === trimmed);
+  if (byText) return byText.text;
   const byLabel = item.choices.find((c) => c.label === trimmed);
   if (byLabel) return byLabel.text;
   const asIndex = Number(trimmed);
@@ -81,15 +84,12 @@ export function gradeItem(item, response) {
  * 집계는 '다음에 무엇을 더 연습해야 하는가'로 이어지는 유일한 신호다.
  */
 export function gradeWorksheet(worksheet, responses) {
-  const byNumber = new Map(worksheet.items.map((it) => [it.number, it]));
   const results = [];
   // 사람이 채점하는 문항은 자동 집계에서 분리한다.
   const manualScoring = [];
 
-  for (const [key, value] of Object.entries(responses ?? {})) {
-    const number = Number(key);
-    const item = byNumber.get(number);
-    if (!item) continue;
+  for (const item of worksheet.items) {
+    const value = responses?.[item.number];
     const graded = gradeItem(item, value);
     if (graded.requiresManualScoring) manualScoring.push(graded);
     else results.push(graded);
@@ -112,18 +112,22 @@ export function gradeWorksheet(worksheet, responses) {
   }
 
   const correct = results.filter((r) => r.correct).length;
+  const answered = results.filter((r) => r.answered).length;
   const weakStandards = Object.entries(byStandard)
     .filter(([, b]) => b.accuracy !== null && b.accuracy < 0.6)
     .map(([code, b]) => ({ code, accuracy: b.accuracy }))
     .sort((a, b) => a.accuracy - b.accuracy);
 
   return {
+    schema: 'digi-mon/grading-result@1',
     seed: worksheet.seed,
     graded: results.length,
+    answered,
     total: worksheet.items.length,
     manualScoringCount: manualScoring.length,
     correct,
     accuracy: results.length === 0 ? null : Number((correct / results.length).toFixed(4)),
+    completionRate: results.length === 0 ? null : Number((answered / results.length).toFixed(4)),
     byStandard,
     weakStandards,
     results,

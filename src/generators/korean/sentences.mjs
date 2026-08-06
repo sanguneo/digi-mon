@@ -306,12 +306,12 @@ const sensoryWord = {
 };
 
 // ---------------------------------------------------------------------------
-// [2국02-03] 인물의 마음 짐작하기
+// [2국02-04] 인물의 마음 짐작하기
 // ---------------------------------------------------------------------------
 
 const mindGuess = {
-  id: 'korean.g12.st.s02-03.mind',
-  standardCode: '[2국02-03]',
+  id: 'korean.g12.st.s02-04.mind',
+  standardCode: '[2국02-04]',
   skill: '인물의 마음 짐작하기',
   format: 'multiple-choice',
   difficultyAxis: 'single',

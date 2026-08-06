@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/grading-result.schema.json",
+  "title": "digi-mon worksheet grading result",
+  "type": "object",
+  "required": [
+    "seed",
+    "schema",
+    "graded",
+    "answered",
+    "total",
+    "manualScoringCount",
+    "correct",
+    "accuracy",
+    "completionRate",
+    "byStandard",
+    "weakStandards",
+    "results",
+    "manualScoring"
+  ],
+  "properties": {
+    "schema": { "const": "digi-mon/grading-result@1" },
+    "seed": { "type": "string" },
+    "graded": { "type": "integer", "minimum": 0 },
+    "answered": { "type": "integer", "minimum": 0 },
+    "total": { "type": "integer", "minimum": 0 },
+    "manualScoringCount": { "type": "integer", "minimum": 0 },
+    "correct": { "type": "integer", "minimum": 0 },
+    "accuracy": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "completionRate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "byStandard": { "type": "object" },
+    "weakStandards": { "type": "array" },
+    "results": { "type": "array" },
+    "manualScoring": { "type": "array" },
+    "responseRecords": { "type": "array" }
+  },
+  "additionalProperties": false
+}

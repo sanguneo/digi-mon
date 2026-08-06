@@ -1,6 +1,13 @@
+import { timingSafeEqual } from 'node:crypto';
+
 import { buildCoverage } from '../engine/registry.mjs';
 import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
 import { createRng } from '../engine/rng.mjs';
+import { learnerFigure } from '../engine/item.mjs';
+import {
+  parseWorksheetOptions,
+  WorksheetOptionsError,
+} from '../engine/options.mjs';
 import { gradeWorksheet } from './grade.mjs';
 import {
   MIN_SAMPLES,
@@ -12,13 +19,18 @@ import {
 import { renderFigureSvg, hasSvgRenderer } from '../render/figure-svg.mjs';
 import {
   MATH_PREREQUISITES,
+  approvedAncestorsOf,
   ancestorsOf,
   dependentsOf,
+  directPrerequisiteAssertions,
   learningOrder,
+  prerequisiteGraphAssertions,
 } from '../curriculum/prerequisites.mjs';
 
 const MAX_BODY_BYTES = 256 * 1024;
 const MAX_COUNT = 100;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_REQUESTS = 120;
 
 class HttpError extends Error {
   constructor(status, message, detail) {
@@ -32,16 +44,21 @@ function readBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     let size = 0;
+    let tooLarge = false;
     req.on('data', (chunk) => {
       size += chunk.length;
       if (size > MAX_BODY_BYTES) {
-        reject(new HttpError(413, '요청 본문이 너무 크다'));
-        req.destroy();
+        tooLarge = true;
+        chunks.length = 0;
         return;
       }
-      chunks.push(chunk);
+      if (!tooLarge) chunks.push(chunk);
     });
     req.on('end', () => {
+      if (tooLarge) {
+        reject(new HttpError(413, '요청 본문이 너무 크다'));
+        return;
+      }
       const raw = Buffer.concat(chunks).toString('utf8');
       if (raw.trim().length === 0) return resolve({});
       try {
@@ -54,12 +71,13 @@ function readBody(req) {
   });
 }
 
-function json(res, status, payload) {
+function json(res, status, payload, headers = {}) {
   const body = JSON.stringify(payload);
   res.writeHead(status, {
     'content-type': 'application/json; charset=utf-8',
     'content-length': Buffer.byteLength(body),
     'cache-control': 'no-store',
+    ...headers,
   });
   res.end(body);
 }
@@ -69,26 +87,18 @@ function list(value) {
   return Array.isArray(value) ? value : String(value).split(',').map((s) => s.trim()).filter(Boolean);
 }
 
-/** 학습지 생성 옵션을 한 곳에서 검증한다. 잘못된 조합은 500이 아니라 400이어야 한다. */
-function parseWorksheetOptions(source) {
-  const count = source.count === undefined ? 20 : Number(source.count);
-  if (!Number.isInteger(count) || count < 1 || count > MAX_COUNT) {
-    throw new HttpError(400, `count 는 1..${MAX_COUNT} 정수여야 한다`, { received: source.count });
+function httpWorksheetOptions(source) {
+  try {
+    return parseWorksheetOptions(source, { maxCount: MAX_COUNT });
+  } catch (error) {
+    if (error instanceof WorksheetOptionsError) {
+      throw new HttpError(400, error.message, {
+        field: error.field,
+        received: error.received,
+      });
+    }
+    throw error;
   }
-  const difficulty = source.difficulty === undefined || source.difficulty === '' ? undefined : Number(source.difficulty);
-  if (difficulty !== undefined && ![1, 2, 3].includes(difficulty)) {
-    throw new HttpError(400, 'difficulty 는 1, 2, 3 중 하나여야 한다', { received: source.difficulty });
-  }
-  return {
-    seed: source.seed === undefined ? undefined : String(source.seed),
-    subject: source.subject ?? 'math',
-    gradeBands: list(source.grade ?? source.gradeBands),
-    domains: list(source.domain ?? source.domains),
-    codes: list(source.code ?? source.codes),
-    count,
-    difficulty,
-    title: source.title,
-  };
 }
 
 /**
@@ -101,23 +111,93 @@ function attachFigureSvg(item) {
   return { ...item, figure: { ...item.figure, svg: renderFigureSvg(item.figure) } };
 }
 
+function stripItemAnswers(item) {
+  const {
+    answer,
+    solution,
+    params,
+    dedupeKey,
+    ...rest
+  } = attachFigureSvg(item);
+  const projectedFigure = rest.figure ? learnerFigure(rest.figure) : null;
+  const learnerDeliveryFigure = projectedFigure
+    ? (({ spec, ...figure }) => figure)(projectedFigure)
+    : null;
+  return {
+    ...rest,
+    ...(rest.choices
+      ? { choices: rest.choices.map(({ correct, ...choice }) => choice) }
+      : {}),
+    ...(learnerDeliveryFigure ? { figure: learnerDeliveryFigure } : {}),
+  };
+}
+
 /** 학습자에게 내려보내는 형태. 정답·풀이·params 를 지운다. */
 function stripAnswers(worksheet) {
   return {
     ...worksheet,
-    items: worksheet.items.map((item) => {
-      const { answer, solution, params, dedupeKey, ...rest } = attachFigureSvg(item);
-      return {
-        ...rest,
-        ...(rest.choices ? { choices: rest.choices.map(({ correct, ...c }) => c) } : {}),
-      };
-    }),
+    items: worksheet.items.map(stripItemAnswers),
   };
 }
 
-export function createApp({ spine, registry }) {
+function sameSecret(provided, expected) {
+  if (typeof provided !== 'string' || typeof expected !== 'string') return false;
+  const a = Buffer.from(provided);
+  const b = Buffer.from(expected);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+
+function isTeacher(req, teacherToken) {
+  const authorization = req.headers.authorization ?? '';
+  const provided = authorization.startsWith('Bearer ')
+    ? authorization.slice('Bearer '.length)
+    : null;
+  return sameSecret(provided, teacherToken);
+}
+
+function requireTeacher(req, teacherToken) {
+  if (!teacherToken) {
+    throw new HttpError(403, '교사용 정답 접근이 비활성화되어 있다');
+  }
+  if (!isTeacher(req, teacherToken)) {
+    throw new HttpError(403, '교사용 인증이 필요하다');
+  }
+}
+
+function stripGradingFeedback(grading) {
+  return {
+    ...grading,
+    results: grading.results.map(({ expected, solution, ...result }) => result),
+    manualScoring: grading.manualScoring.map(({ rubric, ...result }) => result),
+  };
+}
+
+function createRateLimiter() {
+  const clients = new Map();
+  return (key, now = Date.now()) => {
+    const current = clients.get(key);
+    if (!current || now - current.startedAt >= RATE_LIMIT_WINDOW_MS) {
+      clients.set(key, { startedAt: now, count: 1 });
+      if (clients.size > 10_000) {
+        for (const [client, entry] of clients) {
+          if (now - entry.startedAt >= RATE_LIMIT_WINDOW_MS) clients.delete(client);
+        }
+      }
+      return true;
+    }
+    current.count += 1;
+    return current.count <= RATE_LIMIT_REQUESTS;
+  };
+}
+
+export function createApp({
+  spine,
+  registry,
+  teacherToken = process.env.TEACHER_TOKEN ?? null,
+}) {
   const coverage = buildCoverage(spine, registry);
   const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
+  const allowRequest = createRateLimiter();
 
   const routes = [
     {
@@ -189,13 +269,22 @@ export function createApp({ spine, registry }) {
     {
       method: 'POST',
       path: '/v1/worksheets',
-      handle: (body, url) => {
-        const options = parseWorksheetOptions({ ...body, ...Object.fromEntries(url.searchParams) });
+      handle: (body, url, req) => {
+        const source = { ...Object.fromEntries(url.searchParams), ...body };
+        const options = httpWorksheetOptions(source);
         const worksheet = buildWorksheet(spine, registry, {
           ...options,
           seed: options.seed ?? `ws-${Date.now()}`,
         });
-        const includeAnswers = String(body.includeAnswers ?? url.searchParams.get('includeAnswers')) === 'true';
+        if (worksheet.shortfall > 0) {
+          throw new HttpError(409, '요청한 수만큼 고유 문항을 만들 수 없다', {
+            requested: worksheet.requested,
+            produced: worksheet.produced,
+            shortfall: worksheet.shortfall,
+          });
+        }
+        const includeAnswers = String(source.includeAnswers) === 'true';
+        if (includeAnswers) requireTeacher(req, teacherToken);
         return includeAnswers
           ? { ...worksheet, items: worksheet.items.map(attachFigureSvg) }
           : stripAnswers(worksheet);
@@ -204,7 +293,7 @@ export function createApp({ spine, registry }) {
     {
       method: 'POST',
       path: '/v1/items',
-      handle: (body) => {
+      handle: (body, _url, req) => {
         const code = body.code;
         if (!code) throw new HttpError(400, 'code 는 필수다 (예: [2수01-06])');
         const standard = standardByCode.get(code);
@@ -230,19 +319,67 @@ export function createApp({ spine, registry }) {
           seen.add(item.dedupeKey);
           items.push(item);
         }
-        return { seed, code, requested: count, produced: items.length, items: items.map(attachFigureSvg) };
+        if (items.length < count) {
+          throw new HttpError(409, '요청한 수만큼 고유 문항을 만들 수 없다', {
+            requested: count,
+            produced: items.length,
+          });
+        }
+        const includeAnswers = String(body.includeAnswers) === 'true';
+        if (includeAnswers) requireTeacher(req, teacherToken);
+        return {
+          seed,
+          code,
+          requested: count,
+          produced: items.length,
+          items: includeAnswers
+            ? items.map(attachFigureSvg)
+            : items.map(stripItemAnswers),
+        };
       },
     },
     {
       method: 'POST',
       path: '/v1/grade',
-      handle: (body) => {
+      handle: (body, _url, req) => {
         if (!body.seed) throw new HttpError(400, 'seed 는 필수다. 학습지를 다시 만들어 대조한다');
-        if (!body.responses || typeof body.responses !== 'object') {
+        if (!body.fingerprint || typeof body.fingerprint !== 'string') {
+          throw new HttpError(400, 'fingerprint 는 필수다. 발급된 학습지와 같은지 확인한다');
+        }
+        if (!body.responses || typeof body.responses !== 'object' || Array.isArray(body.responses)) {
           throw new HttpError(400, 'responses 는 {문항번호: 답} 객체여야 한다');
         }
-        const options = parseWorksheetOptions(body);
+        if (body.elapsedMs !== undefined
+          && (!body.elapsedMs || typeof body.elapsedMs !== 'object' || Array.isArray(body.elapsedMs))) {
+          throw new HttpError(400, 'elapsedMs 는 {문항번호: 밀리초} 객체여야 한다');
+        }
+        if (body.elapsedMs !== undefined
+          && Object.values(body.elapsedMs).some((value) =>
+            !Number.isFinite(Number(value)) || Number(value) < 0)) {
+          throw new HttpError(400, 'elapsedMs 값은 0 이상의 유한한 밀리초여야 한다');
+        }
+        if (body.learnerId !== undefined
+          && (typeof body.learnerId !== 'string'
+            || body.learnerId.length < 1
+            || body.learnerId.length > 128
+            || !/^[A-Za-z0-9._:-]+$/.test(body.learnerId))) {
+          throw new HttpError(400, 'learnerId 는 개인정보가 아닌 1..128자 영숫자 토큰이어야 한다');
+        }
+        const options = httpWorksheetOptions(body);
         const worksheet = buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
+        if (worksheet.fingerprint !== body.fingerprint) {
+          throw new HttpError(409, '학습지 fingerprint 가 일치하지 않는다', {
+            expected: worksheet.fingerprint,
+            received: body.fingerprint,
+          });
+        }
+        const validNumbers = new Set(worksheet.items.map((item) => String(item.number)));
+        const invalidNumbers = Object.keys(body.responses).filter((number) => !validNumbers.has(number));
+        if (invalidNumbers.length > 0) {
+          throw new HttpError(400, '학습지에 없는 문항 번호가 responses 에 있다', {
+            invalidNumbers,
+          });
+        }
         const grading = gradeWorksheet(worksheet, body.responses);
 
         /**
@@ -255,14 +392,20 @@ export function createApp({ spine, registry }) {
          * 이 배선이 없던 동안 response-log.mjs 는 어떤 진입점에서도 도달하지 않는
          * 죽은 모듈이었다.
          */
-        if (String(body.records) === 'false') return grading;
+        const includeFeedback = String(body.includeFeedback) === 'true';
+        if (includeFeedback) requireTeacher(req, teacherToken);
+        const visibleGrading = includeFeedback ? grading : stripGradingFeedback(grading);
+        if (String(body.records) === 'false') return visibleGrading;
+        const responseRecords = recordsFromGrading(worksheet, grading, {
+          learnerId: body.learnerId ?? null,
+          at: body.at ?? null,
+          elapsedMs: body.elapsedMs ?? null,
+        });
         return {
-          ...grading,
-          responseRecords: recordsFromGrading(worksheet, grading, {
-            learnerId: body.learnerId ?? null,
-            at: body.at ?? null,
-            elapsedMs: body.elapsedMs ?? null,
-          }),
+          ...visibleGrading,
+          responseRecords: includeFeedback
+            ? responseRecords
+            : responseRecords.map(({ dedupeKey, ...record }) => record),
         };
       },
     },
@@ -277,6 +420,7 @@ export function createApp({ spine, registry }) {
             note: '이 저장소가 저작한 추천 순서다. 보편 법칙이 아니다.',
             learningOrder: learningOrder(),
             graph: MATH_PREREQUISITES,
+            assertions: prerequisiteGraphAssertions(),
           };
         }
         if (!Object.hasOwn(MATH_PREREQUISITES, code)) {
@@ -285,6 +429,7 @@ export function createApp({ spine, registry }) {
         return {
           code,
           direct: MATH_PREREQUISITES[code],
+          directAssertions: directPrerequisiteAssertions(code),
           // 먼 선수부터. 복습은 여기 앞쪽부터 시작한다.
           ancestors: ancestorsOf(code),
           dependents: dependentsOf(code),
@@ -304,7 +449,7 @@ export function createApp({ spine, registry }) {
        * 굳혀 버린다. 난이도는 파라미터 범위·받아올림 유무 같은 설계 결정이라
        * 숫자만 고쳐서는 문항이 실제로 쉬워지지 않는다.
        */
-      handle: (body) => {
+      handle: (body, _url, req) => {
         if (!Array.isArray(body.records)) {
           throw new HttpError(400, 'records 는 /v1/grade 가 준 responseRecords 배열이어야 한다');
         }
@@ -332,7 +477,7 @@ export function createApp({ spine, registry }) {
        * 분수의 덧셈을 반복시키면 같은 자리에서 계속 막힌다. 선수를 거슬러
        * 올라가 먼저 배워야 하는 것부터 낸다.
        */
-      handle: (body) => {
+      handle: (body, _url, req) => {
         const weak = list(body.weakStandards ?? body.codes);
         if (!weak || weak.length === 0) {
           throw new HttpError(400, 'weakStandards 는 성취기준 코드 배열이어야 한다', {
@@ -351,8 +496,14 @@ export function createApp({ spine, registry }) {
 
         // 선수를 모으고 학습 순서로 정렬한다. 생성기가 없는 기준은 낼 수 없다.
         const prerequisiteSet = new Set();
+        const excludedCandidateSet = new Set();
         for (const code of weak) {
-          for (const p of ancestorsOf(code, { maxDepth: depth })) prerequisiteSet.add(p);
+          for (const prerequisite of approvedAncestorsOf(code, { maxDepth: depth })) {
+            prerequisiteSet.add(prerequisite);
+          }
+          for (const candidate of ancestorsOf(code, { maxDepth: depth })) {
+            if (!prerequisiteSet.has(candidate)) excludedCandidateSet.add(candidate);
+          }
         }
         for (const code of weak) prerequisiteSet.delete(code);
 
@@ -370,20 +521,38 @@ export function createApp({ spine, registry }) {
           throw new HttpError(409, '복습에 쓸 생성기가 없다', { plan });
         }
 
-        const options = parseWorksheetOptions({ ...body, codes: usable });
+        const options = httpWorksheetOptions({
+          ...body,
+          codes: usable,
+          subject: 'math',
+          followLearningOrder: false,
+        });
         const worksheet = buildWorksheet(spine, registry, {
           ...options,
           seed: options.seed ?? `remediation-${Date.now()}`,
-          // 복습은 선수부터 풀려야 하므로 학습 순서를 따른다.
-          followLearningOrder: true,
+          // 전문가 승인 간선만 운영한다. 현재 후보 간선은 순서를 바꾸지 않는다.
+          followLearningOrder: false,
           title: body.title ?? `복습 학습지 (${weak.join(', ')} 선수 포함)`,
         });
+        if (worksheet.shortfall > 0) {
+          throw new HttpError(409, '요청한 수만큼 복습 문항을 만들 수 없다', {
+            requested: worksheet.requested,
+            produced: worksheet.produced,
+            shortfall: worksheet.shortfall,
+          });
+        }
         const includeAnswers = String(body.includeAnswers) === 'true';
+        if (includeAnswers) requireTeacher(req, teacherToken);
 
         return {
           weakStandards: weak,
           depth,
+          prerequisitePolicy: 'approved-only',
+          excludedCandidateCount: excludedCandidateSet.size,
+          excludedCandidateStandards: [...excludedCandidateSet].sort(),
           plan,
+          prerequisiteAssertions: prerequisiteGraphAssertions(plan.map((entry) => entry.code))
+            .filter((assertion) => plan.some((entry) => entry.code === assertion.prerequisite)),
           skipped: plan.filter((p) => !p.hasGenerator).map((p) => p.code),
           worksheet: includeAnswers
             ? { ...worksheet, items: worksheet.items.map(attachFigureSvg) }
@@ -394,25 +563,53 @@ export function createApp({ spine, registry }) {
   ];
 
   return async function handler(req, res) {
-    const url = new URL(req.url, `http://${req.headers.host ?? 'localhost'}`);
-    const route = routes.find((r) => r.path === url.pathname && r.method === req.method);
-
-    if (!route) {
-      const known = routes.map((r) => `${r.method} ${r.path}`);
-      json(res, 404, { error: '없는 엔드포인트', path: `${req.method} ${url.pathname}`, endpoints: known });
-      return;
-    }
-
     try {
+      const client = req.socket.remoteAddress ?? 'unknown';
+      if (!allowRequest(client)) {
+        json(res, 429, { error: '요청이 너무 많다. 잠시 후 다시 시도하라' }, {
+          'retry-after': String(RATE_LIMIT_WINDOW_MS / 1000),
+        });
+        return;
+      }
+
+      let url;
+      try {
+        url = new URL(req.url, 'http://localhost');
+      } catch {
+        throw new HttpError(400, '요청 URL 형식이 올바르지 않다');
+      }
+
+      const samePath = routes.filter((candidate) => candidate.path === url.pathname);
+      const route = samePath.find((candidate) => candidate.method === req.method);
+      if (!route) {
+        if (samePath.length > 0) {
+          const allowed = samePath.map((candidate) => candidate.method);
+          json(res, 405, {
+            error: '허용되지 않은 HTTP 메서드',
+            path: `${req.method} ${url.pathname}`,
+            allowed,
+          }, { allow: allowed.join(', ') });
+          return;
+        }
+        const known = routes.map((candidate) => `${candidate.method} ${candidate.path}`);
+        json(res, 404, {
+          error: '없는 엔드포인트',
+          path: `${req.method} ${url.pathname}`,
+          endpoints: known,
+        });
+        return;
+      }
+
       const body = req.method === 'POST' ? await readBody(req) : {};
-      json(res, 200, route.handle(body, url));
+      json(res, 200, await route.handle(body, url, req));
     } catch (error) {
       if (error instanceof HttpError) {
         json(res, error.status, { error: error.message, detail: error.detail ?? null });
         return;
       }
       // 검산 실패는 생성기 버그다. 조용히 넘기지 않고 500으로 드러낸다.
-      json(res, 500, { error: '문항 생성 실패', message: error.message });
+      console.error('요청 처리 실패:', error);
+      json(res, 500, { error: '내부 처리 실패' });
     }
   };
 }

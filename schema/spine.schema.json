@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digi-mon.local/schema/spine.schema.json",
+  "title": "Digi-mon ontology spine",
+  "type": "object",
+  "required": ["schema", "scope", "upstream", "standardCount", "standards"],
+  "properties": {
+    "schema": { "const": "digi-mon/spine@2" },
+    "standardCount": { "type": "integer", "minimum": 0 },
+    "scope": { "type": "object" },
+    "upstream": {
+      "type": "object",
+      "required": ["taxonomyVersion", "integrity", "sourceDocuments", "coverageGaps", "coverageGapCount"],
+      "properties": {
+        "sourceDocuments": { "type": "array", "items": { "type": "object", "required": ["id", "name", "sourceType", "url"] } },
+        "coverageGaps": { "type": "array", "items": { "type": "object", "required": ["id"] } },
+        "coverageGapCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "standards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["standardKey", "code", "source", "upstream"],
+        "properties": {
+          "source": { "type": "object", "required": ["sourceIds", "evidence"] },
+          "upstream": {
+            "type": "object",
+            "required": ["topicIds", "topicCount", "topicMappings"],
+            "properties": {
+              "topicMappings": { "type": "array", "items": { "$ref": "#/$defs/topicMapping" } }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "topicMapping": {
+      "type": "object",
+      "required": ["topicId", "role", "confidence", "note", "workstreamFile"],
+      "properties": {
+        "topicId": { "type": "string" }, "role": { "type": "string" },
+        "confidence": { "type": ["string", "null"] }, "note": { "type": ["string", "null"] },
+        "workstreamFile": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

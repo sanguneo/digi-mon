@@ -2,12 +2,14 @@
   "name": "digi-mon",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "description": "2022 개정 초등 국어·수학·영어 학습 데이터 생성 파이프라인",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "test": "node tools/run-tests.mjs",
     "serve": "node bin/serve.mjs",
     "build:spine": "node bin/build-spine.mjs",
     "audit:ontology": "node bin/audit-ontology.mjs",
@@ -24,6 +26,7 @@
     "check:capacity": "node tools/check-capacity.mjs",
     "check:difficulty": "node tools/check-difficulty.mjs",
     "check:review-doc": "node tools/check-review-doc.mjs",
+    "check:artifacts": "git diff --exit-code -- data docs/review REVIEW.md",
     "export:review": "node tools/export-review-tables.mjs",
     "check:fact-tables": "node tools/check-fact-tables.mjs",
     "check:difficulty-notes": "node tools/check-difficulty-notes.mjs",

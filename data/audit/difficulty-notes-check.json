@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 45,
+  "categoricalCount": 44,
   "problemCount": 0,
   "problems": [],
   "rows": [
@@ -624,20 +624,6 @@
         "1": 3,
         "2": 8,
         "3": 8
-      }
-    },
-    {
-      "generatorId": "english.g34.st.s02-03.write-word",
-      "code": "[4영02-03]",
-      "note": "난이도 1은 세 글자 단어, 2 이상은 네 글자 단어까지 낸다. 글자가 길수록 틀릴 자리가 늘어난다.",
-      "mentionedLevels": [
-        1,
-        2
-      ],
-      "uniqueByLevel": {
-        "1": 7,
-        "2": 12,
-        "3": 12
       }
     }
   ]

@@ -1261,7 +1261,7 @@ const likelihoodNumber = {
   skill: '가능성을 수로 나타내기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    // 가능성은 0, 1/2, 1 중 하나로 나타내는 것이 이 학년군의 범위다.
+    // 각 상황의 같은 가능성을 지닌 결과 수를 전체 결과 수와 비교한다.
     const CASES = [
       { situation: '흰 공만 들어 있는 주머니에서 흰 공을 꺼낼', n: 1, d: 1, display: '1' },
       { situation: '흰 공만 들어 있는 주머니에서 검은 공을 꺼낼', n: 0, d: 1, display: '0' },
@@ -1280,7 +1280,7 @@ const likelihoodNumber = {
       { situation: '주사위를 굴려 짝수가 나올', n: 1, d: 2, display: '1/2' },
       { situation: '주사위를 굴려 3 이하의 수가 나올', n: 1, d: 2, display: '1/2' },
       { situation: '번호가 1부터 10까지인 공에서 짝수 번호를 꺼낼', n: 1, d: 2, display: '1/2' },
-      { situation: '가위바위보에서 한 판을 이기거나 질', n: 1, d: 2, display: '1/2' },
+      { situation: '가위바위보에서 한 판을 이기거나 질', n: 2, d: 3, display: '2/3' },
     ];
     const c = rng.pick(difficulty === 1 ? CASES.filter((x) => x.d === 1) : CASES);
     return {

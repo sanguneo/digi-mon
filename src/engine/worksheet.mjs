@@ -1,8 +1,33 @@
+import { createHash } from 'node:crypto';
+
 import { createRng } from './rng.mjs';
 import { finalizeItem } from './item.mjs';
+import { assessmentMappingsFor } from '../ontology/alignment.mjs';
 import { learningOrder } from '../curriculum/prerequisites.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
+const WORKSHEET_SCHEMA = 'digi-mon/worksheet@2';
+const ENGINE_VERSION = 'digi-mon-engine@2';
+
+function stableJson(value) {
+  if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
+  if (value && typeof value === 'object') {
+    return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`).join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
+
+export function buildWorksheetFingerprint({ schema, seed, options, items, corpus }) {
+  const payload = {
+    schema,
+    engineVersion: ENGINE_VERSION,
+    seed: String(seed),
+    options,
+    items,
+    corpus,
+  };
+  return createHash('sha256').update(stableJson(payload)).digest('hex');
+}
 
 /**
  * 생성기 하나를 돌려 검산까지 통과한 문항 한 개를 만든다.
@@ -21,6 +46,12 @@ export function generateItem(generator, standard, rng, difficulty) {
   const withMeta = {
     ...raw,
     generatorId: generator.id,
+    assessmentMappings: assessmentMappingsFor(standard, generator),
+    curriculum: {
+      standardKey: standard.key,
+      source: standard.source,
+      topicMappings: standard.upstream?.topicMappings ?? [],
+    },
     skill: raw.skill ?? generator.skill,
     format: raw.format ?? generator.format,
     difficulty: raw.difficulty ?? level,
@@ -67,17 +98,34 @@ export function buildWorksheet(spine, registry, options) {
     followLearningOrder = false,
   } = options ?? {};
 
+  if (!Number.isInteger(count) || count < 1 || count > 100) {
+    throw new Error(`count 는 1..100 정수여야 한다: ${count}`);
+  }
+  if (difficulty !== undefined && ![1, 2, 3].includes(difficulty)) {
+    throw new Error(`difficulty 는 1, 2, 3 중 하나여야 한다: ${difficulty}`);
+  }
+  if (followLearningOrder && subject !== 'math') {
+    throw new Error(`followLearningOrder 는 수학만 지원한다: ${subject}`);
+  }
+
   const targets = resolveTargets(spine, registry, { subject, gradeBands, domains, codes });
   if (targets.length === 0) {
     throw new Error(`조건에 맞는 성취기준이 없다 (생성기 미보유 포함): subject=${subject} gradeBands=${gradeBands} domains=${domains} codes=${codes}`);
   }
 
   const rng = createRng(seed);
-  const mixEntries = Object.entries(difficultyMix).map(([k, v]) => [Number(k), v]);
+  const mixEntries = Object.entries(difficultyMix).map(([k, v]) => [Number(k), Number(v)]);
+  if (mixEntries.length === 0
+    || mixEntries.some(([level, weight]) =>
+      ![1, 2, 3].includes(level) || !Number.isFinite(weight) || weight <= 0)) {
+    throw new Error('difficultyMix 는 난이도 1..3의 양수 가중치여야 한다');
+  }
 
   // 성취기준을 고르게 돌린다. 한 기준에 몰리면 학습지가 아니라 반복 훈련이 된다.
-  const pool = [];
-  for (const std of targets) for (const g of registry.forStandard(std.code)) pool.push({ std, g });
+  const pool = targets.map((std) => ({
+    std,
+    generators: registry.forStandard(std.code),
+  }));
 
   // 선수 순서를 따를 때는 학습 순서로 정렬해 앞쪽 기준이 먼저 나오게 한다.
   if (followLearningOrder) {
@@ -99,7 +147,8 @@ export function buildWorksheet(spine, registry, options) {
       cursorPool = followLearningOrder ? pool.slice() : rng.shuffle(pool);
       cursor = 0;
     }
-    const { std, g } = cursorPool[cursor];
+    const { std, generators } = cursorPool[cursor];
+    const g = rng.pick(generators);
     cursor += 1;
 
     const d = difficulty ?? rng.weighted(mixEntries);
@@ -124,25 +173,37 @@ export function buildWorksheet(spine, registry, options) {
 
   const numbered = items.map((item, idx) => ({ number: idx + 1, ...item }));
 
-  return {
-    schema: 'digi-mon/worksheet@1',
+  const corpus = {
+    taxonomyVersion: spine.upstream.taxonomyVersion ?? null,
+    integrity: (spine.upstream.integrity ?? []).map(({ file, sha256 }) => ({ file, sha256 })),
+  };
+  const resolvedOptions = {
+    subject,
+    gradeBands: gradeBands ?? null,
+    domains: domains ?? null,
+    codes: codes ?? null,
+    count,
+    difficulty: difficulty ?? null,
+    difficultyMix,
+    followLearningOrder,
+  };
+  const worksheet = {
+    schema: WORKSHEET_SCHEMA,
+    engineVersion: ENGINE_VERSION,
     seed: String(seed),
     title: title ?? defaultTitle(targets, subject),
     requested: count,
     produced: numbered.length,
     shortfall: count - numbered.length,
-    options: {
-      subject,
-      gradeBands: gradeBands ?? null,
-      domains: domains ?? null,
-      codes: codes ?? null,
-      difficulty: difficulty ?? null,
-      difficultyMix,
-      followLearningOrder,
-    },
+    options: resolvedOptions,
+    corpus,
     standardsUsed: [...new Set(numbered.map((it) => it.standardCode))].sort(),
     difficultyHistogram: numbered.reduce((acc, it) => ({ ...acc, [it.difficulty]: (acc[it.difficulty] ?? 0) + 1 }), {}),
     items: numbered,
+  };
+  return {
+    ...worksheet,
+    fingerprint: buildWorksheetFingerprint(worksheet),
   };
 }
 

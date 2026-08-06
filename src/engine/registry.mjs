@@ -13,6 +13,7 @@ import { generators as koreanSentences } from '../generators/korean/sentences.mj
 import { generators as englishSentences } from '../generators/english/sentences.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
+import { GENERATOR_TOPIC_ALIGNMENT_SCHEMA, semanticCoverageFor } from '../ontology/alignment.mjs';
 
 /**
  * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
@@ -121,6 +122,7 @@ export function buildCoverage(spine, registry) {
   for (const std of spine.standards) {
     const gens = registry.forStandard(std.code);
     const scoringMode = scoringModeOf(std.code);
+    const semanticCoverage = semanticCoverageFor(std, gens);
     const entry = {
       code: std.code,
       subject: std.subject,
@@ -135,6 +137,7 @@ export function buildCoverage(spine, registry) {
       } : {}),
       generatorCount: gens.length,
       generatorIds: gens.map((g) => g.id),
+      semanticCoverage,
       /**
        * 생성기가 없는 기준은 무엇이 없어서 못 하는지 밝힌다.
        *
@@ -190,6 +193,12 @@ export function buildCoverage(spine, registry) {
   const autoScorable = covered.length + uncovered.length;
   // 문항 생성 여부는 채점 방식과 별개다. 작도 문항도 학습지에는 나간다.
   const withGenerator = [...covered, ...manualOnly].filter((e) => e.generatorCount > 0).length;
+  const allEntries = [...covered, ...uncovered, ...manualOnly];
+  const assessmentTopicCount = allEntries.reduce((sum, entry) => sum + entry.semanticCoverage.assessmentTopicCount, 0);
+  const alignedAssessmentTopicCount = allEntries.reduce((sum, entry) => sum + entry.semanticCoverage.alignedAssessmentTopicCount, 0);
+  const candidateAlignedAssessmentTopicCount = allEntries.reduce((sum, entry) => sum + entry.semanticCoverage.candidateAlignedAssessmentTopicCount, 0);
+  const standardsWithAssessmentTopics = allEntries.filter((entry) => entry.semanticCoverage.assessmentTopicCount > 0).length;
+  const semanticallyCoveredStandards = allEntries.filter((entry) => entry.semanticCoverage.alignedAssessmentTopicCount > 0).length;
 
   return {
     schema: 'digi-mon/coverage@2',
@@ -204,6 +213,18 @@ export function buildCoverage(spine, registry) {
     // 분모는 자동 채점 가능한 성취기준이다. 수행·작도 과제를 억지로 객관식으로
     // 바꿔 100%를 만드는 것보다, 못 하는 것을 못 한다고 세는 쪽이 정확하다.
     coverageRatio: autoScorable === 0 ? 0 : Number((covered.length / autoScorable).toFixed(4)),
+    semanticCoverage: {
+      contract: GENERATOR_TOPIC_ALIGNMENT_SCHEMA,
+      denominatorRole: 'assesses',
+      assessmentTopicCount,
+      alignedAssessmentTopicCount,
+      candidateAlignedAssessmentTopicCount,
+      coverageRatio: assessmentTopicCount === 0 ? null : Number((alignedAssessmentTopicCount / assessmentTopicCount).toFixed(4)),
+      candidateCoverageRatio: assessmentTopicCount === 0 ? null : Number((candidateAlignedAssessmentTopicCount / assessmentTopicCount).toFixed(4)),
+      standardsWithAssessmentTopics,
+      semanticallyCoveredStandards,
+      standardCoverageRatio: standardsWithAssessmentTopics === 0 ? null : Number((semanticallyCoveredStandards / standardsWithAssessmentTopics).toFixed(4)),
+    },
     bySubject,
     covered,
     uncovered,

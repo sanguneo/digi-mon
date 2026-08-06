@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/worksheet.schema.json",
+  "title": "digi-mon deterministic worksheet",
+  "type": "object",
+  "required": [
+    "schema",
+    "engineVersion",
+    "seed",
+    "fingerprint",
+    "title",
+    "requested",
+    "produced",
+    "shortfall",
+    "options",
+    "corpus",
+    "standardsUsed",
+    "difficultyHistogram",
+    "items"
+  ],
+  "properties": {
+    "schema": { "const": "digi-mon/worksheet@2" },
+    "engineVersion": { "const": "digi-mon-engine@2" },
+    "seed": { "type": "string" },
+    "fingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "requested": { "type": "integer", "minimum": 1 },
+    "produced": { "type": "integer", "minimum": 0 },
+    "shortfall": { "type": "integer", "minimum": 0 },
+    "options": {
+      "type": "object",
+      "required": [
+        "subject",
+        "gradeBands",
+        "domains",
+        "codes",
+        "count",
+        "difficulty",
+        "difficultyMix",
+        "followLearningOrder"
+      ]
+    },
+    "corpus": {
+      "type": "object",
+      "required": ["taxonomyVersion", "integrity"]
+    },
+    "standardsUsed": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string" }
+    },
+    "difficultyHistogram": { "type": "object" },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "./item.schema.json" }
+    }
+  },
+  "additionalProperties": false
+}
