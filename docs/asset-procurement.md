@@ -24,7 +24,8 @@
 영어 단어 자료의 상세 출처와 검토 상태는
 [`docs/assets/english-vocabulary-provenance.md`](assets/english-vocabulary-provenance.md)를
 따른다. 공식 초등 권장 800개는 학년군 배정이 아니므로, 현재 엔진은 그 안에서
-검토한 3~4학년 30개와 5~6학년 신규 24개만 사용한다.
+프로젝트 seed로 선택한 3~4학년 30개와 5~6학년 신규 24개만 사용한다. 이 선택은
+교과 전문가의 학년 적합성 승인이 아니다.
 
 ### P1: 선수 기능
 

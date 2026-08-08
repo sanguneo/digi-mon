@@ -5,7 +5,7 @@
 
 - 저장소: `git@github.com:sanguneo/digi-mon.git`
 - 런타임: Node 24, ESM, **의존성 0개**
-- 실행: `npm run verify` (열여섯 게이트, 전부 통과 시 exit 0)
+- 실행: `npm run verify` (열여덟 게이트, 전부 통과 시 exit 0)
 - 이 문서 자체가 게이트의 검사 대상이다(§3의 16번). 수치가 낡으면 `verify`가 실패한다.
 - 검토 이력은 §16에 짧게 있다. 이번이 5차다.
 
@@ -31,21 +31,21 @@ HTTP API로 문항·학습지·채점을 제공하고, 인쇄·PDF·화면 렌�
 ## 2. 측정된 현재 상태
 
 ```
-자동채점 커버리지   152/194 성취기준 (78.3%)
-문항 생성 가능      153 성취기준
-명시 승인 주제 정렬 0/248 · 코드 기반 검토 후보 153/248 assesses 주제
+자동채점 커버리지   150/194 성취기준 (77.3%)
+문항 생성 가능      151 성취기준
+명시 승인 주제 정렬 119/248 · 코드 기반 검토 후보 151/248 assesses 주제
 자동채점 불가 분류   54 성취기준
 전체                248 성취기준 (수학 121 · 국어 87 · 영어 40)
 
-생성기 188개
-verify-generators      문항 생성 검산 실패 0건 · SVG 렌더 35,585건
-mutation-test          틀린 답 20,907개 주입 → 통과 0개 · 무력한 검산 0개
-check-korean           문면 70,976건 → 조사·표기 위반 0건
+생성기 193개
+verify-generators      문항 생성 검산 실패 0건 · SVG 렌더 37,985건
+mutation-test          틀린 답 21,603개 주입 → 통과 0개 · 무력한 검산 0개
+check-korean           문면 73,676건 → 조사·표기 위반 0건
 check-vocabulary       문항 2,460개 / 낱말 3,547건 → 학년 어휘 위반 0건
 check-fact-tables      사실 표 6종 114짝 → 구조 문제 0건
-check-difficulty       numeric 120 / single 24 / categorical 44 · 평평 0 · 축 불일치 0
-check-difficulty-notes categorical 44개 → 노트와 코드 불일치 0건
-check-capacity         포화 98/188 · 관측 문항 용량 114,700개 · 상한 미신고 0건
+check-difficulty       numeric 120 / single 26 / categorical 47 · 평평 0 · 축 불일치 0
+check-difficulty-notes categorical 47개 → 노트와 코드 불일치 0건
+check-capacity         포화 100/193 · 관측 문항 용량 117,890개 · 상한 미신고 0건
 check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) · 순환·역행 0
 ```
 
@@ -53,7 +53,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 | 교과 | 자동채점 | 생성기 | 전략 | 영역별 |
 |---|---:|---:|---|---|
-| 수학 | **120/120** | 147 | parametric | 수와 연산 42/42 · 변화와 관계 10/10 · 도형과 측정 56/56 · 자료와 가능성 12/12 |
+| 수학 | **118/120** | 152 | parametric | 수와 연산 42/42 · 변화와 관계 10/10 · 도형과 측정 54/56 · 자료와 가능성 12/12 |
 | 국어 | 23/49 | 29 | mixed | **문법 12/12** · 읽기 3/11 · 문학 2/10 · 쓰기 4/6 · 듣기말하기 2/5 · 매체 0/4 |
 | 영어 | 9/25 | 12 | mixed | 이해 2/12 · 표현 7/13 |
 
@@ -66,7 +66,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 ---
 
-## 3. 열여섯 게이트 — 각각 무엇을 왜 잡는가
+## 3. 열여덟 게이트 — 각각 무엇을 왜 잡는가
 
 `npm run verify`가 이 순서로 돈다. 각 게이트는 **실제로 버그를 잡은 뒤에** 만들어졌다.
 괄호 안은 그 게이트가 처음 실행됐을 때 적발한 건수다.
@@ -90,7 +90,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 | 15 | `tools/check-trim.mjs` | 계산 결과 표기(`157.00` vs `157`)가 채점에서 오답 처리되는지 | §5 |
 | 16 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 파일이 `verify` 체인에 실제로 등록됐는지, 게이트 수 주장이 맞는지 | 문서는 게이트가 갱신해 주지 않는다. §16 |
 
-체인은 19단계다 — 게이트 16개 + 산출물 생성 3개(`export-review-tables`). 산출물 생성기는
+체인은 21단계다 — 게이트 18개 + 산출물 생성 3개(`export-review-tables`). 산출물 생성기는
 실패할 수 없으므로 게이트로 세지 않는다.
 
 ---
@@ -338,15 +338,16 @@ GET  /v1/coverage
 GET  /v1/prerequisites?code=[2수01-06]
 POST /v1/worksheets   {seed, subject, grade, domain, count, difficulty, includeAnswers}
 POST /v1/items        {code, count, difficulty, seed}
-POST /v1/grade        {seed, ...같은옵션, responses:{1:"14"}}  → 채점 + responseRecords
-POST /v1/accuracy     {records:[...]}  누적 응답 → 정답률·난이도 역전
+POST /v1/grade        {seed, ...같은옵션, responses, manualEvaluations}  → 채점 + responseRecords
+POST /v1/accuracy     {records:[...]}  교사 인증 · 누적 응답 → 정답률·난이도 역전
 POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}
 ```
 
 기본값으로 학습자용 응답에서 정답·풀이·선택지 `correct` 플래그를 제거한다.
 `includeAnswers=true`가 교사용이다. 작도 문항은 정확도 계산에서 분리해 `manualScoring`으로 넘긴다.
 
-`/v1/accuracy`는 저장하지 않는다 — 누적은 호출자 몫이다. 값을 자동으로 바꾸지도 않는다.
+`/v1/accuracy`는 교사 인증을 요구하고 저장하지 않는다 — 누적은 호출자 몫이다.
+값을 자동으로 바꾸지도 않는다.
 표본 30 미만이면 `accuracy`가 `null`이다. 세 번 풀어 두 번 맞은 것을 0.67이라고 부르면
 숫자가 사실보다 세 보인다. 실측 확인: 응답 240건에서 일부러 뒤집은
 `math.g12.no.s06.add`의 `d1 0.5682 → d2 0.7321` 역전을 격차 0.1639로 잡아냈다.
@@ -368,11 +369,12 @@ src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · w
 src/server/       app(라우터) · grade(무상태 채점)
 bin/              게이트 3종 (build-spine · audit-ontology · verify-generators)
                   + serve · worksheet
-tools/            게이트 13종 (check-boundaries · mutation-test · check-korean
+tools/            게이트 15종 (check-boundaries · mutation-test · check-korean
                   · check-prerequisites · check-vocabulary · check-fact-tables
                   · check-difficulty · check-difficulty-notes · check-capacity
                   · check-trim · check-review-doc · check-vocab-selfapproval
-                  · check-asset-requirements)
+                  · check-asset-requirements · check-coverage-schema
+                  · build-english-official-vocabulary --check)
                   + 도구 6종 (export-review-tables · export-asset-tables · export-math-tables
                   · sample-items · figure-gallery · shot)
 data/             spine · curriculum · coverage · audit (모두 생성물, 커밋됨)
@@ -456,19 +458,19 @@ docs/review/      전문가 검토용 표 (생성물). math.md · assets.md · p
 틀린 문장을 바르게 고치는 문항"은 재고 "글 전체의 흐름을 고쳐 쓰는 활동"은 안 잰다고 했다.
 partial로 둘 수 있는 기준이 더 있는가? 반대로 partial이 과한 게 있는가?
 
-### F. 수학 문항 147개 — **다섯 회차 동안 한 번도 검토받지 않았다**
+### F. 수학 문항 152개 — **다섯 회차 동안 한 번도 검토받지 않았다**
 
-**검토표: [`docs/review/math.md`](docs/review/math.md)** — 성취기준 121개 · 생성기 147개 ·
+**검토표: [`docs/review/math.md`](docs/review/math.md)** — 성취기준 121개 · 생성기 152개 ·
 표본 **423문항**. 발문·선택지·정답·풀이가 전부 있다.
 
-1~5차 검토가 전부 국어·영어 자산을 팠다. 수학은 초기에 `120/120`이 되고 나서 검토 대상에서
-빠졌다 — 자산 검토표 264항목에 수학 생성기 **147개 중 0개**가 올라 있다.
+1~5차 검토가 전부 국어·영어 자산을 팠다. 수학은 초기에 `118/120`이 되고 나서 검토 대상에서
+빠졌다 — 자산 검토표 264항목에 수학 생성기 **152개 중 0개**가 올라 있다.
 형태가 달라서 넘어갔다. 국어·영어는 문장 목록이라 표로 그대로 뽑히는데 수학은 파라메트릭
 생성기라 "자산"이 없다. 그래서 표를 못 만들고 §12-F에 "명백한 오류가 보이면 알려 달라"는
 한 줄만 남았다. **커버리지 100%가 검토 완료를 뜻하지 않는다.**
 
-게이트가 이미 보장하는 것은 다시 볼 필요 없다 — 답이 맞는지(뮤테이션 20,907개 통과 0),
-조사·표기(문면 70,976건 위반 0), 난이도가 커지는지, 용량·중복·표기 다듬기.
+게이트가 이미 보장하는 것은 다시 볼 필요 없다 — 답이 맞는지(뮤테이션 21,603개 통과 0),
+조사·표기(문면 73,676건 위반 0), 난이도가 커지는지, 용량·중복·표기 다듬기.
 
 **사람이 봐야 하는 것 넷:**
 
@@ -800,7 +802,7 @@ C(문장 자산 조사 분해 오염)와 조사 중복 검사 정밀화는 4차 
 조달이 필요 없는 것(문장·절차·대화)을 전부 저작했다. **14개 성취기준이 열렸다** —
 국어 7(감각 표현 · 인물 마음 · 의견-이유 · 고쳐쓰기 · 절차 배열 · 대화 추론 · 근거 타당성),
 영어 7(문장 뜻 · 단어 쓰기 · 행동 지시 · 소개 묘사 · 예시문 빈칸 · 묻고 답하기 2).
-커버리지 139/194 → **153/194 (78.9%)**, 생성기 175 → 189.
+커버리지 139/194 → **150/194 (77.3%)**, 생성기 175 → 193.
 
 - 자산은 전부 판정 갈림을 피해서 지었다 — 마음 낱말은 가까운 말을 섞지 않고 4개 고정,
   묻고-답하기 오답은 짝마다 손으로 선별, 빈칸 오답은 목록 안 낱말 중 문맥에 안 맞는 것만,

@@ -75,11 +75,12 @@ const nonZero = mustBeZero.filter(([, n]) => n !== 0);
  *   3. 문서의 게이트 총수 주장이 체인 길이와 맞는가
  */
 const pkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8'));
-const chain = pkg.scripts.verify.split('&&').map((c) => c.trim().replace(/^node\s+/, ''));
+const chainCommands = pkg.scripts.verify.split('&&').map((c) => c.trim().replace(/^node\s+/, ''));
+const chain = chainCommands.map((c) => c.replace(/ --check$/, ''));
 
 const toolFiles = fs.readdirSync(path.join(REPO_ROOT, 'tools')).filter((f) => f.endsWith('.mjs'));
 const toolGates = toolFiles
-  .filter((f) => f.startsWith('check-') || f === 'mutation-test.mjs')
+  .filter((f) => f.startsWith('check-') || f === 'mutation-test.mjs' || f === 'build-english-official-vocabulary.mjs')
   .map((f) => `tools/${f}`);
 const binGates = ['bin/build-spine.mjs', 'bin/audit-ontology.mjs', 'bin/verify-generators.mjs'];
 const allGates = [...binGates, ...toolGates];
@@ -89,6 +90,7 @@ const allGates = [...binGates, ...toolGates];
  * 산출물을 만드는 스크립트는 실패할 수 없으므로 게이트가 아니다. 게이트로 세면
  * 문서의 '열두 게이트' 총수가 어긋난다.
  */
+const checkCommand = 'tools/build-english-official-vocabulary.mjs --check';
 const chainNonGates = [
   'tools/export-review-tables.mjs',
   'tools/export-asset-tables.mjs',
@@ -96,6 +98,7 @@ const chainNonGates = [
 ];
 
 const notInChain = allGates.filter((g) => !chain.includes(g));
+const missingCheckCommand = !chainCommands.includes(checkCommand);
 const extraInChain = chain.filter((c) => !allGates.includes(c) && !chainNonGates.includes(c));
 const gateChain = chain.filter((c) => allGates.includes(c));
 
@@ -116,6 +119,7 @@ console.log(`REVIEW.md 대조: 필수 문자열 ${expected.length - missing.leng
 console.log(`0이어야 하는 값: ${mustBeZero.length - nonZero.length}/${mustBeZero.length} 정상`);
 console.log(`tools/ 게이트 수 주장(${gateClaim}): ${gateStale ? '문서에 없음' : '일치'}`);
 console.log(`verify 체인 ${chain.length}단계 (게이트 ${gateChain.length} + 산출물 생성 ${chain.length - gateChain.length}) · 게이트 파일 ${allGates.length}개 · 미등록 ${notInChain.length}개`);
+console.log(`영어 공식 어휘 --check 게이트: ${missingCheckCommand ? '문서 체인에 없음' : '등록'}`);
 console.log(`문서 게이트 총수 주장(${totalClaim ?? '수사 없음'}): ${totalStale ? '불일치' : '일치'}`);
 
 if (missing.length > 0) {
@@ -131,6 +135,9 @@ if (notInChain.length > 0) {
   console.log('\nverify 체인에 등록되지 않은 게이트 (돌지 않으므로 낡은 산출물이 대조를 통과시킨다):');
   for (const g of notInChain) console.log(`  ${g}`);
 }
+if (missingCheckCommand) {
+  console.log(`\nverify 체인에 '${checkCommand}'가 등록되어야 한다.`);
+}
 if (extraInChain.length > 0) {
   console.log('\n체인에 있지만 게이트로 인식되지 않는 항목:');
   for (const c of extraInChain) console.log(`  ${c}`);
@@ -141,6 +148,6 @@ if (totalStale) {
 }
 
 if (missing.length > 0 || nonZero.length > 0 || gateStale
-  || notInChain.length > 0 || extraInChain.length > 0 || totalStale) {
+  || notInChain.length > 0 || missingCheckCommand || extraInChain.length > 0 || totalStale) {
   process.exitCode = 1;
 }
