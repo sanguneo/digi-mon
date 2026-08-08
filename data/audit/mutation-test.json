@@ -1,8 +1,8 @@
 {
   "schema": "digi-mon/mutation-test@2",
   "samplesPerGenerator": 40,
-  "generatorCount": 188,
-  "totalMutants": 20907,
+  "generatorCount": 193,
+  "totalMutants": 21603,
   "totalEscaped": 0,
   "weakGeneratorCount": 0,
   "noMutantGeneratorCount": 0,
@@ -13,7 +13,7 @@
     {
       "generatorId": "math.g12.no.s01.read-sino",
       "code": "[2수01-01]",
-      "skill": "수를 한자어로 읽기",
+      "skill": "수의 한자어 읽기 알아보기",
       "mutants": 112,
       "escaped": 0,
       "noMutants": 0,
@@ -52,7 +52,7 @@
     {
       "generatorId": "math.g12.no.s01.count-native",
       "code": "[2수01-01]",
-      "skill": "고유어 수사로 개수 말하기",
+      "skill": "고유어 수사로 읽은 개수 알아보기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -169,7 +169,7 @@
     {
       "generatorId": "math.g12.no.s04.make-ten",
       "code": "[2수01-04]",
-      "skill": "10 만들기",
+      "skill": "10 또는 20 만들기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -258,9 +258,9 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g12.no.s08.estimate",
+      "generatorId": "math.g12.no.s08.add-three",
       "code": "[2수01-08]",
-      "skill": "몇십으로 어림하여 계산하기",
+      "skill": "세 수의 덧셈",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -271,10 +271,10 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g12.no.s08.estimate-compare",
+      "generatorId": "math.g12.no.s08.sub-three",
       "code": "[2수01-08]",
-      "skill": "어림하여 두 식의 결과 비교하기",
-      "mutants": 40,
+      "skill": "세 수의 뺄셈",
+      "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],
@@ -976,7 +976,7 @@
       "generatorId": "math.g34.mr.s03-15.choose-unit",
       "code": "[4수03-15]",
       "skill": "길이 단위 고르기",
-      "mutants": 113,
+      "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],
@@ -1013,7 +1013,7 @@
     },
     {
       "generatorId": "math.g34.mr.s03-16.estimate",
-      "code": "[4수03-16]",
+      "code": "[4수03-15]",
       "skill": "길이 어림하기",
       "mutants": 120,
       "escaped": 0,
@@ -1067,7 +1067,7 @@
       "generatorId": "math.g34.mr.s03-20.choose-unit",
       "code": "[4수03-20]",
       "skill": "무게 단위 고르기",
-      "mutants": 92,
+      "mutants": 101,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],
@@ -1090,8 +1090,21 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "generatorId": "math.g34.mr.s03-22.convert-t-kg",
       "code": "[4수03-22]",
+      "skill": "t와 kg 단위 바꾸기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "code": "[4수03-23]",
       "skill": "무게의 덧셈과 뺄셈",
       "mutants": 115,
       "escaped": 0,
@@ -1104,7 +1117,7 @@
     },
     {
       "generatorId": "math.g34.mr.s03-23.estimate",
-      "code": "[4수03-23]",
+      "code": "[4수03-20]",
       "skill": "무게 어림하기",
       "mutants": 120,
       "escaped": 0,
@@ -1142,9 +1155,9 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g34.gd.s03.right-figures",
+      "generatorId": "math.g34.gd.s03.line-relations",
       "code": "[4수03-03]",
-      "skill": "직각이 있는 도형의 성질",
+      "skill": "두 직선의 수직 관계와 평행 관계 구별하기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1169,9 +1182,22 @@
     },
     {
       "generatorId": "math.g34.gd.s05.pattern",
-      "code": "[4수03-05]",
+      "code": "[4수03-04]",
       "skill": "이동을 반복한 무늬의 규칙 알기",
       "mutants": 109,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g34.gd.s05.point-movement",
+      "code": "[4수03-05]",
+      "skill": "격자에서 한 점의 이동을 위치와 방향으로 설명하기",
+      "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
       "examples": [],
@@ -1195,7 +1221,7 @@
     },
     {
       "generatorId": "math.g34.gd.s07.radius-diameter",
-      "code": "[4수03-07]",
+      "code": "[4수03-06]",
       "skill": "반지름과 지름의 관계",
       "mutants": 120,
       "escaped": 0,
@@ -1259,19 +1285,6 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g34.gd.s12.diagonals",
-      "code": "[4수03-12]",
-      "skill": "대각선의 수 세기",
-      "mutants": 120,
-      "escaped": 0,
-      "noMutants": 0,
-      "examples": [],
-      "scoring": "auto",
-      "autoSamples": 40,
-      "manualSamples": 0,
-      "escapeRatio": 0
-    },
-    {
       "generatorId": "math.g34.gd.s24.measure",
       "code": "[4수03-24]",
       "skill": "각의 크기 읽기",
@@ -1298,9 +1311,9 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g34.gd.s04-01.collect",
+      "generatorId": "math.g34.gd.s04-02.read-bar",
       "code": "[4수04-01]",
-      "skill": "자료를 표로 정리하고 합계 구하기",
+      "skill": "막대그래프에서 값 읽기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1311,9 +1324,9 @@
       "escapeRatio": 0
     },
     {
-      "generatorId": "math.g34.gd.s04-02.read-bar",
+      "generatorId": "math.g34.gd.s04-02.interpret-line",
       "code": "[4수04-02]",
-      "skill": "막대그래프에서 값 읽기",
+      "skill": "꺾은선그래프 해석하기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1637,8 +1650,21 @@
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
-      "code": "[6수03-04]",
+      "code": "[6수03-03]",
       "skill": "직육면체 모서리 길이의 합",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g56.rm.s03-04.cuboid-net",
+      "code": "[6수03-04]",
+      "skill": "정육면체의 전개도가 되는 모양과 되지 않는 모양 구별하기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1663,8 +1689,21 @@
     },
     {
       "generatorId": "math.g56.rm.s03-06.prism-name",
-      "code": "[6수03-06]",
+      "code": "[6수03-05]",
       "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-net",
+      "code": "[6수03-06]",
+      "skill": "삼각기둥의 전개도가 되는 모양과 되지 않는 모양 구별하기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1715,8 +1754,21 @@
     },
     {
       "generatorId": "math.g56.rm.s03-10.cube-block",
-      "code": "[6수03-10]",
+      "code": "[6수03-09]",
       "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g56.rm.s03-10.orthographic-views",
+      "code": "[6수03-10]",
+      "skill": "쌓기나무를 위, 앞, 옆에서 본 모양 나타내기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1741,7 +1793,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-12.area",
-      "code": "[6수03-12]",
+      "code": "[6수03-14]",
       "skill": "사각형·삼각형의 넓이 구하기",
       "mutants": 120,
       "escaped": 0,
@@ -1754,7 +1806,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-13.area-unit",
-      "code": "[6수03-13]",
+      "code": "[6수03-12]",
       "skill": "넓이 단위 바꾸기",
       "mutants": 120,
       "escaped": 0,
@@ -1767,8 +1819,21 @@
     },
     {
       "generatorId": "math.g56.rm.s03-14.composite-area",
-      "code": "[6수03-14]",
-      "skill": "여러 도형으로 나누어 넓이 구하기",
+      "code": "[6수03-13]",
+      "skill": "직사각형·정사각형의 넓이 구하기",
+      "mutants": 120,
+      "escaped": 0,
+      "noMutants": 0,
+      "examples": [],
+      "scoring": "auto",
+      "autoSamples": 40,
+      "manualSamples": 0,
+      "escapeRatio": 0
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.pi-ratio",
+      "code": "[6수03-15]",
+      "skill": "여러 원의 원주와 지름의 비가 약 3.14로 일정함 이해하기",
       "mutants": 120,
       "escaped": 0,
       "noMutants": 0,
@@ -1780,7 +1845,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-15.circumference",
-      "code": "[6수03-15]",
+      "code": "[6수03-16]",
       "skill": "원주 구하기",
       "mutants": 120,
       "escaped": 0,
@@ -1819,7 +1884,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-18.volume",
-      "code": "[6수03-18]",
+      "code": "[6수03-19]",
       "skill": "직육면체의 부피",
       "mutants": 120,
       "escaped": 0,
@@ -1832,7 +1897,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-19.volume-unit",
-      "code": "[6수03-19]",
+      "code": "[6수03-18]",
       "skill": "부피 단위 바꾸기",
       "mutants": 120,
       "escaped": 0,

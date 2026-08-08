@@ -52,6 +52,20 @@ manifest와 데이터가 함께 바뀌었다는 이유만으로 자동 승인하
 
 명시 정렬이 없으면 0으로 보고하며 표준 아래 모든 topic을 자동 상속하지 않는다. 새 정렬은 topic ID, confidence, note와 검토 근거를 포함해야 한다.
 
+검토 완료 생성기 집합은 `src/curriculum/generator-reviews.mjs`의 개수와 ID 지문을
+모두 만족할 때만 승인된다. 집합이 달라지면 새 생성기를 묵시적으로 승인하지 않고
+전체 집합이 후보 상태로 되돌아간다.
+
+## 수동 수행평가
+
+`grading-result@1`의 기존 필드 의미는 유지한다. 선택 필드 `manualEvaluation`과
+수동 문항별 `evaluation`은 교사 제출 루브릭의 기준 충족 수와 충족 비율을 제공한다.
+자동 문항의 `graded`, `correct`, `accuracy`에는 합치지 않는다.
+
+요청의 `manualEvaluations`는 기존 루브릭과 같은 길이의 불리언 배열만 받는다.
+자유 서술·학습자 식별자·증거 본문은 저장하지 않으며 교사 인증과 worksheet
+fingerprint 검증을 모두 통과해야 한다.
+
 ## 폐기
 
 삭제된 generator ID, topic 정렬, 자산 ID가 외부 산출물에 사용됐다면 tombstone과 마지막 지원 버전을 기록한다. 이미 발급된 학습지의 fingerprint와 원본 코퍼스 정보는 삭제하지 않는다.

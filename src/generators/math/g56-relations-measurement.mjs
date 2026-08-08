@@ -430,7 +430,7 @@ const cuboidElements = {
 
 const cuboidEdgeSum = {
   id: 'math.g56.rm.s03-04.edge-sum',
-  standardCode: '[6수03-04]',
+  standardCode: '[6수03-03]',
   skill: '직육면체 모서리 길이의 합',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -459,6 +459,92 @@ const cuboidEdgeSum = {
     let sum = 0;
     for (let k = 0; k < 4; k += 1) sum += a + b + c;
     return sum === answer.value;
+  },
+};
+
+const CUBE_NET_CASES = [
+  { valid: true, cells: [[1, 0], [0, 1], [1, 1], [2, 1], [1, 2], [1, 3]] },
+  { valid: true, cells: [[0, 0], [1, 0], [2, 0], [3, 0], [1, 1], [1, -1]] },
+  { valid: false, cells: [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [3, 1]] },
+  { valid: false, cells: [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]] },
+];
+
+function cubeNetFolds(cells) {
+  if (cells.length !== 6 || new Set(cells.map(([x, y]) => `${x},${y}`)).size !== 6) return false;
+  const positions = new Set(cells.map(([x, y]) => `${x},${y}`));
+  const orientations = new Map([[`${cells[0][0]},${cells[0][1]}`, { n: [0, 0, 1], u: [1, 0, 0], v: [0, 1, 0] }]]);
+  const queue = [cells[0]];
+  const neg = (vector) => vector.map((value) => -value);
+  const same = (a, b) => a.every((value, index) => value === b[index]);
+  while (queue.length > 0) {
+    const [x, y] = queue.shift();
+    const orientation = orientations.get(`${x},${y}`);
+    const neighbors = [
+      [x + 1, y, { n: orientation.u, u: neg(orientation.n), v: orientation.v }],
+      [x - 1, y, { n: neg(orientation.u), u: orientation.n, v: orientation.v }],
+      [x, y + 1, { n: orientation.v, u: orientation.u, v: neg(orientation.n) }],
+      [x, y - 1, { n: neg(orientation.v), u: orientation.u, v: orientation.n }],
+    ];
+    for (const [nextX, nextY, nextOrientation] of neighbors) {
+      const key = `${nextX},${nextY}`;
+      if (!positions.has(key)) continue;
+      const previous = orientations.get(key);
+      if (previous && (!same(previous.n, nextOrientation.n)
+        || !same(previous.u, nextOrientation.u) || !same(previous.v, nextOrientation.v))) return false;
+      if (!previous) {
+        orientations.set(key, nextOrientation);
+        queue.push([nextX, nextY]);
+      }
+    }
+  }
+  return orientations.size === 6
+    && new Set([...orientations.values()].map(({ n }) => n.join(','))).size === 6;
+}
+
+const cuboidNet = {
+  id: 'math.g56.rm.s03-04.cuboid-net',
+  standardCode: '[6수03-04]',
+  skill: '정육면체의 전개도가 되는 모양과 되지 않는 모양 구별하기',
+  format: 'multiple-choice',
+  difficultyAxis: 'single',
+  difficulties: [1],
+  capacityNote: '검산 가능한 대표 정육면체 전개도 후보 두 가지와 반례 두 가지를 사용한다.',
+  generate(rng, { difficulty }) {
+    const wanted = rng.bool();
+    const netCase = rng.pick(CUBE_NET_CASES.filter(({ valid }) => valid === wanted));
+    const cells = netCase.cells.map((cell) => [...cell]);
+    const isValid = cubeNetFolds(cells);
+    const correct = isValid ? '전개도가 된다' : '전개도가 되지 않는다';
+    const coordinateText = cells.map(([x, y]) => `(${x}, ${y})`).join(', ');
+    return {
+      params: { cells, isValid },
+      instruction: '모눈의 여섯 칸을 오려 접을 때 알맞은 것을 고르시오.',
+      stem: '각 좌표는 한 변의 길이가 같은 정사각형 한 칸의 위치를 나타냅니다. 이 모양은 정육면체의 전개도가 됩니까?',
+      choices: buildChoices(rng, correct, ['전개도가 된다', '전개도가 되지 않는다', '주어진 모양만으로 알 수 없다'].filter((choice) => choice !== correct)),
+      figure: {
+        kind: 'data.table',
+        spec: {
+          headers: cells.map((_, index) => `면 ${index + 1}`),
+          values: cells.map(([x, y]) => `(${x}, ${y})`),
+          headerLabel: '정사각형',
+          valueLabel: '모눈 좌표',
+          cells,
+        },
+        altText: `한 변이 같은 정사각형 여섯 개의 모눈 좌표는 ${coordinateText}이다. 가로세로로 한 칸 차이인 정사각형끼리 변을 공유한다.`,
+        prompt: { ko: `흰 모눈 위에 좌표 ${coordinateText}의 여섯 정사각형을 이어 그린 전개도 후보. 검은 윤곽선, 숫자나 정답 표시는 없음. 초등 수학 교재용. AR 1:1` },
+      },
+      answer: { value: correct, display: correct, accepts: [correct] },
+      solution: [
+        '이어진 변을 따라 한 면씩 직각으로 접어 본다.',
+        isValid ? '여섯 면이 서로 다른 방향을 향하고 겹치지 않으므로 정육면체의 전개도가 된다.' : '접으면 두 면이 같은 방향에서 겹치므로 정육면체의 전개도가 되지 않는다.',
+      ],
+      dedupeKey: `cuboid-net:${cells.map((cell) => cell.join(',')).join(';')}`,
+      difficulty,
+    };
+  },
+  verify({ cells, isValid }, answer) {
+    const expected = cubeNetFolds(cells);
+    return isValid === expected && answer.value === (expected ? '전개도가 된다' : '전개도가 되지 않는다');
   },
 };
 
@@ -513,7 +599,7 @@ const prismPyramid = {
 const prismName = {
   id: 'math.g56.rm.s03-06.prism-name',
   capacityNote: '밑면이 삼각형·사각형·오각형·육각형인 각기둥과 각뿔 여덟 경우가 전부다.',
-  standardCode: '[6수03-06]',
+  standardCode: '[6수03-05]',
   skill: '밑면의 모양으로 각기둥·각뿔 이름 정하기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
@@ -544,6 +630,60 @@ const prismName = {
   verify({ n, isPrism, correct }, answer) {
     const expected = `${PRISM_BASES[n]}${isPrism ? '기둥' : '뿔'}`;
     return answer.value === expected && expected === correct;
+  },
+};
+
+const prismNet = {
+  id: 'math.g56.rm.s03-06.prism-net',
+  standardCode: '[6수03-06]',
+  skill: '삼각기둥의 전개도가 되는 모양과 되지 않는 모양 구별하기',
+  format: 'multiple-choice',
+  difficultyAxis: 'single',
+  difficulties: [1],
+  capacityNote: '교육과정이 요구하는 간단한 형태로, 세 직사각형 띠에 붙는 두 삼각형의 위치만 바꾼다.',
+  generate(rng, { difficulty }) {
+    const isValid = rng.bool();
+    const panels = 3;
+    const firstPanel = rng.int(0, panels - 1);
+    const secondPanel = rng.int(0, panels - 1);
+    const firstSide = rng.bool() ? '위' : '아래';
+    const secondSide = isValid ? (firstSide === '위' ? '아래' : '위') : firstSide;
+    const bases = [
+      { panel: firstPanel + 1, side: firstSide },
+      { panel: secondPanel + 1, side: secondSide },
+    ];
+    const correct = isValid ? '전개도가 된다' : '전개도가 되지 않는다';
+    return {
+      params: { panels, bases, isValid },
+      instruction: '삼각기둥의 전개도가 되는지 고르시오.',
+      stem: '직사각형 세 개를 옆으로 이은 띠에 합동인 삼각형 두 개를 표시된 위치에 붙였습니다.',
+      choices: buildChoices(rng, correct, ['전개도가 된다', '전개도가 되지 않는다', '주어진 모양만으로 알 수 없다'].filter((choice) => choice !== correct)),
+      figure: {
+        kind: 'data.table',
+        spec: {
+          headers: ['첫째 삼각형', '둘째 삼각형'],
+          values: bases.map(({ panel, side }) => `${panel}번 옆면의 ${side}쪽`),
+          headerLabel: '밑면',
+          valueLabel: '붙인 위치',
+          panels,
+          bases,
+        },
+        altText: `옆으로 이어진 직사각형 옆면은 ${panels}개다. 첫째 삼각형은 ${bases[0].panel}번 옆면의 ${bases[0].side}쪽, 둘째 삼각형은 ${bases[1].panel}번 옆면의 ${bases[1].side}쪽 변에 붙어 있다.`,
+        prompt: { ko: `흰 배경에 같은 크기의 직사각형 ${panels}개를 가로 띠로 잇고, 합동인 삼각형을 각각 ${bases[0].panel}번 직사각형 ${bases[0].side}쪽과 ${bases[1].panel}번 직사각형 ${bases[1].side}쪽에 붙인 삼각기둥 전개도 후보. 초등 수학 교재용. AR 16:9` },
+      },
+      answer: { value: correct, display: correct, accepts: [correct] },
+      solution: [
+        '직사각형 띠의 위쪽 변들은 한 밑면 쪽, 아래쪽 변들은 반대 밑면 쪽으로 접힌다.',
+        isValid ? '두 삼각형이 서로 반대쪽에 있어 두 밑면을 이루므로 전개도가 된다.' : '두 삼각형이 같은 쪽에 있어 접으면 밑면끼리 겹치므로 전개도가 되지 않는다.',
+      ],
+      dedupeKey: `prism-net:${bases.map(({ panel, side }) => `${panel}-${side}`).join(':')}`,
+      difficulty,
+    };
+  },
+  verify({ panels, bases, isValid }, answer) {
+    const expected = panels === 3 && bases.length === 2 && bases[0].side !== bases[1].side
+      && bases.every(({ panel, side }) => Number.isInteger(panel) && panel >= 1 && panel <= panels && ['위', '아래'].includes(side));
+    return isValid === expected && answer.value === (expected ? '전개도가 된다' : '전개도가 되지 않는다');
   },
 };
 
@@ -659,7 +799,7 @@ const cubeCountFromLayers = {
 
 const cubeVolumeCount = {
   id: 'math.g56.rm.s03-10.cube-block',
-  standardCode: '[6수03-10]',
+  standardCode: '[6수03-09]',
   skill: '직육면체 모양으로 쌓은 쌓기나무의 개수',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -689,6 +829,74 @@ const cubeVolumeCount = {
       }
     }
     return count === answer.value;
+  },
+};
+
+function orthographicViews(heightMap) {
+  return {
+    top: heightMap.map((row) => row.map((height) => Number(height > 0))),
+    front: heightMap[0].map((_, column) => Math.max(...heightMap.map((row) => row[column]))),
+    side: heightMap.map((row) => Math.max(...row)),
+  };
+}
+
+function formatViews({ top, front, side }) {
+  return `위: ${top.map((row) => row.join('')).join('/')}; 앞: ${front.join('-')}; 옆: ${side.join('-')}`;
+}
+
+const orthographicCubeViews = {
+  id: 'math.g56.rm.s03-10.orthographic-views',
+  standardCode: '[6수03-10]',
+  skill: '쌓기나무를 위, 앞, 옆에서 본 모양 나타내기',
+  format: 'multiple-choice',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 2×2, 2 이상은 3×3 바닥의 높이 지도를 투영한다.',
+  generate(rng, { difficulty }) {
+    const size = difficulty === 1 ? 2 : 3;
+    const maxHeight = difficulty === 3 ? 4 : 3;
+    const heightMap = Array.from({ length: size }, () => (
+      Array.from({ length: size }, () => rng.int(0, maxHeight))
+    ));
+    if (heightMap.flat().every((height) => height === 0)) heightMap[0][0] = 1;
+    const views = orthographicViews(heightMap);
+    const correct = formatViews(views);
+    const change = (values) => [values[0] === maxHeight ? 1 : values[0] + 1, ...values.slice(1)];
+    const wrongViews = [
+      { ...views, front: change(views.front) },
+      { ...views, side: change(views.side) },
+      { ...views, top: views.top.map((row, rowIndex) => row.map((value, columnIndex) => (rowIndex === 0 && columnIndex === 0 ? 1 - value : value))) },
+    ];
+    const positions = [];
+    const heights = [];
+    for (let row = 0; row < size; row += 1) {
+      for (let column = 0; column < size; column += 1) {
+        positions.push(`앞에서 ${row + 1}째 줄·왼쪽에서 ${column + 1}째 칸`);
+        heights.push(`${heightMap[row][column]}개`);
+      }
+    }
+    return {
+      params: { heightMap, views },
+      instruction: '위, 앞, 오른쪽 옆에서 본 모양을 바르게 나타낸 것을 고르시오.',
+      stem: '0은 쌓기나무가 없는 칸입니다. 위 모양은 각 칸의 유무를 1과 0으로, 앞·옆 모양은 각 세로줄의 높이로 나타냅니다.',
+      choices: buildChoices(rng, correct, wrongViews.map(formatViews)),
+      figure: {
+        kind: 'data.table',
+        spec: { headers: positions, values: heights, headerLabel: '바닥 위치', valueLabel: '쌓은 높이', heightMap, frontEdge: '첫째 행', sideView: '오른쪽' },
+        altText: `앞줄부터 각 바닥 칸의 쌓기나무 높이는 ${heightMap.map((row) => `[${row.join(', ')}]`).join(', ')}이다. 각 행은 왼쪽에서 오른쪽 순서다.`,
+        prompt: { ko: `흰 배경에 높이 지도 ${JSON.stringify(heightMap)}대로 바닥 칸마다 쌓은 정육면체를 등각 투상으로 그린 도해. 첫째 행이 앞쪽이고 오른쪽에서 옆모양을 본다. 초등 수학 교재용. AR 1:1` },
+      },
+      answer: { value: correct, display: correct, accepts: [correct] },
+      solution: [
+        `위에서 보면 쌓기나무가 있는 칸은 ${views.top.map((row) => row.join('')).join('/')}이다.`,
+        `앞에서 각 세로줄의 가장 높은 수를 보면 ${views.front.join('-')}, 오른쪽 옆에서 보면 ${views.side.join('-')}이다.`,
+      ],
+      dedupeKey: `orthographic-views:${heightMap.map((row) => row.join('')).join('-')}`,
+      difficulty,
+    };
+  },
+  verify({ heightMap, views }, answer) {
+    const expected = orthographicViews(heightMap);
+    return JSON.stringify(views) === JSON.stringify(expected) && answer.value === formatViews(expected);
   },
 };
 
@@ -751,13 +959,13 @@ const AREA_FORMULAS = {
 const areaOfPolygon = {
   id: 'math.g56.rm.s03-12.area',
   difficultyAxis: 'categorical',
-  difficultyNote: '난이도 1은 직사각형, 2는 삼각형·평행사변형, 3은 마름모·사다리꼴까지 넣는다.',
-  standardCode: '[6수03-12]',
+  difficultyNote: '난이도 1은 평행사변형, 2는 삼각형까지, 3은 마름모·사다리꼴까지 넣는다.',
+  standardCode: '[6수03-14]',
   skill: '사각형·삼각형의 넓이 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
     const kind = rng.pick(
-      difficulty === 1 ? ['square', 'rectangle'] : difficulty === 2 ? ['rectangle', 'parallelogram', 'triangle'] : ['triangle', 'trapezoid', 'rhombus'],
+      difficulty === 1 ? ['parallelogram'] : difficulty === 2 ? ['parallelogram', 'triangle'] : ['triangle', 'trapezoid', 'rhombus'],
     );
     const spec = AREA_FORMULAS[kind];
     // 삼각형·마름모·사다리꼴은 2로 나누므로 곱이 짝수가 되게 뽑는다.
@@ -814,7 +1022,7 @@ const areaOfPolygon = {
 
 const areaUnitConversion = {
   id: 'math.g56.rm.s03-13.area-unit',
-  standardCode: '[6수03-13]',
+  standardCode: '[6수03-12]',
   skill: '넓이 단위 바꾸기',
   format: 'fill-blank',
   generate(rng, { difficulty }) {
@@ -845,12 +1053,30 @@ const areaUnitConversion = {
 
 const compositeArea = {
   id: 'math.g56.rm.s03-14.composite-area',
-  standardCode: '[6수03-14]',
-  skill: '여러 도형으로 나누어 넓이 구하기',
+  standardCode: '[6수03-13]',
+  skill: '직사각형·정사각형의 넓이 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
+    if (difficulty === 1) {
+      const isSquare = rng.bool();
+      const w = rng.int(3, 12);
+      const h = isSquare ? w : rng.until(() => rng.int(3, 12), (v) => v !== w);
+      const value = w * h;
+      const shape = isSquare ? '정사각형' : '직사각형';
+      return {
+        params: { w, h, cutW: 0, cutH: 0, value },
+        instruction: '넓이를 구하시오.',
+        stem: isSquare
+          ? `한 변이 ${w}cm인 정사각형의 넓이는 몇 cm²입니까?`
+          : `가로 ${w}cm, 세로 ${h}cm인 직사각형의 넓이는 몇 cm²입니까?`,
+        answer: { value, display: `${value}cm²`, accepts: [num(value), `${value}cm²`, `${value}cm2`] },
+        solution: [`${shape}의 넓이는 가로 × 세로로 구한다.`, `${w} × ${h} = ${value}cm²`],
+        dedupeKey: `rectangle-area:${w}:${h}`,
+        difficulty,
+      };
+    }
     // ㄱ자 모양 도형의 넓이. 큰 직사각형에서 작은 직사각형을 뺀다.
-    const w = rng.int(6, difficulty === 1 ? 12 : 20);
+    const w = rng.int(6, 20);
     const h = rng.int(5, difficulty === 1 ? 10 : 18);
     const cutW = rng.int(2, w - 3);
     const cutH = rng.int(2, h - 3);
@@ -884,9 +1110,59 @@ const compositeArea = {
 // [6수03-15~16] 원주율과 원의 넓이
 // ---------------------------------------------------------------------------
 
+const piRatio = {
+  id: 'math.g56.rm.s03-15.pi-ratio',
+  standardCode: '[6수03-15]',
+  skill: '여러 원의 원주와 지름의 비가 약 3.14로 일정함 이해하기',
+  format: 'short-answer',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도가 오를수록 비교하는 원의 수와 지름 범위가 늘어나며 계산 절차 자체는 같다.',
+  generate(rng, { difficulty }) {
+    const count = difficulty === 1 ? 2 : difficulty === 2 ? 3 : 4;
+    const diameters = [];
+    while (diameters.length < count) {
+      const diameter = rng.int(2, difficulty === 1 ? 10 : 20);
+      if (!diameters.includes(diameter)) diameters.push(diameter);
+    }
+    const measurements = diameters.map((diameter) => ({
+      diameter,
+      circumferenceHundredths: diameter * PI_HUNDREDTHS,
+    }));
+    return {
+      params: { measurements },
+      instruction: '원주 ÷ 지름의 값을 소수로 나타내시오.',
+      stem: '여러 원 모양 물체를 측정한 결과입니다. 각 물체에서 원주를 지름으로 나눈 값은 약 얼마로 일정합니까?',
+      figure: {
+        kind: 'data.table',
+        spec: {
+          headers: measurements.map(({ diameter }) => `지름 ${diameter}cm`),
+          values: measurements.map(({ circumferenceHundredths }) => `원주 ${formatDecimalTrimmed(makeDecimal(circumferenceHundredths, 2))}cm`),
+          headerLabel: '측정',
+          valueLabel: '결과',
+          measurements,
+        },
+        altText: `원 모양 물체의 지름과 원주 측정값. ${measurements.map(({ diameter, circumferenceHundredths }) => `지름 ${diameter}cm, 원주 ${formatDecimalTrimmed(makeDecimal(circumferenceHundredths, 2))}cm`).join('; ')}.`,
+        prompt: { ko: `흰 배경의 측정 결과 표. ${measurements.map(({ diameter, circumferenceHundredths }) => `지름 ${diameter}cm와 원주 ${formatDecimalTrimmed(makeDecimal(circumferenceHundredths, 2))}cm`).join(', ')}를 짝지어 표시. 초등 수학 교재용. AR 16:9` },
+      },
+      answer: { value: '3.14', display: '3.14', accepts: ['3.14'] },
+      solution: [
+        ...measurements.slice(0, 2).map(({ diameter, circumferenceHundredths }) => `${formatDecimalTrimmed(makeDecimal(circumferenceHundredths, 2))} ÷ ${diameter} = 3.14`),
+        '원의 크기가 달라도 원주 ÷ 지름은 약 3.14로 일정하며, 이 값을 원주율이라고 한다.',
+      ],
+      dedupeKey: `pi-ratio:${diameters.join('-')}`,
+      difficulty,
+    };
+  },
+  verify({ measurements }, answer) {
+    return measurements.length >= 2 && measurements.every(({ diameter, circumferenceHundredths }) => (
+      Number.isInteger(diameter) && diameter > 0 && circumferenceHundredths === diameter * PI_HUNDREDTHS
+    )) && answer.value === '3.14';
+  },
+};
+
 const circumference = {
   id: 'math.g56.rm.s03-15.circumference',
-  standardCode: '[6수03-15]',
+  standardCode: '[6수03-16]',
   skill: '원주 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -1005,7 +1281,7 @@ const surfaceArea = {
 
 const volume = {
   id: 'math.g56.rm.s03-18.volume',
-  standardCode: '[6수03-18]',
+  standardCode: '[6수03-19]',
   skill: '직육면체의 부피',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -1043,7 +1319,7 @@ const volume = {
 
 const volumeUnitConversion = {
   id: 'math.g56.rm.s03-19.volume-unit',
-  standardCode: '[6수03-19]',
+  standardCode: '[6수03-18]',
   skill: '부피 단위 바꾸기',
   format: 'fill-blank',
   generate(rng, { difficulty }) {
@@ -1349,16 +1625,20 @@ export const generators = [
   symmetryAxes,
   cuboidElements,
   cuboidEdgeSum,
+  cuboidNet,
   prismPyramid,
   prismName,
+  prismNet,
   roundSolids,
   cylinderParts,
   cubeCountFromLayers,
   cubeVolumeCount,
+  orthographicCubeViews,
   perimeter,
   areaOfPolygon,
   areaUnitConversion,
   compositeArea,
+  piRatio,
   circumference,
   circleArea,
   surfaceArea,

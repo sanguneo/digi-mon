@@ -51,16 +51,20 @@ function repeatedAdd(per, times) {
 const readNumber = {
   id: 'math.g12.no.s01.read-sino',
   standardCode: CODE(1),
-  skill: '수를 한자어로 읽기',
-  format: 'short-answer',
+  skill: '수의 한자어 읽기 알아보기',
+  format: 'multiple-choice',
   generate(rng, { difficulty }) {
     const n = difficulty === 1 ? rng.int(1, 20) : difficulty === 2 ? rng.int(21, 60) : rng.int(61, 100);
     const reading = sinoKorean(n);
     const parts = placeDecompose(n);
+    const alternatives = [n - 10, n + 10, n - 1, n + 1]
+      .filter((candidate) => candidate >= 1 && candidate <= 100)
+      .map((candidate) => sinoKorean(candidate));
     return {
       params: { n },
-      instruction: '수를 읽는 방법을 한글로 쓰시오.',
+      instruction: '알맞게 읽은 것을 고르시오.',
       stem: `${n}`,
+      choices: buildChoices(rng, reading, alternatives.slice(0, 3)),
       answer: { value: reading, display: reading, accepts: [reading] },
       solution: [
         parts.length > 1 ? `${numEun(n)} ${parts.join(' + ')}이다.` : `${numEun(n)} 한 자리 수이다.`,
@@ -133,16 +137,20 @@ const countTensOnes = {
 const countNative = {
   id: 'math.g12.no.s01.count-native',
   standardCode: CODE(1),
-  skill: '고유어 수사로 개수 말하기',
-  format: 'short-answer',
+  skill: '고유어 수사로 읽은 개수 알아보기',
+  format: 'multiple-choice',
   generate(rng, { difficulty }) {
     const n = difficulty === 1 ? rng.int(2, 10) : difficulty === 2 ? rng.int(11, 29) : rng.int(30, 99);
     const thing = rng.pick(THINGS);
     const reading = nativeCounted(n, thing.counter);
+    const alternatives = [n - 10, n + 10, n - 1, n + 1]
+      .filter((candidate) => candidate >= 1 && candidate <= 99)
+      .map((candidate) => nativeCounted(candidate, thing.counter));
     return {
       params: { n, counter: thing.counter },
-      instruction: '개수를 우리말로 읽어 쓰시오.',
+      instruction: '개수를 알맞게 읽은 것을 고르시오.',
       stem: `${thing.noun} ${n}${thing.counter}`,
+      choices: buildChoices(rng, reading, alternatives.slice(0, 3)),
       answer: { value: reading, display: reading, accepts: [reading] },
       solution: [`${numEul(n)} 우리말로 세면 '${reading}'이다.`],
       dedupeKey: `count-native:${n}:${thing.counter}`,
@@ -422,11 +430,11 @@ const composeNumber = {
 const makeTen = {
   id: 'math.g12.no.s04.make-ten',
   standardCode: CODE(4),
-  skill: '10 만들기',
+  skill: '10 또는 20 만들기',
   format: 'fill-blank',
   generate(rng, { difficulty }) {
-    const base = difficulty === 3 ? rng.pick([20, 30, 50, 100]) : 10;
-    const a = difficulty === 3 ? rng.int(1, base - 1) : rng.int(1, 9);
+    const base = difficulty === 3 ? 20 : 10;
+    const a = rng.int(1, base - 1);
     return {
       params: { base, a },
       instruction: '□에 알맞은 수를 써넣으시오.',
@@ -514,7 +522,7 @@ const storySub = {
 const addTwoDigit = {
   id: 'math.g12.no.s06.add',
   difficultyAxis: 'categorical',
-  difficultyNote: '난이도 1은 받아올림 없음, 2 이상은 일의 자리에서 받아올림이 생긴다.',
+  difficultyNote: '난이도 1은 받아올림 없음, 2는 일의 자리 받아올림, 3은 받아올림이 있고 합이 세 자리 수이다.',
   standardCode: CODE(6),
   skill: '두 자리 수의 덧셈',
   format: 'short-answer',
@@ -531,8 +539,10 @@ const addTwoDigit = {
       // 일의 자리 받아올림 있음
       const aOnes = rng.int(2, 9);
       const bOnes = rng.int(10 - aOnes, 9);
-      const aTens = difficulty === 2 ? rng.int(1, 6) : rng.int(2, 7);
-      const bTens = rng.int(1, 8 - aTens);
+      const aTens = difficulty === 2 ? rng.int(1, 6) : rng.int(5, 9);
+      const bTens = difficulty === 2
+        ? rng.int(1, 8 - aTens)
+        : rng.int(Math.max(1, 9 - aTens), 9);
       a = aTens * 10 + aOnes;
       b = bTens * 10 + bOnes;
     }
@@ -558,7 +568,7 @@ const addTwoDigit = {
   },
   verify({ a, b }, answer) {
     // 역연산 + 범위 불변식
-    return answer.value - b === a && answer.value <= 99 && answer.value >= Math.max(a, b);
+    return answer.value - b === a && answer.value <= 198 && answer.value >= Math.max(a, b);
   },
 };
 
@@ -676,96 +686,58 @@ const factFamily = {
 };
 
 // ---------------------------------------------------------------------------
-// [2수01-08] 어림하여 크기 비교
+// [2수01-08] 두 자리 수 범위에서 세 수의 덧셈과 뺄셈
 // ---------------------------------------------------------------------------
 
-const roundToTen = (n) => Math.round(n / 10) * 10;
-
-const estimateSum = {
-  id: 'math.g12.no.s08.estimate',
+const addThree = {
+  id: 'math.g12.no.s08.add-three',
   standardCode: CODE(8),
-  skill: '몇십으로 어림하여 계산하기',
-  format: 'multiple-choice',
+  skill: '세 수의 덧셈',
+  format: 'short-answer',
   generate(rng, { difficulty }) {
-    const isAdd = difficulty === 3 ? rng.bool() : true;
-    // 일의 자리가 0이면 어림할 필요가 없고, 5면 '몇십으로 어림'이 위로도 아래로도
-    // 정당해져 정답이 하나로 정해지지 않는다. 1~2학년 문항에서는 둘 다 배제한다.
-    const roundable = (v) => v % 10 !== 0 && v % 10 !== 5;
-    let x;
-    let y;
-    if (isAdd) {
-      x = rng.until(() => rng.int(12, difficulty === 1 ? 44 : 60), roundable);
-      y = rng.until(() => rng.int(12, Math.min(60, 99 - x)), roundable);
-    } else {
-      x = rng.until(() => rng.int(41, 99), roundable);
-      y = rng.until(() => rng.int(12, x - 1), roundable);
-    }
-    const est = isAdd ? roundToTen(x) + roundToTen(y) : roundToTen(x) - roundToTen(y);
-    const exact = isAdd ? x + y : x - y;
-    // 오답은 전형적 오류를 쓴다: 어림하지 않고 정확히 계산, 한 쪽만 어림, 자리 밀림
-    const wrong = distractors(est, [exact, est + 10, est - 10, est + 20]);
+    const cap = difficulty === 1 ? 9 : difficulty === 2 ? 40 : 99;
+    const a = rng.int(1, cap - 2);
+    const b = rng.int(1, cap - a - 1);
+    const c = rng.int(1, cap - a - b);
+    const sum = a + b + c;
     return {
-      params: { x, y, isAdd },
-      instruction: '몇십으로 어림하여 계산한 값을 고르시오.',
-      stem: `${x} ${isAdd ? '+' : '-'} ${y}`,
-      choices: buildChoices(rng, est, wrong.slice(0, 3)),
-      answer: { value: est, display: num(est), accepts: [num(est)] },
-      solution: [
-        `${numEun(x)} 약 ${roundToTen(x)}, ${numEun(y)} 약 ${roundToTen(y)}이다.`,
-        `${roundToTen(x)} ${isAdd ? '+' : '-'} ${roundToTen(y)} = ${est}`,
-      ],
-      dedupeKey: `estimate:${x}:${y}:${isAdd ? 'add' : 'sub'}`,
+      params: { a, b, c },
+      instruction: '계산하시오.',
+      stem: `${a} + ${b} + ${c}`,
+      answer: { value: sum, display: num(sum), accepts: [num(sum)] },
+      solution: [`앞에서부터 더하면 ${a} + ${b} = ${a + b}이다.`, `${a + b} + ${c} = ${sum}`],
+      dedupeKey: `add-three:${a}:${b}:${c}`,
       difficulty,
     };
   },
-  verify({ x, y, isAdd }, answer) {
-    // 어림값은 10의 배수여야 한다.
-    if (answer.value % 10 !== 0) return false;
-    // 일의 자리가 5가 아니므로 한 항의 어림 오차는 최대 4, 두 항이면 최대 8이다.
-    const exact = isAdd ? x + y : x - y;
-    return Math.abs(answer.value - exact) <= 8;
+  verify({ a, b, c }, answer) {
+    return answer.value - c - b === a;
   },
 };
 
-const estimateCompare = {
-  id: 'math.g12.no.s08.estimate-compare',
+const subThree = {
+  id: 'math.g12.no.s08.sub-three',
   standardCode: CODE(8),
-  skill: '어림하여 두 식의 결과 비교하기',
-  format: 'compare',
+  skill: '세 수의 뺄셈',
+  format: 'short-answer',
   generate(rng, { difficulty }) {
-    // 어림으로 판단한 결과가 정확한 비교와 반드시 일치하도록 제약을 걸고 뽑는다.
-    const gap = difficulty === 1 ? 15 : difficulty === 2 ? 8 : 4;
-    const quad = rng.until(
-      () => [rng.int(11, 60), rng.int(11, 39), rng.int(11, 60), rng.int(11, 39)],
-      ([a1, a2, b1, b2]) => {
-        const left = a1 + a2;
-        const right = b1 + b2;
-        const estDiff = roundToTen(a1) + roundToTen(a2) - (roundToTen(b1) + roundToTen(b2));
-        return Math.abs(left - right) >= gap && Math.sign(left - right) === Math.sign(estDiff);
-      },
-      500,
-    );
-    const [a1, a2, b1, b2] = quad;
-    const left = a1 + a2;
-    const right = b1 + b2;
-    const sign = left > right ? '>' : '<';
+    const cap = difficulty === 1 ? 9 : difficulty === 2 ? 40 : 99;
+    const a = rng.int(3, cap);
+    const b = rng.int(1, a - 2);
+    const c = rng.int(1, a - b - 1);
+    const difference = a - b - c;
     return {
-      params: { a1, a2, b1, b2 },
-      instruction: '□ 안에 >, < 중 알맞은 것을 써넣으시오.',
-      stem: `${a1} + ${a2} □ ${b1} + ${b2}`,
-      answer: { value: sign, display: sign, accepts: [sign] },
-      solution: [
-        `왼쪽은 약 ${roundToTen(a1)} + ${roundToTen(a2)} = ${roundToTen(a1) + roundToTen(a2)}이다.`,
-        `오른쪽은 약 ${roundToTen(b1)} + ${roundToTen(b2)} = ${roundToTen(b1) + roundToTen(b2)}이다.`,
-        `실제로 계산하면 ${left} ${sign} ${right}이다.`,
-      ],
-      dedupeKey: `estimate-compare:${a1}:${a2}:${b1}:${b2}`,
+      params: { a, b, c },
+      instruction: '계산하시오.',
+      stem: `${a} - ${b} - ${c}`,
+      answer: { value: difference, display: num(difference), accepts: [num(difference)] },
+      solution: [`앞에서부터 빼면 ${a} - ${b} = ${a - b}이다.`, `${a - b} - ${c} = ${difference}`],
+      dedupeKey: `sub-three:${a}:${b}:${c}`,
       difficulty,
     };
   },
-  verify({ a1, a2, b1, b2 }, answer) {
-    const diff = a1 + a2 - (b1 + b2);
-    return (diff > 0 && answer.value === '>') || (diff < 0 && answer.value === '<');
+  verify({ a, b, c }, answer) {
+    return answer.value + c + b === a && answer.value >= 0;
   },
 };
 
@@ -981,8 +953,8 @@ export const generators = [
   subTwoDigit,
   addToSub,
   factFamily,
-  estimateSum,
-  estimateCompare,
+  addThree,
+  subThree,
   boxEquation,
   groupsToMultiplication,
   addToMultiplication,

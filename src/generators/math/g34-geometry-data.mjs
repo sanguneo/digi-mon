@@ -114,9 +114,57 @@ const identifyRightAngle = {
 };
 
 // ---------------------------------------------------------------------------
-// [4수03-03] 직각삼각형·직사각형·정사각형
+// [4수03-03] 직선의 수직 관계와 평행 관계
 // ---------------------------------------------------------------------------
 
+const LINE_RELATION_LABELS = {
+  perpendicular: '서로 수직이다',
+  parallel: '서로 평행하다',
+};
+
+const lineRelations = {
+  id: 'math.g34.gd.s03.line-relations',
+  capacityNote: '두 직선의 관계는 수직과 평행 두 가지를 가로·세로 방향 조합으로 확인한다.',
+  difficultyAxis: 'single',
+  difficulties: [1],
+  standardCode: '[4수03-03]',
+  skill: '두 직선의 수직 관계와 평행 관계 구별하기',
+  format: 'multiple-choice',
+  generate(rng, { difficulty }) {
+    const relation = rng.pick(['perpendicular', 'parallel']);
+    const firstHorizontal = rng.bool();
+    const directions = relation === 'perpendicular'
+      ? (firstHorizontal ? [[1, 0], [0, 1]] : [[0, 1], [1, 0]])
+      : (firstHorizontal ? [[1, 0], [1, 0]] : [[0, 1], [0, 1]]);
+    const directionName = ([x]) => (x === 1 ? '가로' : '세로');
+    const correct = LINE_RELATION_LABELS[relation];
+    return {
+      params: { relation, directions },
+      instruction: '두 직선의 관계를 고르시오.',
+      stem: `직선 가는 ${directionName(directions[0])} 방향이고, 직선 나는 ${directionName(directions[1])} 방향입니다.`,
+      choices: buildChoices(rng, correct, [
+        LINE_RELATION_LABELS[relation === 'perpendicular' ? 'parallel' : 'perpendicular'],
+        '서로 겹친다',
+        '한 직선은 곡선이다',
+      ]),
+      answer: { value: correct, display: correct, accepts: [correct] },
+      solution: relation === 'perpendicular'
+        ? ['가로 방향과 세로 방향의 두 직선이 만나 이루는 각은 직각이다.', '따라서 두 직선은 서로 수직이다.']
+        : ['두 직선은 같은 방향으로 나아가며 만나지 않는다.', '따라서 두 직선은 서로 평행하다.'],
+      dedupeKey: `line-relations:${relation}:${firstHorizontal ? 'h' : 'v'}`,
+      difficulty,
+    };
+  },
+  verify({ relation, directions }, answer) {
+    const [[ax, ay], [bx, by]] = directions;
+    const dot = ax * bx + ay * by;
+    const cross = ax * by - ay * bx;
+    const expected = dot === 0 ? 'perpendicular' : cross === 0 ? 'parallel' : null;
+    return expected === relation && answer.value === LINE_RELATION_LABELS[expected];
+  },
+};
+
+// Legacy proxy retained in source but intentionally not registered.
 const RIGHT_FIGURE_FACTS = {
   'right-triangle': { korean: '직각삼각형', basis: '한 각이 직각인 삼각형이다.' },
   rectangle: { korean: '직사각형', basis: '네 각이 모두 직각인 사각형이다.' },
@@ -192,12 +240,12 @@ const identifyTransform = {
 };
 
 // ---------------------------------------------------------------------------
-// [4수03-05] 이동을 반복해 무늬 꾸미기
+// [4수03-04] 이동을 반복해 무늬 꾸미기
 // ---------------------------------------------------------------------------
 
 const patternByTransform = {
   id: 'math.g34.gd.s05.pattern',
-  standardCode: '[4수03-05]',
+  standardCode: '[4수03-04]',
   skill: '이동을 반복한 무늬의 규칙 알기',
   format: 'multiple-choice',
   generate(rng, { difficulty }) {
@@ -225,6 +273,63 @@ const patternByTransform = {
   },
   verify({ transform }, answer) {
     return TRANSFORM_LABELS[transform] === answer.value;
+  },
+};
+
+// ---------------------------------------------------------------------------
+// [4수03-05] 격자에서 한 점의 이동
+// ---------------------------------------------------------------------------
+
+const CARDINAL_MOVES = {
+  위: [0, 1],
+  아래: [0, -1],
+  오른쪽: [1, 0],
+  왼쪽: [-1, 0],
+};
+
+const pointMovement = {
+  id: 'math.g34.gd.s05.point-movement',
+  standardCode: '[4수03-05]',
+  skill: '격자에서 한 점의 이동을 위치와 방향으로 설명하기',
+  format: 'multiple-choice',
+  generate(rng, { difficulty }) {
+    const gridMax = difficulty === 1 ? 4 : difficulty === 2 ? 6 : 8;
+    const maxDistance = difficulty === 1 ? 2 : difficulty === 2 ? 4 : 6;
+    const distance = rng.int(1, Math.min(maxDistance, gridMax));
+    const direction = rng.pick(Object.keys(CARDINAL_MOVES));
+    const [vx, vy] = CARDINAL_MOVES[direction];
+    const x = vx > 0 ? rng.int(0, gridMax - distance)
+      : vx < 0 ? rng.int(distance, gridMax) : rng.int(0, gridMax);
+    const y = vy > 0 ? rng.int(0, gridMax - distance)
+      : vy < 0 ? rng.int(distance, gridMax) : rng.int(0, gridMax);
+    const start = [x, y];
+    const end = [x + vx * distance, y + vy * distance];
+    const correct = `${direction}으로 ${distance}칸`;
+    const wrong = Object.keys(CARDINAL_MOVES)
+      .filter((candidate) => candidate !== direction)
+      .map((candidate) => `${candidate}으로 ${distance}칸`);
+    const position = ([px, py]) => `왼쪽에서 ${px + 1}번째, 아래에서 ${py + 1}번째 격자점`;
+    return {
+      params: { start, end, gridMax, direction, distance },
+      instruction: '점의 이동을 알맞게 설명한 것을 고르시오.',
+      stem: `한 변에 ${gridMax}칸인 정사각형 격자에서 점이 ${position(start)}에서 ${position(end)}으로 이동했습니다.`,
+      choices: buildChoices(rng, correct, wrong),
+      answer: { value: correct, display: correct, accepts: [correct] },
+      solution: [
+        `두 점의 ${vx === 0 ? '가로 위치는 같고' : '세로 위치는 같고'}, ${direction} 방향으로 격자 ${distance}칸만큼 떨어져 있다.`,
+        `따라서 점은 ${correct} 이동했다.`,
+      ],
+      dedupeKey: `point-movement:${gridMax}:${start.join('-')}:${end.join('-')}`,
+      difficulty,
+    };
+  },
+  verify({ start, end, gridMax, direction, distance }, answer) {
+    const [vx, vy] = CARDINAL_MOVES[direction] ?? [];
+    const bounded = [...start, ...end].every((coordinate) => coordinate >= 0 && coordinate <= gridMax);
+    return bounded
+      && end[0] - start[0] === vx * distance
+      && end[1] - start[1] === vy * distance
+      && answer.value === `${direction}으로 ${distance}칸`;
   },
 };
 
@@ -272,12 +377,12 @@ const circleParts = {
 };
 
 // ---------------------------------------------------------------------------
-// [4수03-07] 반지름과 지름의 관계
+// [4수03-06] 반지름과 지름의 관계
 // ---------------------------------------------------------------------------
 
 const radiusDiameter = {
   id: 'math.g34.gd.s07.radius-diameter',
-  standardCode: '[4수03-07]',
+  standardCode: '[4수03-06]',
   skill: '반지름과 지름의 관계',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -720,7 +825,7 @@ const collectTally = {
 
 const readBarGraphValue = {
   id: 'math.g34.gd.s04-02.read-bar',
-  standardCode: '[4수04-02]',
+  standardCode: '[4수04-01]',
   skill: '막대그래프에서 값 읽기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
@@ -749,6 +854,82 @@ const readBarGraphValue = {
   verify({ counts, askIndex, step }, answer) {
     // 눈금 간격의 배수여야 그래프에서 읽을 수 있는 값이다.
     return answer.value === counts[askIndex] && answer.value % step === 0;
+  },
+};
+
+const LINE_GRAPH_CONTEXTS = [
+  { topic: '요일별 낮 기온', categories: ['월', '화', '수', '목'], unit: '°C' },
+  { topic: '시간별 기온', categories: ['9시', '10시', '11시', '12시'], unit: '°C' },
+  { topic: '나흘 동안 읽은 쪽수', categories: ['첫째 날', '둘째 날', '셋째 날', '넷째 날'], unit: '쪽' },
+];
+
+const interpretLineGraph = {
+  id: 'math.g34.gd.s04-02.interpret-line',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 한 점의 값, 2는 이웃한 두 점의 차, 3은 구간별 변화를 비교한다.',
+  standardCode: '[4수04-02]',
+  skill: '꺾은선그래프 해석하기',
+  format: 'short-answer',
+  generate(rng, { difficulty }) {
+    const context = rng.pick(LINE_GRAPH_CONTEXTS);
+    const step = difficulty === 1 ? 1 : difficulty === 2 ? 2 : 5;
+    let values;
+    if (difficulty === 3) {
+      const rises = rng.shuffle([step, step * 2, step * 4]);
+      const start = rng.int(2, 8) * step;
+      values = [start];
+      for (const rise of rises) values.push(values.at(-1) + rise);
+    } else {
+      values = context.categories.map(() => rng.int(3, difficulty === 1 ? 20 : 15) * step);
+    }
+    const mode = difficulty === 1 ? 'value' : difficulty === 2 ? 'change' : 'greatest-rise';
+    const askIndex = mode === 'value' ? rng.int(0, values.length - 1)
+      : mode === 'change' ? rng.int(0, values.length - 2) : null;
+    const points = context.categories.map((category, idx) => `${category}(${values[idx]}${context.unit})`).join(' ─ ');
+
+    let stem;
+    let answer;
+    let solution;
+    if (mode === 'value') {
+      stem = `${context.categories[askIndex]}의 값은 얼마입니까?`;
+      answer = { value: values[askIndex], display: `${values[askIndex]}${context.unit}`, accepts: [num(values[askIndex]), `${values[askIndex]}${context.unit}`] };
+      solution = [`${context.categories[askIndex]}의 점은 ${values[askIndex]}${context.unit} 눈금에 있다.`];
+    } else if (mode === 'change') {
+      const change = Math.abs(values[askIndex + 1] - values[askIndex]);
+      stem = `${context.categories[askIndex]}과 ${context.categories[askIndex + 1]}의 값의 차는 얼마입니까?`;
+      answer = { value: change, display: `${change}${context.unit}`, accepts: [num(change), `${change}${context.unit}`] };
+      solution = [`두 점의 값은 ${values[askIndex]}${context.unit}, ${values[askIndex + 1]}${context.unit}이다.`, `두 값의 차는 ${change}${context.unit}이다.`];
+    } else {
+      const rises = values.slice(1).map((value, idx) => value - values[idx]);
+      const interval = rises.indexOf(Math.max(...rises));
+      const value = `${context.categories[interval]}~${context.categories[interval + 1]}`;
+      stem = '값이 가장 많이 증가한 구간은 어디입니까?';
+      answer = { value, display: value, accepts: [value] };
+      solution = [
+        `구간별 증가량은 차례로 ${rises.map((rise) => `${rise}${context.unit}`).join(', ')}이다.`,
+        `가장 많이 증가한 구간은 ${value}이다.`,
+      ];
+    }
+
+    return {
+      params: { categories: context.categories, values, unit: context.unit, mode, askIndex },
+      instruction: '꺾은선그래프를 보고 물음에 답하시오.',
+      stem: `${context.topic} 꺾은선그래프의 점: ${points}\n${stem}`,
+      answer,
+      solution,
+      dedupeKey: `interpret-line:${context.topic}:${values.join('-')}:${mode}:${askIndex ?? 'all'}`,
+      difficulty,
+    };
+  },
+  verify({ categories, values, mode, askIndex }, answer) {
+    if (mode === 'value') return answer.value === values[askIndex];
+    if (mode === 'change') return answer.value === Math.abs(values[askIndex + 1] - values[askIndex]);
+    const rises = values.slice(1).map((value, idx) => value - values[idx]);
+    const largest = Math.max(...rises);
+    const interval = rises.indexOf(largest);
+    return largest > 0
+      && rises.filter((rise) => rise === largest).length === 1
+      && answer.value === `${categories[interval]}~${categories[interval + 1]}`;
   },
 };
 
@@ -827,19 +1008,19 @@ const interpretBarGraph = {
 export const generators = [
   identifyLine,
   identifyRightAngle,
-  rightAngleFigures,
+  lineRelations,
   identifyTransform,
   patternByTransform,
+  pointMovement,
   circleParts,
   radiusDiameter,
   isoscelesEquilateral,
   triangleByAngles,
   identifyQuadrilateral,
   namePolygon,
-  countDiagonals,
   measureAngle,
   angleSum,
-  collectTally,
   readBarGraphValue,
+  interpretLineGraph,
   interpretBarGraph,
 ];

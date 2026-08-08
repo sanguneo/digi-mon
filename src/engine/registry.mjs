@@ -13,6 +13,10 @@ import { generators as koreanSentences } from '../generators/korean/sentences.mj
 import { generators as englishSentences } from '../generators/english/sentences.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
+import {
+  MATH_GENERATOR_REVIEW,
+  reviewMathGeneratorSet,
+} from '../curriculum/generator-reviews.mjs';
 import { GENERATOR_TOPIC_ALIGNMENT_SCHEMA, semanticCoverageFor } from '../ontology/alignment.mjs';
 
 /**
@@ -90,6 +94,13 @@ export function createRegistry() {
       byId.set(g.id, { ...g, sourceFile: file });
       if (!byStandardCode.has(g.standardCode)) byStandardCode.set(g.standardCode, []);
       byStandardCode.get(g.standardCode).push(byId.get(g.id));
+    }
+  }
+
+  const mathReview = reviewMathGeneratorSet([...byId.values()]);
+  if (mathReview.valid) {
+    for (const id of mathReview.approvedGeneratorIds) {
+      byId.get(id).curriculumReview = MATH_GENERATOR_REVIEW;
     }
   }
 

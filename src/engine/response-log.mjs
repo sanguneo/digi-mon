@@ -58,6 +58,79 @@ export function recordsFromGrading(worksheet, grading, meta = {}) {
 
 const MIN_SAMPLES = 30;
 
+const RESPONSE_RECORD_KEYS = new Set([
+  'itemId',
+  'generatorId',
+  'standardCode',
+  'subject',
+  'gradeBand',
+  'declaredDifficulty',
+  'format',
+  'scoring',
+  'dedupeKey',
+  'answered',
+  'correct',
+  'elapsedMs',
+  'learnerId',
+  'at',
+]);
+const REQUIRED_RESPONSE_RECORD_KEYS = [...RESPONSE_RECORD_KEYS]
+  .filter((key) => key !== 'dedupeKey');
+
+function isBoundedString(value, maximum = 256) {
+  return typeof value === 'string' && value.length > 0 && value.length <= maximum;
+}
+
+function isIsoTimestamp(value) {
+  if (value === null) return true;
+  if (typeof value !== 'string' || value.length > 35) return false;
+  try {
+    return new Date(value).toISOString() === value;
+  } catch {
+    return false;
+  }
+}
+
+export function validateResponseRecords(records) {
+  if (!Array.isArray(records) || records.length > 10_000) {
+    throw new Error('records 는 최대 10000개의 응답 기록 배열이어야 한다');
+  }
+  for (const [index, record] of records.entries()) {
+    if (!record || typeof record !== 'object' || Array.isArray(record)) {
+      throw new Error(`records[${index}]는 객체여야 한다`);
+    }
+    const unknownKeys = Object.keys(record).filter((key) => !RESPONSE_RECORD_KEYS.has(key));
+    if (unknownKeys.length > 0) {
+      throw new Error(`records[${index}]에 허용하지 않는 필드가 있다: ${unknownKeys.join(', ')}`);
+    }
+    const missingKeys = REQUIRED_RESPONSE_RECORD_KEYS.filter((key) => !Object.hasOwn(record, key));
+    if (missingKeys.length > 0) {
+      throw new Error(`records[${index}]에 필수 필드가 없다: ${missingKeys.join(', ')}`);
+    }
+    if (!isBoundedString(record.itemId)
+      || !isBoundedString(record.generatorId)
+      || !/^\[[246][국수영][0-9]{2}-[0-9]{2}\]$/.test(record.standardCode)
+      || !['math', 'korean', 'english'].includes(record.subject)
+      || !['1-2', '3-4', '5-6'].includes(record.gradeBand)
+      || ![1, 2, 3].includes(record.declaredDifficulty)
+      || !isBoundedString(record.format, 64)
+      || !['auto', 'manual'].includes(record.scoring)
+      || typeof record.answered !== 'boolean'
+      || (typeof record.correct !== 'boolean' && record.correct !== null)
+      || (record.elapsedMs !== null
+        && (!Number.isFinite(record.elapsedMs) || record.elapsedMs < 0))
+      || (record.learnerId !== null
+        && (typeof record.learnerId !== 'string'
+          || record.learnerId.length > 128
+          || !/^[A-Za-z0-9._:-]+$/.test(record.learnerId)))
+      || !isIsoTimestamp(record.at)
+      || (record.dedupeKey !== undefined && !isBoundedString(record.dedupeKey, 512))) {
+      throw new Error(`records[${index}]가 응답 기록 계약과 맞지 않는다`);
+    }
+  }
+  return records;
+}
+
 /**
  * 생성기 × 난이도별 정답률.
  * 표본이 MIN_SAMPLES 미만이면 정확도를 계산하지 않는다. 세 번 풀어 두 번 맞은 것을

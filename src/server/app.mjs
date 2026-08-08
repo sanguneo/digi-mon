@@ -15,6 +15,7 @@ import {
   aggregateByStandard,
   findDifficultyInversions,
   recordsFromGrading,
+  validateResponseRecords,
 } from '../engine/response-log.mjs';
 import { renderFigureSvg, hasSvgRenderer } from '../render/figure-svg.mjs';
 import {
@@ -167,9 +168,50 @@ function requireTeacher(req, teacherToken) {
 function stripGradingFeedback(grading) {
   return {
     ...grading,
-    results: grading.results.map(({ expected, solution, ...result }) => result),
-    manualScoring: grading.manualScoring.map(({ rubric, ...result }) => result),
+    results: grading.results.map(({ expected, solution, submitted, ...result }) => result),
+    manualScoring: grading.manualScoring.map(({ rubric, submitted, ...result }) => result),
   };
+}
+
+function validateManualEvaluations(value, worksheet) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    throw new HttpError(400, 'manualEvaluations 는 {문항번호: {criteria: boolean[]}} 객체여야 한다');
+  }
+
+  const itemByNumber = new Map(worksheet.items.map((item) => [String(item.number), item]));
+  for (const [number, evaluation] of Object.entries(value)) {
+    const item = itemByNumber.get(number);
+    if (!item) {
+      throw new HttpError(400, '학습지에 없는 문항 번호가 manualEvaluations 에 있다', {
+        invalidNumbers: [number],
+      });
+    }
+    if (item.scoring !== 'manual') {
+      throw new HttpError(400, '자동 채점 문항은 manualEvaluations 로 평가할 수 없다', {
+        itemNumber: number,
+      });
+    }
+    if (!evaluation || typeof evaluation !== 'object' || Array.isArray(evaluation)
+      || Object.keys(evaluation).length !== 1
+      || !Object.hasOwn(evaluation, 'criteria')) {
+      throw new HttpError(400, '수동 평가는 criteria 불리언 배열만 포함해야 한다', {
+        itemNumber: number,
+      });
+    }
+    if (!Array.isArray(evaluation.criteria)
+      || evaluation.criteria.some((met) => typeof met !== 'boolean')) {
+      throw new HttpError(400, 'manualEvaluations.criteria 는 불리언 배열이어야 한다', {
+        itemNumber: number,
+      });
+    }
+    if (evaluation.criteria.length !== item.answer.rubric.length) {
+      throw new HttpError(400, 'manualEvaluations.criteria 길이는 문항 rubric 길이와 같아야 한다', {
+        itemNumber: number,
+        expected: item.answer.rubric.length,
+        received: evaluation.criteria.length,
+      });
+    }
+  }
 }
 
 function createRateLimiter() {
@@ -342,6 +384,9 @@ export function createApp({
       method: 'POST',
       path: '/v1/grade',
       handle: (body, _url, req) => {
+        if (!body || typeof body !== 'object' || Array.isArray(body)) {
+          throw new HttpError(400, '요청 본문은 객체여야 한다');
+        }
         if (!body.seed) throw new HttpError(400, 'seed 는 필수다. 학습지를 다시 만들어 대조한다');
         if (!body.fingerprint || typeof body.fingerprint !== 'string') {
           throw new HttpError(400, 'fingerprint 는 필수다. 발급된 학습지와 같은지 확인한다');
@@ -365,6 +410,14 @@ export function createApp({
             || !/^[A-Za-z0-9._:-]+$/.test(body.learnerId))) {
           throw new HttpError(400, 'learnerId 는 개인정보가 아닌 1..128자 영숫자 토큰이어야 한다');
         }
+        if (body.at !== undefined
+          && body.at !== null
+          && (typeof body.at !== 'string'
+            || body.at.length > 35
+            || Number.isNaN(Date.parse(body.at))
+            || new Date(body.at).toISOString() !== body.at)) {
+          throw new HttpError(400, 'at 은 ISO 8601 UTC 시각 문자열이어야 한다');
+        }
         const options = httpWorksheetOptions(body);
         const worksheet = buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
         if (worksheet.fingerprint !== body.fingerprint) {
@@ -380,7 +433,11 @@ export function createApp({
             invalidNumbers,
           });
         }
-        const grading = gradeWorksheet(worksheet, body.responses);
+        if (body.manualEvaluations !== undefined) {
+          validateManualEvaluations(body.manualEvaluations, worksheet);
+          requireTeacher(req, teacherToken);
+        }
+        const grading = gradeWorksheet(worksheet, body.responses, body.manualEvaluations);
 
         /**
          * 응답 기록을 함께 돌려준다.
@@ -450,9 +507,15 @@ export function createApp({
        * 숫자만 고쳐서는 문항이 실제로 쉬워지지 않는다.
        */
       handle: (body, _url, req) => {
-        if (!Array.isArray(body.records)) {
+        if (!body || typeof body !== 'object' || Array.isArray(body) || !Array.isArray(body.records)) {
           throw new HttpError(400, 'records 는 /v1/grade 가 준 responseRecords 배열이어야 한다');
         }
+        try {
+          validateResponseRecords(body.records);
+        } catch (error) {
+          throw new HttpError(400, error.message);
+        }
+        requireTeacher(req, teacherToken);
         const byGenerator = aggregateAccuracy(body.records);
         const byStandard = aggregateByStandard(body.records);
         return {

@@ -83,16 +83,36 @@ export function gradeItem(item, response) {
  * 학습지 전체 채점 + 성취기준별 집계.
  * 집계는 '다음에 무엇을 더 연습해야 하는가'로 이어지는 유일한 신호다.
  */
-export function gradeWorksheet(worksheet, responses) {
+export function gradeWorksheet(worksheet, responses, manualEvaluations) {
   const results = [];
   // 사람이 채점하는 문항은 자동 집계에서 분리한다.
   const manualScoring = [];
+  let evaluatedManualItems = 0;
+  let manualCriteriaMet = 0;
+  let manualCriteriaTotal = 0;
 
   for (const item of worksheet.items) {
     const value = responses?.[item.number];
     const graded = gradeItem(item, value);
-    if (graded.requiresManualScoring) manualScoring.push(graded);
-    else results.push(graded);
+    if (graded.requiresManualScoring) {
+      const submittedEvaluation = manualEvaluations?.[item.number];
+      if (submittedEvaluation) {
+        const criteriaMet = submittedEvaluation.criteria.filter(Boolean).length;
+        const criteriaTotal = submittedEvaluation.criteria.length;
+        graded.evaluation = {
+          criteria: submittedEvaluation.criteria.map((met) => ({ met })),
+          criteriaMet,
+          criteriaTotal,
+          criteriaMetRatio: criteriaTotal === 0
+            ? null
+            : Number((criteriaMet / criteriaTotal).toFixed(4)),
+        };
+        evaluatedManualItems += 1;
+        manualCriteriaMet += criteriaMet;
+        manualCriteriaTotal += criteriaTotal;
+      }
+      manualScoring.push(graded);
+    } else results.push(graded);
   }
   results.sort((a, b) => a.number - b.number);
   manualScoring.sort((a, b) => a.number - b.number);
@@ -132,5 +152,15 @@ export function gradeWorksheet(worksheet, responses) {
     weakStandards,
     results,
     manualScoring,
+    ...(manualEvaluations !== undefined ? {
+      manualEvaluation: {
+        evaluatedItems: evaluatedManualItems,
+        criteriaMet: manualCriteriaMet,
+        criteriaTotal: manualCriteriaTotal,
+        criteriaMetRatio: manualCriteriaTotal === 0
+          ? null
+          : Number((manualCriteriaMet / manualCriteriaTotal).toFixed(4)),
+      },
+    } : {}),
   };
 }

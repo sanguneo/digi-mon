@@ -31,8 +31,101 @@
     "byStandard": { "type": "object" },
     "weakStandards": { "type": "array" },
     "results": { "type": "array" },
-    "manualScoring": { "type": "array" },
-    "responseRecords": { "type": "array" }
+    "manualScoring": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evaluation": { "$ref": "#/$defs/manualItemEvaluation" }
+        }
+      }
+    },
+    "manualEvaluation": { "$ref": "#/$defs/manualEvaluationSummary" },
+    "responseRecords": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/responseRecord" }
+    }
+  },
+  "$defs": {
+    "criteriaMetRatio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "manualItemEvaluation": {
+      "type": "object",
+      "required": ["criteria", "criteriaMet", "criteriaTotal", "criteriaMetRatio"],
+      "properties": {
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["met"],
+            "properties": { "met": { "type": "boolean" } },
+            "additionalProperties": false
+          }
+        },
+        "criteriaMet": { "type": "integer", "minimum": 0 },
+        "criteriaTotal": { "type": "integer", "minimum": 1 },
+        "criteriaMetRatio": { "$ref": "#/$defs/criteriaMetRatio" }
+      },
+      "additionalProperties": false
+    },
+    "manualEvaluationSummary": {
+      "type": "object",
+      "required": ["evaluatedItems", "criteriaMet", "criteriaTotal", "criteriaMetRatio"],
+      "properties": {
+        "evaluatedItems": { "type": "integer", "minimum": 0 },
+        "criteriaMet": { "type": "integer", "minimum": 0 },
+        "criteriaTotal": { "type": "integer", "minimum": 0 },
+        "criteriaMetRatio": { "$ref": "#/$defs/criteriaMetRatio" }
+      },
+      "additionalProperties": false
+    },
+    "responseRecord": {
+      "type": "object",
+      "required": [
+        "itemId",
+        "generatorId",
+        "standardCode",
+        "subject",
+        "gradeBand",
+        "declaredDifficulty",
+        "format",
+        "scoring",
+        "answered",
+        "correct",
+        "elapsedMs",
+        "learnerId",
+        "at"
+      ],
+      "properties": {
+        "itemId": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "generatorId": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "standardCode": {
+          "type": "string",
+          "pattern": "^\\[[246][국수영][0-9]{2}-[0-9]{2}\\]$"
+        },
+        "subject": { "enum": ["math", "korean", "english"] },
+        "gradeBand": { "enum": ["1-2", "3-4", "5-6"] },
+        "declaredDifficulty": { "enum": [1, 2, 3] },
+        "format": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "scoring": { "enum": ["auto", "manual"] },
+        "dedupeKey": { "type": "string", "minLength": 1, "maxLength": 512 },
+        "answered": { "type": "boolean" },
+        "correct": { "type": ["boolean", "null"] },
+        "elapsedMs": { "type": ["number", "null"], "minimum": 0 },
+        "learnerId": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9._:-]+$"
+        },
+        "at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "maxLength": 35
+        }
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": false
 }

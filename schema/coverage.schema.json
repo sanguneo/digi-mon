@@ -3,14 +3,48 @@
   "$id": "https://digi-mon.local/schema/coverage.schema.json",
   "title": "Standard and semantic coverage ledger",
   "type": "object",
-  "required": ["schema", "coverageRatio", "covered", "uncovered", "manualOnly", "semanticCoverage"],
+  "required": [
+    "schema",
+    "generatedFrom",
+    "totalStandards",
+    "autoScorableStandards",
+    "manualOnlyStandards",
+    "coveredStandards",
+    "uncoveredStandards",
+    "standardsWithGenerator",
+    "coverageRatio",
+    "semanticCoverage",
+    "bySubject",
+    "covered",
+    "uncovered",
+    "manualOnly"
+  ],
   "properties": {
     "schema": { "const": "digi-mon/coverage@2" },
+    "generatedFrom": {
+      "type": "object",
+      "required": ["standardCount", "generatorCount"],
+      "properties": {
+        "standardCount": { "type": "integer", "minimum": 0 },
+        "generatorCount": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "totalStandards": { "type": "integer", "minimum": 0 },
+    "autoScorableStandards": { "type": "integer", "minimum": 0 },
+    "manualOnlyStandards": { "type": "integer", "minimum": 0 },
+    "coveredStandards": { "type": "integer", "minimum": 0 },
+    "uncoveredStandards": { "type": "integer", "minimum": 0 },
+    "standardsWithGenerator": { "type": "integer", "minimum": 0 },
     "coverageRatio": { "type": "number", "minimum": 0, "maximum": 1 },
+    "semanticCoverage": { "$ref": "#/$defs/semantic" },
+    "bySubject": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/subjectSummary" }
+    },
     "covered": { "type": "array", "items": { "$ref": "#/$defs/entry" } },
     "uncovered": { "type": "array", "items": { "$ref": "#/$defs/entry" } },
-    "manualOnly": { "type": "array", "items": { "$ref": "#/$defs/entry" } },
-    "semanticCoverage": { "$ref": "#/$defs/semantic" }
+    "manualOnly": { "type": "array", "items": { "$ref": "#/$defs/entry" } }
   },
   "$defs": {
     "semantic": {
@@ -25,13 +59,124 @@
       ],
       "properties": {
         "contract": { "const": "digi-mon/generator-topic-alignment@1" },
+        "denominatorRole": { "const": "assesses" },
         "assessmentTopicCount": { "type": "integer", "minimum": 0 },
         "alignedAssessmentTopicCount": { "type": "integer", "minimum": 0 },
         "candidateAlignedAssessmentTopicCount": { "type": "integer", "minimum": 0 },
         "coverageRatio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-        "candidateCoverageRatio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
-      }
+        "candidateCoverageRatio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "topicIds": { "type": "array", "items": { "type": "string" } },
+        "alignedTopicIds": { "type": "array", "items": { "type": "string" } },
+        "candidateAlignedTopicIds": { "type": "array", "items": { "type": "string" } },
+        "unalignedTopicIds": { "type": "array", "items": { "type": "string" } },
+        "alignments": { "type": "array" },
+        "standardsWithAssessmentTopics": { "type": "integer", "minimum": 0 },
+        "semanticallyCoveredStandards": { "type": "integer", "minimum": 0 },
+        "standardCoverageRatio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
     },
-    "entry": { "type": "object", "required": ["code", "generatorCount", "semanticCoverage"], "properties": { "semanticCoverage": { "$ref": "#/$defs/semantic" } } }
-  }
+    "assetRequirement": {
+      "type": "object",
+      "required": ["kind", "need"],
+      "properties": {
+        "kind": {
+          "enum": ["sentence", "procedure", "passage", "dialogue", "audio", "media", "wordlist"]
+        },
+        "need": { "type": "string", "minLength": 1 },
+        "note": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "code",
+        "subject",
+        "gradeBand",
+        "domain",
+        "scoringMode",
+        "generatorCount",
+        "generatorIds",
+        "semanticCoverage"
+      ],
+      "properties": {
+        "code": { "type": "string", "pattern": "^\\[[246][국수영][0-9]{2}-[0-9]{2}\\]$" },
+        "subject": { "enum": ["math", "korean", "english"] },
+        "gradeBand": { "enum": ["1-2", "3-4", "5-6"] },
+        "domain": { "type": "string", "minLength": 1 },
+        "module": { "type": ["string", "null"] },
+        "scoringMode": { "enum": ["auto", "manual", "partial"] },
+        "manualReason": { "type": "string", "minLength": 1 },
+        "partialScored": { "type": "string", "minLength": 1 },
+        "partialNotScored": { "type": "string", "minLength": 1 },
+        "generatorCount": { "type": "integer", "minimum": 0 },
+        "generatorIds": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "semanticCoverage": { "$ref": "#/$defs/semantic" },
+        "blockedBy": { "$ref": "#/$defs/assetRequirement" }
+      },
+      "additionalProperties": false
+    },
+    "domainSummary": {
+      "type": "object",
+      "required": ["total", "autoScorable", "covered"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "autoScorable": { "type": "integer", "minimum": 0 },
+        "covered": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "subjectSummary": {
+      "type": "object",
+      "required": [
+        "subjectKorean",
+        "strategy",
+        "generatable",
+        "total",
+        "autoScorable",
+        "manualOnly",
+        "covered",
+        "generators",
+        "byDomain",
+        "coverageRatio"
+      ],
+      "properties": {
+        "subjectKorean": { "enum": ["수학", "국어", "영어"] },
+        "strategy": { "type": "string", "minLength": 1 },
+        "generatable": {
+          "enum": [true, false, "partial", null]
+        },
+        "generatableDomains": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "blockedDomains": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "generatableTopics": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "blockedBy": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "basis": { "type": "string", "minLength": 1 },
+        "total": { "type": "integer", "minimum": 0 },
+        "autoScorable": { "type": "integer", "minimum": 0 },
+        "manualOnly": { "type": "integer", "minimum": 0 },
+        "covered": { "type": "integer", "minimum": 0 },
+        "generators": { "type": "integer", "minimum": 0 },
+        "byDomain": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/domainSummary" }
+        },
+        "coverageRatio": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
 }

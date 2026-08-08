@@ -56,10 +56,10 @@ const mixedOperations = {
   generate(rng, { difficulty }) {
     // 계산 순서(괄호 -> 곱셈·나눗셈 -> 덧셈·뺄셈)를 재는 문항이다.
     const shape = rng.pick(
-      difficulty === 1 ? ['a+b*c', 'a-b*c'] : difficulty === 2 ? ['a+b*c', '(a+b)*c', 'a+b/c'] : ['(a+b)*c-d', 'a*b+c/d', 'a-(b+c)/d'],
+      difficulty === 1 ? ['a+b*c', 'a-b*c'] : ['a+b*c', 'a-b*c', '(a+b)*c', 'a+b/c'],
     );
-    const b = rng.int(2, 9);
-    const c = rng.int(2, 9);
+    const b = rng.int(2, difficulty === 3 ? 15 : 9);
+    const c = rng.int(2, difficulty === 3 ? 15 : 9);
 
     if (shape === 'a+b*c') {
       const a = rng.int(5, 40);
@@ -81,39 +81,7 @@ const mixedOperations = {
       const a = rng.int(5, 40);
       return pack(`${a} + ${dividend} ÷ ${divisor}`, a + quotient, [`나눗셈을 먼저 한다: ${dividend} ÷ ${divisor} = ${quotient}`, `${a} + ${quotient} = ${a + quotient}`]);
     }
-    if (shape === '(a+b)*c-d') {
-      const a = rng.int(2, 15);
-      const product = (a + b) * c;
-      const d = rng.int(1, product - 1);
-      return pack(`(${a} + ${b}) × ${c} - ${d}`, product - d, [
-        `괄호를 먼저: ${a} + ${b} = ${a + b}`,
-        `곱셈: ${a + b} × ${c} = ${product}`,
-        `뺄셈: ${product} - ${d} = ${product - d}`,
-      ]);
-    }
-    if (shape === 'a*b+c/d') {
-      const a = rng.int(2, 12);
-      const quotient = rng.int(2, 9);
-      const divisor = rng.int(2, 9);
-      const dividend = divisor * quotient;
-      return pack(`${a} × ${b} + ${dividend} ÷ ${divisor}`, a * b + quotient, [
-        `곱셈과 나눗셈을 먼저 한다.`,
-        `${a} × ${b} = ${a * b}, ${dividend} ÷ ${divisor} = ${quotient}`,
-        `${a * b} + ${quotient} = ${a * b + quotient}`,
-      ]);
-    }
-    // a-(b+c)/d
-    const divisor = rng.int(2, 9);
-    const quotient = rng.int(2, 9);
-    const sum = divisor * quotient;
-    const inner = rng.int(1, sum - 1);
-    const other = sum - inner;
-    const a = rng.int(quotient + 1, quotient + 50);
-    return pack(`${a} - (${inner} + ${other}) ÷ ${divisor}`, a - quotient, [
-      `괄호를 먼저: ${inner} + ${other} = ${sum}`,
-      `나눗셈: ${sum} ÷ ${divisor} = ${quotient}`,
-      `뺄셈: ${a} - ${quotient} = ${a - quotient}`,
-    ]);
+    throw new Error(`지원하지 않는 혼합 계산 형태: ${shape}`);
 
     function pack(stem, value, solution) {
       return {

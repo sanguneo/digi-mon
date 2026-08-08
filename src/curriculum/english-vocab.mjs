@@ -1,8 +1,11 @@
 /**
  * 영어 문자·어휘 자산.
  *
- * 이 목록은 이 저장소가 시드한 것이고 공식 어휘 목록이 아니다. 2022 개정 별표의
- * 어휘 목록으로 교체·확장할 자리이며 교과 전문가 검토 대상이다.
+ * 학년군 목록은 이 저장소가 문항용으로 선별한 목록이다. 각 낱말이 2022 개정
+ * 영어과 교육과정 [별표 3]의 초등 권장 800개에 포함되는지는
+ * data/curriculum/english-official-vocabulary.json과 회귀 테스트로 확인한다.
+ * 별표 3은 학년군별 개별 낱말을 배정하지 않으므로, 공식 800개 전체를 임의로
+ * 3~4학년과 5~6학년에 나누지 않는다.
  *
  * 여기 담은 것은 문자 인식 문항에 필요한 최소 자산이다. 듣기·읽기 이해 문항에
  * 필요한 음성·지문 자산은 아직 없고, 그 사실은 SUBJECT_STRATEGY 에 적혀 있다.
@@ -22,20 +25,35 @@ export const CONFUSABLE_LOWER = ['b', 'd', 'p', 'q', 'n', 'u', 'm', 'w', 'i', 'l
 
 /**
  * 3~4학년 기초 어휘. 문자 인식 문항의 예시 낱말로만 쓴다.
- * 뜻을 묻는 문항은 어휘 목록이 공식 자료로 교체된 뒤에 만든다.
+ * 2022 개정 [별표 3] 초등 권장 어휘 안에서 검토한 문항용 부분집합이다.
  */
 export const WORDS_G34 = [
   'apple', 'book', 'cat', 'dog', 'egg', 'fish', 'girl', 'hand', 'ice', 'jump',
-  'kite', 'lion', 'milk', 'nose', 'open', 'pen', 'queen', 'red', 'sun', 'tree',
-  'umbrella', 'van', 'water', 'box', 'yellow', 'zoo', 'ball', 'desk', 'door', 'face',
+  'king', 'lion', 'milk', 'nose', 'open', 'pen', 'queen', 'red', 'sun', 'tree',
+  'umbrella', 'violin', 'water', 'box', 'yellow', 'zoo', 'ball', 'desk', 'door', 'face',
 ];
 
-/** 5~6학년 어휘. 3~4학년 어휘를 포함한다. */
+/** 5~6학년에서 새로 도입하는 검토 어휘. 허용 목록은 3~4학년 어휘를 누적한다. */
 export const WORDS_G56 = [
-  'family', 'friend', 'school', 'teacher', 'student', 'morning', 'evening', 'together',
+  'family', 'friend', 'school', 'teach', 'student', 'morning', 'evening', 'together',
   'library', 'market', 'garden', 'kitchen', 'winter', 'summer', 'spring', 'autumn',
   'science', 'music', 'history', 'question', 'answer', 'picture', 'letter', 'number',
 ];
+
+export const ENGLISH_VOCABULARY_REVIEW = Object.freeze({
+  schema: 'digi-mon/english-grade-band-vocabulary-review@1',
+  status: 'project-selected',
+  officialArtifact: 'data/curriculum/english-official-vocabulary.json',
+  officialArtifactSchema: 'digi-mon/english-official-vocabulary@1',
+  curriculumReference: 'reference/[별책14] 영어과 교육과정.md#[별표 3] 어휘',
+  gradeBandLimits: Object.freeze({ '3-4': 300, '5-6': 300, cumulative: 600 }),
+  reviewedCounts: Object.freeze({
+    '3-4': WORDS_G34.length,
+    '5-6-new': WORDS_G56.length,
+    '5-6-cumulative': WORDS_G34.length + WORDS_G56.length,
+  }),
+  note: '별표 3 초등 권장 800개 중 현재 생성기가 실제 사용하는 낱말을 프로젝트 seed로 선택했다. 교과 전문가의 학년군 승인은 아니다.',
+});
 
 export const WORDS_BY_BAND = {
   '3-4': [...WORDS_G34],
@@ -163,7 +181,7 @@ export const TEMPLATE_BLANKS = [
   { text: 'I drink ___ every morning.', answer: 'milk', wrong: ['book', 'desk', 'tree'] },
   { text: 'The ___ is bright in the sky.', answer: 'sun', wrong: ['desk', 'pen', 'door'] },
   { text: 'Open the ___, please.', answer: 'door', wrong: ['sun', 'milk', 'zoo'] },
-  { text: 'My ___ teaches music at school.', answer: 'teacher', wrong: ['kite', 'apple', 'egg'] },
+  { text: 'My ___ teaches music at school.', answer: 'friend', wrong: ['book', 'apple', 'egg'] },
   { text: 'We play with a ___ in the garden.', answer: 'ball', wrong: ['milk', 'door', 'sun'] },
 ];
 
@@ -178,7 +196,7 @@ export const QA_PAIRS_G34 = [
 
 /** [6영02-07] 세부 정보를 묻고 답하기. */
 export const QA_PAIRS_G56 = [
-  { q: 'How many books do you have?', a: 'I have three books.', wrong: ['I like music.', 'It is Monday.', 'She is my teacher.'] },
+  { q: 'How many books do you have?', a: 'I have three books.', wrong: ['I like music.', 'It is Monday.', 'She is my friend.'] },
   { q: 'What day is it today?', a: 'It is Monday.', wrong: ['I have three books.', 'I like music.', 'He is in the garden.'] },
   { q: 'What subject do you like?', a: 'I like music.', wrong: ['It is Monday.', 'I have three books.', 'He is in the garden.'] },
   { q: 'Where is your brother?', a: 'He is in the garden.', wrong: ['It is Monday.', 'I like music.', 'I have three books.'] },

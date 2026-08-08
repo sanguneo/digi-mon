@@ -3,8 +3,8 @@
   "note": "포화 기준 용량이다. 고정 문턱은 개념이 작은 것과 덜 쓴 것을 구분하지 못해 쓰지 않는다.",
   "baseSamples": 300,
   "minCeiling": 12,
-  "generatorCount": 188,
-  "saturatedCount": 98,
+  "generatorCount": 193,
+  "saturatedCount": 100,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -28,6 +28,11 @@
       "capacityNote": "[4수03-01]이 다루는 것은 직선·선분·반직선 셋이 전부다."
     },
     {
+      "generatorId": "math.g34.gd.s03.line-relations",
+      "ceiling": 4,
+      "capacityNote": "두 직선의 관계는 수직과 평행 두 가지를 가로·세로 방향 조합으로 확인한다."
+    },
+    {
       "generatorId": "math.g34.gd.s04.transform",
       "ceiling": 5,
       "capacityNote": "평면도형의 이동은 밀기·좌우 뒤집기·위아래 뒤집기·90도 돌리기·180도 돌리기 다섯 가지가 전부다."
@@ -36,11 +41,6 @@
       "generatorId": "math.g34.gd.s06.parts",
       "ceiling": 3,
       "capacityNote": "원의 구성 요소는 중심·반지름·지름 셋이 전부다."
-    },
-    {
-      "generatorId": "math.g34.gd.s12.diagonals",
-      "ceiling": 5,
-      "capacityNote": "초등에서 다루는 다각형은 사각형부터 팔각형까지 다섯 가지다."
     },
     {
       "generatorId": "math.g56.rm.s03-02.symmetry",
@@ -53,9 +53,19 @@
       "capacityNote": "면·모서리·꼭짓점 세 가지를 직육면체와 정육면체에 대해 묻는 여섯 경우가 전부다."
     },
     {
+      "generatorId": "math.g56.rm.s03-04.cuboid-net",
+      "ceiling": 4,
+      "capacityNote": "검산 가능한 대표 정육면체 전개도 후보 두 가지와 반례 두 가지를 사용한다."
+    },
+    {
       "generatorId": "math.g56.rm.s03-06.prism-name",
       "ceiling": 8,
       "capacityNote": "밑면이 삼각형·사각형·오각형·육각형인 각기둥과 각뿔 여덟 경우가 전부다."
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-net",
+      "ceiling": 36,
+      "capacityNote": "교육과정이 요구하는 간단한 형태로, 세 직사각형 띠에 붙는 두 삼각형의 위치만 바꾼다."
     },
     {
       "generatorId": "math.g56.rm.s04-04.likelihood-word",
@@ -148,12 +158,12 @@
       "capacityNote": "질문-응답 짝 5개가 상한이다."
     }
   ],
-  "observedCapacity": 114700,
+  "observedCapacity": 117890,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
       "code": "[2수01-01]",
-      "skill": "수를 한자어로 읽기",
+      "skill": "수의 한자어 읽기 알아보기",
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 100,
@@ -186,7 +196,7 @@
     {
       "generatorId": "math.g12.no.s01.count-native",
       "code": "[2수01-01]",
-      "skill": "고유어 수사로 개수 말하기",
+      "skill": "고유어 수사로 읽은 개수 알아보기",
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 326,
@@ -285,13 +295,13 @@
     {
       "generatorId": "math.g12.no.s04.make-ten",
       "code": "[2수01-04]",
-      "skill": "10 만들기",
+      "skill": "10 또는 20 만들기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 151,
-      "uniqueAtDouble": 185,
-      "saturated": false,
-      "ceiling": null
+      "uniqueAtBase": 28,
+      "uniqueAtDouble": 28,
+      "saturated": true,
+      "ceiling": 28
     },
     {
       "generatorId": "math.g12.no.s05.story-add",
@@ -321,8 +331,8 @@
       "skill": "두 자리 수의 덧셈",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 689,
-      "uniqueAtDouble": 1148,
+      "uniqueAtBase": 783,
+      "uniqueAtDouble": 1395,
       "saturated": false,
       "ceiling": null
     },
@@ -360,24 +370,24 @@
       "ceiling": null
     },
     {
-      "generatorId": "math.g12.no.s08.estimate",
+      "generatorId": "math.g12.no.s08.add-three",
       "code": "[2수01-08]",
-      "skill": "몇십으로 어림하여 계산하기",
+      "skill": "세 수의 덧셈",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 738,
-      "uniqueAtDouble": 1209,
+      "uniqueAtBase": 631,
+      "uniqueAtDouble": 1143,
       "saturated": false,
       "ceiling": null
     },
     {
-      "generatorId": "math.g12.no.s08.estimate-compare",
+      "generatorId": "math.g12.no.s08.sub-three",
       "code": "[2수01-08]",
-      "skill": "어림하여 두 식의 결과 비교하기",
+      "skill": "세 수의 뺄셈",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtBase": 571,
+      "uniqueAtDouble": 1045,
       "saturated": false,
       "ceiling": null
     },
@@ -970,10 +980,10 @@
       "skill": "길이 단위 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 11,
-      "uniqueAtDouble": 11,
+      "uniqueAtBase": 5,
+      "uniqueAtDouble": 5,
       "saturated": true,
-      "ceiling": 11
+      "ceiling": 5
     },
     {
       "generatorId": "math.g34.mr.s03-16.convert-cm-mm",
@@ -999,14 +1009,14 @@
     },
     {
       "generatorId": "math.g34.mr.s03-16.estimate",
-      "code": "[4수03-16]",
+      "code": "[4수03-15]",
       "skill": "길이 어림하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 195,
-      "uniqueAtDouble": 208,
+      "uniqueAtBase": 95,
+      "uniqueAtDouble": 95,
       "saturated": true,
-      "ceiling": 208
+      "ceiling": 95
     },
     {
       "generatorId": "math.g34.mr.s03-17.choose-unit",
@@ -1047,10 +1057,10 @@
       "skill": "무게 단위 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 9,
-      "uniqueAtDouble": 9,
+      "uniqueAtBase": 7,
+      "uniqueAtDouble": 7,
       "saturated": true,
-      "ceiling": 9
+      "ceiling": 7
     },
     {
       "generatorId": "math.g34.mr.s03-21.convert-kg-g",
@@ -1064,8 +1074,19 @@
       "ceiling": null
     },
     {
-      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "generatorId": "math.g34.mr.s03-22.convert-t-kg",
       "code": "[4수03-22]",
+      "skill": "t와 kg 단위 바꾸기",
+      "axis": "numeric",
+      "capacityNote": null,
+      "uniqueAtBase": 596,
+      "uniqueAtDouble": 1172,
+      "saturated": false,
+      "ceiling": null
+    },
+    {
+      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "code": "[4수03-23]",
       "skill": "무게의 덧셈과 뺄셈",
       "axis": "numeric",
       "capacityNote": null,
@@ -1076,14 +1097,14 @@
     },
     {
       "generatorId": "math.g34.mr.s03-23.estimate",
-      "code": "[4수03-23]",
+      "code": "[4수03-20]",
       "skill": "무게 어림하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 166,
-      "uniqueAtDouble": 171,
+      "uniqueAtBase": 127,
+      "uniqueAtDouble": 132,
       "saturated": true,
-      "ceiling": 171
+      "ceiling": 132
     },
     {
       "generatorId": "math.g34.gd.s01.identify-line",
@@ -1108,15 +1129,15 @@
       "ceiling": null
     },
     {
-      "generatorId": "math.g34.gd.s03.right-figures",
+      "generatorId": "math.g34.gd.s03.line-relations",
       "code": "[4수03-03]",
-      "skill": "직각이 있는 도형의 성질",
+      "skill": "두 직선의 수직 관계와 평행 관계 구별하기",
       "axis": "single",
-      "capacityNote": null,
-      "uniqueAtBase": 3,
-      "uniqueAtDouble": 3,
+      "capacityNote": "두 직선의 관계는 수직과 평행 두 가지를 가로·세로 방향 조합으로 확인한다.",
+      "uniqueAtBase": 4,
+      "uniqueAtDouble": 4,
       "saturated": true,
-      "ceiling": 3
+      "ceiling": 4
     },
     {
       "generatorId": "math.g34.gd.s04.transform",
@@ -1131,7 +1152,7 @@
     },
     {
       "generatorId": "math.g34.gd.s05.pattern",
-      "code": "[4수03-05]",
+      "code": "[4수03-04]",
       "skill": "이동을 반복한 무늬의 규칙 알기",
       "axis": "numeric",
       "capacityNote": null,
@@ -1139,6 +1160,17 @@
       "uniqueAtDouble": 20,
       "saturated": true,
       "ceiling": 20
+    },
+    {
+      "generatorId": "math.g34.gd.s05.point-movement",
+      "code": "[4수03-05]",
+      "skill": "격자에서 한 점의 이동을 위치와 방향으로 설명하기",
+      "axis": "numeric",
+      "capacityNote": null,
+      "uniqueAtBase": 604,
+      "uniqueAtDouble": 953,
+      "saturated": false,
+      "ceiling": null
     },
     {
       "generatorId": "math.g34.gd.s06.parts",
@@ -1153,7 +1185,7 @@
     },
     {
       "generatorId": "math.g34.gd.s07.radius-diameter",
-      "code": "[4수03-07]",
+      "code": "[4수03-06]",
       "skill": "반지름과 지름의 관계",
       "axis": "numeric",
       "capacityNote": null,
@@ -1207,17 +1239,6 @@
       "ceiling": 12
     },
     {
-      "generatorId": "math.g34.gd.s12.diagonals",
-      "code": "[4수03-12]",
-      "skill": "대각선의 수 세기",
-      "axis": "numeric",
-      "capacityNote": "초등에서 다루는 다각형은 사각형부터 팔각형까지 다섯 가지다.",
-      "uniqueAtBase": 5,
-      "uniqueAtDouble": 5,
-      "saturated": true,
-      "ceiling": 5
-    },
-    {
       "generatorId": "math.g34.gd.s24.measure",
       "code": "[4수03-24]",
       "skill": "각의 크기 읽기",
@@ -1240,24 +1261,24 @@
       "ceiling": null
     },
     {
-      "generatorId": "math.g34.gd.s04-01.collect",
-      "code": "[4수04-01]",
-      "skill": "자료를 표로 정리하고 합계 구하기",
-      "axis": "numeric",
-      "capacityNote": null,
-      "uniqueAtBase": 895,
-      "uniqueAtDouble": 1785,
-      "saturated": false,
-      "ceiling": null
-    },
-    {
       "generatorId": "math.g34.gd.s04-02.read-bar",
-      "code": "[4수04-02]",
+      "code": "[4수04-01]",
       "skill": "막대그래프에서 값 읽기",
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 897,
       "uniqueAtDouble": 1794,
+      "saturated": false,
+      "ceiling": null
+    },
+    {
+      "generatorId": "math.g34.gd.s04-02.interpret-line",
+      "code": "[4수04-02]",
+      "skill": "꺾은선그래프 해석하기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 717,
+      "uniqueAtDouble": 1326,
       "saturated": false,
       "ceiling": null
     },
@@ -1278,8 +1299,8 @@
       "skill": "자연수의 혼합 계산",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 882,
-      "uniqueAtDouble": 1713,
+      "uniqueAtBase": 872,
+      "uniqueAtDouble": 1674,
       "saturated": false,
       "ceiling": null
     },
@@ -1527,7 +1548,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
-      "code": "[6수03-04]",
+      "code": "[6수03-03]",
       "skill": "직육면체 모서리 길이의 합",
       "axis": "numeric",
       "capacityNote": null,
@@ -1535,6 +1556,17 @@
       "uniqueAtDouble": 562,
       "saturated": false,
       "ceiling": null
+    },
+    {
+      "generatorId": "math.g56.rm.s03-04.cuboid-net",
+      "code": "[6수03-04]",
+      "skill": "정육면체의 전개도가 되는 모양과 되지 않는 모양 구별하기",
+      "axis": "single",
+      "capacityNote": "검산 가능한 대표 정육면체 전개도 후보 두 가지와 반례 두 가지를 사용한다.",
+      "uniqueAtBase": 4,
+      "uniqueAtDouble": 4,
+      "saturated": true,
+      "ceiling": 4
     },
     {
       "generatorId": "math.g56.rm.s03-05.prism-pyramid",
@@ -1549,7 +1581,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-06.prism-name",
-      "code": "[6수03-06]",
+      "code": "[6수03-05]",
       "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
       "axis": "numeric",
       "capacityNote": "밑면이 삼각형·사각형·오각형·육각형인 각기둥과 각뿔 여덟 경우가 전부다.",
@@ -1557,6 +1589,17 @@
       "uniqueAtDouble": 8,
       "saturated": true,
       "ceiling": 8
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-net",
+      "code": "[6수03-06]",
+      "skill": "삼각기둥의 전개도가 되는 모양과 되지 않는 모양 구별하기",
+      "axis": "single",
+      "capacityNote": "교육과정이 요구하는 간단한 형태로, 세 직사각형 띠에 붙는 두 삼각형의 위치만 바꾼다.",
+      "uniqueAtBase": 36,
+      "uniqueAtDouble": 36,
+      "saturated": true,
+      "ceiling": 36
     },
     {
       "generatorId": "math.g56.rm.s03-07.round-solids",
@@ -1593,7 +1636,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-10.cube-block",
-      "code": "[6수03-10]",
+      "code": "[6수03-09]",
       "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
       "axis": "numeric",
       "capacityNote": null,
@@ -1601,6 +1644,17 @@
       "uniqueAtDouble": 48,
       "saturated": true,
       "ceiling": 48
+    },
+    {
+      "generatorId": "math.g56.rm.s03-10.orthographic-views",
+      "code": "[6수03-10]",
+      "skill": "쌓기나무를 위, 앞, 옆에서 본 모양 나타내기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 778,
+      "uniqueAtDouble": 1432,
+      "saturated": false,
+      "ceiling": null
     },
     {
       "generatorId": "math.g56.rm.s03-11.perimeter",
@@ -1615,18 +1669,18 @@
     },
     {
       "generatorId": "math.g56.rm.s03-12.area",
-      "code": "[6수03-12]",
+      "code": "[6수03-14]",
       "skill": "사각형·삼각형의 넓이 구하기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 590,
-      "uniqueAtDouble": 945,
+      "uniqueAtBase": 566,
+      "uniqueAtDouble": 834,
       "saturated": false,
       "ceiling": null
     },
     {
       "generatorId": "math.g56.rm.s03-13.area-unit",
-      "code": "[6수03-13]",
+      "code": "[6수03-12]",
       "skill": "넓이 단위 바꾸기",
       "axis": "numeric",
       "capacityNote": null,
@@ -1637,18 +1691,29 @@
     },
     {
       "generatorId": "math.g56.rm.s03-14.composite-area",
-      "code": "[6수03-14]",
-      "skill": "여러 도형으로 나누어 넓이 구하기",
+      "code": "[6수03-13]",
+      "skill": "직사각형·정사각형의 넓이 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 751,
-      "uniqueAtDouble": 1339,
+      "uniqueAtBase": 649,
+      "uniqueAtDouble": 1190,
+      "saturated": false,
+      "ceiling": null
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.pi-ratio",
+      "code": "[6수03-15]",
+      "skill": "여러 원의 원주와 지름의 비가 약 3.14로 일정함 이해하기",
+      "axis": "categorical",
+      "capacityNote": null,
+      "uniqueAtBase": 664,
+      "uniqueAtDouble": 1246,
       "saturated": false,
       "ceiling": null
     },
     {
       "generatorId": "math.g56.rm.s03-15.circumference",
-      "code": "[6수03-15]",
+      "code": "[6수03-16]",
       "skill": "원주 구하기",
       "axis": "numeric",
       "capacityNote": null,
@@ -1681,7 +1746,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-18.volume",
-      "code": "[6수03-18]",
+      "code": "[6수03-19]",
       "skill": "직육면체의 부피",
       "axis": "numeric",
       "capacityNote": null,
@@ -1692,7 +1757,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-19.volume-unit",
-      "code": "[6수03-19]",
+      "code": "[6수03-18]",
       "skill": "부피 단위 바꾸기",
       "axis": "numeric",
       "capacityNote": null,

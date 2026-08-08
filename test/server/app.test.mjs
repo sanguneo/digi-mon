@@ -104,6 +104,70 @@ after(async () => {
   await once(server, 'close');
 });
 
+test('grading rejects non-object bodies and unsafe response metadata', async () => {
+  assert.equal((await request('/v1/grade', { method: 'POST', body: null })).status, 400);
+
+  const options = {
+    seed: 'privacy-boundary',
+    subject: 'math',
+    grade: '1-2',
+    count: 1,
+    difficulty: 1,
+  };
+  const issued = await request('/v1/worksheets', { method: 'POST', body: options });
+  const invalidAt = await request('/v1/grade', {
+    method: 'POST',
+    body: {
+      ...options,
+      fingerprint: issued.body.fingerprint,
+      responses: { 1: 'learner name' },
+      at: { name: 'learner name' },
+    },
+  });
+  assert.equal(invalidAt.status, 400);
+});
+
+test('learner grading hides submitted text and accuracy rejects malformed records', async () => {
+  const options = {
+    seed: 'privacy-output',
+    subject: 'math',
+    grade: '1-2',
+    count: 1,
+    difficulty: 1,
+  };
+  const issued = await request('/v1/worksheets', { method: 'POST', body: options });
+  const graded = await request('/v1/grade', {
+    method: 'POST',
+    body: {
+      ...options,
+      fingerprint: issued.body.fingerprint,
+      responses: { 1: 'learner name' },
+      at: '2026-08-06T00:00:00.000Z',
+    },
+  });
+  assert.equal(graded.status, 200);
+  assert.equal(Object.hasOwn(graded.body.results[0], 'submitted'), false);
+  assert.equal(graded.body.responseRecords[0].at, '2026-08-06T00:00:00.000Z');
+
+  const deniedAccuracy = await request('/v1/accuracy', {
+    method: 'POST',
+    body: { records: graded.body.responseRecords },
+  });
+  assert.equal(deniedAccuracy.status, 403);
+  const allowedAccuracy = await request('/v1/accuracy', {
+    method: 'POST',
+    token: 'teacher-secret',
+    body: { records: graded.body.responseRecords },
+  });
+  assert.equal(allowedAccuracy.status, 200);
+
+  const malformed = await request('/v1/accuracy', {
+    method: 'POST',
+    body: { records: [{ generatorId: { injected: true } }] },
+  });
+  assert.equal(malformed.status, 400);
+});
+
 test('learner endpoints strip answers and teacher answers require authorization', async () => {
   const learner = await request('/v1/worksheets', {
     method: 'POST',

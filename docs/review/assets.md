@@ -557,7 +557,7 @@
 | I drink ___ every morning. | milk | book, desk, tree |
 | The ___ is bright in the sky. | sun | desk, pen, door |
 | Open the ___, please. | door | sun, milk, zoo |
-| My ___ teaches music at school. | teacher | kite, apple, egg |
+| My ___ teaches music at school. | friend | book, apple, egg |
 | We play with a ___ in the garden. | ball | milk, door, sun |
 
 <a id="qa-g34"></a>
@@ -586,7 +586,7 @@
 
 | 물음 | 정답 응답 | 오답 응답 |
 |---|---|---|
-| How many books do you have? | I have three books. | I like music. · It is Monday. · She is my teacher. |
+| How many books do you have? | I have three books. | I like music. · It is Monday. · She is my friend. |
 | What day is it today? | It is Monday. | I have three books. · I like music. · He is in the garden. |
 | What subject do you like? | I like music. | It is Monday. · I have three books. · He is in the garden. |
 | Where is your brother? | He is in the garden. | It is Monday. · I like music. · I have three books. |
@@ -598,12 +598,12 @@
 
 ## 자산 요구 (미충족 성취기준)
 
-- 42항목 · `src/curriculum/asset-requirements.mjs`
+- 44항목 · `src/curriculum/asset-requirements.mjs`
 - **판정해 달라:** `조달 성격` 배정이 맞는가. `필요 자산`이 그 성취기준을 열기에 **충분한가.**
   특히 `sentence`로 분류한 것이 정말 지문 없이 성립하는가 — 그것이 다음에 열 대상이다.
 - **틀리면:** 자산 조달 우선순위가 어긋난다. `passage`는 저작권 판단이 선행하므로 비용이 다르다.
 
-조달 성격별: `passage` 24 · `media` 9 · `audio` 7 · `dialogue` 1 · `wordlist` 1
+조달 성격별: `passage` 24 · `media` 9 · `audio` 7 · `procedure` 2 · `dialogue` 1 · `wordlist` 1
 
 | 코드 | 조달 성격 | 필요 자산 | 비고 |
 |---|---|---|---|
@@ -648,5 +648,7 @@
 | `[6영01-05]` | passage | 중심 내용을 묻는 글 | — |
 | `[6영01-06]` | passage | 사건 순서가 있는 글 | — |
 | `[6영01-07]` | passage | 맥락 추론 대상 글 | — |
+| `[4수03-07]` | procedure | 컴퍼스로 원을 그린 실제 작도 결과와 중심·반지름 사용을 확인하는 교사 루브릭 | 작도 수행은 답안 문자열이나 완성 그림 선택으로 대체하지 않는다. |
+| `[4수03-12]` | procedure | 주어진 도형으로 새 모양을 만들거나 채운 실제 산출물과 설명을 확인하는 교사 루브릭 | 여러 정답이 가능한 도형 만들기 수행은 객관식 프록시로 자동 채점하지 않는다. |
 | `[6영01-03]` | wordlist | 5~6학년 공식 어휘 목록 | 현재 목록은 이 저장소가 지은 시드다(54낱말). |
 

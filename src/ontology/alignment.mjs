@@ -24,6 +24,17 @@ export function assessmentMappingsFor(standard, generator) {
   );
   const explicit = validateAssessmentMappings(generator, assessmentTopicIds);
   if (explicit.length > 0) return explicit;
+  if (
+    generator.curriculumReview?.decision === 'approved'
+    && assessmentTopicIds.size === 1
+  ) {
+    return [...assessmentTopicIds].map((topicId) => ({
+      topicId,
+      confidence: 'official-curriculum-reviewed',
+      note: generator.curriculumReview.note,
+      reviewStatus: 'approved',
+    }));
+  }
   return [...assessmentTopicIds].map((topicId) => ({
     topicId,
     confidence: 'standard-code-inferred',

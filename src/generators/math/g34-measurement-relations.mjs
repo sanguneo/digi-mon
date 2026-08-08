@@ -288,8 +288,11 @@ const timeArithmetic = {
 // ---------------------------------------------------------------------------
 
 /** 상황에 알맞은 단위 고르기. 단위 감각을 재는 문항이다. */
-function makeUnitChoice(system, code, idSuffix) {
+function makeUnitChoice(system, code, idSuffix, allowedSymbols = null) {
   const sys = UNIT_SYSTEMS[system];
+  const contexts = allowedSymbols === null
+    ? sys.contexts
+    : sys.contexts.filter((context) => allowedSymbols.includes(context.unit));
   return {
     id: `math.g34.mr.${idSuffix}.choose-unit`,
     standardCode: code,
@@ -300,7 +303,7 @@ function makeUnitChoice(system, code, idSuffix) {
     difficultyAxis: 'single',
     difficulties: [1],
     generate(rng, { difficulty }) {
-      const context = rng.pick(sys.contexts);
+      const context = rng.pick(contexts);
       const phrase = `${context.object}의 ${context.attribute}`;
       const wrong = sys.units.filter((u) => u.symbol !== context.unit).map((u) => u.symbol);
       // 선택지가 3개를 못 채우면 다른 체계의 단위를 섞는다. 단위의 종류를 혼동하는지도 본다.
@@ -431,15 +434,18 @@ function makeUnitArithmetic(system, code, idSuffix, bigSymbol) {
  * 단위는 문맥이 가진 단위를 그대로 쓴다. 예전 구현은 큰 단위 배수를 곱해
  * 10kg 을 10000g 으로 바꿔 놓아 학년에 맞지 않는 수가 나왔다.
  */
-function makeUnitEstimate(system, code, idSuffix) {
+function makeUnitEstimate(system, code, idSuffix, allowedSymbols = null) {
   const sys = UNIT_SYSTEMS[system];
+  const contexts = allowedSymbols === null
+    ? sys.contexts
+    : sys.contexts.filter((context) => allowedSymbols.includes(context.unit));
   return {
     id: `math.g34.mr.${idSuffix}.estimate`,
     standardCode: code,
     skill: `${sys.korean} 어림하기`,
     format: 'short-answer',
     generate(rng, { difficulty }) {
-      const context = rng.pick(sys.contexts);
+      const context = rng.pick(contexts);
       const per = context.typical;
       const count = difficulty === 1 ? rng.int(2, 5) : difficulty === 2 ? rng.int(3, 9) : rng.int(6, 20);
       const total = per * count;
@@ -473,18 +479,20 @@ export const generators = [
   equalitySense,
   minuteSecond,
   timeArithmetic,
-  // 길이 [4수03-15] 단위 인식, [4수03-16] 변환과 어림
-  makeUnitChoice('length', '[4수03-15]', 's03-15'),
+  // 길이 [4수03-15] mm·km 단위의 측정과 어림, [4수03-16] 단위 관계와 표현
+  makeUnitChoice('length', '[4수03-15]', 's03-15', ['mm', 'km']),
   makeUnitConversion('length', '[4수03-16]', 's03-16', 'cm', 'mm'),
   makeUnitConversion('length', '[4수03-16]', 's03-16', 'km', 'm'),
-  makeUnitEstimate('length', '[4수03-16]', 's03-16'),
+  makeUnitEstimate('length', '[4수03-15]', 's03-16', ['mm', 'km']),
   // 들이 [4수03-17] 단위, [4수03-18] 관계, [4수03-19] 덧셈·뺄셈
   makeUnitChoice('capacity', '[4수03-17]', 's03-17'),
   makeUnitConversion('capacity', '[4수03-18]', 's03-18', 'L', 'mL'),
   makeUnitArithmetic('capacity', '[4수03-19]', 's03-19', 'L'),
-  // 무게 [4수03-20] 단위, [4수03-21] 관계, [4수03-22] 덧셈·뺄셈, [4수03-23] 어림
-  makeUnitChoice('weight', '[4수03-20]', 's03-20'),
+  // 무게 [4수03-20] g·kg 단위의 측정과 어림, [4수03-21] 관계, [4수03-23] 덧셈·뺄셈
+  makeUnitChoice('weight', '[4수03-20]', 's03-20', ['g', 'kg']),
   makeUnitConversion('weight', '[4수03-21]', 's03-21', 'kg', 'g'),
-  makeUnitArithmetic('weight', '[4수03-22]', 's03-22', 'kg'),
-  makeUnitEstimate('weight', '[4수03-23]', 's03-23'),
+  // 무게 [4수03-22] 1t = 1000kg 관계. t와 g의 직접 환산은 다루지 않는다.
+  makeUnitConversion('weight', '[4수03-22]', 's03-22', 't', 'kg'),
+  makeUnitArithmetic('weight', '[4수03-23]', 's03-22', 'kg'),
+  makeUnitEstimate('weight', '[4수03-20]', 's03-23', ['g', 'kg']),
 ];

@@ -1,14 +1,14 @@
 {
   "schema": "digi-mon/generator-verification@1",
   "samplesPerCombination": 400,
-  "generatorCount": 188,
-  "totalGenerated": 225600,
+  "generatorCount": 193,
+  "totalGenerated": 231600,
   "totalFailed": 0,
-  "figuresRendered": 35585,
+  "figuresRendered": 37985,
   "coverage": {
     "totalStandards": 248,
-    "coveredStandards": 152,
-    "coverageRatio": 0.7835,
+    "coveredStandards": 150,
+    "coverageRatio": 0.7732,
     "bySubject": {
       "math": {
         "subjectKorean": "수학",
@@ -18,8 +18,8 @@
         "total": 121,
         "autoScorable": 120,
         "manualOnly": 1,
-        "covered": 120,
-        "generators": 147,
+        "covered": 118,
+        "generators": 152,
         "byDomain": {
           "수와 연산": {
             "total": 42,
@@ -34,7 +34,7 @@
           "도형과 측정": {
             "total": 57,
             "autoScorable": 56,
-            "covered": 56
+            "covered": 54
           },
           "자료와 가능성": {
             "total": 12,
@@ -42,7 +42,7 @@
             "covered": 12
           }
         },
-        "coverageRatio": 1
+        "coverageRatio": 0.9833
       },
       "korean": {
         "subjectKorean": "국어",
@@ -149,7 +149,7 @@
     {
       "generatorId": "math.g12.no.s01.read-sino",
       "code": "[2수01-01]",
-      "skill": "수를 한자어로 읽기",
+      "skill": "수의 한자어 읽기 알아보기",
       "byDifficulty": {
         "1": {
           "generated": 400,
@@ -227,7 +227,7 @@
     {
       "generatorId": "math.g12.no.s01.count-native",
       "code": "[2수01-01]",
-      "skill": "고유어 수사로 개수 말하기",
+      "skill": "고유어 수사로 읽은 개수 알아보기",
       "byDifficulty": {
         "1": {
           "generated": 400,
@@ -461,7 +461,7 @@
     {
       "generatorId": "math.g12.no.s04.make-ten",
       "code": "[2수01-04]",
-      "skill": "10 만들기",
+      "skill": "10 또는 20 만들기",
       "byDifficulty": {
         "1": {
           "generated": 400,
@@ -475,14 +475,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 154,
+          "unique": 19,
           "failed": 0
         }
       },
-      "uniqueTotal": 163,
+      "uniqueTotal": 28,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1358
+      "uniqueRatio": 0.0233
     },
     {
       "generatorId": "math.g12.no.s05.story-add",
@@ -553,14 +553,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 285,
+          "unique": 347,
           "failed": 0
         }
       },
-      "uniqueTotal": 849,
+      "uniqueTotal": 999,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.7075
+      "uniqueRatio": 0.8325
     },
     {
       "generatorId": "math.g12.no.s06.sub",
@@ -641,13 +641,13 @@
       "uniqueRatio": 0.5075
     },
     {
-      "generatorId": "math.g12.no.s08.estimate",
+      "generatorId": "math.g12.no.s08.add-three",
       "code": "[2수01-08]",
-      "skill": "몇십으로 어림하여 계산하기",
+      "skill": "세 수의 덧셈",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 327,
+          "unique": 76,
           "failed": 0
         },
         "2": {
@@ -657,40 +657,40 @@
         },
         "3": {
           "generated": 400,
-          "unique": 375,
+          "unique": 386,
           "failed": 0
         }
       },
-      "uniqueTotal": 893,
+      "uniqueTotal": 805,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.7442
+      "uniqueRatio": 0.6708
     },
     {
-      "generatorId": "math.g12.no.s08.estimate-compare",
+      "generatorId": "math.g12.no.s08.sub-three",
       "code": "[2수01-08]",
-      "skill": "어림하여 두 식의 결과 비교하기",
+      "skill": "세 수의 뺄셈",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 400,
+          "unique": 78,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 400,
+          "unique": 349,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 394,
           "failed": 0
         }
       },
-      "uniqueTotal": 1200,
+      "uniqueTotal": 754,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 1
+      "uniqueRatio": 0.6283
     },
     {
       "generatorId": "math.g12.no.s09.box",
@@ -2077,24 +2077,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 11,
+          "unique": 5,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 11,
+          "unique": 5,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 11,
+          "unique": 5,
           "failed": 0
         }
       },
-      "uniqueTotal": 11,
+      "uniqueTotal": 5,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0092
+      "uniqueRatio": 0.0042
     },
     {
       "generatorId": "math.g34.mr.s03-16.convert-cm-mm",
@@ -2150,29 +2150,29 @@
     },
     {
       "generatorId": "math.g34.mr.s03-16.estimate",
-      "code": "[4수03-16]",
+      "code": "[4수03-15]",
       "skill": "길이 어림하기",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 44,
+          "unique": 20,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 77,
+          "unique": 35,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 148,
+          "unique": 75,
           "failed": 0
         }
       },
-      "uniqueTotal": 196,
+      "uniqueTotal": 95,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1633
+      "uniqueRatio": 0.0792
     },
     {
       "generatorId": "math.g34.mr.s03-17.choose-unit",
@@ -2259,24 +2259,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 9,
+          "unique": 7,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 9,
+          "unique": 7,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 9,
+          "unique": 7,
           "failed": 0
         }
       },
-      "uniqueTotal": 9,
+      "uniqueTotal": 7,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0075
+      "uniqueRatio": 0.0058
     },
     {
       "generatorId": "math.g34.mr.s03-21.convert-kg-g",
@@ -2305,8 +2305,34 @@
       "uniqueRatio": 0.6592
     },
     {
-      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "generatorId": "math.g34.mr.s03-22.convert-t-kg",
       "code": "[4수03-22]",
+      "skill": "t와 kg 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 5,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 394,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 395,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 784,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6533
+    },
+    {
+      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "code": "[4수03-23]",
       "skill": "무게의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
@@ -2332,29 +2358,29 @@
     },
     {
       "generatorId": "math.g34.mr.s03-23.estimate",
-      "code": "[4수03-23]",
+      "code": "[4수03-20]",
       "skill": "무게 어림하기",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 36,
+          "unique": 28,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 62,
+          "unique": 49,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 123,
+          "unique": 101,
           "failed": 0
         }
       },
-      "uniqueTotal": 163,
+      "uniqueTotal": 131,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1358
+      "uniqueRatio": 0.1092
     },
     {
       "generatorId": "math.g34.gd.s01.identify-line",
@@ -2409,30 +2435,30 @@
       "uniqueRatio": 0.9717
     },
     {
-      "generatorId": "math.g34.gd.s03.right-figures",
+      "generatorId": "math.g34.gd.s03.line-relations",
       "code": "[4수03-03]",
-      "skill": "직각이 있는 도형의 성질",
+      "skill": "두 직선의 수직 관계와 평행 관계 구별하기",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 3,
+          "unique": 4,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 3,
+          "unique": 4,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 3,
+          "unique": 4,
           "failed": 0
         }
       },
-      "uniqueTotal": 3,
+      "uniqueTotal": 4,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0025
+      "uniqueRatio": 0.0033
     },
     {
       "generatorId": "math.g34.gd.s04.transform",
@@ -2462,7 +2488,7 @@
     },
     {
       "generatorId": "math.g34.gd.s05.pattern",
-      "code": "[4수03-05]",
+      "code": "[4수03-04]",
       "skill": "이동을 반복한 무늬의 규칙 알기",
       "byDifficulty": {
         "1": {
@@ -2485,6 +2511,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.0167
+    },
+    {
+      "generatorId": "math.g34.gd.s05.point-movement",
+      "code": "[4수03-05]",
+      "skill": "격자에서 한 점의 이동을 위치와 방향으로 설명하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 133,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 266,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 340,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 739,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.6158
     },
     {
       "generatorId": "math.g34.gd.s06.parts",
@@ -2514,7 +2566,7 @@
     },
     {
       "generatorId": "math.g34.gd.s07.radius-diameter",
-      "code": "[4수03-07]",
+      "code": "[4수03-06]",
       "skill": "반지름과 지름의 관계",
       "byDifficulty": {
         "1": {
@@ -2643,32 +2695,6 @@
       "uniqueRatio": 0.01
     },
     {
-      "generatorId": "math.g34.gd.s12.diagonals",
-      "code": "[4수03-12]",
-      "skill": "대각선의 수 세기",
-      "byDifficulty": {
-        "1": {
-          "generated": 400,
-          "unique": 1,
-          "failed": 0
-        },
-        "2": {
-          "generated": 400,
-          "unique": 2,
-          "failed": 0
-        },
-        "3": {
-          "generated": 400,
-          "unique": 3,
-          "failed": 0
-        }
-      },
-      "uniqueTotal": 5,
-      "generated": 1200,
-      "failed": 0,
-      "uniqueRatio": 0.0042
-    },
-    {
       "generatorId": "math.g34.gd.s24.measure",
       "code": "[4수03-24]",
       "skill": "각의 크기 읽기",
@@ -2721,34 +2747,8 @@
       "uniqueRatio": 0.9517
     },
     {
-      "generatorId": "math.g34.gd.s04-01.collect",
-      "code": "[4수04-01]",
-      "skill": "자료를 표로 정리하고 합계 구하기",
-      "byDifficulty": {
-        "1": {
-          "generated": 400,
-          "unique": 395,
-          "failed": 0
-        },
-        "2": {
-          "generated": 400,
-          "unique": 399,
-          "failed": 0
-        },
-        "3": {
-          "generated": 400,
-          "unique": 400,
-          "failed": 0
-        }
-      },
-      "uniqueTotal": 1192,
-      "generated": 1200,
-      "failed": 0,
-      "uniqueRatio": 0.9933
-    },
-    {
       "generatorId": "math.g34.gd.s04-02.read-bar",
-      "code": "[4수04-02]",
+      "code": "[4수04-01]",
       "skill": "막대그래프에서 값 읽기",
       "byDifficulty": {
         "1": {
@@ -2771,6 +2771,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.9975
+    },
+    {
+      "generatorId": "math.g34.gd.s04-02.interpret-line",
+      "code": "[4수04-02]",
+      "skill": "꺾은선그래프 해석하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 124,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 924,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.77
     },
     {
       "generatorId": "math.g34.gd.s04-03.interpret-bar",
@@ -2810,19 +2836,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 384,
+          "unique": 390,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 395,
           "failed": 0
         }
       },
-      "uniqueTotal": 1164,
+      "uniqueTotal": 1140,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.97
+      "uniqueRatio": 0.95
     },
     {
       "generatorId": "math.g56.no.s02.range",
@@ -3398,7 +3424,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
-      "code": "[6수03-04]",
+      "code": "[6수03-03]",
       "skill": "직육면체 모서리 길이의 합",
       "byDifficulty": {
         "1": {
@@ -3421,6 +3447,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.315
+    },
+    {
+      "generatorId": "math.g56.rm.s03-04.cuboid-net",
+      "code": "[6수03-04]",
+      "skill": "정육면체의 전개도가 되는 모양과 되지 않는 모양 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 4,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 4,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0033
     },
     {
       "generatorId": "math.g56.rm.s03-05.prism-pyramid",
@@ -3450,7 +3502,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-06.prism-name",
-      "code": "[6수03-06]",
+      "code": "[6수03-05]",
       "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
       "byDifficulty": {
         "1": {
@@ -3473,6 +3525,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.0067
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-net",
+      "code": "[6수03-06]",
+      "skill": "삼각기둥의 전개도가 되는 모양과 되지 않는 모양 구별하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 36,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 36,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.03
     },
     {
       "generatorId": "math.g56.rm.s03-07.round-solids",
@@ -3554,7 +3632,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-10.cube-block",
-      "code": "[6수03-10]",
+      "code": "[6수03-09]",
       "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
       "byDifficulty": {
         "1": {
@@ -3577,6 +3655,32 @@
       "generated": 1200,
       "failed": 0,
       "uniqueRatio": 0.04
+    },
+    {
+      "generatorId": "math.g56.rm.s03-10.orthographic-views",
+      "code": "[6수03-10]",
+      "skill": "쌓기나무를 위, 앞, 옆에서 본 모양 나타내기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 195,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 400,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 994,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.8283
     },
     {
       "generatorId": "math.g56.rm.s03-11.perimeter",
@@ -3606,17 +3710,17 @@
     },
     {
       "generatorId": "math.g56.rm.s03-12.area",
-      "code": "[6수03-12]",
+      "code": "[6수03-14]",
       "skill": "사각형·삼각형의 넓이 구하기",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 175,
+          "unique": 229,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 319,
+          "unique": 279,
           "failed": 0
         },
         "3": {
@@ -3625,14 +3729,14 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 718,
+      "uniqueTotal": 663,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5983
+      "uniqueRatio": 0.5525
     },
     {
       "generatorId": "math.g56.rm.s03-13.area-unit",
-      "code": "[6수03-13]",
+      "code": "[6수03-12]",
       "skill": "넓이 단위 바꾸기",
       "byDifficulty": {
         "1": {
@@ -3658,12 +3762,12 @@
     },
     {
       "generatorId": "math.g56.rm.s03-14.composite-area",
-      "code": "[6수03-14]",
-      "skill": "여러 도형으로 나누어 넓이 구하기",
+      "code": "[6수03-13]",
+      "skill": "직사각형·정사각형의 넓이 구하기",
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 265,
+          "unique": 85,
           "failed": 0
         },
         "2": {
@@ -3677,14 +3781,40 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 957,
+      "uniqueTotal": 842,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.7975
+      "uniqueRatio": 0.7017
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.pi-ratio",
+      "code": "[6수03-15]",
+      "skill": "여러 원의 원주와 지름의 비가 약 3.14로 일정함 이해하기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 72,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 381,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 398,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 851,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.7092
     },
     {
       "generatorId": "math.g56.rm.s03-15.circumference",
-      "code": "[6수03-15]",
+      "code": "[6수03-16]",
       "skill": "원주 구하기",
       "byDifficulty": {
         "1": {
@@ -3762,7 +3892,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-18.volume",
-      "code": "[6수03-18]",
+      "code": "[6수03-19]",
       "skill": "직육면체의 부피",
       "byDifficulty": {
         "1": {
@@ -3788,7 +3918,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-19.volume-unit",
-      "code": "[6수03-19]",
+      "code": "[6수03-18]",
       "skill": "부피 단위 바꾸기",
       "byDifficulty": {
         "1": {
@@ -4469,7 +4599,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 50,
+          "unique": 48,
           "failed": 0
         },
         "2": {
@@ -4495,7 +4625,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 25,
+          "unique": 24,
           "failed": 0
         },
         "2": {

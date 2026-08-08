@@ -41,8 +41,18 @@
       "note": null
     },
     {
-      "generatorId": "math.g34.gd.s03.right-figures",
+      "generatorId": "math.g34.gd.s03.line-relations",
       "code": "[4수03-03]",
+      "note": null
+    },
+    {
+      "generatorId": "math.g56.rm.s03-04.cuboid-net",
+      "code": "[6수03-04]",
+      "note": null
+    },
+    {
+      "generatorId": "math.g56.rm.s03-06.prism-net",
+      "code": "[6수03-06]",
       "note": null
     },
     {
@@ -130,7 +140,7 @@
     {
       "generatorId": "math.g12.no.s06.add",
       "code": "[2수01-06]",
-      "note": "난이도 1은 받아올림 없음, 2 이상은 일의 자리에서 받아올림이 생긴다."
+      "note": "난이도 1은 받아올림 없음, 2는 일의 자리 받아올림, 3은 받아올림이 있고 합이 세 자리 수이다."
     },
     {
       "generatorId": "math.g12.gm.s05.identify",
@@ -198,6 +208,11 @@
       "note": "난이도가 오를수록 눈금을 잘게 읽는다(10도 -> 5도 -> 1도 단위)."
     },
     {
+      "generatorId": "math.g34.gd.s04-02.interpret-line",
+      "code": "[4수04-02]",
+      "note": "난이도 1은 한 점의 값, 2는 이웃한 두 점의 차, 3은 구간별 변화를 비교한다."
+    },
+    {
       "generatorId": "math.g56.rm.s03-02.symmetry",
       "code": "[6수03-02]",
       "note": "난이도 1은 정다각형만, 2 이상은 대칭축 수가 변의 수와 다른 반례(직사각형·마름모·이등변삼각형)까지 낸다."
@@ -208,14 +223,24 @@
       "note": "난이도 1은 직육면체, 2 이상은 정육면체까지 묻는다."
     },
     {
+      "generatorId": "math.g56.rm.s03-10.orthographic-views",
+      "code": "[6수03-10]",
+      "note": "난이도 1은 2×2, 2 이상은 3×3 바닥의 높이 지도를 투영한다."
+    },
+    {
       "generatorId": "math.g56.rm.s03-11.perimeter",
       "code": "[6수03-11]",
       "note": "난이도 1은 정사각형·직사각형, 2 이상은 정다각형·평행사변형까지 넣는다."
     },
     {
       "generatorId": "math.g56.rm.s03-12.area",
-      "code": "[6수03-12]",
-      "note": "난이도 1은 직사각형, 2는 삼각형·평행사변형, 3은 마름모·사다리꼴까지 넣는다."
+      "code": "[6수03-14]",
+      "note": "난이도 1은 평행사변형, 2는 삼각형까지, 3은 마름모·사다리꼴까지 넣는다."
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.pi-ratio",
+      "code": "[6수03-15]",
+      "note": "난이도가 오를수록 비교하는 원의 수와 지름 범위가 늘어나며 계산 절차 자체는 같다."
     },
     {
       "generatorId": "math.g56.rm.s04-04.likelihood-word",
@@ -353,7 +378,7 @@
     {
       "generatorId": "math.g12.no.s01.read-sino",
       "code": "[2수01-01]",
-      "skill": "수를 한자어로 읽기",
+      "skill": "수의 한자어 읽기 알아보기",
       "byDifficulty": {
         "1": {
           "samples": 80,
@@ -431,7 +456,7 @@
     {
       "generatorId": "math.g12.no.s01.count-native",
       "code": "[2수01-01]",
-      "skill": "고유어 수사로 개수 말하기",
+      "skill": "고유어 수사로 읽은 개수 알아보기",
       "byDifficulty": {
         "1": {
           "samples": 80,
@@ -665,7 +690,7 @@
     {
       "generatorId": "math.g12.no.s04.make-ten",
       "code": "[2수01-04]",
-      "skill": "10 만들기",
+      "skill": "10 또는 20 만들기",
       "byDifficulty": {
         "1": {
           "samples": 80,
@@ -681,9 +706,9 @@
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2.275,
+          "maxMagnitude": 2,
           "steps": 1,
-          "paramMagnitude": 73.237
+          "paramMagnitude": 29.7
         }
       },
       "meaningful": true
@@ -819,53 +844,53 @@
       "meaningful": true
     },
     {
-      "generatorId": "math.g12.no.s08.estimate",
+      "generatorId": "math.g12.no.s08.add-three",
       "code": "[2수01-08]",
-      "skill": "몇십으로 어림하여 계산하기",
+      "skill": "세 수의 덧셈",
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 2.038,
+          "maxMagnitude": 1,
           "steps": 2,
-          "paramMagnitude": 63.05
+          "paramMagnitude": 8.175
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2.025,
+          "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 66.675
+          "paramMagnitude": 35.487
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2.025,
+          "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 89.737
+          "paramMagnitude": 87.162
         }
       },
       "meaningful": true
     },
     {
-      "generatorId": "math.g12.no.s08.estimate-compare",
+      "generatorId": "math.g12.no.s08.sub-three",
       "code": "[2수01-08]",
-      "skill": "어림하여 두 식의 결과 비교하기",
+      "skill": "세 수의 뺄셈",
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 2,
-          "steps": 3,
-          "paramMagnitude": 120.612
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 10.537
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2,
-          "steps": 3,
-          "paramMagnitude": 122.737
+          "maxMagnitude": 1.875,
+          "steps": 2,
+          "paramMagnitude": 38.2
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2,
-          "steps": 3,
-          "paramMagnitude": 122.162
+          "maxMagnitude": 1.938,
+          "steps": 2,
+          "paramMagnitude": 93.987
         }
       },
       "meaningful": true
@@ -2042,26 +2067,26 @@
     },
     {
       "generatorId": "math.g34.mr.s03-16.estimate",
-      "code": "[4수03-16]",
+      "code": "[4수03-15]",
       "skill": "길이 어림하기",
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 1.988,
+          "maxMagnitude": 1.75,
           "steps": 2,
-          "paramMagnitude": 21.5
+          "paramMagnitude": 20.5
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2.175,
+          "maxMagnitude": 2,
           "steps": 2,
-          "paramMagnitude": 22.887
+          "paramMagnitude": 20.413
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2.612,
+          "maxMagnitude": 2.388,
           "steps": 2,
-          "paramMagnitude": 32.325
+          "paramMagnitude": 29.788
         }
       },
       "meaningful": true
@@ -2145,8 +2170,34 @@
       "meaningful": true
     },
     {
-      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "generatorId": "math.g34.mr.s03-22.convert-t-kg",
       "code": "[4수03-22]",
+      "skill": "t와 kg 단위 바꾸기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 4,
+          "steps": 2,
+          "paramMagnitude": 2977.975
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 4,
+          "steps": 2,
+          "paramMagnitude": 6111.3
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 4,
+          "steps": 2,
+          "paramMagnitude": 6078.087
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.mr.s03-22.arithmetic",
+      "code": "[4수03-23]",
       "skill": "무게의 덧셈과 뺄셈",
       "byDifficulty": {
         "1": {
@@ -2172,26 +2223,26 @@
     },
     {
       "generatorId": "math.g34.mr.s03-23.estimate",
-      "code": "[4수03-23]",
+      "code": "[4수03-20]",
       "skill": "무게 어림하기",
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 2.263,
+          "maxMagnitude": 2.413,
           "steps": 2,
-          "paramMagnitude": 47
+          "paramMagnitude": 59.313
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2.362,
+          "maxMagnitude": 2.337,
           "steps": 2,
-          "paramMagnitude": 40.775
+          "paramMagnitude": 37.85
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2.65,
+          "maxMagnitude": 2.8,
           "steps": 2,
-          "paramMagnitude": 50.837
+          "paramMagnitude": 71.662
         }
       },
       "meaningful": true
@@ -2224,7 +2275,7 @@
     },
     {
       "generatorId": "math.g34.gd.s05.pattern",
-      "code": "[4수03-05]",
+      "code": "[4수03-04]",
       "skill": "이동을 반복한 무늬의 규칙 알기",
       "byDifficulty": {
         "1": {
@@ -2249,8 +2300,34 @@
       "meaningful": true
     },
     {
+      "generatorId": "math.g34.gd.s05.point-movement",
+      "code": "[4수03-05]",
+      "skill": "격자에서 한 점의 이동을 위치와 방향으로 설명하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 5.563
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 8.537
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 11.613
+        }
+      },
+      "meaningful": true
+    },
+    {
       "generatorId": "math.g34.gd.s07.radius-diameter",
-      "code": "[4수03-07]",
+      "code": "[4수03-06]",
       "skill": "반지름과 지름의 관계",
       "byDifficulty": {
         "1": {
@@ -2301,32 +2378,6 @@
       "meaningful": true
     },
     {
-      "generatorId": "math.g34.gd.s12.diagonals",
-      "code": "[4수03-12]",
-      "skill": "대각선의 수 세기",
-      "byDifficulty": {
-        "1": {
-          "samples": 80,
-          "maxMagnitude": 1,
-          "steps": 3,
-          "paramMagnitude": 6
-        },
-        "2": {
-          "samples": 80,
-          "maxMagnitude": 1,
-          "steps": 3,
-          "paramMagnitude": 12.188
-        },
-        "3": {
-          "samples": 80,
-          "maxMagnitude": 1.688,
-          "steps": 3,
-          "paramMagnitude": 21.575
-        }
-      },
-      "meaningful": true
-    },
-    {
       "generatorId": "math.g34.gd.s25.angle-sum",
       "code": "[4수03-25]",
       "skill": "삼각형·사각형의 각의 크기 구하기",
@@ -2353,34 +2404,8 @@
       "meaningful": true
     },
     {
-      "generatorId": "math.g34.gd.s04-01.collect",
-      "code": "[4수04-01]",
-      "skill": "자료를 표로 정리하고 합계 구하기",
-      "byDifficulty": {
-        "1": {
-          "samples": 80,
-          "maxMagnitude": 1.962,
-          "steps": 1,
-          "paramMagnitude": 0
-        },
-        "2": {
-          "samples": 80,
-          "maxMagnitude": 2,
-          "steps": 1,
-          "paramMagnitude": 0
-        },
-        "3": {
-          "samples": 80,
-          "maxMagnitude": 2.313,
-          "steps": 1,
-          "paramMagnitude": 0
-        }
-      },
-      "meaningful": true
-    },
-    {
       "generatorId": "math.g34.gd.s04-02.read-bar",
-      "code": "[4수04-02]",
+      "code": "[4수04-01]",
       "skill": "막대그래프에서 값 읽기",
       "byDifficulty": {
         "1": {
@@ -2443,15 +2468,15 @@
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2.112,
+          "maxMagnitude": 2.087,
           "steps": 2,
-          "paramMagnitude": 55.25
+          "paramMagnitude": 48.25
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2,
-          "steps": 3,
-          "paramMagnitude": 35.337
+          "maxMagnitude": 2.35,
+          "steps": 2,
+          "paramMagnitude": 70.175
         }
       },
       "meaningful": true
@@ -2978,7 +3003,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-04.edge-sum",
-      "code": "[6수03-04]",
+      "code": "[6수03-03]",
       "skill": "직육면체 모서리 길이의 합",
       "byDifficulty": {
         "1": {
@@ -3030,7 +3055,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-06.prism-name",
-      "code": "[6수03-06]",
+      "code": "[6수03-05]",
       "skill": "밑면의 모양으로 각기둥·각뿔 이름 정하기",
       "byDifficulty": {
         "1": {
@@ -3108,7 +3133,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-10.cube-block",
-      "code": "[6수03-10]",
+      "code": "[6수03-09]",
       "skill": "직육면체 모양으로 쌓은 쌓기나무의 개수",
       "byDifficulty": {
         "1": {
@@ -3134,7 +3159,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-13.area-unit",
-      "code": "[6수03-13]",
+      "code": "[6수03-12]",
       "skill": "넓이 단위 바꾸기",
       "byDifficulty": {
         "1": {
@@ -3160,14 +3185,14 @@
     },
     {
       "generatorId": "math.g56.rm.s03-14.composite-area",
-      "code": "[6수03-14]",
-      "skill": "여러 도형으로 나누어 넓이 구하기",
+      "code": "[6수03-13]",
+      "skill": "직사각형·정사각형의 넓이 구하기",
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 2.013,
-          "steps": 3,
-          "paramMagnitude": 75.725
+          "maxMagnitude": 2.15,
+          "steps": 2,
+          "paramMagnitude": 73.612
         },
         "2": {
           "samples": 80,
@@ -3186,7 +3211,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-15.circumference",
-      "code": "[6수03-15]",
+      "code": "[6수03-16]",
       "skill": "원주 구하기",
       "byDifficulty": {
         "1": {
@@ -3264,7 +3289,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-18.volume",
-      "code": "[6수03-18]",
+      "code": "[6수03-19]",
       "skill": "직육면체의 부피",
       "byDifficulty": {
         "1": {
@@ -3290,7 +3315,7 @@
     },
     {
       "generatorId": "math.g56.rm.s03-19.volume-unit",
-      "code": "[6수03-19]",
+      "code": "[6수03-18]",
       "skill": "부피 단위 바꾸기",
       "byDifficulty": {
         "1": {

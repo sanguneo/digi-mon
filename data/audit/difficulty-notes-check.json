@@ -2,22 +2,23 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 44,
+  "categoricalCount": 47,
   "problemCount": 0,
   "problems": [],
   "rows": [
     {
       "generatorId": "math.g12.no.s06.add",
       "code": "[2수01-06]",
-      "note": "난이도 1은 받아올림 없음, 2 이상은 일의 자리에서 받아올림이 생긴다.",
+      "note": "난이도 1은 받아올림 없음, 2는 일의 자리 받아올림, 3은 받아올림이 있고 합이 세 자리 수이다.",
       "mentionedLevels": [
         1,
-        2
+        2,
+        3
       ],
       "uniqueByLevel": {
         "1": 110,
         "2": 105,
-        "3": 106
+        "3": 110
       }
     },
     {
@@ -197,6 +198,21 @@
       }
     },
     {
+      "generatorId": "math.g34.gd.s04-02.interpret-line",
+      "code": "[4수04-02]",
+      "note": "난이도 1은 한 점의 값, 2는 이웃한 두 점의 차, 3은 구간별 변화를 비교한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 90
+      }
+    },
+    {
       "generatorId": "math.g56.rm.s03-02.symmetry",
       "code": "[6수03-02]",
       "note": "난이도 1은 정다각형만, 2 이상은 대칭축 수가 변의 수와 다른 반례(직사각형·마름모·이등변삼각형)까지 낸다.",
@@ -225,6 +241,20 @@
       }
     },
     {
+      "generatorId": "math.g56.rm.s03-10.orthographic-views",
+      "code": "[6수03-10]",
+      "note": "난이도 1은 2×2, 2 이상은 3×3 바닥의 높이 지도를 투영한다.",
+      "mentionedLevels": [
+        1,
+        2
+      ],
+      "uniqueByLevel": {
+        "1": 97,
+        "2": 119,
+        "3": 120
+      }
+    },
+    {
       "generatorId": "math.g56.rm.s03-11.perimeter",
       "code": "[6수03-11]",
       "note": "난이도 1은 정사각형·직사각형, 2 이상은 정다각형·평행사변형까지 넣는다.",
@@ -240,17 +270,28 @@
     },
     {
       "generatorId": "math.g56.rm.s03-12.area",
-      "code": "[6수03-12]",
-      "note": "난이도 1은 직사각형, 2는 삼각형·평행사변형, 3은 마름모·사다리꼴까지 넣는다.",
+      "code": "[6수03-14]",
+      "note": "난이도 1은 평행사변형, 2는 삼각형까지, 3은 마름모·사다리꼴까지 넣는다.",
       "mentionedLevels": [
         1,
         2,
         3
       ],
       "uniqueByLevel": {
-        "1": 69,
-        "2": 112,
+        "1": 96,
+        "2": 109,
         "3": 116
+      }
+    },
+    {
+      "generatorId": "math.g56.rm.s03-15.pi-ratio",
+      "code": "[6수03-15]",
+      "note": "난이도가 오를수록 비교하는 원의 수와 지름 범위가 늘어나며 계산 절차 자체는 같다.",
+      "mentionedLevels": [],
+      "uniqueByLevel": {
+        "1": 54,
+        "2": 116,
+        "3": 120
       }
     },
     {
@@ -494,7 +535,7 @@
         3
       ],
       "uniqueByLevel": {
-        "1": 46,
+        "1": 44,
         "2": 52,
         "3": 50
       }
@@ -509,7 +550,7 @@
         3
       ],
       "uniqueByLevel": {
-        "1": 25,
+        "1": 24,
         "2": 29,
         "3": 30
       }

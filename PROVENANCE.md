@@ -83,3 +83,21 @@ MIT로 배포하는 것은 오표시가 된다. 코드(§3)는 영향이 없지�
 - 공식 교육과정 자료 표시: 교육부 고시·별책 식별, NCIC 명칭, 직접 출처 URL과 접근일
   (업스트림 `PROVENANCE.md`의 요구)
 - 비보증: 교육부·국가교육위원회·NCIC 공식 간행물이 아니며, DECK6은 digi-mon을 보증하지 않는다
+
+## 6. 직접 검토한 교육과정과 영어 어휘
+
+2026-08-06에 교육부 고시 제2022-33호의 국어·수학·영어 Markdown을 직접
+검토했다. 원본 파일이 있는 `reference/original/`은 자동 검토에서 열지 않았다.
+
+- 공식 고시:
+  [NCIC 2022 개정 초·중등학교 교육과정 고시 안내](https://ncic.go.kr/board/B0033.cs?act=read&bwrId=2105&pageIndex=2&pageUnit=15)
+- 검토 파일: `reference/[별책5] 국어과 교육과정.md`,
+  `reference/[별책8] 수학과 교육과정.md`,
+  `reference/[별책14] 영어과 교육과정.md`
+- 접근일: 2026-08-06
+
+영어 `[별표 3]`의 공식 초등 권장 대표 표제어 800개와 병합 후보 1,252개의
+파일 해시는 `data/curriculum/english-official-vocabulary.json`에 기록한다.
+제공된 두 보조 PDF는 공개 이용 가능하다는 프로젝트 소유자의 확인을 근거로
+표제어 후보만 사용하며 PDF 자체와 편집 레이아웃은 재배포하지 않는다. 자세한
+판정 경계는 `docs/assets/english-vocabulary-provenance.md`에 있다.

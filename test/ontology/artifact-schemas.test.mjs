@@ -10,6 +10,7 @@ for (const name of [
   'item.schema.json',
   'worksheet.schema.json',
   'grading-result.schema.json',
+  'coverage.schema.json',
 ]) {
   test(`${name} is a versioned JSON Schema`, () => {
     const schema = JSON.parse(readFileSync(path.join(ROOT, 'schema', name), 'utf8'));
@@ -19,4 +20,12 @@ for (const name of [
     assert.ok(Array.isArray(schema.required));
   });
 }
+
+test('coverage schema rejects undeclared root and entry fields', () => {
+  const schema = JSON.parse(readFileSync(path.join(ROOT, 'schema', 'coverage.schema.json'), 'utf8'));
+  assert.equal(schema.additionalProperties, false);
+  assert.equal(schema.$defs.entry.additionalProperties, false);
+  assert.equal(schema.$defs.semantic.additionalProperties, false);
+  assert.equal(schema.$defs.subjectSummary.additionalProperties, false);
+});
 
