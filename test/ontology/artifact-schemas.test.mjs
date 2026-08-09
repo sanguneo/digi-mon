@@ -9,6 +9,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 for (const name of [
   'item.schema.json',
   'worksheet.schema.json',
+  'worksheet-form-set.schema.json',
   'grading-result.schema.json',
   'coverage.schema.json',
 ]) {

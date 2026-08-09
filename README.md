@@ -45,11 +45,17 @@ npm run verify
 ```bash
 node bin/worksheet.mjs --help
 node bin/worksheet.mjs --subject math --count 10 --seed class-a
+node bin/worksheet.mjs --subject math --count 10 --seed class-a --forms 3
 node bin/worksheet.mjs --subject korean --grade 3-4 --count 8 --seed reading-1
 node bin/worksheet.mjs --subject english --difficulty 1 --count 8 --seed english-1
 ```
 
 출력 파일명에는 학습지 fingerprint 일부가 포함되므로 같은 과목·seed라도 옵션이 다르면 서로 덮어쓰지 않는다. 잘못된 count, difficulty, subject, grade 또는 알 수 없는 옵션은 파일을 쓰지 않고 실패한다.
+
+`--forms 2..8`은 같은 성취기준·생성기·난이도 blueprint를 공유하면서 문항은 겹치지
+않는 A/B/C 병렬 form을 만든다. 각 form의 JSON·학습자본·정답지와 전체
+`worksheet-form-set@1` manifest를 함께 쓰며, 고유 문항 pool이 부족하면 중복으로
+채우지 않고 실패한다.
 
 ## HTTP API
 
