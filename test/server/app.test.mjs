@@ -24,6 +24,31 @@ const GENERATOR = {
   standardCode: CODE,
   skill: '덧셈',
   format: 'short-answer',
+  learningGuide: {
+    revision: 1,
+    materials: [
+      {
+        kind: 'principle',
+        text: '덧셈은 두 양을 합한 전체를 구하는 계산이다.',
+      },
+    ],
+    hints: [
+      {
+        level: 1,
+        kind: 'concept-recall',
+        text: '두 수가 나타내는 양을 차례로 확인하세요.',
+      },
+      {
+        level: 2,
+        kind: 'strategy',
+        text: '큰 수에서 작은 수만큼 이어 세어 보세요.',
+      },
+    ],
+    teacher: {
+      lookFor: ['두 양을 빠뜨리지 않고 합하는가'],
+      intervention: '구체물을 두 묶음으로 놓고 하나의 묶음으로 합쳐 보게 한다.',
+    },
+  },
   difficultyAxis: 'single',
   difficulties: [1],
   generate(rng) {
@@ -103,6 +128,27 @@ before(async () => {
 after(async () => {
   server.close();
   await once(server, 'close');
+});
+
+test('learner item exposes guidance without teacher-only notes or answers', async () => {
+  const issued = await request('/v1/items', {
+    method: 'POST',
+    body: {
+      code: CODE,
+      count: 1,
+      difficulty: 1,
+      seed: 'learning-support',
+    },
+  });
+
+  assert.equal(issued.status, 200);
+  const [item] = issued.body.items;
+  assert.equal(item.learningSupport.schema, 'digi-mon/learning-support@1');
+  assert.equal(item.learningSupport.status, 'guided-candidate');
+  assert.equal(item.learningSupport.hints.length, 2);
+  assert.equal(Object.hasOwn(item.learningSupport, 'teacher'), false);
+  assert.equal(Object.hasOwn(item, 'answer'), false);
+  assert.equal(Object.hasOwn(item, 'solution'), false);
 });
 
 test('every parallel form can be replayed and graded from its provenance', async () => {

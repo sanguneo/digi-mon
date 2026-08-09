@@ -18,6 +18,10 @@ import {
   reviewMathGeneratorSet,
 } from '../curriculum/generator-reviews.mjs';
 import { GENERATOR_TOPIC_ALIGNMENT_SCHEMA, semanticCoverageFor } from '../ontology/alignment.mjs';
+import {
+  assertLearningGuide,
+  learningGuideFor,
+} from '../curriculum/learning-support.mjs';
 
 /**
  * 생성기 모듈 목록. 새 학년군·영역을 붙이면 여기에 추가한다.
@@ -48,6 +52,7 @@ function assertGeneratorContract(g, file) {
   if (typeof g.skill !== 'string' || g.skill.length === 0) fail('skill 없음');
   if (typeof g.generate !== 'function') fail('generate 없음');
   if (typeof g.verify !== 'function') fail('verify 없음 — 검산 없는 생성기는 받지 않는다');
+  assertLearningGuide(g.id, g.learningGuide);
 
   /**
    * 난이도 축을 선언한다.
@@ -89,11 +94,17 @@ export function createRegistry() {
 
   for (const { file, generators } of MODULES) {
     for (const g of generators) {
-      assertGeneratorContract(g, file);
-      if (byId.has(g.id)) throw new Error(`생성기 id 중복: ${g.id}`);
-      byId.set(g.id, { ...g, sourceFile: file });
-      if (!byStandardCode.has(g.standardCode)) byStandardCode.set(g.standardCode, []);
-      byStandardCode.get(g.standardCode).push(byId.get(g.id));
+      const learningGuide = g.learningGuide ?? learningGuideFor(g.id);
+      const generator = {
+        ...g,
+        ...(learningGuide ? { learningGuide } : {}),
+        sourceFile: file,
+      };
+      assertGeneratorContract(generator, file);
+      if (byId.has(generator.id)) throw new Error(`생성기 id 중복: ${generator.id}`);
+      byId.set(generator.id, generator);
+      if (!byStandardCode.has(generator.standardCode)) byStandardCode.set(generator.standardCode, []);
+      byStandardCode.get(generator.standardCode).push(generator);
     }
   }
 

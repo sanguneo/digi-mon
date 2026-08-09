@@ -14,6 +14,7 @@
     "domain",
     "generatorId",
     "skill",
+    "learningSupport",
     "difficulty",
     "format",
     "scoring",
@@ -24,7 +25,7 @@
     "dedupeKey"
   ],
   "properties": {
-    "schema": { "const": "digi-mon/item@1" },
+    "schema": { "const": "digi-mon/item@2" },
     "number": { "type": "integer", "minimum": 1 },
     "id": { "type": "string", "pattern": "^[a-f0-9]{12}$" },
     "standardCode": { "type": "string", "pattern": "^\\[[246][국수영][0-9]{2}-[0-9]{2}\\]$" },
@@ -43,6 +44,9 @@
       "type": ["object", "null"]
     },
     "skill": { "type": "string", "minLength": 1 },
+    "learningSupport": {
+      "$ref": "./learning-support.schema.json"
+    },
     "difficulty": { "enum": [1, 2, 3] },
     "format": {
       "enum": [

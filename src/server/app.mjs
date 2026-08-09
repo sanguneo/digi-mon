@@ -9,6 +9,7 @@ import {
   prerequisiteGraphAssertions,
 } from '../curriculum/prerequisites.mjs';
 import { learnerFigure } from '../engine/item.mjs';
+import { learnerLearningSupport } from '../curriculum/learning-support.mjs';
 import {
   parseWorksheetOptions,
   WorksheetOptionsError,
@@ -156,8 +157,10 @@ function stripItemAnswers(item) {
   const learnerDeliveryFigure = projectedFigure
     ? (({ spec, ...figure }) => figure)(projectedFigure)
     : null;
+  const projectedLearningSupport = learnerLearningSupport(rest.learningSupport);
   return {
     ...rest,
+    ...(projectedLearningSupport ? { learningSupport: projectedLearningSupport } : {}),
     ...(rest.choices
       ? { choices: rest.choices.map(({ correct, ...choice }) => choice) }
       : {}),
@@ -335,6 +338,7 @@ export function createApp({
           standardCode: g.standardCode,
           skill: g.skill,
           format: g.format,
+          learningSupportStatus: g.learningGuide ? 'guided-candidate' : 'objective-only',
           sourceFile: g.sourceFile,
         })),
       }),

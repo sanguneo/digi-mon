@@ -7,7 +7,7 @@ import {
   generateItem,
 } from './worksheet.mjs';
 
-const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@2';
+const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@3';
 const FORM_PROVENANCE_SCHEMA = 'digi-mon/worksheet-form@1';
 const FORM_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const BLUEPRINT_ATTEMPTS = 24;

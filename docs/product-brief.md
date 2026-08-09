@@ -1,21 +1,22 @@
 # digi-mon 제품 브리프
 
-> 상태: engine·CLI·HTTP 구현, 교사 client 미구현
+> 상태: engine library·CLI·HTTP 구현, client·persistence는 별도 범위
 >
-> 현재 계약: worksheet `@3`, form set `@2`, mode selection `@1`
+> 현재 계약: item `@2`, learning support `@1`, worksheet `@4`, form set `@3`
 
 ## 한 문장
 
-digi-mon은 2022 개정 초등 국어·영어·수학 성취기준을 바탕으로, 인터넷이나
-runtime 모델 호출 없이 재발급 가능한 학습지와 정답·채점 계약을 만드는 결정적
+digi-mon은 2022 개정 초등 국어·영어·수학 성취기준을 바탕으로 문제, 학습 목표,
+단계별 학습지원 metadata와 채점 evidence를 결정적으로 생성하는 자기주도 학습
 engine이다.
 
 ## 해결할 문제
 
-교사는 학습지를 빠르게 만드는 것뿐 아니라 다음을 확인할 수 있어야 한다.
+학습자와 이를 사용하는 client는 다음을 확인할 수 있어야 한다.
 
-- 같은 발급본을 다시 인쇄할 수 있는가
-- 학생용 자료에 정답과 생성 parameter가 없는가
+- 같은 입력에서 같은 문제를 다시 만들 수 있는가
+- 학습자 응답에 정답·생성 parameter·교사용 notes가 없는가
+- 무엇을 학습하며 어떤 원리나 전략을 참고할 수 있는가
 - 어떤 성취기준과 생성기가 쓰였는가
 - 문항·corpus·option 변경을 fingerprint가 탐지하는가
 - 객관식으로 바꾸면 안 되는 수행 문항을 정직하게 남기는가
@@ -23,14 +24,15 @@ engine이다.
 
 ## 현재 가치 loop
 
-1. 교과·학년군·영역·성취기준·문항 수를 고른다.
-2. 하나의 worksheet 또는 동일 blueprint의 A/B/C form을 생성한다.
-3. 학생용 text와 교사용 answer key를 인쇄하거나 JSON으로 내보낸다.
+1. client가 교과·학년군·영역·성취기준·mode와 문항 수를 명시한다.
+2. engine이 문제와 학습 목표를 생성한다. 지원되는 생성기는 원리·규칙과
+   두 단계 hint도 함께 반환한다.
+3. client가 hint 공개 시점, session과 학습 이력을 관리한다.
 4. seed, options, corpus, fingerprint와 form provenance를 보존한다.
-5. 같은 계약으로 제출을 채점한다. 불일치하면 409로 거부한다.
+5. 같은 계약으로 제출을 채점하고 response evidence를 받는다.
+6. client가 evidence를 다음 게이트 요청에 명시적으로 사용한다.
 
-현재 loop는 CLI와 HTTP engine에서 동작한다. 교사가 설치 지식 없이 사용하는
-print-first web client는 다음 제품 surface이며 아직 구현되지 않았다.
+engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를 구현하지 않는다.
 
 ## 지원 기능
 
@@ -55,6 +57,16 @@ print-first web client는 다음 제품 surface이며 아직 구현되지 않았
 각 mode는 revision과 claim boundary를 `modeSelection`에 기록한다. 조건의 교집합이
 비면 일반 문항으로 fallback하지 않는다.
 
+### 학습지원
+
+- 모든 item은 generator `skill`에서 유도한 학습 목표를 갖는다.
+- 지원이 없는 generator는 `objective-only`로 표시하고 hint를 꾸며내지 않는다.
+- 사고력 6종과 문해력 12종은 `guided-candidate`로 원리·규칙·전략 자료,
+  두 단계 hint, 교사용 관찰점과 개입 제안을 제공한다.
+- `guided-candidate`는 저장소 저작 후보라는 뜻이며 외부 교과 승인을 뜻하지 않는다.
+- learner projection은 teacher notes를 제거한다.
+- 학습지원 내용도 item과 worksheet fingerprint에 결합된다.
+
 ### 채점
 
 - 자동 문항은 정답을 비교한다.
@@ -67,19 +79,20 @@ print-first web client는 다음 제품 surface이며 아직 구현되지 않았
 
 | surface | 상태 | 계약 |
 |---|---|---|
+| engine module | 구현 | item 생성, batch 조립, 채점, prerequisite·response evidence |
 | CLI | 구현 | 단일 worksheet, 2~8 form, 세 mode, text·JSON·answer key |
-| HTTP worksheet·grade | 구현 | learner projection, teacher token, fingerprint replay |
+| HTTP item·worksheet·grade | 구현 | learner projection, teacher token, fingerprint replay |
 | form 발급 HTTP | 미구현 | CLI manifest를 HTTP grading이 재생할 수는 있음 |
-| 교사 web client | 미구현 | `design/client-experience.md`가 목표 계약 |
-| 학생 기기 session | 보류 | 종이 흐름으로 해결되지 않는 요구와 privacy 승인 뒤 |
+| 자기주도 학습 게이트 client | 별도 구현 | engine 계약을 소비하며 session·history·UI를 소유 |
+| 교사용 client | 선택적 별도 구현 | 배정·override·수동 평가·개입 근거를 소비 |
 
 ## 개인정보와 offline 경계
 
 - 이름, 이메일, 음성, 그림, 자유 서술, 안정 learner ID를 첫 제품 범위에서 받지 않는다.
 - 기본 server bind는 `127.0.0.1`이다.
 - production dependency와 outbound model call이 없다.
-- “offline”은 인터넷 없이 한 교사 기기에서 생성·인쇄·채점 가능하다는 뜻이다.
-- 여러 학생 기기 sync, 충돌 해결, 중앙 계정이나 roster를 뜻하지 않는다.
+- “offline”은 문제 생성과 채점이 외부 모델·network 호출 없이 가능하다는 뜻이다.
+- 기기 sync, 충돌 해결, 중앙 계정, roster나 session 저장을 뜻하지 않는다.
 
 ## 하지 않을 것
 
@@ -87,24 +100,20 @@ print-first web client는 다음 제품 surface이며 아직 구현되지 않았
 - mastery·reading level·사고력 점수·진단·예측
 - 실명 roster와 장기 learner history
 - 검토되지 않은 passage·media의 자동 배포
+- client UI, 인쇄 layout, session persistence와 배정 workflow
 - marketplace, live game mode, tool-count breadth 경쟁
 - adopter evidence 없는 LMS·SIS·SSO 선행 구현
 - graph DB, vector DB, event sourcing, microservice 선행 도입
 
-## 다음 제품 gate
+## 다음 engine gate
 
-다음 큰 구현은 새 engine mode가 아니라 로컬 print-first 교사 client다.
+1. 현재 18개 `guided-candidate`의 교과 검토와 승인 상태를 계약으로 분리한다.
+2. 검토된 원리·공식·hint를 다른 generator에 점진적으로 확장한다.
+3. 학습 gate 추천은 입력 evidence, policy revision, reason code와 next action을
+   반환하는 별도 무상태 계약으로 추가한다.
+4. client가 없는 상태에서도 module과 HTTP driver로 모든 계약을 실행·검증할 수 있어야 한다.
 
-| gate | 목표 |
-|---|---|
-| 첫 인쇄 | 교사 5명 관찰 중앙값 3분 이하 |
-| 동일본 | 같은 입력의 fingerprint 일치 100% |
-| print | 잘림·정답 노출·미해결 visual item 0건 |
-| workload | 준비·채점의 교사 순시간 감소 |
-| repeat use | 5명 중 3명 이상이 4주 안에 자발적 두 번째 사용 |
-| privacy | 이름·원시 답안의 engine 지속 저장 0건 |
-
-gate를 통과하기 전에는 DB, 생성 media, analytics, integration을 추가하지 않는다.
+실제 학습 history, 화면, DB와 자동 hint 공개 정책은 engine에 넣지 않는다.
 
 ## Source of truth
 
@@ -113,10 +122,11 @@ gate를 통과하기 전에는 DB, 생성 media, analytics, integration을 추�
 | 설치·실행 방법 | `README.md`, `bin/worksheet.mjs --help` |
 | JSON 계약 | `schema/`, `docs/schema-versioning.md` |
 | 생성 동작 | `src/engine/`, `src/curriculum/practice-modes.mjs` |
+| 학습지원 동작 | `src/curriculum/learning-support.mjs`, `src/curriculum/learning-guides.mjs` |
 | corpus 출처 | `PROVENANCE.md`, `NOTICE.md` |
 | coverage·검산 | `data/coverage/`, `data/audit/`, `npm run verify` |
-| 제품 순서의 근거 | `docs/research/digi-mon-practical-product.md` |
-| 목표 client 경험 | `docs/design/client-experience.md` |
+| 과거 client 연구 | `docs/research/digi-mon-practical-product.md` |
+| 별도 client 참고 설계 | `docs/design/client-experience.md` |
 | 운영·자산 migration | `docs/operational-data-model.md`, `docs/offline-asset-platform.md` |
 
 문서와 code가 다르면 현재 실행되는 code와 machine schema가 우선이다. 계약 변경은

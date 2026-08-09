@@ -4,9 +4,10 @@
 
 | 계약 | 현재 버전 | 스키마 |
 |---|---|---|
-| canonical item | `digi-mon/item@1` | `schema/item.schema.json` |
-| worksheet | `digi-mon/worksheet@3` | `schema/worksheet.schema.json` |
-| worksheet form set | `digi-mon/worksheet-form-set@2` | `schema/worksheet-form-set.schema.json` |
+| canonical item | `digi-mon/item@2` | `schema/item.schema.json` |
+| learning support | `digi-mon/learning-support@1` | `schema/learning-support.schema.json` |
+| worksheet | `digi-mon/worksheet@4` | `schema/worksheet.schema.json` |
+| worksheet form set | `digi-mon/worksheet-form-set@3` | `schema/worksheet-form-set.schema.json` |
 | mode selection | `digi-mon/mode-selection@1` | worksheet schema 내부 |
 | grading result | `digi-mon/grading-result@1` | `schema/grading-result.schema.json` |
 | spine | 스키마의 `const` 참조 | `schema/spine.schema.json` |
@@ -24,16 +25,28 @@
 
 ## 학습지 fingerprint
 
-`digi-mon/worksheet@3` fingerprint는 다음을 결합한다.
+`digi-mon/worksheet@4` fingerprint는 다음을 결합한다.
 
 - 스키마·엔진 버전
 - seed
 - 정규화된 생성 옵션
 - revision이 포함된 mode selection
-- 순서가 포함된 문항 ID 목록
+- 순서가 포함된 문항 전체 내용과 `learningSupport`
 - 온톨로지 taxonomy 버전과 입력 파일 해시
 
 채점은 같은 입력으로 재생성한 fingerprint가 발급된 값과 일치할 때만 수행한다. 생성기·온톨로지·옵션이 달라지면 409로 거부한다.
+
+## 학습지원
+
+`learning-support@1`은 모든 item에 필수다.
+
+- `objective-only`: generator가 선언한 학습 목표만 제공한다.
+- `guided-candidate`: 저장소 저작 원리·규칙·전략, 두 단계 hint와 교사용
+  관찰·개입 후보를 제공한다.
+
+`candidate`를 전문가 승인으로 해석하지 않는다. learner projection은 `teacher`를
+제거하지만 objective, materials와 hints는 유지한다. 학습지원 내용이나 review
+revision이 바뀌면 item 내용과 worksheet fingerprint도 바뀐다.
 
 ## 업스트림 핀 변경 절차
 

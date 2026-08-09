@@ -8,7 +8,7 @@ import {
 
 test('worksheet fingerprint binds seed, resolved options, items, and corpus', () => {
   const base = {
-    schema: 'digi-mon/worksheet@3',
+    schema: 'digi-mon/worksheet@4',
     seed: 'same-seed',
     options: {
       subject: 'math',

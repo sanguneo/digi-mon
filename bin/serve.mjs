@@ -33,7 +33,7 @@ server.on('error', (error) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`digi-mon 출제 백엔드  http://${HOST}:${PORT}`);
+  console.log(`digi-mon 학습 문제 엔진  http://${HOST}:${PORT}`);
   console.log(`성취기준 ${spine.standardCount}개 / 생성기 ${registry.size}개`);
   console.log('');
   console.log('  GET  /health');

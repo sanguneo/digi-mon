@@ -1,6 +1,9 @@
 # digi-mon
 
-2022 개정 초등 교육과정의 **국어·영어·수학** 성취기준을 바탕으로 결정적 학습지를 생성하고 채점하는 엔진이다. 같은 온톨로지 릴리스, 옵션, seed에서는 같은 문항과 같은 `fingerprint`를 만든다.
+2022 개정 초등 교육과정의 **국어·영어·수학** 성취기준을 바탕으로 문제,
+학습 목표, 단계별 학습지원 metadata와 채점 계약을 만드는 결정적 엔진이다.
+같은 온톨로지 릴리스, 옵션, seed에서는 같은 문항과 같은 `fingerprint`를 만든다.
+학습 게이트, 화면, 저장소와 배정 기능은 이 엔진을 사용하는 별도 client의 책임이다.
 
 이 저장소는 교육부·국가교육위원회·NCIC의 공식 제품이 아니며 학습자를 진단하는 의료·심리 도구가 아니다.
 
@@ -11,6 +14,8 @@
 - 표준 코드 커버리지와 명시적 주제 평가 커버리지를 분리해 보고한다.
 - 자동 채점이 부적절한 작도·태도·수행 기준은 별도 목록으로 남긴다.
 - 지문·음성·매체 등 미조달 자산은 `docs/asset-procurement.md`에서 관리한다.
+- 모든 문항은 학습 목표를 포함한다. 사고력·문해력 mode의 18개 생성기는
+  원리·규칙, 두 단계 hint와 교사용 관찰·개입 후보도 포함한다.
 
 최신 수치는 `data/coverage/coverage.json`과 `npm run verify` 결과가 기준이다. `coveredStandards`는 생성기 연결 여부이고, `semanticCoverage`는 생성기가 명시적으로 `assesses` 주제에 연결된 경우만 센다.
 성취기준 코드에서 유도한 정렬은 `candidate`로 별도 보고하며 전문가 승인 전에는 의미 커버리지로 세지 않는다.
@@ -57,7 +62,7 @@ node bin/worksheet.mjs --subject english --difficulty 1 --count 8 --seed english
 
 `--forms 2..8`은 같은 성취기준·생성기·난이도 blueprint를 공유하면서 문항은 겹치지
 않는 A/B/C 병렬 form을 만든다. 각 form의 JSON·학습자본·정답지와 전체
-`worksheet-form-set@1` manifest를 함께 쓰며, 고유 문항 pool이 부족하면 중복으로
+`worksheet-form-set@3` manifest를 함께 쓰며, 고유 문항 pool이 부족하면 중복으로
 채우지 않고 실패한다.
 
 `--modes`는 comma로 조합하며 모든 조건을 동시에 만족하는 생성기만 사용한다.
@@ -65,6 +70,19 @@ node bin/worksheet.mjs --subject english --difficulty 1 --count 8 --seed english
 규칙·순서·근거 과제 6종, `literacy-foundations`는 검토된 국어·영어 문자·문장
 부호 기초 과제 12종만 허용한다. 일반 사고력·읽기 수준·숙달·진단을 뜻하지 않으며
 조건을 만족하는 pool이 없으면 일반 문항으로 대체하지 않고 실패한다.
+
+## 학습지원 계약
+
+모든 canonical item에는 `digi-mon/learning-support@1`이 포함된다.
+
+- `objective-only`: 생성기가 선언한 학습 목표만 있다. 없는 원리나 hint를 만들지 않는다.
+- `guided-candidate`: 목표와 함께 저장소 저작 원리·규칙, 두 단계 hint,
+  교사용 관찰점과 개입 제안이 있다.
+
+현재 `thinking-skills-v1` 6종과 `literacy-foundations` 12종은 모두
+`guided-candidate`다. `candidate`는 외부 교과 전문가 승인을 뜻하지 않는다.
+학습자 projection에는 목표·자료·hint가 남고 교사용 관찰·개입 정보는 제거된다.
+정답과 전체 풀이도 기존처럼 제거한다.
 
 ## HTTP API
 
@@ -76,12 +94,16 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 
 주요 흐름:
 
-1. `POST /v1/worksheets`로 학습자용 학습지를 받는다.
+1. `POST /v1/items` 또는 `POST /v1/worksheets`로 학습자용 문제 묶음을 받는다.
 2. 응답의 `fingerprint`, `seed`, `options`를 보존한다.
 3. `POST /v1/grade`에 같은 옵션과 fingerprint, `responses`를 보낸다.
 4. 옵션·코퍼스·문항이 달라 fingerprint가 바뀌면 409로 거부된다.
 
-학습자 API는 정답, 풀이, 생성 파라미터, 그림 재생성 spec을 제거한다. 정답 포함 학습지나 상세 채점 피드백은 `Authorization: Bearer <TEACHER_TOKEN>`과 `includeAnswers=true` 또는 `includeFeedback=true`가 필요하다.
+학습자 API는 정답, 풀이, 생성 파라미터, 그림 재생성 spec과 교사용
+학습지원 notes를 제거한다. 학습 목표·원리·규칙·단계별 hint는 유지한다.
+정답 포함 응답이나 상세 채점 피드백은
+`Authorization: Bearer <TEACHER_TOKEN>`과 `includeAnswers=true` 또는
+`includeFeedback=true`가 필요하다.
 
 부분 제출도 전체 자동채점 문항을 분모로 사용하며 `answered`, `accuracy`, `completionRate`를 별도로 반환한다. 문항별 시간은 `elapsedMs: {"1": 1234}` 형태로 보낸다.
 `learnerId`는 이름·이메일이 아니라 128자 이하의 가명 토큰만 사용한다.
@@ -94,7 +116,7 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 - 출처·무결성: `PROVENANCE.md`
 - 제3자 고지와 공개 전 확인 사항: `NOTICE.md`
 - 실용 제품 울트라리서치: `docs/research/digi-mon-practical-product.md`
-- 교사·학습자 최소 흐름: `docs/design/client-experience.md`
+- 별도 학습 client 참고 설계: `docs/design/client-experience.md`
 - 클라이언트 디자인 시스템: `docs/design/design-system.md`
 - 스키마 변경 정책: `docs/schema-versioning.md`
 - 운영 데이터·보존·관측 설계: `docs/operational-data-model.md`

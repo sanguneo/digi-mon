@@ -7,12 +7,13 @@ import {
 } from '../curriculum/practice-modes.mjs';
 import { learningOrder } from '../curriculum/prerequisites.mjs';
 import { assessmentMappingsFor } from '../ontology/alignment.mjs';
+import { buildLearningSupport } from '../curriculum/learning-support.mjs';
 import { finalizeItem } from './item.mjs';
 import { createRng } from './rng.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
-const WORKSHEET_SCHEMA = 'digi-mon/worksheet@3';
-const ENGINE_VERSION = 'digi-mon-engine@3';
+const WORKSHEET_SCHEMA = 'digi-mon/worksheet@4';
+const ENGINE_VERSION = 'digi-mon-engine@4';
 
 function stableJson(value) {
   if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
@@ -66,6 +67,7 @@ export function generateItem(generator, standard, rng, difficulty) {
       topicMappings: standard.upstream?.topicMappings ?? [],
     },
     skill: raw.skill ?? generator.skill,
+    learningSupport: buildLearningSupport(generator),
     format: raw.format ?? generator.format,
     difficulty: raw.difficulty ?? level,
   };

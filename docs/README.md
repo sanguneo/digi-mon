@@ -8,7 +8,7 @@
 
 1. [제품 브리프](product-brief.md) - 현재 가치 loop, 지원 surface, mode와 non-goal
 2. [루트 README](../README.md) - 설치, CLI, HTTP 빠른 시작
-3. [실용 제품 울트라리서치](research/digi-mon-practical-product.md) - 왜 이 순서인지에 대한 근거
+3. [실용 제품 울트라리서치](research/digi-mon-practical-product.md) - 과거 client 연구 근거
 4. [상세 품질 현황](../REVIEW.md) - 생성기·커버리지·검증의 현재 수치
 
 ## 제품과 경험
@@ -16,9 +16,9 @@
 | 문서 | 역할 | 구현 상태 |
 |---|---|---|
 | [제품 브리프](product-brief.md) | 현재 scope와 결정 원장 | 현재 |
-| [교사·학습자 경험](design/client-experience.md) | 목표 화면과 접근성 계약 | 설계, client 미구현 |
-| [디자인 시스템](design/design-system.md) | 색·글꼴·component 원칙 | 설계 |
-| [디자인 token](design/tokens.css) | client용 CSS 변수 | 설계 |
+| [교사·학습자 경험](design/client-experience.md) | 별도 client 참고 설계 | engine 범위 밖 |
+| [디자인 시스템](design/design-system.md) | 별도 client용 색·글꼴·component 참고 | engine 범위 밖 |
+| [디자인 token](design/tokens.css) | 별도 client용 CSS 변수 | engine 범위 밖 |
 
 ## 데이터 계약
 
@@ -29,9 +29,10 @@
 | [Provenance](../PROVENANCE.md) | 온톨로지·corpus pin과 출처 |
 | [Notice](../NOTICE.md) | 제3자 고지와 공개 전 확인 |
 
-현재 worksheet는 `digi-mon/worksheet@3`, 병렬 form set은
-`digi-mon/worksheet-form-set@2`다. 발급 당시 JSON, seed, options, fingerprint와
-corpus identity를 함께 보존한다.
+현재 item은 `digi-mon/item@2`, 학습지원은
+`digi-mon/learning-support@1`, worksheet는 `digi-mon/worksheet@4`, 병렬 form
+set은 `digi-mon/worksheet-form-set@3`다. 발급 당시 JSON, seed, options,
+fingerprint와 corpus identity를 함께 보존한다.
 
 ## 운영과 자산
 
@@ -41,9 +42,9 @@ corpus identity를 함께 보존한다.
 | [오프라인 자산 플랫폼](offline-asset-platform.md) | 미래 asset 공급망과 migration trigger |
 | [운영 데이터 모델](operational-data-model.md) | persistence·retention·observability 단계 |
 
-첫 파일럿은 DB·roster·runtime 생성 모델 없이 교사 소유 export와 한 기기 local
-흐름을 우선한다. 위 두 architecture 문서는 단계별 trigger를 정의하며 첫 파일럿의
-필수 구현 목록이 아니다.
+엔진은 DB·roster·학습 session을 소유하지 않는다. 별도 학습 게이트 client가
+명시적인 evidence와 발급 metadata를 보존한다. 위 두 architecture 문서는
+자산 공급망과 외부 persistence의 단계별 trigger이며 현재 엔진의 필수 구성요소가 아니다.
 
 ## 품질과 감사
 
@@ -63,8 +64,8 @@ corpus identity를 함께 보존한다.
 - [실용 제품 연구](research/digi-mon-practical-product.md)
 - [실용 제품 연구 저널](research/digi-mon-practical-product-journal.md)
 
-PDF와 DOCX는 같은 이름의 Markdown 보고서를 배포용으로 렌더한 산출물이다.
-내용을 고칠 때는 Markdown을 먼저 변경하고 다시 렌더·시각 검수한다.
+PDF와 DOCX는 같은 이름의 Markdown 연구 보고서를 렌더한 과거 산출물이다.
+현재 제품 scope는 `product-brief.md`가 우선한다.
 
 ## 문서 변경 규칙
 

@@ -1,4 +1,8 @@
 import { createHash } from 'node:crypto';
+import {
+  assertLearningSupport,
+  buildLearningSupport,
+} from '../curriculum/learning-support.mjs';
 
 export const ITEM_FORMATS = new Set([
   'short-answer', // 답을 직접 쓴다
@@ -133,7 +137,7 @@ function stableId(dedupeKey) {
 export function finalizeItem(raw, context) {
   const dedupeKey = `${raw.generatorId}|${raw.dedupeKey}`;
   const item = {
-    schema: 'digi-mon/item@1',
+    schema: 'digi-mon/item@2',
     id: stableId(dedupeKey),
     standardCode: context.standard.code,
     specId: context.standard.specId,
@@ -146,6 +150,10 @@ export function finalizeItem(raw, context) {
     assessmentMappings: raw.assessmentMappings ?? [],
     curriculum: raw.curriculum ?? null,
     skill: raw.skill,
+    learningSupport: raw.learningSupport ?? buildLearningSupport({
+      id: raw.generatorId,
+      skill: raw.skill,
+    }),
     difficulty: raw.difficulty,
     format: raw.format,
     // 작도 문항은 문자열 대조로 채점할 수 없다. 채점 주체를 문항에 명시한다.
@@ -178,7 +186,7 @@ export function validateItem(item) {
     throw new Error(`문항 계약 위반 [${item.generatorId ?? '?'}]: ${msg}`);
   };
 
-  if (item.schema !== undefined && item.schema !== 'digi-mon/item@1') fail(`알 수 없는 item schema: ${item.schema}`);
+  if (item.schema !== undefined && item.schema !== 'digi-mon/item@2') fail(`알 수 없는 item schema: ${item.schema}`);
   if (!ITEM_FORMATS.has(item.format)) fail(`알 수 없는 format: ${item.format}`);
   if (item.assessmentMappings !== undefined && !Array.isArray(item.assessmentMappings)) fail('assessmentMappings 가 배열이 아니다');
   if (item.curriculum !== undefined
@@ -205,6 +213,11 @@ export function validateItem(item) {
   }
   if (!Array.isArray(item.solution) || item.solution.length === 0) fail('solution 이 비었다');
   if (item.solution.some((s) => typeof s !== 'string' || s.trim().length === 0)) fail('solution 에 빈 단계가 있다');
+  try {
+    assertLearningSupport(item.generatorId, item.learningSupport);
+  } catch (error) {
+    fail(error.message);
+  }
 
   if (item.nonWords !== undefined) {
     if (!Array.isArray(item.nonWords) || item.nonWords.length === 0) fail('nonWords 가 비었다');

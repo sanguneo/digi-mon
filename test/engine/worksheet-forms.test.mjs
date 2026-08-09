@@ -88,7 +88,7 @@ test('form set is deterministic, blueprint-equivalent, and globally deduplicated
   const second = buildWorksheetFormSet(spine, registry, options);
 
   assert.deepEqual(first, second);
-  assert.equal(first.schema, 'digi-mon/worksheet-form-set@2');
+  assert.equal(first.schema, 'digi-mon/worksheet-form-set@3');
   assert.equal(first.formCount, 3);
   assert.deepEqual(first.forms.map((form) => form.label), ['A', 'B', 'C']);
   assert.equal(new Set(first.forms.map((form) => form.worksheet.fingerprint)).size, 3);
@@ -244,6 +244,7 @@ test('form set output validates against the versioned JSON Schema', () => {
     readSchema('generator-topic-alignment.schema.json'),
     'https://example.invalid/digi-mon/generator-topic-alignment.schema.json',
   );
+  ajv.addSchema(readSchema('learning-support.schema.json'));
   ajv.addSchema(readSchema('item.schema.json'));
   ajv.addSchema(readSchema('worksheet.schema.json'));
   const validate = ajv.compile(readSchema('worksheet-form-set.schema.json'));

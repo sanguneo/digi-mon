@@ -20,8 +20,8 @@
     "items"
   ],
   "properties": {
-    "schema": { "const": "digi-mon/worksheet@3" },
-    "engineVersion": { "const": "digi-mon-engine@3" },
+    "schema": { "const": "digi-mon/worksheet@4" },
+    "engineVersion": { "const": "digi-mon-engine@4" },
     "seed": { "type": "string" },
     "fingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "title": { "type": "string", "minLength": 1 },

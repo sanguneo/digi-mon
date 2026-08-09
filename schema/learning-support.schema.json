@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learning-support.schema.json",
+  "title": "digi-mon staged learning support",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "objective"
+  ],
+  "properties": {
+    "schema": { "const": "digi-mon/learning-support@1" },
+    "status": {
+      "enum": [
+        "objective-only",
+        "guided-candidate"
+      ]
+    },
+    "objective": {
+      "type": "object",
+      "required": ["text", "source"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "source": { "const": "generator-skill" }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": ["status", "sourceKind", "revision"],
+      "properties": {
+        "status": { "const": "candidate" },
+        "sourceKind": { "const": "repository-authored" },
+        "revision": { "const": 1 }
+      },
+      "additionalProperties": false
+    },
+    "materials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "text"],
+        "properties": {
+          "kind": { "enum": ["principle", "rule", "strategy"] },
+          "text": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "hints": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "required": ["level", "kind", "text"],
+          "properties": {
+            "level": { "const": 1 },
+            "kind": { "const": "concept-recall" },
+            "text": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["level", "kind", "text"],
+          "properties": {
+            "level": { "const": 2 },
+            "kind": { "const": "strategy" },
+            "text": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "items": false
+    },
+    "teacher": {
+      "type": "object",
+      "required": ["lookFor", "intervention"],
+      "properties": {
+        "lookFor": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "intervention": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "objective-only" } },
+        "required": ["status"]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["review"] },
+            { "required": ["materials"] },
+            { "required": ["hints"] },
+            { "required": ["teacher"] }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "guided-candidate" } },
+        "required": ["status"]
+      },
+      "then": {
+        "required": ["review", "materials", "hints", "teacher"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

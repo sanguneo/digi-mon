@@ -58,7 +58,7 @@ test('answer.value 가 null 이어도 거부한다', () => {
 
 test('answer.value 가 0 이나 빈 문자열이면 받는다 (값이 있는 것과 참인 것은 다르다)', () => {
   const zero = finalize({ answer: { value: 0, display: '0', accepts: ['0'] } });
-  assert.equal(zero.schema, 'digi-mon/item@1');
+  assert.equal(zero.schema, 'digi-mon/item@2');
   assert.equal(zero.answer.value, 0);
 });
 
@@ -325,4 +325,17 @@ test('validateItem 은 finalizeItem 없이도 같은 계약을 적용한다', ()
     answer: { display: '7', accepts: ['7'] },
     solution: ['풀이'],
   }), /answer\.value/);
+});
+
+test('learningSupport 는 versioned objective 또는 검증된 guide만 받는다', () => {
+  assert.throws(() => finalize({
+    learningSupport: {
+      schema: 'digi-mon/learning-support@999',
+      status: 'guided-candidate',
+      objective: {
+        text: '테스트 기능',
+        source: 'generator-skill',
+      },
+    },
+  }), /learningSupport|학습지원/);
 });
