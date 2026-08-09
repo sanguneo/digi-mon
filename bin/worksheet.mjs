@@ -9,7 +9,10 @@ import path from 'node:path';
 import { parseWorksheetOptions } from '../src/engine/options.mjs';
 import { createRegistry } from '../src/engine/registry.mjs';
 import { buildWorksheet } from '../src/engine/worksheet.mjs';
-import { buildWorksheetFormSet } from '../src/engine/worksheet-forms.mjs';
+import {
+  buildWorksheetFormSet,
+  MAX_WORKSHEET_FORMS,
+} from '../src/engine/worksheet-forms.mjs';
 import { loadOntology, REPO_ROOT, writeJson } from '../src/ontology/source.mjs';
 import { buildSpine } from '../src/ontology/spine.mjs';
 import { renderAnswerKey, renderWorksheet } from '../src/render/worksheet-text.mjs';
@@ -23,6 +26,7 @@ const VALUE_FLAGS = new Set([
   'count',
   'difficulty',
   'forms',
+  'modes',
   'title',
 ]);
 const BOOLEAN_FLAGS = new Set(['help', 'print']);
@@ -62,6 +66,7 @@ function printHelp() {
   --count <1..100>               문항 수 (기본: 20)
   --difficulty <1|2|3>           고정 난이도
   --forms <1..8>                 같은 blueprint의 병렬 form 수 (기본: 1)
+  --modes <mode,...>             advanced, thinking-skills-v1, literacy-foundations
   --title <제목>                  학습지 제목
   --print                         학습지와 정답을 표준 출력
   --help                          이 도움말`);
@@ -79,8 +84,8 @@ function main() {
     seed: args.seed ?? String(Date.now()),
   });
   const formCount = args.forms === undefined ? 1 : Number(args.forms);
-  if (!Number.isInteger(formCount) || formCount < 1 || formCount > 8) {
-    throw new Error(`forms 는 1..8 정수여야 한다: ${args.forms}`);
+  if (!Number.isInteger(formCount) || formCount < 1 || formCount > MAX_WORKSHEET_FORMS) {
+    throw new Error(`forms 는 1..${MAX_WORKSHEET_FORMS} 정수여야 한다: ${args.forms}`);
   }
   const ontology = loadOntology();
   const spine = buildSpine(ontology);

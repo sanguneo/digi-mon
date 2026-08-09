@@ -1,32 +1,32 @@
 import { timingSafeEqual } from 'node:crypto';
-
-import { buildCoverage } from '../engine/registry.mjs';
-import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
-import { createRng } from '../engine/rng.mjs';
+import {
+  ancestorsOf,
+  approvedAncestorsOf,
+  dependentsOf,
+  directPrerequisiteAssertions,
+  learningOrder,
+  MATH_PREREQUISITES,
+  prerequisiteGraphAssertions,
+} from '../curriculum/prerequisites.mjs';
 import { learnerFigure } from '../engine/item.mjs';
 import {
   parseWorksheetOptions,
   WorksheetOptionsError,
 } from '../engine/options.mjs';
-import { gradeWorksheet } from './grade.mjs';
+import { buildCoverage } from '../engine/registry.mjs';
 import {
-  MIN_SAMPLES,
   aggregateAccuracy,
   aggregateByStandard,
   findDifficultyInversions,
+  MIN_SAMPLES,
   recordsFromGrading,
   validateResponseRecords,
 } from '../engine/response-log.mjs';
-import { renderFigureSvg, hasSvgRenderer } from '../render/figure-svg.mjs';
-import {
-  MATH_PREREQUISITES,
-  approvedAncestorsOf,
-  ancestorsOf,
-  dependentsOf,
-  directPrerequisiteAssertions,
-  learningOrder,
-  prerequisiteGraphAssertions,
-} from '../curriculum/prerequisites.mjs';
+import { createRng } from '../engine/rng.mjs';
+import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
+import { buildWorksheetFormSet } from '../engine/worksheet-forms.mjs';
+import { hasSvgRenderer, renderFigureSvg } from '../render/figure-svg.mjs';
+import { gradeWorksheet } from './grade.mjs';
 
 const MAX_BODY_BYTES = 256 * 1024;
 const MAX_COUNT = 100;
@@ -100,6 +100,38 @@ function httpWorksheetOptions(source) {
     }
     throw error;
   }
+}
+
+function worksheetForGrading(spine, registry, body, options) {
+  if (body.formSet === undefined) {
+    return buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
+  }
+  const provenance = body.formSet;
+  if (!provenance
+    || typeof provenance !== 'object'
+    || Array.isArray(provenance)
+    || provenance.schema !== 'digi-mon/worksheet-form@1'
+    || typeof provenance.seed !== 'string'
+    || !/^[A-H]$/.test(provenance.label)
+    || !Number.isInteger(provenance.formCount)
+    || !Number.isInteger(provenance.blueprintAttempt)
+    || !/^[a-f0-9]{64}$/.test(provenance.fingerprint ?? '')) {
+    throw new HttpError(400, 'formSet provenance 형식이 올바르지 않다');
+  }
+  const formSet = buildWorksheetFormSet(spine, registry, {
+    ...options,
+    seed: provenance.seed,
+    formCount: provenance.formCount,
+  });
+  if (formSet.fingerprint !== provenance.fingerprint
+    || formSet.blueprintAttempt !== provenance.blueprintAttempt) {
+    throw new HttpError(409, 'formSet provenance 가 현재 생성 결과와 일치하지 않는다');
+  }
+  const form = formSet.forms.find(({ label }) => label === provenance.label);
+  if (!form) {
+    throw new HttpError(400, `formSet 에 없는 form label이다: ${provenance.label}`);
+  }
+  return form.worksheet;
 }
 
 /**
@@ -419,7 +451,7 @@ export function createApp({
           throw new HttpError(400, 'at 은 ISO 8601 UTC 시각 문자열이어야 한다');
         }
         const options = httpWorksheetOptions(body);
-        const worksheet = buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
+        const worksheet = worksheetForGrading(spine, registry, body, options);
         if (worksheet.fingerprint !== body.fingerprint) {
           throw new HttpError(409, '학습지 fingerprint 가 일치하지 않는다', {
             expected: worksheet.fingerprint,

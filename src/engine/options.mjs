@@ -1,3 +1,5 @@
+import { PRACTICE_MODE_IDS } from '../curriculum/practice-modes.mjs';
+
 const SUBJECTS = new Set(['math', 'korean', 'english']);
 const GRADE_BANDS = new Set(['1-2', '3-4', '5-6']);
 const STANDARD_CODE_RE = /^\[[246][국수영]\d{2}-\d{2}\]$/;
@@ -45,6 +47,24 @@ export function parseWorksheetOptions(source, { maxCount = 100 } = {}) {
     throw new WorksheetOptionsError('difficulty', 'difficulty 는 1, 2, 3 중 하나여야 한다', source.difficulty);
   }
 
+  const modes = list(source.mode ?? source.modes) ?? [];
+  const duplicateModes = modes.filter((mode, index) => modes.indexOf(mode) !== index);
+  if (duplicateModes.length > 0) {
+    throw new WorksheetOptionsError('modes', `mode 중복: ${duplicateModes.join(', ')}`, modes);
+  }
+  const invalidModes = modes.filter((mode) => !PRACTICE_MODE_IDS.includes(mode));
+  if (invalidModes.length > 0) {
+    throw new WorksheetOptionsError('modes', `지원하지 않는 mode: ${invalidModes.join(', ')}`, invalidModes);
+  }
+  modes.sort();
+  if (modes.includes('advanced') && difficulty !== undefined && difficulty !== 3) {
+    throw new WorksheetOptionsError(
+      'difficulty',
+      'advanced mode는 difficulty 3만 지원한다',
+      difficulty,
+    );
+  }
+
   const subject = source.subject ?? 'math';
   if (!SUBJECTS.has(subject)) {
     throw new WorksheetOptionsError('subject', 'subject 는 math, korean, english 중 하나여야 한다', subject);
@@ -82,7 +102,8 @@ export function parseWorksheetOptions(source, { maxCount = 100 } = {}) {
     domains: list(source.domain ?? source.domains),
     codes,
     count,
-    difficulty,
+    difficulty: modes.includes('advanced') ? 3 : difficulty,
+    modes,
     title: source.title,
     followLearningOrder,
   };

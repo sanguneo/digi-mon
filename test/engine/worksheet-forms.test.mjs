@@ -88,7 +88,7 @@ test('form set is deterministic, blueprint-equivalent, and globally deduplicated
   const second = buildWorksheetFormSet(spine, registry, options);
 
   assert.deepEqual(first, second);
-  assert.equal(first.schema, 'digi-mon/worksheet-form-set@1');
+  assert.equal(first.schema, 'digi-mon/worksheet-form-set@2');
   assert.equal(first.formCount, 3);
   assert.deepEqual(first.forms.map((form) => form.label), ['A', 'B', 'C']);
   assert.equal(new Set(first.forms.map((form) => form.worksheet.fingerprint)).size, 3);
@@ -169,6 +169,65 @@ test('form set deterministically skips a blueprint that cannot fill every form',
 
   assert.ok(formSet.blueprintAttempt > 0);
   assert.equal(formSet.blueprint[0].generatorId, 'expandable');
+});
+
+test('form set retries when a generator drifts from the blueprint difficulty', () => {
+  const codeA = '[2수01-01]';
+  const codeB = '[2수01-02]';
+  const drift = generator('difficulty-drift', codeA);
+  const stable = {
+    ...generator('difficulty-stable', codeB),
+    difficulties: [1, 2, 3],
+    generate(rng, { difficulty }) {
+      const value = rng.int(1, 1_000_000);
+      return {
+        params: { value },
+        stem: `${value}를 쓰시오.`,
+        answer: {
+          value,
+          display: String(value),
+          accepts: [String(value)],
+        },
+        solution: [`${value}이다.`],
+        dedupeKey: `difficulty-stable:${value}`,
+        difficulty,
+      };
+    },
+  };
+  const generators = new Map([
+    [codeA, [drift]],
+    [codeB, [stable]],
+  ]);
+  const spine = {
+    upstream: { taxonomyVersion: 'test', integrity: [] },
+    standards: [standard(codeA), standard(codeB)],
+  };
+  const registry = {
+    forStandard(code) {
+      return generators.get(code) ?? [];
+    },
+  };
+  const seed = Array.from({ length: 100 }, (_, index) => `drift-${index}`).find(
+    (candidate) => buildWorksheet(spine, registry, {
+      seed: `${candidate}:form:A`,
+      subject: 'math',
+      count: 1,
+      difficulty: 3,
+    }).items[0].generatorId === 'difficulty-drift',
+  );
+  assert.ok(seed);
+
+  const formSet = buildWorksheetFormSet(spine, registry, {
+    seed,
+    subject: 'math',
+    count: 1,
+    difficulty: 3,
+    formCount: 3,
+  });
+
+  assert.ok(formSet.blueprintAttempt > 0);
+  assert.equal(formSet.blueprint[0].generatorId, 'difficulty-stable');
+  assert.ok(formSet.forms.every((form) => form.worksheet.items[0].difficulty === 3));
 });
 
 test('form set output validates against the versioned JSON Schema', () => {

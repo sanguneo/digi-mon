@@ -15,8 +15,8 @@
     "fingerprint"
   ],
   "properties": {
-    "schema": { "const": "digi-mon/worksheet-form-set@1" },
-    "engineVersion": { "const": "digi-mon-engine@2" },
+    "schema": { "const": "digi-mon/worksheet-form-set@2" },
+    "engineVersion": { "const": "digi-mon-engine@3" },
     "seed": { "type": "string", "minLength": 1 },
     "formCount": { "type": "integer", "minimum": 2, "maximum": 8 },
     "blueprintAttempt": { "type": "integer", "minimum": 0 },

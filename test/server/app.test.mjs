@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
+import { once } from 'node:events';
 import http from 'node:http';
 import { after, before, test } from 'node:test';
-import { once } from 'node:events';
 
+import { buildWorksheetFormSet } from '../../src/engine/worksheet-forms.mjs';
 import { createApp } from '../../src/server/app.mjs';
 
 const CODE = '[2수01-06]';
@@ -102,6 +103,33 @@ before(async () => {
 after(async () => {
   server.close();
   await once(server, 'close');
+});
+
+test('every parallel form can be replayed and graded from its provenance', async () => {
+  const formSet = buildWorksheetFormSet(SPINE, REGISTRY, {
+    seed: 'grade-parallel-forms',
+    subject: 'math',
+    codes: [CODE],
+    count: 1,
+    difficulty: 1,
+    formCount: 3,
+  });
+
+  for (const { worksheet } of formSet.forms) {
+    const graded = await request('/v1/grade', {
+      method: 'POST',
+      body: {
+        ...worksheet.options,
+        seed: worksheet.seed,
+        formSet: worksheet.formSet,
+        fingerprint: worksheet.fingerprint,
+        responses: { 1: worksheet.items[0].answer.display },
+        records: false,
+      },
+    });
+    assert.equal(graded.status, 200, JSON.stringify(graded.body));
+    assert.equal(graded.body.correct, 1);
+  }
 });
 
 test('grading rejects non-object bodies and unsafe response metadata', async () => {

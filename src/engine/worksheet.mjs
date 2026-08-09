@@ -1,13 +1,18 @@
 import { createHash } from 'node:crypto';
 
-import { createRng } from './rng.mjs';
-import { finalizeItem } from './item.mjs';
-import { assessmentMappingsFor } from '../ontology/alignment.mjs';
+import {
+  PRACTICE_MODE_IDS,
+  generatorSupportsModes,
+  resolveModeSelection,
+} from '../curriculum/practice-modes.mjs';
 import { learningOrder } from '../curriculum/prerequisites.mjs';
+import { assessmentMappingsFor } from '../ontology/alignment.mjs';
+import { finalizeItem } from './item.mjs';
+import { createRng } from './rng.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
-const WORKSHEET_SCHEMA = 'digi-mon/worksheet@2';
-const ENGINE_VERSION = 'digi-mon-engine@2';
+const WORKSHEET_SCHEMA = 'digi-mon/worksheet@3';
+const ENGINE_VERSION = 'digi-mon-engine@3';
 
 function stableJson(value) {
   if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
@@ -17,12 +22,20 @@ function stableJson(value) {
   return JSON.stringify(value);
 }
 
-export function buildWorksheetFingerprint({ schema, seed, options, items, corpus }) {
+export function buildWorksheetFingerprint({
+  schema,
+  seed,
+  options,
+  modeSelection,
+  items,
+  corpus,
+}) {
   const payload = {
     schema,
     engineVersion: ENGINE_VERSION,
     seed: String(seed),
     options,
+    modeSelection,
     items,
     corpus,
   };
@@ -66,13 +79,24 @@ export function generateItem(generator, standard, rng, difficulty) {
   return item;
 }
 
-function resolveTargets(spine, registry, { subject, gradeBands, domains, codes }) {
+function eligibleGenerators(registry, code, modes) {
+  return registry.forStandard(code).filter((generator) =>
+    generatorSupportsModes(generator, modes));
+}
+
+function resolveTargets(spine, registry, {
+  subject,
+  gradeBands,
+  domains,
+  codes,
+  modes,
+}) {
   return spine.standards.filter((std) => {
     if (subject && std.subject !== subject) return false;
     if (gradeBands?.length && !gradeBands.includes(std.gradeBand)) return false;
     if (domains?.length && !domains.includes(std.domain)) return false;
     if (codes?.length && !codes.includes(std.code)) return false;
-    return registry.forStandard(std.code).length > 0;
+    return eligibleGenerators(registry, std.code, modes).length > 0;
   });
 }
 
@@ -93,6 +117,7 @@ export function buildWorksheet(spine, registry, options) {
     count = 20,
     difficulty,
     difficultyMix = DEFAULT_DIFFICULTY_MIX,
+    modes = [],
     title,
     // true 면 성취기준을 선수 관계 순서로 배치한다. 복습 학습지는 선수부터 풀려야 한다.
     followLearningOrder = false,
@@ -104,13 +129,29 @@ export function buildWorksheet(spine, registry, options) {
   if (difficulty !== undefined && ![1, 2, 3].includes(difficulty)) {
     throw new Error(`difficulty 는 1, 2, 3 중 하나여야 한다: ${difficulty}`);
   }
+  if (!Array.isArray(modes)
+    || modes.some((mode) => !PRACTICE_MODE_IDS.includes(mode))
+    || new Set(modes).size !== modes.length) {
+    throw new Error(`modes 는 지원하는 고유 mode 배열이어야 한다: ${modes}`);
+  }
+  const resolvedModes = modes.slice().sort();
+  const resolvedDifficulty = resolvedModes.includes('advanced') ? 3 : difficulty;
+  if (resolvedModes.includes('advanced') && difficulty !== undefined && difficulty !== 3) {
+    throw new Error(`advanced mode는 difficulty 3만 지원한다: ${difficulty}`);
+  }
   if (followLearningOrder && subject !== 'math') {
     throw new Error(`followLearningOrder 는 수학만 지원한다: ${subject}`);
   }
 
-  const targets = resolveTargets(spine, registry, { subject, gradeBands, domains, codes });
+  const targets = resolveTargets(spine, registry, {
+    subject,
+    gradeBands,
+    domains,
+    codes,
+    modes: resolvedModes,
+  });
   if (targets.length === 0) {
-    throw new Error(`조건에 맞는 성취기준이 없다 (생성기 미보유 포함): subject=${subject} gradeBands=${gradeBands} domains=${domains} codes=${codes}`);
+    throw new Error(`조건과 mode에 맞는 성취기준이 없다: subject=${subject} gradeBands=${gradeBands} domains=${domains} codes=${codes} modes=${resolvedModes}`);
   }
 
   const rng = createRng(seed);
@@ -124,7 +165,7 @@ export function buildWorksheet(spine, registry, options) {
   // 성취기준을 고르게 돌린다. 한 기준에 몰리면 학습지가 아니라 반복 훈련이 된다.
   const pool = targets.map((std) => ({
     std,
-    generators: registry.forStandard(std.code),
+    generators: eligibleGenerators(registry, std.code, resolvedModes),
   }));
 
   // 선수 순서를 따를 때는 학습 순서로 정렬해 앞쪽 기준이 먼저 나오게 한다.
@@ -151,12 +192,21 @@ export function buildWorksheet(spine, registry, options) {
     const g = rng.pick(generators);
     cursor += 1;
 
-    const d = difficulty ?? rng.weighted(mixEntries);
+    const d = resolvedDifficulty ?? rng.weighted(mixEntries);
     let item;
     try {
       item = generateItem(g, std, rng, d);
     } catch (error) {
       failures.push({ generatorId: g.id, code: std.code, difficulty: d, message: error.message });
+      continue;
+    }
+    if (resolvedModes.includes('advanced') && item.difficulty !== 3) {
+      failures.push({
+        generatorId: g.id,
+        code: std.code,
+        difficulty: d,
+        message: `advanced mode 난이도 drift: ${item.difficulty}`,
+      });
       continue;
     }
     if (seen.has(item.dedupeKey)) continue;
@@ -183,10 +233,15 @@ export function buildWorksheet(spine, registry, options) {
     domains: domains ?? null,
     codes: codes ?? null,
     count,
-    difficulty: difficulty ?? null,
+    difficulty: resolvedDifficulty ?? null,
     difficultyMix,
+    modes: resolvedModes,
     followLearningOrder,
   };
+  const difficultyHistogram = {};
+  for (const item of numbered) {
+    difficultyHistogram[item.difficulty] = (difficultyHistogram[item.difficulty] ?? 0) + 1;
+  }
   const worksheet = {
     schema: WORKSHEET_SCHEMA,
     engineVersion: ENGINE_VERSION,
@@ -196,9 +251,10 @@ export function buildWorksheet(spine, registry, options) {
     produced: numbered.length,
     shortfall: count - numbered.length,
     options: resolvedOptions,
+    modeSelection: resolveModeSelection(resolvedModes),
     corpus,
     standardsUsed: [...new Set(numbered.map((it) => it.standardCode))].sort(),
-    difficultyHistogram: numbered.reduce((acc, it) => ({ ...acc, [it.difficulty]: (acc[it.difficulty] ?? 0) + 1 }), {}),
+    difficultyHistogram,
     items: numbered,
   };
   return {

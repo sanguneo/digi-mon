@@ -46,6 +46,9 @@ npm run verify
 node bin/worksheet.mjs --help
 node bin/worksheet.mjs --subject math --count 10 --seed class-a
 node bin/worksheet.mjs --subject math --count 10 --seed class-a --forms 3
+node bin/worksheet.mjs --subject math --grade 1-2 --modes thinking-skills-v1 --count 6 --seed think-a
+node bin/worksheet.mjs --subject korean --grade 1-2 --modes literacy-foundations --count 6 --seed literacy-a
+node bin/worksheet.mjs --subject math --grade 3-4 --modes advanced --count 10 --seed advanced-a
 node bin/worksheet.mjs --subject korean --grade 3-4 --count 8 --seed reading-1
 node bin/worksheet.mjs --subject english --difficulty 1 --count 8 --seed english-1
 ```
@@ -56,6 +59,12 @@ node bin/worksheet.mjs --subject english --difficulty 1 --count 8 --seed english
 않는 A/B/C 병렬 form을 만든다. 각 form의 JSON·학습자본·정답지와 전체
 `worksheet-form-set@1` manifest를 함께 쓰며, 고유 문항 pool이 부족하면 중복으로
 채우지 않고 실패한다.
+
+`--modes`는 comma로 조합하며 모든 조건을 동시에 만족하는 생성기만 사용한다.
+`advanced`는 생성기가 선언한 난이도 3 변형, `thinking-skills-v1`은 검토된
+규칙·순서·근거 과제 6종, `literacy-foundations`는 검토된 국어·영어 문자·문장
+부호 기초 과제 12종만 허용한다. 일반 사고력·읽기 수준·숙달·진단을 뜻하지 않으며
+조건을 만족하는 pool이 없으면 일반 문항으로 대체하지 않고 실패한다.
 
 ## HTTP API
 

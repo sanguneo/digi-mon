@@ -7,10 +7,13 @@ import {
   generateItem,
 } from './worksheet.mjs';
 
-const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@1';
+const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@2';
+const FORM_PROVENANCE_SCHEMA = 'digi-mon/worksheet-form@1';
 const FORM_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const BLUEPRINT_ATTEMPTS = 24;
 const UNIQUE_ATTEMPTS_PER_SLOT = 200;
+
+export const MAX_WORKSHEET_FORMS = FORM_LABELS.length;
 
 class FormPoolExhaustedError extends Error {}
 
@@ -27,6 +30,18 @@ function stableJson(value) {
 
 function formSeed(seed, label) {
   return `${String(seed)}:form:${label}`;
+}
+
+function blueprintSeed(seed, attempt) {
+  if (attempt === 0) return String(seed);
+  const digest = createHash('sha256')
+    .update(stableJson({
+      namespace: 'digi-mon/form-blueprint-seed@1',
+      seed: String(seed),
+      attempt,
+    }))
+    .digest('hex');
+  return `form-blueprint-${digest}`;
 }
 
 function blueprintFor(worksheet) {
@@ -84,7 +99,7 @@ function generateForm({
     for (let attempt = 0; attempt < UNIQUE_ATTEMPTS_PER_SLOT; attempt += 1) {
       const item = generateItem(generator, standard, rng, slot.difficulty);
       if (item.difficulty !== slot.difficulty) {
-        throw new Error(
+        throw new FormPoolExhaustedError(
           `병렬 form blueprint 난이도가 달라졌다: form=${label} `
           + `generator=${slot.generatorId} expected=${slot.difficulty} actual=${item.difficulty}`,
         );
@@ -109,17 +124,21 @@ function buildFormSetAttempt({
   seed,
   blueprintAttempt,
 }) {
-  const blueprintSeed = blueprintAttempt === 0
-    ? String(seed)
-    : `${String(seed)}:blueprint:${blueprintAttempt}`;
+  const resolvedBlueprintSeed = blueprintSeed(seed, blueprintAttempt);
   const firstLabel = FORM_LABELS[0];
   const first = buildWorksheet(spine, registry, {
     ...worksheetOptions,
-    seed: formSeed(blueprintSeed, firstLabel),
+    seed: formSeed(resolvedBlueprintSeed, firstLabel),
   });
   if (first.shortfall > 0) {
     throw new FormPoolExhaustedError(
       `병렬 form 기준 문항 수를 채우지 못했다: ${first.produced}/${first.requested}`,
+    );
+  }
+  if (worksheetOptions.difficulty !== undefined
+    && first.items.some((item) => item.difficulty !== worksheetOptions.difficulty)) {
+    throw new FormPoolExhaustedError(
+      `병렬 form 기준 문항 난이도가 요청과 다르다: requested=${worksheetOptions.difficulty}`,
     );
   }
 
@@ -156,10 +175,25 @@ function buildFormSetAttempt({
       seed: worksheet.seed,
     })),
   };
+  const fingerprint = createHash('sha256').update(stableJson(identity)).digest('hex');
+  const issuedForms = forms.map(({ label, worksheet }) => ({
+    label,
+    worksheet: {
+      ...worksheet,
+      formSet: {
+        schema: FORM_PROVENANCE_SCHEMA,
+        seed: String(seed),
+        label,
+        formCount,
+        blueprintAttempt,
+        fingerprint,
+      },
+    },
+  }));
   return {
     ...identity,
-    forms,
-    fingerprint: createHash('sha256').update(stableJson(identity)).digest('hex'),
+    forms: issuedForms,
+    fingerprint,
   };
 }
 
@@ -168,8 +202,8 @@ export function buildWorksheetFormSet(spine, registry, options) {
     formCount = 3,
     ...worksheetOptions
   } = options ?? {};
-  if (!Number.isInteger(formCount) || formCount < 2 || formCount > FORM_LABELS.length) {
-    throw new Error(`formCount 는 2..${FORM_LABELS.length} 정수여야 한다: ${formCount}`);
+  if (!Number.isInteger(formCount) || formCount < 2 || formCount > MAX_WORKSHEET_FORMS) {
+    throw new Error(`formCount 는 2..${MAX_WORKSHEET_FORMS} 정수여야 한다: ${formCount}`);
   }
 
   const seed = worksheetOptions.seed ?? 'digi-mon';

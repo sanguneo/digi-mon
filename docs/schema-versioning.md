@@ -5,7 +5,7 @@
 | 계약 | 현재 버전 | 스키마 |
 |---|---|---|
 | canonical item | `digi-mon/item@1` | `schema/item.schema.json` |
-| worksheet | `digi-mon/worksheet@2` | `schema/worksheet.schema.json` |
+| worksheet | `digi-mon/worksheet@3` | `schema/worksheet.schema.json` |
 | grading result | `digi-mon/grading-result@1` | `schema/grading-result.schema.json` |
 | spine | 스키마의 `const` 참조 | `schema/spine.schema.json` |
 | coverage | `digi-mon/coverage@2` | `schema/coverage.schema.json` |
@@ -22,11 +22,12 @@
 
 ## 학습지 fingerprint
 
-`digi-mon/worksheet@2` fingerprint는 다음을 결합한다.
+`digi-mon/worksheet@3` fingerprint는 다음을 결합한다.
 
 - 스키마·엔진 버전
 - seed
 - 정규화된 생성 옵션
+- revision이 포함된 mode selection
 - 순서가 포함된 문항 ID 목록
 - 온톨로지 taxonomy 버전과 입력 파일 해시
 
