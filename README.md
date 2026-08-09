@@ -89,6 +89,8 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 
 ## 데이터와 버전
 
+- 전체 문서 안내: `docs/README.md`
+- 현재 제품 브리프: `docs/product-brief.md`
 - 출처·무결성: `PROVENANCE.md`
 - 제3자 고지와 공개 전 확인 사항: `NOTICE.md`
 - 실용 제품 울트라리서치: `docs/research/digi-mon-practical-product.md`

@@ -6,6 +6,8 @@
 |---|---|---|
 | canonical item | `digi-mon/item@1` | `schema/item.schema.json` |
 | worksheet | `digi-mon/worksheet@3` | `schema/worksheet.schema.json` |
+| worksheet form set | `digi-mon/worksheet-form-set@2` | `schema/worksheet-form-set.schema.json` |
+| mode selection | `digi-mon/mode-selection@1` | worksheet schema 내부 |
 | grading result | `digi-mon/grading-result@1` | `schema/grading-result.schema.json` |
 | spine | 스키마의 `const` 참조 | `schema/spine.schema.json` |
 | coverage | `digi-mon/coverage@2` | `schema/coverage.schema.json` |
