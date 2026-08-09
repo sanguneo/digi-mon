@@ -76,9 +76,14 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 
 - 출처·무결성: `PROVENANCE.md`
 - 제3자 고지와 공개 전 확인 사항: `NOTICE.md`
+- 실용 제품 울트라리서치: `docs/research/digi-mon-practical-product.md`
+- 교사·학습자 최소 흐름: `docs/design/client-experience.md`
+- 클라이언트 디자인 시스템: `docs/design/design-system.md`
 - 스키마 변경 정책: `docs/schema-versioning.md`
+- 운영 데이터·보존·관측 설계: `docs/operational-data-model.md`
 - JSON Schemas: `schema/`
 - 자산 조달: `docs/asset-procurement.md`
+- 오프라인 자산 플랫폼 설계: `docs/offline-asset-platform.md`
 - 상세 품질 현황: `REVIEW.md`
 
 향후 LLM 활용도가 높은 지문·대화·대본/TTS·구조화 매체는 자산 조달

@@ -89,6 +89,11 @@ topic mapping 승인은 자산 revision 승인과 분리한다. 파일과 manife
 
 ## LLM 생성 자산의 캐시·DB 운영
 
+구현 가능한 관계형 스키마, queue lease, 내용 주소 fingerprint, SQLite/PostgreSQL과
+로컬/cloud 배포 선택, 비용 reservation 및 단계별 전환 절차는
+[`docs/offline-asset-platform.md`](offline-asset-platform.md)를 따른다. 이 절은
+교육과정 자산 조달 정책과 런타임 경계를 요약한다.
+
 LLM은 자산 부족을 즉석에서 숨기는 출제자가 아니라 **검토 가능한 자산
 후보 공급자**로 사용한다. 학습자 요청 경로는 승인된 불변 코퍼스
 릴리스만 읽는다. 캐시 미스가 나도 모델 응답을 기다리거나 미검토
