@@ -20,8 +20,8 @@
     "items"
   ],
   "properties": {
-    "schema": { "const": "digi-mon/worksheet@4" },
-    "engineVersion": { "const": "digi-mon-engine@4" },
+    "schema": { "const": "digi-mon/worksheet@5" },
+    "engineVersion": { "const": "digi-mon-engine@5" },
     "seed": { "type": "string" },
     "fingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "title": { "type": "string", "minLength": 1 },
@@ -39,7 +39,8 @@
         "difficulty",
         "difficultyMix",
         "modes",
-        "followLearningOrder"
+        "followLearningOrder",
+        "excludeItemIds"
       ],
       "properties": {
         "modes": {
@@ -51,6 +52,15 @@
               "literacy-foundations",
               "thinking-skills-v1"
             ]
+          }
+        },
+        "excludeItemIds": {
+          "type": "array",
+          "maxItems": 10000,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{12}$"
           }
         }
       }

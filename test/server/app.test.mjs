@@ -73,9 +73,9 @@ const GENERATOR = {
   },
 };
 const SPINE = {
-  upstream: {
-    taxonomyVersion: 'test-v1',
-    integrity: [{ file: 'topics.json', sha256: 'abc' }],
+  corpus: {
+    schema: 'test-corpus',
+    integrity: [{ file: 'data/spine/standards.json', sha256: 'abc' }],
   },
   standardCount: 1,
   standards: [STANDARD],
@@ -149,6 +149,135 @@ test('learner item exposes guidance without teacher-only notes or answers', asyn
   assert.equal(Object.hasOwn(item.learningSupport, 'teacher'), false);
   assert.equal(Object.hasOwn(item, 'answer'), false);
   assert.equal(Object.hasOwn(item, 'solution'), false);
+});
+
+test('item issuance excludes previously exposed learner item ids', async () => {
+  const first = await request('/v1/items', {
+    method: 'POST',
+    body: {
+      code: CODE,
+      count: 1,
+      difficulty: 1,
+      seed: 'exclude-item',
+    },
+  });
+  const second = await request('/v1/items', {
+    method: 'POST',
+    body: {
+      code: CODE,
+      count: 1,
+      difficulty: 1,
+      seed: 'exclude-item',
+      excludeItemIds: [first.body.items[0].id],
+    },
+  });
+
+  assert.equal(second.status, 200);
+  assert.notEqual(second.body.items[0].id, first.body.items[0].id);
+});
+
+test('HTTP form issuance preserves projections, exclusions, and grading provenance', async () => {
+  const base = {
+    subject: 'math',
+    codes: [CODE],
+    seed: 'http-parallel-forms',
+    count: 1,
+    difficulty: 1,
+    formCount: 3,
+  };
+  const learner = await request('/v1/worksheet-forms', {
+    method: 'POST',
+    body: base,
+  });
+  assert.equal(learner.status, 200, JSON.stringify(learner.body));
+  assert.equal(learner.body.schema, 'digi-mon/worksheet-form-set@4');
+  assert.equal(learner.body.forms.length, 3);
+  assert.ok(learner.body.forms.every(({ worksheet }) =>
+    !Object.hasOwn(worksheet.items[0], 'answer')));
+
+  const excludedItemId = learner.body.forms[0].worksheet.items[0].id;
+  const teacher = await request('/v1/worksheet-forms', {
+    method: 'POST',
+    token: 'teacher-secret',
+    body: {
+      ...base,
+      excludeItemIds: [excludedItemId],
+      includeAnswers: true,
+    },
+  });
+  assert.equal(teacher.status, 200, JSON.stringify(teacher.body));
+  assert.deepEqual(teacher.body.options.excludeItemIds, [excludedItemId]);
+  assert.ok(teacher.body.forms.every(({ worksheet }) =>
+    Object.hasOwn(worksheet.items[0], 'answer')));
+  assert.ok(teacher.body.forms.every(({ worksheet }) =>
+    worksheet.items.every((item) => item.id !== excludedItemId)));
+
+  for (const { worksheet } of teacher.body.forms) {
+    const graded = await request('/v1/grade', {
+      method: 'POST',
+      body: {
+        ...worksheet.options,
+        seed: worksheet.seed,
+        formSet: worksheet.formSet,
+        fingerprint: worksheet.fingerprint,
+        responses: { 1: worksheet.items[0].answer.display },
+        records: false,
+      },
+    });
+    assert.equal(graded.status, 200, JSON.stringify(graded.body));
+    assert.equal(graded.body.correct, 1);
+  }
+
+  const invalid = await request('/v1/worksheet-forms', {
+    method: 'POST',
+    body: { ...base, formCount: 1 },
+  });
+  assert.equal(invalid.status, 400);
+});
+
+test('learning gate returns a stateless reason-coded next action', async () => {
+  const recommended = await request('/v1/learning-gate', {
+    method: 'POST',
+    body: {
+      schema: 'digi-mon/learning-gate-request@1',
+      policyRevision: 1,
+      evidence: {
+        source: 'grading-result',
+        graded: 10,
+        answered: 10,
+        total: 10,
+        manualScoringCount: 0,
+        accuracy: 0.5,
+        completionRate: 1,
+        byStandard: {
+          [CODE]: { attempted: 10, correct: 5, accuracy: 0.5 },
+        },
+      },
+      target: {
+        subject: 'math',
+        codes: [CODE],
+        modes: [],
+        count: 10,
+      },
+    },
+  });
+
+  assert.equal(recommended.status, 200, JSON.stringify(recommended.body));
+  assert.equal(recommended.body.decision, 'remediate');
+  assert.deepEqual(recommended.body.reasonCodes, [
+    'weak-standard',
+    'no-approved-prerequisite-path',
+  ]);
+
+  const rejected = await request('/v1/learning-gate', {
+    method: 'POST',
+    body: {
+      ...recommended.body,
+      schema: 'digi-mon/learning-gate-request@1',
+      policyRevision: 99,
+    },
+  });
+  assert.equal(rejected.status, 400);
 });
 
 test('every parallel form can be replayed and graded from its provenance', async () => {

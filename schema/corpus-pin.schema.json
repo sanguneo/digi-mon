@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digi-mon.local/schema/corpus-pin.schema.json",
+  "title": "Digi-mon repository corpus pin",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "revision", "standardCount", "files"],
+  "properties": {
+    "schema": { "const": "digi-mon/corpus-pin@1" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "standardCount": { "const": 248 },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data/spine/standards.json",
+        "reference/[별책5] 국어과 교육과정.md",
+        "reference/[별책8] 수학과 교육과정.md",
+        "reference/[별책14] 영어과 교육과정.md"
+      ],
+      "properties": {
+        "data/spine/standards.json": { "$ref": "#/$defs/file" },
+        "reference/[별책5] 국어과 교육과정.md": { "$ref": "#/$defs/file" },
+        "reference/[별책8] 수학과 교육과정.md": { "$ref": "#/$defs/file" },
+        "reference/[별책14] 영어과 교육과정.md": { "$ref": "#/$defs/file" }
+      }
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256"],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}

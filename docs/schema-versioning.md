@@ -6,14 +6,16 @@
 |---|---|---|
 | canonical item | `digi-mon/item@2` | `schema/item.schema.json` |
 | learning support | `digi-mon/learning-support@1` | `schema/learning-support.schema.json` |
-| worksheet | `digi-mon/worksheet@4` | `schema/worksheet.schema.json` |
-| worksheet form set | `digi-mon/worksheet-form-set@3` | `schema/worksheet-form-set.schema.json` |
+| worksheet | `digi-mon/worksheet@5` | `schema/worksheet.schema.json` |
+| worksheet form set | `digi-mon/worksheet-form-set@4` | `schema/worksheet-form-set.schema.json` |
 | mode selection | `digi-mon/mode-selection@1` | worksheet schema 내부 |
 | grading result | `digi-mon/grading-result@1` | `schema/grading-result.schema.json` |
+| learning gate request | `digi-mon/learning-gate-request@1` | `schema/learning-gate-request.schema.json` |
+| learning gate recommendation | `digi-mon/learning-gate-recommendation@1` | `schema/learning-gate-recommendation.schema.json` |
 | spine | 스키마의 `const` 참조 | `schema/spine.schema.json` |
 | coverage | `digi-mon/coverage@2` | `schema/coverage.schema.json` |
 | generator-topic alignment | `digi-mon/generator-topic-alignment@1` | `schema/generator-topic-alignment.schema.json` |
-| ontology pin | 핀 객체 계약 | `schema/ontology-pin.schema.json` |
+| repository corpus pin | `digi-mon/corpus-pin@1` | `schema/corpus-pin.schema.json` |
 
 ## 변경 규칙
 
@@ -25,16 +27,39 @@
 
 ## 학습지 fingerprint
 
-`digi-mon/worksheet@4` fingerprint는 다음을 결합한다.
+`digi-mon/worksheet@5` fingerprint는 다음을 결합한다.
 
 - 스키마·엔진 버전
 - seed
 - 정규화된 생성 옵션
+- 이미 노출된 문항을 제외하는 정규화된 `excludeItemIds`
 - revision이 포함된 mode selection
 - 순서가 포함된 문항 전체 내용과 `learningSupport`
-- 온톨로지 taxonomy 버전과 입력 파일 해시
+- 내부 코퍼스 스키마와 스파인·공식 별책 파일 해시
 
-채점은 같은 입력으로 재생성한 fingerprint가 발급된 값과 일치할 때만 수행한다. 생성기·온톨로지·옵션이 달라지면 409로 거부한다.
+채점은 같은 입력으로 재생성한 fingerprint가 발급된 값과 일치할 때만 수행한다.
+생성기·코퍼스·옵션이 달라지면 409로 거부한다.
+
+`excludeItemIds`는 learner projection에 이미 포함된 안정적인 `item.id`만 받는다.
+내부 생성 parameter를 포함하는 `dedupeKey`는 새로 공개하지 않는다. exclusion
+목록도 재생성 계약이므로 발급과 채점에서 같아야 한다.
+
+## 무상태 학습 게이트
+
+`learning-gate-request@1`은 `policyRevision=1`, 대상 성취기준과 명시적 evidence를
+받는다. evidence는 단일 `grading-result` 요약 또는 호출자가 보존한
+`responseRecords`다. 엔진은 learner history를 읽거나 저장하지 않는다.
+
+`learning-gate-recommendation@1`은 다음을 반환한다.
+
+- `practice`, `remediate`, `advance`, `await-manual-review` 중 한 decision
+- 판단을 재현할 수 있는 policy threshold와 `reasonCodes`
+- 별도 client가 호출할 worksheet·remediation·수동 검토 next action
+- 사용한 evidence의 비식별 집계
+
+누적 response record는 기존 accuracy 계약과 같은 성취기준별 30개 표본 경계를
+쓴다. 표본이 부족하면 진단이나 숙달을 만들지 않고 `insufficient-evidence`로
+동일 범위 연습을 제안한다.
 
 ## 학습지원
 
@@ -48,16 +73,17 @@
 제거하지만 objective, materials와 hints는 유지한다. 학습지원 내용이나 review
 revision이 바뀌면 item 내용과 worksheet fingerprint도 바뀐다.
 
-## 업스트림 핀 변경 절차
+## 내부 코퍼스 핀 변경 절차
 
-1. 참고 프로젝트의 manifest, taxonomy 버전, 네 파일 해시를 확인한다.
-2. JSON shape·count·교차 참조 검증을 통과시킨다.
-3. `src/ontology/pin.mjs`를 의도적으로 변경한다.
-4. 스파인·커버리지·감사·리뷰 산출물을 재생성한다.
-5. 의미 정렬·선수 관계·coverage gap 변화를 사람이 검토한다.
-6. `npm test`, `npm run verify`, 아티팩트 freshness 검사를 통과시킨다.
+1. 공식 별책 또는 내부 스파인을 바꾸는 근거를 기록한다.
+2. 성취기준 코드·교과·학년군·자료 구조 검증을 통과시킨다.
+3. 공식 별책에서 추출한 248개 코드와 내부 스파인이 정확히 같은지 확인한다.
+4. `src/ontology/corpus-pin.mjs`의 개정과 네 파일 해시를 의도적으로 변경한다.
+5. 의미 정렬·선수 관계·커버리지 변화와 역사적 데이터 계보를 사람이 검토한다.
+6. 관련 스키마, 시험과 문서를 함께 갱신한다.
+7. `npm test`, `npm run verify`, 산출물 최신성 검사를 통과시킨다.
 
-manifest와 데이터가 함께 바뀌었다는 이유만으로 자동 승인하지 않는다.
+파일이 함께 바뀌었다는 이유만으로 새 해시를 자동 승인하지 않는다.
 
 ## 의미 커버리지
 

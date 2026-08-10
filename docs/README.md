@@ -26,13 +26,17 @@
 |---|---|
 | [Schema versioning](schema-versioning.md) | 계약 버전과 fingerprint 정책 |
 | [`schema/`](../schema/) | machine-readable JSON Schema |
-| [Provenance](../PROVENANCE.md) | 온톨로지·corpus pin과 출처 |
+| [Provenance](../PROVENANCE.md) | 내부 corpus pin, 공식 별책과 역사적 출처 |
 | [Notice](../NOTICE.md) | 제3자 고지와 공개 전 확인 |
 
 현재 item은 `digi-mon/item@2`, 학습지원은
-`digi-mon/learning-support@1`, worksheet는 `digi-mon/worksheet@4`, 병렬 form
-set은 `digi-mon/worksheet-form-set@3`다. 발급 당시 JSON, seed, options,
-fingerprint와 corpus identity를 함께 보존한다.
+`digi-mon/learning-support@1`, worksheet는 `digi-mon/worksheet@5`, 병렬 form
+set은 `digi-mon/worksheet-form-set@4`다. 학습 게이트는 request와
+recommendation 모두 `@1`이다. 발급 당시 JSON, seed, options, fingerprint와
+corpus identity를 함께 보존한다.
+
+실행 코퍼스는 저장소 안의 성취기준 스파인과 국어·수학·영어 공식 별책으로
+고정한다. 외부 교육과정 저장소 체크아웃이나 환경 변수는 필요하지 않다.
 
 ## 운영과 자산
 

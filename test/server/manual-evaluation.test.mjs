@@ -150,7 +150,7 @@ const REGISTRY = {
 };
 
 const SPINE = {
-  upstream: { taxonomyVersion: 'test-v1', integrity: [] },
+  corpus: { schema: 'test-corpus', integrity: [] },
   standardCount: STANDARDS.length,
   standards: STANDARDS,
 };

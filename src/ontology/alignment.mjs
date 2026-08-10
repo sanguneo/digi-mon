@@ -18,7 +18,7 @@ export function validateAssessmentMappings(generator, assessmentTopicIds) {
 
 export function assessmentMappingsFor(standard, generator) {
   const assessmentTopicIds = new Set(
-    (standard.upstream?.topicMappings ?? [])
+    (standard.alignment?.topicMappings ?? [])
       .filter((mapping) => mapping.role === 'assesses')
       .map((mapping) => mapping.topicId),
   );
@@ -44,7 +44,7 @@ export function assessmentMappingsFor(standard, generator) {
 }
 
 export function semanticCoverageFor(standard, generators) {
-  const assessmentTopicIds = new Set((standard.upstream?.topicMappings ?? []).filter((mapping) => mapping.role === 'assesses').map((mapping) => mapping.topicId));
+  const assessmentTopicIds = new Set((standard.alignment?.topicMappings ?? []).filter((mapping) => mapping.role === 'assesses').map((mapping) => mapping.topicId));
   const alignments = generators.flatMap((generator) => assessmentMappingsFor(standard, generator)
     .map((mapping) => ({ generatorId: generator.id, ...mapping })));
   const approvedAlignments = alignments.filter((mapping) => mapping.reviewStatus === 'approved');

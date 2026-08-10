@@ -1,6 +1,6 @@
 /**
- * 경계 검사. 목표 불변조건 (4) 온톨로지는 성취기준 코드 인덱스로만 쓴다.
- * 생성기가 온톨로지 주제 텍스트(보일러플레이트)에 손대면 실패로 보고한다.
+ * 경계 검사. 내부 교육과정 코퍼스는 성취기준 코드 인덱스로만 쓴다.
+ * 생성기가 가져온 주제 텍스트에 손대거나 외부 저장소를 다시 요구하면 실패한다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -54,6 +54,11 @@ const CLIENT_CONCERNS = [
 const engineFiles = files.filter((f) => f.startsWith('src/') || f.startsWith('bin/'));
 for (const f of engineFiles) {
   const text = fs.readFileSync(f, 'utf8');
+  for (const token of ['KELM_DIR', 'korean-elementary-learning-map']) {
+    if (text.includes(token)) {
+      violations.push(`${f}: 금지된 외부 교육과정 저장소 참조 '${token}'`);
+    }
+  }
   for (const [token, label, display] of CLIENT_CONCERNS) {
     const hit = token instanceof RegExp ? token.test(text) : text.includes(token);
     if (hit) {
@@ -62,13 +67,13 @@ for (const f of engineFiles) {
   }
 }
 
-const ontologyReaders = files.filter((f) => {
+const corpusReaders = files.filter((f) => {
   const t = fs.readFileSync(f, 'utf8');
   return t.includes("ontology/source.mjs") || t.includes("ontology/spine.mjs") || t.includes("ontology/audit.mjs");
 });
 
-console.log('온톨로지를 읽는 파일 (스파인·감사 경로만이어야 한다):');
-for (const f of ontologyReaders) console.log(`  ${f}`);
+console.log('내부 교육과정 코퍼스를 읽는 파일:');
+for (const f of corpusReaders) console.log(`  ${f}`);
 console.log('');
 console.log(`엔진 파일 ${engineFiles.length}개 중 클라이언트 관심사(PDF·DOM·인쇄) 유입: ${violations.filter((v) => v.includes('클라이언트')).length}건`);
 console.log(`생성기 파일 ${files.filter((x) => x.includes('/generators/')).length}개 중 주제 텍스트 사용: ${violations.filter((v) => v.includes('주제 필드')).length}건`);

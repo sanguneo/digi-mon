@@ -7,7 +7,10 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 for (const name of [
+  'corpus-pin.schema.json',
   'item.schema.json',
+  'learning-gate-request.schema.json',
+  'learning-gate-recommendation.schema.json',
   'learning-support.schema.json',
   'worksheet.schema.json',
   'worksheet-form-set.schema.json',

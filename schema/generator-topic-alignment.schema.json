@@ -11,5 +11,5 @@
     "note": { "type": "string", "minLength": 1 },
     "reviewStatus": { "enum": ["approved", "candidate"] }
   },
-  "description": "A generator may only align to an upstream standardMapping whose relationship is assesses. Absence means unknown semantic coverage, never implicit coverage of every topic under the standard."
+  "description": "A generator may only align to an internal assessment mapping whose relationship is assesses. Absence means unknown semantic coverage, never implicit coverage of every topic under the standard."
 }

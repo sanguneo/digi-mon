@@ -20,12 +20,11 @@ test('package scripts expose isolated tests and artifact freshness', () => {
 test('CI pins actions and runs tests, verification, and freshness checks', () => {
   const workflow = read('.github/workflows/ci.yml');
   const actionUses = [...workflow.matchAll(/uses:\s+[^@\s]+@([a-f0-9]{40})/g)];
-  assert.equal(actionUses.length, 3);
+  assert.equal(actionUses.length, 2);
   assert.match(workflow, /run: npm test/);
   assert.match(workflow, /run: npm run verify/);
   assert.match(workflow, /run: npm run check:artifacts/);
-  assert.match(workflow, /repository: DECK6\/korean-elementary-learning-map/);
-  assert.match(workflow, /ref: 3ef0563084aa2a9baaa47da2c1ec0ebf5d7edc5c/);
+  assert.doesNotMatch(workflow, /korean-elementary-learning-map/);
 });
 
 test('agent session directories stay outside source control', () => {

@@ -42,7 +42,9 @@ server.listen(PORT, HOST, () => {
   console.log('  GET  /v1/generators');
   console.log('  GET  /v1/coverage');
   console.log('  POST /v1/worksheets   {seed, subject, grade, domain, count, difficulty, includeAnswers}');
+  console.log('  POST /v1/worksheet-forms   {...worksheetOptions, formCount, includeAnswers}');
   console.log('  POST /v1/items        {code, count, difficulty, seed}');
+  console.log('  POST /v1/learning-gate   {schema, policyRevision, evidence, target}');
   console.log('  POST /v1/grade        {seed, fingerprint, ...같은옵션, responses:{1:"14"}}');
   console.log('  GET  /v1/prerequisites?code=[2수01-06]');
   console.log('  POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}');

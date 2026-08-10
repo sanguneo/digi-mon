@@ -30,7 +30,7 @@ test('the reviewed math generator set is exact and fails closed on drift', () =>
 test('a reviewed generator approves one explicit assessment topic only', () => {
   const generator = createRegistry().get('math.g12.no.s04.decompose');
   const standard = {
-    upstream: {
+    alignment: {
       topicMappings: [
         { role: 'assesses', topicId: 'topic.math.decompose' },
         { role: 'references', topicId: 'topic.math.number' },
@@ -49,7 +49,7 @@ test('a reviewed generator approves one explicit assessment topic only', () => {
 test('reviewed generators do not guess when a standard assesses multiple topics', () => {
   const generator = createRegistry().get('math.g12.no.s04.decompose');
   const standard = {
-    upstream: {
+    alignment: {
       topicMappings: [
         { role: 'assesses', topicId: 'topic.math.decompose' },
         { role: 'assesses', topicId: 'topic.math.compose' },

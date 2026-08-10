@@ -1,7 +1,8 @@
 # 별도 교사·학습자 클라이언트 참고 흐름
 
 > 상태: 참고 설계. digi-mon engine의 구현 계획이나 현재 product roadmap이 아니다.
-> 학습 게이트·교사용 화면·인쇄·저장은 별도 프로젝트에서 구현한다.
+> 학습 게이트 client·교사용 화면·인쇄·저장은 별도 프로젝트에서 구현한다.
+> 무상태 gate 추천 계약과 HTTP endpoint는 digi-mon engine이 제공한다.
 
 이 문서는 현재 CLI·HTTP API 위에 별도 client를 만들 때 고려할 수 있는
 교사·학습자 경험을 기록한다.
@@ -52,7 +53,8 @@ digi-mon(엔진)            127.0.0.1:8787, 무상태, DB 없음
   S2 나눠주기 ├─ 인쇄 A4 ───────────────────────> 종이
       │        └─ 학급코드 ──> 학습자 기기(같은 LAN)
       │                          S4 연습 (오프라인) ──제출──> 호스트
-      │                                                        └─POST /v1/grade─> 채점
+      │                                                        ├─POST /v1/grade─> 채점
+      │                                                        └─POST /v1/learning-gate
   S3 걷기·돌려주기 <──────────────────────────────────────────────┘
       └─ POST /v1/remediation (수학) ──> 복습 학습지 ──> S2
 
@@ -78,6 +80,10 @@ S1과 S2 종이 모드보다 작게는 학습지가 아이에게 닿지 않는�
 먼저 교사 소유 파일로 내보낸다. 교사가 작업을 다시 열지 못해 흐름이 반복해서
 중단될 때만 SQLite에 저장한다(운영 계약은
 [`operational-data-model.md`](../operational-data-model.md)).
+
+기기 연습 client는 learner item의 `id`를 session 이력에 보존하고 다음 발급의
+`excludeItemIds`로 보낸다. gate 호출에는 `/v1/grade`의 비식별 집계 또는 client가
+보존한 response record만 보내며, 받은 `nextAction`을 실행할지는 client가 결정한다.
 
 호스트는 배정을 만들 때 **같은 seed·옵션으로 두 번 호출한다.**
 

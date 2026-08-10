@@ -32,7 +32,7 @@ writeJson(path.join(REPO_ROOT, 'data', 'curriculum', 'prerequisites.json'), {
 });
 
 console.log(`선수 관계: 성취기준 ${result.listedCount}/${result.standardCount}개, 간선 ${result.edgeCount}개`);
-console.log(`학년군을 넘는 간선: ${result.crossBandEdges}개 (온톨로지는 8개였다)`);
+console.log(`학년군을 넘는 간선: ${result.crossBandEdges}개`);
 console.log(`뿌리 기준: ${result.rootCount}개 -> ${result.roots.join(' ')}`);
 console.log('');
 console.log('선수가 가장 많이 쌓인 기준 (가장 늦게 배운다):');

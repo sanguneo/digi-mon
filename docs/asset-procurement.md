@@ -257,7 +257,7 @@ manifest는 `sourceKind`를 `sourced`, `repository-authored`,
 
 생성 자산은 NOTICE와 PROVENANCE에서 별도 자산 클래스로 집계한다.
 provider 출력 권리나 음성 재배포 조건을 증명하지 못하면 승인할 수 없다.
-업스트림 파생 입력을 사용한 출력은 기존 공개 차단 조건을 상속한다.
+역사적 외부 파생 계보가 있는 입력을 사용한 출력은 기존 공개 차단 조건을 상속한다.
 
 LLM/TTS 생성에는 다음 정보를 추가한다.
 

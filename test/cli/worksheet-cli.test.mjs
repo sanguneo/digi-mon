@@ -89,7 +89,7 @@ test('parallel forms write a deterministic manifest and one artifact set per for
   const manifestNames = names.filter((name) => name.endsWith('.forms.json'));
   assert.equal(manifestNames.length, 1);
   const manifest = JSON.parse(readFileSync(path.join(OUT, manifestNames[0]), 'utf8'));
-  assert.equal(manifest.schema, 'digi-mon/worksheet-form-set@3');
+  assert.equal(manifest.schema, 'digi-mon/worksheet-form-set@4');
   assert.equal(manifest.formCount, 3);
   assert.deepEqual(manifest.forms.map((form) => form.label), ['A', 'B', 'C']);
   assert.equal(names.filter((name) => name.endsWith('.answers.txt')).length, 3);

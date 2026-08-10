@@ -63,7 +63,7 @@ test('practice modes expose three revisioned, fail-closed policies', () => {
 test('advanced mode excludes single-axis generators and forces exact difficulty 3', () => {
   const code = '[2수01-01]';
   const spine = {
-    upstream: { taxonomyVersion: 'test', integrity: [] },
+    corpus: { schema: 'test-corpus', integrity: [] },
     standards: [standard(code)],
   };
   const registry = {
@@ -91,7 +91,7 @@ test('advanced mode excludes single-axis generators and forces exact difficulty 
 test('thinking and literacy modes use exact reviewed generator allowlists', () => {
   const code = '[2수04-01]';
   const spine = {
-    upstream: { taxonomyVersion: 'test', integrity: [] },
+    corpus: { schema: 'test-corpus', integrity: [] },
     standards: [standard(code)],
   };
   const eligible = generator('math.g12.pd.s01.shape-pattern', code);

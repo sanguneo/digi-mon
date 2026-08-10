@@ -8,7 +8,7 @@ import {
 
 test('worksheet fingerprint binds seed, resolved options, items, and corpus', () => {
   const base = {
-    schema: 'digi-mon/worksheet@4',
+    schema: 'digi-mon/worksheet@5',
     seed: 'same-seed',
     options: {
       subject: 'math',
@@ -17,8 +17,8 @@ test('worksheet fingerprint binds seed, resolved options, items, and corpus', ()
     },
     items: [{ id: 'a' }, { id: 'b' }],
     corpus: {
-      taxonomyVersion: 'kr-full-depth-v0.4',
-      integrity: [{ file: 'topics.json', sha256: 'abc' }],
+      taxonomyVersion: 'digi-mon/curriculum-corpus@1',
+      integrity: [{ file: 'data/spine/standards.json', sha256: 'abc' }],
     },
   };
 
@@ -95,7 +95,7 @@ test('worksheet rotation is standard-balanced rather than generator-balanced', (
   ]);
   const worksheet = buildWorksheet(
     {
-      upstream: { taxonomyVersion: 'test', integrity: [] },
+      corpus: { schema: 'test-corpus', integrity: [] },
       standards: [standard(codeA), standard(codeB)],
     },
     {
@@ -121,7 +121,7 @@ test('worksheet rotation is standard-balanced rather than generator-balanced', (
 
 test('library boundary rejects invalid worksheet options', () => {
   const spine = {
-    upstream: { taxonomyVersion: 'test', integrity: [] },
+    corpus: { schema: 'test-corpus', integrity: [] },
     standards: [standard('[2수01-01]')],
   };
   const registry = {
@@ -145,5 +145,40 @@ test('library boundary rejects invalid worksheet options', () => {
     }),
     /followLearningOrder/,
   );
+  assert.throws(
+    () => buildWorksheet(spine, registry, {
+      subject: 'math',
+      excludeItemIds: ['not-an-item-id'],
+    }),
+    /excludeItemIds/,
+  );
+});
+
+test('client exclusions are deterministic fingerprint inputs and remove seen items', () => {
+  const code = '[2수01-01]';
+  const spine = {
+    corpus: { schema: 'test-corpus', integrity: [] },
+    standards: [standard(code)],
+  };
+  const registry = {
+    forStandard() {
+      return [generator('one', code)];
+    },
+  };
+  const options = {
+    seed: 'exclude-seen-item',
+    subject: 'math',
+    count: 3,
+    difficulty: 1,
+  };
+  const original = buildWorksheet(spine, registry, options);
+  const excludeItemIds = [original.items[0].id];
+  const first = buildWorksheet(spine, registry, { ...options, excludeItemIds });
+  const second = buildWorksheet(spine, registry, { ...options, excludeItemIds });
+
+  assert.deepEqual(first, second);
+  assert.deepEqual(first.options.excludeItemIds, excludeItemIds);
+  assert.equal(first.items.some((item) => excludeItemIds.includes(item.id)), false);
+  assert.notEqual(first.fingerprint, original.fingerprint);
 });
 

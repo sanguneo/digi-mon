@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learning-gate-recommendation.schema.json",
+  "title": "digi-mon stateless learning gate recommendation",
+  "type": "object",
+  "required": [
+    "schema",
+    "policyRevision",
+    "policy",
+    "decision",
+    "reasonCodes",
+    "nextAction",
+    "evidenceSummary"
+  ],
+  "properties": {
+    "schema": { "const": "digi-mon/learning-gate-recommendation@1" },
+    "policyRevision": { "const": 1 },
+    "policy": {
+      "type": "object",
+      "required": [
+        "weakAccuracyBelow",
+        "minResponseRecordsPerStandard"
+      ],
+      "properties": {
+        "weakAccuracyBelow": { "const": 0.6 },
+        "minResponseRecordsPerStandard": { "const": 30 }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "enum": [
+        "practice",
+        "remediate",
+        "advance",
+        "await-manual-review"
+      ]
+    },
+    "reasonCodes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "approved-prerequisite-path",
+          "incomplete",
+          "insufficient-evidence",
+          "manual-scoring-pending",
+          "meets-policy-threshold",
+          "no-approved-prerequisite-path",
+          "weak-standard"
+        ]
+      }
+    },
+    "nextAction": {
+      "oneOf": [
+        { "$ref": "#/$defs/worksheetAction" },
+        { "$ref": "#/$defs/remediationAction" },
+        { "$ref": "#/$defs/manualReviewAction" },
+        { "$ref": "#/$defs/completeAction" }
+      ]
+    },
+    "evidenceSummary": { "$ref": "#/$defs/evidenceSummary" }
+  },
+  "$defs": {
+    "standardCode": {
+      "type": "string",
+      "pattern": "^\\[[246][국수영][0-9]{2}-[0-9]{2}\\]$"
+    },
+    "standardCodes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/standardCode" }
+    },
+    "modes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "advanced",
+          "literacy-foundations",
+          "thinking-skills-v1"
+        ]
+      }
+    },
+    "worksheetAction": {
+      "type": "object",
+      "required": ["kind", "codes", "modes", "count"],
+      "properties": {
+        "kind": { "const": "worksheet" },
+        "codes": { "$ref": "#/$defs/standardCodes" },
+        "modes": { "$ref": "#/$defs/modes" },
+        "count": { "type": "integer", "minimum": 1, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "remediationAction": {
+      "type": "object",
+      "required": [
+        "kind",
+        "weakStandards",
+        "depth",
+        "prerequisitePolicy"
+      ],
+      "properties": {
+        "kind": { "const": "remediation" },
+        "weakStandards": { "$ref": "#/$defs/standardCodes" },
+        "depth": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "prerequisitePolicy": { "const": "approved-only" }
+      },
+      "additionalProperties": false
+    },
+    "manualReviewAction": {
+      "type": "object",
+      "required": ["kind", "pendingItems"],
+      "properties": {
+        "kind": { "const": "manual-review" },
+        "pendingItems": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "completeAction": {
+      "type": "object",
+      "required": ["kind", "completedStandards"],
+      "properties": {
+        "kind": { "const": "complete" },
+        "completedStandards": { "$ref": "#/$defs/standardCodes" }
+      },
+      "additionalProperties": false
+    },
+    "evidenceSummary": {
+      "type": "object",
+      "required": [
+        "source",
+        "graded",
+        "answered",
+        "total",
+        "manualScoringCount",
+        "accuracy",
+        "completionRate",
+        "sufficientStandardCount",
+        "evaluatedStandards",
+        "weakStandards"
+      ],
+      "properties": {
+        "source": { "enum": ["grading-result", "response-records"] },
+        "graded": { "type": "integer", "minimum": 0 },
+        "answered": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 0 },
+        "manualScoringCount": { "type": "integer", "minimum": 0 },
+        "accuracy": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "completionRate": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sufficientStandardCount": { "type": "integer", "minimum": 0 },
+        "evaluatedStandards": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/standardCode" }
+        },
+        "weakStandards": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/standardCode" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

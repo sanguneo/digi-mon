@@ -9,11 +9,12 @@ import { learningOrder } from '../curriculum/prerequisites.mjs';
 import { assessmentMappingsFor } from '../ontology/alignment.mjs';
 import { buildLearningSupport } from '../curriculum/learning-support.mjs';
 import { finalizeItem } from './item.mjs';
+import { normalizeExcludeItemIds } from './options.mjs';
 import { createRng } from './rng.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
-const WORKSHEET_SCHEMA = 'digi-mon/worksheet@4';
-const ENGINE_VERSION = 'digi-mon-engine@4';
+const WORKSHEET_SCHEMA = 'digi-mon/worksheet@5';
+const ENGINE_VERSION = 'digi-mon-engine@5';
 
 function stableJson(value) {
   if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
@@ -64,7 +65,7 @@ export function generateItem(generator, standard, rng, difficulty) {
     curriculum: {
       standardKey: standard.key,
       source: standard.source,
-      topicMappings: standard.upstream?.topicMappings ?? [],
+      topicMappings: standard.alignment?.topicMappings ?? [],
     },
     skill: raw.skill ?? generator.skill,
     learningSupport: buildLearningSupport(generator),
@@ -123,6 +124,7 @@ export function buildWorksheet(spine, registry, options) {
     title,
     // true 면 성취기준을 선수 관계 순서로 배치한다. 복습 학습지는 선수부터 풀려야 한다.
     followLearningOrder = false,
+    excludeItemIds = [],
   } = options ?? {};
 
   if (!Number.isInteger(count) || count < 1 || count > 100) {
@@ -144,6 +146,7 @@ export function buildWorksheet(spine, registry, options) {
   if (followLearningOrder && subject !== 'math') {
     throw new Error(`followLearningOrder 는 수학만 지원한다: ${subject}`);
   }
+  const resolvedExcludeItemIds = normalizeExcludeItemIds(excludeItemIds);
 
   const targets = resolveTargets(spine, registry, {
     subject,
@@ -177,6 +180,7 @@ export function buildWorksheet(spine, registry, options) {
   }
 
   const items = [];
+  const excludedItemIdSet = new Set(resolvedExcludeItemIds);
   const seen = new Set();
   const failures = [];
   let cursorPool = followLearningOrder ? pool.slice() : rng.shuffle(pool);
@@ -211,7 +215,7 @@ export function buildWorksheet(spine, registry, options) {
       });
       continue;
     }
-    if (seen.has(item.dedupeKey)) continue;
+    if (excludedItemIdSet.has(item.id) || seen.has(item.dedupeKey)) continue;
     seen.add(item.dedupeKey);
     items.push(item);
   }
@@ -226,8 +230,8 @@ export function buildWorksheet(spine, registry, options) {
   const numbered = items.map((item, idx) => ({ number: idx + 1, ...item }));
 
   const corpus = {
-    taxonomyVersion: spine.upstream.taxonomyVersion ?? null,
-    integrity: (spine.upstream.integrity ?? []).map(({ file, sha256 }) => ({ file, sha256 })),
+    taxonomyVersion: spine.corpus.schema,
+    integrity: spine.corpus.integrity.map(({ file, sha256 }) => ({ file, sha256 })),
   };
   const resolvedOptions = {
     subject,
@@ -239,6 +243,7 @@ export function buildWorksheet(spine, registry, options) {
     difficultyMix,
     modes: resolvedModes,
     followLearningOrder,
+    excludeItemIds: resolvedExcludeItemIds,
   };
   const difficultyHistogram = {};
   for (const item of numbered) {

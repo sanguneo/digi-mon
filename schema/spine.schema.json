@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://digi-mon.local/schema/spine.schema.json",
-  "title": "Digi-mon ontology spine",
+  "title": "Digi-mon imported curriculum spine snapshot",
   "type": "object",
   "required": ["schema", "scope", "upstream", "standardCount", "standards"],
   "properties": {

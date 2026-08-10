@@ -17,13 +17,6 @@ jobs:
         with:
           path: digi-mon
 
-      - name: Checkout reference ontology
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-        with:
-          repository: DECK6/korean-elementary-learning-map
-          ref: 3ef0563084aa2a9baaa47da2c1ec0ebf5d7edc5c
-          path: korean-elementary-learning-map
-
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:

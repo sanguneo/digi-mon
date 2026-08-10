@@ -2,79 +2,87 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
-import { fileURLToPath } from 'node:url';
+import os from 'node:os';
+import { pathToFileURL } from 'node:url';
 
 import { buildCoverage } from '../../src/engine/registry.mjs';
-import { validateOntologyDocuments } from '../../src/ontology/contracts.mjs';
-import { EXPECTED_UPSTREAM_PIN, assertPinnedManifest } from '../../src/ontology/pin.mjs';
+import { validateSpine } from '../../src/ontology/contracts.mjs';
+import {
+  EXPECTED_CORPUS_PIN,
+  assertPinnedCorpus,
+} from '../../src/ontology/corpus-pin.mjs';
 import { loadOntology } from '../../src/ontology/source.mjs';
 import { buildSpine } from '../../src/ontology/spine.mjs';
 
-const HERE = path.dirname(fileURLToPath(import.meta.url));
-const ONTOLOGY_DIR = path.resolve(HERE, '..', '..', '..', 'korean-elementary-learning-map');
+test('repository corpus loads without a sibling ontology checkout', async () => {
+  // Given: 저장소 코드·스파인·공식 별책만 있는 독립 디렉터리
+  const sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'digi-mon-corpus-'));
+  const copyRoot = path.join(sandbox, 'digi-mon');
+  fs.cpSync(path.resolve('src', 'ontology'), path.join(copyRoot, 'src', 'ontology'), {
+    recursive: true,
+  });
+  fs.mkdirSync(path.join(copyRoot, 'data', 'spine'), { recursive: true });
+  fs.copyFileSync(
+    path.resolve('data', 'spine', 'standards.json'),
+    path.join(copyRoot, 'data', 'spine', 'standards.json'),
+  );
+  fs.mkdirSync(path.join(copyRoot, 'reference'), { recursive: true });
+  for (const name of [
+    '[별책5] 국어과 교육과정.md',
+    '[별책8] 수학과 교육과정.md',
+    '[별책14] 영어과 교육과정.md',
+  ]) {
+    fs.copyFileSync(path.resolve('reference', name), path.join(copyRoot, 'reference', name));
+  }
 
-function documents() {
-  return {
-    manifest: {
-      taxonomyVersion: 'v1',
-      counts: { sources: 1, curricula: 1, standards: 1, topics: 2, dependencies: 1, clusters: 1, standardMappings: 2, coverageGaps: 0 },
-      files: Object.fromEntries(Object.keys(EXPECTED_UPSTREAM_PIN.files).map((file) => [file, { sha256: 'a'.repeat(64) }])),
-    },
-    standards: {
-      taxonomyVersion: 'v1', sourceCount: 1, sources: [{ id: 'source-1' }], curriculumCount: 1,
-      standardCount: 1, microTopicCount: 2, mappingCount: 2, coverageGapCount: 0,
-      curricula: [{ id: 'curriculum-1', standardCount: 1, standards: [{ key: 'standard-1', sourceRefs: ['source-1'] }] }],
-      standardMappings: [
-        { standardKey: 'standard-1', microTopicId: 'topic-1', relationship: 'introduces' },
-        { standardKey: 'standard-1', microTopicId: 'topic-2', relationship: 'assesses' },
-      ], coverageGaps: [],
-    },
-    topics: { version: 'v1', taxonomyVersion: 'v1', topicCount: 2, topics: [{ id: 'topic-1' }, { id: 'topic-2' }] },
-    dependencies: { version: 'v1', taxonomyVersion: 'v1', edgeCount: 1, dependencies: [{ topicId: 'topic-2', prerequisiteId: 'topic-1' }] },
-    clusters: { version: 'v1', taxonomyVersion: 'v1', clusterCount: 1, clusters: [{ id: 'cluster-1', topicCount: 2, topics: ['topic-1', 'topic-2'] }] },
-  };
-}
+  // When: 형제 온톨로지 저장소 없이 복사본의 코퍼스를 읽는다
+  const source = await import(pathToFileURL(path.join(copyRoot, 'src', 'ontology', 'source.mjs')));
+  const corpus = source.loadOntology();
 
-test('the checked-in upstream pin is deliberate and manifest hashes are mandatory', () => {
-  assert.equal(EXPECTED_UPSTREAM_PIN.taxonomyVersion, 'kr-full-depth-v0.4');
-  assert.deepEqual(Object.keys(EXPECTED_UPSTREAM_PIN.files).sort(), [
-    'clusters.json', 'curriculum-standards.json', 'dependencies.json', 'topics.json',
-  ]);
-  const manifest = { taxonomyVersion: EXPECTED_UPSTREAM_PIN.taxonomyVersion, files: structuredClone(EXPECTED_UPSTREAM_PIN.files) };
-  assert.doesNotThrow(() => assertPinnedManifest(manifest));
-  delete manifest.files['topics.json'].sha256;
-  assert.throws(() => assertPinnedManifest(manifest), /topics\.json.*sha256/);
+  // Then: 저장소 자체 자료만으로 248개 성취기준과 고정 무결성을 제공한다
+  assert.equal(corpus.spine.standardCount, 248);
+  assert.equal(corpus.spine.corpus.schema, 'digi-mon/curriculum-corpus@1');
+  assert.ok(corpus.integrity.every((entry) => entry.matchesPin));
 });
 
-test('ontology validation rejects count drift and dangling taxonomy IDs', () => {
-  assert.doesNotThrow(() => validateOntologyDocuments(documents()));
-  const badCount = documents();
-  badCount.topics.topicCount = 3;
-  assert.throws(() => validateOntologyDocuments(badCount), /topics\.json topicCount/);
-  const dangling = documents();
-  dangling.dependencies.dependencies[0].prerequisiteId = 'missing-topic';
-  assert.throws(() => validateOntologyDocuments(dangling), /missing-topic/);
-  const crossFile = documents();
-  crossFile.topics.topics[0].standards = ['missing-standard'];
-  assert.throws(() => validateOntologyDocuments(crossFile), /missing-standard/);
+test('repository corpus pin requires every internal file hash', () => {
+  const integrity = Object.entries(EXPECTED_CORPUS_PIN.files)
+    .map(([file, entry]) => ({ file, sha256: entry.sha256 }));
+  assert.doesNotThrow(() => assertPinnedCorpus(integrity));
+  integrity[0].sha256 = 'a'.repeat(64);
+  assert.throws(() => assertPinnedCorpus(integrity), /고정 해시 불일치/);
 });
 
-test('real ontology load enforces the pin and preserves scoped provenance and qualified mappings', () => {
-  const ontology = loadOntology(ONTOLOGY_DIR);
-  const spine = buildSpine(ontology);
-  assert.equal(ontology.integrity.length, 4);
-  assert.ok(ontology.integrity.every((entry) => entry.matchesPin && entry.matchesManifest));
-  assert.ok(spine.upstream.sourceDocuments.some((source) => source.id === 'kr-ncic-math-pdf-2022'));
-  assert.ok(spine.upstream.coverageGaps.some((gap) => gap.workstreamFile === 'math.json'));
+test('spine validation rejects count drift and duplicate achievement codes', () => {
+  const spine = JSON.parse(fs.readFileSync(
+    path.resolve('data', 'spine', 'standards.json'),
+    'utf8',
+  ));
+  assert.doesNotThrow(() => validateSpine(spine));
+  const badCount = structuredClone(spine);
+  badCount.standardCount += 1;
+  assert.throws(() => validateSpine(badCount), /성취기준 수 불일치/);
+  const duplicate = structuredClone(spine);
+  duplicate.standards[1].code = duplicate.standards[0].code;
+  assert.throws(() => validateSpine(duplicate), /code 중복/);
+});
+
+test('repository corpus preserves official sources and qualified mappings', () => {
+  const corpus = loadOntology();
+  const spine = buildSpine(corpus);
+  assert.equal(corpus.integrity.length, 4);
+  assert.ok(corpus.integrity.every((entry) => entry.matchesPin));
+  assert.ok(spine.provenance.sourceDocuments.some((source) => source.id === 'kr-ncic-math-pdf-2022'));
+  assert.equal(spine.corpus.schema, 'digi-mon/curriculum-corpus@1');
   const standard = spine.standards.find((entry) => entry.code === '[4영01-01]');
-  assert.deepEqual(standard.upstream.topicMappings.map((mapping) => mapping.role), ['introduces', 'supports', 'assesses']);
-  assert.ok(standard.upstream.topicMappings.every((mapping) => mapping.confidence && mapping.note && mapping.workstreamFile));
+  assert.deepEqual(standard.alignment.topicMappings.map((mapping) => mapping.role), ['introduces', 'supports', 'assesses']);
+  assert.ok(standard.alignment.topicMappings.every((mapping) => mapping.confidence && mapping.note && mapping.workstreamFile));
 });
 
 test('semantic coverage counts explicit assessment-topic alignment, not every standard topic', () => {
   const spine = { standardCount: 1, standards: [{
     code: '[2수01-01]', subject: 'math', subjectKorean: '수학', gradeBand: '1-2', domain: '수와 연산', module: null,
-    upstream: { topicMappings: [
+    alignment: { topicMappings: [
       { topicId: 'topic-intro', role: 'introduces' },
       { topicId: 'topic-assess', role: 'assesses' },
     ] },
@@ -93,7 +101,7 @@ test('semantic coverage counts explicit assessment-topic alignment, not every st
 test('standard-code inferred mappings stay candidates until reviewed', () => {
   const spine = { standardCount: 1, standards: [{
     code: '[2수01-01]', subject: 'math', subjectKorean: '수학', gradeBand: '1-2', domain: '수와 연산', module: null,
-    upstream: { topicMappings: [{ topicId: 'topic-assess', role: 'assesses' }] },
+    alignment: { topicMappings: [{ topicId: 'topic-assess', role: 'assesses' }] },
   }] };
   const generator = { id: 'candidate-generator' };
   const registry = { size: 1, forStandard: () => [generator], all: () => [generator] };
@@ -104,7 +112,7 @@ test('standard-code inferred mappings stay candidates until reviewed', () => {
 });
 
 test('data-contract schemas are checked in and parse as JSON', () => {
-  for (const name of ['ontology-pin', 'spine', 'generator-topic-alignment', 'coverage']) {
+  for (const name of ['corpus-pin', 'spine', 'generator-topic-alignment', 'coverage']) {
     const schema = JSON.parse(fs.readFileSync(path.resolve('schema', `${name}.schema.json`), 'utf8'));
     assert.equal(schema.$schema, 'https://json-schema.org/draft/2020-12/schema');
   }

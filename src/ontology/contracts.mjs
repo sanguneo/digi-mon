@@ -1,82 +1,100 @@
-const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
-const object = (value, label) => { if (!isObject(value)) throw new Error(`${label} 최상위 객체가 필요하다`); return value; };
-const array = (value, label) => { if (!Array.isArray(value)) throw new Error(`${label} 배열이 필요하다`); return value; };
-function count(value, actual, label) {
-  if (!Number.isInteger(value) || value !== actual) throw new Error(`${label} 불일치: declared ${value}, actual ${actual}`);
-}
-function uniqueIds(records, label, key = 'id') {
-  const ids = new Set();
-  for (const record of records) {
-    const id = record?.[key];
-    if (typeof id !== 'string' || id.length === 0) throw new Error(`${label} ${key} 가 필요하다`);
-    if (ids.has(id)) throw new Error(`${label} ${key} 중복: ${id}`);
-    ids.add(id);
+const SUBJECTS = Object.freeze({
+  math: Object.freeze({ character: '수', gradeBands: new Set(['1-2', '3-4', '5-6']) }),
+  korean: Object.freeze({ character: '국', gradeBands: new Set(['1-2', '3-4', '5-6']) }),
+  english: Object.freeze({ character: '영', gradeBands: new Set(['3-4', '5-6']) }),
+});
+
+const STANDARD_CODE_RE = /^\[(2|4|6)([국수영])\d{2}-\d{2}\]$/;
+
+function object(value, label) {
+  if (value === null || typeof value !== 'object' || Array.isArray(value)) {
+    throw new Error(`${label} 객체가 필요하다`);
   }
-  return ids;
-}
-function requireId(ids, id, label) {
-  if (!ids.has(id)) throw new Error(`${label} 알 수 없는 taxonomy ID: ${id}`);
+  return value;
 }
 
-/** Dependency-free validation at the upstream trust boundary. */
-export function validateOntologyDocuments(input) {
-  const manifest = object(input.manifest, 'manifest.json');
-  const standards = object(input.standards, 'curriculum-standards.json');
-  const topics = object(input.topics, 'topics.json');
-  const dependencies = object(input.dependencies, 'dependencies.json');
-  const clusters = object(input.clusters, 'clusters.json');
-  const sources = array(standards.sources, 'curriculum-standards.json sources');
-  const curricula = array(standards.curricula, 'curriculum-standards.json curricula');
-  const mappings = array(standards.standardMappings, 'curriculum-standards.json standardMappings');
-  const gaps = array(standards.coverageGaps, 'curriculum-standards.json coverageGaps');
-  const topicRecords = array(topics.topics, 'topics.json topics');
-  const edges = array(dependencies.dependencies, 'dependencies.json dependencies');
-  const clusterRecords = array(clusters.clusters, 'clusters.json clusters');
-  const versions = [standards.taxonomyVersion, topics.taxonomyVersion, dependencies.taxonomyVersion, clusters.taxonomyVersion];
-  if (versions.some((version) => typeof version !== 'string') || new Set(versions).size !== 1 || versions[0] !== manifest.taxonomyVersion) {
-    throw new Error(`taxonomyVersion 교차 파일 불일치: ${versions.join(', ')}`);
+function array(value, label) {
+  if (!Array.isArray(value)) throw new Error(`${label} 배열이 필요하다`);
+  return value;
+}
+
+function unique(records, key, label) {
+  const values = new Set();
+  for (const record of records) {
+    const value = record?.[key];
+    if (typeof value !== 'string' || value.length === 0) {
+      throw new Error(`${label} ${key}가 필요하다`);
+    }
+    if (values.has(value)) throw new Error(`${label} ${key} 중복: ${value}`);
+    values.add(value);
   }
-  for (const [label, ontologyDoc] of [['topics.json', topics], ['dependencies.json', dependencies], ['clusters.json', clusters]]) {
-    if (ontologyDoc.version !== ontologyDoc.taxonomyVersion) throw new Error(`${label} version 과 taxonomyVersion 불일치`);
+  return values;
+}
+
+export function validateSpine(spine) {
+  object(spine, '성취기준 스파인');
+  if (spine.schema !== 'digi-mon/spine@2') {
+    throw new Error(`지원하지 않는 성취기준 스파인: ${spine.schema ?? 'missing'}`);
   }
-  const standardRecords = curricula.flatMap((curriculum) => array(curriculum.standards, `curriculum ${curriculum.id} standards`));
-  count(standards.sourceCount, sources.length, 'curriculum-standards.json sourceCount');
-  count(standards.curriculumCount, curricula.length, 'curriculum-standards.json curriculumCount');
-  count(standards.standardCount, standardRecords.length, 'curriculum-standards.json standardCount');
-  count(standards.microTopicCount, topicRecords.length, 'curriculum-standards.json microTopicCount');
-  count(standards.mappingCount, mappings.length, 'curriculum-standards.json mappingCount');
-  count(standards.coverageGapCount, gaps.length, 'curriculum-standards.json coverageGapCount');
-  count(topics.topicCount, topicRecords.length, 'topics.json topicCount');
-  count(dependencies.edgeCount, edges.length, 'dependencies.json edgeCount');
-  count(clusters.clusterCount, clusterRecords.length, 'clusters.json clusterCount');
-  for (const curriculum of curricula) count(curriculum.standardCount, curriculum.standards.length, `curriculum ${curriculum.id} standardCount`);
-  for (const cluster of clusterRecords) count(cluster.topicCount, array(cluster.topics, `cluster ${cluster.id} topics`).length, `cluster ${cluster.id} topicCount`);
-  const sourceIds = uniqueIds(sources, 'source');
-  const topicIds = uniqueIds(topicRecords, 'topic');
-  const standardKeys = uniqueIds(standardRecords, 'standard', 'key');
-  uniqueIds(curricula, 'curriculum'); uniqueIds(clusterRecords, 'cluster');
-  for (const standard of standardRecords) for (const id of standard.sourceRefs ?? []) requireId(sourceIds, id, `standard ${standard.key} sourceRefs`);
-  for (const topic of topicRecords) {
-    for (const key of topic.standards ?? []) requireId(standardKeys, key, `topic ${topic.id} standards`);
-    for (const id of topic.sourceRefs ?? []) requireId(sourceIds, id, `topic ${topic.id} sourceRefs`);
+  const standards = array(spine.standards, '성취기준 스파인 standards');
+  if (spine.standardCount !== standards.length) {
+    throw new Error(
+      `성취기준 수 불일치: declared ${spine.standardCount}, actual ${standards.length}`,
+    );
   }
-  for (const mapping of mappings) {
-    requireId(standardKeys, mapping.standardKey, 'standardMapping standardKey');
-    requireId(topicIds, mapping.microTopicId, 'standardMapping microTopicId');
-    if (typeof mapping.relationship !== 'string' || mapping.relationship.length === 0) throw new Error('standardMapping relationship 가 필요하다');
+  if (spine.conflictCount !== 0 || array(spine.conflicts, '성취기준 conflicts').length !== 0) {
+    throw new Error('코드와 성취기준 필드가 충돌하는 스파인은 사용할 수 없다');
   }
-  for (const edge of edges) { requireId(topicIds, edge.topicId, 'dependency topicId'); requireId(topicIds, edge.prerequisiteId, 'dependency prerequisiteId'); }
-  for (const cluster of clusterRecords) {
-    for (const id of cluster.topics) requireId(topicIds, id, `cluster ${cluster.id}`);
-    if (cluster.standards !== undefined) {
-      count(cluster.standardCount, array(cluster.standards, `cluster ${cluster.id} standards`).length, `cluster ${cluster.id} standardCount`);
-      for (const key of cluster.standards) requireId(standardKeys, key, `cluster ${cluster.id} standards`);
+  unique(standards, 'code', '성취기준');
+  unique(standards, 'specId', '성취기준');
+  unique(standards, 'standardKey', '성취기준');
+
+  for (const standard of standards) {
+    const subject = SUBJECTS[standard.subject];
+    if (!subject) throw new Error(`지원하지 않는 교과: ${standard.subject}`);
+    const match = STANDARD_CODE_RE.exec(standard.code);
+    if (!match || match[2] !== subject.character) {
+      throw new Error(`교과와 성취기준 코드 불일치: ${standard.code}`);
+    }
+    if (!subject.gradeBands.has(standard.gradeBand)) {
+      throw new Error(`교과와 학년군 불일치: ${standard.code} ${standard.gradeBand}`);
+    }
+    object(standard.source, `성취기준 ${standard.code} source`);
+    array(standard.source.evidence, `성취기준 ${standard.code} source.evidence`);
+    object(standard.upstream, `성취기준 ${standard.code} 정렬 자료`);
+    array(standard.upstream.topicMappings, `성취기준 ${standard.code} topicMappings`);
+  }
+  return spine;
+}
+
+export function officialStandardCodes(text, subjectCharacter) {
+  const matches = text.matchAll(/\[(?:2|4|6)([국수영])\d{2}-\d{2}\]/g);
+  return new Set(
+    [...matches]
+      .filter((match) => match[1] === subjectCharacter)
+      .map((match) => match[0]),
+  );
+}
+
+export function validateOfficialCodeInventory(spine, annexTexts) {
+  const spineCodesBySubject = new Map(
+    Object.keys(SUBJECTS).map((subject) => [
+      subject,
+      new Set(spine.standards.filter((standard) => standard.subject === subject)
+        .map((standard) => standard.code)),
+    ]),
+  );
+  for (const [subject, contract] of Object.entries(SUBJECTS)) {
+    const official = officialStandardCodes(annexTexts[subject], contract.character);
+    const internal = spineCodesBySubject.get(subject);
+    const missing = [...official].filter((code) => !internal.has(code));
+    const unknown = [...internal].filter((code) => !official.has(code));
+    if (missing.length > 0 || unknown.length > 0) {
+      throw new Error(
+        `${subject} 공식 성취기준 코드 불일치: missing ${missing.join(', ') || '-'}; `
+        + `unknown ${unknown.join(', ') || '-'}`,
+      );
     }
   }
-  for (const gap of gaps) for (const key of gap.standardKeys ?? []) requireId(standardKeys, key, `coverageGap ${gap.id} standardKeys`);
-  const expected = { sources: sources.length, curricula: curricula.length, standards: standardRecords.length, topics: topicRecords.length,
-    dependencies: edges.length, clusters: clusterRecords.length, standardMappings: mappings.length, coverageGaps: gaps.length };
-  object(manifest.counts, 'manifest.json counts');
-  for (const [key, actual] of Object.entries(expected)) count(manifest.counts[key], actual, `manifest.json counts.${key}`);
   return true;
 }

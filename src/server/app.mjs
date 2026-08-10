@@ -1,5 +1,10 @@
 import { timingSafeEqual } from 'node:crypto';
 import {
+  LearningGateRequestError,
+  recommendLearningGate,
+} from '../curriculum/learning-gate.mjs';
+import { generatorSupportsModes } from '../curriculum/practice-modes.mjs';
+import {
   ancestorsOf,
   approvedAncestorsOf,
   dependentsOf,
@@ -11,6 +16,7 @@ import {
 import { learnerFigure } from '../engine/item.mjs';
 import { learnerLearningSupport } from '../curriculum/learning-support.mjs';
 import {
+  normalizeExcludeItemIds,
   parseWorksheetOptions,
   WorksheetOptionsError,
 } from '../engine/options.mjs';
@@ -25,7 +31,11 @@ import {
 } from '../engine/response-log.mjs';
 import { createRng } from '../engine/rng.mjs';
 import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
-import { buildWorksheetFormSet } from '../engine/worksheet-forms.mjs';
+import {
+  buildWorksheetFormSet,
+  MAX_WORKSHEET_FORMS,
+  WorksheetFormPoolError,
+} from '../engine/worksheet-forms.mjs';
 import { hasSvgRenderer, renderFigureSvg } from '../render/figure-svg.mjs';
 import { gradeWorksheet } from './grade.mjs';
 
@@ -101,6 +111,34 @@ function httpWorksheetOptions(source) {
     }
     throw error;
   }
+}
+
+function httpExcludeItemIds(value) {
+  try {
+    return normalizeExcludeItemIds(value);
+  } catch (error) {
+    if (error instanceof WorksheetOptionsError) {
+      throw new HttpError(400, error.message, {
+        field: error.field,
+        received: error.received,
+      });
+    }
+    throw error;
+  }
+}
+
+function httpFormCount(value) {
+  const formCount = Number(value ?? 3);
+  if (!Number.isInteger(formCount)
+    || formCount < 2
+    || formCount > MAX_WORKSHEET_FORMS) {
+    throw new HttpError(
+      400,
+      `formCount 는 2..${MAX_WORKSHEET_FORMS} 정수여야 한다`,
+      { received: value },
+    );
+  }
+  return formCount;
 }
 
 function worksheetForGrading(spine, registry, body, options) {
@@ -282,7 +320,7 @@ export function createApp({
       path: '/health',
       handle: () => ({
         status: 'ok',
-        upstream: spine.upstream.taxonomyVersion,
+        corpus: spine.corpus.schema,
         standards: spine.standardCount,
         generators: registry.size,
         coverageRatio: coverage.coverageRatio,
@@ -370,6 +408,39 @@ export function createApp({
     },
     {
       method: 'POST',
+      path: '/v1/worksheet-forms',
+      handle: (body, url, req) => {
+        const source = { ...Object.fromEntries(url.searchParams), ...body };
+        const options = httpWorksheetOptions(source);
+        const formCount = httpFormCount(source.formCount);
+        let formSet;
+        try {
+          formSet = buildWorksheetFormSet(spine, registry, {
+            ...options,
+            seed: options.seed ?? `forms-${Date.now()}`,
+            formCount,
+          });
+        } catch (error) {
+          if (error instanceof WorksheetFormPoolError) {
+            throw new HttpError(409, error.message);
+          }
+          throw error;
+        }
+        const includeAnswers = String(source.includeAnswers) === 'true';
+        if (includeAnswers) requireTeacher(req, teacherToken);
+        return {
+          ...formSet,
+          forms: formSet.forms.map(({ label, worksheet }) => ({
+            label,
+            worksheet: includeAnswers
+              ? { ...worksheet, items: worksheet.items.map(attachFigureSvg) }
+              : stripAnswers(worksheet),
+          })),
+        };
+      },
+    },
+    {
+      method: 'POST',
       path: '/v1/items',
       handle: (body, _url, req) => {
         const code = body.code;
@@ -389,11 +460,13 @@ export function createApp({
         const seed = String(body.seed ?? `items-${Date.now()}`);
         const rng = createRng(seed);
         const items = [];
+        const excludeItemIds = httpExcludeItemIds(body.excludeItemIds);
+        const excludedItemIdSet = new Set(excludeItemIds);
         const seen = new Set();
         for (let attempt = 0; attempt < count * 40 && items.length < count; attempt += 1) {
           const g = gens[attempt % gens.length];
           const item = generateItem(g, standard, rng, difficulty);
-          if (seen.has(item.dedupeKey)) continue;
+          if (excludedItemIdSet.has(item.id) || seen.has(item.dedupeKey)) continue;
           seen.add(item.dedupeKey);
           items.push(item);
         }
@@ -414,6 +487,49 @@ export function createApp({
             ? items.map(attachFigureSvg)
             : items.map(stripItemAnswers),
         };
+      },
+    },
+    {
+      method: 'POST',
+      path: '/v1/learning-gate',
+      handle: (body) => {
+        let recommendation;
+        try {
+          recommendation = recommendLearningGate(body);
+        } catch (error) {
+          if (error instanceof LearningGateRequestError) {
+            throw new HttpError(400, error.message, {
+              field: error.field,
+              received: error.received,
+            });
+          }
+          throw error;
+        }
+        const targetCodes = [
+          ...body.target.codes,
+          ...(body.target.advanceToCodes ?? []),
+        ];
+        const unknown = targetCodes.filter((code) => !standardByCode.has(code));
+        if (unknown.length > 0) {
+          throw new HttpError(404, `성취기준을 찾을 수 없다: ${unknown.join(', ')}`);
+        }
+        const wrongSubject = targetCodes.filter((code) =>
+          standardByCode.get(code).subject !== body.target.subject);
+        if (wrongSubject.length > 0) {
+          throw new HttpError(400, 'target.subject 와 성취기준 교과가 다르다', {
+            codes: wrongSubject,
+          });
+        }
+        const unavailable = targetCodes.filter((code) =>
+          !registry.forStandard(code).some((generator) =>
+            generatorSupportsModes(generator, body.target.modes ?? [])));
+        if (unavailable.length > 0) {
+          throw new HttpError(409, '요청한 mode로 발급할 수 없는 성취기준이 있다', {
+            codes: unavailable,
+            modes: body.target.modes ?? [],
+          });
+        }
+        return recommendation;
       },
     },
     {

@@ -7,7 +7,7 @@ import {
   generateItem,
 } from './worksheet.mjs';
 
-const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@3';
+const FORM_SET_SCHEMA = 'digi-mon/worksheet-form-set@4';
 const FORM_PROVENANCE_SCHEMA = 'digi-mon/worksheet-form@1';
 const FORM_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const BLUEPRINT_ATTEMPTS = 24;
@@ -16,6 +16,7 @@ const UNIQUE_ATTEMPTS_PER_SLOT = 200;
 export const MAX_WORKSHEET_FORMS = FORM_LABELS.length;
 
 class FormPoolExhaustedError extends Error {}
+export class WorksheetFormPoolError extends Error {}
 
 function stableJson(value) {
   if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
@@ -82,6 +83,7 @@ function generateForm({
   registry,
   standards,
   seen,
+  excludedItemIds,
 }) {
   const seed = formSeed(base.seed.replace(/:form:A$/, ''), label);
   const rng = createRng(seed);
@@ -104,7 +106,7 @@ function generateForm({
           + `generator=${slot.generatorId} expected=${slot.difficulty} actual=${item.difficulty}`,
         );
       }
-      if (seen.has(item.dedupeKey)) continue;
+      if (excludedItemIds.has(item.id) || seen.has(item.dedupeKey)) continue;
       seen.add(item.dedupeKey);
       return item;
     }
@@ -144,6 +146,7 @@ function buildFormSetAttempt({
 
   const blueprint = blueprintFor(first);
   const seen = new Set(first.items.map((item) => item.dedupeKey));
+  const excludedItemIds = new Set(first.options.excludeItemIds);
   const standards = new Map(spine.standards.map((standard) => [standard.code, standard]));
   const forms = [{ label: firstLabel, worksheet: first }];
 
@@ -157,6 +160,7 @@ function buildFormSetAttempt({
         registry,
         standards,
         seen,
+        excludedItemIds,
       }),
     });
   }
@@ -223,7 +227,7 @@ export function buildWorksheetFormSet(spine, registry, options) {
       lastPoolError = error;
     }
   }
-  throw new Error(
+  throw new WorksheetFormPoolError(
     `병렬 form 고유 문항 pool이 ${BLUEPRINT_ATTEMPTS}개 blueprint에서 부족했다: `
     + lastPoolError.message,
   );

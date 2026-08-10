@@ -63,7 +63,7 @@ function fixture({ constant = false } = {}) {
   ]);
   return {
     spine: {
-      upstream: { taxonomyVersion: 'test', integrity: [] },
+      corpus: { schema: 'test-corpus', integrity: [] },
       standards: [standard(codeA), standard(codeB)],
     },
     registry: {
@@ -88,7 +88,7 @@ test('form set is deterministic, blueprint-equivalent, and globally deduplicated
   const second = buildWorksheetFormSet(spine, registry, options);
 
   assert.deepEqual(first, second);
-  assert.equal(first.schema, 'digi-mon/worksheet-form-set@3');
+  assert.equal(first.schema, 'digi-mon/worksheet-form-set@4');
   assert.equal(first.formCount, 3);
   assert.deepEqual(first.forms.map((form) => form.label), ['A', 'B', 'C']);
   assert.equal(new Set(first.forms.map((form) => form.worksheet.fingerprint)).size, 3);
@@ -105,6 +105,30 @@ test('form set is deterministic, blueprint-equivalent, and globally deduplicated
   const dedupeKeys = first.forms.flatMap((form) =>
     form.worksheet.items.map((item) => item.dedupeKey));
   assert.equal(new Set(dedupeKeys).size, dedupeKeys.length);
+});
+
+test('form set excludes client-visible item ids across every form', () => {
+  const { spine, registry } = fixture();
+  const options = {
+    seed: 'excluded-parallel-forms',
+    subject: 'math',
+    count: 2,
+    difficulty: 1,
+    formCount: 3,
+  };
+  const original = buildWorksheetFormSet(spine, registry, options);
+  const excludeItemIds = [original.forms[0].worksheet.items[0].id];
+  const formSet = buildWorksheetFormSet(spine, registry, {
+    ...options,
+    excludeItemIds,
+  });
+  const ids = formSet.forms.flatMap(({ worksheet }) =>
+    worksheet.items.map((item) => item.id));
+
+  assert.deepEqual(formSet.options.excludeItemIds, excludeItemIds);
+  assert.equal(ids.some((id) => excludeItemIds.includes(id)), false);
+  assert.equal(new Set(ids).size, ids.length);
+  assert.notEqual(formSet.fingerprint, original.fingerprint);
 });
 
 test('form set rejects invalid counts and insufficient unique pool capacity', () => {
@@ -141,7 +165,7 @@ test('form set deterministically skips a blueprint that cannot fill every form',
     [codeB, [generator('expandable', codeB)]],
   ]);
   const spine = {
-    upstream: { taxonomyVersion: 'test', integrity: [] },
+    corpus: { schema: 'test-corpus', integrity: [] },
     standards: [standard(codeA), standard(codeB)],
   };
   const registry = {
@@ -199,7 +223,7 @@ test('form set retries when a generator drifts from the blueprint difficulty', (
     [codeB, [stable]],
   ]);
   const spine = {
-    upstream: { taxonomyVersion: 'test', integrity: [] },
+    corpus: { schema: 'test-corpus', integrity: [] },
     standards: [standard(codeA), standard(codeB)],
   };
   const registry = {

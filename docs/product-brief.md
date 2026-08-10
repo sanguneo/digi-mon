@@ -2,7 +2,8 @@
 
 > 상태: engine library·CLI·HTTP 구현, client·persistence는 별도 범위
 >
-> 현재 계약: item `@2`, learning support `@1`, worksheet `@4`, form set `@3`
+> 현재 계약: item `@2`, learning support `@1`, worksheet `@5`, form set `@4`,
+> learning gate request·recommendation `@1`
 
 ## 한 문장
 
@@ -30,7 +31,8 @@ engine이다.
 3. client가 hint 공개 시점, session과 학습 이력을 관리한다.
 4. seed, options, corpus, fingerprint와 form provenance를 보존한다.
 5. 같은 계약으로 제출을 채점하고 response evidence를 받는다.
-6. client가 evidence를 다음 게이트 요청에 명시적으로 사용한다.
+6. client가 evidence를 무상태 학습 게이트 요청에 명시적으로 사용한다.
+7. engine이 policy revision, reason code와 next action을 반환한다.
 
 engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를 구현하지 않는다.
 
@@ -41,6 +43,7 @@ engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를
 - 같은 corpus·option·seed는 같은 worksheet fingerprint를 만든다.
 - 병렬 form은 같은 standard·generator·difficulty blueprint를 공유한다.
 - form 전체에서 `dedupeKey`가 겹치지 않는다.
+- client가 보낸 learner-visible `excludeItemIds`는 모든 발급 form에서 제외된다.
 - 고유 pool이 부족하면 낮은 품질 문항이나 중복으로 채우지 않고 실패한다.
 - 각 form의 provenance로 B형 이후도 `/v1/grade`에서 재생성·검증할 수 있다.
 
@@ -75,14 +78,23 @@ engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를
 - response record는 pseudonymous token만 허용하고 engine은 저장하지 않는다.
 - 표본이 부족하면 accuracy aggregate를 `null`로 둔다.
 
+### 무상태 학습 게이트
+
+- 단일 채점 요약 또는 client가 보존한 response record를 명시적으로 입력받는다.
+- `policyRevision=1`의 threshold와 precedence로 같은 입력에 같은 결정을 반환한다.
+- decision, reason code, 비식별 evidence summary와 선언적 next action을 반환한다.
+- 누적 record는 성취기준별 30개 미만이면 `insufficient-evidence`로 남긴다.
+- learner history, session, 자동 hint 공개와 next action 실행은 client가 소유한다.
+
 ## 현재 surface
 
 | surface | 상태 | 계약 |
 |---|---|---|
-| engine module | 구현 | item 생성, batch 조립, 채점, prerequisite·response evidence |
+| engine module | 구현 | item 생성, batch 조립, 채점, exclusion, gate 추천 |
 | CLI | 구현 | 단일 worksheet, 2~8 form, 세 mode, text·JSON·answer key |
 | HTTP item·worksheet·grade | 구현 | learner projection, teacher token, fingerprint replay |
-| form 발급 HTTP | 미구현 | CLI manifest를 HTTP grading이 재생할 수는 있음 |
+| form 발급 HTTP | 구현 | 2~8 form, learner·teacher projection, provenance replay |
+| 학습 gate HTTP | 구현 | explicit evidence, revisioned policy, reason-coded action |
 | 자기주도 학습 게이트 client | 별도 구현 | engine 계약을 소비하며 session·history·UI를 소유 |
 | 교사용 client | 선택적 별도 구현 | 배정·override·수동 평가·개입 근거를 소비 |
 
@@ -91,6 +103,7 @@ engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를
 - 이름, 이메일, 음성, 그림, 자유 서술, 안정 learner ID를 첫 제품 범위에서 받지 않는다.
 - 기본 server bind는 `127.0.0.1`이다.
 - production dependency와 outbound model call이 없다.
+- 외부 교육과정 저장소 없이 내부 spine과 공식 별책 pin만으로 실행·검증한다.
 - “offline”은 문제 생성과 채점이 외부 모델·network 호출 없이 가능하다는 뜻이다.
 - 기기 sync, 충돌 해결, 중앙 계정, roster나 session 저장을 뜻하지 않는다.
 
@@ -105,13 +118,10 @@ engine은 화면, 인쇄, 배정, 장기 학습 이력이나 게이트 client를
 - adopter evidence 없는 LMS·SIS·SSO 선행 구현
 - graph DB, vector DB, event sourcing, microservice 선행 도입
 
-## 다음 engine gate
+## 다음 사람 검토 gate
 
 1. 현재 18개 `guided-candidate`의 교과 검토와 승인 상태를 계약으로 분리한다.
 2. 검토된 원리·공식·hint를 다른 generator에 점진적으로 확장한다.
-3. 학습 gate 추천은 입력 evidence, policy revision, reason code와 next action을
-   반환하는 별도 무상태 계약으로 추가한다.
-4. client가 없는 상태에서도 module과 HTTP driver로 모든 계약을 실행·검증할 수 있어야 한다.
 
 실제 학습 history, 화면, DB와 자동 hint 공개 정책은 engine에 넣지 않는다.
 

@@ -23,14 +23,15 @@ HTTP API로 문항·학습지·채점을 제공하고, 인쇄·PDF·화면 렌�
 3. **검산 필수** — 모든 생성기는 `verify(params, answer)`를 반드시 갖는다. 없으면 등록이 거부된다.
    검산이 실패하면 문항이 학습지에 나가지 않는다. 답이 틀린 수학 문항은 최악의 실패다.
 
-상위 데이터는 자매 저장소 `korean-elementary-learning-map`(DECK6, 라이선스 메타데이터 충돌 미해결)의 `kr-full-depth-v0.4`를
-읽기 전용으로 쓴다. LF 정규화 후 SHA-256으로 무결성을 확인한다(Windows 체크아웃이 CRLF라서 필요).
+교육과정 코퍼스는 이 저장소의 성취기준 스파인과 교육부 국어·수학·영어 별책
+Markdown으로 고정한다. 외부 저장소를 읽지 않으며, LF 정규화 SHA-256과 공식
+별책의 248개 성취기준 코드 목록을 함께 대조한다.
 
 ---
 
 ## 2. 측정된 현재 상태
 
-```
+```text
 자동채점 커버리지   150/194 성취기준 (77.3%)
 문항 생성 가능      151 성취기준
 명시 승인 주제 정렬 119/248 · 코드 기반 검토 후보 151/248 assesses 주제
@@ -73,9 +74,9 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 | # | 게이트 | 무엇을 검사하는가 | 왜 있는가 |
 |---|---|---|---|
-| 1 | `bin/build-spine.mjs` | 성취기준 코드를 파싱해 학년군·영역·순번을 도출하고 업스트림 기록값과 대조 (248/248 일치) | 코드 체계를 신뢰하려면 대조가 필요하다 |
-| 2 | `bin/audit-ontology.mjs` | 상위 온톨로지의 텍스트 품질 측정, 교과별 사용 가능 앵커 판정 | §4 |
-| 3 | `tools/check-boundaries.mjs` | 생성기가 온톨로지 주제 텍스트를 참조하는지 / 엔진에 PDF·DOM·인쇄 코드가 유입됐는지 | 결정을 주석으로 남기면 나중에 다시 끌어온다 |
+| 1 | `bin/build-spine.mjs` | 내부 스파인·공식 별책의 고정 해시와 성취기준 코드 248개 일치 여부 검사 | 외부 저장소 없이 코드 체계를 검증해야 한다 |
+| 2 | `bin/audit-ontology.mjs` | 내부 코퍼스 무결성, 교과·학년군·영역·내용 앵커 수 감사 | §4 |
+| 3 | `tools/check-boundaries.mjs` | 생성기의 가져온 주제 텍스트 사용, 외부 교육과정 저장소 참조, PDF·DOM·인쇄 코드 유입 검사 | 결정을 주석으로 남기면 나중에 다시 끌어온다 |
 | 4 | `bin/verify-generators.mjs` | 생성기×난이도×시드 대량 생성, 문항 계약 검증, `verify()` 호출, SVG well-formedness | 답이 틀린 문항이 나가는 걸 막는 1차 방어 |
 | 5 | `tools/mutation-test.mjs` | **정답을 일부러 틀리게 바꿔 `verify()`에 넣는다.** 틀린 답이 통과하면 그 검산은 무력하다 (**5개 적발**) | §5 — 가장 중요한 게이트 |
 | 6 | `tools/check-korean.mjs` | 숫자·단위·단위명사 뒤 조사, 조사 중복, 미치환 흔적, 공백 (**656건 적발**, 로/으로 추가로 **222건 더**) | §6 |
@@ -95,29 +96,29 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 ---
 
-## 4. 상위 온톨로지를 어디까지 믿는가
+## 4. 내부 교육과정 코퍼스를 어떻게 믿는가
 
-`data/audit/ontology-audit.json`에 측정치가 있다.
+`data/audit/ontology-audit.json`은 외부 저장소의 상태가 아니라 현재 저장소에
+고정된 코퍼스를 감사한다.
 
-| 교과 | 쓸 수 있는 앵커 | 주제 텍스트 | 선수 그래프 |
-|---|---|---|---|
-| 수학 | `module` (121/121) | **index-only** | **index-only** |
-| 국어 | `summary` (87/87 고유) | index-only | reviewable-candidate |
-| 영어 | `summary` (40/40 고유) | index-only | reviewable-candidate |
+| 교과 | 성취기준 | 내용 앵커 | 공식 별책 코드 대조 |
+|---|---:|---|---|
+| 수학 | 121 | `module` 121개 | 일치 |
+| 국어 | 87 | `summary` 87개 | 일치 |
+| 영어 | 40 | `summary` 40개 | 일치 |
 
-- **주제 텍스트는 보일러플레이트다.** 수학 363개 주제의 `description`·`assessmentPrompt`가
-  **고유 문장틀 3개**다. "네 자리 이하의 수"와 "입체도형의 겉넓이와 부피"의 학습 내용 기술이
-  글자 그대로 같고 소주제명만 치환된다. 생성기가 이 필드를 참조하는 것을 게이트로 금지했다.
-- **성취기준 `summary`는 다르다.** 국어 87/87, 영어 40/40 전부 고유한 내용 라벨이다.
-  수학은 이 필드가 문장틀 2개라 못 쓰는 대신 `module`이 121/121 있다.
-  **앵커가 교과마다 다른 필드에 있다.**
-- **상위 선수 그래프는 못 쓴다.** 수학 359개 간선 중 67%가 같은 성취기준 안의
-  concept→representation→application 순서고, 영역을 넘는 간선이 **0개**, 학년군을 넘는 간선이
-  8개다. `분수 → 약분 → 분수의 곱셈` 같은 실제 위계를 담지 못한다.
+- 내부 스파인과 세 공식 별책의 SHA-256을 `corpus-pin@1`로 고정한다.
+- 교과·학년군·영역과 코드가 어긋나거나 코드·식별자가 중복되면 로더가 실패한다.
+- 공식 별책에서 추출한 고유 성취기준 코드와 내부 스파인의 코드 집합이 다르면
+  실행하지 않는다.
+- 가져온 주제 정렬은 로드 시 digi-mon 내부 `alignment` 계약으로 변환한다.
+- 선수 관계는 외부 그래프를 읽지 않고 `src/curriculum/prerequisites.mjs`의
+  저장소 저작 자료만 사용한다.
+- CI는 digi-mon 저장소 하나만 체크아웃한다.
 
 ### 여기서 저작자가 두 번 틀렸다 — 같은 함정을 볼 것
 
-1. `topics.json`만 감사하고 "국어는 앵커가 없다 → 0/87 원리적 불가"로 결론했다. 성취기준
+1. 과거 주제 자료만 감사하고 "국어는 앵커가 없다 → 0/87 원리적 불가"로 결론했다. 성취기준
    `summary`를 보지 않았다. 이후 문법 12개가 규칙 기반으로 열렸다.
 2. 영어도 성취기준 40개를 **읽지 않고** "전부 불가"로 단정했다. 실제로 읽으니 문자 인식 3개는
    자산 없이 되고 10개는 애초에 자동채점 불가였다. `0/40`이 `3/30`이 됐다.
@@ -296,14 +297,15 @@ manual로만 갈라서 **잴 수 있는 부분이 있는 기준까지 통째로 
 
 ## 9. 선수 관계 그래프
 
-상위 그래프를 못 쓴다고 판정했으므로 새로 저작했다. `src/curriculum/prerequisites.mjs`.
+초기 수입 그래프를 운영에 쓸 수 없다고 판정했으므로 새로 저작했다.
+`src/curriculum/prerequisites.mjs`.
 
-```
-수학 121/121 성취기준 · 간선 158개 · 학년군 넘김 54개 (상위는 8개)
+```text
+수학 121/121 성취기준 · 간선 158개 · 학년군 넘김 54개
 순환 0 · 허깨비 참조 0 · 학년군 역행 0
 가장 깊은 기준·최대 병목: 검토표에 있다(아래 링크). 간선을 고칠 때마다 낡으므로
 이 문서에 옮겨 적지 않는다 — 같은 부류의 낡은 수치가 두 번 재발했다(§16).
-```
+```text
 
 `POST /v1/remediation`이 고리를 닫는다. 채점 → 취약 성취기준 → 선수 역추적 → 학습 순서로
 배치한 복습 학습지. 취약 기준을 반복시키지 않는다. 두 자리 덧셈이 안 되는데 분수의 덧셈을
@@ -314,7 +316,7 @@ manual로만 갈라서 **잴 수 있는 부분이 있는 기준까지 통째로 
 "분수의 나눗셈 조상에 자연수 나눗셈 전무"는 문자로는 틀렸다 — 조상에는 있었다. 그런데
 `[4수01-07]`까지 **6홉**이고 경로가 약분을 우회했다.
 
-```
+```text
 [6수01-11] ← [6수01-10] ← [6수01-09] ← [6수01-06] ← [6수01-05] ← [6수01-04] ← [4수01-07]
 ```
 
@@ -329,7 +331,7 @@ manual로만 갈라서 **잴 수 있는 부분이 있는 기준까지 통째로 
 
 ## 10. API
 
-```
+```text
 GET  /health
 GET  /v1/subjects
 GET  /v1/standards?subject=math&grade=1-2&covered=true
@@ -337,33 +339,31 @@ GET  /v1/generators
 GET  /v1/coverage
 GET  /v1/prerequisites?code=[2수01-06]
 POST /v1/worksheets   {seed, subject, grade, domain, count, difficulty, includeAnswers}
+POST /v1/worksheet-forms   {...학습지옵션, formCount, includeAnswers}
 POST /v1/items        {code, count, difficulty, seed}
 POST /v1/grade        {seed, ...같은옵션, responses, manualEvaluations}  → 채점 + responseRecords
-POST /v1/accuracy     {records:[...]}  교사 인증 · 누적 응답 → 정답률·난이도 역전
+POST /v1/learning-gate   {schema, policyRevision, evidence, target}
 POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}
 ```
 
 기본값으로 학습자용 응답에서 정답·풀이·선택지 `correct` 플래그를 제거한다.
 `includeAnswers=true`가 교사용이다. 작도 문항은 정확도 계산에서 분리해 `manualScoring`으로 넘긴다.
 
-`/v1/accuracy`는 교사 인증을 요구하고 저장하지 않는다 — 누적은 호출자 몫이다.
-값을 자동으로 바꾸지도 않는다.
-표본 30 미만이면 `accuracy`가 `null`이다. 세 번 풀어 두 번 맞은 것을 0.67이라고 부르면
-숫자가 사실보다 세 보인다. 실측 확인: 응답 240건에서 일부러 뒤집은
-`math.g12.no.s06.add`의 `d1 0.5682 → d2 0.7321` 역전을 격차 0.1639로 잡아냈다.
+누적 응답은 호출자가 보존한다. 학습 게이트는 저장하지 않으며, 성취기준별
+표본 30개 미만이면 근거 부족으로 남긴다.
 
 ---
 
 ## 11. 파일 지도
 
-```
-src/ontology/     상위 데이터 읽기 전용 접근. source(무결성) · spine(정규화) · audit(품질측정)
+```text
+src/ontology/     내부 코퍼스 접근. source(고정 해시·공식 코드 대조) · spine · audit
 src/curriculum/   교육과정 지식. prerequisites · scoring-policy · units
                   korean-vocab · korean-sentences · english-vocab
 src/engine/       rng(시드 결정적) · item(계약) · registry(생성기 등록·커버리지) · worksheet(조립)
                   rational(정수 유리수·고정소수점) · hangul(자모 계산) · korean-number(조사)
                   response-log(정답률 집계·난이도 역전 탐지)
-src/generators/   math/ 9파일 147개 · korean/ 2파일 22개 · english/ 1파일 6개
+src/generators/   math/ 9파일 152개 · korean/ 2파일 29개 · english/ 2파일 12개
                   corpus(문장제 공용 어휘 — 이름·사물·단위명사)
 src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · worksheet-text
 src/server/       app(라우터) · grade(무상태 채점)
@@ -377,11 +377,12 @@ tools/            게이트 15종 (check-boundaries · mutation-test · check-ko
                   · build-english-official-vocabulary --check)
                   + 도구 6종 (export-review-tables · export-asset-tables · export-math-tables
                   · sample-items · figure-gallery · shot)
-data/             spine · curriculum · coverage · audit (모두 생성물, 커밋됨)
+data/             고정 spine · curriculum · coverage · audit (커밋됨)
 docs/review/      전문가 검토용 표 (생성물). math.md · assets.md · prerequisites.md · english.md
 ```
 
-`data/*.json`은 전부 `schema` 필드를 갖는다. 게이트가 생성하며 손으로 고치지 않는다.
+`data/*.json`은 전부 `schema` 필드를 갖는다. `data/spine/standards.json`은 고정
+코퍼스이며, 나머지 감사·검토 산출물은 게이트가 관리한다.
 
 ---
 
