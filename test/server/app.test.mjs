@@ -620,3 +620,41 @@ test('대상 없는 요청은 500이 아니라 404로 나간다', async () => {
   assert.equal(formTarget.status, 404);
 });
 
+test('읽기 전용 조회 경로가 전부 응답한다', async () => {
+  const subjects = await request('/v1/subjects');
+  assert.equal(subjects.status, 200);
+  assert.equal(subjects.body.subjects.length, 1);
+  assert.equal(subjects.body.subjects[0].subject, 'math');
+  assert.equal(subjects.body.subjects[0].standardCount, 1);
+
+  const standards = await request('/v1/standards?subject=math&grade=1-2');
+  assert.equal(standards.status, 200);
+  assert.equal(standards.body.count, 1);
+  assert.equal(standards.body.standards[0].code, CODE);
+  assert.equal(standards.body.standards[0].generatorCount, 1);
+
+  // 모르는 교과는 오류가 아니라 빈 목록이다. 조회는 필터일 뿐이다.
+  const noSuchSubject = await request('/v1/standards?subject=klingon');
+  assert.equal(noSuchSubject.status, 200);
+  assert.equal(noSuchSubject.body.count, 0);
+
+  const generators = await request('/v1/generators');
+  assert.equal(generators.status, 200);
+  assert.equal(generators.body.count, 1);
+  assert.equal(generators.body.generators[0].id, GENERATOR.id);
+  assert.equal(generators.body.generators[0].learningSupportStatus, 'guided-candidate');
+
+  const coverage = await request('/v1/coverage');
+  assert.equal(coverage.status, 200);
+  assert.equal(coverage.body.schema, 'digi-mon/coverage@2');
+  assert.equal(coverage.body.totalStandards, 1);
+
+  const prerequisites = await request(`/v1/prerequisites?code=${encodeURIComponent(CODE)}`);
+  assert.equal(prerequisites.status, 200);
+  assert.equal(prerequisites.body.code, CODE);
+  assert.ok(Array.isArray(prerequisites.body.direct));
+
+  const unknownPrerequisite = await request('/v1/prerequisites?code=%5B6%EC%88%9801-99%5D');
+  assert.equal(unknownPrerequisite.status, 404);
+});
+
