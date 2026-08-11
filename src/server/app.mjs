@@ -48,6 +48,20 @@ const MAX_COUNT = 100;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_REQUESTS = 120;
 
+/**
+ * 윈도당 생성 비용 상한.
+ *
+ * 요청 수만 세면 20문항 1형과 100문항 8형이 같은 한 건이다. 뒤엣것은 앞엣것보다
+ * 수십 배 비싸서, 분당 120요청 허용은 단일 IP 가 단일 스레드 서버의 CPU 를 분당
+ * 수십 초 태울 수 있다는 뜻이었다(최악 요청 실측 0.73초 × 120 ≈ 88초).
+ *
+ * 비용은 count × max(1, formCount) — 서버가 만들어야 하는 문항 수다. 상한 3,000 은
+ * 정상 교사 사용을 막지 않는 값으로 잡았다: 20문항 3형(비용 60)이면 분당 50회,
+ * 100문항 1형(비용 100)이면 분당 30회다. 반대로 최악 요청(100문항 8형, 비용 800)은
+ * 분당 3회로 묶여 CPU 점유가 88초에서 2초 아래로 떨어진다.
+ */
+const RATE_LIMIT_COST = 3_000;
+
 class HttpError extends Error {
   constructor(status, message, detail) {
     super(message);
@@ -298,26 +312,48 @@ function validateManualEvaluations(value, worksheet) {
  */
 const RATE_LIMIT_MAX_CLIENTS = 10_000;
 
+/**
+ * 요청 수와 생성 비용을 함께 세는 리미터.
+ *
+ * admit 은 요청 진입 시점(본문을 읽기 전)이라 비용을 모른다. 그래서 두 단계다 —
+ * 진입에서 요청 수를 세고, 라우트가 옵션을 파싱한 뒤 charge 로 실제 비용을 청구한다.
+ * 이미 시작한 요청을 중간에 끊지는 않는다. 비용을 넘긴 IP 는 그 다음 요청부터 429 다.
+ */
 function createRateLimiter() {
   const clients = new Map();
-  return (key, now = Date.now()) => {
+
+  const entryFor = (key, now) => {
     const current = clients.get(key);
-    if (!current || now - current.startedAt >= RATE_LIMIT_WINDOW_MS) {
-      clients.set(key, { startedAt: now, count: 1 });
-      if (clients.size > RATE_LIMIT_MAX_CLIENTS) {
-        for (const [client, entry] of clients) {
-          if (now - entry.startedAt >= RATE_LIMIT_WINDOW_MS) clients.delete(client);
-        }
-        for (const client of clients.keys()) {
-          if (clients.size <= RATE_LIMIT_MAX_CLIENTS) break;
-          if (client !== key) clients.delete(client);
-        }
+    if (current && now - current.startedAt < RATE_LIMIT_WINDOW_MS) return current;
+    const fresh = { startedAt: now, count: 0, cost: 0 };
+    clients.set(key, fresh);
+    if (clients.size > RATE_LIMIT_MAX_CLIENTS) {
+      for (const [client, entry] of clients) {
+        if (now - entry.startedAt >= RATE_LIMIT_WINDOW_MS) clients.delete(client);
       }
-      return true;
+      for (const client of clients.keys()) {
+        if (clients.size <= RATE_LIMIT_MAX_CLIENTS) break;
+        if (client !== key) clients.delete(client);
+      }
     }
-    current.count += 1;
-    return current.count <= RATE_LIMIT_REQUESTS;
+    return fresh;
   };
+
+  return {
+    admit(key, now = Date.now()) {
+      const entry = entryFor(key, now);
+      entry.count += 1;
+      return entry.count <= RATE_LIMIT_REQUESTS && entry.cost <= RATE_LIMIT_COST;
+    },
+    charge(key, cost, now = Date.now()) {
+      entryFor(key, now).cost += cost;
+    },
+  };
+}
+
+/** 요청 하나가 서버에 시키는 문항 생성량. 리밋은 이 값을 센다. */
+function generationCost({ count = 20 } = {}, formCount = 1) {
+  return count * Math.max(1, formCount);
 }
 
 export function createApp({
@@ -327,7 +363,10 @@ export function createApp({
 }) {
   const coverage = buildCoverage(spine, registry);
   const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
-  const allowRequest = createRateLimiter();
+  const rateLimiter = createRateLimiter();
+  const chargeGeneration = (req, options, formCount = 1) => {
+    rateLimiter.charge(req.socket.remoteAddress ?? 'unknown', generationCost(options, formCount));
+  };
 
   const routes = [
     {
@@ -405,6 +444,7 @@ export function createApp({
       handle: (body, url, req) => {
         const source = { ...Object.fromEntries(url.searchParams), ...body };
         const options = httpWorksheetOptions(source);
+        chargeGeneration(req, options);
         const worksheet = buildWorksheet(spine, registry, {
           ...options,
           seed: options.seed ?? `ws-${Date.now()}`,
@@ -430,6 +470,7 @@ export function createApp({
         const source = { ...Object.fromEntries(url.searchParams), ...body };
         const options = httpWorksheetOptions(source);
         const formCount = httpFormCount(source.formCount);
+        chargeGeneration(req, options, formCount);
         let formSet;
         try {
           formSet = buildWorksheetFormSet(spine, registry, {
@@ -474,6 +515,7 @@ export function createApp({
         const difficulty = Number(body.difficulty ?? 2);
         if (![1, 2, 3].includes(difficulty)) throw new HttpError(400, 'difficulty 는 1, 2, 3 중 하나여야 한다');
 
+        chargeGeneration(req, { count });
         const seed = String(body.seed ?? `items-${Date.now()}`);
         const rng = createRng(seed);
         const items = [];
@@ -588,6 +630,9 @@ export function createApp({
           throw new HttpError(400, 'at 은 ISO 8601 UTC 시각 문자열이어야 한다');
         }
         const options = httpWorksheetOptions(body);
+        // 채점은 학습지를 다시 만들어 대조한다. formSet 채점이면 form set 전체를
+        // 재생성하므로 발급과 같은 비용이다.
+        chargeGeneration(req, options, Number(body.formSet?.formCount) || 1);
         const worksheet = worksheetForGrading(spine, registry, body, options);
         if (worksheet.fingerprint !== body.fingerprint) {
           throw new HttpError(409, '학습지 fingerprint 가 일치하지 않는다', {
@@ -759,6 +804,7 @@ export function createApp({
           subject: 'math',
           followLearningOrder: false,
         });
+        chargeGeneration(req, options);
         const worksheet = buildWorksheet(spine, registry, {
           ...options,
           seed: options.seed ?? `remediation-${Date.now()}`,
@@ -797,7 +843,7 @@ export function createApp({
   return async function handler(req, res) {
     try {
       const client = req.socket.remoteAddress ?? 'unknown';
-      if (!allowRequest(client)) {
+      if (!rateLimiter.admit(client)) {
         json(res, 429, { error: '요청이 너무 많다. 잠시 후 다시 시도하라' }, {
           'retry-after': String(RATE_LIMIT_WINDOW_MS / 1000),
         });
