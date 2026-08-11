@@ -12,6 +12,7 @@
  * 저장은 엔진 밖의 관심사다. 여기서는 순수 함수로 집계만 하고, 어디에 쌓을지는
  * 호출자가 정한다.
  */
+import { isStandardCode } from '../curriculum/standard-code.mjs';
 
 /** 응답 한 건. 채점 결과에서 만든다. */
 export function makeResponseRecord({ item, correct, answered, elapsedMs = null, learnerId = null, at = null }) {
@@ -109,7 +110,7 @@ export function validateResponseRecords(records) {
     }
     if (!isBoundedString(record.itemId)
       || !isBoundedString(record.generatorId)
-      || !/^\[[246][국수영][0-9]{2}-[0-9]{2}\]$/.test(record.standardCode)
+      || !isStandardCode(record.standardCode)
       || !['math', 'korean', 'english'].includes(record.subject)
       || !['1-2', '3-4', '5-6'].includes(record.gradeBand)
       || ![1, 2, 3].includes(record.declaredDifficulty)

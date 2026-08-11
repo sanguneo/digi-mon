@@ -3,9 +3,9 @@ import {
   aggregateByStandard,
   validateResponseRecords,
 } from '../engine/response-log.mjs';
+import { STANDARD_CODE_RE } from './standard-code.mjs';
 
 const SUBJECTS = new Set(['math', 'korean', 'english']);
-const STANDARD_CODE_RE = /^\[[246][국수영]\d{2}-\d{2}\]$/;
 const WEAK_ACCURACY_BELOW = 0.6;
 
 export class LearningGateRequestError extends Error {

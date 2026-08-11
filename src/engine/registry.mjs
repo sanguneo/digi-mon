@@ -13,6 +13,7 @@ import { generators as koreanSentences } from '../generators/korean/sentences.mj
 import { generators as englishSentences } from '../generators/english/sentences.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
+import { isStandardCode } from '../curriculum/standard-code.mjs';
 import {
   MATH_GENERATOR_REVIEW,
   reviewMathGeneratorSet,
@@ -48,7 +49,7 @@ function assertGeneratorContract(g, file) {
     throw new Error(`생성기 계약 위반 [${g?.id ?? '?'} in ${file}]: ${msg}`);
   };
   if (typeof g?.id !== 'string' || g.id.length === 0) fail('id 없음');
-  if (typeof g.standardCode !== 'string' || !/^\[\d[가-힣]+\d{2}-\d{2}\]$/.test(g.standardCode)) fail(`standardCode 형식 오류: ${g.standardCode}`);
+  if (!isStandardCode(g.standardCode)) fail(`standardCode 형식 오류: ${g.standardCode}`);
   if (typeof g.skill !== 'string' || g.skill.length === 0) fail('skill 없음');
   if (typeof g.generate !== 'function') fail('generate 없음');
   if (typeof g.verify !== 'function') fail('verify 없음 — 검산 없는 생성기는 받지 않는다');

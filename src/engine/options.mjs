@@ -1,8 +1,8 @@
 import { PRACTICE_MODE_IDS } from '../curriculum/practice-modes.mjs';
+import { STANDARD_CODE_RE } from '../curriculum/standard-code.mjs';
 
 const SUBJECTS = new Set(['math', 'korean', 'english']);
 const GRADE_BANDS = new Set(['1-2', '3-4', '5-6']);
-const STANDARD_CODE_RE = /^\[[246][국수영]\d{2}-\d{2}\]$/;
 const ITEM_ID_RE = /^[a-f0-9]{12}$/;
 const MAX_EXCLUDED_ITEM_IDS = 10_000;
 const DIFFICULTY_LEVELS = [1, 2, 3];
