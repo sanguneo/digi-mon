@@ -46,7 +46,11 @@ export const FIGURE_KINDS = new Set([
   'data.bar-graph',
 ]);
 
-const CHOICE_LABELS = ['①', '②', '③', '④', '⑤'];
+/**
+ * 선택지 라벨. 채점(`src/server/grade.mjs`)이 학습자가 보낸 라벨을 선택지 본문으로
+ * 되읽을 때 같은 배열을 써야 한다. 두 벌로 두면 라벨 해석이 조용히 갈린다.
+ */
+export const CHOICE_LABELS = ['①', '②', '③', '④', '⑤'];
 const POSITION_MARKS = new Set(['㉠', '㉡', '㉢', '㉣', '㉤', ...CHOICE_LABELS]);
 const DATA_VISIBLE_IN_FIGURE = new Set([
   'math.g12.gm.s12.read-ruler',

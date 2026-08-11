@@ -5,7 +5,7 @@
  * 다시 만들어서 대조한다. 문항을 DB에 넣어 둘 필요가 없다.
  */
 
-const CHOICE_LABELS = ['①', '②', '③', '④', '⑤'];
+import { CHOICE_LABELS } from '../engine/item.mjs';
 
 /** 표기 차이를 흡수한다. 정답 판정이 전각/공백/쉼표 때문에 갈리면 안 된다. */
 export function normalizeResponse(value) {
