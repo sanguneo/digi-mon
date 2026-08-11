@@ -14,6 +14,20 @@ digi-mon은 초등 **국어·영어·수학** 성취기준을 바탕으로 문�
 > 한마디로, digi-mon은 학습 화면이 아니라 학습 화면이 믿고 사용할 수 있는
 > 문제·채점·학습지원 엔진이다.
 
+## 저장소 역할
+
+현재 저장소는 하나의 엔진 프로젝트다. 교육과정 코퍼스, 생성기, 검산·채점
+로직, JSON Schema, CLI와 HTTP adapter를 함께 버전 관리한다. 웹·앱·인쇄
+클라이언트는 포함하지 않는다.
+
+첫 클라이언트를 시작할 때는 이 저장소를 npm workspace 모노레포로 확장한다.
+엔진은 루트 프로젝트에 그대로 두고 클라이언트를 `apps/web`의 독립 프로젝트로
+추가한다. 클라이언트는 자체 `package.json`, 테스트와 CI 경계를 가지며 엔진의
+`src/`를 직접 import하지 않는다. 연결 표면은 HTTP API와 `schema/` 계약뿐이다.
+
+전환 구조, 클라이언트 책임과 구현 순서는
+[클라이언트 프로젝트 기획서](docs/client-project-plan.md)에 고정한다.
+
 ## 왜 만드는가
 
 문제를 무작위로 만들어 주는 것만으로는 학습 엔진이 되기 어렵다. 학습용
@@ -48,6 +62,33 @@ digi-mon은 이 질문들을 생성기 규칙, 버전이 붙은 자료 구조, �
 도움말을 언제 공개할지, 어떤 화면을 보여 줄지, 제안을 실제로 실행할지는
 클라이언트가 결정한다.
 
+## 조립·데이터 흐름
+
+```text
+reference/ + data/
+        ↓
+src/ontology/ + src/curriculum/
+        ↓
+src/generators/
+        ↓
+src/engine/
+        ↓
+bin/ CLI · src/server/ HTTP adapter
+        ↓
+외부 클라이언트
+```
+
+- `src/engine/`은 DOM, 인쇄, 계정, DB와 클라이언트를 모른다.
+- `src/generators/`는 승인된 교육과정·어휘·사실 자료만 사용한다.
+- 생성기는 난수·문항 확정 같은 engine primitive를 사용하고 registry가 생성기를
+  조립한다. 위 화살표는 package import graph가 아니라 결과가 만들어지는 흐름이다.
+- `src/server/`는 엔진 결과를 HTTP로 투영하며 장기 상태를 저장하지 않는다.
+- 클라이언트는 학습지의 `seed`, `options`, `fingerprint`를 함께 보존한다.
+- 학습자용 투영과 정답 제거는 클라이언트가 재구현하지 않고 엔진 결과를 사용한다.
+
+`tools/check-boundaries.mjs`가 엔진과 생성기에 브라우저·인쇄 관심사가 들어오는
+회귀를 검사한다.
+
 ## 핵심 기능
 
 ### 교육과정에 연결된 문제 생성
@@ -80,6 +121,10 @@ digi-mon은 이 질문들을 생성기 규칙, 버전이 붙은 자료 구조, �
 - 발급 당시 조건과 다른 조건으로 채점을 요청하면 실패한다.
 - 고유 문항이 부족할 때 중복이나 낮은 품질 문항으로 채우지 않고 명시적으로
   실패한다.
+- 난이도를 생략한 일반 학습지는 교과별 검토 기본 mix를 사용한다. 수학은
+  `1/2/3 = 45/45/10`, 국어·영어는 `15/50/35`이며, 호출자가 `difficulty` 또는
+  `difficultyMix`를 지정하면 요청값을 그대로 사용한다
+  (`src/engine/worksheet.mjs`).
 
 ### 반복 노출 방지
 
@@ -322,10 +367,22 @@ test/      동작과 계약 시험
 tools/     검증·감사·검토표 생성 도구
 ```
 
+`src/`의 책임은 다음처럼 나뉜다.
+
+| 경로 | 책임 |
+|---|---|
+| `src/ontology/` | 고정 코퍼스 로드, 스파인과 정렬 계약 |
+| `src/curriculum/` | 어휘, 선수 관계, mode, 학습지원 정책 |
+| `src/generators/` | 교과·학년군별 결정적 문항 생성기 |
+| `src/engine/` | 옵션, 생성, fingerprint, form, 응답 집계 |
+| `src/server/` | 무상태 HTTP 경계, 투영, 채점 |
+| `src/render/` | CLI·검토용 텍스트와 SVG 렌더 |
+
 ## 더 읽을 문서
 
 - 전체 문서 안내: `docs/README.md`
 - 제품 목적과 경계: `docs/product-brief.md`
+- 다음 클라이언트 작업의 결정 원장: `docs/client-project-plan.md`
 - 출처와 무결성: `PROVENANCE.md`
 - 제3자 고지: `NOTICE.md`
 - 자료 계약 변경 정책: `docs/schema-versioning.md`

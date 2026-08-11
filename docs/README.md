@@ -8,8 +8,9 @@
 
 1. [제품 브리프](product-brief.md) - 현재 가치 loop, 지원 surface, mode와 non-goal
 2. [루트 README](../README.md) - 설치, CLI, HTTP 빠른 시작
-3. [실용 제품 울트라리서치](research/digi-mon-practical-product.md) - 과거 client 연구 근거
-4. [상세 품질 현황](../REVIEW.md) - 생성기·커버리지·검증의 현재 수치
+3. [클라이언트 프로젝트 기획서](client-project-plan.md) - 다음 client의 monorepo·경계·작업 순서
+4. [실용 제품 울트라리서치](research/digi-mon-practical-product.md) - 과거 client 연구 근거
+5. [상세 품질 현황](../REVIEW.md) - 생성기·커버리지·검증의 현재 수치
 
 ## 제품과 경험
 

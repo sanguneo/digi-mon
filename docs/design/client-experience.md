@@ -1,8 +1,9 @@
 # 별도 교사·학습자 클라이언트 참고 흐름
 
 > 상태: 참고 설계. digi-mon engine의 구현 계획이나 현재 product roadmap이 아니다.
-> 학습 게이트 client·교사용 화면·인쇄·저장은 별도 프로젝트에서 구현한다.
+> 학습 게이트 client·교사용 화면·인쇄·저장은 `apps/web` 독립 workspace에서 구현한다.
 > 무상태 gate 추천 계약과 HTTP endpoint는 digi-mon engine이 제공한다.
+> 저장소 배치와 작업 순서는 [`client-project-plan.md`](../client-project-plan.md)가 우선한다.
 
 이 문서는 현재 CLI·HTTP API 위에 별도 client를 만들 때 고려할 수 있는
 교사·학습자 경험을 기록한다.
@@ -20,7 +21,7 @@
 
 ```text
 digi-mon(엔진)            127.0.0.1:8787, 무상태, DB 없음
-별도 client 저장소        정적 UI + 필요할 때 얇은 호스트 프로세스
+apps/web workspace        정적 UI + 필요할 때 얇은 호스트 프로세스
 ```
 
 **호스트 프로세스가 필요한 이유는 편의가 아니라 두 가지 계약이다.**
@@ -37,10 +38,10 @@ digi-mon(엔진)            127.0.0.1:8787, 무상태, DB 없음
 
 | 경로 | 토큰 | 허용 |
 |---|---|---|
-| `/teacher/*` | 호스트가 `Authorization: Bearer` 주입 | 정답본, 피드백, 수동 채점, 복습 |
-| `/learner/*` | **주입하지 않음** | 학습자본 조회, `POST /v1/grade`(피드백 없이) |
+| `/teacher/api/*` | 호스트가 `Authorization: Bearer` 주입 | 정답본, 피드백, 수동 채점, 복습 |
+| `/learner/api/*` | **주입하지 않음** | 학습자본 조회, `POST /v1/grade`(피드백 없이) |
 
-`/learner/*` 프록시는 `includeAnswers`·`includeFeedback`·`manualEvaluations` 파라미터를
+`/learner/api/*` 프록시는 `includeAnswers`·`includeFeedback`·`manualEvaluations` 파라미터를
 요청에서 제거한 뒤 전달한다. 통과시켜도 엔진이 `403` 을 주지만, 학습자 경로가 교사
 파라미터를 실어 나를 수 있다는 사실 자체를 남기지 않는다.
 
