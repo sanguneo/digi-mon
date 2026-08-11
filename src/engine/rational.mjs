@@ -15,7 +15,15 @@ export function gcd(a, b) {
   return x;
 }
 
+/**
+ * 최소공배수. 0 은 받지 않는다.
+ *
+ * lcm(0, 0) 은 gcd 가 0 이라 0/0 = NaN 을 돌려주고, 그 NaN 이 정답 문자열까지
+ * 흘러가 'NaN' 이 답인 문항이 만들어진다. 이웃한 makeFraction·divideFractions 와
+ * 같이 경계에서 명시적으로 던진다.
+ */
 export function lcm(a, b) {
+  if (a === 0 || b === 0) throw new Error(`최소공배수는 0에 대해 정의되지 않는다: ${a}, ${b}`);
   return Math.abs(a * b) / gcd(a, b);
 }
 
