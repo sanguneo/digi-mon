@@ -5,6 +5,7 @@ const GRADE_BANDS = new Set(['1-2', '3-4', '5-6']);
 const STANDARD_CODE_RE = /^\[[246][국수영]\d{2}-\d{2}\]$/;
 const ITEM_ID_RE = /^[a-f0-9]{12}$/;
 const MAX_EXCLUDED_ITEM_IDS = 10_000;
+const DIFFICULTY_LEVELS = [1, 2, 3];
 
 export class WorksheetOptionsError extends Error {
   constructor(field, message, received) {
@@ -28,6 +29,51 @@ function boolean(value, fallback = false) {
   if (value === true || value === 'true') return true;
   if (value === false || value === 'false') return false;
   throw new WorksheetOptionsError('boolean', 'boolean 옵션은 true 또는 false여야 한다', value);
+}
+
+/**
+ * difficultyMix 를 엔진이 받는 모양({난이도: 가중치})으로 정규화한다.
+ *
+ * 엔진은 처음부터 이 옵션을 지원했는데(`worksheet.mjs` 의 difficultyMix) 파서가
+ * 통과시키지 않아, HTTP 로 보낸 클라이언트는 200 을 받고도 조용히 무시당했다.
+ * 조용한 무시 대신 배선하거나 명시적으로 거부한다.
+ *
+ * 쿼리스트링으로도 보낼 수 있게 "1:3,2:1" 형태의 문자열을 함께 받는다.
+ * 검증 규칙은 엔진(`worksheet.mjs` 의 mixEntries 검사)과 같다 — 난이도 1..3 키,
+ * 유한한 양수 가중치.
+ */
+export function normalizeDifficultyMix(value) {
+  if (value === undefined || value === null || value === '') return undefined;
+
+  const reject = () => {
+    throw new WorksheetOptionsError(
+      'difficultyMix',
+      'difficultyMix 는 난이도 1..3 키에 양수 가중치를 붙인 객체여야 한다',
+      value,
+    );
+  };
+
+  let entries;
+  if (typeof value === 'string') {
+    entries = value.split(',').map((pair) => pair.split(':').map((part) => part.trim()));
+    if (entries.some((pair) => pair.length !== 2)) reject();
+  } else if (typeof value === 'object' && !Array.isArray(value)) {
+    entries = Object.entries(value);
+  } else {
+    reject();
+  }
+  if (entries.length === 0) reject();
+
+  const mix = {};
+  for (const [rawLevel, rawWeight] of entries) {
+    const level = Number(rawLevel);
+    const weight = Number(rawWeight);
+    if (!DIFFICULTY_LEVELS.includes(level)) reject();
+    if (!Number.isFinite(weight) || weight <= 0) reject();
+    if (mix[level] !== undefined) reject();
+    mix[level] = weight;
+  }
+  return mix;
 }
 
 export function normalizeExcludeItemIds(value) {
@@ -136,6 +182,7 @@ export function parseWorksheetOptions(source, { maxCount = 100 } = {}) {
     codes,
     count,
     difficulty: modes.includes('advanced') ? 3 : difficulty,
+    difficultyMix: normalizeDifficultyMix(source.difficultyMix),
     modes,
     title: source.title,
     followLearningOrder,
