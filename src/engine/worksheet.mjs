@@ -13,7 +13,12 @@ import { normalizeExcludeItemIds } from './options.mjs';
 import { createRng } from './rng.mjs';
 import { stableJson } from './stable-json.mjs';
 
-const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
+const DEFAULT_DIFFICULTY_MIXES = {
+  math: { 1: 45, 2: 45, 3: 10 },
+  korean: { 1: 15, 2: 50, 3: 35 },
+  english: { 1: 15, 2: 50, 3: 35 },
+};
+const NEUTRAL_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
 const WORKSHEET_SCHEMA = 'digi-mon/worksheet@5';
 const ENGINE_VERSION = 'digi-mon-engine@5';
 
@@ -130,7 +135,8 @@ function resolveTargets(spine, registry, {
  * @property {string[]} [codes]
  * @property {number} [count] 1..100
  * @property {number} [difficulty] 1..3. 주면 difficultyMix 대신 이 값으로 고정한다
- * @property {Record<number, number>} [difficultyMix] 난이도별 양수 가중치
+ * @property {Record<number, number>} [difficultyMix] 난이도별 양수 가중치.
+ *   생략하면 교과별 검토 기본값을 쓴다
  * @property {string[]} [modes]
  * @property {string} [title]
  * @property {boolean} [followLearningOrder] 선수 관계 순서로 배치. 수학만 지원
@@ -174,7 +180,7 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     codes,
     count = 20,
     difficulty,
-    difficultyMix = DEFAULT_DIFFICULTY_MIX,
+    difficultyMix,
     modes = [],
     title,
     // true 면 성취기준을 선수 관계 순서로 배치한다. 복습 학습지는 선수부터 풀려야 한다.
@@ -195,6 +201,12 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
   }
   const resolvedModes = modes.slice().sort();
   const resolvedDifficulty = resolvedModes.includes('advanced') ? 3 : difficulty;
+  // 명시한 난이도는 그대로 존중한다. 옵션을 생략한 일반 학습지만 사람 검토에서
+  // 확인한 교과 전체 경향을 한 곳에서 보정해 생성기별 임시 수정을 피한다.
+  const resolvedDifficultyMix = difficultyMix
+    ?? (resolvedDifficulty === undefined
+      ? DEFAULT_DIFFICULTY_MIXES[subject]
+      : NEUTRAL_DIFFICULTY_MIX);
   if (resolvedModes.includes('advanced') && difficulty !== undefined && difficulty !== 3) {
     throw new Error(`advanced mode는 difficulty 3만 지원한다: ${difficulty}`);
   }
@@ -224,7 +236,8 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
   }
 
   const rng = createRng(seed);
-  const mixEntries = Object.entries(difficultyMix).map(([k, v]) => [Number(k), Number(v)]);
+  const mixEntries = Object.entries(resolvedDifficultyMix)
+    .map(([k, v]) => [Number(k), Number(v)]);
   if (mixEntries.length === 0
     || mixEntries.some(([level, weight]) =>
       ![1, 2, 3].includes(level) || !Number.isFinite(weight) || weight <= 0)) {
@@ -305,7 +318,7 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     codes: codes ?? null,
     count,
     difficulty: resolvedDifficulty ?? null,
-    difficultyMix,
+    difficultyMix: resolvedDifficultyMix,
     modes: resolvedModes,
     followLearningOrder,
     excludeItemIds: resolvedExcludeItemIds,
