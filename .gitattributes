@@ -1,0 +1,16 @@
+# 체크아웃 환경이 파일 바이트를 바꾸면 안 된다.
+#
+# 이 저장소는 파일 내용을 바이트 단위로 해시해서 검증 핀으로 쓴다 —
+# `src/curriculum/generator-reviews.mjs` 의 생성기 검토 지문과
+# `src/ontology/corpus-pin.mjs` 의 공식 별책 코퍼스 핀이 그렇다.
+# core.autocrlf 설정이 사람마다 달라 작업 사본의 줄바꿈이 갈리면 같은 커밋에서
+# 다른 지문이 나오고, 검토 지문이 어긋나면 승인 집합이 빈 집합이 되어 의미
+# 커버리지가 조용히 0 으로 무너진다(`REVIEW.md` §13 에 사고 기록).
+#
+# 저장소의 blob 은 전부 LF 다. 작업 사본도 항상 LF 로 고정한다.
+* text=auto eol=lf
+
+# 원문 자산. 줄바꿈 변환 대상이 아니다.
+*.hwp binary
+*.pdf binary
+*.docx binary
