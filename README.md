@@ -257,6 +257,8 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 | `GET` | `/health` | 서버 상태 확인 |
 | `GET` | `/v1/subjects` | 지원 교과 조회 |
 | `GET` | `/v1/standards` | 성취기준 조회 |
+| `GET` | `/v1/generators` | 등록된 생성기 목록 조회 |
+| `GET` | `/v1/coverage` | 성취기준 대비 생성기 커버리지 조회 |
 | `POST` | `/v1/items` | 특정 성취기준의 개별 문항 발급 |
 | `POST` | `/v1/worksheets` | 학습지 발급 |
 | `POST` | `/v1/worksheet-forms` | 2~8개 병렬 문제지 발급 |
@@ -264,6 +266,7 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 | `POST` | `/v1/learning-gate` | 채점 근거에 따른 다음 행동 제안 |
 | `GET` | `/v1/prerequisites` | 승인된 선수 관계 조회 |
 | `POST` | `/v1/remediation` | 승인된 선수 관계 기반 보충 문제 발급 |
+| `POST` | `/v1/accuracy` | 누적 응답 기록에서 정답률·난이도 역전 집계 |
 
 정답이 포함된 발급이나 상세 채점 결과는 다음 인증이 필요하다.
 
