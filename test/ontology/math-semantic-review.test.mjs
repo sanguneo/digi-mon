@@ -5,8 +5,26 @@ import { createRegistry } from '../../src/engine/registry.mjs';
 import {
   MATH_GENERATOR_REVIEW,
   reviewMathGeneratorSet,
+  sourceContentDigest,
 } from '../../src/curriculum/generator-reviews.mjs';
 import { assessmentMappingsFor } from '../../src/ontology/alignment.mjs';
+
+test('검토 지문은 줄바꿈 표현이 아니라 소스 내용만 본다', () => {
+  // 이 불변식이 깨졌을 때 무슨 일이 났는지는 REVIEW.md §13 에 있다. 요약하면:
+  // CRLF 작업 사본에서 계산한 핀이 커밋돼, 커밋된 LF 내용으로는 지문이 영구히
+  // 어긋났고 승인 집합이 빈 집합이 되어 의미 커버리지가 0 으로 무너졌다.
+  const lf = 'export const a = 1;\nexport const b = 2;\n';
+  const crlf = lf.replace(/\n/g, '\r\n');
+  const cr = lf.replace(/\n/g, '\r');
+
+  assert.equal(sourceContentDigest(crlf), sourceContentDigest(lf));
+
+  // 내용이 실제로 바뀌면 여전히 다른 지문이 나온다 — 게이트를 무르게 만든 게 아니다.
+  assert.notEqual(sourceContentDigest(`${lf}export const c = 3;\n`), sourceContentDigest(lf));
+
+  // 정규화 대상은 CRLF 뿐이다. 홀로 남은 CR 은 내용 차이로 남는다.
+  assert.notEqual(sourceContentDigest(cr), sourceContentDigest(lf));
+});
 
 test('the reviewed math generator set is exact and fails closed on drift', () => {
   const generators = createRegistry().all();
