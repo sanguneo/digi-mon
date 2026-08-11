@@ -184,7 +184,47 @@ export function finalizeItem(raw, context) {
   return item;
 }
 
-/** 형식 계약 위반은 즉시 던진다. 깨진 문항이 학습지에 나가는 것보다 낫다. */
+/**
+ * 정답. 자동 채점이면 value·accepts 가, 사람 채점이면 rubric 이 필수다.
+ *
+ * @typedef {object} ItemAnswer
+ * @property {string} display 사람이 읽는 정답 표기
+ * @property {*} [value]
+ * @property {string[]} [accepts] 허용 표기. 자동 채점 문항은 비면 안 된다
+ * @property {string[]} [rubric] 채점 기준. 사람 채점 문항은 비면 안 된다
+ */
+
+/**
+ * 문항 계약 — 아래 validateItem 이 런타임에 강제하는 필드다.
+ *
+ * @typedef {object} ItemContract
+ * @property {string} [schema] 있으면 'digi-mon/item@2'
+ * @property {string} generatorId
+ * @property {string} standardCode
+ * @property {string} format
+ * @property {string} stem 그림 문항이 아니면 비면 안 된다
+ * @property {number} difficulty 1..3
+ * @property {string} [scoring] 'auto' 또는 'manual'
+ * @property {ItemAnswer} answer
+ * @property {string[]} solution 빈 단계가 있으면 안 된다
+ * @property {Record<string, any>} [figure]
+ * @property {string[]} [nonWords] 비표기 낱말. 정답이 여기 들어가면 문항이 모순이다
+ * @property {object} [params]
+ * @property {string} [dedupeKey]
+ */
+
+/**
+ * 실제 문항은 계약 필드에 더해 교육과정 provenance·학습지원 자료 같은 부가 필드를
+ * 함께 싣는다. 계약은 최소 요구이지 전부가 아니다.
+ *
+ * @typedef {ItemContract & Record<string, any>} Item
+ */
+
+/**
+ * 형식 계약 위반은 즉시 던진다. 깨진 문항이 학습지에 나가는 것보다 낫다.
+ *
+ * @param {Item} item
+ */
 export function validateItem(item) {
   const fail = (msg) => {
     throw new Error(`문항 계약 위반 [${item.generatorId ?? '?'}]: ${msg}`);

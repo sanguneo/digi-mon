@@ -15,6 +15,7 @@
     "audit:ontology": "node bin/audit-ontology.mjs",
     "verify:generators": "node bin/verify-generators.mjs",
     "worksheet": "node bin/worksheet.mjs",
+    "check:types": "node tools/check-types.mjs",
     "check:boundaries": "node tools/check-boundaries.mjs",
     "check:coverage-schema": "node tools/check-coverage-schema.mjs",
     "check:schema-usage": "node tools/check-schema-usage.mjs",
@@ -25,7 +26,7 @@
     "check:official-vocabulary": "node tools/build-english-official-vocabulary.mjs --check",
     "check:vocabulary": "node tools/check-vocabulary.mjs",
     "figures": "node tools/figure-gallery.mjs",
-    "verify": "node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/check-coverage-schema.mjs && node tools/check-schema-usage.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/build-english-official-vocabulary.mjs --check && node tools/check-vocabulary.mjs && node tools/check-asset-requirements.mjs && node tools/check-vocab-selfapproval.mjs && node tools/check-fact-tables.mjs && node tools/check-difficulty.mjs && node tools/check-difficulty-notes.mjs && node tools/check-capacity.mjs && node tools/check-trim.mjs && node tools/export-review-tables.mjs && node tools/export-asset-tables.mjs && node tools/export-math-tables.mjs && node tools/check-review-doc.mjs",
+    "verify": "node tools/check-types.mjs && node bin/build-spine.mjs && node bin/audit-ontology.mjs && node tools/check-boundaries.mjs && node bin/verify-generators.mjs && node tools/check-coverage-schema.mjs && node tools/check-schema-usage.mjs && node tools/mutation-test.mjs && node tools/check-korean.mjs && node tools/check-prerequisites.mjs && node tools/build-english-official-vocabulary.mjs --check && node tools/check-vocabulary.mjs && node tools/check-asset-requirements.mjs && node tools/check-vocab-selfapproval.mjs && node tools/check-fact-tables.mjs && node tools/check-difficulty.mjs && node tools/check-difficulty-notes.mjs && node tools/check-capacity.mjs && node tools/check-trim.mjs && node tools/export-review-tables.mjs && node tools/export-asset-tables.mjs && node tools/export-math-tables.mjs && node tools/check-review-doc.mjs",
     "check:capacity": "node tools/check-capacity.mjs",
     "check:difficulty": "node tools/check-difficulty.mjs",
     "check:review-doc": "node tools/check-review-doc.mjs",
@@ -39,6 +40,8 @@
     "export:math": "node tools/export-math-tables.mjs"
   },
   "devDependencies": {
-    "ajv": "^8.18.0"
+    "@types/node": "^26.2.0",
+    "ajv": "^8.18.0",
+    "typescript": "^7.0.2"
   }
 }

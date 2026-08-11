@@ -44,6 +44,28 @@ const MODULES = [
   { file: 'english/sentences.mjs', generators: englishSentences },
 ];
 
+/**
+ * 생성기 계약.
+ *
+ * 아래 assertGeneratorContract 가 런타임에 강제하는 것과 같은 모양을 타입으로도
+ * 적는다. 런타임 검사는 그 생성기를 실제로 등록해 봐야 울지만, 타입은 편집기와
+ * `npm run check:types` 에서 먼저 운다. 둘이 갈리면 검사 쪽이 정본이다.
+ *
+ * @typedef {object} Generator
+ * @property {string} id
+ * @property {string} standardCode 엄격형 성취기준 코드 (curriculum/standard-code.mjs)
+ * @property {string} skill
+ * @property {string} [format]
+ * @property {string} [difficultyAxis] 'numeric'|'categorical'|'single'. 기본값 numeric
+ * @property {number[]} [difficulties] 1..3 중에서. 기본값은 축에 따라 [1] 또는 [1,2,3]
+ * @property {string} [difficultyNote] categorical 이면 필수
+ * @property {string} [capacityNote] 파라미터 공간이 원래 좁은 이유
+ * @property {object} [learningGuide]
+ * @property {(rng: object, context: {difficulty: number, standard: object}) => object} generate
+ * @property {(params: object, answer: object) => boolean} verify 검산. 없는 생성기는 받지 않는다
+ */
+
+/** @param {Generator} g */
 function assertGeneratorContract(g, file) {
   const fail = (msg) => {
     throw new Error(`생성기 계약 위반 [${g?.id ?? '?'} in ${file}]: ${msg}`);

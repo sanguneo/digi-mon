@@ -32,6 +32,10 @@ jobs:
         working-directory: digi-mon
         run: npm audit
 
+      - name: Type check
+        working-directory: digi-mon
+        run: npm run check:types
+
       - name: Unit and regression tests
         working-directory: digi-mon
         run: npm test

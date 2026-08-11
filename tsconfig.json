@@ -1,0 +1,25 @@
+{
+  "// 왜": [
+    "빌드 단계를 만들지 않는다. tsc 는 타입 검사만 하고(noEmit) 산출물을 내지 않는다.",
+    "src 는 약 24k 줄인데 JSDoc @param 이 0개였고 lint·formatter·tsconfig 도 없었다.",
+    "Generator·Item 계약은 registry.mjs·item.mjs 의 명령형 검사로만 존재한다 —",
+    "런타임 검사는 그 코드를 실제로 돌려야 울고, 오타는 배포 후에 운다.",
+    "우선 src/engine 만 검사한다. 깨끗해지면 curriculum → server → generators 로 넓힌다."
+  ],
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/engine/**/*.mjs"]
+}

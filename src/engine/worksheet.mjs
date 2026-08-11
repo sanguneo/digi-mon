@@ -118,6 +118,52 @@ function resolveTargets(spine, registry, {
  * dedupeKey 로 한 장 안에서의 중복을 막는다. 파라미터 공간이 고갈되면
  * 조용히 중복을 넣지 않고 만든 만큼만 돌려주고 부족분을 보고한다.
  */
+/**
+ * 학습지 발급 옵션. HTTP 경계에서는 engine/options.mjs 의 parseWorksheetOptions 가
+ * 이 모양으로 정규화해 넘긴다.
+ *
+ * @typedef {object} WorksheetOptions
+ * @property {string} [seed]
+ * @property {'math'|'korean'|'english'} [subject]
+ * @property {string[]} [gradeBands]
+ * @property {string[]} [domains]
+ * @property {string[]} [codes]
+ * @property {number} [count] 1..100
+ * @property {number} [difficulty] 1..3. 주면 difficultyMix 대신 이 값으로 고정한다
+ * @property {Record<number, number>} [difficultyMix] 난이도별 양수 가중치
+ * @property {string[]} [modes]
+ * @property {string} [title]
+ * @property {boolean} [followLearningOrder] 선수 관계 순서로 배치. 수학만 지원
+ * @property {string[]} [excludeItemIds]
+ */
+
+/**
+ * 발급된 학습지. fingerprint 는 seed·해석된 옵션·문항·코퍼스로 계산한다 —
+ * 채점은 이 지문으로 같은 학습지인지 대조한다.
+ *
+ * @typedef {object} Worksheet
+ * @property {string} schema
+ * @property {string} engineVersion
+ * @property {string} seed
+ * @property {string} title
+ * @property {number} requested
+ * @property {number} produced
+ * @property {number} shortfall 요청분에서 못 채운 수. 0 이 아니면 서버가 409 를 낸다
+ * @property {Record<string, any>} options 해석된 옵션(provenance)
+ * @property {Record<string, any>} modeSelection
+ * @property {Record<string, any>} corpus
+ * @property {string[]} standardsUsed
+ * @property {Record<number, number>} difficultyHistogram
+ * @property {Record<string, any>[]} items
+ * @property {string} fingerprint
+ */
+
+/**
+ * @param {Record<string, any>} spine
+ * @param {Record<string, any>} registry
+ * @param {WorksheetOptions} [options]
+ * @returns {Worksheet}
+ */
 export function buildWorksheet(spine, registry, options) {
   const {
     seed = 'digi-mon',
