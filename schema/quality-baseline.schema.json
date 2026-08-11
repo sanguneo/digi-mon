@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digi-mon.local/schema/quality-baseline.schema.json",
+  "title": "Deterministic human-review worksheet baseline",
+  "type": "object",
+  "required": [
+    "schema",
+    "reviewAxes",
+    "reviewRatings",
+    "caseCount",
+    "itemsPerCase",
+    "totalItems",
+    "cases",
+    "fingerprint"
+  ],
+  "properties": {
+    "schema": { "const": "digi-mon/quality-baseline@1" },
+    "reviewAxes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        { "const": "curriculum-alignment" },
+        { "const": "answer-correctness" },
+        { "const": "wording-naturalness" },
+        { "const": "distractor-quality" },
+        { "const": "perceived-difficulty" },
+        { "const": "repetition" }
+      ],
+      "items": false
+    },
+    "reviewRatings": {
+      "type": "object",
+      "required": ["core", "perceivedDifficulty", "repetition"],
+      "properties": {
+        "core": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "prefixItems": [
+            { "const": "pass" },
+            { "const": "fix" },
+            { "const": "undecidable" },
+            { "const": "n-a" }
+          ],
+          "items": false
+        },
+        "perceivedDifficulty": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "prefixItems": [
+            { "const": "match" },
+            { "const": "easier" },
+            { "const": "harder" },
+            { "const": "undecidable" }
+          ],
+          "items": false
+        },
+        "repetition": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "prefixItems": [
+            { "const": "varied" },
+            { "const": "repetitive" },
+            { "const": "undecidable" }
+          ],
+          "items": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "caseCount": { "const": 24 },
+    "itemsPerCase": { "const": 10 },
+    "totalItems": { "const": 240 },
+    "cases": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": { "$ref": "#/$defs/case" }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": [
+        "id",
+        "seed",
+        "options",
+        "worksheetFingerprint",
+        "standardsUsed",
+        "difficultyHistogram"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^WS-[MKE](12|34|56)-D[123]$"
+        },
+        "seed": {
+          "type": "string",
+          "pattern": "^review-ws-[mke](12|34|56)-d[123]$"
+        },
+        "options": {
+          "type": "object",
+          "required": ["subject", "gradeBands", "count", "difficulty"],
+          "properties": {
+            "subject": {
+              "enum": ["math", "korean", "english"]
+            },
+            "gradeBands": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "enum": ["1-2", "3-4", "5-6"]
+              }
+            },
+            "count": { "const": 10 },
+            "difficulty": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3
+            }
+          },
+          "additionalProperties": false
+        },
+        "worksheetFingerprint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "standardsUsed": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^\\[[246][국수영]\\d{2}-\\d{2}\\]$"
+          }
+        },
+        "difficultyHistogram": {
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "1": { "type": "integer", "minimum": 0 },
+            "2": { "type": "integer", "minimum": 0 },
+            "3": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

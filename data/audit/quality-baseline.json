@@ -1,0 +1,667 @@
+{
+  "schema": "digi-mon/quality-baseline@1",
+  "reviewAxes": [
+    "curriculum-alignment",
+    "answer-correctness",
+    "wording-naturalness",
+    "distractor-quality",
+    "perceived-difficulty",
+    "repetition"
+  ],
+  "reviewRatings": {
+    "core": [
+      "pass",
+      "fix",
+      "undecidable",
+      "n-a"
+    ],
+    "perceivedDifficulty": [
+      "match",
+      "easier",
+      "harder",
+      "undecidable"
+    ],
+    "repetition": [
+      "varied",
+      "repetitive",
+      "undecidable"
+    ]
+  },
+  "caseCount": 24,
+  "itemsPerCase": 10,
+  "totalItems": 240,
+  "cases": [
+    {
+      "id": "WS-M12-D1",
+      "seed": "review-ws-m12-d1",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "6053d57c6f0e3056a4987cce0a7114c8e676e325d0381f667a54be2c8fe89b2e",
+      "standardsUsed": [
+        "[2수01-02]",
+        "[2수01-04]",
+        "[2수01-05]",
+        "[2수01-06]",
+        "[2수02-01]",
+        "[2수03-01]",
+        "[2수03-02]",
+        "[2수03-05]",
+        "[2수03-07]",
+        "[2수04-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-M12-D2",
+      "seed": "review-ws-m12-d2",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "bb6020dc99f6959db8fcafd437d3170df627bf2215eb6b03be8c1b55739a3eae",
+      "standardsUsed": [
+        "[2수01-03]",
+        "[2수01-05]",
+        "[2수01-07]",
+        "[2수01-08]",
+        "[2수01-11]",
+        "[2수03-04]",
+        "[2수03-09]",
+        "[2수03-11]",
+        "[2수03-13]",
+        "[2수04-02]"
+      ],
+      "difficultyHistogram": {
+        "2": 10
+      }
+    },
+    {
+      "id": "WS-M12-D3",
+      "seed": "review-ws-m12-d3",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "2045d5b73d5d6b162e511e07a909e487711ce8f06eab0e79c824471c0944dda6",
+      "standardsUsed": [
+        "[2수01-02]",
+        "[2수01-04]",
+        "[2수01-05]",
+        "[2수01-08]",
+        "[2수01-09]",
+        "[2수03-04]",
+        "[2수03-05]",
+        "[2수03-08]",
+        "[2수03-12]",
+        "[2수03-13]"
+      ],
+      "difficultyHistogram": {
+        "3": 10
+      }
+    },
+    {
+      "id": "WS-M34-D1",
+      "seed": "review-ws-m34-d1",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "c3a4468341e655f42c2a8e7abb6517423760473b877c804cf62ccb15f665e2af",
+      "standardsUsed": [
+        "[4수01-13]",
+        "[4수01-14]",
+        "[4수03-04]",
+        "[4수03-05]",
+        "[4수03-09]",
+        "[4수03-10]",
+        "[4수03-18]",
+        "[4수03-19]",
+        "[4수03-23]",
+        "[4수03-25]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-M34-D2",
+      "seed": "review-ws-m34-d2",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "c5a6e8f8cfc7bb80a78046540a6167c031ab18c3612b84b10090d112607e2775",
+      "standardsUsed": [
+        "[4수01-08]",
+        "[4수01-09]",
+        "[4수01-14]",
+        "[4수03-01]",
+        "[4수03-03]",
+        "[4수03-10]",
+        "[4수03-13]",
+        "[4수03-17]",
+        "[4수03-18]",
+        "[4수04-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 2,
+        "2": 8
+      }
+    },
+    {
+      "id": "WS-M34-D3",
+      "seed": "review-ws-m34-d3",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "e5d86db4aefa1bbf26f7585b15913c62db96c3eb987b4d7ecffbe174004ed12e",
+      "standardsUsed": [
+        "[4수01-07]",
+        "[4수01-11]",
+        "[4수01-15]",
+        "[4수02-03]",
+        "[4수03-01]",
+        "[4수03-05]",
+        "[4수03-14]",
+        "[4수03-17]",
+        "[4수03-25]",
+        "[4수04-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 1,
+        "3": 9
+      }
+    },
+    {
+      "id": "WS-M56-D1",
+      "seed": "review-ws-m56-d1",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "22cb5ee3af8f55234f88d711f55dafcc69b39f7305e27669fb3ad66748b109c3",
+      "standardsUsed": [
+        "[6수01-03]",
+        "[6수01-04]",
+        "[6수01-06]",
+        "[6수01-09]",
+        "[6수02-03]",
+        "[6수03-01]",
+        "[6수03-02]",
+        "[6수03-03]",
+        "[6수03-07]",
+        "[6수03-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-M56-D2",
+      "seed": "review-ws-m56-d2",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "e586200cc122899c534d11c087e21569a93b97d46297d4eb4101d7fb3c02c4fc",
+      "standardsUsed": [
+        "[6수01-06]",
+        "[6수01-12]",
+        "[6수01-15]",
+        "[6수02-02]",
+        "[6수02-03]",
+        "[6수02-05]",
+        "[6수03-06]",
+        "[6수03-11]",
+        "[6수03-12]",
+        "[6수04-06]"
+      ],
+      "difficultyHistogram": {
+        "1": 1,
+        "2": 9
+      }
+    },
+    {
+      "id": "WS-M56-D3",
+      "seed": "review-ws-m56-d3",
+      "options": {
+        "subject": "math",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "d321c4b540cafc2c19d726120d9f57ac45b8b8964339c471d2beda2d3cec68d0",
+      "standardsUsed": [
+        "[6수01-04]",
+        "[6수01-11]",
+        "[6수01-14]",
+        "[6수01-15]",
+        "[6수02-05]",
+        "[6수03-03]",
+        "[6수03-14]",
+        "[6수04-01]",
+        "[6수04-03]",
+        "[6수04-05]"
+      ],
+      "difficultyHistogram": {
+        "3": 10
+      }
+    },
+    {
+      "id": "WS-K12-D1",
+      "seed": "review-ws-k12-d1",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "bd21cf527ed282e7aa48fbe4d81d425f58adb906f1ad5792c1db642b849b1de6",
+      "standardsUsed": [
+        "[2국02-02]",
+        "[2국02-04]",
+        "[2국03-01]",
+        "[2국04-01]",
+        "[2국04-02]",
+        "[2국04-03]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-K12-D2",
+      "seed": "review-ws-k12-d2",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "e410f78a0624737e53ee4437ce9a544d814887ea0ab4d5512652b7d7a8ff491d",
+      "standardsUsed": [
+        "[2국02-02]",
+        "[2국02-04]",
+        "[2국03-01]",
+        "[2국04-01]",
+        "[2국04-02]",
+        "[2국04-03]"
+      ],
+      "difficultyHistogram": {
+        "1": 4,
+        "2": 6
+      }
+    },
+    {
+      "id": "WS-K12-D3",
+      "seed": "review-ws-k12-d3",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "1-2"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "6ef5deac6b74155c9e22f881749f6d49797aafbda5efd3e6404492c675176ab5",
+      "standardsUsed": [
+        "[2국02-02]",
+        "[2국02-04]",
+        "[2국03-01]",
+        "[2국04-01]",
+        "[2국04-02]",
+        "[2국04-03]"
+      ],
+      "difficultyHistogram": {
+        "1": 5,
+        "3": 5
+      }
+    },
+    {
+      "id": "WS-K34-D1",
+      "seed": "review-ws-k34-d1",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "df902811d24bee7f39c0e54e3b382ecf3c0a1d539e38a315bf395f58ba1bc526",
+      "standardsUsed": [
+        "[4국02-04]",
+        "[4국03-02]",
+        "[4국03-03]",
+        "[4국04-01]",
+        "[4국04-02]",
+        "[4국04-03]",
+        "[4국04-04]",
+        "[4국05-04]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-K34-D2",
+      "seed": "review-ws-k34-d2",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "752315b5db975b384d8f2bea0aef186bca9cfe801baf8e20301cede7aff20f6b",
+      "standardsUsed": [
+        "[4국02-04]",
+        "[4국03-02]",
+        "[4국03-03]",
+        "[4국04-01]",
+        "[4국04-02]",
+        "[4국04-03]",
+        "[4국04-04]",
+        "[4국05-04]"
+      ],
+      "difficultyHistogram": {
+        "1": 2,
+        "2": 8
+      }
+    },
+    {
+      "id": "WS-K34-D3",
+      "seed": "review-ws-k34-d3",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "61732523257f5139c79b24f514109ef822c63290c8d59a63ef254abbf523496f",
+      "standardsUsed": [
+        "[4국02-04]",
+        "[4국03-02]",
+        "[4국03-03]",
+        "[4국04-01]",
+        "[4국04-02]",
+        "[4국04-03]",
+        "[4국04-04]",
+        "[4국05-04]"
+      ],
+      "difficultyHistogram": {
+        "1": 2,
+        "3": 8
+      }
+    },
+    {
+      "id": "WS-K56-D1",
+      "seed": "review-ws-k56-d1",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "c0d3354c5b073c8671f3ded6e47156fb8d13c101449d6c9935d994cd495bdc2f",
+      "standardsUsed": [
+        "[6국01-01]",
+        "[6국01-02]",
+        "[6국03-05]",
+        "[6국04-02]",
+        "[6국04-03]",
+        "[6국04-04]",
+        "[6국04-05]",
+        "[6국04-06]",
+        "[6국05-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-K56-D2",
+      "seed": "review-ws-k56-d2",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "cdf1c8358418c92da86232ff14d1f1c71717a028d94e131dd000bd38d59f6e24",
+      "standardsUsed": [
+        "[6국01-01]",
+        "[6국01-02]",
+        "[6국03-05]",
+        "[6국04-02]",
+        "[6국04-03]",
+        "[6국04-04]",
+        "[6국04-05]",
+        "[6국04-06]",
+        "[6국05-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 3,
+        "2": 7
+      }
+    },
+    {
+      "id": "WS-K56-D3",
+      "seed": "review-ws-k56-d3",
+      "options": {
+        "subject": "korean",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "3286f00d729f61c5eb9d4c5bde5a1ccf73ffedb42ec3b0934f5bada7679bb4d4",
+      "standardsUsed": [
+        "[6국01-01]",
+        "[6국01-02]",
+        "[6국03-05]",
+        "[6국04-02]",
+        "[6국04-03]",
+        "[6국04-04]",
+        "[6국04-05]",
+        "[6국04-06]",
+        "[6국05-02]"
+      ],
+      "difficultyHistogram": {
+        "1": 5,
+        "3": 5
+      }
+    },
+    {
+      "id": "WS-E34-D1",
+      "seed": "review-ws-e34-d1",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "de202e416299ef420074d765023e9356f24da47d262f0b65747e99c0d370ae2f",
+      "standardsUsed": [
+        "[4영01-02]",
+        "[4영01-05]",
+        "[4영02-02]",
+        "[4영02-06]",
+        "[4영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-E34-D2",
+      "seed": "review-ws-e34-d2",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "d54ec57338352490e88f8020bd11ff50b0e685b98f03c11d0df1d0057e524af8",
+      "standardsUsed": [
+        "[4영01-02]",
+        "[4영01-05]",
+        "[4영02-02]",
+        "[4영02-06]",
+        "[4영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 4,
+        "2": 6
+      }
+    },
+    {
+      "id": "WS-E34-D3",
+      "seed": "review-ws-e34-d3",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "3-4"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "1588681c697f6da79f9249bc091c3a7eb8d019fba1f2e78118030a8058ca7b63",
+      "standardsUsed": [
+        "[4영01-02]",
+        "[4영01-05]",
+        "[4영02-02]",
+        "[4영02-06]",
+        "[4영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 4,
+        "3": 6
+      }
+    },
+    {
+      "id": "WS-E56-D1",
+      "seed": "review-ws-e56-d1",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 1
+      },
+      "worksheetFingerprint": "5e5c655fa8292256f59317cc06d43ccc2b3d08dfd67e77b6562b970a2e8d0161",
+      "standardsUsed": [
+        "[6영02-03]",
+        "[6영02-04]",
+        "[6영02-07]",
+        "[6영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 10
+      }
+    },
+    {
+      "id": "WS-E56-D2",
+      "seed": "review-ws-e56-d2",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 2
+      },
+      "worksheetFingerprint": "9884b490065dcc4d55bebf82e6e12a5f781554e189952271e3b2ca3e7326d103",
+      "standardsUsed": [
+        "[6영02-03]",
+        "[6영02-04]",
+        "[6영02-07]",
+        "[6영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 7,
+        "2": 3
+      }
+    },
+    {
+      "id": "WS-E56-D3",
+      "seed": "review-ws-e56-d3",
+      "options": {
+        "subject": "english",
+        "gradeBands": [
+          "5-6"
+        ],
+        "count": 10,
+        "difficulty": 3
+      },
+      "worksheetFingerprint": "6c05ae2acd61b879295fa00c4481cbeb26fcc7917c507e5d21c471b33d47bc0e",
+      "standardsUsed": [
+        "[6영02-03]",
+        "[6영02-04]",
+        "[6영02-07]",
+        "[6영02-08]"
+      ],
+      "difficultyHistogram": {
+        "1": 7,
+        "3": 3
+      }
+    }
+  ],
+  "fingerprint": "6afd44fc45f4ccb8d54304b97511014076f729010b63665c652433b3c1516ef0"
+}

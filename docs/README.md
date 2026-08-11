@@ -56,6 +56,8 @@ corpus identity를 함께 보존한다.
   capacity와 자산 요구의 machine output
 - [`data/coverage/coverage.json`](../data/coverage/coverage.json) - 현재 coverage 원장
 - [`docs/review/`](review/) - 교과·자산·선수 관계 사람이 읽는 요약
+- [대표 학습지 품질 기준선](review/quality-baseline.md) - 고정 seed 24개·240문항 검토 증거
+- [사람 품질 평가표](quality-evaluation.md) - 여섯 축 rubric과 fingerprint 고정 판정 원장
 - [`npm run verify`](../package.json) - 위 산출물 freshness와 전체 검증
 
 `coveredStandards`는 생성기 연결 여부다. `semanticCoverage`와

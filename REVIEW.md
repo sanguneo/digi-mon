@@ -94,7 +94,8 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 | 18 | `tools/check-types.mjs` | **`tsc --noEmit` 으로 `src/engine` 타입 검사.** 빌드 단계는 만들지 않는다. 범위 밖(생성기) 진단은 참고로 출력만 한다 | 런타임 검사는 그 코드를 돌려야 울고, 오타는 배포 후에 운다 |
 
-체인은 23단계다 — 게이트 20개 + 산출물 생성 3개(`export-review-tables`). 산출물 생성기는
+체인은 24단계다 — 게이트 20개 + 산출물 생성 4개(`export-review-tables`,
+`export-asset-tables`, `export-math-tables`, `export-quality-baseline`). 산출물 생성기는
 실패할 수 없으므로 게이트로 세지 않는다.
 
 ---

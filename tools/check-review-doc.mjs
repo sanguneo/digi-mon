@@ -95,6 +95,7 @@ const chainNonGates = [
   'tools/export-review-tables.mjs',
   'tools/export-asset-tables.mjs',
   'tools/export-math-tables.mjs',
+  'tools/export-quality-baseline.mjs',
 ];
 
 const notInChain = allGates.filter((g) => !chain.includes(g));

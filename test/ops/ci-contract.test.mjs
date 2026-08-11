@@ -16,6 +16,11 @@ test('package scripts expose isolated tests and artifact freshness', () => {
   );
   assert.equal(pkg.scripts['check:types'], 'node tools/check-types.mjs');
   assert.equal(pkg.scripts['check:markdown'], 'markdownlint-cli2');
+  assert.equal(
+    pkg.scripts['export:quality-baseline'],
+    'node tools/export-quality-baseline.mjs',
+  );
+  assert.match(pkg.scripts.verify, /node tools\/export-quality-baseline\.mjs/);
   assert.equal(pkg.license, 'MIT');
 });
 
