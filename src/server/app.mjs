@@ -291,15 +291,26 @@ function validateManualEvaluations(value, worksheet) {
   }
 }
 
+/**
+ * 맵 항목 수 상한. 만료 청소만으로는 한 윈도 안에 유니크 IP 가 대량 유입될 때
+ * 지울 것이 없어 맵이 무한히 큰다. 만료분을 먼저 지우고, 그래도 상한을 넘으면
+ * 가장 오래된 항목부터 버린다. Map 은 삽입 순서를 지키므로 앞쪽이 가장 오래됐다.
+ */
+const RATE_LIMIT_MAX_CLIENTS = 10_000;
+
 function createRateLimiter() {
   const clients = new Map();
   return (key, now = Date.now()) => {
     const current = clients.get(key);
     if (!current || now - current.startedAt >= RATE_LIMIT_WINDOW_MS) {
       clients.set(key, { startedAt: now, count: 1 });
-      if (clients.size > 10_000) {
+      if (clients.size > RATE_LIMIT_MAX_CLIENTS) {
         for (const [client, entry] of clients) {
           if (now - entry.startedAt >= RATE_LIMIT_WINDOW_MS) clients.delete(client);
+        }
+        for (const client of clients.keys()) {
+          if (clients.size <= RATE_LIMIT_MAX_CLIENTS) break;
+          if (client !== key) clients.delete(client);
         }
       }
       return true;
