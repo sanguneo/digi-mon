@@ -1,5 +1,22 @@
 {
+  // 검사 대상은 사람이 쓴 문서뿐이다.
+  //
+  // reference/ 는 가져온 공식 별책이라 손대면 출처가 깨지고, docs/review/ 와
+  // docs/assets 표는 export-*-tables 가 만드는 산출물이다. 산출물은 표 칸 안에서
+  // 줄을 바꾸려고 <br> 을 쓰는데(MD033), 린터를 맞추자고 생성기를 비틀 이유가 없다.
+  // 손으로 고칠 수 없는 파일을 검사하면 게이트가 곧 꺼진다.
+  "globs": [
+    "*.md",
+    "docs/*.md",
+    "docs/research/*.md"
+  ],
+  "ignores": [
+    "node_modules",
+    "reference",
+    "docs/review"
+  ],
   "config": {
+    // 한국어 문서는 줄 길이를 의미 단위로 끊는다. 80자 규칙은 그것과 싸운다.
     "MD013": false,
     "MD060": false
   }

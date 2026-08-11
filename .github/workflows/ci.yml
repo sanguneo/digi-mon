@@ -36,6 +36,10 @@ jobs:
         working-directory: digi-mon
         run: npm run check:types
 
+      - name: Markdown lint
+        working-directory: digi-mon
+        run: npm run check:markdown
+
       - name: Unit and regression tests
         working-directory: digi-mon
         run: npm test

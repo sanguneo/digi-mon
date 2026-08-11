@@ -6,7 +6,7 @@
   "type": "module",
   "description": "2022 개정 초등 국어·수학·영어 학습 데이터 생성 파이프라인",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "test": "node tools/run-tests.mjs",
@@ -16,6 +16,7 @@
     "verify:generators": "node bin/verify-generators.mjs",
     "worksheet": "node bin/worksheet.mjs",
     "check:types": "node tools/check-types.mjs",
+    "check:markdown": "markdownlint-cli2",
     "check:boundaries": "node tools/check-boundaries.mjs",
     "check:coverage-schema": "node tools/check-coverage-schema.mjs",
     "check:schema-usage": "node tools/check-schema-usage.mjs",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@types/node": "^26.2.0",
     "ajv": "^8.18.0",
+    "markdownlint-cli2": "^0.23.2",
     "typescript": "^7.0.2"
   }
 }

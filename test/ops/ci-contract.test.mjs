@@ -15,6 +15,7 @@ test('package scripts expose isolated tests and artifact freshness', () => {
     'git diff --exit-code -- data docs/review REVIEW.md',
   );
   assert.equal(pkg.scripts['check:types'], 'node tools/check-types.mjs');
+  assert.equal(pkg.scripts['check:markdown'], 'markdownlint-cli2');
   assert.equal(pkg.license, 'MIT');
 });
 
@@ -35,10 +36,30 @@ test('CI pins actions and runs tests, verification, and freshness checks', () =>
   const actionUses = [...workflow.matchAll(/uses:\s+[^@\s]+@([a-f0-9]{40})/g)];
   assert.equal(actionUses.length, 2);
   assert.match(workflow, /run: npm run check:types/);
+  assert.match(workflow, /run: npm run check:markdown/);
   assert.match(workflow, /run: npm test/);
   assert.match(workflow, /run: npm run verify/);
   assert.match(workflow, /run: npm run check:artifacts/);
   assert.doesNotMatch(workflow, /korean-elementary-learning-map/);
+});
+
+test('declared Node version is the one CI actually verifies', () => {
+  // 약속과 검증이 갈리면 둘 중 하나는 거짓이다. package.json 은 20 이상을
+  // 선언하는데 CI 는 24만 돌린 적이 있다 — 20 은 아무도 검증하지 않는 약속이었다.
+  const pkg = JSON.parse(read('package.json'));
+  const declared = pkg.engines.node.match(/^>=(\d+)$/);
+  assert.ok(declared, `engines.node 형식이 '>=주버전' 이 아니다: ${pkg.engines.node}`);
+
+  const workflow = read('.github/workflows/ci.yml');
+  const versions = [...workflow.matchAll(/node-version:\s*(\d+)/g)].map((m) => m[1]);
+  assert.ok(versions.length > 0, 'CI 에 node-version 이 없다');
+  assert.ok(
+    versions.includes(declared[1]),
+    `engines.node ${pkg.engines.node} 를 CI 가 검증하지 않는다 (CI: ${versions.join(', ')})`,
+  );
+
+  const readme = read('README.md');
+  assert.match(readme, new RegExp(`Node\\.js ${declared[1]} 이상`));
 });
 
 test('agent session directories stay outside source control', () => {
