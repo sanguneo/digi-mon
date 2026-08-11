@@ -161,10 +161,7 @@ function buildFormSetAttempt({
   const first = buildWorksheet(spine, registry, {
     ...worksheetOptions,
     seed: formSeed(resolvedBlueprintSeed, firstLabel),
-  });
-  // 기준 form 은 슬롯 수만큼 청구한다. buildWorksheet 는 내부 재시도 횟수를
-  // 돌려주지 않으므로 최소치로 센다 — blueprint 재시도가 늘어나면 그만큼 쌓인다.
-  budget.spend(first.produced);
+  }, () => budget.spend(1));
   if (first.shortfall > 0) {
     throw new FormPoolExhaustedError(
       `병렬 form 기준 문항 수를 채우지 못했다: ${first.produced}/${first.requested}`,

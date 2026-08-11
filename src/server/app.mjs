@@ -488,19 +488,11 @@ export function createApp({
         const options = httpWorksheetOptions(source);
         const formCount = httpFormCount(source.formCount);
         chargeGeneration(req, options, formCount);
-        let formSet;
-        try {
-          formSet = buildWorksheetFormSet(spine, registry, {
-            ...options,
-            seed: options.seed ?? `forms-${Date.now()}`,
-            formCount,
-          });
-        } catch (error) {
-          if (error instanceof WorksheetFormPoolError) {
-            throw new HttpError(409, error.message);
-          }
-          throw error;
-        }
+        const formSet = buildWorksheetFormSet(spine, registry, {
+          ...options,
+          seed: options.seed ?? `forms-${Date.now()}`,
+          formCount,
+        });
         const includeAnswers = String(source.includeAnswers) === 'true';
         if (includeAnswers) requireTeacher(req, teacherToken);
         return {
@@ -909,6 +901,10 @@ export function createApp({
     } catch (error) {
       if (error instanceof HttpError) {
         json(res, error.status, { error: error.message, detail: error.detail ?? null });
+        return;
+      }
+      if (error instanceof WorksheetFormPoolError) {
+        json(res, 409, { error: error.message, detail: null });
         return;
       }
       // 옵션 형식은 옳지만 가리키는 성취기준이 없는 요청이다. 클라이언트 잘못이므로

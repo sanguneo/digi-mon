@@ -162,9 +162,10 @@ function resolveTargets(spine, registry, {
  * @param {Record<string, any>} spine
  * @param {Record<string, any>} registry
  * @param {WorksheetOptions} [options]
+ * @param {() => void} [onItemAttempt] 생성 직전 시도 관찰자. 출력 계약에는 포함하지 않는다
  * @returns {Worksheet}
  */
-export function buildWorksheet(spine, registry, options) {
+export function buildWorksheet(spine, registry, options, onItemAttempt) {
   const {
     seed = 'digi-mon',
     subject = 'math',
@@ -262,6 +263,7 @@ export function buildWorksheet(spine, registry, options) {
     cursor += 1;
 
     const d = resolvedDifficulty ?? rng.weighted(mixEntries);
+    onItemAttempt?.();
     let item;
     try {
       item = generateItem(g, std, rng, d);

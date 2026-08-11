@@ -28,7 +28,7 @@ const STANDARD = {
 };
 
 /** dedupeKey 공간을 pool 크기로 조절할 수 있는 생성기. */
-function generatorWithPool(poolSize) {
+function generatorWithPool(poolSize, onGenerate = () => {}) {
   return {
     id: 'test.math.add.pool',
     standardCode: CODE,
@@ -37,6 +37,7 @@ function generatorWithPool(poolSize) {
     difficultyAxis: 'single',
     difficulties: [1],
     generate(rng) {
+      onGenerate();
       const left = rng.int(1, poolSize);
       const value = left + 1;
       return {
@@ -147,5 +148,51 @@ test('a request cannot burn unbounded generation attempts', async () => {
     assert.equal(response.status, 409, JSON.stringify(response.body));
     assert.match(response.body.error, /상한 8000회를 넘었다/);
     assert.ok(cpuMs < 5_000, `요청 하나가 CPU 를 ${Math.round(cpuMs)}ms 점유했다`);
+  });
+});
+
+test('base form retries consume the real generation attempt budget', async () => {
+  let generateCalls = 0;
+  await withServer(generatorWithPool(9, () => {
+    generateCalls += 1;
+  }), async (post) => {
+    const response = await post('/v1/worksheet-forms', {
+      subject: 'math',
+      code: CODE,
+      count: 100,
+      formCount: 8,
+      seed: 'base-form-attempt-budget',
+    });
+
+    assert.equal(response.status, 409, JSON.stringify(response.body));
+    assert.equal(generateCalls, 8_000, `실제 generate 호출이 ${generateCalls}회였다`);
+    assert.match(response.body.error, /상한 8000회를 넘었다/);
+  });
+});
+
+test('grading maps form pool exhaustion to 409', async () => {
+  await withServer(generatorWithPool(9), async (post) => {
+    const fingerprint = '0'.repeat(64);
+    const response = await post('/v1/grade', {
+      subject: 'math',
+      code: CODE,
+      count: 100,
+      difficulty: 1,
+      seed: 'grade-form-pool',
+      formSet: {
+        schema: 'digi-mon/worksheet-form@1',
+        seed: 'grade-form-pool',
+        label: 'A',
+        formCount: 8,
+        blueprintAttempt: 0,
+        fingerprint,
+      },
+      fingerprint,
+      responses: {},
+      records: false,
+    });
+
+    assert.equal(response.status, 409, JSON.stringify(response.body));
+    assert.match(response.body.error, /병렬 form/);
   });
 });
