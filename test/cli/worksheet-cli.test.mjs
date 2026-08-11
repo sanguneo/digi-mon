@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { readdirSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import path from 'node:path';
 import { afterEach, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -21,8 +21,20 @@ function runWorksheet(...args) {
   );
 }
 
+/**
+ * out/ 은 gitignore 된 생성 산출물이라 새 클론·CI 체크아웃에는 존재하지 않는다.
+ * 디렉터리가 없다는 것은 아무것도 쓰이지 않았다는 뜻이므로 빈 목록으로 읽는다.
+ *
+ * 산출물이 있어야 하는 테스트는 이 함수를 쓰지 않는다 — 거기서는 없는 것이 실패다.
+ */
+function outputNames() {
+  return existsSync(OUT) ? readdirSync(OUT) : [];
+}
+
 function removeTestOutputs() {
-  for (const name of readdirSync(OUT)) {
+  // 아무것도 쓰지 않는 테스트(--help, 잘못된 입력)가 먼저 돌면 이 훅이 ENOENT 로
+  // 죽어서 정작 통과한 테스트가 실패로 보고됐다. 치울 것이 없는 건 실패가 아니다.
+  for (const name of outputNames()) {
     if (TEST_SEEDS.some((seed) => name.includes(seed))) {
       rmSync(path.join(OUT, name), { force: true });
     }
@@ -63,7 +75,7 @@ test('invalid count and difficulty fail without writing artifacts', () => {
   assert.match(invalidDifficulty.stderr, /difficulty/);
 
   assert.equal(
-    readdirSync(OUT).some((name) => name.includes('cli-invalid')),
+    outputNames().some((name) => name.includes('cli-invalid')),
     false,
   );
 });
