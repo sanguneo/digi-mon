@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 
 import { createRng } from './rng.mjs';
+import { stableJson } from './stable-json.mjs';
 import {
   buildWorksheet,
   buildWorksheetFingerprint,
@@ -17,17 +18,6 @@ export const MAX_WORKSHEET_FORMS = FORM_LABELS.length;
 
 class FormPoolExhaustedError extends Error {}
 export class WorksheetFormPoolError extends Error {}
-
-function stableJson(value) {
-  if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
-  if (value && typeof value === 'object') {
-    const entries = Object.keys(value)
-      .sort()
-      .map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`);
-    return `{${entries.join(',')}}`;
-  }
-  return JSON.stringify(value);
-}
 
 function formSeed(seed, label) {
   return `${String(seed)}:form:${label}`;

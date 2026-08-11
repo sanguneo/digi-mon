@@ -11,18 +11,12 @@ import { buildLearningSupport } from '../curriculum/learning-support.mjs';
 import { finalizeItem } from './item.mjs';
 import { normalizeExcludeItemIds } from './options.mjs';
 import { createRng } from './rng.mjs';
+import { stableJson } from './stable-json.mjs';
 
 const DEFAULT_DIFFICULTY_MIX = { 1: 0.3, 2: 0.5, 3: 0.2 };
 const WORKSHEET_SCHEMA = 'digi-mon/worksheet@5';
 const ENGINE_VERSION = 'digi-mon-engine@5';
 
-function stableJson(value) {
-  if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
-  if (value && typeof value === 'object') {
-    return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`).join(',')}}`;
-  }
-  return JSON.stringify(value);
-}
 /**
  * 요청한 조건에 맞는 성취기준이 하나도 없다는 뜻이다.
  *
