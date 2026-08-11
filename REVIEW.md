@@ -5,7 +5,7 @@
 
 - 저장소: `git@github.com:sanguneo/digi-mon.git`
 - 런타임: Node 24, ESM, **프로덕션 의존성 0개** · 검증용 dev dependency `ajv`
-- 실행: `npm run verify` (열여덟 게이트, 전부 통과 시 exit 0)
+- 실행: `npm run verify` (열아홉 게이트, 전부 통과 시 exit 0)
 - 이 문서 자체가 `check-review-doc` 게이트의 검사 대상이다. 수치가 낡으면 `verify`가 실패한다.
 - 검토 이력은 §16에 짧게 있다. 이번이 5차다.
 
@@ -67,7 +67,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 ---
 
-## 3. 열여덟 게이트 — 각각 무엇을 왜 잡는가
+## 3. 열아홉 게이트 — 각각 무엇을 왜 잡는가
 
 `npm run verify`가 이 순서로 돈다. 각 게이트는 **실제로 버그를 잡은 뒤에** 만들어졌다.
 괄호 안은 그 게이트가 처음 실행됐을 때 적발한 건수다.
@@ -90,8 +90,9 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 | 14 | `tools/check-capacity.mjs` | 표본을 두 배로 늘려 포화를 재고, 상한이 낮은데 이유를 밝히지 않은 생성기를 잡는다 | §7 |
 | 15 | `tools/check-trim.mjs` | 계산 결과 표기(`157.00` vs `157`)가 채점에서 오답 처리되는지 | §5 |
 | 16 | `tools/check-review-doc.mjs` | **이 문서의 수치가 산출물과 맞는지.** 게이트 파일이 `verify` 체인에 실제로 등록됐는지, 게이트 수 주장이 맞는지 | 문서는 게이트가 갱신해 주지 않는다. §16 |
+| 17 | `tools/check-schema-usage.mjs` | **`schema/*.json` 이 실제로 컴파일·참조되는지.** 참조 0인 스키마는 아무도 강제하지 않는 계약이다 (**1건 적발** — `spine.schema.json`) | 죽은 계약은 스키마가 없는 것보다 나쁘다. 있다고 믿게 만든다 |
 
-체인은 21단계다 — 게이트 18개 + 산출물 생성 3개(`export-review-tables`). 산출물 생성기는
+체인은 22단계다 — 게이트 19개 + 산출물 생성 3개(`export-review-tables`). 산출물 생성기는
 실패할 수 없으므로 게이트로 세지 않는다.
 
 ---
@@ -369,11 +370,12 @@ src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · w
 src/server/       app(라우터) · grade(무상태 채점)
 bin/              게이트 3종 (build-spine · audit-ontology · verify-generators)
                   + serve · worksheet
-tools/            게이트 15종 (check-boundaries · mutation-test · check-korean
+tools/            게이트 16종 (check-boundaries · mutation-test · check-korean
                   · check-prerequisites · check-vocabulary · check-fact-tables
                   · check-difficulty · check-difficulty-notes · check-capacity
                   · check-trim · check-review-doc · check-vocab-selfapproval
                   · check-asset-requirements · check-coverage-schema
+                  · check-schema-usage
                   · build-english-official-vocabulary --check)
                   + 도구 6종 (export-review-tables · export-asset-tables · export-math-tables
                   · sample-items · figure-gallery · shot)

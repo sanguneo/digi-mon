@@ -159,19 +159,36 @@ function httpFormCount(value) {
   return formCount;
 }
 
+/** worksheet.schema.json 의 formSet 정의가 선언한 필드 전부. 그 밖은 거부한다. */
+const FORM_PROVENANCE_KEYS = ['schema', 'seed', 'label', 'formCount', 'blueprintAttempt', 'fingerprint'];
+
 function worksheetForGrading(spine, registry, body, options) {
   if (body.formSet === undefined) {
     return buildWorksheet(spine, registry, { ...options, seed: String(body.seed) });
   }
   const provenance = body.formSet;
+  /**
+   * 런타임 검사라 ajv 를 쓰지 않는다(런타임 의존성 0개). 대신 제약을
+   * worksheet.schema.json 의 formSet 정의와 글자 그대로 맞춘다.
+   *
+   * 맞추기 전에는 이 검사가 스키마보다 느슨했다 — 빈 seed, 범위 밖 formCount,
+   * 음수 blueprintAttempt, 모르는 필드를 통과시켰고, formCount 99 는 엔진의 일반
+   * Error 로 번져 사용자 입력이 500 을 냈다. 두 계약이 갈리지 않는지는
+   * test/server/response-schemas.test.mjs 가 양방향으로 대조한다.
+   */
   if (!provenance
     || typeof provenance !== 'object'
     || Array.isArray(provenance)
+    || Object.keys(provenance).some((key) => !FORM_PROVENANCE_KEYS.includes(key))
     || provenance.schema !== 'digi-mon/worksheet-form@1'
     || typeof provenance.seed !== 'string'
+    || provenance.seed.length === 0
     || !/^[A-H]$/.test(provenance.label)
     || !Number.isInteger(provenance.formCount)
+    || provenance.formCount < 2
+    || provenance.formCount > MAX_WORKSHEET_FORMS
     || !Number.isInteger(provenance.blueprintAttempt)
+    || provenance.blueprintAttempt < 0
     || !/^[a-f0-9]{64}$/.test(provenance.fingerprint ?? '')) {
     throw new HttpError(400, 'formSet provenance 형식이 올바르지 않다');
   }

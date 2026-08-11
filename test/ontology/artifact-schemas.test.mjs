@@ -16,6 +16,7 @@ for (const name of [
   'worksheet-form-set.schema.json',
   'grading-result.schema.json',
   'coverage.schema.json',
+  'spine.schema.json',
 ]) {
   test(`${name} is a versioned JSON Schema`, () => {
     const schema = JSON.parse(readFileSync(path.join(ROOT, 'schema', name), 'utf8'));
