@@ -48,8 +48,27 @@ server.listen(PORT, HOST, () => {
   console.log('  POST /v1/grade        {seed, fingerprint, ...같은옵션, responses:{1:"14"}}');
   console.log('  GET  /v1/prerequisites?code=[2수01-06]');
   console.log('  POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}');
+  console.log('  POST /v1/accuracy     {records: [...responseRecords]}  (교사 토큰 필요)');
 });
 
+/**
+ * 종료. server.close() 는 새 연결만 막고 이미 열린 keep-alive 연결은 기다린다.
+ * 유휴 연결을 먼저 끊고, 그래도 안 닫히면 5초 뒤 강제 종료한다.
+ */
 for (const signal of ['SIGINT', 'SIGTERM']) {
-  process.on(signal, () => server.close(() => process.exit(0)));
+  process.on(signal, () => {
+    server.closeIdleConnections();
+    server.close(() => process.exit(0));
+    setTimeout(() => process.exit(0), 5_000).unref();
+  });
 }
+
+// 삼켜진 예외로 좀비가 되지 않게 한다. 기록을 남기고 실패로 끝낸다.
+process.on('unhandledRejection', (reason) => {
+  console.error('처리되지 않은 Promise 거부:', reason);
+  process.exit(1);
+});
+process.on('uncaughtException', (error) => {
+  console.error('잡히지 않은 예외:', error);
+  process.exit(1);
+});

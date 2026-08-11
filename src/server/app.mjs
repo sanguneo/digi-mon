@@ -341,6 +341,8 @@ export function createApp({
         coverageRatio: coverage.coverageRatio,
       }),
     },
+    // LB·k8s 프로브는 HEAD 로 살아 있는지 묻는다. 몸통 없이 200 만 돌려준다.
+    { method: 'HEAD', path: '/health', handle: () => ({}) },
     {
       method: 'GET',
       path: '/v1/subjects',
@@ -827,6 +829,15 @@ export function createApp({
           path: `${req.method} ${url.pathname}`,
           endpoints: known,
         });
+        return;
+      }
+
+      if (req.method === 'HEAD') {
+        res.writeHead(200, {
+          'content-type': 'application/json; charset=utf-8',
+          'cache-control': 'no-store',
+        });
+        res.end();
         return;
       }
 

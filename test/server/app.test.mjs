@@ -579,7 +579,7 @@ test('invalid input and transport errors return precise status codes', async () 
 
   const wrongMethod = await request('/health', { method: 'POST', body: {} });
   assert.equal(wrongMethod.status, 405);
-  assert.equal(wrongMethod.headers.get('allow'), 'GET');
+  assert.equal(wrongMethod.headers.get('allow'), 'GET, HEAD');
 
   const oversized = await request('/v1/worksheets', {
     method: 'POST',
@@ -656,5 +656,12 @@ test('읽기 전용 조회 경로가 전부 응답한다', async () => {
 
   const unknownPrerequisite = await request('/v1/prerequisites?code=%5B6%EC%88%9801-99%5D');
   assert.equal(unknownPrerequisite.status, 404);
+});
+
+test('HEAD /health 는 몸통 없이 200 이다', async () => {
+  // LB·k8s 프로브가 HEAD 를 쓴다. 405 를 주면 살아 있는 서버가 죽은 것으로 보인다.
+  const response = await fetch(`${baseUrl}/health`, { method: 'HEAD' });
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), '');
 });
 
