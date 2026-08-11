@@ -30,7 +30,11 @@ import {
   validateResponseRecords,
 } from '../engine/response-log.mjs';
 import { createRng } from '../engine/rng.mjs';
-import { buildWorksheet, generateItem } from '../engine/worksheet.mjs';
+import {
+  buildWorksheet,
+  generateItem,
+  WorksheetTargetError,
+} from '../engine/worksheet.mjs';
 import {
   buildWorksheetFormSet,
   MAX_WORKSHEET_FORMS,
@@ -820,6 +824,12 @@ export function createApp({
     } catch (error) {
       if (error instanceof HttpError) {
         json(res, error.status, { error: error.message, detail: error.detail ?? null });
+        return;
+      }
+      // 옵션 형식은 옳지만 가리키는 성취기준이 없는 요청이다. 클라이언트 잘못이므로
+      // 404 로 낸다. 학습지 발급·form 발급·복습·채점 재생성이 모두 이 경로를 탄다.
+      if (error instanceof WorksheetTargetError) {
+        json(res, 404, { error: error.message, detail: error.detail ?? null });
         return;
       }
       // 검산 실패는 생성기 버그다. 조용히 넘기지 않고 500으로 드러낸다.

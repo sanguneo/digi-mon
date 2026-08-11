@@ -595,3 +595,28 @@ test('invalid input and transport errors return precise status codes', async () 
   assert.ok(shortfall.body.detail.shortfall > 0);
 });
 
+test('대상 없는 요청은 500이 아니라 404로 나간다', async () => {
+  // 형식은 옳지만 스파인에 없는 코드다. 클라이언트 잘못이지 서버 고장이 아니다.
+  const unknownCode = await request('/v1/worksheets', {
+    method: 'POST',
+    body: { subject: 'math', codes: ['[6수01-99]'], count: 5 },
+  });
+  assert.equal(unknownCode.status, 404);
+  assert.match(unknownCode.body.error, /성취기준이 없다/);
+  assert.deepEqual(unknownCode.body.detail.codes, ['[6수01-99]']);
+
+  // 해당 학년군에 그 교과의 성취기준이 하나도 없는 경우도 같은 부류다.
+  const emptySubject = await request('/v1/worksheets', {
+    method: 'POST',
+    body: { subject: 'english', grade: '1-2', count: 5 },
+  });
+  assert.equal(emptySubject.status, 404);
+
+  // form 발급도 같은 매핑을 탄다.
+  const formTarget = await request('/v1/worksheet-forms', {
+    method: 'POST',
+    body: { subject: 'english', grade: '1-2', count: 5, formCount: 2 },
+  });
+  assert.equal(formTarget.status, 404);
+});
+

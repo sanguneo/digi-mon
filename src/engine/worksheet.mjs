@@ -23,6 +23,20 @@ function stableJson(value) {
   }
   return JSON.stringify(value);
 }
+/**
+ * 요청한 조건에 맞는 성취기준이 하나도 없다는 뜻이다.
+ *
+ * 옵션 형식은 옳지만 가리키는 대상이 없는 경우이므로 서버 잘못이 아니다.
+ * 타입이 없으면 일반 Error 로 500 이 나가, 500 을 '검산 실패' 신호로만 쓰기로 한
+ * 약속(`src/server/app.mjs` 의 catch 주석)이 깨진다.
+ */
+export class WorksheetTargetError extends Error {
+  constructor(message, detail) {
+    super(message);
+    this.name = 'WorksheetTargetError';
+    this.detail = detail;
+  }
+}
 
 export function buildWorksheetFingerprint({
   schema,
@@ -156,7 +170,16 @@ export function buildWorksheet(spine, registry, options) {
     modes: resolvedModes,
   });
   if (targets.length === 0) {
-    throw new Error(`조건과 mode에 맞는 성취기준이 없다: subject=${subject} gradeBands=${gradeBands} domains=${domains} codes=${codes} modes=${resolvedModes}`);
+    throw new WorksheetTargetError(
+      `조건과 mode에 맞는 성취기준이 없다: subject=${subject} gradeBands=${gradeBands} domains=${domains} codes=${codes} modes=${resolvedModes}`,
+      {
+        subject,
+        gradeBands: gradeBands ?? null,
+        domains: domains ?? null,
+        codes: codes ?? null,
+        modes: resolvedModes,
+      },
+    );
   }
 
   const rng = createRng(seed);
