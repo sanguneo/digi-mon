@@ -12,13 +12,13 @@ import {
   EMPTY_GAME_STATE,
   type AnswerResult,
   type GardenSpotId,
-  type GameItem,
   type GameState,
   parseGameState,
   placeDecoration,
   recordAnswer,
   serializeGameState,
 } from './game-state.ts';
+import type { GameItem } from './garden-catalog.ts';
 
 const STORAGE_KEY = 'digi-mon/garden-state@1';
 

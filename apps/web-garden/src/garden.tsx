@@ -3,22 +3,17 @@ import { type CSSProperties, useEffect, useState } from 'react';
 import { useGame } from './game-context.tsx';
 import {
   GAME_CATALOG,
+  GARDEN_CATEGORIES,
+  type GameItem,
+} from './garden-catalog.ts';
+import {
   GARDEN_SPOTS,
   gardenSpot,
-  type GameItem,
   type GardenSpotId,
 } from './game-state.ts';
 
 function DecorationArt({ item }: { item: GameItem }) {
-  const artwork: Record<string, string> = {
-    'moon-chair': '🌙',
-    'dandelion-pot': '🌼',
-    'tiny-pond': '🐟',
-    'cloud-balloon': '☁️',
-    'reading-cat': '🐈',
-    'rainbow-flag': '🌈',
-  };
-  return <span className="garden-art" aria-hidden="true">{artwork[item.id]}</span>;
+  return <span className="garden-art" aria-hidden="true">{item.art}</span>;
 }
 
 export function GardenRoom({
@@ -147,36 +142,59 @@ export function GardenRoom({
           <div>
             <p className="dm-kicker">모은 친구를 풍경 속으로</p>
             <h2 id="inventory-title">장식 상자</h2>
+            <p>
+              모은 장식 {state.unlockedItemIds.length}/{GAME_CATALOG.length}
+              <span aria-hidden="true"> · </span>
+              네 가지 이야기
+            </p>
           </div>
           <button className="garden-reset" onClick={resetGarden} type="button">
             정원 새로 시작하기
           </button>
         </div>
-        <div className="garden-inventory__grid">
-          {GAME_CATALOG.map((item) => {
-            const unlocked = state.unlockedItemIds.includes(item.id);
-            const spotId = state.placements[item.id];
-            const spot = spotId ? gardenSpot(spotId) : null;
-            return (
-              <button
-                className={`garden-item ${unlocked ? 'is-unlocked' : 'is-locked'}`}
-                disabled={!unlocked}
-                key={item.id}
-                onClick={() => setSelectedItemId(item.id)}
-                type="button"
-                aria-label={[
-                  item.name,
-                  unlocked ? item.description : '다음 장식을 기다리는 중',
-                  spot ? `${spot.label}에 놓임, 다시 놓기` : '',
-                ].filter(Boolean).join(', ')}
-              >
-                <DecorationArt item={item} />
-                <strong>{unlocked ? item.name : '아직 비밀'}</strong>
-                <span>{unlocked ? item.description : '다음 장식을 기다리는 중'}</span>
-                {spot ? <small>{spot.label} · 다시 놓기</small> : null}
-              </button>
-            );
-          })}
+        <div className="garden-collections">
+          {GARDEN_CATEGORIES.map((category) => (
+            <section className={`garden-collection garden-collection--${category.id}`} key={category.id}>
+              <header>
+                <div>
+                  <p>{category.description}</p>
+                  <h3>{category.name}</h3>
+                </div>
+                <span>
+                  {GAME_CATALOG.filter((item) => (
+                    item.category === category.id
+                    && state.unlockedItemIds.includes(item.id)
+                  )).length}/3
+                </span>
+              </header>
+              <div className="garden-inventory__grid">
+                {GAME_CATALOG.filter((item) => item.category === category.id).map((item) => {
+                  const unlocked = state.unlockedItemIds.includes(item.id);
+                  const spotId = state.placements[item.id];
+                  const spot = spotId ? gardenSpot(spotId) : null;
+                  return (
+                    <button
+                      className={`garden-item ${unlocked ? 'is-unlocked' : 'is-locked'}`}
+                      disabled={!unlocked}
+                      key={item.id}
+                      onClick={() => setSelectedItemId(item.id)}
+                      type="button"
+                      aria-label={[
+                        item.name,
+                        unlocked ? item.description : '다음 장식을 기다리는 중',
+                        spot ? `${spot.label}에 놓임, 다시 놓기` : '',
+                      ].filter(Boolean).join(', ')}
+                    >
+                      <DecorationArt item={item} />
+                      <strong>{unlocked ? item.name : '아직 비밀'}</strong>
+                      <span>{unlocked ? item.description : '다음 장식을 기다리는 중'}</span>
+                      {spot ? <small>{spot.label} · 다시 놓기</small> : null}
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       </section>
       <p className="garden-rest">오늘은 여기까지 해도 괜찮아요.</p>

@@ -25,14 +25,19 @@ Learning and decorating are separate views.
 - A decoration can be placed at one of eight named points in a continuous landscape.
 - Placement can be changed at any time and never deletes the item.
 
-The reward catalog is local static product data:
+The reward catalog is local static product data. Existing rewards keep their order so
+saved gardens and the first unlock experience remain stable. The full collection has
+four small themes with three decorations each:
 
-1. 달빛 의자
-2. 민들레 화분
-3. 작은 연못
-4. 구름 풍선
-5. 책 읽는 고양이
-6. 무지개 깃발
+- `쉴 곳`: 달빛 의자, 책 읽는 고양이, 소풍 바구니
+- `꽃과 열매`: 민들레 화분, 딸기 텃밭, 버섯 오두막
+- `물가 풍경`: 작은 연못, 새들의 물그릇, 조약돌 분수
+- `하늘과 빛`: 구름 풍선, 무지개 깃발, 반딧불 등불
+
+The inventory groups these themes as four softly tinted collection panels. Each panel
+shows its own `0/3` collection count while the inventory heading shows the overall
+count. Locked items remain intentionally secret; the category gives children variety
+without spoiling the next reward.
 
 After the catalog is complete, children can keep learning and rearranging without
 scarcity messaging or losing anything.

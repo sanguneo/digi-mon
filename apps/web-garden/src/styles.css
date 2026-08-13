@@ -667,6 +667,81 @@ a:focus-visible {
   font-size: clamp(32px, 4vw, 48px);
 }
 
+.garden-room__inventory .garden-inventory__title > div > p:last-child {
+  margin: 8px 0 0;
+  color: var(--garden-muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.garden-collections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.garden-collection {
+  min-width: 0;
+  padding: 18px;
+  border: 2px solid var(--collection-border);
+  border-radius: 28px;
+  background: var(--collection-surface);
+}
+
+.garden-collection--rest {
+  --collection-border: #d5b88a;
+  --collection-surface: #fff8e9;
+}
+
+.garden-collection--bloom {
+  --collection-border: #e8aaa0;
+  --collection-surface: #fff2ef;
+}
+
+.garden-collection--waterside {
+  --collection-border: #9bcddd;
+  --collection-surface: #eefbff;
+}
+
+.garden-collection--sky-light {
+  --collection-border: #c3b3df;
+  --collection-surface: #f7f1ff;
+}
+
+.garden-collection > header {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.garden-collection h3 {
+  margin: 2px 0 0;
+  color: var(--garden-green-dark);
+  font-family: Georgia, 'Nanum Myeongjo', serif;
+  font-size: 25px;
+}
+
+.garden-collection header p {
+  margin: 0;
+  color: var(--garden-muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.garden-collection header > span {
+  display: grid;
+  min-width: 48px;
+  min-height: 34px;
+  place-items: center;
+  border: 2px solid var(--collection-border);
+  border-radius: 999px;
+  background: var(--garden-paper);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .garden-heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.6fr);
@@ -886,7 +961,7 @@ a:focus-visible {
 .garden-item {
   display: grid;
   min-width: 0;
-  min-height: 178px;
+  min-height: 184px;
   gap: 5px;
   justify-items: center;
   padding: 18px 12px;
@@ -897,8 +972,9 @@ a:focus-visible {
 }
 
 .garden-item.is-unlocked {
-  border-color: var(--garden-green);
-  background: #f7ffeb;
+  border-color: var(--collection-border);
+  background: var(--garden-paper);
+  box-shadow: inset 0 -6px 0 var(--collection-border);
 }
 
 .garden-item.is-locked {
@@ -1429,6 +1505,10 @@ legend,
 
   .garden-room__actions {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .garden-collections {
+    grid-template-columns: 1fr;
   }
 }
 

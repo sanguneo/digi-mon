@@ -1,3 +1,6 @@
+import type { GameItem } from './garden-catalog.ts';
+import { GAME_CATALOG } from './garden-catalog.ts';
+
 export type GardenSpotId =
   | 'big-tree'
   | 'pond-side'
@@ -14,12 +17,6 @@ export interface GardenSpot {
   x: number;
   y: number;
   depth: 2 | 3 | 4 | 5;
-}
-
-export interface GameItem {
-  id: string;
-  name: string;
-  description: string;
 }
 
 export interface GameState {
@@ -46,15 +43,6 @@ export const GARDEN_SPOTS: readonly GardenSpot[] = [
   { id: 'little-gate', label: '작은 문 앞', x: 84, y: 52, depth: 3 },
   { id: 'stream-bridge', label: '시냇물 다리', x: 56, y: 84, depth: 5 },
   { id: 'front-garden', label: '앞뜰', x: 83, y: 83, depth: 5 },
-];
-
-export const GAME_CATALOG: readonly GameItem[] = [
-  { id: 'moon-chair', name: '달빛 의자', description: '달빛 아래 쉬어 가는 의자' },
-  { id: 'dandelion-pot', name: '민들레 화분', description: '노란 민들레가 피었어요' },
-  { id: 'tiny-pond', name: '작은 연못', description: '물고기가 살짝 헤엄쳐요' },
-  { id: 'cloud-balloon', name: '구름 풍선', description: '하늘에 둥실 떠 있어요' },
-  { id: 'reading-cat', name: '책 읽는 고양이', description: '고양이가 조용히 책을 읽어요' },
-  { id: 'rainbow-flag', name: '무지개 깃발', description: '정원 입구를 밝혀요' },
 ];
 
 export const EMPTY_GAME_STATE: GameState = {

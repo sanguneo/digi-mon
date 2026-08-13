@@ -9,6 +9,24 @@ const unlockedState = {
   latestRewardId: 'moon-chair',
 };
 
+const expandedCollectionState = {
+  ...unlockedState,
+  unlockedItemIds: [
+    'moon-chair',
+    'dandelion-pot',
+    'tiny-pond',
+    'cloud-balloon',
+    'reading-cat',
+    'rainbow-flag',
+    'picnic-basket',
+    'strawberry-patch',
+    'mushroom-home',
+    'bird-bath',
+    'pebble-fountain',
+    'firefly-lantern',
+  ],
+};
+
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
@@ -58,6 +76,60 @@ test('places and moves an item across named canvas coordinates', async ({ page }
 
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-decorated-room.png',
+    fullPage: true,
+  });
+});
+
+test('shows twelve collected decorations grouped into four themes', async ({ page }) => {
+  await page.evaluate((state) => {
+    localStorage.setItem('digi-mon/garden-state@1', JSON.stringify(state));
+  }, expandedCollectionState);
+  await page.goto('/#garden');
+  await page.reload();
+
+  await expect(page.getByText('모은 장식 12/12')).toBeVisible();
+  for (const theme of ['쉴 곳', '꽃과 열매', '물가 풍경', '하늘과 빛']) {
+    await expect(page.getByRole('heading', { name: theme })).toBeVisible();
+  }
+  await expect(page.locator('.garden-item:enabled')).toHaveCount(12);
+  await page.screenshot({
+    path: '../../artifacts/qa-garden/garden-expanded-collection.png',
+    fullPage: true,
+  });
+});
+
+test('keeps the expanded collection usable at a tablet viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.evaluate((state) => {
+    localStorage.setItem('digi-mon/garden-state@1', JSON.stringify(state));
+  }, expandedCollectionState);
+  await page.goto('/#garden');
+  await page.reload();
+
+  await expect(page.getByText('모은 장식 12/12')).toBeVisible();
+  expect(await page.evaluate(
+    () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
+  )).toBeFalsy();
+  await page.screenshot({
+    path: '../../artifacts/qa-garden/garden-expanded-collection-tablet.png',
+    fullPage: true,
+  });
+});
+
+test('keeps the expanded collection usable at a mobile viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.evaluate((state) => {
+    localStorage.setItem('digi-mon/garden-state@1', JSON.stringify(state));
+  }, expandedCollectionState);
+  await page.goto('/#garden');
+  await page.reload();
+
+  await expect(page.getByText('모은 장식 12/12')).toBeVisible();
+  expect(await page.evaluate(
+    () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
+  )).toBeFalsy();
+  await page.screenshot({
+    path: '../../artifacts/qa-garden/garden-expanded-collection-mobile.png',
     fullPage: true,
   });
 });

@@ -2,14 +2,32 @@ import { describe, expect, test } from 'vitest';
 
 import {
   EMPTY_GAME_STATE,
-  GAME_CATALOG,
   parseGameState,
   placeDecoration,
   recordAnswer,
   serializeGameState,
 } from './game-state.ts';
+import { GAME_CATALOG } from './garden-catalog.ts';
 
 describe('garden game state', () => {
+  test('offers twelve decorations across four garden themes', () => {
+    expect(GAME_CATALOG.map((item) => item.id)).toEqual([
+      'moon-chair',
+      'dandelion-pot',
+      'tiny-pond',
+      'cloud-balloon',
+      'reading-cat',
+      'rainbow-flag',
+      'picnic-basket',
+      'strawberry-patch',
+      'mushroom-home',
+      'bird-bath',
+      'pebble-fountain',
+      'firefly-lantern',
+    ]);
+    expect(new Set(GAME_CATALOG.map((item) => item.category)).size).toBe(4);
+  });
+
   test('counts each answered worksheet item once and ignores correctness', () => {
     const first = recordAnswer(EMPTY_GAME_STATE, 'sheet-a', 'item-1');
     const changed = recordAnswer(first.state, 'sheet-a', 'item-1');
@@ -33,6 +51,42 @@ describe('garden game state', () => {
     const duplicate = recordAnswer(three.state, 'sheet-a', 'item-3');
     expect(duplicate.reward).toBeNull();
     expect(duplicate.state.unlockedItemIds).toHaveLength(1);
+  });
+
+  test('unlocks the entire expanded catalog in stable order', () => {
+    let state = EMPTY_GAME_STATE;
+    const rewards: string[] = [];
+
+    for (let index = 0; index < GAME_CATALOG.length * 3; index += 1) {
+      const result = recordAnswer(state, 'catalog-sheet', `item-${index}`);
+      state = result.state;
+      if (result.reward) rewards.push(result.reward.id);
+    }
+
+    expect(rewards).toEqual(GAME_CATALOG.map((item) => item.id));
+    expect(state.unlockedItemIds).toEqual(rewards);
+
+    const afterComplete = recordAnswer(state, 'catalog-sheet', 'one-more');
+    expect(afterComplete.reward).toBeNull();
+    expect(afterComplete.state.unlockedItemIds).toEqual(rewards);
+  });
+
+  test('places and persists every decoration in the expanded catalog', () => {
+    const unlocked = {
+      ...EMPTY_GAME_STATE,
+      unlockedItemIds: GAME_CATALOG.map((item) => item.id),
+    };
+    const placed = GAME_CATALOG.reduce(
+      (state, item, index) => placeDecoration(
+        state,
+        item.id,
+        index % 2 === 0 ? 'flower-path' : 'hill-top',
+      ),
+      unlocked,
+    );
+
+    expect(Object.keys(placed.placements)).toHaveLength(GAME_CATALOG.length);
+    expect(parseGameState(serializeGameState(placed))).toEqual(placed);
   });
 
   test('places an unlocked item and moves it without deleting inventory', () => {
