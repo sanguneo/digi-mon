@@ -48,6 +48,16 @@ test('opens a dedicated garden room from the compact learning summary', async ({
   });
 });
 
+test('returns to the learning view with browser back', async ({ page }) => {
+  await page.getByRole('button', { name: '정원 보기' }).first().click();
+  await expect(page).toHaveURL(/#garden$/);
+  await page.goBack();
+
+  await expect(page).toHaveURL(/#studio$/);
+  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '나만의 정원' })).toHaveCount(0);
+});
+
 test('places and moves an item across named canvas coordinates', async ({ page }) => {
   await page.evaluate((state) => {
     localStorage.setItem('digi-mon/garden-state@1', JSON.stringify(state));
