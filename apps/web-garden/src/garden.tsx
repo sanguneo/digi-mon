@@ -1,22 +1,13 @@
-import { useState } from 'react';
+import { type CSSProperties, useEffect, useState } from 'react';
 
 import { useGame } from './game-context.tsx';
 import {
   GAME_CATALOG,
-  type DecorationArea,
+  GARDEN_SPOTS,
+  gardenSpot,
   type GameItem,
+  type GardenSpotId,
 } from './game-state.ts';
-
-const AREAS: Array<{ id: DecorationArea; label: string }> = [
-  { id: 'left', label: '왼쪽' },
-  { id: 'center', label: '가운데' },
-  { id: 'right', label: '오른쪽' },
-  { id: 'front', label: '앞쪽' },
-];
-const AREA_NAMES = Object.fromEntries(AREAS.map(({ id, label }) => [id, label])) as Record<
-  DecorationArea,
-  string
->;
 
 function DecorationArt({ item }: { item: GameItem }) {
   const artwork: Record<string, string> = {
@@ -30,7 +21,13 @@ function DecorationArt({ item }: { item: GameItem }) {
   return <span className="garden-art" aria-hidden="true">{artwork[item.id]}</span>;
 }
 
-export function Garden() {
+export function GardenRoom({
+  onLearn,
+  preselectReward,
+}: {
+  onLearn: () => void;
+  preselectReward: boolean;
+}) {
   const {
     state,
     latestReward,
@@ -42,92 +39,124 @@ export function Garden() {
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const selected = GAME_CATALOG.find((item) => item.id === selectedItemId) ?? null;
 
-  const chooseArea = (area: DecorationArea) => {
+  useEffect(() => {
+    if (preselectReward && latestReward) setSelectedItemId(latestReward.id);
+  }, [latestReward, preselectReward]);
+
+  const chooseSpot = (spotId: GardenSpotId) => {
     if (!selected) return;
-    placeItem(selected.id, area);
+    placeItem(selected.id, spotId);
     setSelectedItemId(null);
     dismissReward();
   };
 
   return (
-    <section className="garden-shell" aria-labelledby="garden-title">
-      <div className="garden-heading">
+    <main className="garden-room" id="garden-view">
+      <header className="garden-room__header">
         <div>
-          <p className="dm-kicker">내가 키우는 배움 공간</p>
-          <h2 id="garden-title">오늘의 작은 정원</h2>
-          <p>문제 세 개를 천천히 풀면 정원에 새 장식 하나가 도착해요.</p>
+          <p className="dm-kicker">배움으로 가꾸는 나만의 공간</p>
+          <h1>나만의 정원</h1>
+          <p>모은 장식을 골라 나무 아래, 연못 옆, 꽃길에 자유롭게 놓아 보세요.</p>
         </div>
-        <fieldset className="garden-progress">
-          <legend className="sr-only">오늘의 걸음 진행</legend>
-          <strong>오늘의 걸음 {state.quotaProgress}/3</strong>
-          <div className="garden-progress__track" aria-hidden="true">
-            {[0, 1, 2].map((step) => (
-              <span className={step < state.quotaProgress ? 'is-grown' : ''} key={step}>
-                {step < state.quotaProgress ? '🌱' : '○'}
-              </span>
-            ))}
+        <div className="garden-room__actions">
+          <div className="garden-room__progress">
+            <span aria-hidden="true">🌱</span>
+            <strong>오늘의 걸음 {state.quotaProgress}/3</strong>
           </div>
-          <small>맞혔는지보다, 해 본 것이 소중해요.</small>
-        </fieldset>
-      </div>
+          <button className="dm-btn dm-btn--primary" onClick={onLearn} type="button">
+            학습하러 가기
+          </button>
+        </div>
+      </header>
 
       <p className="garden-announcement" aria-live="polite">
         {latestReward ? '정원에 새 친구가 왔어요!' : announcement}
       </p>
 
-      <section className="garden-stage" aria-label="꾸민 정원">
-        {AREAS.map(({ id, label }) => (
-          <div className={`garden-zone garden-zone--${id}`} key={id}>
-            <span className="garden-zone__name">{label}</span>
-            {GAME_CATALOG.filter((item) => state.placements[item.id] === id).map((item) => (
-              <div
-                className="garden-placed"
-                role="img"
-                aria-label={`${item.name}, ${label}에 놓임`}
-                key={item.id}
-              >
-                <DecorationArt item={item} />
-                <span>{item.name}</span>
-              </div>
-            ))}
-          </div>
-        ))}
-        <div className="garden-sun" aria-hidden="true">☀️</div>
-        <div className="garden-cloud garden-cloud--one" aria-hidden="true">☁️</div>
-        <div className="garden-cloud garden-cloud--two" aria-hidden="true">☁️</div>
+      <section className="garden-canvas" aria-label="꾸미는 정원 풍경">
+        <div className="garden-canvas__sky" aria-hidden="true">
+          <span className="garden-canvas__sun">☀️</span>
+          <span className="garden-canvas__cloud garden-canvas__cloud--one">☁️</span>
+          <span className="garden-canvas__cloud garden-canvas__cloud--two">☁️</span>
+        </div>
+        <div className="garden-landmark garden-landmark--tree" aria-hidden="true">🌳</div>
+        <div className="garden-landmark garden-landmark--pond" aria-hidden="true">
+          <span>🐟</span>
+        </div>
+        <div className="garden-landmark garden-landmark--flowers" aria-hidden="true">🌷 🌼 🌸</div>
+        <div className="garden-landmark garden-landmark--gate" aria-hidden="true">🏡</div>
+        <div className="garden-landmark garden-landmark--bridge" aria-hidden="true">🌉</div>
+        <div className="garden-path" aria-hidden="true" />
+        <div className="garden-stream" aria-hidden="true" />
+
+        {GAME_CATALOG.flatMap((item) => {
+          const spotId = state.placements[item.id];
+          if (!spotId) return [];
+          const spot = gardenSpot(spotId);
+          return [(
+            <div
+              className="garden-decoration"
+              key={item.id}
+              role="img"
+              aria-label={`${item.name}, ${spot.label}에 놓임`}
+              style={{
+                '--spot-x': `${spot.x}%`,
+                '--spot-y': `${spot.y}%`,
+                '--spot-depth': String(spot.depth),
+              } as CSSProperties}
+            >
+              <DecorationArt item={item} />
+              <span>{item.name}</span>
+            </div>
+          )];
+        })}
+
+        {selected ? GARDEN_SPOTS.map((spot) => (
+          <button
+            className="garden-spot"
+            key={spot.id}
+            onClick={() => chooseSpot(spot.id)}
+            type="button"
+            aria-label={`${spot.label} 배치 지점`}
+            style={{
+              '--spot-x': `${spot.x}%`,
+              '--spot-y': `${spot.y}%`,
+              '--spot-depth': String(spot.depth + 10),
+            } as CSSProperties}
+          >
+            <span>{spot.label}</span>
+          </button>
+        )) : null}
       </section>
 
       {selected ? (
-        <div className="garden-placement" aria-live="polite">
+        <aside className="garden-placement-bar" aria-live="polite">
+          <DecorationArt item={selected} />
           <div>
             <strong>{selected.name}을 어디에 놓을까요?</strong>
-            <p>{selected.description}</p>
+            <p>정원 풍경 안의 반짝이는 지점을 골라 주세요.</p>
           </div>
-          <div className="garden-placement__areas">
-            {AREAS.map(({ id, label }) => (
-              <button className="dm-btn garden-area-button" key={id} onClick={() => chooseArea(id)} type="button">
-                {label}
-              </button>
-            ))}
-            <button className="dm-btn dm-btn--quiet" onClick={() => setSelectedItemId(null)} type="button">
-              배치하지 않기
-            </button>
-          </div>
-        </div>
+          <button className="dm-btn dm-btn--quiet" onClick={() => setSelectedItemId(null)} type="button">
+            배치하지 않기
+          </button>
+        </aside>
       ) : null}
 
-      <div className="garden-inventory">
+      <section className="garden-room__inventory" aria-labelledby="inventory-title">
         <div className="garden-inventory__title">
           <div>
-            <p className="dm-kicker">나의 장식 상자</p>
-            <h3>모은 정원 친구들</h3>
+            <p className="dm-kicker">모은 친구를 풍경 속으로</p>
+            <h2 id="inventory-title">장식 상자</h2>
           </div>
-          <button className="garden-reset" onClick={resetGarden} type="button">정원 새로 시작하기</button>
+          <button className="garden-reset" onClick={resetGarden} type="button">
+            정원 새로 시작하기
+          </button>
         </div>
         <div className="garden-inventory__grid">
           {GAME_CATALOG.map((item) => {
             const unlocked = state.unlockedItemIds.includes(item.id);
-            const area = state.placements[item.id];
+            const spotId = state.placements[item.id];
+            const spot = spotId ? gardenSpot(spotId) : null;
             return (
               <button
                 className={`garden-item ${unlocked ? 'is-unlocked' : 'is-locked'}`}
@@ -138,20 +167,19 @@ export function Garden() {
                 aria-label={[
                   item.name,
                   unlocked ? item.description : '다음 장식을 기다리는 중',
-                  area ? `${AREA_NAMES[area]}에 놓임, 다시 놓기` : '',
+                  spot ? `${spot.label}에 놓임, 다시 놓기` : '',
                 ].filter(Boolean).join(', ')}
               >
                 <DecorationArt item={item} />
                 <strong>{unlocked ? item.name : '아직 비밀'}</strong>
                 <span>{unlocked ? item.description : '다음 장식을 기다리는 중'}</span>
-                {area ? <small>{AREA_NAMES[area]} · 다시 놓기</small> : null}
+                {spot ? <small>{spot.label} · 다시 놓기</small> : null}
               </button>
             );
           })}
         </div>
-      </div>
-
+      </section>
       <p className="garden-rest">오늘은 여기까지 해도 괜찮아요.</p>
-    </section>
+    </main>
   );
 }

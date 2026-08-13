@@ -11,7 +11,7 @@ import {
 import {
   EMPTY_GAME_STATE,
   type AnswerResult,
-  type DecorationArea,
+  type GardenSpotId,
   type GameItem,
   type GameState,
   parseGameState,
@@ -27,7 +27,7 @@ interface GameContextValue {
   latestReward: GameItem | null;
   announcement: string;
   answerItem: (worksheetId: string, itemId: string) => AnswerResult;
-  placeItem: (itemId: string, area: DecorationArea) => void;
+  placeItem: (itemId: string, spotId: GardenSpotId) => void;
   dismissReward: () => void;
   resetGarden: () => void;
 }
@@ -62,8 +62,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
     return result;
   }, [state]);
 
-  const placeItem = useCallback((itemId: string, area: DecorationArea) => {
-    setState((current) => placeDecoration(current, itemId, area));
+  const placeItem = useCallback((itemId: string, spotId: GardenSpotId) => {
+    setState((current) => placeDecoration(current, itemId, spotId));
     setAnnouncement('정원에 예쁘게 놓았어요.');
   }, []);
 

@@ -1,4 +1,20 @@
-export type DecorationArea = 'left' | 'center' | 'right' | 'front';
+export type GardenSpotId =
+  | 'big-tree'
+  | 'pond-side'
+  | 'flower-path'
+  | 'hill-top'
+  | 'picnic-lawn'
+  | 'little-gate'
+  | 'stream-bridge'
+  | 'front-garden';
+
+export interface GardenSpot {
+  id: GardenSpotId;
+  label: string;
+  x: number;
+  y: number;
+  depth: 2 | 3 | 4 | 5;
+}
 
 export interface GameItem {
   id: string;
@@ -7,11 +23,11 @@ export interface GameItem {
 }
 
 export interface GameState {
-  version: 1;
+  version: 2;
   quotaProgress: number;
   answeredKeys: string[];
   unlockedItemIds: string[];
-  placements: Partial<Record<string, DecorationArea>>;
+  placements: Partial<Record<string, GardenSpotId>>;
   latestRewardId?: string;
 }
 
@@ -20,6 +36,17 @@ export interface AnswerResult {
   progressed: boolean;
   reward: GameItem | null;
 }
+
+export const GARDEN_SPOTS: readonly GardenSpot[] = [
+  { id: 'big-tree', label: '큰 나무 아래', x: 18, y: 56, depth: 3 },
+  { id: 'pond-side', label: '연못 옆', x: 68, y: 66, depth: 4 },
+  { id: 'flower-path', label: '꽃길 옆', x: 43, y: 72, depth: 4 },
+  { id: 'hill-top', label: '언덕 위', x: 52, y: 39, depth: 2 },
+  { id: 'picnic-lawn', label: '소풍 잔디밭', x: 28, y: 76, depth: 4 },
+  { id: 'little-gate', label: '작은 문 앞', x: 84, y: 52, depth: 3 },
+  { id: 'stream-bridge', label: '시냇물 다리', x: 56, y: 84, depth: 5 },
+  { id: 'front-garden', label: '앞뜰', x: 83, y: 83, depth: 5 },
+];
 
 export const GAME_CATALOG: readonly GameItem[] = [
   { id: 'moon-chair', name: '달빛 의자', description: '달빛 아래 쉬어 가는 의자' },
@@ -31,12 +58,18 @@ export const GAME_CATALOG: readonly GameItem[] = [
 ];
 
 export const EMPTY_GAME_STATE: GameState = {
-  version: 1,
+  version: 2,
   quotaProgress: 0,
   answeredKeys: [],
   unlockedItemIds: [],
   placements: {},
 };
+
+export function gardenSpot(id: GardenSpotId): GardenSpot {
+  const spot = GARDEN_SPOTS.find((entry) => entry.id === id);
+  if (!spot) throw new Error(`알 수 없는 정원 지점: ${id}`);
+  return spot;
+}
 
 export function recordAnswer(
   state: GameState,
@@ -51,16 +84,11 @@ export function recordAnswer(
   const answeredKeys = [...state.answeredKeys, key];
   if (nextProgress < 3) {
     return {
-      state: {
-        ...state,
-        quotaProgress: nextProgress,
-        answeredKeys,
-      },
+      state: { ...state, quotaProgress: nextProgress, answeredKeys },
       progressed: true,
       reward: null,
     };
   }
-
   const reward = GAME_CATALOG.find((item) => !state.unlockedItemIds.includes(item.id)) ?? null;
   return {
     state: {
@@ -80,14 +108,14 @@ export function recordAnswer(
 export function placeDecoration(
   state: GameState,
   itemId: string,
-  area: DecorationArea,
+  spotId: GardenSpotId,
 ): GameState {
   if (!state.unlockedItemIds.includes(itemId)) return state;
   return {
     ...state,
     placements: {
       ...state.placements,
-      [itemId]: area,
+      [itemId]: spotId,
     },
   };
 }
@@ -101,11 +129,34 @@ function uniqueStrings(value: unknown): string[] | null {
   return [...new Set(value)];
 }
 
+const V1_MIGRATION: Record<string, GardenSpotId> = {
+  left: 'big-tree',
+  center: 'pond-side',
+  right: 'little-gate',
+  front: 'front-garden',
+};
+
+function validPlacementMap(
+  raw: unknown,
+  unlockedItemIds: string[],
+  version: 1 | 2,
+): Partial<Record<string, GardenSpotId>> | null {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  const placements: Partial<Record<string, GardenSpotId>> = {};
+  for (const [id, value] of Object.entries(raw)) {
+    if (!unlockedItemIds.includes(id) || typeof value !== 'string') return null;
+    const spotId = version === 1 ? V1_MIGRATION[value] : value as GardenSpotId;
+    if (!spotId || !GARDEN_SPOTS.some((spot) => spot.id === spotId)) return null;
+    placements[id] = spotId;
+  }
+  return placements;
+}
+
 export function parseGameState(raw: string | null): GameState {
   if (!raw) return EMPTY_GAME_STATE;
   try {
     const value = JSON.parse(raw) as Record<string, unknown>;
-    if (value.version !== 1
+    if ((value.version !== 1 && value.version !== 2)
       || !Number.isInteger(value.quotaProgress)
       || Number(value.quotaProgress) < 0
       || Number(value.quotaProgress) > 2) {
@@ -117,27 +168,15 @@ export function parseGameState(raw: string | null): GameState {
     if (unlockedItemIds.some((id) => !GAME_CATALOG.some((item) => item.id === id))) {
       return EMPTY_GAME_STATE;
     }
-    const rawPlacements = value.placements;
-    if (!rawPlacements || typeof rawPlacements !== 'object' || Array.isArray(rawPlacements)) {
-      return EMPTY_GAME_STATE;
-    }
-    const validAreas: DecorationArea[] = ['left', 'center', 'right', 'front'];
-    const placements: Partial<Record<string, DecorationArea>> = {};
-    for (const [id, area] of Object.entries(rawPlacements)) {
-      if (!unlockedItemIds.includes(id)
-        || typeof area !== 'string'
-        || !validAreas.includes(area as DecorationArea)) {
-        return EMPTY_GAME_STATE;
-      }
-      placements[id] = area as DecorationArea;
-    }
+    const placements = validPlacementMap(value.placements, unlockedItemIds, value.version);
+    if (!placements) return EMPTY_GAME_STATE;
     const latestRewardId = value.latestRewardId;
     if (latestRewardId !== undefined
       && (typeof latestRewardId !== 'string' || !unlockedItemIds.includes(latestRewardId))) {
       return EMPTY_GAME_STATE;
     }
     return {
-      version: 1,
+      version: 2,
       quotaProgress: Number(value.quotaProgress),
       answeredKeys,
       unlockedItemIds,

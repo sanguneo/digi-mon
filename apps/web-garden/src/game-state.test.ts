@@ -40,11 +40,11 @@ describe('garden game state', () => {
       ...EMPTY_GAME_STATE,
       unlockedItemIds: ['moon-chair'],
     };
-    const centered = placeDecoration(unlocked, 'moon-chair', 'center');
-    const moved = placeDecoration(centered, 'moon-chair', 'right');
+    const centered = placeDecoration(unlocked, 'moon-chair', 'pond-side');
+    const moved = placeDecoration(centered, 'moon-chair', 'big-tree');
 
-    expect(centered.placements['moon-chair']).toBe('center');
-    expect(moved.placements['moon-chair']).toBe('right');
+    expect(centered.placements['moon-chair']).toBe('pond-side');
+    expect(moved.placements['moon-chair']).toBe('big-tree');
     expect(moved.unlockedItemIds).toEqual(['moon-chair']);
   });
 
@@ -54,10 +54,23 @@ describe('garden game state', () => {
       quotaProgress: 2,
       unlockedItemIds: ['moon-chair'],
       answeredKeys: ['sheet-a:item-1', 'sheet-a:item-2'],
-    }, 'moon-chair', 'front');
+    }, 'moon-chair', 'flower-path');
 
     expect(parseGameState(serializeGameState(state))).toEqual(state);
     expect(parseGameState('{nope')).toEqual(EMPTY_GAME_STATE);
     expect(parseGameState(JSON.stringify({ version: 99 }))).toEqual(EMPTY_GAME_STATE);
+  });
+
+  test('migrates version-one placements into version-two named spots', () => {
+    const migrated = parseGameState(JSON.stringify({
+      version: 1,
+      quotaProgress: 1,
+      answeredKeys: ['sheet:item'],
+      unlockedItemIds: ['moon-chair'],
+      placements: { 'moon-chair': 'center' },
+    }));
+
+    expect(migrated.version).toBe(2);
+    expect(migrated.placements['moon-chair']).toBe('pond-side');
   });
 });

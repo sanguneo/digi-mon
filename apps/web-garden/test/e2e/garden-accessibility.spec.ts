@@ -5,7 +5,7 @@ test('garden stays pressure-free, keyboard-operable, and overflow-free', async (
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
-  await page.reload();
+  await page.goto('/#studio');
 
   await expect(page.getByText('맞혔는지보다, 해 본 것이 소중해요.')).toBeVisible();
   await expect(page.locator('.garden-app').getByText(/연속|스트릭|타이머|순위|감점|실패/)).toHaveCount(0);
@@ -22,6 +22,7 @@ test('garden stays pressure-free, keyboard-operable, and overflow-free', async (
   );
   expect(motion).toBe('0ms');
 
+  await page.getByRole('button', { name: '정원 보기' }).first().click();
   await expect(page.getByRole('button', { name: /달빛 의자/ })).toBeDisabled();
   await page.screenshot({
     path: '../../artifacts/qa-garden/mobile-garden.png',

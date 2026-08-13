@@ -3,12 +3,12 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
-  await page.reload();
+  await page.goto('/#diagnostic');
 });
 
 test('fork preserves subject worksheet generation and engine geometry', async ({ page }) => {
-  await page.goto('/');
-  await expect(page.getByRole('heading', { name: '오늘의 작은 정원' })).toBeVisible();
+  await page.goto('/#studio');
+  await expect(page.getByRole('heading', { name: '오늘의 걸음 0/3' })).toBeVisible();
   await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
 
   await page.getByRole('button', { name: '문제 만들기' }).click();
@@ -33,7 +33,7 @@ test('fork preserves subject worksheet generation and engine geometry', async ({
 
 test('three unique answers unlock one reward and duplicate changes do not count', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: '진단평가' }).click();
+  await page.goto('/#diagnostic');
   await page.getByRole('radio', { name: '수학' }).check();
   await page.getByLabel('학년군').selectOption('1-2');
   await page.getByLabel('문항 수').fill('6');
@@ -65,20 +65,23 @@ test('three unique answers unlock one reward and duplicate changes do not count'
 
   await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
   await expect(page.getByText('정원에 새 친구가 왔어요!')).toBeVisible();
+  await page.getByRole('button', { name: '정원에 놓으러 가기' }).click();
+  await expect(page).toHaveURL(/#garden$/);
   await expect(page.getByRole('button', { name: /달빛 의자/ })).toBeEnabled();
   await expect(page.getByRole('button', { name: /민들레 화분/ })).toBeDisabled();
+  await expect(page.getByText('달빛 의자을 어디에 놓을까요?')).toBeVisible();
 
   await page.screenshot({
-    path: '../../artifacts/qa-garden/reward-unlocked.png',
+    path: '../../artifacts/qa-garden/reward-to-garden.png',
     fullPage: true,
   });
 });
 
 test('places an earned decoration and persists it across reload', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/#garden');
   await page.evaluate(() => {
     localStorage.setItem('digi-mon/garden-state@1', JSON.stringify({
-      version: 1,
+      version: 2,
       quotaProgress: 0,
       answeredKeys: ['a:1', 'a:2', 'a:3'],
       unlockedItemIds: ['moon-chair'],
@@ -87,16 +90,15 @@ test('places an earned decoration and persists it across reload', async ({ page 
     }));
   });
   await page.reload();
-
   await page.getByRole('button', { name: /달빛 의자/ }).click();
-  await page.getByRole('button', { name: '가운데' }).click();
-  await expect(page.getByRole('img', { name: '달빛 의자, 가운데에 놓임' })).toBeVisible();
+  await page.getByRole('button', { name: '연못 옆 배치 지점' }).click();
+  await expect(page.getByRole('img', { name: '달빛 의자, 연못 옆에 놓임' })).toBeVisible();
 
   await page.reload();
-  await expect(page.getByRole('img', { name: '달빛 의자, 가운데에 놓임' })).toBeVisible();
+  await expect(page.getByRole('img', { name: '달빛 의자, 연못 옆에 놓임' })).toBeVisible();
   await page.getByRole('button', { name: /달빛 의자.*다시 놓기/ }).click();
-  await page.getByRole('button', { name: '오른쪽' }).click();
-  await expect(page.getByRole('img', { name: '달빛 의자, 오른쪽에 놓임' })).toBeVisible();
+  await page.getByRole('button', { name: '큰 나무 아래 배치 지점' }).click();
+  await expect(page.getByRole('img', { name: '달빛 의자, 큰 나무 아래에 놓임' })).toBeVisible();
 
   await page.screenshot({
     path: '../../artifacts/qa-garden/decorated-garden.png',

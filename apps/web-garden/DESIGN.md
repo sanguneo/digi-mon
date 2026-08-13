@@ -11,13 +11,18 @@ at the fork point so each application can evolve without hidden runtime coupling
 
 ## Product concept: 오늘의 작은 정원
 
-The child sees a small garden before the worksheet.
+Learning and decorating are separate views.
+
+- The learning view keeps a compact `오늘의 걸음` card and `정원 보기` CTA.
+- `#garden` opens the dedicated `나만의 정원` room.
+- A new reward exposes `정원에 놓으러 가기`, which opens the room with that item selected.
+- Browser back and a reloadable hash preserve the visible view without adding a router dependency.
 
 - Every distinct answered item adds one `오늘의 걸음`.
 - Changing an answer to the same item never adds another step.
 - Correctness is not used for progress or rewards.
 - Every three steps unlock exactly one decoration in catalog order.
-- A decoration can be placed in `왼쪽`, `가운데`, `오른쪽`, or `앞쪽`.
+- A decoration can be placed at one of eight named points in a continuous landscape.
 - Placement can be changed at any time and never deletes the item.
 
 The reward catalog is local static product data:
@@ -44,6 +49,20 @@ Progress acknowledges participation. The engine's accuracy and recommendation re
 visible only inside the honest diagnostic explanation and never control decoration.
 Learning is never blocked on placing or claiming a reward.
 
+## Decoration scene
+
+The room is a single coordinate canvas with trees, hills, a path, a pond, flowers,
+a small gate, a stream, and a bridge. It has eight stable placement IDs:
+
+```text
+big-tree, pond-side, flower-path, hill-top,
+picnic-lawn, little-gate, stream-bridge, front-garden
+```
+
+The point buttons are the primary interaction for touch and keyboard. Drag-and-drop is
+not required. A placed item has a textual accessible name such as
+`달빛 의자, 연못 옆에 놓임`; its coordinates never carry meaning alone.
+
 ## State and privacy boundary
 
 The engine remains stateless and unchanged. Game state uses the versioned browser key:
@@ -57,11 +76,12 @@ Stored values are only:
 - quota progress from zero to two;
 - opaque worksheet/item keys already present in delivered worksheets;
 - unlocked catalog IDs;
-- placement area IDs;
+- version-2 placement point IDs;
 - the latest reward ID.
 
 No name, account, age, school, roster, answer text, score, or diagnostic aggregate is
-stored. Invalid or future-version data resets to an empty garden.
+stored. Valid version-1 four-area placements migrate deterministically to version-2
+points. Invalid or future-version data resets to an empty garden.
 
 `정원 새로 시작하기` removes progress and decorations without affecting worksheets
 or engine data.
