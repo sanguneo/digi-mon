@@ -2,6 +2,9 @@
   "name": "digi-mon",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "license": "MIT",
   "type": "module",
   "description": "2022 개정 초등 국어·수학·영어 학습 데이터 생성 파이프라인",
@@ -11,6 +14,9 @@
   "scripts": {
     "test": "node tools/run-tests.mjs",
     "serve": "node bin/serve.mjs",
+    "web:dev": "npm run dev -w @digi-mon/web",
+    "web:test": "npm test -w @digi-mon/web",
+    "web:build": "npm run build -w @digi-mon/web",
     "build:spine": "node bin/build-spine.mjs",
     "audit:ontology": "node bin/audit-ontology.mjs",
     "verify:generators": "node bin/verify-generators.mjs",

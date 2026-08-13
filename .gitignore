@@ -1,7 +1,9 @@
 node_modules/
+apps/*/dist/
 
 # 생성 산출물. 학습지·스크린샷은 매번 다시 뽑는다.
 out/
+artifacts/
 
 # 에이전트 세션 상태
 .gjc/
