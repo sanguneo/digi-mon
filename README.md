@@ -378,6 +378,38 @@ tools/     검증·감사·검토표 생성 도구
 | `src/server/` | 무상태 HTTP 경계, 투영, 채점 |
 | `src/render/` | CLI·검토용 텍스트와 SVG 렌더 |
 
+## 웹 클라이언트
+
+엔진 API를 소비하는 두 독립 workspace가 있다.
+
+- `apps/web` — 과목·문항 수·난이도를 선택하고 진단·맞춤 학습을 실행하는 기본 클라이언트
+- `apps/web-garden` — 기본 기능을 포크하고 참여 기반 보상과 정원 꾸미기를 더한 어린이용 클라이언트
+
+작은 정원은 서로 다른 문제 세 개에 답할 때마다 장식 하나를 연다. 정답률은 보상에
+영향을 주지 않으며 streak, 타이머, 순위, 감점도 없다. 획득한 장식과 배치는 이름이나
+계정 없이 현재 브라우저의 `localStorage`에만 저장된다.
+
+```bash
+# 터미널 1: 엔진
+npm run serve
+
+# 터미널 2: 기본 웹 (http://127.0.0.1:4173)
+npm run web:dev
+
+# 또는 어린이용 작은 정원 (http://127.0.0.1:4273)
+npm run garden:dev
+```
+
+프로덕션 빌드 후 작은 정원의 same-origin host를 실행하려면:
+
+```bash
+npm run garden:build
+npm run host -w @digi-mon/web-garden
+```
+
+세부 게임 규칙과 개인정보·접근성 경계는
+[`apps/web-garden/DESIGN.md`](apps/web-garden/DESIGN.md)에 있다.
+
 ## 더 읽을 문서
 
 - 전체 문서 안내: `docs/README.md`
