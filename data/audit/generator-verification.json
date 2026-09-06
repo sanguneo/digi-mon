@@ -491,12 +491,12 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 318,
+          "unique": 314,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 394,
+          "unique": 398,
           "failed": 0
         },
         "3": {
@@ -505,10 +505,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1094,
+      "uniqueTotal": 1099,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9117
+      "uniqueRatio": 0.9158
     },
     {
       "generatorId": "math.g12.no.s05.story-sub",
@@ -517,12 +517,12 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 238,
+          "unique": 337,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 383,
+          "unique": 395,
           "failed": 0
         },
         "3": {
@@ -531,10 +531,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 952,
+      "uniqueTotal": 1092,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.7933
+      "uniqueRatio": 0.91
     },
     {
       "generatorId": "math.g12.no.s06.add",
@@ -1557,24 +1557,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 123,
+          "unique": 311,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 231,
+          "unique": 350,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 330,
+          "unique": 387,
           "failed": 0
         }
       },
-      "uniqueTotal": 680,
+      "uniqueTotal": 1047,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5667
+      "uniqueRatio": 0.8725
     },
     {
       "generatorId": "math.g34.no.s06.remainder",
@@ -4859,24 +4859,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 8,
+          "unique": 16,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 16,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 16,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 16,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.0133
     },
     {
       "generatorId": "korean.g34.st.s03-03.reason",
@@ -4937,24 +4937,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 10,
+          "unique": 20,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 46,
+          "unique": 92,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 46,
+          "unique": 91,
           "failed": 0
         }
       },
-      "uniqueTotal": 56,
+      "uniqueTotal": 112,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0467
+      "uniqueRatio": 0.0933
     },
     {
       "generatorId": "korean.g56.st.s01-01.inference",
@@ -4963,24 +4963,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 4,
+          "unique": 8,
           "failed": 0
         }
       },
-      "uniqueTotal": 4,
+      "uniqueTotal": 8,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0033
+      "uniqueRatio": 0.0067
     },
     {
       "generatorId": "korean.g56.st.s01-02.claim-reason",
@@ -5015,24 +5015,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 3,
+          "unique": 5,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 8,
+          "unique": 28,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 8,
+          "unique": 28,
           "failed": 0
         }
       },
-      "uniqueTotal": 8,
+      "uniqueTotal": 28,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0067
+      "uniqueRatio": 0.0233
     },
     {
       "generatorId": "english.g34.st.s02-06.command",
@@ -5145,24 +5145,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 5,
+          "unique": 9,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 5,
+          "unique": 9,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 5,
+          "unique": 9,
           "failed": 0
         }
       },
-      "uniqueTotal": 5,
+      "uniqueTotal": 9,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0042
+      "uniqueRatio": 0.0075
     }
   ],
   "errors": []

@@ -464,19 +464,40 @@ const storyAdd = {
     const a = rng.int(2, cap);
     const b = rng.int(1, Math.min(cap, 99 - a));
     const name = rng.pick(NAMES);
-    const thing = rng.pick(THINGS);
+    const kind = rng.pick(['receive', 'combine', 'join']);
+    const thing = kind === 'join'
+      ? { noun: '아이', counter: '명', place: rng.pick(['운동장', '놀이터', '교실']) }
+      : rng.pick(THINGS);
     const sum = a + b;
     const expr = `${a} + ${b} = ${sum}`;
     const N = thing.noun;
+    const { counter, place } = thing;
+    const stories = {
+      receive: {
+        stem: `${name}${josaEun(name)} ${N}${josaEul(N)} ${a}${counter} 가지고 있었습니다.`
+          + ` 친구에게 ${b}${counter}${josaEul(counter)} 더 받았습니다.`
+          + ` ${name}${josaI(name)} 가진 ${N}${josaEun(N)} 모두 몇 ${counter}입니까?`,
+        reason: '더 받아서 늘어났으므로 덧셈으로 구한다.',
+      },
+      combine: {
+        stem: `왼쪽 ${place}에 ${N}${josaI(N)} ${a}${counter}, 오른쪽 ${place}에 ${b}${counter} 있습니다.`
+          + ` 두 곳에 있는 ${N}${josaEun(N)} 모두 몇 ${counter}입니까?`,
+        reason: '두 곳에 있는 수를 모아 전체를 구하므로 덧셈을 한다.',
+      },
+      join: {
+        stem: `${place}에서 아이 ${a}명이 놀고 있었습니다. 다른 아이 ${b}명이 와서 함께 놀았습니다.`
+          + ` 지금 함께 노는 아이는 모두 몇 명입니까?`,
+        reason: '처음 놀던 아이 수에 새로 온 아이 수를 더한다.',
+      },
+    };
+    const story = stories[kind];
     return {
-      params: { a, b },
+      params: { a, b, kind, name, noun: N, counter, place },
       instruction: '식을 쓰고 답을 구하시오.',
-      stem: `${name}${josaEun(name)} ${N}${josaEul(N)} ${a}${thing.counter} 가지고 있었습니다.`
-        + ` 친구에게 ${b}${thing.counter}${josaEul(thing.counter)} 더 받았습니다.`
-        + ` ${name}${josaI(name)} 가진 ${N}${josaEun(N)} 모두 몇 ${thing.counter}입니까?`,
-      answer: { value: sum, display: `${expr} / 답 ${sum}${thing.counter}`, accepts: [num(sum), `${sum}${thing.counter}`, expr] },
-      solution: ['더 받아서 늘어났으므로 덧셈으로 구한다.', expr, `답은 ${countIda(sum, thing.counter)}.`],
-      dedupeKey: `story-add:${a}:${b}:${N}`,
+      stem: story.stem,
+      answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, expr] },
+      solution: [story.reason, expr, `답은 ${countIda(sum, counter)}.`],
+      dedupeKey: `story-add:${kind}:${a}:${b}:${N}`,
       difficulty,
     };
   },
@@ -495,18 +516,37 @@ const storySub = {
     const a = rng.int(3, cap);
     const b = rng.int(1, a - 1);
     const thing = rng.pick(THINGS);
+    const kind = rng.pick(['take-away', 'compare', 'missing-part']);
     const rest = a - b;
     const expr = `${a} - ${b} = ${rest}`;
     const N = thing.noun;
+    const { counter, place } = thing;
+    const stories = {
+      'take-away': {
+        stem: `${place}에 ${N}${josaI(N)} ${a}${counter} 있었습니다.`
+          + ` 그중 ${b}${counter}${josaEul(counter)} 다른 곳으로 옮겼습니다.`
+          + ` 처음 ${place}에 남은 ${N}${josaEun(N)} 몇 ${counter}입니까?`,
+        reason: '다른 곳으로 옮겨 수가 줄었으므로 처음 수에서 옮긴 수를 뺀다.',
+      },
+      compare: {
+        stem: `왼쪽 ${place}에 ${N}${josaI(N)} ${a}${counter}, 오른쪽 ${place}에 ${b}${counter} 있습니다.`
+          + ` 왼쪽에 있는 ${N}${josaEun(N)} 오른쪽보다 몇 ${counter} 더 많습니까?`,
+        reason: '두 수의 차이를 구하려면 큰 수에서 작은 수를 뺀다.',
+      },
+      'missing-part': {
+        stem: `두 ${place}에 있는 ${N}${josaEun(N)} 모두 ${a}${counter}입니다.`
+          + ` 한 ${place}에 ${b}${counter} 있다면 다른 ${place}에는 몇 ${counter} 있습니까?`,
+        reason: '전체 수에서 알고 있는 한 부분의 수를 빼면 다른 부분의 수가 된다.',
+      },
+    };
+    const story = stories[kind];
     return {
-      params: { a, b },
+      params: { a, b, kind, noun: N, counter, place },
       instruction: '식을 쓰고 답을 구하시오.',
-      stem: `${thing.place}에 ${N}${josaI(N)} ${a}${thing.counter} 있었습니다.`
-        + ` 그중 ${b}${thing.counter}${josaEul(thing.counter)} 사용했습니다.`
-        + ` 남은 ${N}${josaEun(N)} 몇 ${thing.counter}입니까?`,
-      answer: { value: rest, display: `${expr} / 답 ${rest}${thing.counter}`, accepts: [num(rest), `${rest}${thing.counter}`, expr] },
-      solution: ['사용해서 줄었으므로 뺄셈으로 구한다.', expr, `답은 ${countIda(rest, thing.counter)}.`],
-      dedupeKey: `story-sub:${a}:${b}:${N}`,
+      stem: story.stem,
+      answer: { value: rest, display: `${expr} / 답 ${rest}${counter}`, accepts: [num(rest), `${rest}${counter}`, expr] },
+      solution: [story.reason, expr, `답은 ${countIda(rest, counter)}.`],
+      dedupeKey: `story-sub:${kind}:${a}:${b}:${N}`,
       difficulty,
     };
   },

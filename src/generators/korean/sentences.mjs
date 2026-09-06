@@ -11,6 +11,8 @@
  * 판정 근거(basis)를 함께 두어 사람이 검토할 수 있게 했다.
  */
 import { buildChoices } from '../../engine/item.mjs';
+import { FEELING_SCENES } from './feeling-scenes.mjs';
+import { INFERENCE_SCENES, PROCEDURE_SCENES } from './progression-scenes.mjs';
 import { josaEun, josaI } from '../../engine/korean-number.mjs';
 import {
   CLAIM_REASONS,
@@ -309,6 +311,8 @@ const sensoryWord = {
 // [2국02-04] 인물의 마음 짐작하기
 // ---------------------------------------------------------------------------
 
+const mindScenes = [...MIND_SENTENCES, ...FEELING_SCENES];
+
 const mindGuess = {
   id: 'korean.g12.st.s02-04.mind',
   standardCode: '[2국02-04]',
@@ -316,12 +320,17 @@ const mindGuess = {
   format: 'multiple-choice',
   difficultyAxis: 'single',
   difficulties: [1],
-  capacityNote: '마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다.',
+  capacityNote: '기존 문장 8개와 행동·대화 근거를 담은 이야기 8개를 쓴다. 마음 낱말은 판정이 겹치지 않는 기존 네 개로 제한한다.',
   generate(rng, { difficulty }) {
-    const spec = rng.pick(MIND_SENTENCES);
+    const spec = rng.pick(mindScenes);
     const wrong = MIND_FEELINGS.filter((f) => f !== spec.feeling);
     return {
-      params: { text: spec.text, feeling: spec.feeling },
+      params: {
+        text: spec.text, feeling: spec.feeling,
+        ...('sceneId' in spec ? {
+          sceneId: spec.sceneId, presentation: spec.presentation, evidence: spec.evidence,
+        } : {}),
+      },
       instruction: '인물의 마음으로 알맞은 것을 고르시오.',
       stem: spec.text,
       choices: buildChoices(rng, spec.feeling, wrong),
@@ -332,7 +341,7 @@ const mindGuess = {
     };
   },
   verify({ text, feeling }, answer) {
-    const found = MIND_SENTENCES.find((s) => s.text === text);
+    const found = mindScenes.find((s) => s.text === text);
     if (!found || found.feeling !== feeling) return false;
     return answer.value === feeling && MIND_FEELINGS.includes(answer.value);
   },
@@ -416,6 +425,7 @@ const fixSentence = {
 // ---------------------------------------------------------------------------
 
 const STEP_LABELS = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ'];
+const procedureScenes = [...PROCEDURES, ...PROCEDURE_SCENES];
 
 const procedureOrder = {
   id: 'korean.g34.st.s03-02.procedure',
@@ -424,12 +434,12 @@ const procedureOrder = {
   format: 'ordering',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 세 단계 절차, 2 이상은 네 단계 절차를 낸다.',
-  capacityNote: '순서가 상식으로 확정되는 절차 4개 × 뒤섞기가 상한이다. 순서가 갈리는 절차는 넣을 수 없다.',
+  capacityNote: '기존 절차 4개와 선후 관계가 명시된 생활·만들기 절차 4개를 뒤섞는다. 순서가 갈리는 절차는 넣지 않는다.',
   generate(rng, { difficulty }) {
     const pool = difficulty === 1
-      ? PROCEDURES.filter((p) => p.steps.length === 3)
-      : PROCEDURES.filter((p) => p.steps.length >= 4);
-    const spec = rng.pick(pool.length > 0 ? pool : PROCEDURES);
+      ? procedureScenes.filter((p) => p.steps.length === 3)
+      : procedureScenes.filter((p) => p.steps.length >= 4);
+    const spec = rng.pick(pool);
     // 뒤섞되 원래 순서 그대로면 문항이 성립하지 않으므로 다시 섞는다.
     let shuffled = rng.shuffle(spec.steps.map((_, i) => i));
     if (shuffled.every((v, i) => v === i)) shuffled = [...shuffled.slice(1), shuffled[0]];
@@ -440,7 +450,7 @@ const procedureOrder = {
     const display = orderLabels.join(', ');
 
     return {
-      params: { title: spec.title, shuffled },
+      params: { title: spec.title, shuffled, ...('sceneId' in spec ? { sceneId: spec.sceneId } : {}) },
       instruction: '차례에 맞게 기호를 쓰시오.',
       stem: `'${spec.title}'의 차례입니다.\n  ${labeled.join('\n  ')}`,
       answer: {
@@ -461,7 +471,7 @@ const procedureOrder = {
      * 답 기호를 낱낱이 풀어 실제 단계 문장으로 되돌린 뒤, 표의 순서와 대조한다.
      * 기호 개수·중복·범위를 모두 본다 — 자리만 세면 훼손된 답이 통과한다.
      */
-    const spec = PROCEDURES.find((p) => p.title === title);
+    const spec = procedureScenes.find((p) => p.title === title);
     if (!spec) return false;
     const labels = String(answer.value).split(/[,\s]+/).filter((s) => s.length > 0);
     if (labels.length !== spec.steps.length) return false;
@@ -480,6 +490,8 @@ const procedureOrder = {
 // [6국01-01] 대화에서 생략된 내용 추론 (PARTIAL — 실제 듣기·발화는 사람이 본다)
 // ---------------------------------------------------------------------------
 
+const inferenceScenes = [...INFERENCE_DIALOGUES, ...INFERENCE_SCENES];
+
 const dialogueInference = {
   id: 'korean.g56.st.s01-01.inference',
   standardCode: '[6국01-01]',
@@ -487,11 +499,14 @@ const dialogueInference = {
   format: 'multiple-choice',
   difficultyAxis: 'single',
   difficulties: [1],
-  capacityNote: '추론 대화 4개가 상한이다. 복수 해석이 없는 대화만 담을 수 있어 확장에 검토가 필요하다.',
+  capacityNote: '기존 추론 대화 4개와 행동의 까닭·바라는 행동·빠진 정보·상황을 짐작하는 대화 4개를 쓴다.',
   generate(rng, { difficulty }) {
-    const spec = rng.pick(INFERENCE_DIALOGUES);
+    const spec = rng.pick(inferenceScenes);
     return {
-      params: { firstLine: spec.lines[0], answer: spec.answer },
+      params: {
+        firstLine: spec.lines[0], answer: spec.answer,
+        ...('sceneId' in spec ? { sceneId: spec.sceneId, evidence: spec.evidence } : {}),
+      },
       instruction: spec.question,
       stem: spec.lines.map((l) => `"${l}"`).join('\n'),
       choices: buildChoices(rng, spec.answer, spec.wrong),
@@ -502,7 +517,7 @@ const dialogueInference = {
     };
   },
   verify({ firstLine, answer: expected }, answer) {
-    const found = INFERENCE_DIALOGUES.find((d) => d.lines[0] === firstLine);
+    const found = inferenceScenes.find((d) => d.lines[0] === firstLine);
     if (!found || found.answer !== expected) return false;
     return answer.value === expected && !found.wrong.includes(answer.value);
   },

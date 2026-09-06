@@ -63,32 +63,41 @@ const mixedOperations = {
 
     if (shape === 'a+b*c') {
       const a = rng.int(5, 40);
-      return pack(`${a} + ${b} × ${c}`, a + b * c, [`곱셈을 먼저 한다: ${b} × ${c} = ${b * c}`, `${a} + ${b * c} = ${a + b * c}`]);
+      return pack(`${a} + ${b} × ${c}`, a + b * c,
+        [`곱셈을 먼저 한다: ${b} × ${c} = ${b * c}`, `${a} + ${b * c} = ${a + b * c}`],
+        [a, b, c], `낱장 색종이 ${a}장과 한 묶음에 ${b}장씩 든 색종이 ${c}묶음이 있습니다. 색종이는 모두 몇 장입니까?`);
     }
     if (shape === 'a-b*c') {
       const product = b * c;
       const a = rng.int(product + 1, product + 50);
-      return pack(`${a} - ${b} × ${c}`, a - product, [`곱셈을 먼저 한다: ${b} × ${c} = ${product}`, `${a} - ${product} = ${a - product}`]);
+      return pack(`${a} - ${b} × ${c}`, a - product,
+        [`곱셈을 먼저 한다: ${b} × ${c} = ${product}`, `${a} - ${product} = ${a - product}`],
+        [a, b, c], `색종이 ${a}장 중에서 친구 ${c}명에게 한 명당 ${b}장씩 주었습니다. 남은 색종이는 몇 장입니까?`);
     }
     if (shape === '(a+b)*c') {
       const a = rng.int(2, 20);
-      return pack(`(${a} + ${b}) × ${c}`, (a + b) * c, [`괄호를 먼저 계산한다: ${a} + ${b} = ${a + b}`, `${a + b} × ${c} = ${(a + b) * c}`]);
+      return pack(`(${a} + ${b}) × ${c}`, (a + b) * c,
+        [`괄호를 먼저 계산한다: ${a} + ${b} = ${a + b}`, `${a + b} × ${c} = ${(a + b) * c}`],
+        [a, b, c], `한 봉지에 빨간 색종이 ${a}장과 파란 색종이 ${b}장이 들어 있습니다. 똑같은 봉지 ${c}개에 든 색종이는 모두 몇 장입니까?`);
     }
     if (shape === 'a+b/c') {
       const quotient = rng.int(2, 9);
       const divisor = rng.int(2, 9);
       const dividend = divisor * quotient;
       const a = rng.int(5, 40);
-      return pack(`${a} + ${dividend} ÷ ${divisor}`, a + quotient, [`나눗셈을 먼저 한다: ${dividend} ÷ ${divisor} = ${quotient}`, `${a} + ${quotient} = ${a + quotient}`]);
+      return pack(`${a} + ${dividend} ÷ ${divisor}`, a + quotient,
+        [`나눗셈을 먼저 한다: ${dividend} ÷ ${divisor} = ${quotient}`, `${a} + ${quotient} = ${a + quotient}`],
+        [a, dividend, divisor], `색종이 ${dividend}장을 ${divisor}명에게 똑같이 나누어 줍니다. 그중 한 명인 지우는 처음에 ${a}장을 가지고 있었습니다. 나누어 받은 뒤 지우의 색종이는 모두 몇 장입니까?`);
     }
     throw new Error(`지원하지 않는 혼합 계산 형태: ${shape}`);
 
-    function pack(stem, value, solution) {
+    function pack(stem, value, solution, operands, context) {
+      const presentation = rng.bool() ? 'expression' : 'story';
       return {
-        params: { stem, value },
-        instruction: '계산하시오.',
-        stem,
-        answer: { value, display: num(value), accepts: [num(value)] },
+        params: { stem, value, shape, operands, presentation },
+        instruction: presentation === 'story' ? '상황에 맞는 혼합 계산으로 답을 구하시오.' : '계산하시오.',
+        stem: presentation === 'story' ? context : stem,
+        answer: { value, display: num(value), accepts: [num(value), ...(presentation === 'story' ? [`${value}장`] : [])] },
         solution,
         dedupeKey: `mixed-ops:${stem}`,
         difficulty,

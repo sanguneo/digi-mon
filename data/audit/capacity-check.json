@@ -99,8 +99,8 @@
     },
     {
       "generatorId": "korean.g12.st.s02-04.mind",
-      "ceiling": 8,
-      "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다."
+      "ceiling": 16,
+      "capacityNote": "기존 문장 8개와 행동·대화 근거를 담은 이야기 8개를 쓴다. 마음 낱말은 판정이 겹치지 않는 기존 네 개로 제한한다."
     },
     {
       "generatorId": "korean.g34.st.s03-03.reason",
@@ -114,13 +114,13 @@
     },
     {
       "generatorId": "korean.g34.st.s03-02.procedure",
-      "ceiling": 56,
-      "capacityNote": "순서가 상식으로 확정되는 절차 4개 × 뒤섞기가 상한이다. 순서가 갈리는 절차는 넣을 수 없다."
+      "ceiling": 112,
+      "capacityNote": "기존 절차 4개와 선후 관계가 명시된 생활·만들기 절차 4개를 뒤섞는다. 순서가 갈리는 절차는 넣지 않는다."
     },
     {
       "generatorId": "korean.g56.st.s01-01.inference",
-      "ceiling": 4,
-      "capacityNote": "추론 대화 4개가 상한이다. 복수 해석이 없는 대화만 담을 수 있어 확장에 검토가 필요하다."
+      "ceiling": 8,
+      "capacityNote": "기존 추론 대화 4개와 행동의 까닭·바라는 행동·빠진 정보·상황을 짐작하는 대화 4개를 쓴다."
     },
     {
       "generatorId": "korean.g56.st.s01-02.claim-reason",
@@ -129,8 +129,8 @@
     },
     {
       "generatorId": "english.g34.st.s01-05.meaning",
-      "ceiling": 8,
-      "capacityNote": "문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다."
+      "ceiling": 28,
+      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다."
     },
     {
       "generatorId": "english.g34.st.s02-06.command",
@@ -154,11 +154,11 @@
     },
     {
       "generatorId": "english.g56.st.s02-07.qa",
-      "ceiling": 5,
-      "capacityNote": "질문-응답 짝 5개가 상한이다."
+      "ceiling": 9,
+      "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 117890,
+  "observedCapacity": 118861,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -309,8 +309,8 @@
       "skill": "덧셈 상황에서 식 세우고 답 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 848,
-      "uniqueAtDouble": 1610,
+      "uniqueAtBase": 836,
+      "uniqueAtDouble": 1594,
       "saturated": false,
       "ceiling": null
     },
@@ -320,8 +320,8 @@
       "skill": "뺄셈 상황에서 식 세우고 답 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 742,
-      "uniqueAtDouble": 1342,
+      "uniqueAtBase": 829,
+      "uniqueAtDouble": 1580,
       "saturated": false,
       "ceiling": null
     },
@@ -760,8 +760,8 @@
       "skill": "곱셈과 나눗셈의 관계",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 561,
-      "uniqueAtDouble": 830,
+      "uniqueAtBase": 814,
+      "uniqueAtDouble": 1487,
       "saturated": false,
       "ceiling": null
     },
@@ -2156,11 +2156,11 @@
       "code": "[2국02-04]",
       "skill": "인물의 마음 짐작하기",
       "axis": "single",
-      "capacityNote": "마음 문장 자산 8개 × 고정 마음 낱말 4개가 상한이다. 가까운 마음 낱말을 섞으면 판정이 갈려 낱말을 늘리기 어렵다.",
-      "uniqueAtBase": 8,
-      "uniqueAtDouble": 8,
+      "capacityNote": "기존 문장 8개와 행동·대화 근거를 담은 이야기 8개를 쓴다. 마음 낱말은 판정이 겹치지 않는 기존 네 개로 제한한다.",
+      "uniqueAtBase": 16,
+      "uniqueAtDouble": 16,
       "saturated": true,
-      "ceiling": 8
+      "ceiling": 16
     },
     {
       "generatorId": "korean.g34.st.s03-03.reason",
@@ -2189,22 +2189,22 @@
       "code": "[4국03-02]",
       "skill": "절차를 순서대로 배열하기",
       "axis": "categorical",
-      "capacityNote": "순서가 상식으로 확정되는 절차 4개 × 뒤섞기가 상한이다. 순서가 갈리는 절차는 넣을 수 없다.",
-      "uniqueAtBase": 56,
-      "uniqueAtDouble": 56,
+      "capacityNote": "기존 절차 4개와 선후 관계가 명시된 생활·만들기 절차 4개를 뒤섞는다. 순서가 갈리는 절차는 넣지 않는다.",
+      "uniqueAtBase": 112,
+      "uniqueAtDouble": 112,
       "saturated": true,
-      "ceiling": 56
+      "ceiling": 112
     },
     {
       "generatorId": "korean.g56.st.s01-01.inference",
       "code": "[6국01-01]",
       "skill": "대화에서 생략된 내용 추론하기",
       "axis": "single",
-      "capacityNote": "추론 대화 4개가 상한이다. 복수 해석이 없는 대화만 담을 수 있어 확장에 검토가 필요하다.",
-      "uniqueAtBase": 4,
-      "uniqueAtDouble": 4,
+      "capacityNote": "기존 추론 대화 4개와 행동의 까닭·바라는 행동·빠진 정보·상황을 짐작하는 대화 4개를 쓴다.",
+      "uniqueAtBase": 8,
+      "uniqueAtDouble": 8,
       "saturated": true,
-      "ceiling": 4
+      "ceiling": 8
     },
     {
       "generatorId": "korean.g56.st.s01-02.claim-reason",
@@ -2222,11 +2222,11 @@
       "code": "[4영01-05]",
       "skill": "문장의 뜻 알기",
       "axis": "categorical",
-      "capacityNote": "문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다.",
-      "uniqueAtBase": 8,
-      "uniqueAtDouble": 8,
+      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.",
+      "uniqueAtBase": 28,
+      "uniqueAtDouble": 28,
       "saturated": true,
-      "ceiling": 8
+      "ceiling": 28
     },
     {
       "generatorId": "english.g34.st.s02-06.command",
@@ -2277,11 +2277,11 @@
       "code": "[6영02-07]",
       "skill": "세부 정보를 묻고 답하기",
       "axis": "single",
-      "capacityNote": "질문-응답 짝 5개가 상한이다.",
-      "uniqueAtBase": 5,
-      "uniqueAtDouble": 5,
+      "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다.",
+      "uniqueAtBase": 9,
+      "uniqueAtDouble": 9,
       "saturated": true,
-      "ceiling": 5
+      "ceiling": 9
     }
   ]
 }

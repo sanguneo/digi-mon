@@ -341,19 +341,33 @@ const divisionMeaning = {
     const quotient = difficulty === 1 ? rng.int(2, 9) : difficulty === 2 ? rng.int(10, 30) : rng.int(30, 99);
     const dividend = divisor * quotient;
     const askQuotient = rng.bool();
-    return {
-      params: { dividend, divisor, quotient, askQuotient },
-      instruction: '□에 알맞은 수를 써넣으시오.',
-      stem: askQuotient
+    const kind = rng.pick(['equation', 'sharing', 'grouping']);
+    const { noun, counter } = rng.pick(THINGS.filter((thing) => ['색종이', '스티커', '구슬'].includes(thing.noun)));
+    const value = askQuotient ? quotient : dividend;
+    const answerUnit = kind === 'grouping' && askQuotient ? '봉지' : counter;
+    const stems = {
+      equation: askQuotient
         ? `${divisor} × □ = ${dividend} 이므로 ${dividend} ÷ ${divisor} = □`
         : `${dividend} ÷ ${divisor} = ${quotient} 이므로 ${divisor} × ${quotient} = □`,
-      answer: askQuotient
-        ? { value: quotient, display: num(quotient), accepts: [num(quotient)] }
-        : { value: dividend, display: num(dividend), accepts: [num(dividend)] },
+      sharing: askQuotient
+        ? `${noun} ${dividend}${counter}${josaEul(counter)} ${divisor}명에게 똑같이 나누어 주면 한 명이 □${counter}씩 받습니다.`
+        : `${noun}${josaEul(noun)} ${divisor}명에게 똑같이 나누어 주었더니 한 명이 ${quotient}${counter}씩 받았습니다. 나누어 준 ${noun}${josaEun(noun)} 모두 □${counter}입니다.`,
+      grouping: askQuotient
+        ? `${noun} ${dividend}${counter}${josaEul(counter)} 한 봉지에 ${divisor}${counter}씩 담으면 모두 □봉지가 됩니다.`
+        : `${noun}${josaEul(noun)} 한 봉지에 ${divisor}${counter}씩 담았더니 ${quotient}봉지가 되었습니다. 담은 ${noun}${josaEun(noun)} 모두 □${counter}입니다.`,
+    };
+    return {
+      params: { dividend, divisor, quotient, askQuotient, kind, noun, counter, answerUnit },
+      instruction: '□에 알맞은 수를 써넣으시오.',
+      stem: stems[kind],
+      answer: {
+        value, display: num(value),
+        accepts: [num(value), ...(kind === 'equation' ? [] : [`${value}${answerUnit}`])],
+      },
       solution: askQuotient
         ? [`곱셈식에서 모르는 수는 나눗셈으로 구한다.`, `${dividend} ÷ ${divisor} = ${quotient}`]
         : [`나눗셈식을 곱셈식으로 바꾸면 나누는 수와 몫의 곱이 나누어지는 수다.`, `${divisor} × ${quotient} = ${dividend}`],
-      dedupeKey: `div-meaning:${dividend}:${divisor}:${askQuotient ? 'q' : 'd'}`,
+      dedupeKey: `div-meaning:${kind}:${dividend}:${divisor}:${askQuotient ? 'q' : 'd'}:${kind === 'equation' ? '' : noun}`,
       difficulty,
     };
   },

@@ -195,28 +195,28 @@
             "generatorId": "math.g12.no.s01.read-sino",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s01.write-digit",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s01.count-tens-ones",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s01.count-native",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -257,21 +257,21 @@
             "generatorId": "math.g12.no.s02.place-digit",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s02.place-amount",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s02.decompose",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -312,21 +312,21 @@
             "generatorId": "math.g12.no.s03.compare",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s03.order",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s03.sequence",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -367,21 +367,21 @@
             "generatorId": "math.g12.no.s04.decompose",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s04.compose",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s04.make-ten",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -421,14 +421,14 @@
             "generatorId": "math.g12.no.s05.story-add",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s05.story-sub",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -468,14 +468,14 @@
             "generatorId": "math.g12.no.s06.add",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s06.sub",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -515,14 +515,14 @@
             "generatorId": "math.g12.no.s07.add-to-sub",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s07.fact-family",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -562,14 +562,14 @@
             "generatorId": "math.g12.no.s08.add-three",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s08.sub-three",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -608,7 +608,7 @@
             "generatorId": "math.g12.no.s09.box",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -648,14 +648,14 @@
             "generatorId": "math.g12.no.s10.groups",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s10.add-to-mult",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -695,14 +695,14 @@
             "generatorId": "math.g12.no.s11.times-table",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.no.s11.times-blank",
             "topicId": "kr.mt.math.number-operations.g1-2.s2-01-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -742,14 +742,14 @@
             "generatorId": "math.g12.pd.s01.shape-pattern",
             "topicId": "kr.mt.math.change-relationships.g1-2.s2-02-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.pd.s01.number-pattern",
             "topicId": "kr.mt.math.change-relationships.g1-2.s2-02-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -790,7 +790,7 @@
             "generatorId": "math.g12.pd.s02.continue",
             "topicId": "kr.mt.math.change-relationships.g1-2.s2-02-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -830,14 +830,14 @@
             "generatorId": "math.g12.sc.s01.identify",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.sc.s01.from-object",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -878,7 +878,7 @@
             "generatorId": "math.g12.sc.s02.count-cubes",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -917,7 +917,7 @@
             "generatorId": "math.g12.sc.s03.from-object",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -957,14 +957,14 @@
             "generatorId": "math.g12.gm.s05.identify",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.gm.s05.count-sides",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1003,7 +1003,7 @@
             "generatorId": "math.g12.sc.s06.compare",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1042,7 +1042,7 @@
             "generatorId": "math.g12.gm.s07.read-clock",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1081,7 +1081,7 @@
             "generatorId": "math.g12.gm.s08.convert",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1120,7 +1120,7 @@
             "generatorId": "math.g12.gm.s09.calendar",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1159,7 +1159,7 @@
             "generatorId": "math.g12.gm.s10.choose-unit",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1198,7 +1198,7 @@
             "generatorId": "math.g12.gm.s11.m-cm",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1237,7 +1237,7 @@
             "generatorId": "math.g12.gm.s12.read-ruler",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-12.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1277,14 +1277,14 @@
             "generatorId": "math.g12.sc.s13.estimate-unit",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g12.sc.s13.compare-estimate",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1325,7 +1325,7 @@
             "generatorId": "math.g12.pd.s04-01.count",
             "topicId": "kr.mt.math.data-probability.g1-2.s2-04-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1364,7 +1364,7 @@
             "generatorId": "math.g12.pd.s04-02.read-table",
             "topicId": "kr.mt.math.data-probability.g1-2.s2-04-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1403,7 +1403,7 @@
             "generatorId": "math.g12.pd.s04-03.read-graph",
             "topicId": "kr.mt.math.data-probability.g1-2.s2-04-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1443,14 +1443,14 @@
             "generatorId": "math.g34.no.s01.read-big",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.no.s01.place-value",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1490,14 +1490,14 @@
             "generatorId": "math.g34.no.s02.compare",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.no.s02.sequence",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1536,7 +1536,7 @@
             "generatorId": "math.g34.no.s03.add-sub",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1575,7 +1575,7 @@
             "generatorId": "math.g34.no.s04.multiply",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1614,7 +1614,7 @@
             "generatorId": "math.g34.no.s05.meaning",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1653,7 +1653,7 @@
             "generatorId": "math.g34.no.s06.remainder",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1692,7 +1692,7 @@
             "generatorId": "math.g34.no.s07.divide",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1731,7 +1731,7 @@
             "generatorId": "math.g34.no.s08.estimate",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1771,14 +1771,14 @@
             "generatorId": "math.g34.no.s09.read",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.no.s09.part-of-whole",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1818,14 +1818,14 @@
             "generatorId": "math.g34.no.s10.classify",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.no.s10.to-mixed",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1865,14 +1865,14 @@
             "generatorId": "math.g34.no.s11.compare",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.no.s11.compare-unit",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1911,7 +1911,7 @@
             "generatorId": "math.g34.no.s12.tenths",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-12.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1950,7 +1950,7 @@
             "generatorId": "math.g34.no.s13.place",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -1989,7 +1989,7 @@
             "generatorId": "math.g34.no.s14.compare",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-14.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2028,7 +2028,7 @@
             "generatorId": "math.g34.no.s15.add-sub",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-15.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2067,7 +2067,7 @@
             "generatorId": "math.g34.no.s16.add-sub",
             "topicId": "kr.mt.math.number-operations.g3-4.s4-01-16.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2106,7 +2106,7 @@
             "generatorId": "math.g34.mr.s02-01.rule-expression",
             "topicId": "kr.mt.math.change-relationships.g3-4.s4-02-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2145,7 +2145,7 @@
             "generatorId": "math.g34.mr.s02-02.calc-pattern",
             "topicId": "kr.mt.math.change-relationships.g3-4.s4-02-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2184,7 +2184,7 @@
             "generatorId": "math.g34.mr.s02-03.equality",
             "topicId": "kr.mt.math.change-relationships.g3-4.s4-02-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2223,7 +2223,7 @@
             "generatorId": "math.g34.gd.s01.identify-line",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2262,7 +2262,7 @@
             "generatorId": "math.g34.gd.s02.right-angle",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2301,7 +2301,7 @@
             "generatorId": "math.g34.gd.s03.line-relations",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2341,14 +2341,14 @@
             "generatorId": "math.g34.gd.s04.transform",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.gd.s05.pattern",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2387,7 +2387,7 @@
             "generatorId": "math.g34.gd.s05.point-movement",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2427,14 +2427,14 @@
             "generatorId": "math.g34.gd.s06.parts",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.gd.s07.radius-diameter",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2473,7 +2473,7 @@
             "generatorId": "math.g34.gd.s08.by-sides",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2512,7 +2512,7 @@
             "generatorId": "math.g34.gd.s09.by-angles",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2551,7 +2551,7 @@
             "generatorId": "math.g34.gd.s10.quadrilateral",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2590,7 +2590,7 @@
             "generatorId": "math.g34.gd.s11.name-polygon",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2629,7 +2629,7 @@
             "generatorId": "math.g34.mr.s03-13.minute-second",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2668,7 +2668,7 @@
             "generatorId": "math.g34.mr.s03-14.time-arithmetic",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-14.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2708,14 +2708,14 @@
             "generatorId": "math.g34.mr.s03-15.choose-unit",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-15.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.mr.s03-16.estimate",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-15.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2755,14 +2755,14 @@
             "generatorId": "math.g34.mr.s03-16.convert-cm-mm",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-16.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.mr.s03-16.convert-km-m",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-16.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2801,7 +2801,7 @@
             "generatorId": "math.g34.mr.s03-17.choose-unit",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-17.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2840,7 +2840,7 @@
             "generatorId": "math.g34.mr.s03-18.convert-L-mL",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-18.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2879,7 +2879,7 @@
             "generatorId": "math.g34.mr.s03-19.arithmetic",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-19.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2919,14 +2919,14 @@
             "generatorId": "math.g34.mr.s03-20.choose-unit",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-20.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g34.mr.s03-23.estimate",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-20.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -2965,7 +2965,7 @@
             "generatorId": "math.g34.mr.s03-21.convert-kg-g",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-21.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3004,7 +3004,7 @@
             "generatorId": "math.g34.mr.s03-22.convert-t-kg",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-22.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3043,7 +3043,7 @@
             "generatorId": "math.g34.mr.s03-22.arithmetic",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-23.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3082,7 +3082,7 @@
             "generatorId": "math.g34.gd.s24.measure",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-24.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3121,7 +3121,7 @@
             "generatorId": "math.g34.gd.s25.angle-sum",
             "topicId": "kr.mt.math.geometry-measurement.g3-4.s4-03-25.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3160,7 +3160,7 @@
             "generatorId": "math.g34.gd.s04-02.read-bar",
             "topicId": "kr.mt.math.data-probability.g3-4.s4-04-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3199,7 +3199,7 @@
             "generatorId": "math.g34.gd.s04-02.interpret-line",
             "topicId": "kr.mt.math.data-probability.g3-4.s4-04-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3238,7 +3238,7 @@
             "generatorId": "math.g34.gd.s04-03.interpret-bar",
             "topicId": "kr.mt.math.data-probability.g3-4.s4-04-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3277,7 +3277,7 @@
             "generatorId": "math.g56.no.s01.mixed-ops",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3316,7 +3316,7 @@
             "generatorId": "math.g56.no.s02.range",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3355,7 +3355,7 @@
             "generatorId": "math.g56.no.s03.rounding",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3394,7 +3394,7 @@
             "generatorId": "math.g56.no.s04.divisors",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3433,7 +3433,7 @@
             "generatorId": "math.g56.no.s05.gcd-lcm",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3472,7 +3472,7 @@
             "generatorId": "math.g56.no.s06.reduce",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3511,7 +3511,7 @@
             "generatorId": "math.g56.no.s07.compare",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3550,7 +3550,7 @@
             "generatorId": "math.g56.no.s08.add-sub",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3589,7 +3589,7 @@
             "generatorId": "math.g56.no.s09.multiply",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3628,7 +3628,7 @@
             "generatorId": "math.g56.no.s10.divide-natural",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3667,7 +3667,7 @@
             "generatorId": "math.g56.no.s11.divide-fraction",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3706,7 +3706,7 @@
             "generatorId": "math.g56.no.s12.relation",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-12.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3745,7 +3745,7 @@
             "generatorId": "math.g56.no.s13.mul-natural",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3784,7 +3784,7 @@
             "generatorId": "math.g56.no.s14.mul-decimals",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-14.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3823,7 +3823,7 @@
             "generatorId": "math.g56.no.s15.divide",
             "topicId": "kr.mt.math.number-operations.g5-6.s6-01-15.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3862,7 +3862,7 @@
             "generatorId": "math.g56.rm.s02-01.correspondence",
             "topicId": "kr.mt.math.change-relationships.g5-6.s6-02-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3901,7 +3901,7 @@
             "generatorId": "math.g56.rm.s02-02.ratio",
             "topicId": "kr.mt.math.change-relationships.g5-6.s6-02-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3940,7 +3940,7 @@
             "generatorId": "math.g56.rm.s02-03.ratio-value",
             "topicId": "kr.mt.math.change-relationships.g5-6.s6-02-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -3979,7 +3979,7 @@
             "generatorId": "math.g56.rm.s02-04.proportion",
             "topicId": "kr.mt.math.change-relationships.g5-6.s6-02-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4018,7 +4018,7 @@
             "generatorId": "math.g56.rm.s02-05.distribution",
             "topicId": "kr.mt.math.change-relationships.g5-6.s6-02-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4057,7 +4057,7 @@
             "generatorId": "math.g56.rm.s03-01.congruence",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4096,7 +4096,7 @@
             "generatorId": "math.g56.rm.s03-02.symmetry",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4136,14 +4136,14 @@
             "generatorId": "math.g56.rm.s03-03.cuboid",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g56.rm.s03-04.edge-sum",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4182,7 +4182,7 @@
             "generatorId": "math.g56.rm.s03-04.cuboid-net",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4222,14 +4222,14 @@
             "generatorId": "math.g56.rm.s03-05.prism-pyramid",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g56.rm.s03-06.prism-name",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4268,7 +4268,7 @@
             "generatorId": "math.g56.rm.s03-06.prism-net",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4307,7 +4307,7 @@
             "generatorId": "math.g56.rm.s03-07.round-solids",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-07.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4346,7 +4346,7 @@
             "generatorId": "math.g56.rm.s03-08.cylinder-parts",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-08.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4386,14 +4386,14 @@
             "generatorId": "math.g56.rm.s03-09.cube-count",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g56.rm.s03-10.cube-block",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-09.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4432,7 +4432,7 @@
             "generatorId": "math.g56.rm.s03-10.orthographic-views",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-10.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4471,7 +4471,7 @@
             "generatorId": "math.g56.rm.s03-11.perimeter",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-11.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4510,7 +4510,7 @@
             "generatorId": "math.g56.rm.s03-13.area-unit",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-12.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4549,7 +4549,7 @@
             "generatorId": "math.g56.rm.s03-14.composite-area",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-13.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4588,7 +4588,7 @@
             "generatorId": "math.g56.rm.s03-12.area",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-14.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4627,7 +4627,7 @@
             "generatorId": "math.g56.rm.s03-15.pi-ratio",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-15.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4667,14 +4667,14 @@
             "generatorId": "math.g56.rm.s03-15.circumference",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-16.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           },
           {
             "generatorId": "math.g56.rm.s03-16.circle-area",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-16.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4713,7 +4713,7 @@
             "generatorId": "math.g56.rm.s03-17.surface-area",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-17.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4752,7 +4752,7 @@
             "generatorId": "math.g56.rm.s03-19.volume-unit",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-18.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4791,7 +4791,7 @@
             "generatorId": "math.g56.rm.s03-18.volume",
             "topicId": "kr.mt.math.geometry-measurement.g5-6.s6-03-19.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4830,7 +4830,7 @@
             "generatorId": "math.g56.rm.s04-01.average",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-01.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4869,7 +4869,7 @@
             "generatorId": "math.g56.rm.s04-02.missing-for-average",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-02.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4908,7 +4908,7 @@
             "generatorId": "math.g56.rm.s04-03.band-graph",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-03.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4947,7 +4947,7 @@
             "generatorId": "math.g56.rm.s04-04.likelihood-word",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -4986,7 +4986,7 @@
             "generatorId": "math.g56.rm.s04-05.likelihood-number",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-05.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -5025,7 +5025,7 @@
             "generatorId": "math.g56.rm.s04-06.likelihood-compare",
             "topicId": "kr.mt.math.data-probability.g5-6.s6-04-06.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]
@@ -7783,7 +7783,7 @@
             "generatorId": "math.g12.sc.s04.draw",
             "topicId": "kr.mt.math.geometry-measurement.g1-2.s2-03-04.application",
             "confidence": "official-curriculum-reviewed",
-            "note": "2022 개정 수학과 교육과정 Markdown과 생성기·검토표를 학년군별 전수 대조한 고정 생성기 집합.",
+            "note": "2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.",
             "reviewStatus": "approved"
           }
         ]

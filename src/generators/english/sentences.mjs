@@ -14,6 +14,8 @@
  * 오답을 짝마다 손으로 골랐다 — 자산 표의 주석에 그 제약을 적어 뒀다.
  */
 import { buildChoices } from '../../engine/item.mjs';
+import { MEANING_SCENES } from './meaning-scenes.mjs';
+import { DETAIL_SCENES } from './detail-scenes.mjs';
 import {
   COMMANDS,
   EXPRESSIONS,
@@ -28,6 +30,7 @@ import {
 // ---------------------------------------------------------------------------
 
 const wordCount = (s) => s.split(/\s+/).length;
+const meaningScenes = [...SENTENCE_MEANINGS, ...MEANING_SCENES];
 
 const sentenceMeaning = {
   id: 'english.g34.st.s01-05.meaning',
@@ -36,17 +39,21 @@ const sentenceMeaning = {
   format: 'multiple-choice',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 세 단어 문장, 2 이상은 더 긴 문장까지 낸다.',
-  capacityNote: '문장-뜻 짝 8개가 상한이다. 뜻이 겹치지 않는 문장만 담을 수 있어 확장에 검토가 필요하다.',
+  capacityNote: '기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.',
   generate(rng, { difficulty }) {
     const pool = difficulty === 1
-      ? SENTENCE_MEANINGS.filter((s) => wordCount(s.en) <= 3)
-      : SENTENCE_MEANINGS;
-    const spec = rng.pick(pool.length > 0 ? pool : SENTENCE_MEANINGS);
-    const wrong = rng.shuffle(SENTENCE_MEANINGS.filter((s) => s.en !== spec.en))
-      .slice(0, 3)
-      .map((s) => s.ko);
+      ? meaningScenes.filter((s) => wordCount(s.en) <= 3)
+      : meaningScenes;
+    const spec = rng.pick(pool);
+    const candidates = 'wrong' in spec
+      ? spec.wrong
+      : SENTENCE_MEANINGS.filter((s) => s.en !== spec.en).map((s) => s.ko);
+    const wrong = rng.shuffle(candidates).slice(0, 3);
     return {
-      params: { en: spec.en, ko: spec.ko },
+      params: {
+        en: spec.en, ko: spec.ko,
+        ...('kind' in spec ? { kind: spec.kind, contentWords: spec.contentWords } : {}),
+      },
       instruction: '문장의 뜻으로 알맞은 것을 고르시오.',
       stem: spec.en,
       choices: buildChoices(rng, spec.ko, wrong),
@@ -57,7 +64,7 @@ const sentenceMeaning = {
     };
   },
   verify({ en, ko }, answer) {
-    const found = SENTENCE_MEANINGS.find((s) => s.en === en);
+    const found = meaningScenes.find((s) => s.en === en);
     if (!found || found.ko !== ko) return false;
     return answer.value === ko;
   },
@@ -164,9 +171,16 @@ function qaGenerator({ id, standardCode, skill, table, capacityNote }) {
     generate(rng, { difficulty }) {
       const spec = rng.pick(table);
       return {
-        params: { q: spec.q, a: spec.a },
-        instruction: '물음에 알맞은 대답을 고르시오.',
-        stem: spec.q,
+        params: {
+          q: spec.q, a: spec.a,
+          ...('context' in spec ? {
+            context: spec.context, kind: spec.kind, contentWords: spec.contentWords,
+          } : {}),
+        },
+        instruction: 'context' in spec
+          ? '주어진 말을 한 사람에게 묻습니다. 내용에 알맞은 대답을 고르시오.'
+          : '물음에 알맞은 대답을 고르시오.',
+        stem: 'context' in spec ? `${spec.context}\n${spec.q}` : spec.q,
         choices: buildChoices(rng, spec.a, spec.wrong),
         answer: { value: spec.a, display: spec.a, accepts: [spec.a] },
         solution: [`'${spec.q}'에는 '${spec.a}'로 답한다.`],
@@ -174,9 +188,10 @@ function qaGenerator({ id, standardCode, skill, table, capacityNote }) {
         difficulty,
       };
     },
-    verify({ q, a }, answer) {
+    verify({ q, a, context }, answer) {
       const found = table.find((p) => p.q === q);
       if (!found || found.a !== a) return false;
+      if ('context' in found && found.context !== context) return false;
       return answer.value === a && !found.wrong.includes(answer.value);
     },
   };
@@ -194,8 +209,8 @@ const qaG56 = qaGenerator({
   id: 'english.g56.st.s02-07.qa',
   standardCode: '[6영02-07]',
   skill: '세부 정보를 묻고 답하기',
-  table: QA_PAIRS_G56,
-  capacityNote: '질문-응답 짝 5개가 상한이다.',
+  table: [...QA_PAIRS_G56, ...DETAIL_SCENES],
+  capacityNote: '기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다.',
 });
 
 export const generators = [
