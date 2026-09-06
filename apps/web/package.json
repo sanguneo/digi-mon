@@ -10,7 +10,8 @@
     "dev": "vite --host 127.0.0.1",
     "host": "tsx server/index.ts",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "pretest": "npm run build",
+    "test": "vitest run src && node --import tsx --test test/host.test.ts",
     "test:e2e": "playwright test",
     "build": "tsc --noEmit && vite build"
   },

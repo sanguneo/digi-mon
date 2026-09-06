@@ -1,0 +1,115 @@
+/* Subject-shaped practice stays legible on screen and on a full paper set. */
+[data-dm-subject='math'] { --dm-accent: var(--dm-accent-math); }
+[data-dm-subject='korean'] { --dm-accent: var(--dm-accent-korean); }
+[data-dm-subject='english'] { --dm-accent: var(--dm-accent-english); }
+#learning-view[hidden] { display: none; }
+.dm-field input, .dm-field select, .dm-answer__input { min-height: 48px; font-size: 18px; }
+.dm-chunk-nav { display: grid; gap: 12px; }
+.dm-chunk-nav > span { font-size: 16px; font-weight: 700; }
+.dm-chunk-nav > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.dm-chunk-nav a, .dm-chunk-return { display: inline-flex; min-height: 48px; align-items: center; padding: 12px 16px; color: var(--dm-accent); font-size: 16px; text-underline-offset: 4px; }
+.dm-chunk-nav a { border: 1px solid currentColor; }
+.dm-chunk-return { margin-top: 12px; }
+.dm-practice-group:focus, .dm-chunk-nav:focus { outline: 3px solid var(--dm-accent); outline-offset: 4px; }
+.dm-practice-group, .dm-chunk-nav { scroll-margin-block: 24px; }
+.dm-practice-presets { display: flex; flex-wrap: wrap; gap: 12px; }
+.dm-practice-presets .dm-btn { flex: 1 1 180px; padding: 12px 16px; }
+.dm-practice-presets [aria-pressed='true'] { outline: 2px solid var(--dm-accent); outline-offset: 2px; color: var(--dm-accent); }
+.dm-preset-note { margin: 16px 0 0; color: var(--dm-ink-muted); line-height: 1.8; font-size: 14px; }
+.dm-studio__intro h2 { line-height: 1.25; }
+.dm-worksheet { min-width: 0; border-left: 4px solid var(--dm-accent); }
+.dm-worksheet__header { min-width: 0; border-bottom-color: var(--dm-accent); }
+.dm-worksheet__header > div { min-width: 0; }
+.dm-worksheet__guidance { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; color: var(--dm-accent); }
+.dm-worksheet__guidance p { margin: 0; max-width: 64ch; line-height: 1.8; }
+.dm-worksheet__tools { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.dm-worksheet__tools p { margin: 0; max-width: 48ch; color: var(--dm-ink-muted); line-height: 1.8; }
+.dm-practice { display: grid; gap: 40px; }
+.dm-practice-group { min-width: 0; }
+.dm-practice-group__header { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid var(--dm-accent); padding-bottom: 12px; color: var(--dm-accent); }
+.dm-practice-group__header h4 { margin: 0; font-size: 20px; }
+.dm-practice-group__header > span { font-size: 14px; }
+.dm-item { min-width: 0; }
+.dm-item__stem { font-size: 20px; line-height: 1.8; overflow-wrap: anywhere; }
+.dm-item__instruction { font-size: 14px; line-height: 1.8; }
+.dm-item__review { font-size: 14px; line-height: 1.8; color: var(--dm-ink-muted); }
+.dm-item[data-dm-subject='korean'] .dm-item__stem { font-weight: 500; }
+.dm-practice:where([data-dm-subject='korean']) .dm-item-list,
+.dm-practice:where([data-dm-subject='english']) .dm-item-list { grid-template-columns: minmax(0, 1fr); }
+.dm-practice[data-dm-subject='english'] .dm-item__stem { max-width: 58ch; font-size: 22px; }
+.dm-choice { min-width: 0; line-height: 1.8; font-size: 18px; align-items: start; }
+.dm-choice input { flex: 0 0 20px; margin-top: 6px; }
+.dm-choice > span:first-of-type { flex-shrink: 0; }
+.dm-choice > span:last-child { min-width: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.dm-choice--paper { cursor: default; }
+.dm-figure, .dm-figure__canvas { min-width: 0; max-width: 100%; }
+.dm-figure__canvas { display: block; min-height: 0; overflow: visible; text-align: center; }
+.dm-figure svg { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; overflow: visible; }
+.dm-figure figcaption { width: 100%; overflow-wrap: anywhere; text-align: left; }
+.dm-answer__writing { display: block; resize: vertical; min-height: 144px; font: inherit; font-size: 20px; line-height: 1.8; color: inherit; }
+textarea:focus-visible { outline: 3px solid var(--dm-accent); outline-offset: 3px; }
+.dm-writing-space { margin-top: 24px; min-height: 112px; padding-top: 8px; background: repeating-linear-gradient(to bottom, transparent 0 35px, var(--dm-rule) 35px 36px); }
+.dm-writing-space > span { color: var(--dm-ink-muted); font-size: 12px; background: var(--dm-paper); }
+.dm-item[data-dm-subject='math'] .dm-writing-space { background: linear-gradient(var(--dm-rule) 1px, transparent 1px), linear-gradient(90deg, var(--dm-rule) 1px, transparent 1px); background-size: 24px 24px; }
+.dm-item[data-dm-subject='korean'] .dm-writing-space { min-height: 160px; }
+.dm-item[data-dm-subject='english'] .dm-writing-space { min-height: 80px; }
+.dm-writing-space--print { display: none; }
+
+@media (max-width: 640px) {
+  .dm-worksheet { padding: 24px 16px; }
+  .dm-item { padding: 20px 16px; }
+  .dm-choice { padding: 12px 8px; gap: 8px; }
+  .dm-practice-group__header { align-items: start; flex-direction: column; gap: 4px; }
+  .dm-worksheet__tools .dm-btn { width: 100%; }
+  .dm-worksheet__guidance { align-items: start; }
+}
+
+@media print {
+  :root { background: white; }
+  html, body, .dm-app, .garden-app, main { min-width: 0; width: auto; background: white; overflow: visible; }
+  .dm-chunk-nav, .dm-chunk-return, .dm-worksheet__tools, .dm-learning-help, .garden-summary, .garden-room { display: none; }
+  .dm-results { display: block; padding: 0; margin: 0; border: 0; background: white; }
+  .dm-results > :not(.dm-adaptive), .dm-adaptive > :not(.dm-worksheet) { display: none; }
+  .dm-adaptive { display: block; padding: 0; margin: 0; border: 0; }
+  .dm-worksheet--adaptive { break-before: page; }
+  .dm-worksheet { margin: 0; padding: 0; border: 0; background: white; }
+  .dm-worksheet__header { margin-bottom: 5mm; padding-bottom: 4mm; }
+  .dm-worksheet__header h3 { font-size: 22pt; }
+  .dm-worksheet__guidance { margin-bottom: 6mm; font-size: 10pt; }
+  .dm-practice { display: block; }
+  .dm-practice-group { margin-bottom: 6mm; }
+  .dm-practice-group__header { break-after: avoid; margin-bottom: 3mm; padding-bottom: 2mm; }
+  .dm-practice-group__header h4 { font-size: 12pt; }
+  .dm-practice-group__header > span { font-size: 9pt; }
+  .dm-practice .dm-item-list { display: block; }
+  .dm-item { min-height: 0; margin-bottom: 5mm; padding: 5mm; break-inside: avoid; box-shadow: none; border-radius: 0; }
+  .dm-item__meta { margin-bottom: 3mm; }
+  .dm-item__stem, .dm-practice[data-dm-subject='english'] .dm-item__stem { font-size: 12pt; line-height: 1.7; }
+  .dm-item__instruction, .dm-item__review { font-size: 9pt; }
+  .dm-answer { padding-top: 4mm; }
+  .dm-answer__input { display: none; }
+  .dm-choice { min-height: 0; padding: 2mm; font-size: 11pt; break-inside: avoid; }
+  .dm-choice input { appearance: none; width: 3mm; height: 3mm; min-height: 0; flex-basis: 3mm; border: 1px solid currentColor; border-radius: 50%; }
+  .dm-choice:has(input:checked) { border: 1px solid var(--dm-rule); background: white; box-shadow: none; }
+  .dm-writing-space, .dm-writing-space--print { display: block; min-height: 24mm; margin-top: 4mm; print-color-adjust: exact; }
+  .dm-item[data-dm-subject='korean'] .dm-writing-space { min-height: 36mm; }
+  .dm-item[data-dm-subject='english'] .dm-writing-space { min-height: 18mm; }
+  .dm-figure { margin: 4mm 0; break-inside: avoid; }
+  .dm-figure svg { print-color-adjust: exact; }
+  .dm-practice .dm-item-list:has(.dm-item--calculation) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
+  .dm-item-list:has(.dm-item--calculation) > .dm-item:not(.dm-item--calculation) { grid-column: 1 / -1; }
+  .dm-item--calculation.dm-item { margin: 0; padding: 2mm; }
+  .dm-item--calculation .dm-item__meta { margin-bottom: 1mm; }
+  .dm-item--calculation .dm-item__number { font-size: 16pt; line-height: 1.2; }
+  .dm-item--calculation .dm-badge { min-height: 5mm; padding: 0 2mm; font-size: 8pt; }
+  .dm-item--calculation .dm-item__instruction { margin-bottom: 1mm; line-height: 1.4; }
+  .dm-item--calculation .dm-answer legend { margin-bottom: 0; font-size: 9pt; line-height: 1.2; }
+  .dm-item--calculation .dm-badge--quiet { display: none; }
+  .dm-item--calculation .dm-answer { padding-top: 2mm; }
+  .dm-item--calculation.dm-item .dm-writing-space { min-height: 6mm; margin-top: 1mm; background: none; border-bottom: 1px solid var(--dm-rule); }
+  .dm-item--calculation .dm-writing-space > span { display: none; }
+  .dm-item:where([data-dm-subject='korean'], [data-dm-subject='english']) { padding: 3mm; margin-bottom: 3mm; }
+  .dm-item:not([data-dm-subject='math']) .dm-choice { padding: 1mm 2mm; line-height: 1.4; }
+  .dm-item:not([data-dm-subject='math']) .dm-answer { padding-top: 2mm; }
+  .dm-item:not([data-dm-subject='math']) .dm-item__meta { margin-bottom: 2mm; }
+}

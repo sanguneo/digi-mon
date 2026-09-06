@@ -5,6 +5,7 @@ import type { Worksheet } from './api.ts';
 import { Diagnostic } from './diagnostic.tsx';
 import { ProblemStudio } from './problem-studio.tsx';
 import './styles.css';
+import './worksheet-layout.css';
 
 type View = 'studio' | 'diagnostic';
 
@@ -67,7 +68,7 @@ function App() {
         />
 
         {view === 'diagnostic' && worksheet ? (
-          <Diagnostic worksheet={worksheet} />
+          <Diagnostic key={worksheet.fingerprint} worksheet={worksheet} />
         ) : null}
       </main>
 

@@ -31,6 +31,26 @@ export interface Figure {
   svg?: string;
 }
 
+interface LearningObjective {
+  text: string;
+  source: 'generator-skill';
+}
+
+export type LearningSupport = {
+  schema: 'digi-mon/learning-support@1';
+  objective: LearningObjective;
+} & ({
+  status: 'objective-only';
+} | {
+  status: 'guided-candidate';
+  review: { status: 'candidate'; sourceKind: 'repository-authored'; revision: 1 };
+  materials: Array<{ kind: 'principle' | 'rule' | 'strategy'; text: string }>;
+  hints: [
+    { level: 1; kind: 'concept-recall' | 'strategy'; text: string },
+    { level: 2; kind: 'concept-recall' | 'strategy'; text: string },
+  ];
+});
+
 export interface WorksheetItem {
   id: string;
   number: number;
@@ -47,6 +67,7 @@ export interface WorksheetItem {
   stem: string;
   choices?: Choice[];
   figure?: Figure;
+  learningSupport?: LearningSupport;
 }
 
 export interface WorksheetOptions {

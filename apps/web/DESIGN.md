@@ -1,5 +1,14 @@
 # digi-mon web client design
 
+## Drawing and reading refinements
+
+Manual math construction uses a local SVG drawing surface in interactive mode, with
+an explicit draw/scroll toggle, undo, clear and a keyboard-accessible paper confirmation.
+Ruler tasks explicitly recommend paper; no drawing is automatically graded or uploaded.
+Print retains the drawing or a blank drawing area. Controls retain 48px targets.
+Korean words stay together with emergency wrapping for overlong tokens.
+Language print cards reduce metadata and choice padding, not reading font size.
+
 ## Product promise
 
 The client turns the deterministic digi-mon engine into one connected loop:
@@ -61,6 +70,49 @@ When a figure exists without SVG, the client renders the engine's alternative te
 the explicit state `그림 없음 · 종이 학습지로`. A visually dependent item also displays
 its accommodation instead of silently treating it as accessible.
 
+## Subject-specific practice
+
+The default is an easy 12-question mathematics sheet for grades 1-2. The engine still
+owns content, balancing, order, numbering, and fingerprint; visual groups never alter
+the issued worksheet or grading request. Every question stays mounted and printable.
+
+| Subject / grade | Quick presets | Screen groups and response space |
+|---|---|---|
+| Mathematics 1-2 | 12 mixed (easy), 30 or 50 number/operations (easy), 12 mixed application (basic) | Four items; calculation/drawing grid |
+| Mathematics 3-4 | 12 mixed (basic), 30 or 50 number/operations (easy), 12 mixed application (challenge) | Four items; grade-filtered multiplication/division and number practice |
+| Mathematics 5-6 | 12 mixed (basic), 30 or 50 number/operations (easy), 12 mixed application (challenge) | Four items; grade-filtered fraction/decimal and number practice |
+| Korean 1-2 / 3-4 / 5-6 | 6 or 10; easy in lower/middle bands, basic in upper band | Two items; full-width reading and multiline writing |
+| English 3-4 / 5-6 | 6 or 9; easy in middle band, basic in upper band | Three items; short full-width reading and word/sentence space |
+
+Counts remain freely editable from 1 through 100. Presets configure rather than
+silently generate a sheet. The number/operations domain can include number concepts,
+not just symbolic calculations. Application presets use the engine's higher difficulty,
+not a client-authored curriculum. English starts at the supported 3-4 band; the client
+explains the grade-three curriculum floor and does not offer unsupported grade 1-2 English.
+
+Subject identity follows the delivered worksheet even while the builder changes. Written
+subject marks accompany the existing green/red/blue accents. Every engine choice appears
+in worksheet and diagnostic modes. Korean free responses use textareas; answer collection
+preserves line breaks and excludes whitespace-only responses. No numeric keyboard is
+forced on answers that may contain fractions, units, words, or construction descriptions.
+
+Chunk links are 48px touch targets and move focus without unmounting responses. Inputs
+are at least 18px to avoid mobile browser zoom. Nothing fixes an answer bar over the
+software keyboard. Print includes all chunks and choices, replaces editable fields with
+subject-shaped writing space, and includes adaptive sheets without result-dashboard chrome.
+Figure-free symbolic arithmetic gets a compact two-column print layout and a short answer
+line. Number reading, sequence instructions, word problems, geometry, and language items
+retain their roomy layout; mixed groups give those items the full row. The real-engine
+50-calculation A4 fixture prints in six pages in both clients, preserving all item numbers.
+
+## Learning help
+
+Each item can render the server-provided `learningSupport` through `LearningHelp` after
+the stem and canonical figure. Native details initially conceal the objective/principle;
+a child can reveal the two supplied hints one at a time. The client neither invents hints
+nor requests teacher answers. Help is hidden in print to preserve worksheet writing room.
+Support remains candidate-authored guidance, not a mastery judgment.
+
 ## Diagnostic semantics
 
 The client submits the complete session once to `/v1/grade`.
@@ -79,7 +131,7 @@ action calls the approved-prerequisite endpoint.
 
 - All selection controls use native radio, input, select, and button semantics.
 - Focus uses a 3px subject-accent outline with offset.
-- English stems carry `lang="en"` while surrounding guidance remains Korean.
+- English text carries `lang="en"`; Hangul prompts and translation choices carry `lang="ko"`, even in English worksheets.
 - Primary actions are at least 56px high.
 - At 900px the worksheet and control grids collapse to one column.
 - At 640px navigation, result rows, and document headers stack.

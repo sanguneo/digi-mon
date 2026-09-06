@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { once } from 'node:events';
 import http from 'node:http';
 import { after, before, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -20,8 +21,9 @@ before(async () => {
     response.writeHead(200, { 'content-type': 'application/json' });
     response.end(JSON.stringify({ ok: true }));
   });
+  const engineListening = once(engine, 'listening', { signal: AbortSignal.timeout(10_000) });
   engine.listen(0, '127.0.0.1');
-  await new Promise<void>((resolve) => engine.once('listening', resolve));
+  await engineListening;
   const engineAddress = engine.address();
   assert(engineAddress && typeof engineAddress !== 'string');
 
@@ -30,8 +32,9 @@ before(async () => {
     teacherToken: 'server-only-secret',
     staticRoot: fileURLToPath(new URL('../dist', import.meta.url)),
   });
+  const hostListening = once(host, 'listening', { signal: AbortSignal.timeout(10_000) });
   host.listen(0, '127.0.0.1');
-  await new Promise<void>((resolve) => host.once('listening', resolve));
+  await hostListening;
   const hostAddress = host.address();
   assert(hostAddress && typeof hostAddress !== 'string');
   hostUrl = `http://127.0.0.1:${hostAddress.port}`;
