@@ -1,0 +1,107 @@
+.world-room { --world-accent: var(--garden-green-dark); }
+.world-room[data-world='english'] { --world-accent: #275d68; }
+.world-room[data-world='math'] { --world-accent: #795339; }
+.world-room .garden-room__header h1 { font-size: clamp(36px, 5.5vw, 72px); line-height: 1.15; }
+.world-switcher, .world-room__play, .world-placement, .world-placed, .world-reset, .world-storage-warning { max-width: 1240px; margin: 0 auto; }
+.world-switcher { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.world-switcher .dm-btn { display: flex; gap: 10px; min-width: 0; padding: 14px 8px; text-align: left; }
+.world-switcher .dm-btn > span:first-child { font-size: 26px; }
+.world-switcher small { display: block; margin-top: 4px; font-size: 12px; font-weight: 500; }
+.world-switcher [aria-pressed='true'] { border-color: var(--world-accent); background: var(--world-accent); color: white; }
+.world-room__play { display: grid; gap: 20px; align-items: start; }
+.world-scene { min-width: 0; border: 3px solid var(--world-accent); border-radius: 26px; overflow: hidden; background: var(--garden-paper); }
+.world-scene__viewport { position: relative; height: clamp(310px, 67vw, 520px); background: #e5efd5; }
+.world-scene[data-subject='english'] .world-scene__viewport { background: #d4efed; }
+.world-scene__canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; }
+.world-scene__canvas[hidden] { display: none; }
+.world-scene__caption { position: absolute; top: 16px; left: 18px; right: 16px; pointer-events: none; color: #315344; }
+.world-scene__caption span, .world-scene__caption strong { display: block; }
+.world-scene__caption span { font-size: 12px; margin-bottom: 5px; }
+.world-scene__caption strong { font-size: 16px; }
+.world-scene__loading { position: absolute; inset: 45% 15px auto; text-align: center; }
+.world-scene__fallback { display: grid; align-content: center; justify-items: center; height: 100%; padding: 72px 24px 24px; text-align: center; }
+.world-scene__fallback > span { font-size: 44px; }
+.world-scene__fallback h3 { margin: 8px 0; font-size: 20px; }
+.world-scene__fallback p { max-width: 38em; margin: 4px 0 16px; line-height: 1.6; }
+.world-camera { padding: 0 12px 8px; border-top: 1px solid var(--garden-rule); }
+.world-camera summary { min-height: 48px; align-content: center; cursor: pointer; font-size: 14px; }
+.world-scene__care { padding: 12px; border-top: 1px solid var(--garden-rule); }
+.world-camera__buttons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.world-camera .dm-btn { min-height: 48px; padding: 7px 5px; font-size: 12px; line-height: 1.35; border-width: 1px; }
+.world-camera__options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.world-camera__options .dm-btn { flex: 1 1 130px; }
+.world-camera p { font-size: 12px; line-height: 1.6; margin: 10px 0 0; color: var(--garden-muted); }
+.world-care { padding: 22px; background: var(--garden-paper); border: 2px solid var(--garden-rule); border-radius: 22px; }
+.world-care h2 { margin: 4px 0 16px; font-size: 26px; color: var(--world-accent); }
+.world-growth { padding: 16px 0; border-block: 1px solid var(--garden-rule); }
+.world-growth h3 { margin: 0 0 14px; font-size: 17px; }
+.world-growth label { display: block; font-size: 14px; margin: 12px 0; }
+.world-growth label strong { float: right; }
+.world-growth progress { display: block; width: 100%; height: 10px; margin-top: 8px; accent-color: var(--world-accent); }
+.world-growth p, .world-care__response { font-size: 14px; line-height: 1.7; }
+.world-growth > .dm-btn { width: 100%; font-size: 15px; }
+.world-care__actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.world-care__actions .dm-btn { flex: 1 1 110px; min-height: 56px; font-size: 14px; padding: 10px; }
+.world-care__actions small { display: block; margin-top: 5px; font-size: 11px; }
+.world-care__response { min-height: 48px; margin-bottom: 12px; }
+.world-care__response span { display: block; font-size: 12px; color: var(--garden-muted); }
+.world-scene__care .world-care__actions { margin-top: 0; }
+.world-scene__care .world-care__response { margin: 8px 0 0; min-height: 0; }
+.world-memory summary { min-height: 48px; align-content: center; cursor: pointer; font-size: 14px; }
+.world-memory ol { margin: 0; padding-left: 24px; font-size: 13px; line-height: 1.9; }
+.world-celebration { padding: 14px; border: 2px solid #d3b965; border-radius: 12px; background: #fff2bc; font-size: 14px; line-height: 1.6; }
+.world-placement { margin-top: 22px; padding: 18px; border: 2px solid var(--garden-purple); border-radius: 18px; background: var(--garden-paper); }
+.world-placement .garden-placement-bar { margin: 0; padding: 0; border: 0; box-shadow: none; }
+.world-placement h2 { margin: 0; font-size: 20px; }
+.world-placement__spots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.world-placement__spots .dm-btn { padding: 10px 6px; font-size: 14px; }
+.world-placed { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 16px; }
+.world-placed p { margin: 0; padding: 10px 14px; border: 1px solid var(--garden-rule); border-radius: 12px; background: var(--garden-paper); font-size: 13px; }
+.world-room .garden-item[aria-pressed='true'] { outline: 4px solid var(--garden-purple); outline-offset: 2px; }
+.world-reset { text-align: center; }
+.world-reset .garden-reset, .world-reset .dm-btn { min-height: 48px; margin: 4px; }
+.world-reset p { line-height: 1.7; }
+.world-storage-warning { border: 2px solid #a8763b; padding: 16px; margin-top: 16px; background: #fff1d2; line-height: 1.6; }
+.world-room button, .world-room summary { touch-action: manipulation; }
+.world-room button:focus-visible, .world-room summary:focus-visible { outline: 4px solid var(--garden-purple); outline-offset: 3px; }
+@media (min-width: 720px) {
+  .world-switcher { gap: 14px; }
+  .world-switcher .dm-btn { padding: 16px 24px; }
+  .world-switcher small { font-size: 14px; }
+  .world-camera__buttons { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .world-camera .dm-btn { font-size: 13px; }
+  .world-placement__spots { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  .world-room__play { grid-template-columns: minmax(0, 1fr) 310px; }
+  .world-scene__viewport { height: 510px; }
+  .world-camera__buttons { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 719px) {
+  .world-room { padding: 16px 14px 40px; }
+  .world-room .garden-room__header { gap: 12px; margin-bottom: 12px; }
+  .world-room .garden-room__header h1 { font-size: 30px; }
+  .world-room .garden-room__header .dm-kicker { display: none; }
+  .world-room .garden-room__header > div:first-child > p:last-child { margin-top: 7px; font-size: 14px; line-height: 1.5; }
+  .world-room .garden-room__actions { display: flex; gap: 8px; min-width: 0; width: 100%; }
+  .world-room .garden-room__progress { flex: 1; min-height: 48px; border-width: 1px; font-size: 13px; }
+  .world-room .garden-room__actions > .dm-btn { flex: 1; min-height: 48px; padding: 8px; font-size: 14px; }
+  .world-switcher .dm-btn { flex-direction: row; justify-content: center; min-height: 56px; padding: 8px 3px; gap: 5px; }
+  .world-switcher .dm-btn > span:first-child { font-size: 21px; }
+  .world-switcher small { font-size: 10px; }
+  .world-room .garden-announcement { margin: 10px 0; min-height: 0; font-size: 13px; }
+  .world-scene__viewport { height: 280px; }
+  .world-care__actions .dm-btn { min-height: 48px; flex-basis: 90px; font-size: 13px; }
+  .world-care__actions small { font-size: 10px; }
+  .world-scene__care .world-care__response { font-size: 12px; }
+  .world-room .garden-inventory__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .world-room .garden-item { min-width: 0; padding: 10px 6px; }
+  .world-room .garden-item .garden-art { font-size: 40px; }
+}
+@media (max-width: 450px) {
+  .world-scene__caption { left: 12px; top: 12px; }
+  .world-scene__caption strong { font-size: 14px; }
+  .world-care { padding: 18px; }
+  .world-placement .garden-placement-bar { flex-wrap: wrap; }
+}
+@media print { .world-room { display: none; } }

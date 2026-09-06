@@ -4,12 +4,12 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.goto('/#diagnostic');
+  await page.reload();
 });
 
 test('fork preserves subject worksheet generation and engine geometry', async ({ page }) => {
   await page.goto('/#studio');
-  await expect(page.getByRole('heading', { name: '오늘의 걸음 0/3' })).toBeVisible();
-  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
+  await expect(page.locator('#garden-summary-title')).toBeVisible();
 
   await page.getByRole('button', { name: '문제 만들기' }).click();
   await page.getByRole('radio', { name: '수학' }).check();
@@ -24,7 +24,7 @@ test('fork preserves subject worksheet generation and engine geometry', async ({
   await expect(
     page.locator('.dm-figure svg[role="img"], .dm-figure-fallback').first(),
   ).toBeVisible();
-  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!).worlds.math.answeredKeys)).toEqual([]);
   await page.screenshot({
     path: '../../artifacts/qa-garden/problem-studio.png',
     fullPage: true,
@@ -46,7 +46,7 @@ test('three unique answers unlock one reward and duplicate changes do not count'
   const firstText = fields.nth(0).getByRole('textbox');
   if (await firstRadio.count()) await firstRadio.check();
   else await firstText.fill('아무 답');
-  await expect(page.getByText('오늘의 걸음 1/3')).toBeVisible();
+  await expect(page.locator('#garden-summary-title')).toContainText('1/3');
 
   if (await firstRadio.count()) {
     const choices = fields.nth(0).getByRole('radio');
@@ -54,7 +54,7 @@ test('three unique answers unlock one reward and duplicate changes do not count'
   } else {
     await firstText.fill('바꾼 답');
   }
-  await expect(page.getByText('오늘의 걸음 1/3')).toBeVisible();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!).worlds.math.answeredKeys)).toHaveLength(1);
 
   for (const index of [1, 2]) {
     const item = fields.nth(index);
@@ -63,13 +63,16 @@ test('three unique answers unlock one reward and duplicate changes do not count'
     else await item.getByRole('textbox').fill('해 본 답');
   }
 
-  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
-  await expect(page.getByText('정원에 새 친구가 왔어요!')).toBeVisible();
-  await page.getByRole('button', { name: '정원에 놓으러 가기' }).click();
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!));
+  expect(saved.worlds.math.quotaProgress).toBe(0);
+  expect(saved.worlds.math.unlockedItemIds).toEqual(['puppy-ball']);
+  expect(saved.worlds.korean.unlockedItemIds).toEqual([]);
+  await page.getByRole('button', { name: '새 장식 놓으러 가기' }).click();
   await expect(page).toHaveURL(/#garden$/);
-  await expect(page.getByRole('button', { name: /달빛 의자/ })).toBeEnabled();
-  await expect(page.getByRole('button', { name: /민들레 화분/ })).toBeDisabled();
-  await expect(page.getByText('달빛 의자을 어디에 놓을까요?')).toBeVisible();
+  await expect(page.getByRole('button', { name: /통통 공/ })).toBeEnabled();
+  await expect(page.getByRole('button', { name: /폭신 방석/ })).toBeDisabled();
+  await expect(page.locator('.world-placement__spots button')).toHaveCount(8);
+  await expect(page.locator('#garden-view')).toHaveAttribute('data-world', 'math');
 
   await page.screenshot({
     path: '../../artifacts/qa-garden/reward-to-garden.png',

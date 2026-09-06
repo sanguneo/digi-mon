@@ -6,6 +6,7 @@ test('garden stays pressure-free, keyboard-operable, and overflow-free', async (
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.goto('/#studio');
+  await page.reload();
 
   await expect(page.getByText('맞혔는지보다, 해 본 것이 소중해요.')).toBeVisible();
   await expect(page.locator('.garden-app').getByText(/연속|스트릭|타이머|순위|감점|실패/)).toHaveCount(0);
@@ -22,7 +23,21 @@ test('garden stays pressure-free, keyboard-operable, and overflow-free', async (
   );
   expect(motion).toBe('0ms');
 
-  await page.getByRole('button', { name: '정원 보기' }).first().click();
+  await page.getByRole('button', { name: '세상 둘러보기', exact: true }).click();
+  const canvas = page.locator('canvas[data-renderer="three-webgl"]');
+  await expect(canvas).toHaveAttribute('data-motion', 'off');
+  expect(await canvas.evaluate((element) => getComputedStyle(element).touchAction)).toBe('pan-y');
+  const cameraDisclosure = page.locator('.world-camera summary');
+  await cameraDisclosure.focus();
+  await page.keyboard.press('Enter');
+  const orbit = page.getByRole('button', { name: '왼쪽 보기', exact: true });
+  await orbit.focus();
+  await page.keyboard.press('Enter');
+  await expect(orbit).toBeFocused();
+  for (const button of await page.locator('#garden-view button:visible:not(:disabled)').all()) {
+    const bounds = await button.boundingBox();
+    expect(bounds!.height).toBeGreaterThanOrEqual(48);
+  }
   await expect(page.getByRole('button', { name: /달빛 의자/ })).toBeDisabled();
   await page.screenshot({
     path: '../../artifacts/qa-garden/mobile-garden.png',

@@ -17,6 +17,12 @@
   --garden-rule: #cfd8be;
   --garden-motion: 220ms;
   --garden-shadow: 0 16px 0 rgb(47 118 80 / 10%);
+  --dm-ink-muted: #3f4448;
+  --dm-rule: #d8d2c6;
+  --dm-paper: #ffffff;
+  --dm-accent-math: #0f6b5f;
+  --dm-accent-korean: #a6301e;
+  --dm-accent-english: #1d3f73;
   --dm-accent: var(--garden-green);
 }
 
@@ -33,6 +39,8 @@ html {
 }
 
 body {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
@@ -41,7 +49,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   min-height: 48px;
   font: inherit;
 }
@@ -1514,7 +1523,15 @@ legend,
 
 @media (max-width: 640px) {
   .garden-topbar {
-    align-items: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .garden-brand {
+    align-self: flex-start;
+    min-height: 48px;
   }
 
   .garden-brand small {
@@ -1522,14 +1539,16 @@ legend,
   }
 
   .garden-topbar nav {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 4px;
   }
 
   .garden-topbar nav button {
-    min-height: 40px;
-    padding: 0 12px;
-    font-size: 12px;
+    flex: 1 1 auto;
+    min-height: 48px;
+    padding: 8px;
+    font-size: 14px;
   }
 
   .garden-hero {
@@ -1706,7 +1725,6 @@ legend,
   .garden-shell,
   .dm-builder,
   .dm-studio__intro,
-  .dm-results,
   .dm-diagnostic-submit,
   .garden-footer {
     display: none !important;

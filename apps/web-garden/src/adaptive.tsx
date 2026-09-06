@@ -7,6 +7,7 @@ import {
   type Worksheet,
 } from './api.ts';
 import { WorksheetItems } from './problem-studio.tsx';
+import { WorksheetHeader } from './worksheet-experience.tsx';
 
 const DECISIONS: Record<LearningRecommendation['decision'], string> = {
   practice: '같은 길을 조금 더 걸어 봐요',
@@ -85,18 +86,8 @@ export function AdaptiveLearning({
       {error ? <div className="dm-note dm-note--danger" role="alert">{error}</div> : null}
 
       {worksheet ? (
-        <section className="dm-worksheet dm-worksheet--adaptive">
-          <header className="dm-worksheet__header">
-            <div>
-              <p className="dm-kicker">나에게 맞는 다음 길</p>
-              <h3>맞춤 학습지</h3>
-              <p>{worksheet.produced}문항 · {worksheet.standardsUsed.length}개 성취기준</p>
-            </div>
-            <div className="dm-seal">
-              <span>seed {worksheet.seed}</span>
-              <span>fingerprint {worksheet.fingerprint.slice(0, 12)}</span>
-            </div>
-          </header>
+        <section className="dm-worksheet dm-worksheet--adaptive" data-dm-subject={worksheet.options.subject}>
+          <WorksheetHeader worksheet={worksheet} adaptive />
           <WorksheetItems diagnostic={false} worksheet={worksheet} />
         </section>
       ) : null}

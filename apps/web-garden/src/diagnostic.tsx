@@ -24,7 +24,7 @@ export function Diagnostic({ worksheet }: { worksheet: Worksheet }) {
     setLoading(true);
     setError('');
     try {
-      const responses = collectResponses();
+      const responses = collectResponses(document, worksheet.fingerprint);
       const result = await gradeWorksheet(worksheet, responses);
       const next = await recommendLearning(worksheet, result);
       setGrading(result);

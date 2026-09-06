@@ -31,15 +31,18 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => localStorage.clear());
   await page.goto('/#studio');
+  await page.reload();
+  await page.emulateMedia({ reducedMotion: 'reduce' });
 });
 
 test('opens a dedicated garden room from the compact learning summary', async ({ page }) => {
-  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
+  await expect(page.locator('#garden-summary-title')).toBeVisible();
   await expect(page.getByRole('heading', { name: '모은 정원 친구들' })).toHaveCount(0);
 
-  await page.getByRole('button', { name: '정원 보기' }).first().click();
+  await page.getByRole('button', { name: '내 세상 둘러보기', exact: true }).click();
   await expect(page).toHaveURL(/#garden$/);
-  await expect(page.getByRole('heading', { name: '나만의 정원' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '나만의 정원', exact: true })).toBeVisible();
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-world', 'korean');
   await expect(page.getByRole('heading', { name: '장식 상자' })).toBeVisible();
   await expect(page.getByRole('button', { name: '학습하러 가기' })).toBeVisible();
   await page.screenshot({
@@ -49,12 +52,12 @@ test('opens a dedicated garden room from the compact learning summary', async ({
 });
 
 test('returns to the learning view with browser back', async ({ page }) => {
-  await page.getByRole('button', { name: '정원 보기' }).first().click();
+  await page.getByRole('button', { name: '세상 둘러보기', exact: true }).click();
   await expect(page).toHaveURL(/#garden$/);
   await page.goBack();
 
   await expect(page).toHaveURL(/#studio$/);
-  await expect(page.getByText('오늘의 걸음 0/3')).toBeVisible();
+  await expect(page.locator('#garden-summary-title')).toBeVisible();
   await expect(page.getByRole('heading', { name: '나만의 정원' })).toHaveCount(0);
 });
 
@@ -71,18 +74,21 @@ test('places and moves an item across named canvas coordinates', async ({ page }
   await page.getByRole('button', { name: '연못 옆 배치 지점' }).click();
   const chair = page.getByRole('img', { name: '달빛 의자, 연못 옆에 놓임' });
   await expect(chair).toBeVisible();
-  const pondBox = await chair.boundingBox();
-  const pondScroll = await page.evaluate(() => window.scrollY);
+  const canvas = page.locator('canvas[data-renderer="three-webgl"]');
+  await expect(canvas).toHaveAttribute('data-world', 'korean');
+  const beforeMove = await canvas.screenshot({ path: '../../artifacts/qa-garden/placement-pond-3d.png' });
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!).worlds.korean.placements['moon-chair'])).toBe('pond-side');
 
   await page.reload();
   await expect(page.getByRole('img', { name: '달빛 의자, 연못 옆에 놓임' })).toBeVisible();
   await page.getByRole('button', { name: /달빛 의자.*다시 놓기/ }).click();
   await page.getByRole('button', { name: '큰 나무 아래 배치 지점' }).click();
   const moved = page.getByRole('img', { name: '달빛 의자, 큰 나무 아래에 놓임' });
-  const treeBox = await moved.boundingBox();
-  const treeScroll = await page.evaluate(() => window.scrollY);
-  expect(treeBox?.x).not.toBe(pondBox?.x);
-  expect((treeBox?.y ?? 0) + treeScroll).not.toBe((pondBox?.y ?? 0) + pondScroll);
+  await expect(moved).toBeVisible();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!).worlds.korean.placements['moon-chair'])).toBe('big-tree');
+  // Geometry tests assert real transforms; compare canvas pixels here, not text boxes.
+  const afterMove = await canvas.screenshot({ path: '../../artifacts/qa-garden/placement-tree-3d.png' });
+  expect(afterMove.equals(beforeMove)).toBe(false);
 
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-decorated-room.png',
@@ -102,6 +108,7 @@ test('shows twelve collected decorations grouped into four themes', async ({ pag
     await expect(page.getByRole('heading', { name: theme })).toBeVisible();
   }
   await expect(page.locator('.garden-item:enabled')).toHaveCount(12);
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-motion', 'off');
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-expanded-collection.png',
     fullPage: true,
@@ -109,7 +116,7 @@ test('shows twelve collected decorations grouped into four themes', async ({ pag
 });
 
 test('keeps the expanded collection usable at a tablet viewport', async ({ page }) => {
-  await page.setViewportSize({ width: 768, height: 900 });
+  await page.setViewportSize({ width: 768, height: 1024 });
   await page.evaluate((state) => {
     localStorage.setItem('digi-mon/garden-state@1', JSON.stringify(state));
   }, expandedCollectionState);
@@ -120,6 +127,7 @@ test('keeps the expanded collection usable at a tablet viewport', async ({ page 
   expect(await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   )).toBeFalsy();
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-motion', 'off');
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-expanded-collection-tablet.png',
     fullPage: true,
@@ -138,6 +146,7 @@ test('keeps the expanded collection usable at a mobile viewport', async ({ page 
   expect(await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   )).toBeFalsy();
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-motion', 'off');
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-expanded-collection-mobile.png',
     fullPage: true,
@@ -158,6 +167,7 @@ test('keeps the dedicated room usable on a learner viewport', async ({ page }) =
     () => getComputedStyle(document.documentElement).getPropertyValue('--garden-motion').trim(),
   );
   expect(motion).toBe('0ms');
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-motion', 'off');
   await page.screenshot({
     path: '../../artifacts/qa-garden/garden-room-mobile.png',
     fullPage: true,

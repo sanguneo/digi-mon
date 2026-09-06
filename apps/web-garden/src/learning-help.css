@@ -1,0 +1,46 @@
+.dm-learning-help {
+  margin-block: 16px;
+  border-block-start: 1px solid var(--garden-rule);
+  color: var(--garden-ink);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.dm-learning-help summary {
+  min-height: 48px;
+  padding-block: 12px;
+  color: var(--dm-accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dm-learning-help summary:focus-visible {
+  outline: 4px solid var(--garden-purple);
+  outline-offset: 3px;
+}
+
+.dm-learning-help__body {
+  padding-block-end: 16px;
+}
+
+.dm-learning-help__objective {
+  font-weight: 700;
+}
+
+.dm-learning-help__hints {
+  padding-inline-start: 24px;
+}
+
+.dm-learning-help__hints:empty {
+  display: none;
+}
+
+.dm-learning-help__hints li + li {
+  margin-block-start: 12px;
+}
+
+@media print {
+  .dm-learning-help {
+    display: none;
+  }
+}
