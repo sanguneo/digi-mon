@@ -39,14 +39,16 @@ export function GardenScene({ subject, world, careEvent = null, children }: { su
     setStatus('loading');
     setGestures(false);
     const canvas = canvasRef.current!;
-    import('./garden-renderer.ts').then(({ createWorldRenderer }) => {
+    import('./garden-renderer.ts').then(async ({ createWorldRenderer, prepareWorldAssets }) => {
+      if (cancelled) return;
+      const assets = await prepareWorldAssets(subject);
       if (cancelled) return;
       const runtime = createWorldRenderer(canvas, subject, latestWorld.current, () => {
         setStatus('unavailable');
         runtimeRef.current?.dispose();
         runtimeRef.current = null;
         setGestures(false);
-      });
+      }, assets);
       runtimeRef.current = runtime;
       setStatus('ready');
     }).catch((error: unknown) => {

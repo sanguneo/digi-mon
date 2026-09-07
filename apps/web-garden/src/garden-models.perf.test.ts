@@ -2,8 +2,19 @@ import { BufferGeometry, Material, Matrix3, Mesh, MeshStandardMaterial, Object3D
 import { describe, expect, test, vi } from 'vitest';
 import type { Subject } from './api.ts';
 import { EMPTY_GAME_STATE, GARDEN_SPOTS, type WorldState } from './game-state.ts';
-import { buildWorldModel, disposeModel } from './garden-models.ts';
+import { disposeModel } from './garden-models.ts';
+import { buildWorldModel } from './puppy-asset.test-fixture.ts';
 import { WORLD_CATALOGS, WORLDS } from './garden-worlds.ts';
+
+// Measured by executing garden-models.ts from Git 31c4e1524b4c59a5e1559f4ba0b9179b63578728,
+// with empty placements, all four stages, batch=false/true. Counts include hidden
+// pooled care geometry, exactly like resources() below; they are not visible-frame estimates.
+const PROCEDURAL_MATH_BASELINE = [
+  { puppyTriangles: 20_800, puppyMeshes: 50, puppyBatchedMeshes: 4, worldTriangles: 56_416, worldBatchedMeshes: 11 },
+  { puppyTriangles: 22_120, puppyMeshes: 52, puppyBatchedMeshes: 4, worldTriangles: 59_056, worldBatchedMeshes: 11 },
+  { puppyTriangles: 22_126, puppyMeshes: 53, puppyBatchedMeshes: 4, worldTriangles: 59_062, worldBatchedMeshes: 11 },
+  { puppyTriangles: 22_126, puppyMeshes: 53, puppyBatchedMeshes: 4, worldTriangles: 69_510, worldBatchedMeshes: 11 },
+] as const;
 
 function worldAt(subject: Subject, stage: number): WorldState {
   return {
@@ -52,17 +63,17 @@ function triangleStreams(root: Object3D, frames: Map<Object3D, string>) {
     const position = geometry.getAttribute('position');
     const normals = geometry.getAttribute('normal');
     const uv = geometry.getAttribute('uv');
-    const colors = geometry.getAttribute('color');
+    const colors = object.material.vertexColors ? geometry.getAttribute('color') : undefined;
     const normalMatrix = new Matrix3().getNormalMatrix(object.matrixWorld);
-    const flags = `${frames.get(owner)}:${object.material.opacity}:${object.material.transparent}:${object.material.roughness}:${object.material.metalness}:${object.castShadow}:${object.receiveShadow}`;
+    const flags = `${frames.get(owner)}:${object.material.opacity}:${object.material.transparent}:${object.material.roughness}:${object.material.metalness}:${object.castShadow}:${object.receiveShadow}:uv=${!!uv}`;
     let previousColor = '';
     let previousR = -1, previousG = -1, previousB = -1;
     let stream: number[] = [];
     for (let i = 0; i < (geometry.index?.count ?? position.count); i++) {
       const index = geometry.index?.getX(i) ?? i;
-      const r = colors ? colors.getX(index) : object.material.color.r;
-      const g = colors ? colors.getY(index) : object.material.color.g;
-      const b = colors ? colors.getZ(index) : object.material.color.b;
+      const r = (colors ? colors.getX(index) : 1) * object.material.color.r;
+      const g = (colors ? colors.getY(index) : 1) * object.material.color.g;
+      const b = (colors ? colors.getZ(index) : 1) * object.material.color.b;
       if (r !== previousR || g !== previousG || b !== previousB) {
         previousR = r; previousG = g; previousB = b;
         previousColor = `${Math.fround(r)},${Math.fround(g)},${Math.fround(b)}`;
@@ -72,7 +83,8 @@ function triangleStreams(root: Object3D, frames: Map<Object3D, string>) {
       }
       vertex.fromBufferAttribute(position, index).applyMatrix4(object.matrixWorld);
       normal.fromBufferAttribute(normals, index).applyNormalMatrix(normalMatrix);
-      stream.push(vertex.x, vertex.y, vertex.z, normal.x, normal.y, normal.z, uv.getX(index), uv.getY(index));
+      stream.push(vertex.x, vertex.y, vertex.z, normal.x, normal.y, normal.z, uv?.getX(index) ?? 0, uv?.getY(index) ?? 0,
+        colors?.itemSize === 4 ? colors.getW(index) : 1);
     }
   });
   return streams;
@@ -90,6 +102,21 @@ function expectSameTriangles(original: Map<string, number[]>, batched: Map<strin
 }
 
 describe('world render batching', () => {
+  test.each([0, 1, 2, 3])('math stage %i replaces only the puppy and retains the measured scenery budget', (stage) => {
+    const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true });
+    const world = resources(model.root);
+    const puppy = resources(model.root.getObjectByName('puppy')!);
+    const baseline = PROCEDURAL_MATH_BASELINE[stage]!;
+    expect(world.triangles - puppy.triangles).toBe(baseline.worldTriangles - baseline.puppyTriangles);
+    expect(world.meshes.length - puppy.meshes.length).toBe(baseline.worldBatchedMeshes - baseline.puppyBatchedMeshes);
+    expect(puppy.triangles).toBeLessThanOrEqual(45_000);
+    // The Blender file is already consolidated into independently articulated
+    // primitives. Keep its authored roles/colors rather than rebaking them.
+    expect(puppy.meshes.length).toBeLessThanOrEqual(6);
+    expect(puppy.materials.size).toBeLessThanOrEqual(5);
+    disposeModel(model.root);
+  });
+
   test.each(['korean', 'english', 'math'] as const)('%s initial world cuts draw submissions and GPU resources without dropping triangles', (subject) => {
     const original = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject]);
     const batched = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject], { batch: true });
@@ -97,7 +124,11 @@ describe('world render batching', () => {
     const after = resources(batched.root);
     expect(after.meshes.length).toBeLessThanOrEqual(before.meshes.length * 0.15);
     expect(after.geometries.size).toBeLessThanOrEqual(before.geometries.size * 0.15);
-    expect(after.materials.size).toBeLessThanOrEqual(5);
+    // Actual GLB measurement: three authored roles plus the unchanged world's
+    // organic/wood/satin roles. Do not destroy authored response to hit the old
+    // primitive-only five-material cap; other worlds retain that cap unchanged.
+    if (subject === 'math') expect(after.materials.size).toBe(6);
+    else expect(after.materials.size).toBeLessThanOrEqual(5);
     expect(after.triangles).toBe(before.triangles);
     for (const mesh of after.meshes.filter((object) => object.name === 'static-batch')) {
       expect(mesh.geometry.groups).toHaveLength(0);
@@ -133,7 +164,7 @@ describe('world render batching', () => {
     }
   }
 
-  test('temporary, replaced, shared and live resources are released once and never across worlds', () => {
+  test.each(['english', 'math'] as const)('%s temporary, replaced, shared and live resources are released once and never across worlds', (subject) => {
     const geometryDisposals = new Map<BufferGeometry, number>();
     const materialDisposals = new Map<Material, number>();
     const geometryDispose = BufferGeometry.prototype.dispose;
@@ -147,8 +178,8 @@ describe('world render batching', () => {
       materialDispose.call(this);
     });
     try {
-      const first = buildWorldModel('english', { ...worldAt('english', 3), lastCare: 'play' }, { batch: true });
-      const second = buildWorldModel('english', worldAt('english', 3), { batch: true });
+      const first = buildWorldModel(subject, { ...worldAt(subject, 3), lastCare: 'play' }, { batch: true });
+      const second = buildWorldModel(subject, worldAt(subject, 3), { batch: true });
       const live = resources(second.root);
       disposeModel(first.root);
       for (const entry of live.geometries) expect(geometryDisposals.has(entry)).toBe(false);

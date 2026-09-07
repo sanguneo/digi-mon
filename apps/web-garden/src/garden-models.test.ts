@@ -1,6 +1,7 @@
 import { Box3, Mesh, Vector3 } from 'three';
 import { describe, expect, test, vi } from 'vitest';
-import { buildWorldModel, disposeModel } from './garden-models.ts';
+import { disposeModel } from './garden-models.ts';
+import { buildWorldModel } from './puppy-asset.test-fixture.ts';
 import { EMPTY_GAME_STATE, GARDEN_SPOTS, careForWorld, placeDecoration, recordAnswer, type WorldState } from './game-state.ts';
 import { WORLD_CATALOGS } from './garden-worlds.ts';
 import type { Subject } from './api.ts';

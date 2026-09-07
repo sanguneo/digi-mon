@@ -3,6 +3,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import type { Subject } from './api.ts';
 import { GARDEN_SPOTS, growthStage, type WorldState } from './game-state.ts';
 import { WORLD_CATALOGS, type CareAction } from './garden-worlds.ts';
+import { clonePuppyAsset } from './puppy-asset.ts';
 
 type Point = readonly [number, number, number];
 const LEAF = '#78a85b';
@@ -171,46 +172,16 @@ function fish(parent: THREE.Object3D, stage: number, color = '#dd8848') {
   return { result, tail, fin, mouth };
 }
 
-function puppy(parent: THREE.Object3D, stage: number) {
+function puppy(parent: THREE.Object3D, stage: number, template: THREE.Object3D) {
   const result = group(parent, 'puppy', [0, 0, 0.2]);
-  const bodyColor = '#b98051';
-  const legHeight = stage === 0 ? 0.3 : 0.48;
-  orb(result, bodyColor, [0, 0.85, -0.2], [0.62, 0.72, 0.88]);
-  orb(result, '#f4d8af', [0, 0.9, 0.44], [0.42, 0.55, 0.21]);
-  for (const x of [-0.43, 0.43]) for (const z of [-0.65, 0.47]) {
-    orb(result, bodyColor, [x, legHeight, z], [0.25, legHeight, 0.3]);
-    orb(result, '#f5ddb9', [x, 0.17, z + 0.09], [0.26, 0.17, 0.32]);
-    for (const toe of [-0.09, 0.09]) stroke(result, '#c69c74', [[x + toe, 0.22, z + 0.37], [x + toe, 0.12, z + 0.4]], 0.011);
-  }
-  const head = group(result, 'head', [0, 1.6, 0.5]);
-  orb(head, bodyColor, [0, 0, 0], [0.74, 0.67, 0.67]);
-  for (const side of [-1, 1]) {
-    const ear = orb(head, '#946344', [side * 0.66, -0.17, 0.02], [0.25, 0.61, 0.32]);
-    ear.rotation.z = side * 0.17;
-    orb(head, '#eeb399', [side * 0.72, -0.24, 0.24], [0.12, 0.34, 0.06]);
-    orb(head, INK, [side * 0.28, 0.13, 0.6], [0.11, 0.15, 0.075], 'satin');
-    stroke(head, '#704932', [[side * 0.15, 0.32, 0.58], [side * 0.27, 0.36, 0.57], [side * 0.38, 0.31, 0.54]], 0.035);
-    for (let i = 0; i < 3; i++) orb(head, '#90623f', [side * (0.22 + i % 2 * 0.065), -0.23 + Math.floor(i / 2) * 0.065, 0.785], [0.018, 0.018, 0.012]);
-    stroke(head, '#bd885c', [[side * 0.69, -0.05, 0.3], [side * 0.74, -0.32, 0.29], [side * 0.63, -0.55, 0.19]], 0.015);
-    orb(head, '#ffffff', [side * 0.26, 0.18, 0.66], [0.035, 0.045, 0.02]);
-    orb(head, '#f7e0be', [side * 0.15, -0.22, 0.62], [0.26, 0.19, 0.18]);
-    orb(head, '#de9c7c', [side * 0.48, -0.14, 0.5], [0.12, 0.07, 0.05]);
-  }
-  orb(head, '#49392f', [0, -0.13, 0.8], [0.145, 0.105, 0.105], 'satin');
-  orb(head, '#a4846a', [-0.035, -0.095, 0.89], [0.04, 0.018, 0.012], 'satin');
-  stroke(head, '#795039', [[-0.16, -0.3, 0.77], [0, -0.33, 0.8], [0.16, -0.3, 0.77]], 0.014);
-  for (const x of [-0.14, 0, 0.14]) orb(head, '#d9ac78', [x, 0.57 + (x === 0 ? 0.07 : 0), 0.1], [0.13, 0.16, 0.23]).rotation.z = x * -2;
-  orb(head, '#df9291', [0, -0.36, 0.7], [0.095, 0.13, 0.06]);
-  const tail = group(result, 'tail', [0, 1.03, -0.94]);
-  orb(tail, bodyColor, [0, 0.24, -0.17], [0.18, 0.38, 0.2]).rotation.x = -0.5;
-  orb(tail, CREAM, [0, 0.47, -0.27], [0.17, 0.15, 0.17]);
-  if (stage >= 1) {
-    ring(result, '#719da3', [0, 1.25, 0.45], 0.43, 0.08).rotation.x = Math.PI / 2;
-    orb(result, '#f4c863', [0, 1.12, 0.83], [0.1, 0.12, 0.035]);
-  }
-  if (stage >= 2) {
-    mesh(result, new THREE.ConeGeometry(0.31, 0.4, 3), '#e48e79', [0, 0.95, 0.82], [1, 1, 0.15]).rotation.z = Math.PI;
-  }
+  const asset = clonePuppyAsset(template);
+  result.add(asset);
+  const head = asset.getObjectByName('head')!;
+  const tail = asset.getObjectByName('tail')!;
+  const collar = asset.getObjectByName('growth-collar');
+  const bandana = asset.getObjectByName('growth-bandana');
+  if (collar) collar.visible = stage >= 1;
+  if (bandana) bandana.visible = stage >= 2;
   result.scale.setScalar([0.7, 0.9, 1.08, 1.2][stage]!);
   return { result, head, tail };
 }
@@ -348,7 +319,10 @@ export type CarePhase = 'idle' | 'approach' | 'respond' | 'settle';
 type CarePose = { action: CareAction; time: number; reach: number; touch: number; acknowledge: number };
 const ramp = (time: number, from: number, to: number) => THREE.MathUtils.smoothstep(time, from, to);
 
-export function buildWorldModel(subject: Subject, world: WorldState, { batch = false } = {}) {
+export type WorldModelAssets = { puppyTemplate?: THREE.Object3D };
+
+export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
+  if (subject === 'math' && !puppyTemplate) throw new Error('Math world requires the loaded puppy asset');
   const root = new THREE.Group();
   root.name = `world:${subject}`;
   const stage = growthStage(world);
@@ -477,7 +451,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       for (let i = 0; i <= stage; i++) plant(root, [-2.6 + i * 0.55, 0.1, -0.8], 0.45 + stage * 0.2);
       const pond = decoration(root, 'tiny-pond'); pond.position.set(2.9, 0.03, 0.15); pond.scale.setScalar(1.25);
     } else {
-      const dog = puppy(root, stage);
+      const dog = puppy(root, stage, puppyTemplate!);
       moving.add(dog.result); moving.add(dog.head); moving.add(dog.tail);
       const food = prop('feed');
       const scale = dog.result.scale.x;
@@ -565,6 +539,9 @@ function batchStaticMeshes(root: THREE.Group, moving: Set<THREE.Object3D>) {
   const surfaces = new Map<string, THREE.MeshStandardMaterial>();
   const removed: THREE.Mesh[] = [];
   const collect = (object: THREE.Object3D, owner: THREE.Object3D, parentMatrix: THREE.Matrix4) => {
+    // Authored geometry/materials have their own attribute layouts and colors.
+    // Batch only our primitives, never reinterpret or flatten the GLB subtree.
+    if (object.userData.assetSource) return;
     object.updateMatrix();
     const boundary = moving.has(object);
     const matrix = boundary ? new THREE.Matrix4() : parentMatrix.clone().multiply(object.matrix);
@@ -629,6 +606,11 @@ export function disposeModel(root: THREE.Object3D) {
     }
   });
   for (const entry of geometries) entry.dispose();
-  for (const entry of materials) entry.dispose();
+  const textures = new Set<THREE.Texture>();
+  for (const entry of materials) {
+    for (const value of Object.values(entry)) if (value instanceof THREE.Texture) textures.add(value);
+    entry.dispose();
+  }
+  for (const entry of textures) entry.dispose();
   root.clear();
 }

@@ -113,8 +113,11 @@ center; controls stay quiet, explicit and outside the canvas.
   buttons, collapsed camera disclosure, growth goal and collection in one column.
   Desktop adds a growth panel beside the canvas; the component system stays shared.
 - Lighting, real geometry, perspective camera, shadows and OrbitControls make each
-  scene genuinely three-dimensional. Models are local procedural meshes: no remote
-  assets, trackers or external model licenses.
+  scene genuinely three-dimensional. The puppy is an original, locally authored
+  Blender GLB with connected body/face forms and thick curved ears; other models
+  remain procedural. No remote model service, tracker or downloaded asset is used.
+  The [Blender puppy contract](../../docs/design/companion-art.md#blender-puppy-replacement)
+  defines its source, motion pivots, resource budget and focused verification.
 
 ### Participation and care
 

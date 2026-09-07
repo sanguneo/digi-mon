@@ -3,7 +3,12 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { Subject } from './api.ts';
 import { growthStage, type WorldState } from './game-state.ts';
 import type { CareEvent } from './garden-worlds.ts';
-import { buildWorldModel, disposeModel } from './garden-models.ts';
+import { buildWorldModel, disposeModel, type WorldModelAssets } from './garden-models.ts';
+import { loadPuppyAsset, PUPPY_ASSET_URL } from './puppy-asset.ts';
+
+export async function prepareWorldAssets(subject: Subject): Promise<WorldModelAssets> {
+  return subject === 'math' ? { puppyTemplate: await loadPuppyAsset() } : {};
+}
 
 export type CameraAction = 'left' | 'right' | 'up' | 'down' | 'in' | 'out' | 'home';
 
@@ -16,7 +21,8 @@ export function worldFraming(subject: Subject, stage: number, aspect: number) {
   };
 }
 
-export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject, world: WorldState, onLost: () => void) {
+export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject, world: WorldState, onLost: () => void, assets: WorldModelAssets = {}) {
+  if (subject === 'math' && !assets.puppyTemplate) throw new Error('Math renderer requires the loaded puppy asset');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.shadowMap.enabled = true;
@@ -48,7 +54,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   const fill = new THREE.DirectionalLight('#c4e9f0', 0.8);
   fill.position.set(5, 4, -4); scene.add(fill);
   let currentWorld = world;
-  let model = buildWorldModel(subject, world, { batch: true });
+  let model = buildWorldModel(subject, world, { ...assets, batch: true });
   let activeCare: CareEvent | null = null;
   let careTransition = '';
   const careState = (phase: 'idle' | 'approach' | 'respond' | 'settle' | 'settled') => {
@@ -135,6 +141,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   resize();
   canvas.dataset.renderer = 'three-webgl';
   canvas.dataset.world = subject;
+  if (subject === 'math') canvas.dataset.assetSource = PUPPY_ASSET_URL;
   canvas.dataset.stage = String(model.root.userData.stage);
   canvas.dataset.careId = '0';
   careState('idle');
@@ -148,7 +155,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       if (activeCare) { activeCare = null; careState('settled'); }
       scene.remove(model.root);
       disposeModel(model.root);
-      model = buildWorldModel(subject, next, { batch: true });
+      model = buildWorldModel(subject, next, { ...assets, batch: true });
       scene.add(model.root);
       canvas.dataset.stage = String(model.root.userData.stage);
       model.animate(elapsed);
@@ -204,6 +211,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       renderer.dispose();
       if (!lost) renderer.forceContextLoss();
       delete canvas.dataset.renderer;
+      delete canvas.dataset.assetSource;
     },
   };
 }

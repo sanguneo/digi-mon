@@ -22,6 +22,35 @@ quiet supporting scenery, softened borders and explicit native care controls.
 - Aquarium: open viewing face with no upper front rail crossing the actor. Back/side
   glass and a thin waterline communicate enclosure without obscuring fish silhouettes.
 
+## Blender puppy replacement
+
+The first Blender-authored mesh is the puppy only. Author it locally in Blender
+from a reproducible Python script, retain the editable `.blend`, and ship a
+self-contained `public/models/puppy.glb`. No downloaded model, texture service or
+runtime Blender dependency is introduced. Other worlds and scenery remain procedural.
+
+Use connected, smoothly shaped body/shoulder/haunch volumes, defined paws, a connected
+skull/cheek/muzzle form, eye sockets and thick curved ears with inner folds. Spend
+geometry on silhouettes and curvature, not many tiny fur spheres. Preserve the warm
+caramel/cream palette and existing matte/satin material distinction.
+
+The exported asset is Y-up, faces +Z and rests on y=0. Its identity root is
+`puppy-asset`; body, head and tail remain independently addressable. Head pivot is
+`(0, 1.6, 0.5)` and tail pivot is `(0, 1.03, -0.94)` in exported coordinates.
+`growth-collar` and `growth-bandana` identify removable growth accessories. Existing
+growth scales and care timelines remain runtime responsibilities.
+
+Target 15,000-35,000 triangles, at most 45,000 triangles and 3 MB per complete GLB,
+with no external textures and at most five simple materials. Record actual geometry,
+bounds and submission counts before judging the budget. Preserve authored normals,
+colors and independent motion frames through cloning and batching; each live instance
+owns its disposable resources. Math-world asset loading must be lazy, failures
+must reach the existing retry surface, and abandoned loads must not install a renderer.
+
+Verification is primarily actual-GLB parsing and model/lifecycle/browser assertions.
+Use one essential multi-angle model preview and only the minimum in-app comparison
+needed to judge whether the requested shape improvement is visible.
+
 ## Materials and rendering
 
 Use a small fixed set of semantic surfaces: matte organic/fur, dry wood/earth,
@@ -30,7 +59,10 @@ roughness/metalness by surface role and linear vertex color within independently
 moving coordinate systems. Do not discard geometry/normals/UVs to meet a draw budget.
 Reuse one batch material per role, not one material/draw per color or detail.
 Target initial worlds at <= 15% of original unbatched mesh submissions; at most five
-material roles including glass. Transparent panes retain their sorting/depth behavior.
+material roles including glass for procedural worlds. The Blender math world retains
+three authored puppy materials plus three environment materials, with a six-material
+resource budget rather than flattening the authored appearance into the old roles.
+Transparent panes retain their sorting/depth behavior.
 Keep capped DPR, offscreen/background suspension, demand rendering when motion is
 stopped, and exact-once geometry/material disposal.
 

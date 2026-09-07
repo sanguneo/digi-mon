@@ -1,6 +1,7 @@
 import { Box3, Mesh, MeshStandardMaterial, Vector3 } from 'three';
 import { describe, expect, test } from 'vitest';
-import { buildWorldModel, CARE_DURATION, disposeModel } from './garden-models.ts';
+import { CARE_DURATION, disposeModel } from './garden-models.ts';
+import { buildWorldModel } from './puppy-asset.test-fixture.ts';
 import { EMPTY_GAME_STATE } from './game-state.ts';
 import { WORLDS } from './garden-worlds.ts';
 import { worldFraming } from './garden-renderer.ts';
