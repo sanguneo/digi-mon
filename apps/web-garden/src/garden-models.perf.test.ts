@@ -29,10 +29,8 @@ function resources(root: Object3D) {
 function motionFrames(root: Object3D) {
   const frames = new Map<Object3D, string>([[root, 'world']]);
   root.traverse((object) => {
-    if (['growing-tree', 'fish', 'puppy', 'head', 'tail'].includes(object.name)
-      || (object.name === 'decoration:puppy-ball' && object.position.z === 1.65 && object.scale.x === 1)
-      || (object instanceof Mesh && object.material instanceof MeshStandardMaterial
-        && (object.geometry.type === 'OctahedronGeometry' || ['8bc4df', 'dcf7f4'].includes(object.material.color.getHexString())))) {
+    if (['growing-tree', 'fish', 'puppy', 'head', 'tail', 'canopy', 'leaf:left', 'leaf:right', 'mouth', 'pectoral-fin', 'care-tool', 'care-drops', 'care-morsels'].includes(object.name)
+      || object.name.startsWith('care:')) {
       frames.set(object, `motion:${frames.size}`);
     }
   });
@@ -56,7 +54,7 @@ function triangleStreams(root: Object3D, frames: Map<Object3D, string>) {
     const uv = geometry.getAttribute('uv');
     const colors = geometry.getAttribute('color');
     const normalMatrix = new Matrix3().getNormalMatrix(object.matrixWorld);
-    const flags = `${frames.get(owner)}:${object.material.opacity}:${object.material.transparent}:${object.castShadow}:${object.receiveShadow}`;
+    const flags = `${frames.get(owner)}:${object.material.opacity}:${object.material.transparent}:${object.material.roughness}:${object.material.metalness}:${object.castShadow}:${object.receiveShadow}`;
     let previousColor = '';
     let previousR = -1, previousG = -1, previousB = -1;
     let stream: number[] = [];
@@ -99,13 +97,13 @@ describe('world render batching', () => {
     const after = resources(batched.root);
     expect(after.meshes.length).toBeLessThanOrEqual(before.meshes.length * 0.15);
     expect(after.geometries.size).toBeLessThanOrEqual(before.geometries.size * 0.15);
-    expect(after.materials.size).toBeLessThanOrEqual(2);
+    expect(after.materials.size).toBeLessThanOrEqual(5);
     expect(after.triangles).toBe(before.triangles);
     for (const mesh of after.meshes.filter((object) => object.name === 'static-batch')) {
       expect(mesh.geometry.groups).toHaveLength(0);
       expect(mesh.castShadow).toBe(true);
       expect(mesh.receiveShadow).toBe(true);
-      expect((mesh.material as MeshStandardMaterial).roughness).toBe(0.8);
+      expect([0.92, 0.84, 0.42, 0.16]).toContain((mesh.material as MeshStandardMaterial).roughness);
     }
     disposeModel(original.root); disposeModel(batched.root);
   });
@@ -120,7 +118,8 @@ describe('world render batching', () => {
           const sourceFrames = motionFrames(original.root);
           const batchFrames = motionFrames(batched.root);
           expect(batchFrames.size).toBe(sourceFrames.size);
-          for (const time of [0, 0.73, 4.2]) {
+          if (lastCare) { original.startCare(lastCare, 0); batched.startCare(lastCare, 0); }
+          for (const time of [0, 0.73, 1.4, 2.8, 4.2]) {
             original.animate(time); batched.animate(time);
             expectSameTriangles(triangleStreams(original.root, sourceFrames), triangleStreams(batched.root, batchFrames));
           }

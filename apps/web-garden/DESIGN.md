@@ -1,5 +1,68 @@
 # digi-mon garden client
 
+## Child-first learning studio (2026-09)
+
+The home is a working learning desk, not a marketing hero. At 375 x 812 the
+three subject choices, current set size and primary start action must fit in the
+first viewport. Choosing a subject and starting takes at most two taps; successful
+creation focuses the first question, without asking the child to scroll through
+the builder again. Companion progress comes after the studio, never before start.
+
+Use the existing React/Vite and native CSS stack. Rounded Korean sans headings
+(`NanumSquareRound`, Pretendard, system fallback), warm ivory paper, forest ink,
+muted ochre accents and a single restrained paper shadow replace oversized serif
+headlines, thick outlines and emoji scenery. The signature detail is a set of
+small original SVG book, number-block and speech-bubble marks. No remote fonts,
+new dependencies, image downloads or animations are required. Body text remains
+20px on questions; controls remain at least 48px, primary actions 56px. Use a
+4/8/12/16/24/32 spacing rhythm and visible keyboard focus.
+
+Button-state mechanics were consulted at <https://beui.dev/r/button>: stable
+dimensions, explicit busy/error states, fine-pointer-only hover and reduced-motion
+press feedback. No source dependency, width animation or letter cascade is copied.
+
+Math starts with 12 questions; Korean and English retain their six-question
+starters. 30, 50 and 100 remain explicit options for all subjects,
+with an editable 1-100 count. Native `details` contains grade, covered domain,
+difficulty, count presets and editable seed. The closed summary communicates the
+current grade/difficulty; settings never silently shrink a requested set. Capacity
+errors preserve both the previous worksheet and all its answers.
+
+### New practice versus exact repeat
+
+- The primary practice start and explicit new-practice action create a fresh seed
+  on user action, including after reload. Advanced `입력한 seed로 생성` uses the
+  editable seed unchanged; diagnostic start retains its configured seed. Editing
+  settings never generates a seed or replaces an issued worksheet. Fresh practice
+  uses the current builder options and excludes the previous
+  issued set's item IDs for that subject. Capacity shortfall is surfaced without
+  secretly reducing the count or retrying without exclusions.
+- Exact repeat reuses the issued learner worksheet object, including its seed,
+  fingerprint, options and ordered items, even after the builder changes. It makes
+  no HTTP request. Only the attempt subtree and diagnostic result subtree reset.
+  The same fingerprint/item keys keep participation idempotent; repeat does not
+  mint rewards. Existing local drawing and answer state survive ordinary settings,
+  chunk navigation and garden/back visits. A repeat is an explicit fresh attempt.
+- Practice, diagnostic and adaptive response collection retain their separate
+  instances. Manual answers remain teacher-reviewed; all issued questions and
+  drawing surfaces remain available in print. Engine determinism is untouched.
+
+### Parallel visual contracts
+
+- [Companion art](../../docs/design/companion-art.md) owns the three-dimensional
+  world's modeled character detail and art direction.
+- [Concept aids](../../docs/design/concept-aids.md) owns visual principle help.
+  Both clients pass the optional delivered `item` to `LearningHelp`; learner-safe
+  support remains the sole source of instructional content.
+
+### Acceptance evidence
+
+Behavior tests must cover fresh seeds/exclusions, request-free exact repeat after
+builder edits, cleared inputs/results and unchanged earned participation. Browser
+QA measures the first CTA at 375 x 812, exercises two-tap entry, settings, route/back
+answer retention and full-set print. Tablet targets are 768 x 1024 and 1024 x 768.
+Record actual measurements and screenshots with the implementation milestone.
+
 ## Drawing and reading refinements
 
 Manual math construction uses a local SVG drawing surface, with an explicit draw/scroll

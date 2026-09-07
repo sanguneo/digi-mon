@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGame } from './game-context.tsx';
 import type { Subject } from './api.ts';
 import { GARDEN_CATEGORIES } from './garden-catalog.ts';
 import { GARDEN_SPOTS, GROWTH_MILESTONES, gardenSpot, growthProgress, type GardenSpotId } from './game-state.ts';
-import { WORLD_CATALOGS, WORLDS, WORLD_SUBJECTS } from './garden-worlds.ts';
+import { WORLD_CATALOGS, WORLDS, WORLD_SUBJECTS, WORLD_ICON_PATHS, type CareAction, type CareEvent } from './garden-worlds.ts';
 import { GardenScene } from './garden-scene.tsx';
 import './garden-worlds.css';
+
+function GardenIcon({ kind }: { kind: keyof typeof WORLD_ICON_PATHS }) {
+  return <svg className="world-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={WORLD_ICON_PATHS[kind]} /></svg>;
+}
 
 export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: Subject) => void; preselectReward: boolean }) {
   const { state, latestReward, latestRewardSubject, growthCelebration, announcement, storageError,
@@ -17,6 +21,13 @@ export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: S
   const growth = growthProgress(world);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
+  const careSequence = useRef(0);
+  const [careEvent, setCareEvent] = useState<CareEvent | null>(null);
+  const respond = (action: CareAction) => {
+    care(subject, action);
+    setCareEvent({ id: ++careSequence.current, subject, action });
+  };
+  const unplaced = catalog.find((item) => world.unlockedItemIds.includes(item.id) && !world.placements[item.id]);
   const selected = catalog.find((item) => item.id === selectedItemId) ?? null;
   const rewardHere = latestRewardSubject === subject ? latestReward : null;
   const celebrated = growthCelebration?.subject === subject ? growthCelebration : null;
@@ -44,7 +55,7 @@ export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: S
           <p>{definition.description}</p>
         </div>
         <div className="garden-room__actions">
-          <div className="garden-room__progress"><span aria-hidden="true">{definition.art}</span><strong>{definition.subjectName} 걸음 {world.quotaProgress}/3</strong></div>
+          <div className="garden-room__progress"><GardenIcon kind={subject} /><strong>{definition.subjectName} 걸음 {world.quotaProgress}/3</strong></div>
           <button className="dm-btn dm-btn--primary" onClick={() => onLearn()} type="button">학습하러 가기</button>
         </div>
       </header>
@@ -54,7 +65,7 @@ export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: S
           <button className="dm-btn" type="button" key={entry} aria-pressed={entry === subject} onClick={() => {
             selectSubject(entry); setSelectedItemId(null); setConfirmReset(false);
           }}>
-            <span aria-hidden="true">{WORLDS[entry].art}</span>
+            <GardenIcon kind={entry} />
             <span>{WORLDS[entry].subjectName}<small>{entry === 'korean' ? '나무 키우기' : entry === 'english' ? '물고기 키우기' : '강아지 키우기'}</small></span>
           </button>
         ))}
@@ -63,18 +74,18 @@ export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: S
       <p className="garden-announcement" aria-live="polite" aria-atomic="true">{announcement || (rewardHere ? `${rewardHere.name}이 왔어요. 장식 상자에서 골라 보세요.` : '맞혔는지보다, 해 본 것이 소중해요.')}</p>
 
       <div className="world-room__play">
-        <GardenScene subject={subject} world={world}>
+        <GardenScene subject={subject} world={world} careEvent={careEvent}>
           <div className="world-scene__care">
             <div className="world-care__actions" role="group" aria-label={`${definition.companion} 돌보기`}>
               {definition.care.map((action) => {
                 const available = growth.stage >= (action.unlockStage ?? 0);
-                return <button className="dm-btn" type="button" key={action.id} disabled={!available} onClick={() => care(subject, action.id)}>
-                  <span aria-hidden="true">{action.art}</span> {action.label}
+                return <button className="dm-btn" type="button" key={action.id} disabled={!available} onClick={() => respond(action.id)}>
+                  <GardenIcon kind={action.id === 'play' ? subject === 'english' ? 'bubbles' : 'ball' : action.id} /> {action.label}
                   {!available ? <small>한 번 자라면 함께 놀아요</small> : null}
                 </button>;
               })}
             </div>
-            <p className="world-care__response" aria-live="polite" aria-atomic="true">{world.lastCare ? <>{definition.care.find((action) => action.id === world.lastCare)?.response} <span>함께 돌본 횟수 {Object.values(world.careCounts).reduce((sum, value) => sum + value, 0)}</span></> : '언제든 돌볼 수 있어요. 쉬는 동안에도 작아지지 않아요.'}</p>
+            <p className="world-care__response" aria-live="polite" aria-atomic="true" data-care-id={careEvent?.subject === subject ? careEvent.id : undefined}>{world.lastCare ? <>{definition.care.find((action) => action.id === world.lastCare)?.response} <span>함께 돌본 횟수 {Object.values(world.careCounts).reduce((sum, value) => sum + value, 0)}</span></> : '언제든 돌볼 수 있어요. 쉬는 동안에도 작아지지 않아요.'}</p>
           </div>
         </GardenScene>
         <aside className="world-care" aria-labelledby="world-care-title">
@@ -93,11 +104,12 @@ export function GardenRoom({ onLearn, preselectReward }: { onLearn: (subject?: S
               <p>{growth.answersNeeded > 0 ? `${definition.subjectName} 문제 ${growth.answersNeeded}개를 더 해 봐요. 정답이 아니어도 괜찮아요.` : `${growth.careNeeded}번 더 돌보면 새 모습으로 자라요.`}</p>
               <button className="dm-btn dm-btn--primary" type="button" onClick={() => {
                 if (growth.answersNeeded > 0) onLearn(subject);
-                else care(subject, definition.care[0]!.id);
+                else respond(definition.care[0]!.id);
               }}>{growth.answersNeeded > 0 ? `${definition.subjectName} 문제 해 보기` : definition.care[0]!.label}</button>
             </> : <>
               <h3>우리, 이렇게 자랐어요!</h3>
-              <p>함께한 걸음과 돌봄이 쌓였어요. 이제도 놀고, 배우고, 자유롭게 꾸며요.</p>
+              <p>{unplaced ? `${unplaced.name}의 자리를 함께 골라 볼까요? 모은 장식은 언제든 옮길 수 있어요.` : '우리만의 풍경이 되었어요. 장식 상자에서 하나를 골라 새 자리에 놓고, 오늘도 친구와 놀아요.'}</p>
+              {unplaced ? <button className="dm-btn" type="button" onClick={() => setSelectedItemId(unplaced.id)}>{unplaced.name} 놓기</button> : null}
             </>}
           </div>
           <details className="world-memory">

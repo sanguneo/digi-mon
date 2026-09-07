@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import type { Subject } from './api.ts';
 import { growthStage, type WorldState } from './game-state.ts';
-import { WORLDS } from './garden-worlds.ts';
+import { WORLDS, type CareEvent } from './garden-worlds.ts';
 import type { CameraAction, WorldRenderer } from './garden-renderer.ts';
 
 const CAMERA_BUTTONS: readonly [CameraAction, string][] = [
@@ -9,9 +9,12 @@ const CAMERA_BUTTONS: readonly [CameraAction, string][] = [
   ['down', '낮게 보기'], ['in', '가까이'], ['out', '멀리'], ['home', '처음 시점'],
 ];
 
-export function GardenScene({ subject, world, children }: { subject: Subject; world: WorldState; children?: ReactNode }) {
+export function GardenScene({ subject, world, careEvent = null, children }: { subject: Subject; world: WorldState; careEvent?: CareEvent | null; children?: ReactNode }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const runtimeRef = useRef<WorldRenderer | null>(null);
+  const consumedCare = useRef(careEvent?.id ?? 0);
+  const latestCare = useRef(careEvent);
+  latestCare.current = careEvent;
   const latestWorld = useRef(world);
   latestWorld.current = world;
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
@@ -31,6 +34,8 @@ export function GardenScene({ subject, world, children }: { subject: Subject; wo
 
   useEffect(() => {
     let cancelled = false;
+    // Subject changes and GPU retries are fresh views, never playback commands.
+    consumedCare.current = latestCare.current?.id ?? 0;
     setStatus('loading');
     setGestures(false);
     const canvas = canvasRef.current!;
@@ -59,6 +64,11 @@ export function GardenScene({ subject, world, children }: { subject: Subject; wo
   useEffect(() => { runtimeRef.current?.update(world); }, [world]);
   useEffect(() => { runtimeRef.current?.setMotion(!paused && !reducedMotion); }, [paused, reducedMotion, status]);
   useEffect(() => { runtimeRef.current?.setGestures(gestures); }, [gestures, status]);
+  useEffect(() => {
+    if (!careEvent || careEvent.id <= consumedCare.current) return;
+    consumedCare.current = careEvent.id;
+    if (careEvent.subject === subject) runtimeRef.current?.care(careEvent);
+  }, [careEvent, subject]);
 
   return (
     <section className="world-scene" aria-label={`${definition.name} 3D 풍경`} data-subject={subject} data-status={status}>
