@@ -1,4 +1,8 @@
-# Blender fish
+# Blender fish v1 - historical source
+
+The active fish now comes from [fish-v2](../fish-v2/README.md). This directory
+preserves the first design and its measurements. The old rebuild command below
+exports v1 to the canonical path; use the v2 publication command for the active app.
 
 Original project-authored geometry under the repository MIT license. Blender is an
 authoring tool only; the app consumes the committed `public/models/fish.glb`.

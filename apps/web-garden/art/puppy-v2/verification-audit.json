@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "rebuild_equal_attributes_and_oriented_triangle_sets": true,
+  "rebuild_byte_identical": false,
+  "rebuild_difference": "Facial triangle serialization order only; identical vertex attributes and oriented triangle sets.",
+  "explicit_output_argument_tested": true,
+  "staging_glb_sha256": "3e8b5e82a1f97ca23fc0cc615ba8dd7c3a6e7c8b05fe70e59bb37fdd148694fb",
+  "override_glb_sha256": "536b4fead80cc79066cb34bd574d96acd0b9e1369e466110148cee38faf8e364",
+  "canonical_untouched_sha256": "f267220030083e51a22f5828dac2f147dd9214b61b20a146adcafae14956a322",
+  "backup_files": 0,
+  "render_or_image_operations": 0,
+  "editor_diagnostics": "Only unresolved Blender embedded modules bmesh/bpy/mathutils remain as errors; unknown-type warnings are not suppressed."
+}

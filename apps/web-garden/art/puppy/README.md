@@ -1,4 +1,8 @@
-# Blender puppy
+# Blender puppy v1 - historical source
+
+The active puppy now comes from [puppy-v2](../puppy-v2/README.md). This directory
+preserves the first design and its measurements. The old rebuild command below
+exports v1 to the canonical path; use the v2 publication command for the active app.
 
 Original project-authored geometry, distributed under the repository MIT license.
 No downloaded models or textures are included.

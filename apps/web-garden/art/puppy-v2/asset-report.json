@@ -1,0 +1,364 @@
+{
+  "status": "PASS",
+  "blender_version": "5.2.1 LTS",
+  "glb": "C:\\Users\\USER\\WebstormProjects\\digi-mon\\apps\\web-garden\\public\\models\\puppy.glb",
+  "glb_bytes": 1073828,
+  "glb_sha256": "7b6ce38ff61ab2bf5c13d8f3bfcfca2b41fb6ea2b609b0c5022fb93c6ebef4ab",
+  "triangles": 32056,
+  "mesh_primitives": 6,
+  "materials": [
+    {
+      "name": "PuppyV2 matte cream and caramel",
+      "roughness": 0.8999999761581421,
+      "metallic": 0,
+      "base_color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "PuppyV2 soft cloth",
+      "roughness": 0.9599999785423279,
+      "metallic": 0,
+      "base_color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "PuppyV2 matte facial details",
+      "roughness": 0.8399999737739563,
+      "metallic": 0,
+      "base_color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "bounds_y_up": {
+    "min": [
+      -1.0115482807159424,
+      0.0,
+      -1.3730944395065308
+    ],
+    "max": [
+      1.0115691423416138,
+      2.4080066680908203,
+      1.4793206453323364
+    ],
+    "dimensions": [
+      2.023117423057556,
+      2.4080066680908203,
+      2.852415084838867
+    ]
+  },
+  "pivots_y_up": {
+    "body": [
+      0,
+      0,
+      0
+    ],
+    "head": [
+      0,
+      1.6,
+      0.5
+    ],
+    "tail": [
+      0,
+      1.03,
+      -0.94
+    ],
+    "growth-collar": [
+      0,
+      0,
+      0
+    ],
+    "growth-bandana": [
+      0,
+      0,
+      0
+    ]
+  },
+  "primitives": [
+    {
+      "node": "PuppyV2_Body",
+      "triangles": 10500,
+      "vertices": 6493,
+      "bounds_y_up": [
+        [
+          -0.8050813674926758,
+          0.0,
+          -1.076817512512207
+        ],
+        [
+          0.8052998185157776,
+          1.797254204750061,
+          0.7836958169937134
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 3.441390799707733e-05,
+      "uv_min": [
+        0.005551527254283428,
+        0.005551457405090332
+      ],
+      "uv_max": [
+        0.9781306385993958,
+        0.9944484829902649
+      ]
+    },
+    {
+      "node": "PuppyV2_Bandana",
+      "triangles": 1052,
+      "vertices": 648,
+      "bounds_y_up": [
+        [
+          -0.24611452221870422,
+          0.9088051319122314,
+          0.6617576479911804
+        ],
+        [
+          0.24611450731754303,
+          1.2970094680786133,
+          0.791000485420227
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 2.8263348212931305e-06,
+      "uv_min": [
+        0.0017271162942051888,
+        0.0041446685791015625
+      ],
+      "uv_max": [
+        0.9982727766036987,
+        0.9982728958129883
+      ]
+    },
+    {
+      "node": "PuppyV2_Collar",
+      "triangles": 1536,
+      "vertices": 1216,
+      "bounds_y_up": [
+        [
+          -0.5220000147819519,
+          1.222999930381775,
+          -0.18700000643730164
+        ],
+        [
+          0.5220000147819519,
+          1.3270000219345093,
+          0.7870000004768372
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 0.0004419067408889532,
+      "uv_min": [
+        0.002753135282546282,
+        0.021528184413909912
+      ],
+      "uv_max": [
+        0.9972468018531799,
+        0.9972468018531799
+      ]
+    },
+    {
+      "node": "PuppyV2_Face",
+      "triangles": 4696,
+      "vertices": 3132,
+      "bounds_y_up": [
+        [
+          -0.4770902097225189,
+          1.343056321144104,
+          0.9065976738929749
+        ],
+        [
+          0.4759083688259125,
+          2.0371079444885254,
+          1.4793206453323364
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 4.4643186924986367e-07,
+      "uv_min": [
+        0.005457832477986813,
+        0.02280449867248535
+      ],
+      "uv_max": [
+        0.994542121887207,
+        0.9945424199104309
+      ]
+    },
+    {
+      "node": "PuppyV2_Head",
+      "triangles": 12500,
+      "vertices": 7239,
+      "bounds_y_up": [
+        [
+          -1.0115482807159424,
+          0.9313108325004578,
+          -0.14763689041137695
+        ],
+        [
+          1.0115691423416138,
+          2.4080066680908203,
+          1.4217076301574707
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 5.363386208045995e-06,
+      "uv_min": [
+        0.0037443337496370077,
+        0.0037443041801452637
+      ],
+      "uv_max": [
+        0.8901380300521851,
+        0.9962557554244995
+      ]
+    },
+    {
+      "node": "PuppyV2_Tail",
+      "triangles": 1772,
+      "vertices": 1152,
+      "bounds_y_up": [
+        [
+          -0.1539669930934906,
+          0.8865988850593567,
+          -1.3730944395065308
+        ],
+        [
+          0.20354926586151123,
+          1.6803944110870361,
+          -0.8588955402374268
+        ]
+      ],
+      "max_normal_length_error": 1.1920928955078125e-07,
+      "min_triangle_area": 1.269795461666945e-06,
+      "uv_min": [
+        0.0028573765885084867,
+        0.09748661518096924
+      ],
+      "uv_max": [
+        0.9971426129341125,
+        0.9971426725387573
+      ]
+    }
+  ],
+  "source_topology": {
+    "PuppyV2_Bandana": {
+      "components": 1,
+      "component_vertices": [
+        528
+      ],
+      "nonmanifold_edges": 0
+    },
+    "PuppyV2_Body": {
+      "components": 1,
+      "component_vertices": [
+        5252
+      ],
+      "nonmanifold_edges": 0
+    },
+    "PuppyV2_Collar": {
+      "components": 1,
+      "component_vertices": [
+        768
+      ],
+      "nonmanifold_edges": 0
+    },
+    "PuppyV2_Face": {
+      "components": 11,
+      "component_vertices": [
+        610,
+        362,
+        362,
+        362,
+        362,
+        200,
+        104,
+        8,
+        8,
+        8,
+        8
+      ],
+      "nonmanifold_edges": 64
+    },
+    "PuppyV2_Head": {
+      "components": 1,
+      "component_vertices": [
+        6252
+      ],
+      "nonmanifold_edges": 0
+    },
+    "PuppyV2_Tail": {
+      "components": 1,
+      "component_vertices": [
+        888
+      ],
+      "nonmanifold_edges": 0
+    }
+  },
+  "ground_contact_vertices_by_paw": [
+    61,
+    57,
+    60,
+    59
+  ],
+  "features": {
+    "eye_centers_y_up": [
+      [
+        -0.4070935845375061,
+        1.9361273050308228,
+        0.9650278091430664
+      ],
+      [
+        0.4072328507900238,
+        1.936097502708435,
+        0.9651855826377869
+      ]
+    ],
+    "eye_authored_height": 0.21,
+    "eye_authored_width": 0.156,
+    "eye_center_separation": 0.8143264353275299,
+    "cranium_authored_height": 1.48,
+    "ear_authored_y_range": [
+      1.735,
+      2.24
+    ],
+    "visible_lower_leg_region_y": [
+      0.29,
+      0.58
+    ],
+    "paw_authored_width": 0.6,
+    "muzzle_sculpt_front_z": 1.4217076301574707
+  },
+  "palette_srgb": {
+    "cream": "#eed6ab",
+    "caramel": "#bd8550",
+    "off_white": "#fff3d9",
+    "chocolate": "#34251e"
+  },
+  "attributes": [
+    "POSITION",
+    "NORMAL",
+    "TEXCOORD_0",
+    "COLOR_0"
+  ],
+  "images": 0,
+  "textures": 0,
+  "animations": 0,
+  "skins": 0,
+  "smooth_normals": true,
+  "physically_lit": true,
+  "visual_review_performed": false,
+  "thumbnails": false,
+  "backups": 0,
+  "verification": "GLB binary attributes, finite/unit/range data, indices/areas, budgets, hierarchy/pivots, ground contacts, source connectivity/manifoldness; no image inspection",
+  "blend_bytes": 994539,
+  "source_sha256": "85382c7fa7346cf391fc3f5f66988e4d34402525706b37c712b1385277bd8cc0"
+}
