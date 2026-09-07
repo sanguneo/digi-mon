@@ -77,8 +77,8 @@ Korean Elementary Learning Map의 `kr-full-depth-v0.4` 자료를 읽어 만든 �
 - 학습 목표, 원리·공식·도움말과 교사용 검토 후보
 - 선수 관계와 학습 게이트 정책
 - 제품·설계·검토 문서
-- `apps/web-garden/art/puppy/`의 Blender 제작 스크립트·편집 원본과
-  그 원본에서 내보낸 `apps/web-garden/public/models/puppy.glb`.
+- `apps/web-garden/art/puppy/`, `art/tree/`, `art/fish/`의 Blender 제작 스크립트·편집 원본과
+  그 원본에서 내보낸 `apps/web-garden/public/models/`의 강아지·나무·물고기 GLB.
   외부 모델이나 텍스처를 가져오지 않고 프로젝트에서 직접 제작한다.
 
 ## 생성 산출물

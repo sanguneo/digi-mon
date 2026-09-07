@@ -1,0 +1,1510 @@
+{
+  "status": "PASS",
+  "asset_version": 1,
+  "path": "C:/Users/USER/WebstormProjects/digi-mon/apps/web-garden/public/models/tree.glb",
+  "bytes": 3324892,
+  "sha256": "9ca74738fca51678d4c080c2ec3438aba0ba5121768cb06cf64b122ada945606",
+  "glb_version": 2,
+  "generator": "Khronos glTF Blender I/O v5.2.40",
+  "total_triangles": 81368,
+  "total_primitives": 15,
+  "material_count": 3,
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Tree white-base vertex foliage",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7200000286102295
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Tree white-base vertex bark",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.9200000166893005
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Tree white-base vertex blossom fruit",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.47999998927116394
+      }
+    }
+  ],
+  "embedded_buffers": 1,
+  "images": 0,
+  "textures": 0,
+  "cameras": 0,
+  "lights": 0,
+  "coordinates": "Three.js Y-up, model-local, no world placement offset",
+  "root": "tree-asset",
+  "identity_stage_roots": [
+    "tree-stage-0",
+    "tree-stage-1",
+    "tree-stage-2",
+    "tree-stage-3"
+  ],
+  "pivots": {
+    "sprout-leaf-left": [
+      0,
+      1,
+      0
+    ],
+    "sprout-leaf-right": [
+      0,
+      1.350000023841858,
+      0.019999999552965164
+    ],
+    "stage-1-canopy": [
+      0,
+      1.600000023841858,
+      0
+    ],
+    "stage-2-canopy": [
+      0,
+      2.1500000953674316,
+      0
+    ],
+    "stage-3-canopy": [
+      0,
+      2.1500000953674316,
+      0
+    ]
+  },
+  "all_node_rotations_identity": true,
+  "all_node_scales_identity": true,
+  "all_attributes_finite": true,
+  "max_normal_length_error": 1.3633520223876872e-07,
+  "minimum_uv_triangle_area": 1.2647038971635993e-07,
+  "stages": [
+    {
+      "stage": 0,
+      "bounds": {
+        "min": [
+          -0.9814866185188293,
+          0.000800006091594696,
+          -0.6159999966621399
+        ],
+        "max": [
+          1.0438919067382812,
+          1.8873155117034912,
+          0.6159999966621399
+        ],
+        "size": [
+          2.0253785252571106,
+          1.8865155056118965,
+          1.2319999933242798
+        ]
+      },
+      "triangles": 4488,
+      "primitives": 4,
+      "roles": [
+        "connected-stem-roots",
+        "soil-and-seed-stones",
+        "thick-sprout-leaf",
+        "thick-sprout-leaf"
+      ],
+      "nodes": [
+        "sprout-leaf-left",
+        "sprout-leaf-left-blade",
+        "sprout-leaf-right",
+        "sprout-leaf-right-blade",
+        "stage-0-soil",
+        "stage-0-stem-roots",
+        "tree-stage-0"
+      ]
+    },
+    {
+      "stage": 1,
+      "bounds": {
+        "min": [
+          -1.0319687128067017,
+          0.015584003180265427,
+          -1.0608069896697998
+        ],
+        "max": [
+          1.0468677282333374,
+          2.957519054412842,
+          1.086800217628479
+        ],
+        "size": [
+          2.078836441040039,
+          2.9419350512325764,
+          2.147607207298279
+        ]
+      },
+      "triangles": 14484,
+      "primitives": 3,
+      "roles": [
+        "connected-trunk-roots-branches",
+        "layered-thick-leaf-sprays",
+        "soil-and-seed-stones"
+      ],
+      "nodes": [
+        "stage-1-canopy",
+        "stage-1-leaf-sprays",
+        "stage-1-soil",
+        "stage-1-trunk-roots-branches",
+        "tree-stage-1"
+      ]
+    },
+    {
+      "stage": 2,
+      "bounds": {
+        "min": [
+          -1.4067727327346802,
+          0.000800006091594696,
+          -1.343475103378296
+        ],
+        "max": [
+          1.3421381711959839,
+          3.8055660724639893,
+          1.3990881443023682
+        ],
+        "size": [
+          2.748910903930664,
+          3.8047660663723946,
+          2.742563247680664
+        ]
+      },
+      "triangles": 33252,
+      "primitives": 4,
+      "roles": [
+        "blossoms",
+        "connected-trunk-roots-branches",
+        "layered-thick-leaf-sprays",
+        "soil-and-seed-stones"
+      ],
+      "nodes": [
+        "stage-2-blossoms",
+        "stage-2-canopy",
+        "stage-2-leaf-sprays",
+        "stage-2-soil",
+        "stage-2-trunk-roots-branches",
+        "tree-stage-2"
+      ]
+    },
+    {
+      "stage": 3,
+      "bounds": {
+        "min": [
+          -1.4060535430908203,
+          0.000800006091594696,
+          -1.3458774089813232
+        ],
+        "max": [
+          1.3421381711959839,
+          3.7873716354370117,
+          1.3986520767211914
+        ],
+        "size": [
+          2.748191714286804,
+          3.786571629345417,
+          2.7445294857025146
+        ]
+      },
+      "triangles": 29144,
+      "primitives": 4,
+      "roles": [
+        "connected-trunk-roots-branches",
+        "fruit",
+        "layered-thick-leaf-sprays",
+        "soil-and-seed-stones"
+      ],
+      "nodes": [
+        "stage-3-canopy",
+        "stage-3-fruit",
+        "stage-3-leaf-sprays",
+        "stage-3-soil",
+        "stage-3-trunk-roots-branches",
+        "tree-stage-3"
+      ]
+    }
+  ],
+  "meshes": {
+    "stage-0-stem-roots": {
+      "role": "connected-stem-roots",
+      "triangles": 2400,
+      "bounds_local": {
+        "min": [
+          -0.3265099823474884,
+          0.057889435440301895,
+          -0.3129323720932007
+        ],
+        "max": [
+          0.3507338762283325,
+          1.498963713645935,
+          0.35383984446525574
+        ],
+        "size": [
+          0.6772438585758209,
+          1.4410742782056332,
+          0.6667722165584564
+        ]
+      },
+      "topology": {
+        "welded_vertices": 1202,
+        "components": 1,
+        "component_vertex_counts": [
+          1202
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 1.3145672788757426e-05,
+        "signed_volume": 0.01881515656193834,
+        "min_component_signed_volume": 0.01881515656193834
+      },
+      "metadata": {
+        "authored_shells": 6,
+        "role": "connected-stem-roots"
+      }
+    },
+    "stage-0-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "bounds_local": {
+        "min": [
+          -0.6159999966621399,
+          0.000800006091594696,
+          -0.6159999966621399
+        ],
+        "max": [
+          0.6159999966621399,
+          0.1525699943304062,
+          0.6159999966621399
+        ],
+        "size": [
+          1.2319999933242798,
+          0.1517699882388115,
+          1.2319999933242798
+        ]
+      },
+      "topology": {
+        "welded_vertices": 408,
+        "components": 8,
+        "component_vertex_counts": [
+          170,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 0.00040162978361024296,
+        "signed_volume": 0.0900671973006419,
+        "min_component_signed_volume": 0.0005670516343881544
+      },
+      "metadata": {
+        "authored_shells": 8,
+        "role": "soil-and-seed-stones"
+      }
+    },
+    "sprout-leaf-right-blade": {
+      "role": "thick-sprout-leaf",
+      "triangles": 652,
+      "bounds_local": {
+        "min": [
+          -0.010398820973932743,
+          -0.025997400283813477,
+          -0.027980711311101913
+        ],
+        "max": [
+          1.0438919067382812,
+          0.5373154878616333,
+          0.33390435576438904
+        ],
+        "size": [
+          1.054290727712214,
+          0.5633128881454468,
+          0.36188506707549095
+        ]
+      },
+      "topology": {
+        "welded_vertices": 332,
+        "components": 3,
+        "component_vertex_counts": [
+          182,
+          78,
+          72
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 3.89712562414957e-06,
+        "signed_volume": 0.028413819272350323,
+        "min_component_signed_volume": 0.00023340855089748865
+      },
+      "metadata": {
+        "authored_shells": 3,
+        "role": "thick-sprout-leaf"
+      }
+    },
+    "sprout-leaf-left-blade": {
+      "role": "thick-sprout-leaf",
+      "triangles": 652,
+      "bounds_local": {
+        "min": [
+          -0.9814866185188293,
+          -0.025815367698669434,
+          -0.027980981394648552
+        ],
+        "max": [
+          0.010842784307897091,
+          0.532785177230835,
+          0.3323430120944977
+        ],
+        "size": [
+          0.9923294028267264,
+          0.5586005449295044,
+          0.36032399348914623
+        ]
+      },
+      "topology": {
+        "welded_vertices": 332,
+        "components": 3,
+        "component_vertex_counts": [
+          182,
+          78,
+          72
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 3.897141128469667e-06,
+        "signed_volume": 0.02685722975647871,
+        "min_component_signed_volume": 0.00023340864572954048
+      },
+      "metadata": {
+        "authored_shells": 3,
+        "role": "thick-sprout-leaf"
+      }
+    },
+    "stage-1-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "bounds_local": {
+        "min": [
+          -0.5037275552749634,
+          0.026087462902069092,
+          -0.5036059021949768
+        ],
+        "max": [
+          0.5041501522064209,
+          2.583425283432007,
+          0.5042373538017273
+        ],
+        "size": [
+          1.0078777074813843,
+          2.5573378205299377,
+          1.007843255996704
+        ]
+      },
+      "topology": {
+        "welded_vertices": 2352,
+        "components": 1,
+        "component_vertex_counts": [
+          2352
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 2.31718709014074e-05,
+        "signed_volume": 0.12692234447985312,
+        "min_component_signed_volume": 0.12692234447985312
+      },
+      "metadata": {
+        "authored_shells": 16,
+        "role": "connected-trunk-roots-branches"
+      }
+    },
+    "stage-1-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "bounds_local": {
+        "min": [
+          -0.48047998547554016,
+          0.015584003180265427,
+          -0.48047998547554016
+        ],
+        "max": [
+          0.48047998547554016,
+          0.14320459961891174,
+          0.48047998547554016
+        ],
+        "size": [
+          0.9609599709510803,
+          0.12762059643864632,
+          0.9609599709510803
+        ]
+      },
+      "topology": {
+        "welded_vertices": 408,
+        "components": 8,
+        "component_vertex_counts": [
+          170,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 0.0002443517590425272,
+        "signed_volume": 0.042741568939855624,
+        "min_component_signed_volume": 0.0002690955002237046
+      },
+      "metadata": {
+        "authored_shells": 8,
+        "role": "soil-and-seed-stones"
+      }
+    },
+    "stage-1-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 9000,
+      "bounds_local": {
+        "min": [
+          -1.0319687128067017,
+          0.06941342353820801,
+          -1.0608069896697998
+        ],
+        "max": [
+          1.0468677282333374,
+          1.3575190305709839,
+          1.086800217628479
+        ],
+        "size": [
+          2.078836441040039,
+          1.2881056070327759,
+          2.147607207298279
+        ]
+      },
+      "topology": {
+        "welded_vertices": 4680,
+        "components": 90,
+        "component_vertex_counts": [
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 2.634352624017719e-05,
+        "signed_volume": 0.2120535278418716,
+        "min_component_signed_volume": 2.8333490059745986e-05
+      },
+      "metadata": {
+        "authored_shells": 90,
+        "role": "layered-thick-leaf-sprays"
+      }
+    },
+    "stage-2-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "bounds_local": {
+        "min": [
+          -0.6462097764015198,
+          0.03373555466532707,
+          -0.6057816743850708
+        ],
+        "max": [
+          0.6446729898452759,
+          3.308483362197876,
+          0.677815854549408
+        ],
+        "size": [
+          1.2908827662467957,
+          3.274747807532549,
+          1.2835975289344788
+        ]
+      },
+      "topology": {
+        "welded_vertices": 2352,
+        "components": 1,
+        "component_vertex_counts": [
+          2352
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 6.070884969623291e-05,
+        "signed_volume": 0.2880402651137483,
+        "min_component_signed_volume": 0.2880402651137483
+      },
+      "metadata": {
+        "authored_shells": 20,
+        "role": "connected-trunk-roots-branches"
+      }
+    },
+    "stage-2-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "bounds_local": {
+        "min": [
+          -0.6159999966621399,
+          0.000800006091594696,
+          -0.6159999966621399
+        ],
+        "max": [
+          0.6159999966621399,
+          0.1525699943304062,
+          0.6159999966621399
+        ],
+        "size": [
+          1.2319999933242798,
+          0.1517699882388115,
+          1.2319999933242798
+        ]
+      },
+      "topology": {
+        "welded_vertices": 408,
+        "components": 8,
+        "component_vertex_counts": [
+          170,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 0.00040162978361024296,
+        "signed_volume": 0.0900671973006419,
+        "min_component_signed_volume": 0.0005670516343881544
+      },
+      "metadata": {
+        "authored_shells": 8,
+        "role": "soil-and-seed-stones"
+      }
+    },
+    "stage-2-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 13000,
+      "bounds_local": {
+        "min": [
+          -1.4060535430908203,
+          -0.009346246719360352,
+          -1.323466181755066
+        ],
+        "max": [
+          1.3421381711959839,
+          1.63737154006958,
+          1.3211843967437744
+        ],
+        "size": [
+          2.748191714286804,
+          1.6467177867889404,
+          2.6446505784988403
+        ]
+      },
+      "topology": {
+        "welded_vertices": 6760,
+        "components": 130,
+        "component_vertex_counts": [
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 4.329996503940019e-05,
+        "signed_volume": 0.6447541816334011,
+        "min_component_signed_volume": 5.9705782937511046e-05
+      },
+      "metadata": {
+        "authored_shells": 130,
+        "role": "layered-thick-leaf-sprays"
+      }
+    },
+    "stage-2-blossoms": {
+      "role": "blossoms",
+      "triangles": 14768,
+      "bounds_local": {
+        "min": [
+          -1.4067727327346802,
+          -0.04758048057556152,
+          -1.343475103378296
+        ],
+        "max": [
+          1.3278480768203735,
+          1.6555659770965576,
+          1.3990881443023682
+        ],
+        "size": [
+          2.7346208095550537,
+          1.7031464576721191,
+          2.742563247680664
+        ]
+      },
+      "topology": {
+        "welded_vertices": 7826,
+        "components": 182,
+        "component_vertex_counts": [
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          42,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 3.2548118002689835e-05,
+        "signed_volume": 0.10250540991238553,
+        "min_component_signed_volume": 1.2416593980396862e-05
+      },
+      "metadata": {
+        "authored_shells": 260,
+        "role": "blossoms",
+        "blossom_count": 26
+      }
+    },
+    "stage-3-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "bounds_local": {
+        "min": [
+          -0.6462097764015198,
+          0.03373555466532707,
+          -0.6057816743850708
+        ],
+        "max": [
+          0.6446729898452759,
+          3.308483362197876,
+          0.677815854549408
+        ],
+        "size": [
+          1.2908827662467957,
+          3.274747807532549,
+          1.2835975289344788
+        ]
+      },
+      "topology": {
+        "welded_vertices": 2352,
+        "components": 1,
+        "component_vertex_counts": [
+          2352
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 6.070884969623291e-05,
+        "signed_volume": 0.2880402651137483,
+        "min_component_signed_volume": 0.2880402651137483
+      },
+      "metadata": {
+        "authored_shells": 20,
+        "role": "connected-trunk-roots-branches"
+      }
+    },
+    "stage-3-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "bounds_local": {
+        "min": [
+          -0.6159999966621399,
+          0.000800006091594696,
+          -0.6159999966621399
+        ],
+        "max": [
+          0.6159999966621399,
+          0.1525699943304062,
+          0.6159999966621399
+        ],
+        "size": [
+          1.2319999933242798,
+          0.1517699882388115,
+          1.2319999933242798
+        ]
+      },
+      "topology": {
+        "welded_vertices": 408,
+        "components": 8,
+        "component_vertex_counts": [
+          170,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 0.00040162978361024296,
+        "signed_volume": 0.0900671973006419,
+        "min_component_signed_volume": 0.0005670516343881544
+      },
+      "metadata": {
+        "authored_shells": 8,
+        "role": "soil-and-seed-stones"
+      }
+    },
+    "stage-3-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 13000,
+      "bounds_local": {
+        "min": [
+          -1.4060535430908203,
+          -0.009346246719360352,
+          -1.323466181755066
+        ],
+        "max": [
+          1.3421381711959839,
+          1.63737154006958,
+          1.3211843967437744
+        ],
+        "size": [
+          2.748191714286804,
+          1.6467177867889404,
+          2.6446505784988403
+        ]
+      },
+      "topology": {
+        "welded_vertices": 6760,
+        "components": 130,
+        "component_vertex_counts": [
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          74,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 4.329996503940019e-05,
+        "signed_volume": 0.6447541816334011,
+        "min_component_signed_volume": 5.9705782937511046e-05
+      },
+      "metadata": {
+        "authored_shells": 130,
+        "role": "layered-thick-leaf-sprays"
+      }
+    },
+    "stage-3-fruit": {
+      "role": "fruit",
+      "triangles": 10660,
+      "bounds_local": {
+        "min": [
+          -1.3676135540008545,
+          -0.39592158794403076,
+          -1.3458774089813232
+        ],
+        "max": [
+          1.3181133270263672,
+          1.2708044052124023,
+          1.3986520767211914
+        ],
+        "size": [
+          2.6857268810272217,
+          1.666725993156433,
+          2.7445294857025146
+        ]
+      },
+      "topology": {
+        "welded_vertices": 5447,
+        "components": 39,
+        "component_vertex_counts": [
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          222,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72,
+          72
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "min_triangle_area": 6.41175642424769e-05,
+        "signed_volume": 0.657148151895232,
+        "min_component_signed_volume": 0.0008477682161154193
+      },
+      "metadata": {
+        "authored_shells": 78,
+        "role": "fruit",
+        "fruit_count": 13,
+        "calyx_count": 13,
+        "calyx_lobes_per_fruit": 4
+      }
+    }
+  },
+  "semantic_counts": {
+    "sprout_leaves": 2,
+    "young_leaves": 45,
+    "mature_leaves": 65,
+    "blossoms": 26,
+    "fruits": 13,
+    "calyx_lobes": 52
+  },
+  "connectivity_method": "Position-weld exported UV/normal seams at 1e-7; count edges and connected components",
+  "closed_shells": true,
+  "structural_network_components_per_stage": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "verification_surface": "Actual GLB JSON and binary accessors; no visual evidence",
+  "blend": {
+    "status": "PASS",
+    "objects": 25,
+    "editable_meshes": 15,
+    "cameras": 0,
+    "lights": 0,
+    "images": 0,
+    "materials": 3,
+    "saved_viewport_shading": "SOLID",
+    "unapplied_modifiers": 0
+  },
+  "authoring": {
+    "stage-0-stem-roots": {
+      "role": "connected-stem-roots",
+      "triangles": 2400,
+      "authored_shells": 6
+    },
+    "stage-0-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "authored_shells": 8
+    },
+    "sprout-leaf-left-blade": {
+      "role": "thick-sprout-leaf",
+      "triangles": 652,
+      "authored_shells": 3
+    },
+    "sprout-leaf-right-blade": {
+      "role": "thick-sprout-leaf",
+      "triangles": 652,
+      "authored_shells": 3
+    },
+    "stage-1-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "authored_shells": 16
+    },
+    "stage-1-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "authored_shells": 8
+    },
+    "stage-1-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 9000,
+      "authored_shells": 90
+    },
+    "stage-2-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "authored_shells": 20
+    },
+    "stage-2-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "authored_shells": 8
+    },
+    "stage-2-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 13000,
+      "authored_shells": 130
+    },
+    "stage-2-blossoms": {
+      "role": "blossoms",
+      "triangles": 14768,
+      "authored_shells": 260
+    },
+    "stage-3-trunk-roots-branches": {
+      "role": "connected-trunk-roots-branches",
+      "triangles": 4700,
+      "authored_shells": 20
+    },
+    "stage-3-soil": {
+      "role": "soil-and-seed-stones",
+      "triangles": 784,
+      "authored_shells": 8
+    },
+    "stage-3-leaf-sprays": {
+      "role": "layered-thick-leaf-sprays",
+      "triangles": 13000,
+      "authored_shells": 130
+    },
+    "stage-3-fruit": {
+      "role": "fruit",
+      "triangles": 10660,
+      "authored_shells": 78
+    }
+  },
+  "blender_version": "5.2.1 LTS",
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "apps/web-garden/art/tree/build_tree.py"
+  ],
+  "source_sha256": {
+    "build_tree.py": "58882851c75a7641b6660984873d6f9132304f8951e2d6a64d063af4b28537c8",
+    "verify_tree.py": "3a2337e1853355753225b7b939ecc534cf6509b004f703801ba4c5660a0f7a5b"
+  },
+  "blend_bytes": 2234353,
+  "blend_sha256": "56c7876533ec347bb15c0f3c427eeed629015c19659871d3b237389ec05e9268"
+}
