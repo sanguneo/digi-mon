@@ -113,6 +113,16 @@ a child can reveal the two supplied hints one at a time. The client neither inve
 nor requests teacher answers. Help is hidden in print to preserve worksheet writing room.
 Support remains candidate-authored guidance, not a mastery judgment.
 
+An optional public `item` prop (`subject` and `stem` only) enables a second, independent
+"점으로 생각해 보기" disclosure for bounded whole-number addition, subtraction, and
+multiplication. Ten-frames, crossed-out dots, and equal groups illustrate the given
+quantities without printing a computed answer. `a × b` shows a dots per group and b
+groups. Unsupported expressions keep the original server help without an invented
+picture. No answer data, grading, reward, or autoplay is involved. Both disclosures
+remain item-local; 30/50-question presets and print writing space are unchanged.
+See [Concrete concept aids](../../docs/design/concept-aids.md) for grammar, accessibility,
+and responsive requirements.
+
 ## Diagnostic semantics
 
 The client submits the complete session once to `/v1/grade`.

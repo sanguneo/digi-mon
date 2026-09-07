@@ -20,7 +20,14 @@
 }
 
 .dm-learning-help__body {
+  min-inline-size: 0;
   padding-block-end: 16px;
+}
+
+.dm-learning-help__body > .dm-btn {
+  min-block-size: 48px;
+  max-inline-size: 100%;
+  white-space: normal;
 }
 
 .dm-learning-help__objective {

@@ -37,7 +37,7 @@ function ItemCard({ item, diagnostic, worksheetId, instanceId }: {
       {item.instruction ? <p className="dm-item__instruction">{item.instruction}</p> : null}
       <p className="dm-item__stem" lang={textLanguage(item.stem)}>{item.stem}</p>
       {item.figure ? <Figure figure={item.figure} /> : null}
-      {item.learningSupport ? <LearningHelp support={item.learningSupport} /> : null}
+      {item.learningSupport ? <LearningHelp support={item.learningSupport} item={item} /> : null}
       <fieldset className="dm-answer" aria-label={`${item.number}번 답`}>
         <legend>{editable ? '내 답' : '답을 고르거나 써 보세요'}</legend>
         {drawing ? <DrawingAnswer name={responseName} number={item.number} onParticipate={() => markAnswered('drawing')} /> : item.choices ? (

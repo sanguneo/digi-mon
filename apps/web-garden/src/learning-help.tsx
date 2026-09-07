@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import type { LearningSupport } from './api.ts';
+import type { LearningSupport, WorksheetItem } from './api.ts';
+import { VisualMathHelp } from './visual-math-help.tsx';
 import './learning-help.css';
 
-export function LearningHelp({ support }: { support?: LearningSupport }) {
+export function LearningHelp({ support, item }: {
+  support?: LearningSupport;
+  item?: Pick<WorksheetItem, 'subject' | 'stem'>;
+}) {
   const [hintCount, setHintCount] = useState(0);
   if (!support) return null;
   const guided = support.status === 'guided-candidate' ? support : null;
@@ -12,6 +16,7 @@ export function LearningHelp({ support }: { support?: LearningSupport }) {
       <summary>{guided ? '생각하는 방법 보기' : '무엇을 배울까요?'}</summary>
       <div className="dm-learning-help__body">
         <p className="dm-learning-help__objective">{support.objective.text}</p>
+        {item ? <VisualMathHelp item={item} /> : null}
         {guided?.materials.map((material, index) => <p key={index}>{material.text}</p>)}
         {guided ? <>
           <ol className="dm-learning-help__hints" aria-live="polite" aria-relevant="additions">
