@@ -1,0 +1,116 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "command": "\"C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe\" --background --factory-startup --threads 8 --python apps/web-garden/art/puppy/build_puppy.py",
+  "glb_bytes": 1197684,
+  "triangles": 35112,
+  "mesh_primitives": 6,
+  "materials": [
+    {
+      "name": "Puppy matte fur",
+      "roughness": 0.8600000143051147
+    },
+    {
+      "name": "Puppy woven accessories",
+      "roughness": 0.9300000071525574
+    },
+    {
+      "name": "Puppy satin face",
+      "roughness": 0.3400000035762787
+    }
+  ],
+  "bounds_y_up": {
+    "min": [
+      -1.002764105796814,
+      0.0,
+      -1.3721826076507568
+    ],
+    "max": [
+      1.002764105796814,
+      2.407198667526245,
+      1.486993670463562
+    ],
+    "dimensions": [
+      2.005528211593628,
+      2.407198667526245,
+      2.859176278114319
+    ]
+  },
+  "pivots_y_up": {
+    "body": [
+      0,
+      0,
+      0
+    ],
+    "head": [
+      0,
+      1.6,
+      0.5
+    ],
+    "tail": [
+      0,
+      1.03,
+      -0.94
+    ],
+    "growth-collar": [
+      0,
+      0,
+      0
+    ],
+    "growth-bandana": [
+      0,
+      0,
+      0
+    ]
+  },
+  "primitives": [
+    {
+      "node": "Connected torso shoulders haunches limbs paws",
+      "triangles": 10500,
+      "vertices": 6516
+    },
+    {
+      "node": "Draped kerchief",
+      "triangles": 284,
+      "vertices": 211
+    },
+    {
+      "node": "Soft teal woven collar",
+      "triangles": 2048,
+      "vertices": 1536
+    },
+    {
+      "node": "Eyes nose and lip details",
+      "triangles": 4300,
+      "vertices": 2992
+    },
+    {
+      "node": "Head fur and folded ears",
+      "triangles": 16180,
+      "vertices": 9916
+    },
+    {
+      "node": "Tapered upward curling tail",
+      "triangles": 1800,
+      "vertices": 1105
+    }
+  ],
+  "textures": 0,
+  "images": 0,
+  "color_encoding": "linear COLOR_0 vertex colors, white base color factor",
+  "attributes": [
+    "POSITION",
+    "NORMAL",
+    "TEXCOORD_0",
+    "COLOR_0"
+  ],
+  "connected_body_components": 1,
+  "connected_primary_skull_components": 1,
+  "preview": "artifacts/puppy/contact-sheet.png",
+  "preview_views": [
+    "front",
+    "side",
+    "three-quarter"
+  ],
+  "provenance": "Original authored anatomical cross-sections and sculpt volumes; no downloaded models or textures",
+  "checks": "GLB header, embedded buffer, hierarchy/pivots, identity transforms, bounds, geometry budget, finite attributes, unit normals, noncollapsed UVs, no cameras/lights/images/animations"
+}
