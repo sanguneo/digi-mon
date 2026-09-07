@@ -1,12 +1,12 @@
 :root {
   color: #24311f;
-  background: #fff8dc;
-  font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Malgun Gothic', sans-serif;
+  background: #f6f3e9;
+  font-family: 'NanumSquareRound', 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Malgun Gothic', sans-serif;
   font-synthesis: none;
   --garden-ink: #24311f;
   --garden-muted: #5e6e54;
-  --garden-paper: #fffdf3;
-  --garden-cream: #fff8dc;
+  --garden-paper: #fffdf7;
+  --garden-cream: #f6f3e9;
   --garden-green: #2f7650;
   --garden-green-dark: #1e5637;
   --garden-leaf: #85b861;
@@ -16,7 +16,7 @@
   --garden-purple: #8667a7;
   --garden-rule: #cfd8be;
   --garden-motion: 220ms;
-  --garden-shadow: 0 16px 0 rgb(47 118 80 / 10%);
+  --garden-shadow: 0 2px 4px rgb(47 65 40 / 4%), 0 12px 32px rgb(47 65 40 / 6%);
   --dm-ink-muted: #3f4448;
   --dm-rule: #d8d2c6;
   --dm-paper: #ffffff;
@@ -32,9 +32,7 @@
 
 html {
   min-width: 320px;
-  background:
-    radial-gradient(circle at 18px 18px, rgb(47 118 80 / 8%) 2px, transparent 3px) 0 0 / 36px 36px,
-    var(--garden-cream);
+  background: var(--garden-cream);
   scroll-behavior: smooth;
 }
 

@@ -1,4 +1,4 @@
-import { StrictMode, useEffect, useState } from 'react';
+import { StrictMode, useCallback, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import type { Subject, Worksheet } from './api.ts';
@@ -7,8 +7,11 @@ import { GameProvider, useGame } from './game-context.tsx';
 import { GardenRoom } from './garden.tsx';
 import { GardenSummary } from './garden-summary.tsx';
 import { ProblemStudio } from './problem-studio.tsx';
+import { StudioWelcome } from './studio-welcome.tsx';
+import { SubjectMark } from './subject-mark.tsx';
 import './styles.css';
 import './worksheet-layout.css';
+import './studio.css';
 
 type LearningView = 'studio' | 'diagnostic';
 type AppView = LearningView | 'garden';
@@ -24,8 +27,19 @@ function App() {
   const [view, setView] = useState<AppView>(hashView);
   const [lastLearningView, setLastLearningView] = useState<LearningView>(() => hashView() === 'diagnostic' ? 'diagnostic' : 'studio');
   const [worksheet, setWorksheet] = useState<Worksheet | null>(null);
+  const [attempt, setAttempt] = useState(0);
+  const [studySubject, setStudySubject] = useState<Subject>('math');
+  const chooseStudySubject = useCallback((subject: Subject) => {
+    setStudySubject(subject);
+    selectSubject(subject);
+  }, [selectSubject]);
   const [rewardHandoff, setRewardHandoff] = useState(false);
   const [subjectRequest, setSubjectRequest] = useState<{ subject: Subject; revision: number } | null>(null);
+
+  useEffect(() => {
+    // A direct garden visit keeps its saved world; learning shows its selected subject.
+    if (view !== 'garden') selectSubject(studySubject);
+  }, [view, studySubject, selectSubject]);
 
   useEffect(() => {
     const updateFromHash = () => {
@@ -58,7 +72,7 @@ function App() {
     <div className="garden-app">
       <header className="garden-topbar">
         <button className="garden-brand" onClick={() => navigate('studio')} type="button">
-          <span className="garden-brand__mascot" aria-hidden="true">🌱</span>
+          <span className="garden-brand__mascot" aria-hidden="true"><SubjectMark subject="korean" /></span>
           <span>
             <strong>digi-mon</strong>
             <small>배움으로 자라는 세 세상</small>
@@ -99,40 +113,18 @@ function App() {
         />
       ) : null}
         <main id="learning-view" hidden={view === 'garden'} tabIndex={-1}>
-          <section className="garden-hero">
-            <div className="garden-hero__copy">
-              <p className="dm-kicker">배움이 자라는 나만의 공간</p>
-              <h1>한 문제씩,<br /><span>세 세상이 자라요!</span></h1>
-              <p>
-                국어는 초록 정원, 영어는 물속 수족관, 수학은 강아지 마당.
-                한 문제씩 해 보며 과목마다 다른 친구를 돌봐요.
-              </p>
-              <div className="garden-hero__chips">
-                <span>국어 · 정원</span>
-                <span>영어 · 수족관</span>
-                <span>수학 · 강아지 마당</span>
-              </div>
-            </div>
-            <div className="garden-hero__scene" aria-hidden="true">
-              <span className="garden-hero__sun">☀️</span>
-              <span className="garden-hero__tree">🌳</span>
-              <span className="garden-hero__flower">🐠</span>
-              <span className="garden-hero__snail">🐶</span>
-              <span className="garden-hero__path">•••••</span>
-            </div>
-          </section>
-
-          <GardenSummary onOpenGarden={() => navigate('garden', true)} />
+          <StudioWelcome />
 
           <ProblemStudio
             key={lastLearningView}
             mode={lastLearningView === 'diagnostic' ? 'diagnostic' : 'worksheet'}
-            onWorksheet={setWorksheet}
-            onSubjectChange={selectSubject}
+            onWorksheet={(issued) => { setWorksheet(issued); setAttempt((current) => current + 1); }}
+            onSubjectChange={chooseStudySubject}
             subjectRequest={subjectRequest}
           />
 
-          {lastLearningView === 'diagnostic' && worksheet ? <Diagnostic key={worksheet.fingerprint} worksheet={worksheet} /> : null}
+          {lastLearningView === 'diagnostic' && worksheet ? <Diagnostic key={attempt} worksheet={worksheet} /> : null}
+          <GardenSummary onOpenGarden={() => navigate('garden', true)} />
         </main>
 
       <footer className="garden-footer">

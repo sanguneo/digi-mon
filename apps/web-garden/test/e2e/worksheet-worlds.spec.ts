@@ -31,6 +31,7 @@ test('practice answers belong to their issued subject and survive world visits a
   await expect(first).toHaveValue('1/2');
   await expect(second).toHaveValue('3');
 
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByLabel('문항 수').fill('9');
   await page.getByRole('button', { name: '세상 둘러보기', exact: true }).click();
   await page.getByRole('button', { name: '학습하러 가기', exact: true }).click();

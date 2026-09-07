@@ -36,13 +36,14 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('opens a dedicated garden room from the compact learning summary', async ({ page }) => {
+  await expect(page.getByRole('radio', { name: '수학', exact: true })).toBeChecked();
   await expect(page.locator('#garden-summary-title')).toBeVisible();
   await expect(page.getByRole('heading', { name: '모은 정원 친구들' })).toHaveCount(0);
 
   await page.getByRole('button', { name: '내 세상 둘러보기', exact: true }).click();
   await expect(page).toHaveURL(/#garden$/);
-  await expect(page.getByRole('heading', { name: '나만의 정원', exact: true })).toBeVisible();
-  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-world', 'korean');
+  await expect(page.getByRole('heading', { name: '나만의 강아지 마당', exact: true })).toBeVisible();
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-world', 'math');
   await expect(page.getByRole('heading', { name: '장식 상자' })).toBeVisible();
   await expect(page.getByRole('button', { name: '학습하러 가기' })).toBeVisible();
   await page.screenshot({
@@ -58,7 +59,7 @@ test('returns to the learning view with browser back', async ({ page }) => {
 
   await expect(page).toHaveURL(/#studio$/);
   await expect(page.locator('#garden-summary-title')).toBeVisible();
-  await expect(page.getByRole('heading', { name: '나만의 정원' })).toHaveCount(0);
+  await expect(page.locator('#garden-view')).toHaveCount(0);
 });
 
 test('places and moves an item across named canvas coordinates', async ({ page }) => {
@@ -69,6 +70,21 @@ test('places and moves an item across named canvas coordinates', async ({ page }
   await page.goto('/#garden');
   await page.reload();
 
+  // Legacy rewards migrate into Korean even when the studio selects math.
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-world', 'math');
+  await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^국어/ }).click();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('digi-mon/garden-state@1')!))).toMatchObject({
+    version: 3,
+    activeSubject: 'korean',
+    worlds: {
+      korean: {
+        answeredKeys: unlockedState.answeredKeys,
+        unlockedItemIds: unlockedState.unlockedItemIds,
+        latestRewardId: unlockedState.latestRewardId,
+      },
+      math: { answeredKeys: [], unlockedItemIds: [], placements: {} },
+    },
+  });
   await page.getByRole('button', { name: /달빛 의자/ }).click();
   await expect(page.getByRole('button', { name: /배치 지점/ })).toHaveCount(8);
   await page.getByRole('button', { name: '연못 옆 배치 지점' }).click();
@@ -102,6 +118,7 @@ test('shows twelve collected decorations grouped into four themes', async ({ pag
   }, expandedCollectionState);
   await page.goto('/#garden');
   await page.reload();
+  await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^국어/ }).click();
 
   await expect(page.getByText('모은 장식 12/12')).toBeVisible();
   for (const theme of ['쉴 곳', '꽃과 열매', '물가 풍경', '하늘과 빛']) {
@@ -122,6 +139,7 @@ test('keeps the expanded collection usable at a tablet viewport', async ({ page 
   }, expandedCollectionState);
   await page.goto('/#garden');
   await page.reload();
+  await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^국어/ }).click();
 
   await expect(page.getByText('모은 장식 12/12')).toBeVisible();
   expect(await page.evaluate(
@@ -141,6 +159,7 @@ test('keeps the expanded collection usable at a mobile viewport', async ({ page 
   }, expandedCollectionState);
   await page.goto('/#garden');
   await page.reload();
+  await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^국어/ }).click();
 
   await expect(page.getByText('모은 장식 12/12')).toBeVisible();
   expect(await page.evaluate(
@@ -158,7 +177,8 @@ test('keeps the dedicated room usable on a learner viewport', async ({ page }) =
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#garden');
 
-  await expect(page.getByRole('heading', { name: '나만의 정원' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '나만의 강아지 마당', exact: true })).toBeVisible();
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-world', 'math');
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   );

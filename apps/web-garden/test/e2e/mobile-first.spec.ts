@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('a plentiful worksheet keeps every item and choice on touch screens and paper', async ({ page }) => {
   await page.goto('/');
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('radio', { name: '수학', exact: true }).check();
   await page.getByLabel('학년군').selectOption('1-2');
   await page.getByLabel('영역').selectOption({ label: '수와 연산' });
@@ -38,6 +39,7 @@ test('a plentiful worksheet keeps every item and choice on touch screens and pap
 
 test('visiting a companion and returning preserves the active worksheet and answer', async ({ page }) => {
   await page.goto('/');
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('radio', { name: '수학', exact: true }).check();
   await page.getByLabel('문항 수').fill('6');
   await page.getByLabel('seed').fill('mobile-answer-retention');

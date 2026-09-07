@@ -12,6 +12,7 @@ test('fork preserves subject worksheet generation and engine geometry', async ({
   await expect(page.locator('#garden-summary-title')).toBeVisible();
 
   await page.getByRole('button', { name: '문제 만들기' }).click();
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('radio', { name: '수학' }).check();
   await page.getByLabel('학년군').selectOption('3-4');
   await page.getByLabel('영역').selectOption({ label: '도형과 측정' });
@@ -20,6 +21,7 @@ test('fork preserves subject worksheet generation and engine geometry', async ({
   await page.getByRole('button', { name: '6문항 생성' }).click();
 
   await expect(page.locator('.dm-item')).toHaveCount(6);
+  await page.locator('.dm-worksheet-ticket > summary').click();
   await expect(page.getByText(/fingerprint/i)).toBeVisible();
   await expect(
     page.locator('.dm-figure svg[role="img"], .dm-figure-fallback').first(),
@@ -34,6 +36,7 @@ test('fork preserves subject worksheet generation and engine geometry', async ({
 test('three unique answers unlock one reward and duplicate changes do not count', async ({ page }) => {
   await page.goto('/');
   await page.goto('/#diagnostic');
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('radio', { name: '수학' }).check();
   await page.getByLabel('학년군').selectOption('1-2');
   await page.getByLabel('문항 수').fill('6');

@@ -8,6 +8,7 @@ test('prints fifty real symbolic calculations in compact columns without losing 
     postData: JSON.stringify({ ...route.request().postDataJSON(), codes: ['[2수01-06]'] }),
   }));
   await page.goto('/');
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('button', { name: '50문항 넉넉히', exact: true }).click();
   const responseReady = page.waitForResponse((response) => response.url().endsWith('/learner/api/v1/worksheets') && response.request().method() === 'POST');
   await page.getByRole('button', { name: '50문항 생성', exact: true }).click();

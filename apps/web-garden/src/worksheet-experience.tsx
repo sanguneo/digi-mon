@@ -1,4 +1,5 @@
 import type { Difficulty, GradeBand, Subject, Worksheet } from './api.ts';
+import { SubjectMark } from './subject-mark.tsx';
 
 export interface PracticePreset {
   count: number;
@@ -35,8 +36,10 @@ export const SUBJECT_PRACTICE: Record<Subject, {
     guidance: '두 문제씩 읽어 봐요. 글에서 중요한 말을 찾고, 내 생각은 아래 칸에 천천히 써요.',
     answerLabel: '내 생각을 써 보세요',
     presets: [
-      { count: 6, label: '6문항 차근차근', domain: '', difficulty: 1 },
-      { count: 10, label: '10문항 더 읽기', domain: '', difficulty: 1 },
+      { count: 12, label: '12문항 골고루', domain: '', difficulty: 1 },
+      { count: 30, label: '30문항 더 읽기', domain: '', difficulty: 1 },
+      { count: 50, label: '50문항 넉넉히', domain: '', difficulty: 1 },
+      { count: 100, label: '100문항 충분히', domain: '', difficulty: 1 },
     ],
   },
   english: {
@@ -45,8 +48,10 @@ export const SUBJECT_PRACTICE: Record<Subject, {
     guidance: '세 문제씩 만나요. 낱말과 짧은 문장을 읽고, 알맞은 답을 고르거나 써요.',
     answerLabel: '낱말이나 짧은 문장을 써 보세요',
     presets: [
-      { count: 6, label: '6문항 짧게 시작', domain: '', difficulty: 1 },
-      { count: 9, label: '9문항 더 연습', domain: '', difficulty: 1 },
+      { count: 12, label: '12문항 골고루', domain: '', difficulty: 1 },
+      { count: 30, label: '30문항 더 연습', domain: '', difficulty: 1 },
+      { count: 50, label: '50문항 넉넉히', domain: '', difficulty: 1 },
+      { count: 100, label: '100문항 충분히', domain: '', difficulty: 1 },
     ],
   },
 };
@@ -60,6 +65,7 @@ export function practicePresets(subject: Subject, grade: GradeBand): PracticePre
     { count: 12, label: '12문항 골고루', domain: '', difficulty: grade === '1-2' ? 1 : 2 },
     { count: 30, label: `30문항 ${topic}`, domain: '수와 연산', difficulty: 1 },
     { count: 50, label: '50문항 넉넉히', domain: '수와 연산', difficulty: 1 },
+    { count: 100, label: '100문항 충분히', domain: '수와 연산', difficulty: 1 },
     { count: 12, label: '12문항 생각 넓히기', domain: '', difficulty: grade === '1-2' ? 2 : 3 },
   ];
 }
@@ -77,13 +83,13 @@ export function WorksheetHeader({ worksheet, adaptive = false }: { worksheet: Wo
           <h3>{adaptive ? '맞춤 학습지' : `${practice.label} · ${grades}학년`}</h3>
           <p>난이도 {difficultyLabel} · {worksheet.produced}문항</p>
         </div>
-        <div className="dm-seal">
+        <details className="dm-worksheet-ticket"><summary>학습지 정보</summary><div className="dm-seal">
           <span>seed {worksheet.seed}</span>
           <span>fingerprint {worksheet.fingerprint.slice(0, 12)}</span>
-        </div>
+        </div></details>
       </header>
       <div className="dm-worksheet__guidance">
-        <span className="dm-subject-option__mark" aria-hidden="true">{practice.mark}</span>
+        <SubjectMark subject={worksheet.options.subject} />
         <p>{practice.guidance}</p>
       </div>
       <div className="dm-worksheet__tools">

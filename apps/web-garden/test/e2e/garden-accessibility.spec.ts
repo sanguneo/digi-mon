@@ -25,6 +25,10 @@ test('garden stays pressure-free, keyboard-operable, and overflow-free', async (
 
   await page.getByRole('button', { name: '세상 둘러보기', exact: true }).click();
   const canvas = page.locator('canvas[data-renderer="three-webgl"]');
+  await expect(canvas).toHaveAttribute('data-world', 'math');
+  await expect(page.getByRole('button', { name: /통통 공/ })).toBeDisabled();
+  await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^국어/ }).click();
+  await expect(canvas).toHaveAttribute('data-world', 'korean');
   await expect(canvas).toHaveAttribute('data-motion', 'off');
   expect(await canvas.evaluate((element) => getComputedStyle(element).touchAction)).toBe('pan-y');
   const cameraDisclosure = page.locator('.world-camera summary');

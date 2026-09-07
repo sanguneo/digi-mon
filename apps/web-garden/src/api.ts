@@ -170,6 +170,7 @@ export function createWorksheet(
     difficulty?: Difficulty;
     modes?: string[];
     seed: string;
+    excludeItemIds?: string[];
   },
 ): Promise<Worksheet> {
   return requestJson('/learner/api/v1/worksheets', {

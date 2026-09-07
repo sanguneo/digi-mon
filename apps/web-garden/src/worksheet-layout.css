@@ -55,6 +55,36 @@ textarea:focus-visible { outline: 3px solid var(--dm-accent); outline-offset: 3p
 .dm-item[data-dm-subject='english'] .dm-writing-space { min-height: 80px; }
 .dm-writing-space--print { display: none; }
 
+@media screen {
+  .dm-worksheet { margin: 24px -8px 8px; padding: 20px 16px; border: 1px solid var(--garden-rule); border-radius: 16px; background: #f7f6ef; }
+  .dm-worksheet__header { flex-direction: row; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--garden-rule); }
+  .dm-worksheet__header h3 { font-size: 24px; }
+  .dm-worksheet__header p { margin-block: 4px; font-size: 13px; }
+  .dm-worksheet-ticket { max-width: 45%; }
+  .dm-worksheet-ticket > summary { font-size: 12px; white-space: nowrap; }
+  .dm-seal { border-width: 1px; font-size: 10px; }
+  .dm-worksheet__guidance { gap: 12px; margin-bottom: 16px; font-size: 14px; }
+  .dm-worksheet__guidance .dm-subject-mark { width: 32px; height: 32px; }
+  .dm-worksheet__tools { gap: 12px; margin-bottom: 20px; }
+  .dm-worksheet__tools p { font-size: 12px; }
+  .dm-worksheet__tools .dm-btn { width: auto; font-size: 13px; }
+  .dm-practice { gap: 24px; }
+  .dm-chunk-nav { gap: 8px; }
+  .dm-chunk-nav > span { font-size: 13px; }
+  .dm-chunk-nav a { border-color: var(--garden-rule); border-radius: 8px; padding: 12px; font-size: 13px; background: var(--garden-paper); }
+  .dm-practice-group__header { border-bottom: 0; margin-bottom: 12px; padding-bottom: 0; }
+  .dm-practice-group__header h4 { font-size: 16px; }
+  .dm-practice-group__header > span { font-size: 12px; }
+  .dm-item { min-height: 0; padding: 20px 16px; border-width: 1px; border-radius: 12px; box-shadow: 0 2px 3px rgb(47 65 40 / 4%); }
+  .dm-item__meta { margin-bottom: 12px; }
+  .dm-item__number { font-size: 20px; color: var(--dm-accent); font-weight: 800; }
+  .dm-badge { border-width: 1px; font-weight: 600; }
+  .dm-item__meta .dm-badge--quiet { border: 0; font-size: 10px; }
+  .dm-answer { padding-top: 16px; }
+  .dm-answer__input { border-radius: 8px; }
+  .dm-choice { border-width: 1px; border-radius: 8px; }
+}
+
 @media (max-width: 640px) {
   .dm-worksheet { padding: 24px 16px; }
   .dm-item { padding: 20px 16px; }

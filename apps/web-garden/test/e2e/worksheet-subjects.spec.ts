@@ -57,6 +57,7 @@ test('renders subject sheets, exact choices, progressive help, and full print se
   await expect(help.locator('li')).toHaveText(helpItem.learningSupport.hints.map((hint) => hint.text));
   await page.locator('.dm-worksheet').screenshot({ path: `${screenshots}-math-mobile.png` });
 
+  await page.locator('.dm-studio-settings > summary').click();
   await page.getByRole('button', { name: '50문항 넉넉히', exact: true }).click();
   const plentiful = await generate(50);
   await checkLayout(plentiful);
