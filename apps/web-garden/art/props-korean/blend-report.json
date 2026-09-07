@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "blender_version": "5.2.1 LTS",
+  "identity_groups": 14,
+  "editable_meshes": 265,
+  "triangles": 23842,
+  "materials": 2,
+  "images": 0,
+  "cameras": 0,
+  "lights": 0,
+  "animations": 0,
+  "parts": {
+    "moon-chair": {
+      "editable_features": 18,
+      "triangles": 1544,
+      "bounds_error": 5.2452087562215866e-08
+    },
+    "dandelion-pot": {
+      "editable_features": 45,
+      "triangles": 1412,
+      "bounds_error": 1.1248711295763769e-08
+    },
+    "tiny-pond": {
+      "editable_features": 8,
+      "triangles": 1336,
+      "bounds_error": 1.1920928910669204e-08
+    },
+    "cloud-balloon": {
+      "editable_features": 3,
+      "triangles": 558,
+      "bounds_error": 9.536743128535363e-08
+    },
+    "reading-cat": {
+      "editable_features": 28,
+      "triangles": 2300,
+      "bounds_error": 1.907348634588857e-08
+    },
+    "rainbow-flag": {
+      "editable_features": 2,
+      "triangles": 312,
+      "bounds_error": 2.1457672083613488e-08
+    },
+    "picnic-basket": {
+      "editable_features": 26,
+      "triangles": 3420,
+      "bounds_error": 5.960464455334602e-09
+    },
+    "strawberry-patch": {
+      "editable_features": 74,
+      "triangles": 2532,
+      "bounds_error": 1.70212721695151e-08
+    },
+    "mushroom-home": {
+      "editable_features": 12,
+      "triangles": 2060,
+      "bounds_error": 5.7220459037665705e-08
+    },
+    "bird-bath": {
+      "editable_features": 8,
+      "triangles": 1220,
+      "bounds_error": 1.1920928910669204e-08
+    },
+    "pebble-fountain": {
+      "editable_features": 9,
+      "triangles": 1476,
+      "bounds_error": 1.4305114648394124e-08
+    },
+    "firefly-lantern": {
+      "editable_features": 17,
+      "triangles": 1748,
+      "bounds_error": 3.337860099428269e-08
+    },
+    "watering-can": {
+      "editable_features": 5,
+      "triangles": 1652,
+      "bounds_error": 2.347922500867128e-08
+    },
+    "sunlight-token": {
+      "editable_features": 10,
+      "triangles": 2272,
+      "bounds_error": 5.9604643443123e-10
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "loader": "Three GLTFLoader",
+  "directGroups": 14,
+  "triangles": 23842,
+  "careCanAngles": [
+    -0.3,
+    -0.7
+  ],
+  "careSunHeights": [
+    2.2,
+    3.35
+  ],
+  "parts": {
+    "moon-chair": {
+      "triangles": 1544,
+      "meshes": 1,
+      "boundsError": 5.2452087562215866e-8
+    },
+    "dandelion-pot": {
+      "triangles": 1412,
+      "meshes": 1,
+      "boundsError": 1.1248711295763769e-8
+    },
+    "tiny-pond": {
+      "triangles": 1336,
+      "meshes": 2,
+      "boundsError": 1.1920928910669204e-8
+    },
+    "cloud-balloon": {
+      "triangles": 558,
+      "meshes": 1,
+      "boundsError": 9.536743128535363e-8
+    },
+    "reading-cat": {
+      "triangles": 2300,
+      "meshes": 2,
+      "boundsError": 1.907348634588857e-8
+    },
+    "rainbow-flag": {
+      "triangles": 312,
+      "meshes": 1,
+      "boundsError": 2.1457672083613488e-8
+    },
+    "picnic-basket": {
+      "triangles": 3420,
+      "meshes": 1,
+      "boundsError": 5.960464455334602e-9
+    },
+    "strawberry-patch": {
+      "triangles": 2532,
+      "meshes": 1,
+      "boundsError": 1.70212721695151e-8
+    },
+    "mushroom-home": {
+      "triangles": 2060,
+      "meshes": 1,
+      "boundsError": 5.7220459037665705e-8
+    },
+    "bird-bath": {
+      "triangles": 1220,
+      "meshes": 2,
+      "boundsError": 1.1920928910669204e-8
+    },
+    "pebble-fountain": {
+      "triangles": 1476,
+      "meshes": 2,
+      "boundsError": 1.4305114648394124e-8
+    },
+    "firefly-lantern": {
+      "triangles": 1748,
+      "meshes": 2,
+      "boundsError": 3.337860099428269e-8
+    },
+    "watering-can": {
+      "triangles": 1652,
+      "meshes": 2,
+      "boundsError": 2.347922500867128e-8
+    },
+    "sunlight-token": {
+      "triangles": 2272,
+      "meshes": 1,
+      "boundsError": 5.9604643443123e-10
+    }
+  },
+  "rendering": false,
+  "networkRequests": 0
+}

@@ -80,6 +80,9 @@ Korean Elementary Learning Map의 `kr-full-depth-v0.4` 자료를 읽어 만든 �
 - `apps/web-garden/art/puppy/`, `art/tree/`, `art/fish/`의 Blender 제작 스크립트·편집 원본과
   그 원본에서 내보낸 `apps/web-garden/public/models/`의 강아지·나무·물고기 GLB.
   외부 모델이나 텍스처를 가져오지 않고 프로젝트에서 직접 제작한다.
+- `apps/web-garden/art/props-korean/`, `art/props-english/`, `art/props-math/`의
+  장식·돌봄 소품 제작 원본과 해당 `props-*.glb` 라이브러리.
+  기존 소품의 식별자·배치 좌표를 유지하며, 재질 색은 이미지가 아닌 정점 색으로 저장한다.
 
 ## 생성 산출물
 

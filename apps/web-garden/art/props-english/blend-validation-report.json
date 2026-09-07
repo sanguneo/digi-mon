@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "blender_version": "5.2.1 LTS",
+  "objects": 9,
+  "meshes": 8,
+  "materials": 3,
+  "forbidden_datablocks": [],
+  "parts": {
+    "bubble-rock": {
+      "triangles": 2072,
+      "closed_manifold_edges": 3108,
+      "signed_volume": 0.238379360812562
+    },
+    "bubble-trail": {
+      "triangles": 3240,
+      "closed_manifold_edges": 4860,
+      "signed_volume": 0.0030479599620599506
+    },
+    "coral-garden": {
+      "triangles": 2482,
+      "closed_manifold_edges": 3723,
+      "signed_volume": 0.04183073626628417
+    },
+    "fish-food": {
+      "triangles": 840,
+      "closed_manifold_edges": 1260,
+      "signed_volume": 0.00320085447719057
+    },
+    "ribbon-kelp": {
+      "triangles": 780,
+      "closed_manifold_edges": 1170,
+      "signed_volume": 0.023699964685909687
+    },
+    "shell-arch": {
+      "triangles": 2036,
+      "closed_manifold_edges": 3054,
+      "signed_volume": 0.23732265326159205
+    },
+    "star-lamp": {
+      "triangles": 2520,
+      "closed_manifold_edges": 3780,
+      "signed_volume": 0.043708836896040014
+    },
+    "treasure-chest": {
+      "triangles": 1780,
+      "closed_manifold_edges": 2670,
+      "signed_volume": 0.15419655635266194
+    }
+  }
+}
