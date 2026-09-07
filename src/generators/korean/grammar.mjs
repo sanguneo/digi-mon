@@ -742,19 +742,18 @@ const spacingFix = {
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 조사 붙여쓰기, 2는 수와 단위 띄어쓰기, 3은 의존 명사(것·수·동안) 띄어쓰기를 다룬다.',
   standardCode: '[6국04-06]',
-  skill: '띄어쓰기가 바른 문장 고르기',
-  format: 'multiple-choice',
+  skill: '문장의 띄어쓰기 바르게 고치기',
+  format: 'short-answer',
   generate(rng, { difficulty }) {
     // 난이도가 오를수록 뒤쪽 사례(의존 명사 띄어쓰기)까지 넓힌다.
     const upTo = difficulty === 1 ? 5 : difficulty === 2 ? 10 : SPACING_CASES.length;
     const pool = SPACING_CASES.slice(0, upTo);
     const spec = rng.pick(pool);
-    const others = rng.shuffle(SPACING_CASES.filter((c) => c.right !== spec.right)).slice(0, 3);
     return {
       params: { right: spec.right },
-      instruction: '띄어쓰기가 바른 문장을 고르시오.',
-      stem: '다음 중 띄어쓰기가 알맞은 문장은 어느 것입니까?',
-      choices: buildChoices(rng, `${spec.right}.`, [`${spec.wrong}.`, ...others.map((c) => `${c.wrong}.`)].slice(0, 3)),
+      instruction: '다음 문장의 띄어쓰기를 바르게 고쳐 쓰시오.',
+      // 바른 문장을 선택지로 보여 주지 않고, 잘못 띄어 쓴 문장을 직접 고치게 한다.
+      stem: `${spec.wrong}.`,
       answer: { value: `${spec.right}.`, display: `${spec.right}.`, accepts: [`${spec.right}.`, spec.right] },
       solution: [spec.rule, `바르게 띄어 쓰면 '${spec.right}.'이다.`],
       dedupeKey: `spacing:${spec.right}:${difficulty}`,

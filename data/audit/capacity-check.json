@@ -2011,7 +2011,7 @@
     {
       "generatorId": "korean.g56.gr.s06.spacing",
       "code": "[6국04-06]",
-      "skill": "띄어쓰기가 바른 문장 고르기",
+      "skill": "문장의 띄어쓰기 바르게 고치기",
       "axis": "categorical",
       "capacityNote": null,
       "uniqueAtBase": 29,

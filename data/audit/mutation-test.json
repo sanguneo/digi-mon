@@ -2197,7 +2197,7 @@
     {
       "generatorId": "korean.g56.gr.s06.spacing",
       "code": "[6국04-06]",
-      "skill": "띄어쓰기가 바른 문장 고르기",
+      "skill": "문장의 띄어쓰기 바르게 고치기",
       "mutants": 80,
       "escaped": 0,
       "noMutants": 0,

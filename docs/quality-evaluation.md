@@ -3,7 +3,7 @@
 이 문서는 사람이 작성하는 판정 원장이다. 표본과 정답은 [생성된 품질 기준선](review/quality-baseline.md)에서 읽는다.
 생성 성공, schema 통과, 자동 검산은 교육적 품질 승인이 아니다.
 
-baselineFingerprint: `decf5d0095335ff08622c73492574d9ed4d104cbc4be7d7ffbe2bee9212ae18c`
+baselineFingerprint: `58c6eee20402a82425465da12617a5d50b04774ecc6f44f9a674176e735591b7`
 reviewer: `pending`
 reviewDate: `pending`
 
@@ -87,9 +87,9 @@ reviewDate: `pending`
 | `WS-K34-D1` | `40d6748c20a06a5655750ba099dd34057432543543cae365b6d234655f7bf49a` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-K34-D2` | `6b7c43ac370e999550e00bd780bf682a908949990de1493a4f16b4543f5f742f` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-K34-D3` | `6983293c27b9d2b28337685a25cffc68db5a2215289b1bbb6ce31fe5ccdad0d0` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-K56-D1` | `766368106f2f03c64118175453b850287e8589715cf1f82fd3cf48baeac30f4c` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-K56-D2` | `288998a90e9ce4c272a1ac6afe2b233b0643baa500b664608e98b779ed63ccbe` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-K56-D3` | `7a0d8a84796633b8bfe7c0512661065017a7bc7418ab13df9902f6374ffec5b6` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-K56-D1` | `af573894a3fc68bd3032383c626c7f5c0d746692a091df113dd882b42b30e984` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-K56-D2` | `feb462e5a1cf095255f4a2a2aa5222fa196c2a6468d0fede90b4104f95d6dcd3` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-K56-D3` | `8b9a8b17bc934495dfaf0067a2267c9385f61006bc64967c5f835148a91add4d` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-E34-D1` | `56e1e916dea17e247f1861a62a59fe51acc3fe3acf5e70fac8098efb11f11275` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-E34-D2` | `ee46b6df080389bedae9a48beaa5832e82eda7352cc48462eef1afa59f9e0d69` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-E34-D3` | `029dd7c4f5b6cf268db832e25dd74c6cd885fd14fc75c279abdd670d764c25e5` | pending | pending | pending | pending | pending | pending | pending | — |
