@@ -107,6 +107,22 @@ export function normalizeExcludeItemIds(value) {
   return normalized.sort();
 }
 
+export function normalizeGeneratorIds(value) {
+  if (value === undefined) return undefined;
+  if (!Array.isArray(value) || value.length === 0
+    || value.some((id) => typeof id !== 'string' || id.length === 0 || id.trim() !== id)) {
+    throw new WorksheetOptionsError(
+      'generatorIds',
+      'generatorIds 는 비어 있지 않은 생성기 id 문자열 배열이어야 한다',
+      value,
+    );
+  }
+  if (new Set(value).size !== value.length) {
+    throw new WorksheetOptionsError('generatorIds', 'generatorIds 에 중복이 없어야 한다', value);
+  }
+  return value.slice().sort();
+}
+
 export function parseWorksheetOptions(source, { maxCount = 100 } = {}) {
   if (!source || typeof source !== 'object' || Array.isArray(source)) {
     throw new WorksheetOptionsError('options', '학습지 옵션은 객체여야 한다', source);
@@ -187,6 +203,7 @@ export function parseWorksheetOptions(source, { maxCount = 100 } = {}) {
     title: source.title,
     followLearningOrder,
     excludeItemIds: normalizeExcludeItemIds(source.excludeItemIds),
+    ...(source.generatorIds === undefined ? {} : { generatorIds: normalizeGeneratorIds(source.generatorIds) }),
   };
 }
 

@@ -447,6 +447,10 @@ export function createApp({
         generators: registry.all().map((g) => ({
           id: g.id,
           standardCode: g.standardCode,
+          subject: standardByCode.get(g.standardCode).subject,
+          gradeBand: standardByCode.get(g.standardCode).gradeBand,
+          domain: standardByCode.get(g.standardCode).domain,
+          difficulties: g.difficulties ?? (g.difficultyAxis === 'single' ? [1] : [1, 2, 3]),
           skill: g.skill,
           format: g.format,
           learningSupportStatus: g.learningGuide ? 'guided-candidate' : 'objective-only',

@@ -9,7 +9,7 @@ import { learningOrder } from '../curriculum/prerequisites.mjs';
 import { assessmentMappingsFor } from '../ontology/alignment.mjs';
 import { buildLearningSupport } from '../curriculum/learning-support.mjs';
 import { finalizeItem } from './item.mjs';
-import { normalizeExcludeItemIds } from './options.mjs';
+import { normalizeExcludeItemIds, normalizeGeneratorIds } from './options.mjs';
 import { createRng } from './rng.mjs';
 import { stableJson } from './stable-json.mjs';
 
@@ -95,9 +95,15 @@ export function generateItem(generator, standard, rng, difficulty) {
   return item;
 }
 
-function eligibleGenerators(registry, code, modes) {
-  return registry.forStandard(code).filter((generator) =>
-    generatorSupportsModes(generator, modes));
+function eligibleGenerators(registry, code, modes, generatorIds, difficulty) {
+  return registry.forStandard(code).filter((generator) => {
+    if (!generatorSupportsModes(generator, modes)) return false;
+    if (!generatorIds) return true;
+    if (!generatorIds.includes(generator.id)) return false;
+    const supported = generator.difficulties
+      ?? (generator.difficultyAxis === 'single' ? [1] : [1, 2, 3]);
+    return difficulty === undefined || supported.includes(difficulty);
+  });
 }
 
 function resolveTargets(spine, registry, {
@@ -106,13 +112,15 @@ function resolveTargets(spine, registry, {
   domains,
   codes,
   modes,
+  generatorIds,
+  difficulty,
 }) {
   return spine.standards.filter((std) => {
     if (subject && std.subject !== subject) return false;
     if (gradeBands?.length && !gradeBands.includes(std.gradeBand)) return false;
     if (domains?.length && !domains.includes(std.domain)) return false;
     if (codes?.length && !codes.includes(std.code)) return false;
-    return eligibleGenerators(registry, std.code, modes).length > 0;
+    return eligibleGenerators(registry, std.code, modes, generatorIds, difficulty).length > 0;
   });
 }
 
@@ -141,6 +149,7 @@ function resolveTargets(spine, registry, {
  * @property {string} [title]
  * @property {boolean} [followLearningOrder] 선수 관계 순서로 배치. 수학만 지원
  * @property {string[]} [excludeItemIds]
+ * @property {string[]} [generatorIds] Exact optional problem-type selector, intersected with other filters.
  */
 
 /**
@@ -186,6 +195,7 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     // true 면 성취기준을 선수 관계 순서로 배치한다. 복습 학습지는 선수부터 풀려야 한다.
     followLearningOrder = false,
     excludeItemIds = [],
+    generatorIds,
   } = options ?? {};
 
   if (!Number.isInteger(count) || count < 1 || count > 100) {
@@ -214,6 +224,18 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     throw new Error(`followLearningOrder 는 수학만 지원한다: ${subject}`);
   }
   const resolvedExcludeItemIds = normalizeExcludeItemIds(excludeItemIds);
+  const resolvedGeneratorIds = normalizeGeneratorIds(generatorIds);
+  if (resolvedGeneratorIds) {
+    const knownIds = new Set(spine.standards.flatMap((std) =>
+      registry.forStandard(std.code).map((generator) => generator.id)));
+    const unknown = resolvedGeneratorIds.filter((id) => !knownIds.has(id));
+    if (unknown.length > 0) {
+      throw new WorksheetTargetError(`생성기를 찾을 수 없다: ${unknown.join(', ')}`, {
+        generatorIds: resolvedGeneratorIds,
+        unknownGeneratorIds: unknown,
+      });
+    }
+  }
 
   const targets = resolveTargets(spine, registry, {
     subject,
@@ -221,6 +243,8 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     domains,
     codes,
     modes: resolvedModes,
+    generatorIds: resolvedGeneratorIds,
+    difficulty: resolvedDifficulty,
   });
   if (targets.length === 0) {
     throw new WorksheetTargetError(
@@ -231,6 +255,10 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
         domains: domains ?? null,
         codes: codes ?? null,
         modes: resolvedModes,
+        ...(resolvedGeneratorIds ? {
+          generatorIds: resolvedGeneratorIds,
+          difficulty: resolvedDifficulty ?? null,
+        } : {}),
       },
     );
   }
@@ -247,7 +275,7 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
   // 성취기준을 고르게 돌린다. 한 기준에 몰리면 학습지가 아니라 반복 훈련이 된다.
   const pool = targets.map((std) => ({
     std,
-    generators: eligibleGenerators(registry, std.code, resolvedModes),
+    generators: eligibleGenerators(registry, std.code, resolvedModes, resolvedGeneratorIds, resolvedDifficulty),
   }));
 
   // 선수 순서를 따를 때는 학습 순서로 정렬해 앞쪽 기준이 먼저 나오게 한다.
@@ -284,12 +312,14 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
       failures.push({ generatorId: g.id, code: std.code, difficulty: d, message: error.message });
       continue;
     }
-    if (resolvedModes.includes('advanced') && item.difficulty !== 3) {
+    if ((resolvedModes.includes('advanced')
+      || (resolvedGeneratorIds && resolvedDifficulty !== undefined))
+      && item.difficulty !== resolvedDifficulty) {
       failures.push({
         generatorId: g.id,
         code: std.code,
         difficulty: d,
-        message: `advanced mode 난이도 drift: ${item.difficulty}`,
+        message: `요청 난이도 drift: expected=${resolvedDifficulty} actual=${item.difficulty}`,
       });
       continue;
     }
@@ -322,6 +352,7 @@ export function buildWorksheet(spine, registry, options, onItemAttempt) {
     modes: resolvedModes,
     followLearningOrder,
     excludeItemIds: resolvedExcludeItemIds,
+    ...(resolvedGeneratorIds ? { generatorIds: resolvedGeneratorIds } : {}),
   };
   const difficultyHistogram = {};
   for (const item of numbered) {
