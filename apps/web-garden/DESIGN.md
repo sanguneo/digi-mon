@@ -23,9 +23,15 @@ press feedback. No source dependency, width animation or letter cascade is copie
 
 Math starts with 12 questions; Korean and English retain their six-question
 starters. 30, 50 and 100 remain explicit options for all subjects,
-with an editable 1-100 count. Native `details` contains grade, covered domain,
-difficulty, count presets and editable seed. The closed summary communicates the
-current grade/difficulty; settings never silently shrink a requested set. Capacity
+with an editable 1-100 count. Count and a native problem-type selector remain visible
+above start, outside advanced settings. They share a compact two-column row using
+the existing field tokens, 48px controls, and a flexible type column. Available types
+come from generator metadata filtered by subject, grade, domain and difficulty;
+the selected generator ID is sent to the engine, never used to filter returned items.
+An explicit count survives subject changes. A subject, grade, domain, difficulty or
+preset change clears the type selection. Native `details` contains grade, covered
+domain, difficulty, count presets and editable seed. Settings never silently shrink a
+requested set. Capacity
 errors preserve both the previous worksheet and all its answers.
 
 ### New practice versus exact repeat

@@ -73,6 +73,7 @@ test('renders subject sheets, exact choices, progressive help, and full print se
   for (const subject of ['국어', '영어']) {
     await page.getByRole('radio', { name: subject, exact: true }).check();
     if (subject === '영어') await expect(page.getByLabel('학년군')).toHaveValue('3-4');
+    await page.getByLabel('문항 수', { exact: true }).fill('6');
     const sheet = await generate(6);
     await checkLayout(sheet);
     await page.locator('.dm-worksheet').screenshot({ path: `${screenshots}-${sheet.options.subject}-mobile.png` });

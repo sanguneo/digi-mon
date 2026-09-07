@@ -18,6 +18,15 @@ export interface SubjectCoverage {
   domains: DomainCoverage[];
 }
 
+export interface ProblemType {
+  readonly id: string;
+  readonly skill: string;
+  readonly subject: Subject;
+  readonly gradeBand: GradeBand;
+  readonly domain: string;
+  readonly difficulties: readonly Difficulty[];
+}
+
 export interface Choice {
   label: string;
   text: string;
@@ -75,6 +84,7 @@ export interface WorksheetOptions {
   gradeBands?: GradeBand[];
   domains?: string[];
   codes?: string[];
+  generatorIds?: string[];
   count: number;
   difficulty?: Difficulty;
   difficultyMix?: Record<string, number>;
@@ -160,12 +170,18 @@ export async function getSubjects(): Promise<SubjectCoverage[]> {
   return payload.subjects;
 }
 
+export async function getProblemTypes(): Promise<ProblemType[]> {
+  const payload = await requestJson<{ generators: ProblemType[] }>('/learner/api/v1/generators');
+  return payload.generators;
+}
+
 export function createWorksheet(
   options: {
     subject: Subject;
     grade?: GradeBand[];
     domain?: string[];
     codes?: string[];
+    generatorIds?: string[];
     count: number;
     difficulty?: Difficulty;
     modes?: string[];

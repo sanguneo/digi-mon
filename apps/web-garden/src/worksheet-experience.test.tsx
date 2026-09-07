@@ -3,7 +3,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Worksheet } from './api.ts';
 import { collectResponses, ProblemStudio, WorksheetItems } from './problem-studio.tsx';
-import { createWorksheet, getSubjects } from './api.ts';
+import { createWorksheet, getProblemTypes, getSubjects } from './api.ts';
 import { isCompactCalculation } from './worksheet-items.tsx';
 
 const { answerItem } = vi.hoisted(() => ({ answerItem: vi.fn() }));
@@ -13,6 +13,7 @@ vi.mock('./api.ts', async (original) => ({
   ...await original<typeof import('./api.ts')>(),
   createWorksheet: vi.fn(),
   getSubjects: vi.fn(),
+  getProblemTypes: vi.fn(),
 }));
 
 function worksheet(subject: 'math' | 'korean' | 'english', count: number): Worksheet {
@@ -33,6 +34,7 @@ function worksheet(subject: 'math' | 'korean' | 'english', count: number): Works
 beforeEach(() => {
   HTMLElement.prototype.scrollIntoView = vi.fn();
   vi.mocked(getSubjects).mockResolvedValue([]);
+  vi.mocked(getProblemTypes).mockResolvedValue([]);
   vi.mocked(createWorksheet).mockImplementation(async (options) => worksheet(options.subject, options.count));
 });
 afterEach(() => { cleanup(); vi.clearAllMocks(); });

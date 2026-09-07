@@ -1,12 +1,12 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { createWorksheet, getSubjects, type Worksheet } from './api.ts';
+import { createWorksheet, getProblemTypes, getSubjects, type Worksheet } from './api.ts';
 import { GameProvider, useGame } from './game-context.tsx';
 import { ProblemStudio } from './problem-studio.tsx';
 
 vi.mock('./api.ts', async (original) => ({
-  ...await original<typeof import('./api.ts')>(), createWorksheet: vi.fn(), getSubjects: vi.fn(),
+  ...await original<typeof import('./api.ts')>(), createWorksheet: vi.fn(), getSubjects: vi.fn(), getProblemTypes: vi.fn(),
 }));
 
 function sheet(seed: string, generation: number): Worksheet {
@@ -32,6 +32,7 @@ beforeEach(() => {
   HTMLElement.prototype.scrollIntoView = vi.fn();
   localStorage.clear();
   vi.mocked(getSubjects).mockResolvedValue([]);
+  vi.mocked(getProblemTypes).mockResolvedValue([]);
   vi.mocked(createWorksheet).mockImplementation(async (options) => sheet(options.seed, vi.mocked(createWorksheet).mock.calls.length));
 });
 afterEach(() => { cleanup(); vi.clearAllMocks(); });

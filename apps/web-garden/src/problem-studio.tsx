@@ -1,6 +1,6 @@
 import { type FormEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { ApiError, createWorksheet, getSubjects } from './api.ts';
-import type { Difficulty, GradeBand, Subject, SubjectCoverage, Worksheet } from './api.ts';
+import { ApiError, createWorksheet, getProblemTypes, getSubjects } from './api.ts';
+import type { Difficulty, GradeBand, ProblemType, Subject, SubjectCoverage, Worksheet } from './api.ts';
 import { SUBJECT_PRACTICE, WorksheetHeader, practicePresets, type PracticePreset } from './worksheet-experience.tsx';
 import { WorksheetItems } from './worksheet-items.tsx';
 import { SubjectMark } from './subject-mark.tsx';
@@ -25,6 +25,7 @@ export interface StudioOptions {
   subject: Subject;
   grade: GradeBand;
   domain: string;
+  generatorId: string;
   count: number;
   difficulty: Difficulty;
   seed: string;
@@ -39,8 +40,11 @@ interface ProblemStudioProps {
 
 export function ProblemStudio({ mode, onWorksheet, onSubjectChange, subjectRequest }: ProblemStudioProps) {
   const [subjects, setSubjects] = useState<SubjectCoverage[]>([]);
+  const [problemTypes, setProblemTypes] = useState<ProblemType[]>([]);
+  const [typesLoading, setTypesLoading] = useState(true);
+  const countChosen = useRef(false);
   const [options, setOptions] = useState<StudioOptions>({
-    subject: 'math', grade: '1-2', domain: '', count: 12, difficulty: 1,
+    subject: 'math', grade: '1-2', domain: '', generatorId: '', count: 12, difficulty: 1,
     seed: mode === 'diagnostic' ? 'garden-reward-e2e' : 'garden-math',
   });
   const [worksheet, setWorksheet] = useState<Worksheet | null>(null);
@@ -61,27 +65,35 @@ export function ProblemStudio({ mode, onWorksheet, onSubjectChange, subjectReque
     void getSubjects().then(setSubjects).catch((cause: unknown) => {
       setError(cause instanceof Error ? cause.message : String(cause));
     });
+    void getProblemTypes().then(setProblemTypes).catch((cause: unknown) => {
+      setError(cause instanceof Error ? cause.message : String(cause));
+    }).finally(() => setTypesLoading(false));
   }, []);
 
   useEffect(() => {
     if (!subjectRequest) return;
     const next = SUBJECT_PRACTICE[subjectRequest.subject];
-    setOptions((current) => ({ ...current, subject: subjectRequest.subject, grade: next.grade, count: next.count, domain: '', difficulty: 1 }));
+    setOptions((current) => ({ ...current, subject: subjectRequest.subject, grade: next.grade, count: countChosen.current ? current.count : next.count, domain: '', generatorId: '', difficulty: 1 }));
     onSubjectChange?.(subjectRequest.subject);
   }, [subjectRequest, onSubjectChange]);
 
   const practice = SUBJECT_PRACTICE[options.subject];
   const subjectCoverage = subjects.find((entry) => entry.subject === options.subject);
   const domains = useMemo(() => subjectCoverage?.domains.filter((entry) => entry.covered > 0) ?? [], [subjectCoverage]);
+  const availableTypes = problemTypes.filter((type) => type.subject === options.subject
+    && type.gradeBand === options.grade
+    && (!options.domain || type.domain === options.domain)
+    && type.difficulties.includes(options.difficulty));
   const countValid = Number.isInteger(options.count) && options.count >= 1 && options.count <= 100;
 
   const chooseSubject = (subject: Subject) => {
     const next = SUBJECT_PRACTICE[subject];
-    setOptions((current) => ({ ...current, subject, grade: next.grade, count: next.count, domain: '', difficulty: 1 }));
+    setOptions((current) => ({ ...current, subject, grade: next.grade, count: countChosen.current ? current.count : next.count, domain: '', generatorId: '', difficulty: 1 }));
     onSubjectChange?.(subject);
   };
   const choosePreset = (preset: PracticePreset) => {
-    setOptions((current) => ({ ...current, count: preset.count, domain: preset.domain, difficulty: preset.difficulty }));
+    countChosen.current = true;
+    setOptions((current) => ({ ...current, count: preset.count, domain: preset.domain, generatorId: '', difficulty: preset.difficulty }));
   };
   const generate = async (fresh: boolean) => {
     if (!countValid || requestInFlight.current) return;
@@ -96,6 +108,7 @@ export function ProblemStudio({ mode, onWorksheet, onSubjectChange, subjectReque
       const result = await createWorksheet({
         subject: options.subject, grade: [options.grade],
         ...(options.domain ? { domain: [options.domain] } : {}),
+        ...(options.generatorId ? { generatorIds: [options.generatorId] } : {}),
         count: options.count, difficulty: options.difficulty, seed,
         ...(excludeItemIds ? { excludeItemIds } : {}),
       });
@@ -144,18 +157,35 @@ export function ProblemStudio({ mode, onWorksheet, onSubjectChange, subjectReque
             ))}
           </div>
         </fieldset>
+        <div className="dm-generation-options">
+          <label className="dm-field">
+            <span>문항 수</span>
+            <input aria-label="문항 수" disabled={loading} aria-invalid={!countValid} max="100" min="1" step="1" onChange={(event) => {
+              countChosen.current = true;
+              setOptions((current) => ({ ...current, count: event.target.valueAsNumber }));
+            }} type="number" value={Number.isNaN(options.count) ? '' : options.count} />
+          </label>
+          <label className="dm-field">
+            <span>문제 유형</span>
+            <select aria-label="문제 유형" disabled={loading || typesLoading} value={options.generatorId} onChange={(event) => setOptions((current) => ({ ...current, generatorId: event.target.value }))}>
+              <option value="">{typesLoading ? '유형 불러오는 중…' : '전체 유형'}</option>
+              {availableTypes.map((type) => <option key={type.id} value={type.id}>{type.skill}</option>)}
+            </select>
+          </label>
+        </div>
+        {!countValid ? <p className="dm-field-error">문항 수는 1개부터 100개까지입니다.</p> : null}
         <div className="dm-start-row">
           <p><strong>{practice.label} {options.count}문항</strong><span>{options.grade}학년 · {DIFFICULTIES.find((entry) => entry.value === options.difficulty)?.label}</span></p>
           <button className="dm-btn dm-btn--primary" disabled={!countValid || loading} aria-busy={loading} type="submit">{loading ? '만드는 중…' : mode === 'diagnostic' ? '진단평가 시작' : `${options.count}문항 생성`}</button>
         </div>
         <details className="dm-studio-settings">
-          <summary>학습 설정 <span>학년 · 문항 수 · 난이도</span></summary>
+          <summary>학습 설정 <span>학년 · 영역 · 난이도</span></summary>
           <div className="dm-studio-settings__body">
         <fieldset className="dm-control-group" disabled={loading}>
           <legend>빠르게 고르기</legend>
           <div className="dm-practice-presets">
             {practicePresets(options.subject, options.grade).map((preset) => (
-              <button className="dm-btn" key={preset.label} type="button" aria-pressed={options.count === preset.count && options.domain === preset.domain && options.difficulty === preset.difficulty} onClick={() => choosePreset(preset)}>{preset.label}</button>
+              <button className="dm-btn" key={preset.label} type="button" aria-pressed={!options.generatorId && options.count === preset.count && options.domain === preset.domain && options.difficulty === preset.difficulty} onClick={() => choosePreset(preset)}>{preset.label}</button>
             ))}
           </div>
           <p className="dm-preset-note">{options.subject === 'math' ? '골고루는 여러 영역, 30·50문항은 이 학년의 쉬운 수와 연산, 생각 넓히기는 여러 영역의 도전 문제예요. 문항 수는 100개까지 바꿀 수 있어요.' : '아래에서 학년과 문항 수를 바꿀 수 있어요.'}</p>
@@ -163,30 +193,28 @@ export function ProblemStudio({ mode, onWorksheet, onSubjectChange, subjectReque
         <div className="dm-field-row">
           <label className="dm-field">
             <span>학년군</span>
-            <select aria-label="학년군" disabled={loading} value={options.grade} onChange={(event) => setOptions((current) => ({ ...current, grade: event.target.value as GradeBand }))}>
+            <select aria-label="학년군" disabled={loading} value={options.grade} onChange={(event) => {
+              const grade = GRADES.find((entry) => entry === event.target.value);
+              if (grade) setOptions((current) => ({ ...current, grade, generatorId: '' }));
+            }}>
               {GRADES.filter((grade) => options.subject !== 'english' || grade !== '1-2').map((grade) => <option key={grade} value={grade}>{grade}학년</option>)}
             </select>
           </label>
           <label className="dm-field">
             <span>영역</span>
-            <select aria-label="영역" disabled={loading} value={options.domain} onChange={(event) => setOptions((current) => ({ ...current, domain: event.target.value }))}>
+            <select aria-label="영역" disabled={loading} value={options.domain} onChange={(event) => setOptions((current) => ({ ...current, domain: event.target.value, generatorId: '' }))}>
               <option value="">전체 영역</option>
               {domains.map((domain) => <option key={domain.domain} value={domain.domain}>{domain.domain}</option>)}
             </select>
           </label>
-          <label className="dm-field">
-            <span>문항 수</span>
-            <input aria-label="문항 수" disabled={loading} aria-invalid={!countValid} max="100" min="1" onChange={(event) => setOptions((current) => ({ ...current, count: event.target.valueAsNumber }))} type="number" value={Number.isNaN(options.count) ? '' : options.count} />
-          </label>
         </div>
         {options.subject === 'english' ? <p className="dm-preset-note">학교 영어 교육과정은 3학년부터 시작해요. 처음이라면 3-4학년의 쉬운 문제로 연습해요.</p> : null}
-        {!countValid ? <p className="dm-field-error">문항 수는 1개부터 100개까지입니다.</p> : null}
         <fieldset className="dm-control-group" disabled={loading}>
           <legend>난이도</legend>
           <div className="dm-difficulty-picker">
             {DIFFICULTIES.map((difficulty) => (
               <label className="dm-difficulty-option" key={difficulty.value}>
-                <input checked={options.difficulty === difficulty.value} name={`${mode}-difficulty`} onChange={() => setOptions((current) => ({ ...current, difficulty: difficulty.value }))} type="radio" />
+                <input checked={options.difficulty === difficulty.value} name={`${mode}-difficulty`} onChange={() => setOptions((current) => ({ ...current, difficulty: difficulty.value, generatorId: '' }))} type="radio" />
                 <strong>{difficulty.label}</strong><small>{difficulty.note}</small>
               </label>
             ))}

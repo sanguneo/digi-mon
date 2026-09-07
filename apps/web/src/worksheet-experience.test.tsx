@@ -1,15 +1,16 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Worksheet } from './api.ts';
 import { collectResponses, ProblemStudio, WorksheetItems } from './problem-studio.tsx';
-import { createWorksheet, getSubjects } from './api.ts';
+import { createWorksheet, getProblemTypes, getSubjects } from './api.ts';
 import { isCompactCalculation } from './worksheet-items.tsx';
 
 vi.mock('./api.ts', async (original) => ({
   ...await original<typeof import('./api.ts')>(),
   createWorksheet: vi.fn(),
   getSubjects: vi.fn(),
+  getProblemTypes: vi.fn(),
 }));
 
 function worksheet(subject: 'math' | 'korean' | 'english', count: number): Worksheet {
@@ -29,6 +30,7 @@ function worksheet(subject: 'math' | 'korean' | 'english', count: number): Works
 
 beforeEach(() => {
   vi.mocked(getSubjects).mockResolvedValue([]);
+  vi.mocked(getProblemTypes).mockResolvedValue([]);
   vi.mocked(createWorksheet).mockImplementation(async (options) => worksheet(options.subject, options.count));
 });
 afterEach(() => { cleanup(); vi.clearAllMocks(); });
@@ -49,8 +51,8 @@ describe('subject worksheet experience', () => {
     render(<ProblemStudio mode="worksheet" onWorksheet={vi.fn()} />);
     expect((screen.getByLabelText('학년군') as HTMLSelectElement).value).toBe('1-2');
     expect((screen.getByLabelText('문항 수') as HTMLInputElement).value).toBe('12');
-    fireEvent.click(screen.getByRole('button', { name: '12문항 생성' }));
-    await waitFor(() => expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject: 'math', grade: ['1-2'], count: 12, difficulty: 1 })));
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '12문항 생성' })); });
+    expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject: 'math', grade: ['1-2'], count: 12, difficulty: 1 }));
     fireEvent.click(screen.getByRole('button', { name: /30문항/ }));
     expect((screen.getByLabelText('문항 수') as HTMLInputElement).value).toBe('30');
     expect(createWorksheet).toHaveBeenCalledTimes(1);
@@ -61,8 +63,8 @@ describe('subject worksheet experience', () => {
     fireEvent.click(screen.getByRole('radio', { name: label }));
     expect((screen.getByLabelText('학년군') as HTMLSelectElement).value).toBe(grade);
     expect((screen.getByLabelText('문항 수') as HTMLInputElement).value).toBe('6');
-    fireEvent.click(screen.getByRole('button', { name: '6문항 생성' }));
-    await waitFor(() => expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject, grade: [grade], count: 6 })));
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '6문항 생성' })); });
+    expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject, grade: [grade], count: 6 }));
   });
 
   it.each([['math', 12, [4, 4, 4]], ['korean', 6, [2, 2, 2]], ['english', 7, [3, 3, 1]]] as const)('chunks %s without dropping or renumbering engine items', (subject, count, sizes) => {
@@ -95,12 +97,12 @@ describe('subject worksheet experience', () => {
     render(<ProblemStudio mode="worksheet" onWorksheet={vi.fn()} />);
     fireEvent.change(screen.getByLabelText('학년군'), { target: { value: grade } });
     fireEvent.click(screen.getByRole('button', { name: /50문항/ }));
-    fireEvent.click(screen.getByRole('button', { name: '50문항 생성' }));
-    await waitFor(() => expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject: 'math', grade: [grade], count: 50, difficulty: 1, domain: ['수와 연산'] })));
-    await screen.findByRole('button', { name: '학습지 인쇄' });
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '50문항 생성' })); });
+    expect(createWorksheet).toHaveBeenCalledWith(expect.objectContaining({ subject: 'math', grade: [grade], count: 50, difficulty: 1, domain: ['수와 연산'] }));
+    expect(screen.getByRole('button', { name: '학습지 인쇄' })).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: '12문항 생각 넓히기' }));
-    fireEvent.click(screen.getByRole('button', { name: '12문항 생성' }));
-    await waitFor(() => expect(createWorksheet).toHaveBeenLastCalledWith(expect.objectContaining({ grade: [grade], count: 12, difficulty: grade === '1-2' ? 2 : 3 })));
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '12문항 생성' })); });
+    expect(createWorksheet).toHaveBeenLastCalledWith(expect.objectContaining({ grade: [grade], count: 12, difficulty: grade === '1-2' ? 2 : 3 }));
     expect(vi.mocked(createWorksheet).mock.lastCall?.[0].domain).toBeUndefined();
   });
 
@@ -136,12 +138,9 @@ describe('subject worksheet experience', () => {
     };
     vi.mocked(createWorksheet).mockResolvedValue(sheet);
     const { container } = render(<ProblemStudio mode="worksheet" onWorksheet={vi.fn()} />);
-    fireEvent.click(screen.getByRole('button', { name: '12문항 생성' }));
-    const details = await waitFor(() => {
-      const result = container.querySelector<HTMLDetailsElement>('.dm-item .dm-learning-help');
-      expect(result).not.toBeNull();
-      return result!;
-    });
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '12문항 생성' })); });
+    const details = container.querySelector<HTMLDetailsElement>('.dm-item .dm-learning-help')!;
+    expect(details).not.toBeNull();
     expect(details.open).toBe(false);
     fireEvent.click(details.querySelector('summary')!);
     expect(details.querySelectorAll('li')).toHaveLength(0);
@@ -152,8 +151,8 @@ describe('subject worksheet experience', () => {
 
   it('keeps the issued subject identity when builder selection changes', async () => {
     const { container } = render(<ProblemStudio mode="worksheet" onWorksheet={vi.fn()} />);
-    fireEvent.click(screen.getByRole('button', { name: '12문항 생성' }));
-    await waitFor(() => expect(container.querySelector('.dm-worksheet')).not.toBeNull());
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '12문항 생성' })); });
+    expect(container.querySelector('.dm-worksheet')).not.toBeNull();
     fireEvent.click(screen.getByRole('radio', { name: '영어' }));
     expect(container.querySelector('.dm-worksheet')?.getAttribute('data-dm-subject')).toBe('math');
     expect(container.querySelector('.dm-worksheet__header h3')?.textContent).toContain('수학');

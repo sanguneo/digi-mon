@@ -13,7 +13,7 @@ Language print cards reduce metadata and choice padding, not reading font size.
 
 The client turns the deterministic digi-mon engine into one connected loop:
 
-1. choose a subject, grade band, optional domain, item count, and difficulty;
+1. choose a subject, grade band, optional domain and problem type, item count, and difficulty;
 2. render the exact worksheet returned by the engine, including canonical SVG figures;
 3. collect an anonymous diagnostic attempt;
 4. show honest exercise signals, not a permanent learner label;
@@ -84,8 +84,15 @@ the issued worksheet or grading request. Every question stays mounted and printa
 | Korean 1-2 / 3-4 / 5-6 | 6 or 10; easy in lower/middle bands, basic in upper band | Two items; full-width reading and multiline writing |
 | English 3-4 / 5-6 | 6 or 9; easy in middle band, basic in upper band | Three items; short full-width reading and word/sentence space |
 
-Counts remain freely editable from 1 through 100. Presets configure rather than
-silently generate a sheet. The number/operations domain can include number concepts,
+Counts remain freely editable from 1 through 100. Once edited or chosen through a
+preset, the count survives subject switches; untouched counts use the existing 12/6
+subject defaults. Presets configure rather than silently generate a sheet.
+
+The native problem-type selector uses exact generator skill labels from the learner
+catalog, filtered by subject, grade band, domain, and difficulty. Changing any of those
+conditions or choosing a preset clears the selected type. All types omits the generator
+filter; a selected type sends its exact generator ID. Capacity conflicts retain the
+prior sheet and requested count without retrying or broadening the filter. The number/operations domain can include number concepts,
 not just symbolic calculations. Application presets use the engine's higher difficulty,
 not a client-authored curriculum. English starts at the supported 3-4 band; the client
 explains the grade-three curriculum floor and does not offer unsupported grade 1-2 English.
