@@ -48,8 +48,72 @@ owns its disposable resources. Math-world asset loading must be lazy, failures
 must reach the existing retry surface, and abandoned loads must not install a renderer.
 
 Verification is primarily actual-GLB parsing and model/lifecycle/browser assertions.
-Use one essential multi-angle model preview and only the minimum in-app comparison
-needed to judge whether the requested shape improvement is visible.
+The puppy's earlier preview belongs to the completed milestone. For subsequent
+model work, the user's latest instruction forbids image generation, rendered
+previews, OCR and image analysis. Validate geometry, asset loading and behavior in
+code; do not run the earlier preview workflow.
+
+## Blender tree and fish replacement
+
+Author the remaining growing companions locally in Blender, retaining Python source,
+editable `.blend` files and self-contained `tree.glb` and `fish.glb`. No textures,
+downloaded models, rendered previews or image-analysis tools are used.
+
+The tree asset has an identity `tree-asset` root with four independent stage roots,
+`tree-stage-0` through `tree-stage-3`. Clone only the active stage. Sprout leaves have
+named motion pivots; later canopies pivot at Y=1.6 for the young tree and Y=2.15 for
+blossom/fruit stages. Leaves have actual curvature and thickness, trunks taper and
+branch, and blossoms/fruits are separate volumetric growth features. Care adds motion
+to the authored rest pose instead of imposing the old primitive leaf orientations.
+Budget each active stage at no more than 35,000 triangles, the complete asset at
+100,000 triangles/5 MB, and preferably six primitives and three materials per stage.
+
+The fish asset has an identity `fish-asset` root, Y-up and forward +X. Its named tail,
+pectoral fin and mouth use the existing pivots `(-0.65,0,0)`, `(0,-0.13,0.28)` and
+`(0.68,-0.05,0)`. Use a connected tapered body, shaped gill/head forms and thick curved
+fins. Growth markings/fin details supplement existing scaling, and the companion fish
+reuses an independently owned clone with a separate palette. Hard budget: 35,000
+triangles/3 MB, seven primitives and three simple materials.
+
+All three subjects load only their own required asset. Failed loads remain retryable,
+abandoned scene loads cannot install stale renderers, cached templates are immutable,
+and owned clones preserve authored normals/colors and dispose without harming other
+instances. Unchanged environment and decoration geometry retains its measured budget.
+
+## Secondary prop libraries
+
+Upgrade the existing 24 catalog decorations and seven reusable care-prop groups in
+Blender without changing catalog IDs, unlocks, saved placements or care timing.
+Each subject has one self-contained library GLB, loaded for that subject only:
+
+- `props-korean.glb`, root `korean-props`: the twelve Korean catalog IDs plus
+  `watering-can` and `sunlight-token`.
+- `props-english.glb`, root `english-props`: the six English catalog IDs plus
+  `fish-food` and `bubble-trail`.
+- `props-math.glb`, root `math-props`: the six math catalog IDs plus
+  `feeding-bowl`, `grooming-brush` and `dog-food`.
+
+Every reusable part is a direct, identity-transform child named by its ID, with
+Y-up geometry at its own local origin and the existing unit footprint. Reuse the
+ball model for both placement and play. Care tools retain their existing pivots
+and particle-group origin conventions. World placement, growth decorations and
+care animation remain runtime concerns.
+
+Improve shape-specific geometry: hollow bowls/pots/entrances, beveled furniture,
+curved cloth/kelp, shell fluting, branching coral, formed basket handles and rims,
+layered petals and shaped fruit. Do not merely export the primitive placeholders.
+Use shared white-base vertex-color material roles, no downloaded textures/models,
+and at most three primitives per prop where feasible.
+
+The Korean library has a 65,000-triangle/5 MB hard budget, English 30,000/3 MB and
+math 40,000/3 MB. Most parts target 3,500 triangles or fewer; the cat and house may
+use up to 8,000. Validate every required ID, bounds, normals, UVs, colors and resource
+counts from the actual exported GLB. Clone only parts used by the current scene,
+preserve independent instance transforms and dispose owned resources exactly once.
+
+The user permits quick real-app screenshots at important milestones, sent directly
+to Telegram without inspection or analysis. This does not permit Blender previews,
+image generation, OCR or an image-based review/polishing loop.
 
 ## Materials and rendering
 
@@ -105,7 +169,7 @@ upright gable/ridge and genuine volume/growth. UI tests cover event identity wit
 changing persistence/reward semantics. Use custom inline SVG care/subject icons in
 a consistent rounded stroke style. No prose-pinning tests.
 
-Lead owns final real-browser comparison at 375x812, 768x1024 and 1024x768, including
-stage zero and maturity, each care beat/repeat, reduced motion, pause, scroll/touch,
-context-loss retry and console errors. Model/type/build checks cannot certify visual
-quality; the final capture pass is explicitly separate.
+Lead owns code-driven browser checks at phone/tablet sizes, including stage zero and
+maturity, care repeat/completion, reduced motion, pause, scrolling, retry and console
+errors. Model and behavior checks do not certify appearance. Under the current user
+instruction, do not generate or analyze image evidence.

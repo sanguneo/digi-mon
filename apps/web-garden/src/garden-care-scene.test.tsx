@@ -4,6 +4,7 @@ import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { GardenScene } from './garden-scene.tsx';
 import { EMPTY_GAME_STATE, type WorldState } from './game-state.ts';
 import type { WorldModelAssets } from './garden-models.ts';
+import { WORLD_CATALOGS, type CareEvent } from './garden-worlds.ts';
 
 const { prepare, create, care, dispose, update } = vi.hoisted(() => ({
   prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(),
@@ -20,8 +21,8 @@ function deferred<T>() {
   return { promise, resolve, reject };
 }
 
-// Observe the exact React lifecycle state, subscribed before resolving/rejecting
-// a load. The timeout only bounds a missing signal; it never advances the test.
+// Subscribe before triggering a transition. The timeout only bounds a missing
+// signal; no sleep or polling advances the test.
 function statusChanged(container: HTMLElement, status: string) {
   return new Promise<void>((resolve, reject) => {
     const timer = setTimeout(() => { observer.disconnect(); reject(new Error(`Missing scene status ${status}`)); }, 3000);
@@ -40,92 +41,97 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
-test.each(['resolve', 'reject'] as const)('switching away during loading ignores late asset %s without creating a stale renderer', async (completion) => {
-  const pending = deferred<WorldModelAssets>();
-  const requested = deferred<void>();
-  prepare.mockImplementation((subject: string) => {
-    if (subject !== 'math') return Promise.resolve({});
-    requested.resolve(); return pending.promise;
+for (const subject of ['korean', 'english', 'math'] as const) {
+  const nextSubject = subject === 'korean' ? 'english' : 'korean';
+  const action = subject === 'korean' ? 'water' : 'feed';
+  test.each(['resolve', 'reject'] as const)(`${subject}: switching away ignores late asset %s without creating a stale renderer`, async (completion) => {
+    const pending = deferred<WorldModelAssets>();
+    const requested = deferred<void>();
+    prepare.mockImplementation((requestedSubject: string) => {
+      if (requestedSubject !== subject) return Promise.resolve({});
+      requested.resolve(); return pending.promise;
+    });
+    const warn = vi.spyOn(console, 'warn');
+    const view = render(<GardenScene subject={subject} world={EMPTY_GAME_STATE.worlds[subject]} />);
+    await act(async () => { await requested.promise; });
+    expect(create).not.toHaveBeenCalled();
+    const ready = statusChanged(view.container, 'ready');
+    await act(async () => { view.rerender(<GardenScene subject={nextSubject} world={EMPTY_GAME_STATE.worlds[nextSubject]} />); });
+    await ready;
+    expect(create).toHaveBeenCalledTimes(1);
+    expect(create.mock.calls[0]![1]).toBe(nextSubject);
+    expect(prepare.mock.calls).toEqual([[subject], [nextSubject]]);
+    await act(async () => {
+      if (completion === 'resolve') { pending.resolve({}); await pending.promise; }
+      else {
+        pending.reject(new Error('late asset failure'));
+        await expect(pending.promise).rejects.toThrow('late asset failure');
+      }
+    });
+    expect(create).toHaveBeenCalledTimes(1);
+    expect(warn).not.toHaveBeenCalled();
+    expect(view.container.querySelector('.world-scene')!.getAttribute('data-status')).toBe('ready');
+    view.unmount();
+    expect(dispose).toHaveBeenCalledTimes(1);
   });
-  const warn = vi.spyOn(console, 'warn');
-  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} />);
-  await act(async () => { await requested.promise; });
-  expect(create).not.toHaveBeenCalled();
-  const ready = statusChanged(view.container, 'ready');
-  await act(async () => { view.rerender(<GardenScene subject="english" world={EMPTY_GAME_STATE.worlds.english} />); });
-  await ready;
-  expect(create).toHaveBeenCalledTimes(1);
-  expect(create.mock.calls[0]![1]).toBe('english');
-  await act(async () => {
-    if (completion === 'resolve') { pending.resolve({}); await pending.promise; }
-    else {
-      pending.reject(new Error('late asset failure'));
-      await expect(pending.promise).rejects.toThrow('late asset failure');
-    }
+
+  test(`${subject}: unmounted pending load never creates a renderer`, async () => {
+    const pending = deferred<WorldModelAssets>();
+    const requested = deferred<void>();
+    prepare.mockImplementation(() => { requested.resolve(); return pending.promise; });
+    const view = render(<GardenScene subject={subject} world={EMPTY_GAME_STATE.worlds[subject]} />);
+    await act(async () => { await requested.promise; });
+    view.unmount();
+    await act(async () => { pending.resolve({}); await pending.promise; });
+    expect(create).not.toHaveBeenCalled();
+    expect(dispose).not.toHaveBeenCalled();
   });
-  expect(create).toHaveBeenCalledTimes(1);
-  expect(warn).not.toHaveBeenCalled();
-  expect(view.container.querySelector('.world-scene')!.getAttribute('data-status')).toBe('ready');
-  view.unmount();
-  expect(dispose).toHaveBeenCalledTimes(1);
-});
 
-test('unmounted pending math load never creates a renderer', async () => {
-  const pending = deferred<WorldModelAssets>();
-  const requested = deferred<void>();
-  prepare.mockImplementation(() => { requested.resolve(); return pending.promise; });
-  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} />);
-  await act(async () => { await requested.promise; });
-  view.unmount();
-  await act(async () => { pending.resolve({}); await pending.promise; });
-  expect(create).not.toHaveBeenCalled();
-  expect(dispose).not.toHaveBeenCalled();
-});
+  test(`${subject}: pending load uses current growth and placements without replaying loading care clicks`, async () => {
+    const pending = deferred<WorldModelAssets>();
+    const requested = deferred<void>();
+    prepare.mockImplementation(() => { requested.resolve(); return pending.promise; });
+    const view = render(<GardenScene subject={subject} world={EMPTY_GAME_STATE.worlds[subject]} />);
+    await act(async () => { await requested.promise; });
+    const world: WorldState = { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: [1], placements: { [WORLD_CATALOGS[subject][0]!.id]: 'front-garden' } };
+    view.rerender(<GardenScene subject={subject} world={world} careEvent={{ id: 1, subject, action }} />);
+    const ready = statusChanged(view.container, 'ready');
+    await act(async () => { pending.resolve({}); await pending.promise; });
+    await ready;
+    expect(create.mock.calls[0]![2]).toBe(world);
+    expect(care).not.toHaveBeenCalled();
+    view.rerender(<GardenScene subject={subject} world={world} careEvent={{ id: 2, subject, action }} />);
+    expect(care).toHaveBeenCalledExactlyOnceWith({ id: 2, subject, action });
+  });
 
-test('a successful pending load uses current growth and placements without replaying care clicks from loading', async () => {
-  const pending = deferred<WorldModelAssets>();
-  const requested = deferred<void>();
-  prepare.mockImplementation(() => { requested.resolve(); return pending.promise; });
-  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} />);
-  await act(async () => { await requested.promise; });
-  const world: WorldState = { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: [1], placements: { 'puppy-ball': 'front-garden' } };
-  view.rerender(<GardenScene subject="math" world={world} careEvent={{ id: 1, subject: 'math', action: 'play' }} />);
-  const ready = statusChanged(view.container, 'ready');
-  await act(async () => { pending.resolve({}); await pending.promise; });
-  await ready;
-  expect(create.mock.calls[0]![2]).toBe(world);
-  expect(care).not.toHaveBeenCalled();
-  view.rerender(<GardenScene subject="math" world={world} careEvent={{ id: 2, subject: 'math', action: 'play' }} />);
-  expect(care).toHaveBeenCalledExactlyOnceWith({ id: 2, subject: 'math', action: 'play' });
-});
-
-test('failed asset load exposes retry, uses latest growth, and never replays care received while loading or persisted history', async () => {
-  const pending = deferred<WorldModelAssets>();
-  const requested = deferred<void>();
-  prepare.mockImplementationOnce(() => { requested.resolve(); return pending.promise; }).mockResolvedValue({});
-  const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-  const first = { id: 8, subject: 'math' as const, action: 'feed' as const };
-  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} careEvent={first} />);
-  await act(async () => { await requested.promise; });
-  const world: WorldState = { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: [1, 2], lastCare: 'feed' };
-  view.rerender(<GardenScene subject="math" world={world} careEvent={{ ...first, id: 9 }} />);
-  const unavailable = statusChanged(view.container, 'unavailable');
-  await act(async () => { pending.reject(new Error('503')); await expect(pending.promise).rejects.toThrow('503'); });
-  await unavailable;
-  expect(create).not.toHaveBeenCalled();
-  expect(warn).toHaveBeenCalledTimes(1);
-  const ready = statusChanged(view.container, 'ready');
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: '3D 다시 열기' })); });
-  await ready;
-  expect(prepare).toHaveBeenCalledTimes(2);
-  expect(create.mock.calls[0]![2]).toBe(world);
-  expect(care).not.toHaveBeenCalled();
-  view.rerender(<GardenScene subject="math" world={world} careEvent={{ ...first, id: 10 }} />);
-  expect(care).toHaveBeenCalledExactlyOnceWith({ ...first, id: 10 });
-  view.unmount();
-  const reloaded = render(<GardenScene subject="math" world={world} careEvent={{ ...first, id: 10 }} />);
-  const reloadedReady = statusChanged(reloaded.container, 'ready');
-  await act(async () => {});
-  await reloadedReady;
-  expect(care).toHaveBeenCalledTimes(1);
-});
+  test(`${subject}: failed load exposes retry, uses latest growth, and never replays loading care or history`, async () => {
+    const pending = deferred<WorldModelAssets>();
+    const requested = deferred<void>();
+    prepare.mockImplementationOnce(() => { requested.resolve(); return pending.promise; }).mockResolvedValue({});
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const first: CareEvent = { id: 8, subject, action };
+    const view = render(<GardenScene subject={subject} world={EMPTY_GAME_STATE.worlds[subject]} careEvent={first} />);
+    await act(async () => { await requested.promise; });
+    const world: WorldState = { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: [1, 2], lastCare: action };
+    view.rerender(<GardenScene subject={subject} world={world} careEvent={{ ...first, id: 9 }} />);
+    const unavailable = statusChanged(view.container, 'unavailable');
+    await act(async () => { pending.reject(new Error('503')); await expect(pending.promise).rejects.toThrow('503'); });
+    await unavailable;
+    expect(create).not.toHaveBeenCalled();
+    expect(warn).toHaveBeenCalledTimes(1);
+    const ready = statusChanged(view.container, 'ready');
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '3D 다시 열기' })); });
+    await ready;
+    expect(prepare).toHaveBeenCalledTimes(2);
+    expect(create.mock.calls[0]![2]).toBe(world);
+    expect(care).not.toHaveBeenCalled();
+    view.rerender(<GardenScene subject={subject} world={world} careEvent={{ ...first, id: 10 }} />);
+    expect(care).toHaveBeenCalledExactlyOnceWith({ ...first, id: 10 });
+    view.unmount();
+    const reloaded = render(<GardenScene subject={subject} world={world} careEvent={{ ...first, id: 10 }} />);
+    const reloadedReady = statusChanged(reloaded.container, 'ready');
+    await act(async () => {});
+    await reloadedReady;
+    expect(care).toHaveBeenCalledTimes(1);
+  });
+}

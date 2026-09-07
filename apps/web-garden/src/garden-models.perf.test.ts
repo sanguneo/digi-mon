@@ -16,6 +16,49 @@ const PROCEDURAL_MATH_BASELINE = [
   { puppyTriangles: 22_126, puppyMeshes: 53, puppyBatchedMeshes: 4, worldTriangles: 69_510, worldBatchedMeshes: 11 },
 ] as const;
 
+// Executed from Git 214416e before removing procedural tree/fish actors. Empty
+// placements; triangles include pooled hidden care props. English actor totals
+// include the stage-zero friend from stage 2 onward.
+const PROCEDURAL_NATURE_BASELINE = {
+  korean: [
+    { actorTriangles: 7_968, actorMeshes: 28, actorBatchedMeshes: 4, worldTriangles: 45_580, worldMeshes: 124, worldBatchedMeshes: 10 },
+    { actorTriangles: 13_452, actorMeshes: 85, actorBatchedMeshes: 3, worldTriangles: 53_240, worldMeshes: 186, worldBatchedMeshes: 9 },
+    { actorTriangles: 39_180, actorMeshes: 141, actorBatchedMeshes: 3, worldTriangles: 81_144, worldMeshes: 247, worldBatchedMeshes: 9 },
+    { actorTriangles: 26_988, actorMeshes: 165, actorBatchedMeshes: 4, worldTriangles: 71_128, worldMeshes: 276, worldBatchedMeshes: 10 },
+  ],
+  english: [
+    { actorTriangles: 8_836, actorMeshes: 34, actorBatchedMeshes: 4, worldTriangles: 24_846, worldMeshes: 81, worldBatchedMeshes: 11 },
+    { actorTriangles: 8_836, actorMeshes: 34, actorBatchedMeshes: 4, worldTriangles: 27_022, worldMeshes: 86, worldBatchedMeshes: 11 },
+    { actorTriangles: 18_712, actorMeshes: 70, actorBatchedMeshes: 8, worldTriangles: 39_074, worldMeshes: 127, worldBatchedMeshes: 15 },
+    { actorTriangles: 18_712, actorMeshes: 70, actorBatchedMeshes: 8, worldTriangles: 44_330, worldMeshes: 142, worldBatchedMeshes: 15 },
+  ],
+} as const;
+
+// Measured with the shipped GLBs through buildWorldModel(batch=true), empty
+// placements. Tuples are [triangles, meshes, geometries, materials], including
+// hidden growth/care resources. Each fish owns its material rather than sharing
+// GPU lifetime with its friend; only the selected tree stage is ever cloned.
+const SHIPPED_WORLD_BUDGETS = {
+  korean: [
+    { world: [42_100, 10, 10, 6], actors: [[4_488, 4, 4, 2]] },
+    { world: [54_272, 9, 9, 6], actors: [[14_484, 3, 3, 2]] },
+    { world: [75_216, 10, 10, 7], actors: [[33_252, 4, 4, 3]] },
+    { world: [73_284, 10, 10, 7], actors: [[29_144, 4, 4, 3]] },
+  ],
+  english: [
+    { world: [40_670, 13, 13, 5], actors: [[24_660, 6, 6, 1]] },
+    { world: [42_846, 13, 13, 5], actors: [[24_660, 6, 6, 1]] },
+    { world: [69_682, 19, 19, 6], actors: [[24_660, 6, 6, 1], [24_660, 6, 6, 1]] },
+    { world: [74_938, 19, 19, 6], actors: [[24_660, 6, 6, 1], [24_660, 6, 6, 1]] },
+  ],
+  math: [
+    { world: [70_728, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
+    { world: [72_048, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
+    { world: [72_048, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
+    { world: [82_496, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
+  ],
+} as const;
+
 function worldAt(subject: Subject, stage: number): WorldState {
   return {
     ...EMPTY_GAME_STATE.worlds[subject],
@@ -24,9 +67,19 @@ function worldAt(subject: Subject, stage: number): WorldState {
   };
 }
 
-function resources(root: Object3D) {
+function resources(root: Object3D, sceneryOnly = false) {
   const meshes: Mesh[] = [];
-  root.traverse((object) => { if (object instanceof Mesh) meshes.push(object); });
+  root.traverse((object) => {
+    if (!(object instanceof Mesh)) return;
+    if (sceneryOnly) {
+      let ancestor: Object3D | null = object;
+      while (ancestor) {
+        if (ancestor.userData.assetSource) return;
+        ancestor = ancestor.parent;
+      }
+    }
+    meshes.push(object);
+  });
   return {
     meshes,
     triangles: meshes.reduce((sum, object) => sum + (object.geometry.index?.count ?? object.geometry.getAttribute('position').count) / 3, 0),
@@ -102,6 +155,18 @@ function expectSameTriangles(original: Map<string, number[]>, batched: Map<strin
 }
 
 describe('world render batching', () => {
+  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i has the exact measured authored actor and complete-world resource budget`, (stage) => {
+    const model = buildWorldModel(subject, { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true });
+    const summarize = (root: Object3D) => {
+      const result = resources(root);
+      return [result.triangles, result.meshes.length, result.geometries.size, result.materials.size];
+    };
+    const budget = SHIPPED_WORLD_BUDGETS[subject][stage]!;
+    expect(summarize(model.root)).toEqual(budget.world);
+    const actors = model.root.children.filter((object) => ['growing-tree', 'fish', 'puppy'].includes(object.name));
+    expect(actors.map(summarize)).toEqual(budget.actors);
+    disposeModel(model.root);
+  });
   test.each([0, 1, 2, 3])('math stage %i replaces only the puppy and retains the measured scenery budget', (stage) => {
     const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true });
     const world = resources(model.root);
@@ -117,19 +182,32 @@ describe('world render batching', () => {
     disposeModel(model.root);
   });
 
-  test.each(['korean', 'english', 'math'] as const)('%s initial world cuts draw submissions and GPU resources without dropping triangles', (subject) => {
+  for (const subject of ['korean', 'english'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i replaces only actors and retains original scenery resources`, (stage) => {
+    const baseline = PROCEDURAL_NATURE_BASELINE[subject][stage]!;
+    for (const batch of [false, true]) {
+      const model = buildWorldModel(subject, { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch });
+      const scenery = resources(model.root, true);
+      const count = batch ? baseline.worldBatchedMeshes - baseline.actorBatchedMeshes : baseline.worldMeshes - baseline.actorMeshes;
+      expect(scenery.triangles).toBe(baseline.worldTriangles - baseline.actorTriangles);
+      expect(scenery.meshes.length).toBe(count);
+      expect(scenery.geometries.size).toBe(count);
+      expect(scenery.materials.size).toBe(batch ? 4 : count - (subject === 'english' ? 2 : 0));
+      disposeModel(model.root);
+    }
+  });
+
+  test.each(['korean', 'english', 'math'] as const)('%s initial scenery cuts draw submissions and GPU resources without dropping any world triangles', (subject) => {
     const original = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject]);
     const batched = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject], { batch: true });
-    const before = resources(original.root);
-    const after = resources(batched.root);
+    // Only procedural scenery is batched now. Authored actors already have
+    // consolidated primitives and independently owned materials; exact complete
+    // world budgets below account for those instead of weakening this invariant.
+    const before = resources(original.root, true);
+    const after = resources(batched.root, true);
     expect(after.meshes.length).toBeLessThanOrEqual(before.meshes.length * 0.15);
     expect(after.geometries.size).toBeLessThanOrEqual(before.geometries.size * 0.15);
-    // Actual GLB measurement: three authored roles plus the unchanged world's
-    // organic/wood/satin roles. Do not destroy authored response to hit the old
-    // primitive-only five-material cap; other worlds retain that cap unchanged.
-    if (subject === 'math') expect(after.materials.size).toBe(6);
-    else expect(after.materials.size).toBeLessThanOrEqual(5);
-    expect(after.triangles).toBe(before.triangles);
+    expect(after.materials.size).toBe(subject === 'math' ? 3 : 4);
+    expect(resources(batched.root).triangles).toBe(resources(original.root).triangles);
     for (const mesh of after.meshes.filter((object) => object.name === 'static-batch')) {
       expect(mesh.geometry.groups).toHaveLength(0);
       expect(mesh.castShadow).toBe(true);
@@ -164,7 +242,7 @@ describe('world render batching', () => {
     }
   }
 
-  test.each(['english', 'math'] as const)('%s temporary, replaced, shared and live resources are released once and never across worlds', (subject) => {
+  test.each(['korean', 'english', 'math'] as const)('%s temporary, replaced, shared and live resources are released once and never across worlds', (subject) => {
     const geometryDisposals = new Map<BufferGeometry, number>();
     const materialDisposals = new Map<Material, number>();
     const geometryDispose = BufferGeometry.prototype.dispose;

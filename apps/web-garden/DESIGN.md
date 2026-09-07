@@ -113,11 +113,14 @@ center; controls stay quiet, explicit and outside the canvas.
   buttons, collapsed camera disclosure, growth goal and collection in one column.
   Desktop adds a growth panel beside the canvas; the component system stays shared.
 - Lighting, real geometry, perspective camera, shadows and OrbitControls make each
-  scene genuinely three-dimensional. The puppy is an original, locally authored
-  Blender GLB with connected body/face forms and thick curved ears; other models
-  remain procedural. No remote model service, tracker or downloaded asset is used.
+  scene genuinely three-dimensional. The puppy, growing tree and fish are original,
+  locally authored Blender GLBs. Scenery and decorations remain procedural.
+  No remote model service, tracker or downloaded asset is used.
   The [Blender puppy contract](../../docs/design/companion-art.md#blender-puppy-replacement)
   defines its source, motion pivots, resource budget and focused verification.
+  The same document specifies the tree/fish stage and motion contracts. Current
+  verification uses numerical geometry and browser DOM/network assertions, with
+  image generation, rendered previews, OCR and image analysis prohibited by the user.
 
 ### Participation and care
 

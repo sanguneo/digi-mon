@@ -4,6 +4,8 @@ import type { Subject } from './api.ts';
 import { GARDEN_SPOTS, growthStage, type WorldState } from './game-state.ts';
 import { WORLD_CATALOGS, type CareAction } from './garden-worlds.ts';
 import { clonePuppyAsset } from './puppy-asset.ts';
+import { cloneTreeAsset } from './tree-asset.ts';
+import { cloneFishAsset } from './fish-asset.ts';
 
 type Point = readonly [number, number, number];
 const LEAF = '#78a85b';
@@ -73,101 +75,29 @@ function stroke(parent: THREE.Object3D, color: string, points: Point[], radius =
   return mesh(parent, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map((p) => new THREE.Vector3(...p))), 12, radius, 5, false), color, [0, 0, 0], [1, 1, 1], surface);
 }
 
-function leaf(parent: THREE.Object3D, name: string, position: Point, size = 1) {
-  const result = group(parent, name, position);
-  const shape = new THREE.Shape();
-  shape.moveTo(0, 0); shape.bezierCurveTo(0.22, 0.32, 0.62, 0.3, 1, 0.06);
-  shape.bezierCurveTo(0.68, -0.22, 0.28, -0.27, 0, 0);
-  mesh(result, new THREE.ExtrudeGeometry(shape, { depth: 0.04, bevelEnabled: true, bevelSize: 0.035, bevelThickness: 0.04, bevelSegments: 2, steps: 1, curveSegments: 10 }), '#559450', [0, 0, 0]);
-  stroke(result, '#b1d27e', [[0.04, 0, 0.1], [0.46, 0.02, 0.12], [0.9, 0.05, 0.08]], 0.018);
-  for (const x of [0.28, 0.48, 0.65]) {
-    stroke(result, '#88b969', [[x, 0.02, 0.11], [x + 0.07, 0.12, 0.1]], 0.009);
-    stroke(result, '#88b969', [[x, 0.02, 0.11], [x + 0.09, -0.1, 0.1]], 0.009);
-  }
-  result.scale.setScalar(size);
-  return result;
-}
-
-function tree(parent: THREE.Object3D, stage: number) {
-  const result = group(parent, 'growing-tree', [0, 0, -0.5]);
+function tree(parent: THREE.Object3D, stage: number, template: THREE.Object3D) {
+  const result = group(parent, 'growing-tree', [0, 0, stage === 0 ? 0.2 : -0.5]);
+  const asset = cloneTreeAsset(template, stage);
+  result.add(asset);
   if (stage === 0) {
-    cylinder(result, '#558c45', [0, 0.7, 0], 0.075, 1.4);
-    leaf(result, 'leaf:left', [0, 1.0, 0], 0.95).rotation.z = Math.PI - 0.22;
-    leaf(result, 'leaf:right', [0, 1.35, 0.02], 1.02).rotation.z = 0.22;
-    orb(result, '#78563e', [0, 0.02, 0], [0.85, 0.13, 0.65], 'wood');
-    for (let i = 0; i < 9; i++) orb(result, i % 2 ? '#aa8053' : '#c19a70', [Math.cos(i * 2.4) * 0.63, 0.13, Math.sin(i * 2.4) * 0.4], [0.1, 0.06, 0.075], 'wood');
-    orb(result, '#c8a276', [-0.23, 0.16, 0.32], [0.19, 0.14, 0.12], 'wood').rotation.z = -0.4;
-    result.position.z = 0.2;
-  } else {
-    const height = stage === 1 ? 1.6 : 2.15;
-    cylinder(result, WOOD, [0, height / 2, 0], 0.23, height, 0.14, 'wood');
-    cylinder(result, WOOD, [-0.3, height * 0.7, 0], 0.11, 0.8, 0.08, 'wood').rotation.z = 0.7;
-    cylinder(result, WOOD, [0.32, height * 0.76, 0], 0.1, 0.85, 0.07, 'wood').rotation.z = -0.75;
-    for (const x of [-0.11, 0.05, 0.14]) stroke(result, '#735238', [[x, 0.17, 0.2], [x - 0.02, 0.52, 0.21], [x * 0.6, 1.0, 0.17]], 0.013, 'wood');
-    ring(result, '#805c3d', [0.01, 0.86, 0.2], 0.065, 0.014).scale.y = 1.5;
-    for (const side of [-1, 1]) stroke(result, '#936c47', [[side * 0.08, 0.33, 0], [side * 0.26, 0.1, 0.15], [side * 0.48, 0.05, 0.18]], 0.065, 'wood');
-    const crown = group(result, 'canopy', [0, height, 0]);
-    orb(crown, '#4f8345', [0, 0.6, 0], [1.15, 1.0, 0.95]);
-    orb(crown, '#79a65a', [-0.75, 0.12, 0.1], [0.85, 0.78, 0.8]);
-    orb(crown, '#426f41', [0.75, 0.2, -0.08], [0.9, 0.8, 0.85]);
-    orb(crown, '#8cb567', [-0.1, 0.45, 0.65], [0.88, 0.72, 0.55]);
-    for (let i = 0; i < 9; i++) {
-      const detail = leaf(crown, `crown-leaf:${i}`, [Math.sin(i * 2.4) * 1.05, 0.2 + i % 3 * 0.35, 0.85], 0.34);
-      detail.rotation.z = i * 0.8;
-    }
-    if (stage === 1) crown.scale.setScalar(0.73);
-    if (stage >= 2) {
-      for (let i = 0; i < 8; i++) {
-        const angle = i * 2.4;
-        const x = Math.cos(angle) * (0.6 + i % 2 * 0.45);
-        const y = 0.15 + i % 3 * 0.35;
-        if (stage === 2) flower(crown, [x, y, 0.78], '#f8b4b0', 0.75);
-        else {
-          orb(crown, '#d97854', [x, y + 0.1, 0.83], [0.18, 0.2, 0.18]);
-          cylinder(crown, '#755335', [x, y + 0.33, 0.83], 0.018, 0.12, 0.018, 'wood');
-          leaf(crown, `fruit-leaf:${i}`, [x, y + 0.31, 0.85], 0.18).rotation.z = 0.5;
-        }
-      }
-    }
-  }
+    asset.getObjectByName('sprout-leaf-left')!.name = 'leaf:left';
+    asset.getObjectByName('sprout-leaf-right')!.name = 'leaf:right';
+  } else asset.getObjectByName(`stage-${stage}-canopy`)!.name = 'canopy';
   return result;
 }
 
-function fish(parent: THREE.Object3D, stage: number, color = '#dd8848') {
+function fish(parent: THREE.Object3D, stage: number, template: THREE.Object3D, friend = false) {
   const result = group(parent, 'fish');
-  result.userData.surface = 'satin';
-  orb(result, color, [0, 0, 0], [0.72, 0.48, 0.32]);
-  orb(result, '#ffdf99', [0.2, -0.11, 0.13], [0.43, 0.27, 0.23]);
-  const tail = group(result, 'tail', [-0.65, 0, 0]);
-  const fan = new THREE.Shape();
-  fan.moveTo(0, 0); fan.quadraticCurveTo(-0.24, 0.15, -0.6, 0.43);
-  fan.bezierCurveTo(-0.72, 0.26, -0.53, 0.1, -0.64, 0);
-  fan.bezierCurveTo(-0.53, -0.1, -0.72, -0.26, -0.6, -0.43);
-  fan.quadraticCurveTo(-0.24, -0.15, 0, 0);
-  mesh(tail, new THREE.ExtrudeGeometry(fan, { depth: 0.05, bevelSize: 0.035, bevelThickness: 0.025, bevelSegments: 2, steps: 1, curveSegments: 10 }), '#cf694f', [0, 0, -0.025]);
-  for (const y of [-0.3, -0.15, 0, 0.15, 0.3]) stroke(tail, '#f5b174', [[-0.04, 0, 0.06], [-0.28, y * 0.45, 0.06], [-0.56, y, 0.06]], 0.013);
-  const fin = group(result, 'pectoral-fin', [0, -0.13, 0.28]);
-  orb(fin, '#cb7250', [0, -0.1, 0], [0.2, 0.25 + stage * 0.035, 0.045]);
-  for (const x of [-0.09, 0, 0.09]) stroke(fin, '#f0ae73', [[0, 0.05, 0.04], [x, -0.23, 0.04]], 0.01);
+  const asset = cloneFishAsset(template, friend);
+  result.add(asset);
+  const tail = asset.getObjectByName('tail')!;
+  const fin = asset.getObjectByName('pectoral-fin')!;
+  const mouth = asset.getObjectByName('mouth')!;
+  const markings = asset.getObjectByName('growth-markings');
+  const detail = asset.getObjectByName('growth-fin-detail');
+  if (markings) markings.visible = stage >= 2;
+  if (detail) detail.visible = stage >= 3;
   fin.rotation.z = -0.6;
-  const mouth = group(result, 'mouth', [0.68, -0.05, 0]);
-  orb(mouth, '#884838', [0, 0, 0], [0.05, 0.075, 0.13]);
-  for (const side of [-1, 1]) {
-    stroke(result, '#b56543', [[0.22, 0.22, side * 0.305], [0.13, 0.06, side * 0.33], [0.23, -0.1, side * 0.305]], 0.02);
-    for (let i = 0; i < 6; i++) {
-      const x = -0.44 + i % 3 * 0.18, y = 0.05 + Math.floor(i / 3) * 0.19;
-      stroke(result, '#efbc7b', [[x, y + 0.07, side * 0.285], [x - 0.035, y, side * 0.31], [x, y - 0.06, side * 0.285]], 0.011);
-    }
-  }
-  orb(result, '#ef9a64', [-0.1, 0.43, 0], [0.28, 0.18 + stage * 0.035, 0.075]);
-  for (const side of [-1, 1]) {
-    orb(result, CREAM, [0.4, 0.13, side * 0.25], [0.18, 0.2, 0.1]);
-    orb(result, INK, [0.46, 0.13, side * 0.32], [0.095, 0.12, 0.045]);
-    orb(result, '#ffffff', [0.48, 0.17, side * 0.35], [0.032, 0.04, 0.022]);
-  }
-  if (stage >= 2) {
-    for (const x of [-0.3, -0.05]) orb(result, '#fff0c5', [x, 0.04, 0], [0.07, 0.4, 0.325]);
-  }
   result.scale.setScalar([0.82, 1.02, 1.27, 1.48][stage]!);
   return { result, tail, fin, mouth };
 }
@@ -319,10 +249,12 @@ export type CarePhase = 'idle' | 'approach' | 'respond' | 'settle';
 type CarePose = { action: CareAction; time: number; reach: number; touch: number; acknowledge: number };
 const ramp = (time: number, from: number, to: number) => THREE.MathUtils.smoothstep(time, from, to);
 
-export type WorldModelAssets = { puppyTemplate?: THREE.Object3D };
+export type WorldModelAssets = { puppyTemplate?: THREE.Object3D; treeTemplate?: THREE.Object3D; fishTemplate?: THREE.Object3D };
 
-export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
+export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate, treeTemplate, fishTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
   if (subject === 'math' && !puppyTemplate) throw new Error('Math world requires the loaded puppy asset');
+  if (subject === 'korean' && !treeTemplate) throw new Error('Korean world requires the loaded tree asset');
+  if (subject === 'english' && !fishTemplate) throw new Error('English world requires the loaded fish asset');
   const root = new THREE.Group();
   root.name = `world:${subject}`;
   const stage = growthStage(world);
@@ -359,7 +291,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
     const back = new THREE.Mesh(new THREE.PlaneGeometry(8.6, 4.2), glass);
     back.position.set(0, 2.1, -3.05); root.add(back);
     for (let i = 0; i < 3 + stage; i++) plant(root, [-3.4 + i * 1.15, 0.08, -2.4], 1.0 + i % 3 * 0.36, '#67a897');
-    const swimmer = fish(root, stage);
+    const swimmer = fish(root, stage, fishTemplate!);
     moving.add(swimmer.result); moving.add(swimmer.tail); moving.add(swimmer.fin); moving.add(swimmer.mouth);
     swimmer.result.position.set(0, 2.0, 0.55);
     const food = prop('feed');
@@ -392,7 +324,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       bubbles.scale.setScalar(1 - ramp(care?.time ?? 0, 2.6, CARE_DURATION));
     });
     if (stage >= 2) {
-      const friend = fish(root, 0, '#9cb8d0');
+      const friend = fish(root, 0, fishTemplate!, true);
       moving.add(friend.result); moving.add(friend.tail); moving.add(friend.fin); moving.add(friend.mouth);
       friend.result.position.set(-2.2, 1.15, -0.8);
       animated.push((time) => { friend.result.position.x = -2.0 + Math.sin(time * 0.45) * 0.5; friend.tail.rotation.y = Math.sin(time * 3) * 0.2; });
@@ -415,10 +347,12 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
     }
     box(root, '#e7d7b4', [0, 0.42, -2.9], [7.3, 0.11, 0.07]);
     if (subject === 'korean') {
-      const growing = tree(root, stage);
+      const growing = tree(root, stage, treeTemplate!);
       moving.add(growing);
       const crown = growing.getObjectByName('canopy');
       const leaves = ['leaf:left', 'leaf:right'].map((name) => growing.getObjectByName(name)).filter((entry): entry is THREE.Object3D => !!entry);
+      const leafRest = leaves.map((entry) => entry.rotation.z);
+      const crownRest = crown ? { y: crown.position.y, z: crown.rotation.z } : null;
       if (crown) moving.add(crown);
       for (const entry of leaves) moving.add(entry);
       const water = prop('water');
@@ -439,8 +373,8 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       animated.push((time, care) => {
         const lift = care?.reach ?? 0;
         growing.rotation.z = Math.sin(time * 0.6) * 0.012 + lift * 0.035;
-        leaves.forEach((entry, i) => { entry.rotation.z = (i === 0 ? Math.PI - 0.22 : 0.22) + (i === 0 ? -1 : 1) * lift * 0.38; });
-        if (crown) { crown.rotation.z = lift * 0.045; crown.position.y = (stage === 1 ? 1.6 : 2.15) + lift * 0.1; }
+        leaves.forEach((entry, i) => { entry.rotation.z = leafRest[i]! + (i === 0 ? -1 : 1) * lift * 0.38; });
+        if (crown && crownRest) { crown.rotation.z = crownRest.z + lift * 0.045; crown.position.y = crownRest.y + lift * 0.1; }
         can.rotation.z = -0.3 - (care?.touch ?? 0) * 0.4;
         can.position.x = -1.25 - ramp(care?.time ?? 0, 2.4, CARE_DURATION) * 0.3;
         drops.position.y = -((care?.time ?? 0) % 0.6) * 0.6;
