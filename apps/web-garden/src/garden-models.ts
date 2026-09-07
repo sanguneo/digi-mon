@@ -6,12 +6,10 @@ import { WORLD_CATALOGS, type CareAction } from './garden-worlds.ts';
 import { clonePuppyAsset } from './puppy-asset.ts';
 import { cloneTreeAsset } from './tree-asset.ts';
 import { cloneFishAsset } from './fish-asset.ts';
+import { createPropInstancer } from './prop-asset.ts';
 
 type Point = readonly [number, number, number];
 const LEAF = '#78a85b';
-const CREAM = '#fff2d6';
-const WOOD = '#a37450';
-const INK = '#343734';
 
 type Surface = 'organic' | 'wood' | 'satin' | 'water';
 const ROUGHNESS: Record<Surface, number> = { organic: 0.92, wood: 0.84, satin: 0.42, water: 0.16 };
@@ -37,9 +35,6 @@ function box(parent: THREE.Object3D, color: string, position: Point, scale: Poin
 }
 function cylinder(parent: THREE.Object3D, color: string, position: Point, radius: number, height: number, top = radius, surface?: Surface) {
   return mesh(parent, new THREE.CylinderGeometry(top, radius, height, 24), color, position, [1, 1, 1], surface);
-}
-function ring(parent: THREE.Object3D, color: string, position: Point, radius: number, tube: number) {
-  return mesh(parent, new THREE.TorusGeometry(radius, tube, 10, 40), color, position);
 }
 function group(parent: THREE.Object3D, name: string, position: Point = [0, 0, 0]) {
   const result = new THREE.Group();
@@ -116,145 +111,24 @@ function puppy(parent: THREE.Object3D, stage: number, template: THREE.Object3D) 
   return { result, head, tail };
 }
 
-function bowl(parent: THREE.Object3D, position: Point, water: boolean) {
-  const result = group(parent, 'bowl', position);
-  cylinder(result, '#6395a3', [0, 0.14, 0], 0.4, 0.26, 0.47, 'satin');
-  cylinder(result, water ? '#79bccb' : '#3f6970', [0, 0.26, 0], 0.37, 0.025, 0.37, water ? 'water' : 'satin');
-  return result;
-}
-
-function decoration(parent: THREE.Object3D, id: string) {
-  const result = group(parent, `decoration:${id}`);
-  switch (id) {
-    case 'moon-chair':
-      box(result, '#edcb88', [0, 0.42, 0], [1.1, 0.12, 0.5]);
-      box(result, '#f6db9d', [0, 0.78, -0.2], [1.1, 0.55, 0.12]);
-      for (const x of [-0.42, 0.42]) for (const z of [-0.17, 0.17]) cylinder(result, WOOD, [x, 0.2, z], 0.05, 0.4);
-      break;
-    case 'dandelion-pot':
-      cylinder(result, '#de9d7f', [0, 0.23, 0], 0.23, 0.45, 0.33);
-      flower(result, [0, 0.42, 0], '#fff1b3', 1.1);
-      break;
-    case 'tiny-pond':
-      orb(result, '#c6c1a6', [0, 0.03, 0], [0.7, 0.12, 0.55]);
-      orb(result, '#63a8b8', [0, 0.12, 0], [0.59, 0.035, 0.44], 'water');
-      stroke(result, '#c4e8df', [[-0.36, 0.15, 0.1], [-0.08, 0.16, 0.24], [0.25, 0.15, 0.17]], 0.012, 'water');
-      break;
-    case 'cloud-balloon':
-      cylinder(result, '#b6a17b', [0, 0.85, 0], 0.025, 1.7);
-      for (const x of [-0.3, 0, 0.3]) orb(result, '#fffaf0', [x, 1.65 + (x === 0 ? 0.15 : 0), 0], [0.35, 0.3, 0.25]);
-      break;
-    case 'reading-cat':
-      orb(result, '#e6be87', [0, 0.32, 0], [0.29, 0.35, 0.23]);
-      orb(result, '#e6be87', [0, 0.73, 0.05], [0.28, 0.25, 0.24]);
-      for (const x of [-0.18, 0.18]) {
-        mesh(result, new THREE.ConeGeometry(0.13, 0.26, 3), '#e6be87', [x, 0.98, 0.05]);
-        orb(result, INK, [x * 0.6, 0.77, 0.27], [0.026, 0.04, 0.02]);
-      }
-      box(result, '#8db7a0', [0, 0.36, 0.32], [0.55, 0.08, 0.32]).rotation.x = 0.3;
-      break;
-    case 'rainbow-flag': case 'paw-flag':
-      cylinder(result, WOOD, [0, 0.68, 0], 0.035, 1.36);
-      for (let i = 0; i < 3; i++) box(result, ['#e89986', '#f4d277', '#8fbaa2'][i]!, [0.27, 1.2 - i * 0.13, 0], [0.54, 0.13, 0.04]);
-      if (id === 'paw-flag') orb(result, CREAM, [0.28, 1.09, 0.045], [0.09, 0.1, 0.03]);
-      break;
-    case 'picnic-basket': case 'treasure-chest':
-      box(result, id === 'picnic-basket' ? '#bd9261' : '#9b7652', [0, 0.26, 0], [0.75, 0.5, 0.5]);
-      ring(result, '#e3bd76', [0, 0.6, 0], 0.24, 0.045);
-      if (id === 'treasure-chest') box(result, '#f2d380', [0, 0.27, 0.27], [0.13, 0.19, 0.05]);
-      break;
-    case 'strawberry-patch':
-      box(result, WOOD, [0, 0.09, 0], [0.85, 0.18, 0.6]);
-      for (const x of [-0.26, 0, 0.26]) {
-        plant(result, [x, 0.13, 0], 0.42);
-        orb(result, '#df7b74', [x, 0.22, 0.2], [0.12, 0.14, 0.11]);
-      }
-      break;
-    case 'mushroom-home': case 'puppy-house':
-      if (id === 'mushroom-home') {
-        cylinder(result, CREAM, [0, 0.4, 0], 0.4, 0.8);
-        orb(result, '#d99581', [0, 0.85, 0], [0.66, 0.34, 0.6]);
-        for (const x of [-0.3, 0, 0.3]) orb(result, CREAM, [x, 1.1, 0.1], [0.09, 0.025, 0.07]);
-      } else {
-        box(result, '#e7bd86', [0, 0.53, 0], [1.05, 1.05, 0.9]);
-        const gable = new THREE.Shape();
-        gable.moveTo(-0.66, 0); gable.lineTo(0, 0.56); gable.lineTo(0.66, 0); gable.closePath();
-        const roof = mesh(result, new THREE.ExtrudeGeometry(gable, { depth: 1.1, bevelEnabled: false, steps: 1 }), '#9a624e', [0, 1.02, -0.55], [1, 1, 1], 'wood');
-        roof.name = 'gable-roof';
-        stroke(result, '#e5bc86', [[-0.64, 1.03, 0.57], [0, 1.58, 0.57], [0.64, 1.03, 0.57]], 0.045, 'wood');
-        for (const y of [0.25, 0.5, 0.75]) box(result, '#c69968', [0, y, 0.456], [1.04, 0.015, 0.012], 'wood');
-        for (const z of [-0.32, -0.05, 0.22]) stroke(result, '#ae7759', [[-0.64, 1.04, z], [0, 1.59, z], [0.64, 1.04, z]], 0.012, 'wood');
-      }
-      orb(result, '#705945', [0, 0.27, 0.46], [0.22, 0.32, 0.03]);
-      break;
-    case 'bird-bath': case 'pebble-fountain':
-      cylinder(result, '#b9b7a1', [0, 0.32, 0], 0.16, 0.64);
-      orb(result, '#c7c8b2', [0, 0.62, 0], [0.5, 0.1, 0.4]);
-      orb(result, '#9edce4', [0, 0.69, 0], [0.43, 0.025, 0.34]);
-      if (id === 'pebble-fountain') orb(result, '#a7dde1', [0, 0.88, 0], [0.08, 0.23, 0.08]);
-      else orb(result, '#eac484', [0.32, 0.82, 0], [0.13, 0.13, 0.12]);
-      break;
-    case 'firefly-lantern':
-      cylinder(result, WOOD, [0, 0.55, 0], 0.04, 1.1);
-      orb(result, '#f7dc8b', [0, 1.0, 0], [0.25, 0.34, 0.25]);
-      break;
-    case 'shell-arch':
-      for (let i = 0; i < 7; i++) {
-        const angle = i / 6 * Math.PI;
-        const shell = orb(result, i % 2 ? '#f1cfbb' : '#fff0dc', [Math.cos(angle) * 0.3, 0.16 + Math.sin(angle) * 0.36, 0], [0.12, 0.38, 0.18]);
-        shell.rotation.z = Math.PI / 2 - angle;
-      }
-      orb(result, CREAM, [0, 0.15, 0.24], [0.14, 0.14, 0.14]);
-      break;
-    case 'ribbon-kelp':
-      for (const x of [-0.25, 0, 0.25]) plant(result, [x, 0, 0], 0.8 + (x === 0 ? 0.4 : 0), '#64a69a');
-      break;
-    case 'coral-garden':
-      for (let i = 0; i < 5; i++) {
-        const coral = cylinder(result, i % 2 ? '#ecb09e' : '#d99493', [(i - 2) * 0.17, 0.3, 0], 0.065, 0.5 + i % 2 * 0.35);
-        coral.rotation.z = (i - 2) * 0.2;
-        orb(result, '#eeb7a3', [(i - 2) * 0.22, 0.57 + i % 2 * 0.15, 0], [0.12, 0.13, 0.12]);
-      }
-      break;
-    case 'bubble-rock':
-      orb(result, '#a8babc', [0, 0.2, 0], [0.5, 0.27, 0.38]);
-      for (let i = 0; i < 4; i++) orb(result, '#d7f5f1', [Math.sin(i) * 0.15, 0.5 + i * 0.3, 0], [0.09, 0.09, 0.09]);
-      break;
-    case 'star-lamp':
-      for (let i = 0; i < 5; i++) {
-        const angle = i * Math.PI * 2 / 5;
-        const arm = orb(result, '#f5d68f', [Math.sin(angle) * 0.2, 0.35 + Math.cos(angle) * 0.2, 0], [0.1, 0.27, 0.1]);
-        arm.rotation.z = -angle;
-      }
-      break;
-    case 'puppy-ball':
-      orb(result, '#cbd883', [0, 0.3, 0], [0.3, 0.3, 0.3]);
-      ring(result, CREAM, [0, 0.3, 0], 0.3, 0.018).rotation.y = 0.4;
-      break;
-    case 'soft-bed':
-      orb(result, '#b5b5cb', [0, 0.13, 0], [0.7, 0.16, 0.55]);
-      ring(result, '#c7c5da', [0, 0.24, 0], 0.5, 0.13).rotation.x = Math.PI / 2;
-      break;
-    case 'flower-hoop':
-      ring(result, '#e4c57e', [0, 0.68, 0], 0.58, 0.055);
-      for (const x of [-0.4, 0, 0.4]) flower(result, [x, 0.82, 0], '#edb4af', 0.65);
-      break;
-    case 'water-bowl': bowl(result, [0, 0, 0], true); break;
-  }
-  return result;
-}
-
 export const CARE_DURATION = 3.6;
 export type CarePhase = 'idle' | 'approach' | 'respond' | 'settle';
 type CarePose = { action: CareAction; time: number; reach: number; touch: number; acknowledge: number };
 const ramp = (time: number, from: number, to: number) => THREE.MathUtils.smoothstep(time, from, to);
 
-export type WorldModelAssets = { puppyTemplate?: THREE.Object3D; treeTemplate?: THREE.Object3D; fishTemplate?: THREE.Object3D };
+export type WorldModelAssets = { puppyTemplate?: THREE.Object3D; treeTemplate?: THREE.Object3D; fishTemplate?: THREE.Object3D; propTemplate?: THREE.Object3D };
 
-export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate, treeTemplate, fishTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
+export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate, treeTemplate, fishTemplate, propTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
   if (subject === 'math' && !puppyTemplate) throw new Error('Math world requires the loaded puppy asset');
   if (subject === 'korean' && !treeTemplate) throw new Error('Korean world requires the loaded tree asset');
   if (subject === 'english' && !fishTemplate) throw new Error('English world requires the loaded fish asset');
+  if (!propTemplate) throw new Error(`${subject} world requires the loaded prop library`);
+  const instantiate = createPropInstancer(subject, propTemplate);
+  const decoration = (parent: THREE.Object3D, id: string) => {
+    const wrapper = group(parent, `decoration:${id}`);
+    wrapper.add(instantiate(id));
+    return wrapper;
+  };
   const root = new THREE.Group();
   root.name = `world:${subject}`;
   const stage = growthStage(world);
@@ -296,13 +170,9 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
     swimmer.result.position.set(0, 2.0, 0.55);
     const food = prop('feed');
     const morsels = group(food, 'care-morsels'); moving.add(morsels);
-    for (let i = 0; i < 5; i++) orb(morsels, '#9b643c', [(i % 2 - 0.5) * 0.11, i * 0.085, 0], [0.055, 0.055, 0.055], 'wood');
+    morsels.add(instantiate('fish-food'));
     const bubbles = prop('play');
-    bubbles.userData.surface = 'water';
-    for (let i = 0; i < 5; i++) {
-      ring(bubbles, '#c6f3ed', [Math.sin(i * 1.6) * 0.3, i * 0.3, 0], 0.12 + i % 2 * 0.07, 0.014);
-      orb(bubbles, '#e5fff4', [Math.sin(i * 1.6) * 0.3 - 0.055, i * 0.3 + 0.07, 0.02], [0.026, 0.04, 0.02]);
-    }
+    bubbles.add(instantiate('bubble-trail'));
     animated.push((time, care) => {
       const reach = care?.reach ?? 0, touch = care?.touch ?? 0, ack = care?.acknowledge ?? 0;
       const feeding = care?.action === 'feed';
@@ -357,18 +227,11 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       for (const entry of leaves) moving.add(entry);
       const water = prop('water');
       const can = group(water, 'care-tool', [-1.25, 1.45, 0.55]); moving.add(can);
-      can.userData.surface = 'satin';
-      cylinder(can, '#699eae', [0, 0, 0], 0.25, 0.43);
-      cylinder(can, '#699eae', [0.34, 0.1, 0], 0.055, 0.65).rotation.z = -0.85;
-      ring(can, '#699eae', [-0.25, 0.08, 0], 0.2, 0.04);
+      can.add(instantiate('watering-can'));
       const drops = group(water, 'care-drops'); moving.add(drops);
       for (let i = 0; i < 7; i++) orb(drops, '#69afc7', [-0.85 + i % 3 * 0.17, 0.2 + i * 0.12, 0.55], [0.04, 0.085, 0.04], 'water');
       const sun = prop('sunlight');
-      orb(sun, '#edbf56', [0, 0, 0], [0.32, 0.32, 0.14]);
-      for (let i = 0; i < 8; i++) {
-        const angle = i * Math.PI / 4;
-        stroke(sun, '#e5b34d', [[Math.cos(angle) * 0.43, Math.sin(angle) * 0.43, 0], [Math.cos(angle) * 0.58, Math.sin(angle) * 0.58, 0]], 0.035);
-      }
+      sun.add(instantiate('sunlight-token'));
       sun.position.set(1.65, stage === 0 ? 2.2 : 3.35, 0);
       animated.push((time, care) => {
         const lift = care?.reach ?? 0;
@@ -389,13 +252,11 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       moving.add(dog.result); moving.add(dog.head); moving.add(dog.tail);
       const food = prop('feed');
       const scale = dog.result.scale.x;
-      bowl(root, [0.9, 0.09, 1.6], false);
-      for (let i = 0; i < 9; i++) orb(food, '#a87340', [Math.cos(i * 2.4) * 0.25, i % 2 * 0.04, Math.sin(i * 2.4) * 0.25], [0.07, 0.055, 0.07], 'wood');
+      group(root, 'bowl', [0.9, 0.09, 1.6]).add(instantiate('feeding-bowl'));
+      food.add(instantiate('dog-food'));
       food.position.set(0.9, 0.41, 1.6);
       const brush = prop('brush');
-      box(brush, '#ac7953', [0, 0, 0], [0.38, 0.14, 0.52], 'wood');
-      cylinder(brush, '#ac7953', [0, 0.03, -0.43], 0.065, 0.44, 0.065, 'wood').rotation.x = Math.PI / 2;
-      for (let i = 0; i < 12; i++) cylinder(brush, '#f0ddbd', [-0.12 + i % 3 * 0.12, -0.13, -0.17 + Math.floor(i / 3) * 0.11], 0.013, 0.16);
+      brush.add(instantiate('grooming-brush'));
       const ball = prop('play'); decoration(ball, 'puppy-ball');
       animated.push((time, care) => {
         const reach = care?.reach ?? 0, touch = care?.touch ?? 0, ack = care?.acknowledge ?? 0;

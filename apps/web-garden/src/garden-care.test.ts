@@ -71,15 +71,25 @@ test('thrown ball stays above the lawn throughout its finite flight and reaches 
 
 test('puppy house has an upright centered gable ridge and level overhanging eaves', () => {
   const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, placements: { 'puppy-house': 'front-garden' } });
-  const roof = model.root.getObjectByName('gable-roof') as Mesh;
-  expect(roof).toBeInstanceOf(Mesh);
-  const positions = roof.geometry.getAttribute('position');
-  const points = Array.from({ length: positions.count }, (_, i) => new Vector3().fromBufferAttribute(positions, i));
+  const roof = model.root.getObjectByName('puppy-house')!;
+  const points: Vector3[] = [];
+  roof.traverse(object => {
+    if (!(object instanceof Mesh)) return;
+    const positions = object.geometry.getAttribute('position');
+    for (let i = 0; i < positions.count; i++) {
+      const point = new Vector3().fromBufferAttribute(positions, i);
+      if (point.y >= 1.02) points.push(point);
+    }
+  });
   const maxY = Math.max(...points.map((p) => p.y));
   const minY = Math.min(...points.map((p) => p.y));
   expect(maxY - minY).toBeGreaterThan(0.4);
   expect(points.filter((p) => Math.abs(p.y - maxY) < 0.001).every((p) => Math.abs(p.x) < 0.05)).toBe(true);
-  expect(Math.max(...points.filter((p) => p.y === minY).map((p) => Math.abs(p.x)))).toBeGreaterThan(0.525);
+  for (const side of [-1, 1]) {
+    const eaves = points.filter(p => p.x * side > 0.6 && p.y < 1.2);
+    expect(eaves.length).toBeGreaterThan(0);
+    expect(Math.max(...eaves.map(p => p.y)) - Math.min(...eaves.map(p => p.y))).toBeLessThan(0.1);
+  }
   expect(new Box3().setFromObject(roof).getSize(new Vector3()).z).toBeGreaterThan(0.7);
   disposeModel(model.root);
 });

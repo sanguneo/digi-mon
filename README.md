@@ -427,6 +427,13 @@ seed는 `학습 설정`에서 조절한다. 일반 연습 시작과 `새 문제 
 [나무](apps/web-garden/art/tree/README.md),
 [물고기](apps/web-garden/art/fish/README.md)에 있다.
 
+장식 24종과 물뿌리개·먹이·그릇·빗 등 돌봄 소품도 과목별 Blender GLB
+라이브러리를 사용한다. 현재 세계의 라이브러리만 불러오며, 기존 장식 식별자와
+여덟 배치 지점, 저장된 배치, 돌봄 동작은 유지한다. 제작 원본은
+[정원 소품](apps/web-garden/art/props-korean/README.md),
+[어항 소품](apps/web-garden/art/props-english/README.md),
+[마당 소품](apps/web-garden/art/props-math/README.md)에 있다.
+
 해당 과목의 서로 다른 문제 세 개에 답할 때마다 장식 하나를 연다.
 학습 참여와 돌봄이 함께 쌓이면 모습이 성장하고 다음 목표와 성장 기록이 나타난다.
 정답률은 보상에 영향을 주지 않으며, 접속하지 않았다고 시들거나 성장이 줄지 않는다.

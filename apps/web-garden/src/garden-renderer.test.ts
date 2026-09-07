@@ -2,12 +2,13 @@
 import { BufferGeometry, Mesh, type Scene } from 'three';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createWorldRenderer, prepareWorldAssets } from './garden-renderer.ts';
-import { readShippedAssetBytes, readShippedPuppy, shippedAssets } from './puppy-asset.test-fixture.ts';
+import { assetsFor, readShippedAssetBytes, readShippedPuppy, shippedAssets } from './puppy-asset.test-fixture.ts';
 import { disposeModel } from './garden-models.ts';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { TREE_ASSET_URL } from './tree-asset.ts';
 import { FISH_ASSET_URL } from './fish-asset.ts';
+import { PROP_ASSET_URLS } from './prop-asset.ts';
 import { EMPTY_GAME_STATE, careForWorld, type WorldState } from './game-state.ts';
 
 const { gpuDraw } = vi.hoisted(() => ({ gpuDraw: vi.fn() }));
@@ -47,7 +48,7 @@ afterEach(() => { document.body.replaceChildren(); vi.restoreAllMocks(); vi.unst
 test.each(['korean', 'english', 'math'] as const)('%s care phase events are transition-only, repeat clicks restart, and care updates allocate no new geometry', (subject) => {
   const element = canvas();
   const action = subject === 'korean' ? 'water' : 'feed';
-  const runtime = createWorldRenderer(element, subject, EMPTY_GAME_STATE.worlds[subject], () => {}, shippedAssets);
+  const runtime = createWorldRenderer(element, subject, EMPTY_GAME_STATE.worlds[subject], () => {}, assetsFor(subject));
   const phases: string[] = [];
   element.addEventListener('garden-care-phase', (event) => phases.push(`${(event as CustomEvent).detail.id}:${(event as CustomEvent).detail.phase}`));
   const finished = vi.fn(); element.addEventListener('garden-care-finished', finished);
@@ -70,7 +71,7 @@ test.each(['korean', 'english', 'math'] as const)('%s care phase events are tran
 
 test.each(['korean', 'english', 'math'] as const)('%s pause, offscreen and background do not advance care; static actions finish without a motion loop', (subject) => {
   const element = canvas();
-  const runtime = createWorldRenderer(element, subject, EMPTY_GAME_STATE.worlds[subject], () => {}, shippedAssets);
+  const runtime = createWorldRenderer(element, subject, EMPTY_GAME_STATE.worlds[subject], () => {}, assetsFor(subject));
   const finished = vi.fn(); element.addEventListener('garden-care-finished', finished);
   runtime.care({ id: 1, subject, action: subject === 'korean' ? 'water' : 'feed' });
   expect(element.dataset.careState).toBe('settled');
@@ -102,7 +103,7 @@ test.each([['korean', TREE_ASSET_URL], ['english', FISH_ASSET_URL], ['math', PUP
   const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockRejectedValue(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
-  expect(load.mock.calls).toEqual([[url], [url]]);
+  expect(load.mock.calls).toEqual([[url], [PROP_ASSET_URLS[subject]], [url], [PROP_ASSET_URLS[subject]]]);
 });
 
 test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_URL]] as const)('%s real asset growth and context retry release owned scenes without poisoning templates or replaying history', (subject, name, url) => {
@@ -118,8 +119,9 @@ test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_UR
   const lost = vi.fn();
   const action = subject === 'korean' ? 'water' : 'feed';
   const world: WorldState = { ...EMPTY_GAME_STATE.worlds[subject], lastCare: action };
-  const runtime = createWorldRenderer(element, subject, world, lost, shippedAssets);
+  const runtime = createWorldRenderer(element, subject, world, lost, assetsFor(subject));
   expect(element.dataset.assetSource).toBe(url);
+  expect(element.dataset.propAssetSource).toBe(PROP_ASSET_URLS[subject]);
   expect(element.dataset.careState).toBe('idle');
   const scene = gpuDraw.mock.lastCall![0] as Scene;
   runtime.setMotion(true);
@@ -145,8 +147,9 @@ test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_UR
   expect(frames.size).toBe(0);
   runtime.dispose();
   expect(element.dataset.assetSource).toBeUndefined();
+  expect(element.dataset.propAssetSource).toBeUndefined();
   const retryElement = canvas();
-  const retry = createWorldRenderer(retryElement, subject, world, () => {}, shippedAssets);
+  const retry = createWorldRenderer(retryElement, subject, world, () => {}, assetsFor(subject));
   expect(retryElement.dataset.careState).toBe('idle');
   expect(retryElement.dataset.assetSource).toBe(url);
   expect((gpuDraw.mock.lastCall![0] as Scene).getObjectByName(`${name}-asset`)).toBeDefined();
@@ -166,7 +169,7 @@ test('actual puppy growth and context retry dispose owned art without poisoning 
   const element = canvas();
   const lost = vi.fn();
   const world = { ...EMPTY_GAME_STATE.worlds.math, lastCare: 'feed' as const };
-  const runtime = createWorldRenderer(element, 'math', world, lost, { puppyTemplate });
+  const runtime = createWorldRenderer(element, 'math', world, lost, { ...assetsFor('math'), puppyTemplate });
   expect(element.dataset.assetSource).toBe(PUPPY_ASSET_URL);
   expect(element.dataset.careState).toBe('idle');
   const scene = gpuDraw.mock.lastCall![0] as Scene;
@@ -184,7 +187,7 @@ test('actual puppy growth and context retry dispose owned art without poisoning 
   element.dispatchEvent(new Event('webglcontextlost', { cancelable: true }));
   expect(lost).toHaveBeenCalledTimes(1);
   runtime.dispose();
-  const retry = createWorldRenderer(canvas(), 'math', world, () => {}, { puppyTemplate });
+  const retry = createWorldRenderer(canvas(), 'math', world, () => {}, { ...assetsFor('math'), puppyTemplate });
   expect((gpuDraw.mock.lastCall![0] as Scene).getObjectByName('puppy-asset')).toBeDefined();
   retry.dispose();
   for (const spy of templateDisposals) expect(spy).not.toHaveBeenCalled();
@@ -193,7 +196,7 @@ test('actual puppy growth and context retry dispose owned art without poisoning 
 
 test('successful preparation caches each real shipped GLB independently and never preloads inactive subjects', async () => {
   const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockImplementation(async (url) => {
-    const name = url === TREE_ASSET_URL ? 'tree' : url === FISH_ASSET_URL ? 'fish' : 'puppy';
+    const name = url.split('/').pop()!.replace('.glb', '') as Parameters<typeof readShippedAssetBytes>[0];
     return new GLTFLoader().parseAsync(await readShippedAssetBytes(name), '');
   });
   for (const [index, subject, key, url] of [
@@ -202,10 +205,11 @@ test('successful preparation caches each real shipped GLB independently and neve
     [3, 'math', 'puppyTemplate', PUPPY_ASSET_URL],
   ] as const) {
     const [first, concurrent] = await Promise.all([prepareWorldAssets(subject), prepareWorldAssets(subject)]);
-    expect(Object.keys(first)).toEqual([key]);
+    expect(Object.keys(first)).toEqual([key, 'propTemplate']);
+    expect(first.propTemplate === concurrent.propTemplate).toBe(true);
     expect(first[key] === concurrent[key]).toBe(true);
     expect((await prepareWorldAssets(subject))[key] === first[key]).toBe(true);
-    expect(load).toHaveBeenCalledTimes(index);
-    expect(load).toHaveBeenLastCalledWith(url);
+    expect(load).toHaveBeenCalledTimes(index * 2);
+    expect(load.mock.calls.slice(-2)).toEqual([[url], [PROP_ASSET_URLS[subject]]]);
   }
 });

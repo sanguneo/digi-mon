@@ -7,11 +7,14 @@ import { buildWorldModel, disposeModel, type WorldModelAssets } from './garden-m
 import { loadPuppyAsset, PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { loadTreeAsset, TREE_ASSET_URL } from './tree-asset.ts';
 import { loadFishAsset, FISH_ASSET_URL } from './fish-asset.ts';
+import { loadPropAsset, PROP_ASSET_URLS } from './prop-asset.ts';
 
 export async function prepareWorldAssets(subject: Subject): Promise<WorldModelAssets> {
-  if (subject === 'korean') return { treeTemplate: await loadTreeAsset() };
-  if (subject === 'english') return { fishTemplate: await loadFishAsset() };
-  return { puppyTemplate: await loadPuppyAsset() };
+  const [primary, propTemplate] = await Promise.all([
+    subject === 'korean' ? loadTreeAsset() : subject === 'english' ? loadFishAsset() : loadPuppyAsset(),
+    loadPropAsset(subject),
+  ]);
+  return { [subject === 'korean' ? 'treeTemplate' : subject === 'english' ? 'fishTemplate' : 'puppyTemplate']: primary, propTemplate };
 }
 
 export type CameraAction = 'left' | 'right' | 'up' | 'down' | 'in' | 'out' | 'home';
@@ -29,6 +32,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   if (subject === 'math' && !assets.puppyTemplate) throw new Error('Math renderer requires the loaded puppy asset');
   if (subject === 'korean' && !assets.treeTemplate) throw new Error('Korean renderer requires the loaded tree asset');
   if (subject === 'english' && !assets.fishTemplate) throw new Error('English renderer requires the loaded fish asset');
+  if (!assets.propTemplate) throw new Error(`${subject} renderer requires the loaded prop library`);
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.shadowMap.enabled = true;
@@ -148,6 +152,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   canvas.dataset.renderer = 'three-webgl';
   canvas.dataset.world = subject;
   canvas.dataset.assetSource = subject === 'korean' ? TREE_ASSET_URL : subject === 'english' ? FISH_ASSET_URL : PUPPY_ASSET_URL;
+  canvas.dataset.propAssetSource = PROP_ASSET_URLS[subject];
   canvas.dataset.stage = String(model.root.userData.stage);
   canvas.dataset.careId = '0';
   careState('idle');
@@ -218,6 +223,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       if (!lost) renderer.forceContextLoss();
       delete canvas.dataset.renderer;
       delete canvas.dataset.assetSource;
+      delete canvas.dataset.propAssetSource;
     },
   };
 }

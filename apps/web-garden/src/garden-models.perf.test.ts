@@ -6,58 +6,15 @@ import { disposeModel } from './garden-models.ts';
 import { buildWorldModel } from './puppy-asset.test-fixture.ts';
 import { WORLD_CATALOGS, WORLDS } from './garden-worlds.ts';
 
-// Measured by executing garden-models.ts from Git 31c4e1524b4c59a5e1559f4ba0b9179b63578728,
-// with empty placements, all four stages, batch=false/true. Counts include hidden
-// pooled care geometry, exactly like resources() below; they are not visible-frame estimates.
-const PROCEDURAL_MATH_BASELINE = [
-  { puppyTriangles: 20_800, puppyMeshes: 50, puppyBatchedMeshes: 4, worldTriangles: 56_416, worldBatchedMeshes: 11 },
-  { puppyTriangles: 22_120, puppyMeshes: 52, puppyBatchedMeshes: 4, worldTriangles: 59_056, worldBatchedMeshes: 11 },
-  { puppyTriangles: 22_126, puppyMeshes: 53, puppyBatchedMeshes: 4, worldTriangles: 59_062, worldBatchedMeshes: 11 },
-  { puppyTriangles: 22_126, puppyMeshes: 53, puppyBatchedMeshes: 4, worldTriangles: 69_510, worldBatchedMeshes: 11 },
-] as const;
-
-// Executed from Git 214416e before removing procedural tree/fish actors. Empty
-// placements; triangles include pooled hidden care props. English actor totals
-// include the stage-zero friend from stage 2 onward.
-const PROCEDURAL_NATURE_BASELINE = {
-  korean: [
-    { actorTriangles: 7_968, actorMeshes: 28, actorBatchedMeshes: 4, worldTriangles: 45_580, worldMeshes: 124, worldBatchedMeshes: 10 },
-    { actorTriangles: 13_452, actorMeshes: 85, actorBatchedMeshes: 3, worldTriangles: 53_240, worldMeshes: 186, worldBatchedMeshes: 9 },
-    { actorTriangles: 39_180, actorMeshes: 141, actorBatchedMeshes: 3, worldTriangles: 81_144, worldMeshes: 247, worldBatchedMeshes: 9 },
-    { actorTriangles: 26_988, actorMeshes: 165, actorBatchedMeshes: 4, worldTriangles: 71_128, worldMeshes: 276, worldBatchedMeshes: 10 },
-  ],
-  english: [
-    { actorTriangles: 8_836, actorMeshes: 34, actorBatchedMeshes: 4, worldTriangles: 24_846, worldMeshes: 81, worldBatchedMeshes: 11 },
-    { actorTriangles: 8_836, actorMeshes: 34, actorBatchedMeshes: 4, worldTriangles: 27_022, worldMeshes: 86, worldBatchedMeshes: 11 },
-    { actorTriangles: 18_712, actorMeshes: 70, actorBatchedMeshes: 8, worldTriangles: 39_074, worldMeshes: 127, worldBatchedMeshes: 15 },
-    { actorTriangles: 18_712, actorMeshes: 70, actorBatchedMeshes: 8, worldTriangles: 44_330, worldMeshes: 142, worldBatchedMeshes: 15 },
-  ],
-} as const;
-
-// Measured with the shipped GLBs through buildWorldModel(batch=true), empty
-// placements. Tuples are [triangles, meshes, geometries, materials], including
-// hidden growth/care resources. Each fish owns its material rather than sharing
-// GPU lifetime with its friend; only the selected tree stage is ever cloned.
-const SHIPPED_WORLD_BUDGETS = {
-  korean: [
-    { world: [42_100, 10, 10, 6], actors: [[4_488, 4, 4, 2]] },
-    { world: [54_272, 9, 9, 6], actors: [[14_484, 3, 3, 2]] },
-    { world: [75_216, 10, 10, 7], actors: [[33_252, 4, 4, 3]] },
-    { world: [73_284, 10, 10, 7], actors: [[29_144, 4, 4, 3]] },
-  ],
-  english: [
-    { world: [40_670, 13, 13, 5], actors: [[24_660, 6, 6, 1]] },
-    { world: [42_846, 13, 13, 5], actors: [[24_660, 6, 6, 1]] },
-    { world: [69_682, 19, 19, 6], actors: [[24_660, 6, 6, 1], [24_660, 6, 6, 1]] },
-    { world: [74_938, 19, 19, 6], actors: [[24_660, 6, 6, 1], [24_660, 6, 6, 1]] },
-  ],
-  math: [
-    { world: [70_728, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
-    { world: [72_048, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
-    { world: [72_048, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
-    { world: [82_496, 13, 13, 6], actors: [[35_112, 6, 6, 3]] },
-  ],
-} as const;
+// Executed Git 127ad25 before replacing props. Removed only declared prop
+// subtrees and primary actors, then measured the remaining environment both raw
+// and batched. Includes Korean procedural droplets; no prop triangles can mask
+// environment regressions. Tuples: triangles, meshes, geometries, materials.
+import baseline from './prop-baseline.test-fixture.json';
+// Actual shipped libraries, all four stages, empty/full catalogs, idle and every
+// care action at t=1.4. Full budgets include hidden growth and pooled care resources;
+// active budgets count visible subtrees only, not all cached library parts.
+import budgets from './prop-budgets.test-fixture.json';
 
 function worldAt(subject: Subject, stage: number): WorldState {
   return {
@@ -67,10 +24,14 @@ function worldAt(subject: Subject, stage: number): WorldState {
   };
 }
 
-function resources(root: Object3D, sceneryOnly = false) {
+function resources(root: Object3D, sceneryOnly = false, visibleOnly = false) {
   const meshes: Mesh[] = [];
   root.traverse((object) => {
     if (!(object instanceof Mesh)) return;
+    if (visibleOnly) {
+      let ancestor: Object3D | null = object;
+      while (ancestor) { if (!ancestor.visible) return; ancestor = ancestor.parent; }
+    }
     if (sceneryOnly) {
       let ancestor: Object3D | null = object;
       while (ancestor) {
@@ -155,43 +116,30 @@ function expectSameTriangles(original: Map<string, number[]>, batched: Map<strin
 }
 
 describe('world render batching', () => {
-  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i has the exact measured authored actor and complete-world resource budget`, (stage) => {
-    const model = buildWorldModel(subject, { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true });
-    const summarize = (root: Object3D) => {
-      const result = resources(root);
-      return [result.triangles, result.meshes.length, result.geometries.size, result.materials.size];
-    };
-    const budget = SHIPPED_WORLD_BUDGETS[subject][stage]!;
-    expect(summarize(model.root)).toEqual(budget.world);
-    const actors = model.root.children.filter((object) => ['growing-tree', 'fish', 'puppy'].includes(object.name));
-    expect(actors.map(summarize)).toEqual(budget.actors);
-    disposeModel(model.root);
+  const summarize = (root: Object3D, sceneryOnly = false, visibleOnly = false) => {
+    const result = resources(root, sceneryOnly, visibleOnly);
+    return [result.triangles, result.meshes.length, result.geometries.size, result.materials.size];
+  };
+  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i retains exact full, active and primary actor budgets with empty/full catalogs`, (stage) => {
+    for (const catalog of [false, true]) {
+      const world = { ...worldAt(subject, stage), ...(!catalog ? { placements: {} } : {}) };
+      const model = buildWorldModel(subject, world, { batch: true });
+      const budget = budgets[subject][stage]![catalog ? 'catalog' : 'empty'];
+      expect(summarize(model.root)).toEqual(budget.full);
+      expect(summarize(model.root, false, true)).toEqual(budget.idle);
+      const actors = model.root.children.filter(object => ['growing-tree', 'fish', 'puppy'].includes(object.name));
+      expect(actors.map(actor => summarize(actor))).toEqual(budget.actors);
+      for (const care of WORLDS[subject].care) {
+        model.startCare(care.id, 0); model.animate(1.4);
+        expect(summarize(model.root, false, true)).toEqual((budget.active as Record<string, number[]>)[care.id]);
+      }
+      disposeModel(model.root);
+    }
   });
-  test.each([0, 1, 2, 3])('math stage %i replaces only the puppy and retains the measured scenery budget', (stage) => {
-    const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true });
-    const world = resources(model.root);
-    const puppy = resources(model.root.getObjectByName('puppy')!);
-    const baseline = PROCEDURAL_MATH_BASELINE[stage]!;
-    expect(world.triangles - puppy.triangles).toBe(baseline.worldTriangles - baseline.puppyTriangles);
-    expect(world.meshes.length - puppy.meshes.length).toBe(baseline.worldBatchedMeshes - baseline.puppyBatchedMeshes);
-    expect(puppy.triangles).toBeLessThanOrEqual(45_000);
-    // The Blender file is already consolidated into independently articulated
-    // primitives. Keep its authored roles/colors rather than rebaking them.
-    expect(puppy.meshes.length).toBeLessThanOrEqual(6);
-    expect(puppy.materials.size).toBeLessThanOrEqual(5);
-    disposeModel(model.root);
-  });
-
-  for (const subject of ['korean', 'english'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i replaces only actors and retains original scenery resources`, (stage) => {
-    const baseline = PROCEDURAL_NATURE_BASELINE[subject][stage]!;
+  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i retains independently measured unchanged environment resources`, (stage) => {
     for (const batch of [false, true]) {
-      const model = buildWorldModel(subject, { ...EMPTY_GAME_STATE.worlds[subject], growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch });
-      const scenery = resources(model.root, true);
-      const count = batch ? baseline.worldBatchedMeshes - baseline.actorBatchedMeshes : baseline.worldMeshes - baseline.actorMeshes;
-      expect(scenery.triangles).toBe(baseline.worldTriangles - baseline.actorTriangles);
-      expect(scenery.meshes.length).toBe(count);
-      expect(scenery.geometries.size).toBe(count);
-      expect(scenery.materials.size).toBe(batch ? 4 : count - (subject === 'english' ? 2 : 0));
+      const model = buildWorldModel(subject, worldAt(subject, stage), { batch });
+      expect(summarize(model.root, true)).toEqual(baseline[subject][stage]![batch ? 'batchedEnvironment' : 'environment']);
       disposeModel(model.root);
     }
   });
@@ -204,9 +152,12 @@ describe('world render batching', () => {
     // world budgets below account for those instead of weakening this invariant.
     const before = resources(original.root, true);
     const after = resources(batched.root, true);
-    expect(after.meshes.length).toBeLessThanOrEqual(before.meshes.length * 0.15);
-    expect(after.geometries.size).toBeLessThanOrEqual(before.geometries.size * 0.15);
-    expect(after.materials.size).toBe(subject === 'math' ? 3 : 4);
+    // Removing props changes the denominator, not the batching algorithm. Preserve
+    // the exact Git127ad25 unchanged-environment ratio (English includes 3 glass panes).
+    const measured = baseline[subject][0]!;
+    expect(after.meshes.length / before.meshes.length).toBe(measured.batchedEnvironment[1]! / measured.environment[1]!);
+    expect(after.geometries.size / before.geometries.size).toBe(measured.batchedEnvironment[2]! / measured.environment[2]!);
+    expect(after.materials.size).toBe(measured.batchedEnvironment[3]);
     expect(resources(batched.root).triangles).toBe(resources(original.root).triangles);
     for (const mesh of after.meshes.filter((object) => object.name === 'static-batch')) {
       expect(mesh.geometry.groups).toHaveLength(0);

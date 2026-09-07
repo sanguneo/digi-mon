@@ -1,0 +1,1119 @@
+{
+  "revision": "127ad25",
+  "korean": [
+    {
+      "full": [
+        42100,
+        100,
+        100,
+        98
+      ],
+      "parts": {
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "care-tool": [
+          992,
+          3,
+          3,
+          3
+        ],
+        "care:sunlight": [
+          1480,
+          9,
+          9,
+          9
+        ]
+      },
+      "catalog": {
+        "decoration:moon-chair": [
+          408,
+          6,
+          6,
+          6
+        ],
+        "decoration:dandelion-pot": [
+          3312,
+          8,
+          8,
+          8
+        ],
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "decoration:cloud-balloon": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:reading-cat": [
+          2104,
+          7,
+          7,
+          7
+        ],
+        "decoration:rainbow-flag": [
+          132,
+          4,
+          4,
+          4
+        ],
+        "decoration:picnic-basket": [
+          812,
+          2,
+          2,
+          2
+        ],
+        "decoration:strawberry-patch": [
+          8100,
+          19,
+          19,
+          19
+        ],
+        "decoration:mushroom-home": [
+          2696,
+          6,
+          6,
+          6
+        ],
+        "decoration:bird-bath": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:pebble-fountain": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:firefly-lantern": [
+          616,
+          2,
+          2,
+          2
+        ]
+      },
+      "environment": [
+        33980,
+        81,
+        81,
+        81
+      ],
+      "batchedEnvironment": [
+        33980,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "full": [
+        54272,
+        104,
+        104,
+        103
+      ],
+      "parts": {
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "care-tool": [
+          992,
+          3,
+          3,
+          3
+        ],
+        "care:sunlight": [
+          1480,
+          9,
+          9,
+          9
+        ]
+      },
+      "catalog": {
+        "decoration:moon-chair": [
+          408,
+          6,
+          6,
+          6
+        ],
+        "decoration:dandelion-pot": [
+          3312,
+          8,
+          8,
+          8
+        ],
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "decoration:cloud-balloon": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:reading-cat": [
+          2104,
+          7,
+          7,
+          7
+        ],
+        "decoration:rainbow-flag": [
+          132,
+          4,
+          4,
+          4
+        ],
+        "decoration:picnic-basket": [
+          812,
+          2,
+          2,
+          2
+        ],
+        "decoration:strawberry-patch": [
+          8100,
+          19,
+          19,
+          19
+        ],
+        "decoration:mushroom-home": [
+          2696,
+          6,
+          6,
+          6
+        ],
+        "decoration:bird-bath": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:pebble-fountain": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:firefly-lantern": [
+          616,
+          2,
+          2,
+          2
+        ]
+      },
+      "environment": [
+        36156,
+        86,
+        86,
+        86
+      ],
+      "batchedEnvironment": [
+        36156,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "full": [
+        75216,
+        110,
+        110,
+        109
+      ],
+      "parts": {
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "care-tool": [
+          992,
+          3,
+          3,
+          3
+        ],
+        "care:sunlight": [
+          1480,
+          9,
+          9,
+          9
+        ]
+      },
+      "catalog": {
+        "decoration:moon-chair": [
+          408,
+          6,
+          6,
+          6
+        ],
+        "decoration:dandelion-pot": [
+          3312,
+          8,
+          8,
+          8
+        ],
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "decoration:cloud-balloon": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:reading-cat": [
+          2104,
+          7,
+          7,
+          7
+        ],
+        "decoration:rainbow-flag": [
+          132,
+          4,
+          4,
+          4
+        ],
+        "decoration:picnic-basket": [
+          812,
+          2,
+          2,
+          2
+        ],
+        "decoration:strawberry-patch": [
+          8100,
+          19,
+          19,
+          19
+        ],
+        "decoration:mushroom-home": [
+          2696,
+          6,
+          6,
+          6
+        ],
+        "decoration:bird-bath": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:pebble-fountain": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:firefly-lantern": [
+          616,
+          2,
+          2,
+          2
+        ]
+      },
+      "environment": [
+        38332,
+        91,
+        91,
+        91
+      ],
+      "batchedEnvironment": [
+        38332,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "full": [
+        73284,
+        115,
+        115,
+        114
+      ],
+      "parts": {
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "care-tool": [
+          992,
+          3,
+          3,
+          3
+        ],
+        "care:sunlight": [
+          1480,
+          9,
+          9,
+          9
+        ]
+      },
+      "catalog": {
+        "decoration:moon-chair": [
+          408,
+          6,
+          6,
+          6
+        ],
+        "decoration:dandelion-pot": [
+          3312,
+          8,
+          8,
+          8
+        ],
+        "decoration:tiny-pond": [
+          1160,
+          3,
+          3,
+          3
+        ],
+        "decoration:cloud-balloon": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:reading-cat": [
+          2104,
+          7,
+          7,
+          7
+        ],
+        "decoration:rainbow-flag": [
+          132,
+          4,
+          4,
+          4
+        ],
+        "decoration:picnic-basket": [
+          812,
+          2,
+          2,
+          2
+        ],
+        "decoration:strawberry-patch": [
+          8100,
+          19,
+          19,
+          19
+        ],
+        "decoration:mushroom-home": [
+          2696,
+          6,
+          6,
+          6
+        ],
+        "decoration:bird-bath": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:pebble-fountain": [
+          1656,
+          4,
+          4,
+          4
+        ],
+        "decoration:firefly-lantern": [
+          616,
+          2,
+          2,
+          2
+        ]
+      },
+      "environment": [
+        40508,
+        96,
+        96,
+        96
+      ],
+      "batchedEnvironment": [
+        40508,
+        3,
+        3,
+        3
+      ]
+    }
+  ],
+  "english": [
+    {
+      "full": [
+        40670,
+        53,
+        53,
+        46
+      ],
+      "parts": {
+        "care:feed": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "care:play": [
+          6600,
+          10,
+          10,
+          10
+        ]
+      },
+      "catalog": {
+        "decoration:shell-arch": [
+          4160,
+          8,
+          8,
+          8
+        ],
+        "decoration:ribbon-kelp": [
+          6528,
+          15,
+          15,
+          15
+        ],
+        "decoration:coral-garden": [
+          3080,
+          10,
+          10,
+          10
+        ],
+        "decoration:bubble-rock": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "decoration:treasure-chest": [
+          824,
+          3,
+          3,
+          3
+        ],
+        "decoration:star-lamp": [
+          2600,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        6810,
+        32,
+        32,
+        30
+      ],
+      "batchedEnvironment": [
+        6810,
+        5,
+        5,
+        3
+      ]
+    },
+    {
+      "full": [
+        42846,
+        58,
+        58,
+        51
+      ],
+      "parts": {
+        "care:feed": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "care:play": [
+          6600,
+          10,
+          10,
+          10
+        ]
+      },
+      "catalog": {
+        "decoration:shell-arch": [
+          4160,
+          8,
+          8,
+          8
+        ],
+        "decoration:ribbon-kelp": [
+          6528,
+          15,
+          15,
+          15
+        ],
+        "decoration:coral-garden": [
+          3080,
+          10,
+          10,
+          10
+        ],
+        "decoration:bubble-rock": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "decoration:treasure-chest": [
+          824,
+          3,
+          3,
+          3
+        ],
+        "decoration:star-lamp": [
+          2600,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        8986,
+        37,
+        37,
+        35
+      ],
+      "batchedEnvironment": [
+        8986,
+        5,
+        5,
+        3
+      ]
+    },
+    {
+      "full": [
+        69682,
+        69,
+        69,
+        57
+      ],
+      "parts": {
+        "care:feed": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "care:play": [
+          6600,
+          10,
+          10,
+          10
+        ]
+      },
+      "catalog": {
+        "decoration:shell-arch": [
+          4160,
+          8,
+          8,
+          8
+        ],
+        "decoration:ribbon-kelp": [
+          6528,
+          15,
+          15,
+          15
+        ],
+        "decoration:coral-garden": [
+          3080,
+          10,
+          10,
+          10
+        ],
+        "decoration:bubble-rock": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "decoration:treasure-chest": [
+          824,
+          3,
+          3,
+          3
+        ],
+        "decoration:star-lamp": [
+          2600,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        11162,
+        42,
+        42,
+        40
+      ],
+      "batchedEnvironment": [
+        11162,
+        5,
+        5,
+        3
+      ]
+    },
+    {
+      "full": [
+        74938,
+        84,
+        84,
+        72
+      ],
+      "parts": {
+        "decoration:coral-garden": [
+          3080,
+          10,
+          10,
+          10
+        ],
+        "care:feed": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "care:play": [
+          6600,
+          10,
+          10,
+          10
+        ]
+      },
+      "catalog": {
+        "decoration:shell-arch": [
+          4160,
+          8,
+          8,
+          8
+        ],
+        "decoration:ribbon-kelp": [
+          6528,
+          15,
+          15,
+          15
+        ],
+        "decoration:coral-garden": [
+          3080,
+          10,
+          10,
+          10
+        ],
+        "decoration:bubble-rock": [
+          2600,
+          5,
+          5,
+          5
+        ],
+        "decoration:treasure-chest": [
+          824,
+          3,
+          3,
+          3
+        ],
+        "decoration:star-lamp": [
+          2600,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        13338,
+        47,
+        47,
+        45
+      ],
+      "batchedEnvironment": [
+        13338,
+        5,
+        5,
+        3
+      ]
+    }
+  ],
+  "math": [
+    {
+      "full": [
+        70728,
+        102,
+        102,
+        99
+      ],
+      "parts": {
+        "bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "care:feed": [
+          4680,
+          9,
+          9,
+          9
+        ],
+        "care:brush": [
+          1260,
+          14,
+          14,
+          14
+        ],
+        "care:play": [
+          1320,
+          2,
+          2,
+          2
+        ]
+      },
+      "catalog": {
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:soft-bed": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-house": [
+          1056,
+          10,
+          10,
+          10
+        ],
+        "decoration:flower-hoop": [
+          10448,
+          22,
+          22,
+          22
+        ],
+        "decoration:water-bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:paw-flag": [
+          652,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        28164,
+        69,
+        69,
+        69
+      ],
+      "batchedEnvironment": [
+        28164,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "full": [
+        72048,
+        104,
+        104,
+        101
+      ],
+      "parts": {
+        "bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "care:feed": [
+          4680,
+          9,
+          9,
+          9
+        ],
+        "care:brush": [
+          1260,
+          14,
+          14,
+          14
+        ],
+        "care:play": [
+          1320,
+          2,
+          2,
+          2
+        ]
+      },
+      "catalog": {
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:soft-bed": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-house": [
+          1056,
+          10,
+          10,
+          10
+        ],
+        "decoration:flower-hoop": [
+          10448,
+          22,
+          22,
+          22
+        ],
+        "decoration:water-bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:paw-flag": [
+          652,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        28164,
+        69,
+        69,
+        69
+      ],
+      "batchedEnvironment": [
+        28164,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "full": [
+        72048,
+        104,
+        104,
+        101
+      ],
+      "parts": {
+        "bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "care:feed": [
+          4680,
+          9,
+          9,
+          9
+        ],
+        "care:brush": [
+          1260,
+          14,
+          14,
+          14
+        ],
+        "care:play": [
+          1320,
+          2,
+          2,
+          2
+        ]
+      },
+      "catalog": {
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:soft-bed": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-house": [
+          1056,
+          10,
+          10,
+          10
+        ],
+        "decoration:flower-hoop": [
+          10448,
+          22,
+          22,
+          22
+        ],
+        "decoration:water-bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:paw-flag": [
+          652,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        28164,
+        69,
+        69,
+        69
+      ],
+      "batchedEnvironment": [
+        28164,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "full": [
+        82496,
+        126,
+        126,
+        123
+      ],
+      "parts": {
+        "bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:flower-hoop": [
+          10448,
+          22,
+          22,
+          22
+        ],
+        "care:feed": [
+          4680,
+          9,
+          9,
+          9
+        ],
+        "care:brush": [
+          1260,
+          14,
+          14,
+          14
+        ],
+        "care:play": [
+          1320,
+          2,
+          2,
+          2
+        ]
+      },
+      "catalog": {
+        "decoration:puppy-ball": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:soft-bed": [
+          1320,
+          2,
+          2,
+          2
+        ],
+        "decoration:puppy-house": [
+          1056,
+          10,
+          10,
+          10
+        ],
+        "decoration:flower-hoop": [
+          10448,
+          22,
+          22,
+          22
+        ],
+        "decoration:water-bowl": [
+          192,
+          2,
+          2,
+          2
+        ],
+        "decoration:paw-flag": [
+          652,
+          5,
+          5,
+          5
+        ]
+      },
+      "environment": [
+        28164,
+        69,
+        69,
+        69
+      ],
+      "batchedEnvironment": [
+        28164,
+        2,
+        2,
+        2
+      ]
+    }
+  ]
+}

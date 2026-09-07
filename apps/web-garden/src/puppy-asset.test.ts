@@ -4,6 +4,7 @@ import { expect, test, vi } from 'vitest';
 import { createPuppyAssetLoader, parsePuppyAsset, clonePuppyAsset, PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { buildWorldModel, disposeModel } from './garden-models.ts';
 import { EMPTY_GAME_STATE } from './game-state.ts';
+import { assetsFor } from './puppy-asset.test-fixture.ts';
 
 test('failed loads retry, concurrent loads share a template, and successful loads are cached', async () => {
   const failure = new Error('asset unavailable');
@@ -54,7 +55,7 @@ test('shipped GLB preserves its authored nodes, appearance, growth and independe
   expect(triangles).toBeGreaterThan(0); expect(triangles).toBeLessThanOrEqual(45_000);
   expect(materials.size).toBeLessThanOrEqual(5);
   for (const stage of [0, 1, 2, 3]) {
-    const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { batch: true, puppyTemplate: template });
+    const model = buildWorldModel('math', { ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) }, { ...assetsFor('math'), batch: true, puppyTemplate: template });
     const puppy = model.root.getObjectByName('puppy')!;
     expect(puppy.scale.x).toBe([0.7, 0.9, 1.08, 1.2][stage]);
     const asset = puppy.getObjectByName('puppy-asset')!;

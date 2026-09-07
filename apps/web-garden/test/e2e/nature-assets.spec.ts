@@ -25,7 +25,10 @@ for (const world of worlds) {
     const canvas = page.locator('canvas[data-renderer="three-webgl"]');
     await expect(canvas).toHaveAttribute('data-world', world.subject);
     await expect(canvas).toHaveAttribute('data-asset-source', world.path);
-    expect(requests).toHaveLength(1);
+    expect(requests.map((url) => new URL(url).pathname).sort()).toEqual([
+      world.path, `/models/props-${world.subject}.glb`,
+    ].sort());
+    await expect(canvas).toHaveAttribute('data-prop-asset-source', `/models/props-${world.subject}.glb`);
     await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: /^수학/ }).click();
     await expect(canvas).toHaveAttribute('data-asset-source', '/models/puppy.glb');
     await page.getByRole('group', { name: '돌볼 세상 고르기' }).getByRole('button', { name: new RegExp(`^${world.label}`) }).click();

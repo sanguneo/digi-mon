@@ -50,7 +50,7 @@ for (const [subject, name] of [['korean', 'tree'], ['english', 'fish']] as const
     try {
       await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
       await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
-      expect(load.mock.calls).toEqual([[`/models/${name}.glb`], [`/models/${name}.glb`]]);
+      expect(load.mock.calls).toEqual([[`/models/${name}.glb`], [`/models/props-${subject}.glb`], [`/models/${name}.glb`], [`/models/props-${subject}.glb`]]);
     } finally { load.mockRestore(); }
   });
 }

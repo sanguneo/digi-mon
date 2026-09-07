@@ -5,7 +5,7 @@ import base from './playwright.studio.config.ts';
 // through this entry point; the user owns appearance review.
 export default defineConfig(base, {
   testMatch: [
-    'nature-assets.spec.ts', 'puppy-asset.spec.ts', 'care-reactions.spec.ts',
+    'nature-assets.spec.ts', 'prop-assets.spec.ts', 'puppy-asset.spec.ts', 'care-reactions.spec.ts',
     'mobile-first.spec.ts', 'problem-selection.spec.ts', 'worksheet-worlds.spec.ts',
   ],
   outputDir: '../../artifacts/model-code-checks',

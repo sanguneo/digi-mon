@@ -48,10 +48,11 @@ owns its disposable resources. Math-world asset loading must be lazy, failures
 must reach the existing retry surface, and abandoned loads must not install a renderer.
 
 Verification is primarily actual-GLB parsing and model/lifecycle/browser assertions.
-The puppy's earlier preview belongs to the completed milestone. For subsequent
-model work, the user's latest instruction forbids image generation, rendered
-previews, OCR and image analysis. Validate geometry, asset loading and behavior in
-code; do not run the earlier preview workflow.
+The puppy's earlier preview belongs to the completed milestone. Subsequent model
+work forbids image generation and rendered previews. The main agent does not perform
+image analysis or OCR; any needed recognition is delegated to Claude Opus or Sonnet,
+never Fable. Validate geometry, asset loading and behavior in code; do not run the
+earlier preview workflow.
 
 ## Blender tree and fish replacement
 
@@ -112,8 +113,9 @@ counts from the actual exported GLB. Clone only parts used by the current scene,
 preserve independent instance transforms and dispose owned resources exactly once.
 
 The user permits quick real-app screenshots at important milestones, sent directly
-to Telegram without inspection or analysis. This does not permit Blender previews,
-image generation, OCR or an image-based review/polishing loop.
+to Telegram without main-agent inspection or analysis. Any needed image recognition
+or OCR is delegated to Claude Opus or Sonnet only, with minimal scope. Fable,
+Blender previews and image generation are not used.
 
 ## Materials and rendering
 
@@ -122,10 +124,10 @@ restrained satin fish/ceramic, water and transparent glass. Opaque batching reta
 roughness/metalness by surface role and linear vertex color within independently
 moving coordinate systems. Do not discard geometry/normals/UVs to meet a draw budget.
 Reuse one batch material per role, not one material/draw per color or detail.
-Target initial worlds at <= 15% of original unbatched mesh submissions; at most five
-material roles including glass for procedural worlds. The Blender math world retains
-three authored puppy materials plus three environment materials, with a six-material
-resource budget rather than flattening the authored appearance into the old roles.
+Keep the unchanged procedural environment's batching and geometry budgets independent
+of authored actors and props. Consolidated GLB parts retain their material roles;
+full-scene resource budgets are measured for the actual subject, stage and placements
+instead of forcing new assets into the earlier primitive-only material limits.
 Transparent panes retain their sorting/depth behavior.
 Keep capped DPR, offscreen/background suspension, demand rendering when motion is
 stopped, and exact-once geometry/material disposal.

@@ -5,6 +5,8 @@ import { GardenScene } from './garden-scene.tsx';
 import { EMPTY_GAME_STATE, type WorldState } from './game-state.ts';
 import type { WorldModelAssets } from './garden-models.ts';
 import { WORLD_CATALOGS, type CareEvent } from './garden-worlds.ts';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { readShippedAssetBytes } from './puppy-asset.test-fixture.ts';
 
 const { prepare, create, care, dispose, update } = vi.hoisted(() => ({
   prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(),
@@ -133,5 +135,69 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     await act(async () => {});
     await reloadedReady;
     expect(care).toHaveBeenCalledTimes(1);
+  });
+
+  test.each(['503', 'missing-part'] as const)(`${subject}: actual prop library %s reaches unavailable and retry preserves placements without care replay`, async (failure) => {
+    vi.resetModules();
+    const actual = await vi.importActual<typeof import('./garden-renderer.ts')>('./garden-renderer.ts');
+    let completed = deferred<void>();
+    prepare.mockImplementation(async (requestedSubject: Parameters<typeof actual.prepareWorldAssets>[0]) => {
+      try { return await actual.prepareWorldAssets(requestedSubject); }
+      finally { completed.resolve(); }
+    });
+    let fail = true;
+    const propUrl = `/models/props-${subject}.glb`;
+    const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockImplementation(async url => {
+      if (url === propUrl && fail && failure === '503') throw new Error('503');
+      const name = url.split('/').pop()!.replace('.glb', '') as Parameters<typeof readShippedAssetBytes>[0];
+      const parsed = await new GLTFLoader().parseAsync(await readShippedAssetBytes(name), '');
+      if (url === propUrl && fail) parsed.scene.getObjectByName(WORLD_CATALOGS[subject][0]!.id)!.removeFromParent();
+      return parsed;
+    });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const world: WorldState = { ...EMPTY_GAME_STATE.worlds[subject], placements: { [WORLD_CATALOGS[subject][0]!.id]: 'front-garden' }, lastCare: action };
+    const view = render(<GardenScene subject={subject} world={world} careEvent={{ id: 1, subject, action }} />);
+    const unavailable = statusChanged(view.container, 'unavailable');
+    await act(async () => { await completed.promise; });
+    await unavailable;
+    expect(create).not.toHaveBeenCalled(); expect(warn).toHaveBeenCalledTimes(1);
+    expect(load.mock.calls.map(([url]) => url).sort()).toEqual([propUrl, `/models/${subject === 'korean' ? 'tree' : subject === 'english' ? 'fish' : 'puppy'}.glb`].sort());
+    fail = false;
+    completed = deferred<void>();
+    const ready = statusChanged(view.container, 'ready');
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '3D 다시 열기' })); });
+    await act(async () => { await completed.promise; });
+    await ready;
+    expect(load.mock.calls.filter(([url]) => url === propUrl)).toHaveLength(2);
+    expect(create.mock.calls[0]![2]).toBe(world);
+    expect((create.mock.calls[0]![4] as WorldModelAssets).propTemplate!.getObjectByName(WORLD_CATALOGS[subject][0]!.id)).toBeDefined();
+    expect(care).not.toHaveBeenCalled();
+  });
+
+  test.each(['resolve', 'reject'] as const)(`${subject}: unmount cancels a real primary/props preparation with late prop %s`, async (completion) => {
+    vi.resetModules();
+    const actual = await vi.importActual<typeof import('./garden-renderer.ts')>('./garden-renderer.ts');
+    const requested = deferred<void>(), gate = deferred<void>(), completed = deferred<void>();
+    prepare.mockImplementation(async (requestedSubject: Parameters<typeof actual.prepareWorldAssets>[0]) => {
+      try { return await actual.prepareWorldAssets(requestedSubject); }
+      finally { completed.resolve(); }
+    });
+    vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockImplementation(async url => {
+      if (url === `/models/props-${subject}.glb`) { requested.resolve(); await gate.promise; }
+      const name = url.split('/').pop()!.replace('.glb', '') as Parameters<typeof readShippedAssetBytes>[0];
+      return new GLTFLoader().parseAsync(await readShippedAssetBytes(name), '');
+    });
+    const warn = vi.spyOn(console, 'warn');
+    const view = render(<GardenScene subject={subject} world={EMPTY_GAME_STATE.worlds[subject]} />);
+    await act(async () => { await requested.promise; });
+    view.unmount();
+    await act(async () => {
+      if (completion === 'resolve') gate.resolve();
+      else gate.reject(new Error('late 503'));
+      await completed.promise;
+    });
+    expect(create).not.toHaveBeenCalled();
+    expect(dispose).not.toHaveBeenCalled();
+    expect(warn).not.toHaveBeenCalled();
   });
 }
