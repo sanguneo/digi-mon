@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "blender_version": "5.2.1 LTS",
+  "blender_version": "4.3.2",
   "identity_groups": 14,
-  "editable_meshes": 265,
-  "triangles": 23842,
+  "editable_meshes": 242,
+  "triangles": 39838,
   "materials": 2,
   "images": 0,
   "cameras": 0,
@@ -11,73 +11,73 @@
   "animations": 0,
   "parts": {
     "moon-chair": {
-      "editable_features": 18,
-      "triangles": 1544,
+      "editable_features": 17,
+      "triangles": 2660,
       "bounds_error": 5.2452087562215866e-08
     },
     "dandelion-pot": {
-      "editable_features": 45,
-      "triangles": 1412,
+      "editable_features": 43,
+      "triangles": 2916,
       "bounds_error": 1.1248711295763769e-08
     },
     "tiny-pond": {
-      "editable_features": 8,
-      "triangles": 1336,
+      "editable_features": 11,
+      "triangles": 2884,
       "bounds_error": 1.1920928910669204e-08
     },
     "cloud-balloon": {
       "editable_features": 3,
-      "triangles": 558,
+      "triangles": 1214,
       "bounds_error": 9.536743128535363e-08
     },
     "reading-cat": {
-      "editable_features": 28,
-      "triangles": 2300,
+      "editable_features": 23,
+      "triangles": 6334,
       "bounds_error": 1.907348634588857e-08
     },
     "rainbow-flag": {
-      "editable_features": 2,
-      "triangles": 312,
+      "editable_features": 4,
+      "triangles": 868,
       "bounds_error": 2.1457672083613488e-08
     },
     "picnic-basket": {
-      "editable_features": 26,
-      "triangles": 3420,
+      "editable_features": 21,
+      "triangles": 3084,
       "bounds_error": 5.960464455334602e-09
     },
     "strawberry-patch": {
-      "editable_features": 74,
-      "triangles": 2532,
+      "editable_features": 59,
+      "triangles": 3304,
       "bounds_error": 1.70212721695151e-08
     },
     "mushroom-home": {
-      "editable_features": 12,
-      "triangles": 2060,
+      "editable_features": 10,
+      "triangles": 3448,
       "bounds_error": 5.7220459037665705e-08
     },
     "bird-bath": {
       "editable_features": 8,
-      "triangles": 1220,
+      "triangles": 2298,
       "bounds_error": 1.1920928910669204e-08
     },
     "pebble-fountain": {
       "editable_features": 9,
-      "triangles": 1476,
+      "triangles": 3268,
       "bounds_error": 1.4305114648394124e-08
     },
     "firefly-lantern": {
-      "editable_features": 17,
-      "triangles": 1748,
+      "editable_features": 16,
+      "triangles": 2892,
       "bounds_error": 3.337860099428269e-08
     },
     "watering-can": {
       "editable_features": 5,
-      "triangles": 1652,
+      "triangles": 2380,
       "bounds_error": 2.347922500867128e-08
     },
     "sunlight-token": {
-      "editable_features": 10,
-      "triangles": 2272,
+      "editable_features": 13,
+      "triangles": 2288,
       "bounds_error": 5.9604643443123e-10
     }
   }

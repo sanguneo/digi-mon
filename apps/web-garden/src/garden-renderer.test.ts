@@ -8,6 +8,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { TREE_ASSET_URL } from './tree-asset.ts';
 import { FISH_ASSET_URL } from './fish-asset.ts';
+import { ENVIRONMENT_ASSET_URLS } from './environment-asset.ts';
 import { PROP_ASSET_URLS } from './prop-asset.ts';
 import { EMPTY_GAME_STATE, careForWorld, type WorldState } from './game-state.ts';
 
@@ -148,7 +149,7 @@ test.each([['korean', TREE_ASSET_URL], ['english', FISH_ASSET_URL], ['math', PUP
   const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockRejectedValue(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
-  expect(load.mock.calls).toEqual([[url], [PROP_ASSET_URLS[subject]], [url], [PROP_ASSET_URLS[subject]]]);
+  expect(load.mock.calls).toEqual([[url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]], [url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]]]);
 });
 
 test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_URL]] as const)('%s real asset growth and context retry release owned scenes without poisoning templates or replaying history', (subject, name, url) => {
@@ -167,6 +168,7 @@ test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_UR
   const runtime = createWorldRenderer(element, subject, world, lost, assetsFor(subject));
   expect(element.dataset.assetSource).toBe(url);
   expect(element.dataset.propAssetSource).toBe(PROP_ASSET_URLS[subject]);
+  expect(element.dataset.environmentAssetSource).toBe(ENVIRONMENT_ASSET_URLS[subject]);
   expect(element.dataset.careState).toBe('idle');
   const scene = gpuDraw.mock.lastCall![0] as Scene;
   runtime.setMotion(true);
@@ -250,11 +252,12 @@ test('successful preparation caches each real shipped GLB independently and neve
     [3, 'math', 'puppyTemplate', PUPPY_ASSET_URL],
   ] as const) {
     const [first, concurrent] = await Promise.all([prepareWorldAssets(subject), prepareWorldAssets(subject)]);
-    expect(Object.keys(first)).toEqual([key, 'propTemplate']);
+    expect(Object.keys(first)).toEqual([key, 'propTemplate', 'environmentTemplate']);
     expect(first.propTemplate === concurrent.propTemplate).toBe(true);
+    expect(first.environmentTemplate === concurrent.environmentTemplate).toBe(true);
     expect(first[key] === concurrent[key]).toBe(true);
     expect((await prepareWorldAssets(subject))[key] === first[key]).toBe(true);
-    expect(load).toHaveBeenCalledTimes(index * 2);
-    expect(load.mock.calls.slice(-2)).toEqual([[url], [PROP_ASSET_URLS[subject]]]);
+    expect(load).toHaveBeenCalledTimes(index * 3);
+    expect(load.mock.calls.slice(-3)).toEqual([[url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]]]);
   }
 });

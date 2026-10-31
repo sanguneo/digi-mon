@@ -33,7 +33,7 @@ quiet supporting scenery, softened borders and explicit native care controls.
 Author the puppy locally in Blender from a reproducible Python script, retain the
 editable `.blend`, and ship a self-contained `public/models/puppy.glb`. No downloaded
 model, texture service or runtime Blender dependency is introduced. Companion and
-prop sources are authored separately; the supporting environment stays procedural.
+prop and supporting-environment sources are authored separately.
 
 Use a clean oval body, visibly thinner gently tapered limbs and small paws, with no
 shoulder caps, ankle cuffs, swollen feet or pinched wavy transitions. The head
@@ -90,7 +90,7 @@ triangles/3 MB, seven primitives and three simple materials.
 All three subjects load only their own required asset. Failed loads remain retryable,
 abandoned scene loads cannot install stale renderers, cached templates are immutable,
 and owned clones preserve authored normals/colors and dispose without harming other
-instances. Unchanged environment and decoration geometry retains its measured budget.
+instances. Supporting environment and decoration geometry has independent measured budgets.
 
 ## Secondary prop libraries
 
@@ -134,7 +134,7 @@ restrained satin fish/ceramic, water and transparent glass. Opaque batching reta
 roughness/metalness by surface role and linear vertex color within independently
 moving coordinate systems. Do not discard geometry/normals/UVs to meet a draw budget.
 Reuse one batch material per role, not one material/draw per color or detail.
-Keep the unchanged procedural environment's batching and geometry budgets independent
+Keep the authored environment's resource and geometry budgets independent
 of authored actors and props. Consolidated GLB parts retain their material roles;
 full-scene resource budgets are measured for the actual subject, stage and placements
 instead of forcing new assets into the earlier primitive-only material limits.
@@ -188,7 +188,7 @@ actual-app evidence, with known rendering/device limitations stated explicitly.
 
 ## Sculpted companion and lighting refinement (2026-10)
 
-Active authoring sources are `art/puppy-v3`, `art/fish-v3` and `art/tree-v2` in the
+Active authoring sources are `art/puppy-v3`, `art/fish-v3` and `art/tree-v3` in the
 garden workspace. Previous versions remain historical references. The original
 Blender geometry is editable and reproducible without downloaded assets. Invest
 triangles in clean rounded silhouettes, blended attachment roots, thick swept fins,
@@ -214,3 +214,25 @@ Measure every stage with empty/full placement catalogs and each care action usin
 regression tests so refreshing exact measurements cannot hide a performance
 regression. The existing subject-lazy loading, stage selection, immutable templates,
 independent clones, reduced-motion behavior and disposal contracts still apply.
+
+## Surrounding-world refinement (2026-10 follow-on)
+
+The owner explicitly included the growing tree and all surrounding assets. Preserve
+all 24 catalog identities and seven care groups described above, not generic
+substitutes. The new `art/environment-v1` inventory covers the full land/aquarium
+supporting set. The owner preferred the original tree shape: `art/tree-v3` now
+preserves exact published v2 geometry in every growth stage and changes vertex
+colors only. Material response and all transforms stay unchanged. The approved Shiba and
+clownfish sources and exported bytes remain unchanged.
+
+Avoid lumpy added anatomy, pillow shrubs, faceted paper leaves and disconnected
+attachment roots. Use restrained rounded silhouettes, purposeful hollow spaces,
+continuous swept stems/cloth/foliage and surface-appropriate PBR roughness. Specific
+stories remain readable: book-reading cat, yellow dandelion, fish pond, picnic
+basket, strawberry patch, mushroom home, bird bath and marine/puppy care tools.
+
+Each subject lazily loads only its own environment, primary actor and prop library.
+The added environment request uses the same retry/abandoned-load boundary and
+independent-clone ownership as the existing assets. Preserve contact surfaces,
+placement footprints, care timing and mobile framing. No new state, dependencies,
+remote service or learning/reward changes are required by this art revision.

@@ -174,7 +174,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     expect(care).toHaveBeenCalledTimes(1);
   });
 
-  test.each(['503', 'missing-part'] as const)(`${subject}: actual prop library %s reaches unavailable and retry preserves placements without care replay`, async (failure) => {
+  test.each([['prop', '503'], ['prop', 'missing-part'], ['environment', '503'], ['environment', 'missing-part']] as const)(`${subject}: actual %s library %s reaches unavailable and retry preserves placements without care replay`, async (kind, failure) => {
     vi.resetModules();
     const actual = await vi.importActual<typeof import('./garden-renderer.ts')>('./garden-renderer.ts');
     let completed = deferred<void>();
@@ -183,12 +183,14 @@ for (const subject of ['korean', 'english', 'math'] as const) {
       finally { completed.resolve(); }
     });
     let fail = true;
-    const propUrl = `/models/props-${subject}.glb`;
+    const propUrl = `/models/${kind === 'prop' ? 'props' : 'environment'}-${subject}.glb`;
+    const partId = kind === 'prop' ? WORLD_CATALOGS[subject][0]!.id : 'static-environment';
+    const templateKey = kind === 'prop' ? 'propTemplate' : 'environmentTemplate';
     const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockImplementation(async url => {
       if (url === propUrl && fail && failure === '503') throw new Error('503');
       const name = url.split('/').pop()!.replace('.glb', '') as Parameters<typeof readShippedAssetBytes>[0];
       const parsed = await new GLTFLoader().parseAsync(await readShippedAssetBytes(name), '');
-      if (url === propUrl && fail) parsed.scene.getObjectByName(WORLD_CATALOGS[subject][0]!.id)!.removeFromParent();
+      if (url === propUrl && fail) parsed.scene.getObjectByName(partId)!.removeFromParent();
       return parsed;
     });
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
@@ -198,7 +200,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     await act(async () => { await completed.promise; });
     await unavailable;
     expect(create).not.toHaveBeenCalled(); expect(warn).toHaveBeenCalledTimes(1);
-    expect(load.mock.calls.map(([url]) => url).sort()).toEqual([propUrl, `/models/${subject === 'korean' ? 'tree' : subject === 'english' ? 'fish' : 'puppy'}.glb`].sort());
+    expect(load.mock.calls.map(([url]) => url).sort()).toEqual([`/models/props-${subject}.glb`, `/models/environment-${subject}.glb`, `/models/${subject === 'korean' ? 'tree' : subject === 'english' ? 'fish' : 'puppy'}.glb`].sort());
     fail = false;
     completed = deferred<void>();
     const ready = statusChanged(view.container, 'ready');
@@ -207,7 +209,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     await ready;
     expect(load.mock.calls.filter(([url]) => url === propUrl)).toHaveLength(2);
     expect(create.mock.calls[0]![2]).toBe(world);
-    expect((create.mock.calls[0]![4] as WorldModelAssets).propTemplate!.getObjectByName(WORLD_CATALOGS[subject][0]!.id)).toBeDefined();
+    expect((create.mock.calls[0]![4] as WorldModelAssets)[templateKey]!.getObjectByName(partId)).toBeDefined();
     expect(care).not.toHaveBeenCalled();
   });
 

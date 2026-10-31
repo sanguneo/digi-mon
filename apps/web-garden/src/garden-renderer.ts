@@ -8,15 +8,16 @@ import { loadPuppyAsset, PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { loadTreeAsset, TREE_ASSET_URL } from './tree-asset.ts';
 import { loadFishAsset, FISH_ASSET_URL } from './fish-asset.ts';
 import { loadPropAsset, PROP_ASSET_URLS } from './prop-asset.ts';
+import { loadEnvironmentAsset, ENVIRONMENT_ASSET_URLS } from './environment-asset.ts';
 import { createWorldLighting, type WorldLightPreset } from './garden-lighting.ts';
 export type { WorldLightPreset } from './garden-lighting.ts';
 
 export async function prepareWorldAssets(subject: Subject): Promise<WorldModelAssets> {
-  const [primary, propTemplate] = await Promise.all([
+  const [primary, propTemplate, environmentTemplate] = await Promise.all([
     subject === 'korean' ? loadTreeAsset() : subject === 'english' ? loadFishAsset() : loadPuppyAsset(),
-    loadPropAsset(subject),
+    loadPropAsset(subject), loadEnvironmentAsset(subject),
   ]);
-  return { [subject === 'korean' ? 'treeTemplate' : subject === 'english' ? 'fishTemplate' : 'puppyTemplate']: primary, propTemplate };
+  return { [subject === 'korean' ? 'treeTemplate' : subject === 'english' ? 'fishTemplate' : 'puppyTemplate']: primary, propTemplate, environmentTemplate };
 }
 
 export type CameraAction = 'left' | 'right' | 'up' | 'down' | 'in' | 'out' | 'home';
@@ -35,6 +36,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   if (subject === 'korean' && !assets.treeTemplate) throw new Error('Korean renderer requires the loaded tree asset');
   if (subject === 'english' && !assets.fishTemplate) throw new Error('English renderer requires the loaded fish asset');
   if (!assets.propTemplate) throw new Error(`${subject} renderer requires the loaded prop library`);
+  if (!assets.environmentTemplate) throw new Error(`${subject} renderer requires the loaded environment library`);
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.shadowMap.enabled = true;
@@ -157,6 +159,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   canvas.dataset.world = subject;
   canvas.dataset.assetSource = subject === 'korean' ? TREE_ASSET_URL : subject === 'english' ? FISH_ASSET_URL : PUPPY_ASSET_URL;
   canvas.dataset.propAssetSource = PROP_ASSET_URLS[subject];
+  canvas.dataset.environmentAssetSource = ENVIRONMENT_ASSET_URLS[subject];
   canvas.dataset.stage = String(model.root.userData.stage);
   canvas.dataset.lighting = 'daylight';
   canvas.dataset.careId = '0';
@@ -235,6 +238,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       delete canvas.dataset.renderer;
       delete canvas.dataset.assetSource;
       delete canvas.dataset.propAssetSource;
+      delete canvas.dataset.environmentAssetSource;
       delete canvas.dataset.lighting;
     },
   };

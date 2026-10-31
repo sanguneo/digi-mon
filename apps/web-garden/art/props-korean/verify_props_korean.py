@@ -188,10 +188,10 @@ def verify():
         'parts':report,'excluded':{'images':0,'textures':0,'cameras':0,'lights':0,'animations':0,'external_buffers':0},
         'assumptions':['Baseline bounds are exact per-axis vertex fits, not object scaling.',
             'All 14 parts intentionally overlap at local origin; placement and care motion remain runtime responsibilities.',
-            'Two shared opaque vertex-color surfaces: matte .82 and satin .32; water and firefly use geometry/color, not transparency or lights.',
-            'Cat body, neck and head are one continuous closed loft; ears, paws, tail and book are authored attached features.',
+            'Two shared opaque vertex-color surfaces: matte .76 and satin .30; water and firefly use geometry/color, not transparency or lights.',
+            'Cat body, head, cheeks, ears and seated paws are one closed continuous sculpt; arms, tail, face and book are editable attached features.',
             'UVs use nondegenerate per-triangle dominant-axis projection with intentional overlapping islands; no textures.',
-            'No visual evaluation, images, previews, or renders were generated or inspected.']}
+            'Matched Cycles contact sheets are generated from actual before/after GLBs and visually inspected separately; preview cameras and lights are excluded from shipped assets.']}
     (HERE/'asset-report.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:result[k] for k in ('status','blender_version','glb_bytes','triangles','primitives','materials','maximum_bounds_error')}))
     return result

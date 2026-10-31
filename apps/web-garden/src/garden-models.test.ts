@@ -29,7 +29,9 @@ describe('real three-dimensional world geometry', () => {
         expect(object.geometry.attributes.position!.count).toBeGreaterThan(0);
       }
     });
-    expect(meshes).toBeGreaterThan(40);
+    // Authored props/scenery are consolidated by surface, not one draw per feature.
+    expect(meshes).toBeGreaterThan(10);
+    expect(mature.root.getObjectByName('static-environment')?.userData.environmentAsset).toBe(true);
     if (subject === 'english') {
       expect(mature.root.children.filter((object) => object.name === 'fish')).toHaveLength(2);
       expect(mature.root.getObjectByName('decoration:coral-garden')).toBeDefined();

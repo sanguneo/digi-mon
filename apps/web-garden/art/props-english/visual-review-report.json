@@ -1,0 +1,45 @@
+{
+  "status": "inspected",
+  "glb_sha256": "9912bd183e7d89e08033c35472a4e2e9ec71cd1aba572f418a776a5bfa07d52d",
+  "baseline_glb_sha256": "73827e9c298ba5a8af7a8968803645113b012ef00fd2588de7a93a64d5d46de7",
+  "renderer": "Blender 4.3.2 Cycles CPU",
+  "resolution": [
+    440,
+    396
+  ],
+  "samples": 32,
+  "camera_and_lighting": "Identical per-part framing from baseline bounds; same orthographic direction, soft key/rim/fill and ground",
+  "images": {
+    "before": {
+      "shell-arch": "3ab60bea3aedcd7d03434168e1928dc18fc502885d9e4b11ddb5b6592108fa4b",
+      "ribbon-kelp": "67fe030213415844380e7dc3961bd7904c98a7f0063d92c54d130d81f68aa066",
+      "coral-garden": "be728164b46347fc50449ff695b04892f90653fc2fc75dd9a48abd7cf21c344f",
+      "bubble-rock": "7699616a1718a384f51827b48a4c93b6d6f749de3aef19c528228a4011bc10ab",
+      "treasure-chest": "8dca29dcc8a95e150d59571d1a9d9ef3b4e77680d9a5bb16488698b5d0bf17fb",
+      "star-lamp": "1c57a7edc1ba0fb7b815f54b10485b4e42907cb19b1c031142456b198776d85d",
+      "fish-food": "b160310e145763e9ee64ecb12904b1f5369d4514be0f12baa598fff3ddfdb390",
+      "bubble-trail": "6d92bb7ac4d4bd0311afacfd6414a2cce748cbe445a3643a670cf411441f391d"
+    },
+    "after": {
+      "shell-arch": "cd7a89b90266f408f20f3d38df33ef923f7f1232151f4932e19f5a1486cdd2b2",
+      "ribbon-kelp": "5151c453b6da99381ac797fce9962379d12085378e38fcb26372f1cd8e91d64a",
+      "coral-garden": "4c022d99348d3e887d1556055da22a5d1ae2eab5331853e0d26e6d120125ca89",
+      "bubble-rock": "108188e7f9ce5e0981813addfe040c20d35e1d6015e0a00bc724e6bb3c72da8f",
+      "treasure-chest": "493cc0eed3de3e312b812d2dd4b69c30a4369640041124c8e760bcbc6dc96e25",
+      "star-lamp": "86491eede02ef38bfaa855ae0ddcc0c2fd682a1e8bd5aa75e1d481b40600fe65",
+      "fish-food": "30dfa7c25c29228a130726d0bdce265b4cc2e15d46b9b301c8a929e164a98988",
+      "bubble-trail": "f2cbf67ea43f84784ffa2a22a454e2529cba71f891824bf46607da6f810bc013"
+    }
+  },
+  "all_parts_pixels_inspected": true,
+  "corrected_findings": [
+    "Concave shell floor and pearl seating replace flat fan",
+    "Outward input winding before voxel union restores rounded coral tips; forks are one connected volume",
+    "Rounded star tip sampling resolves faceted silhouette",
+    "Chest plank/hinge geometry and weighted wood normals improve construction"
+  ],
+  "limits": [
+    "Offline asset studies, not browser screenshots or runtime ray tracing",
+    "Full scene integration and aggregate budgets handled by lead"
+  ]
+}

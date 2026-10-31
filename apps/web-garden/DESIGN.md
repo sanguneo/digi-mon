@@ -116,8 +116,8 @@ center; controls stay quiet, explicit and outside the canvas.
 - Lighting, real geometry, perspective camera, shadows and OrbitControls make each
   scene genuinely three-dimensional. The puppy, growing tree and fish are original,
   locally authored Blender GLBs. Catalog decorations and declared care props use
-  subject-specific Blender libraries; ground, tank, fence and background plants
-  remain procedural.
+  subject-specific Blender libraries; ground, tank, fence, background plants and
+  droplets now use separately authored, subject-lazy Blender environment libraries.
   No remote model service, tracker or downloaded asset is used.
   The [Blender puppy contract](../../docs/design/companion-art.md#blender-puppy-replacement)
   defines its source, motion pivots, resource budget and focused verification.

@@ -2,7 +2,8 @@
 
 All design coordinates are the application's Y-up world units, converted into
 Blender Z-up vertices; every object and group has an identity transform.
-No renders, previews, image assets, network input, or random geometry.
+The builder exports only authored geometry; the separate review script renders
+actual GLB bytes without adding preview objects to the production library.
 """
 from pathlib import Path
 import json
@@ -19,7 +20,7 @@ TAU = math.tau
 IDS = ['puppy-ball', 'soft-bed', 'puppy-house', 'flower-hoop', 'water-bowl',
        'paw-flag', 'feeding-bowl', 'grooming-brush', 'dog-food']
 CREAM = '#fff2d6'
-TEAL = '#6395a3'
+TEAL = '#799b91'
 WOOD = '#ac7953'
 PARTS = {}
 FEATURES = {}
@@ -28,6 +29,29 @@ FEATURES = {}
 def linear_color(value):
     rgb = [int(value[i:i + 2], 16) / 255 for i in (1, 3, 5)]
     return tuple(c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in rgb) + (1,)
+
+
+def smoothstep(low, high, value):
+    t = max(0., min(1., (value - low) / (high - low)))
+    return t * t * (3 - 2 * t)
+
+
+def tint_mix(a, b, value):
+    t = max(0., min(1., value))
+    return tuple(x * (1 - t) + y * t for x, y in zip(linear_color(a), linear_color(b)))
+
+
+def profile_curve(points, steps=2):
+    """Low-frequency cardinal curves for real rounded vessel/cushion profiles."""
+    result = []
+    for i in range(len(points) - 1):
+        a, b, c, d = points[max(0, i - 1)], points[i], points[i + 1], points[min(len(points) - 1, i + 2)]
+        for j in range(steps):
+            t = j / steps
+            result.append(tuple(.5 * (2 * b[k] + (-a[k] + c[k]) * t +
+                (2*a[k] - 5*b[k] + 4*c[k] - d[k]) * t*t +
+                (-a[k] + 3*b[k] - 3*c[k] + d[k]) * t*t*t) for k in range(2)))
+    return result + [points[-1]]
 
 
 def xyz(p):
@@ -47,6 +71,7 @@ def empty(name, parent=None):
 
 def make_material(name, roughness):
     mat = bpy.data.materials.new(name)
+    mat.use_nodes = True
     bsdf = mat.node_tree.nodes.get('Principled BSDF')
     bsdf.inputs['Base Color'].default_value = (1, 1, 1, 1)
     bsdf.inputs['Roughness'].default_value = roughness
@@ -73,6 +98,10 @@ def finish(ob, part, color, role='matte', smooth=True):
         poly.use_smooth = smooth
     uv = ob.data.uv_layers.new(name='UVMap')
     col = ob.data.color_attributes.new(name='Color', type='FLOAT_COLOR', domain='CORNER')
+    # Blender 4.3 may reallocate CustomData when an attribute is added. Re-fetch
+    # BOTH handles before writing; stale UV handles can overwrite color storage.
+    uv = ob.data.uv_layers['UVMap']
+    col = ob.data.color_attributes['Color']
     for poly in ob.data.polygons:
         # Per-face dominant-axis projection guarantees nonzero-area UVs, even
         # for the vessel floor and tube caps. Islands overlap intentionally.
@@ -81,7 +110,8 @@ def finish(ob, part, color, role='matte', smooth=True):
         for li in poly.loop_indices:
             co = ob.data.vertices[ob.data.loops[li].vertex_index].co
             uv.data[li].uv = ((co[axes[0]] + 2) / 4, (co[axes[1]] + 2) / 4)
-            col.data[li].color = linear_color(color(yup(co)) if callable(color) else color)
+            value = color(yup(co)) if callable(color) else color
+            col.data[li].color = linear_color(value) if isinstance(value, str) else value
     ob.data.color_attributes.active_color = col
     vg = ob.vertex_groups.new(name=ob.name)
     vg.add(list(range(len(ob.data.vertices))), 1, 'REPLACE')
@@ -98,7 +128,7 @@ def mesh(part, name, verts, faces, color, role='matte', smooth=True):
     return finish(ob, part, color, role, smooth)
 
 
-def lathe(part, name, profile, color, role='matte', n=40, sx=1.0, sz=1.0, center=(0, 0, 0)):
+def lathe(part, name, profile, color, role='matte', n=40, sx=1.0, sz=1.0, center=(0, 0, 0), deform=None):
     """Closed radial profile with true shared poles: no degenerate pole quads."""
     verts, rows, faces = [], [], []
     for r, y in profile:
@@ -118,6 +148,8 @@ def lathe(part, name, profile, color, role='matte', n=40, sx=1.0, sz=1.0, center
                 faces.append((a[j], a[k], b[0]))
             else:
                 faces.append((a[j], a[k], b[k], b[j]))
+    if deform:
+        verts = [deform(p) for p in verts]
     return mesh(part, name, verts, faces, color, role)
 
 
@@ -187,7 +219,7 @@ def solid_polygon(part, name, polygon, zmin, zmax, color, bevel=.008, role='matt
     ob.select_set(True)
     if bevel:
         mod = ob.modifiers.new("Soft manufactured edges", "BEVEL")
-        mod.width, mod.segments = bevel, 2
+        mod.width, mod.segments = bevel, 3
         bpy.ops.object.modifier_apply(modifier=mod.name)
     ob.select_set(False)
     return finish(ob, part, color, role, smooth=False)
@@ -200,31 +232,60 @@ def box(part, name, low, high, color, bevel=.008, role='matte'):
 
 def ball():
     part = 'puppy-ball'
-    def seam(u, v):
-        return abs(v - .48 * math.cos(2 * u))
-    def tint(p):
-        v = math.asin(max(-1, min(1, (p[1] - .3) / .3)))
-        d = seam(math.atan2(p[2], p[0]), v)
-        return CREAM if d < .105 else ('#cbd883' if v > 0 else '#b3c66b')
-    ellipsoid(part, 'recessed-winding-tennis-seam', (0, .3, 0), (.3, .3, .3), tint,
-              'satin', n=48, rings=24,
-              deform=lambda u, v: 1 - .011 * math.exp(-(seam(u, v) / .08) ** 2))
+    # Warp latitude rings onto the curved seam. Unlike a threshold painted on a
+    # regular sphere grid, both groove and cream inlay follow continuous rings.
+    rows = [-math.pi/2, -1.35, -1.15, -.95, -.75, -.55, -.35, -.19, -.11,
+            -.065, -.035, 0., .035, .065, .11, .19, .35, .55, .75, .95, 1.15, 1.35, math.pi/2]
+    verts, rings, faces, n = [], [], [], 64
+    for t in rows:
+        if abs(t) == math.pi/2:
+            rings.append([len(verts)])
+            verts.append((0, .3 + math.copysign(.3, t), 0))
+            continue
+        row = []
+        for j in range(n):
+            u = TAU*j/n
+            v = t + .48*math.cos(2*u)*math.cos(t)**2
+            radius = .3 - .0045*math.exp(-(t/.035)**2)
+            row.append(len(verts))
+            verts.append((radius*math.cos(v)*math.cos(u), .3+radius*math.sin(v), radius*math.cos(v)*math.sin(u)))
+        rings.append(row)
+    for a, b in zip(rings, rings[1:]):
+        for j in range(n):
+            k=(j+1)%n
+            faces.append((a[0],b[k],b[j]) if len(a)==1 else
+                         (a[j],a[k],b[0]) if len(b)==1 else (a[j],a[k],b[k],b[j]))
+    def color(point):
+        x, y, z = point[0], point[1]-.3, point[2]
+        u, v = math.atan2(z,x), math.atan2(y,math.hypot(x,z))
+        t=v
+        for _ in range(8):
+            t -= (t+.48*math.cos(2*u)*math.cos(t)**2-v)/(1-.96*math.cos(2*u)*math.cos(t)*math.sin(t))
+        return tint_mix(CREAM, '#c5b773', smoothstep(.026,.074,abs(t)))
+    mesh(part, 'continuous-recessed-tennis-inlay', verts, faces, color)
 
 
 def bed():
     part = 'soft-bed'
-    # Continuous underside/bolster/inner-wall/cushion skin, not intersecting rings.
-    lathe(part, 'padded-bolster-and-depressed-cushion',
-          [(0, -.03), (.48, -.03), (.62, .005), (.685, .07), (.7, .15),
-           (.685, .24), (.645, .32), (.59, .36363735), (.535, .345),
-           (.48, .29), (.435, .19), (.37, .145), (.22, .13), (0, .115)],
-          lambda p: '#c7c5da' if p[1] > .22 else '#aaaac3', 'fabric', n=48, sz=.9)
-    torus(part, 'bolster-piping', (0, .325, 0), .642, .578, .007, '#e6def0', role='fabric', n=48, sides=6)
-    for i in range(16):
-        a = TAU * i / 16
-        tube(part, f'cushion-stitch-{i:02}',
-             [(.38 * math.cos(a + t), .153, .342 * math.sin(a + t)) for t in (-.026, .026)],
-             .0025, '#e8deed', 'fabric', sides=5)
+    profile = [(0,-.03),(.48,-.03),(.62,.005),(.685,.07),(.7,.15),
+               (.685,.24),(.645,.32),(.59,.36363735),(.535,.345),
+               (.48,.29),(.435,.19),(.37,.125),(.22,.145),(.10,.158),(0,.16)]
+    def form(p):
+        x,y,z=p
+        direction=z/max(.0001,math.hypot(x,z))
+        # Lower only the front of the continuous roll into a calm walk-in edge.
+        # The back stays at its existing maximum height; no segmented puffs.
+        drop=max(0.,y-.16)*.55*smoothstep(.05,.9,direction)*smoothstep(.16,.24,y)
+        return (x,y-drop,z)
+    lathe(part,'continuous-soft-bolster-and-cushion',profile_curve(profile),
+          lambda p:tint_mix('#cfa397',CREAM,
+              (1-smoothstep(.39,.51,math.hypot(p[0],p[2]/.9)))*smoothstep(.07,.16,p[1])),
+          'fabric',n=40,sz=.9,deform=form)
+    tube(part,'soft-bolster-piping',
+         [form((.642*math.cos(TAU*j/48),.325,.578*math.sin(TAU*j/48))) for j in range(48)],
+         .0065,'#f6dfce','fabric',sides=6,closed=True)
+    torus(part,'inset-cushion-seam',(0,.131,0),.38,.342,.003,'#e6d3ba',
+          role='fabric',n=48,sides=4)
 
 
 def house():
@@ -232,29 +293,34 @@ def house():
     box(part, 'raised-floor', (-.525, -.05, -.45), (.525, .025, .47), '#96704f', .012)
     for side in (-1, 1):
         x0, x1 = sorted((side * .455, side * .525))
-        box(part, f'side-wall-{side}', (x0, .015, -.45), (x1, 1.045, .45), '#dfb57e')
-    outline = [(-.525, .015), (-.525, 1.025), (0, 1.525), (.525, 1.025), (.525, .015)]
+        box(part, f'side-wall-{side}', (x0, .015, -.395), (x1, 1.125, .395), '#dfb57e')
+    outline = [(-.525,.015),(-.525,1.125),(0,1.555),(.525,1.125),(.525,.015)]
     solid_polygon(part, 'back-gable-wall', outline, -.45, -.38, '#d4a66f')
     # Concave U-shaped front: no surface spans the doorway.
-    arch = [(.235 * math.cos(math.pi * i / 12), .36 + .25 * math.sin(math.pi * i / 12)) for i in range(13)]
-    front = outline + [(.235, .015)] + arch + [(-.235, .015)]
+    arch = [(.265 * math.cos(math.pi * i / 16), .36 + .29 * math.sin(math.pi * i / 16)) for i in range(17)]
+    front = outline + [(.265, .015)] + arch + [(-.265, .015)]
     solid_polygon(part, 'open-arched-front-wall', front, .38, .45, '#e7bd86', .006)
-    tube(part, 'arched-door-casing', [(-.255, .03, .462)] +
-         [(.255 * math.cos(math.pi - math.pi * i / 16), .36 + .27 * math.sin(math.pi * i / 16), .462) for i in range(17)] +
-         [(.255, .03, .462)], .021, '#f5d7a7', sides=8)
+    tube(part, 'arched-door-casing', [(-.286, .03, .462)] +
+         [(.286 * math.cos(math.pi - math.pi * i / 16), .36 + .31 * math.sin(math.pi * i / 16), .462) for i in range(17)] +
+         [(.286, .03, .462)], .021, '#f5d7a7', sides=8)
     for side in (-1, 1):
         poly = [(0, 1.555), (side * .66, 1.015), (side * .66, 1.075), (0, 1.615)]
-        solid_polygon(part, f'sloped-roof-{side}', poly, -.55, .57, '#9a624e', .005)
-    tube(part, 'front-gable-fascia', [(-.64, 1.03, .575), (0, 1.5827975, .575), (.64, 1.03, .575)],
-         .04, '#edc78f', sides=8)
+        roof = solid_polygon(part, f'soft-overhanging-roof-{side}', poly, -.55, .57, '#789888', .014)
+        for vertex in roof.data.vertices:
+            x,y,z=yup(vertex.co)
+            vertex.co=xyz((x,y+.006*math.sin(math.pi*(z+.55)/1.12),z))
+        roof.data.update()
+    solid_polygon(part,'joined-rounded-gable-fascia',
+        [(-.65,1.03),(-.64,1.09),(0,1.615),(.64,1.09),(.65,1.03),(0,1.555)],
+        .551,.615,'#f1d6aa',.012)
     for side in (-1, 1):
         tube(part, f'eave-{side}', [(side * .645, 1.04, -.53), (side * .645, 1.04, .565)],
-             .022, '#714c3b', sides=6)
+             .022, '#607f70', sides=6)
     for j, z in enumerate((-.39, -.18, .03, .24, .45)):
         tube(part, f'roof-board-lap-{j}', [(-.64, 1.088, z), (0, 1.616, z), (.64, 1.088, z)],
-             .006, '#b67c5d', sides=6)
+             .006, '#8eab9a', sides=6)
     for j, y in enumerate((.20, .38, .56, .74, .92)):
-        gap = .272 if y < .64 else 0
+        gap = .309 if y < .70 else 0
         for side in (-1, 1):
             lo, hi = sorted((side * max(gap, .006), side * .513))
             box(part, f'front-plank-reveal-{j}-{side}', (lo, y, .45), (hi, y + .008, .456), '#b28459', .002)
@@ -263,10 +329,12 @@ def house():
     for x in (-.465, .465):
         for y in (.12, .86):
             ellipsoid(part, f'joinery-peg-{x}-{y}', (x, y, .458), (.012, .012, .005), '#845b40', n=8, rings=4)
-    box(part, 'bone-plaque-middle', (-.105, .791, .458), (.105, .845, .477), CREAM, .006)
-    for x in (-.105, .105):
-        for y in (.791, .845):
-            ellipsoid(part, f'bone-plaque-lobe-{x}-{y}', (x, y, .469), (.035, .035, .012), CREAM, n=10, rings=6)
+    # One continuous softly beveled bone, not five intersecting little blobs.
+    solid_polygon(part,'single-soft-bone-plaque',
+        [(-.085,.795),(-.115,.772),(-.15,.784),(-.15,.813),(-.136,.824),
+         (-.15,.84),(-.147,.867),(-.115,.876),(-.085,.852),(.085,.852),
+         (.115,.876),(.147,.867),(.15,.84),(.136,.824),(.15,.813),
+         (.15,.784),(.115,.772),(.085,.795)],.456,.482,CREAM,.008)
 
 
 def petal(part, name, center, angle, length, width, color):
@@ -274,18 +342,18 @@ def petal(part, name, center, angle, length, width, color):
     radial = Vector((math.cos(angle), math.sin(angle), 0))
     lateral = Vector((-math.sin(angle), math.cos(angle), 0))
     verts, faces, rows = [tuple(Vector(center))], [], [[0]]
-    for i in range(1, 6):
-        t = i / 6
+    for i in range(1, 8):
+        t = i / 8
         row = []
         for j in range(8):
             a = TAU * j / 8
-            p = Vector(center) + radial * (length * t) + lateral * (width * math.sin(math.pi * t) ** .7 * math.cos(a))
-            p.z += .010 * math.sin(math.pi * t) * math.sin(a) + .012 * t * t
+            p = Vector(center) + radial * (length * t) + lateral * (width * math.sin(math.pi * t) ** .55 * math.cos(a))
+            p.z += .012 * math.sin(math.pi * t) * math.sin(a) + .010 * t * t
             row.append(len(verts))
             verts.append(tuple(p))
         rows.append(row)
     rows.append([len(verts)])
-    verts.append(tuple(Vector(center) + radial * length + Vector((0, 0, .012))))
+    verts.append(tuple(Vector(center) + radial * length + Vector((0, 0, .010))))
     for a, b in zip(rows, rows[1:]):
         for j in range(8):
             k = (j + 1) % 8
@@ -296,45 +364,46 @@ def petal(part, name, center, angle, length, width, color):
 
 def hoop():
     part = 'flower-hoop'
-    torus(part, 'continuous-hoop', (0, .68, 0), .58, .58, .055, '#d8b568', vertical=True, n=48)
-    for i, (x, y) in enumerate(((-.4, 1.05), (0, 1.205), (.4, 1.05))):
+    torus(part, 'continuous-hoop', (0, .68, 0), .58, .58, .055, '#bb9a63', vertical=True, n=48)
+    for i, (x, y) in enumerate(((-.4, 1.07), (0, 1.218), (.4, 1.07))):
         for j in range(5):
-            petal(part, f'flower-{i}-petal-{j}', (x, y, .045), TAU * j / 5 + math.pi / 2,
-                  .088, .031, '#edb4af' if j % 2 else '#f5cbc1')
-        ellipsoid(part, f'flower-{i}-pollen-cushion', (x, y, .05225), (.03, .03, .016), '#f1d68c', n=12, rings=6)
-        petal(part, f'flower-{i}-leaf', (x, y - .025, .015), -.6 if i % 2 else 3.7, .115, .024, '#8eae7a')
+            petal(part, f'flower-{i}-petal-{j}', (x, y, .035), TAU * j / 5 + math.pi / 2,
+                  .088,.037,'#e6a394' if j%2 else '#f2c4b3')
+        ellipsoid(part, f'flower-{i}-pollen-cushion', (x,y,.044),(.035,.035,.021), '#f1d68c', n=12, rings=6)
+        petal(part, f'flower-{i}-leaf', (x,y-.012,.033), -.6 if i % 2 else 3.7, .115,.030,'#84a184')
 
 
 def bowl(part, water=False):
     lathe(part, 'hollow-vessel-rolled-rim',
-          [(0, .01), (.425, .01), (.463, .02), (.47, .045), (.455, .09),
+          profile_curve([(0, .01), (.425, .01), (.463, .02), (.47, .045), (.455, .09),
            (.418, .226), (.421, .248), (.412, .266), (.398, .2725),
            (.383, .268), (.373, .253), (.375, .23), (.349, .105),
-           (.322, .071), (.27, .055), (0, .055)],
-          lambda p: '#bfd6d2' if p[1] > .25 else '#6395a3', 'satin', n=48)
-    torus(part, 'recessed-foot-band', (0, .044, 0), .468, .468, .002, '#446f7b', role='satin', n=48, sides=6)
+           (.322, .071), (.27, .055), (0, .055)]),
+          lambda p: tint_mix(TEAL, CREAM, .65*smoothstep(.23,.266,p[1]) +
+              .70*(1-smoothstep(.34,.39,math.hypot(p[0],p[2])))), 'satin', n=40)
+    torus(part, 'recessed-foot-band', (0, .044, 0), .468, .468, .002,'#597d73',role='satin',n=40,sides=5)
     if water:
-        lathe(part, 'inset-water-meniscus', [(0, .177), (.357, .177), (.362, .184), (.354, .188), (0, .183)],
-              '#79bccb', 'satin', n=48)
+        lathe(part, 'inset-water-meniscus', [(0, .177), (.357, .177), (.362, .184), (.354, .188), (0, .180)],
+              '#9bc9cc','satin',n=40)
         for i, r in enumerate((.115, .215)):
             tube(part, f'water-ripple-{i}', [(r * math.cos(a), .187, r * math.sin(a))
                  for a in [j * math.pi / 24 for j in range(15)]], .002, '#c7e9e6', 'satin', sides=5)
 
 
 def flag_wave(x, y):
-    return .015 * math.sin(2 * math.pi * x / .54) + .010 * x / .54 * math.sin(8 * (y - .85))
+    return .025*math.sin(2*math.pi*x/.54) + .006*x/.54*math.sin(8*(y-.85))
 
 
 def flag():
     part = 'paw-flag'
-    lathe(part, 'pole-and-rounded-finial', [(0, 0), (.035, 0), (.035, 1.315), (.031, 1.344), (0, 1.36)], WOOD, n=16)
+    lathe(part, 'pole-and-rounded-finial', [(0, 0), (.035, 0), (.027,1.315),(.024,1.344), (0, 1.36)], WOOD, n=16)
     nx, ny = 18, 9
     verts, faces = [], []
     for side in (-1, 1):
         for j in range(ny + 1):
             for i in range(nx + 1):
-                x = .015 + .525 * i / nx
-                y = .875 + .39 * j / ny - .018 * math.sin(math.pi * i / nx)
+                x = .015+.525*i/nx-.012*math.sin(math.pi*j/ny)*(i/nx)**2
+                y = .875+.39*j/ny-.030*math.sin(math.pi*i/nx)*(.65+.35*math.cos(math.pi*j/ny))
                 verts.append((x, y, flag_wave(x, y) + side * .004))
     stride, layer = nx + 1, (nx + 1) * (ny + 1)
     for s in range(2):
@@ -346,7 +415,7 @@ def flag():
                [ny * stride + i for i in range(nx - 1, -1, -1)] + [j * stride for j in range(ny - 1, 0, -1)]
     faces += [(a, b, b + layer, a + layer) for a, b in zip(boundary, boundary[1:] + boundary[:1])]
     mesh(part, 'curved-thick-tricolor-cloth', verts, faces,
-         lambda p: '#e89986' if p[1] > 1.135 else '#f4d277' if p[1] > 1.005 else '#8fbaa2', 'fabric')
+         lambda p: tint_mix('#8da992',CREAM,smoothstep(1.17,1.23,p[1])), 'fabric')
     ellipsoid(part, 'raised-paw-central-pad', (.29, 1.049, .029), (.067, .062, .033), CREAM, 'fabric', n=16, rings=8,
               deform=lambda u, v: 1 + .08 * math.cos(3 * u) * math.cos(v))
     for i, (x, y, rx, ry) in enumerate(((.213, 1.113, .023, .033), (.258, 1.146, .026, .034),
@@ -362,30 +431,51 @@ def flag():
         torus(part, f'flag-tie-{y}', (0, y, 0), .037, .037, .004, CREAM, role='fabric', n=12, sides=5)
 
 
+def handle_loft(part):
+    rows=[(-.215,.038,.034),(-.29,.045,.041),(-.40,.059,.052),(-.50,.063,.065),
+          (-.58,.052,.047),(-.625,.030,.029),(-.65,0,0)]
+    verts, rings, faces, n=[],[],[],16
+    for z,rx,ry in rows:
+        if rx==0:
+            rings.append([len(verts)]);verts.append((0,.03,z));continue
+        rings.append(list(range(len(verts),len(verts)+n)))
+        for j in range(n):
+            a=TAU*j/n
+            verts.append((rx*math.cos(a),.03+ry*math.sin(a),z))
+    faces.append(tuple(reversed(rings[0])))
+    for a,b in zip(rings,rings[1:]):
+        for j in range(n):
+            k=(j+1)%n
+            faces.append((a[j],a[k],b[0]) if len(b)==1 else (a[j],a[k],b[k],b[j]))
+    return mesh(part,'single-continuous-comfort-handle',verts,faces,'#b98b60')
+
+
 def brush():
-    part = 'grooming-brush'
-    box(part, 'rounded-brush-base-038-014-052', (-.19, -.07, -.26), (.19, .07, .26),
-        lambda p: '#ac7953' if math.sin(p[2] * 75 + p[0] * 11) > -.6 else '#bf9167', .035)
-    box(part, 'inset-bristle-cushion', (-.16, -.082, -.224), (.16, -.063, .224), '#6f8888', .009)
-    tube(part, 'contoured-negative-z-handle', [(0, .03, z) for z in (-.215, -.29, -.39, -.49, -.585)],
-         lambda t: .043 + .022 * math.sin(math.pi * t), WOOD, sides=12)
-    ellipsoid(part, 'rounded-handle-butt', (0, .03, -.585), (.057, .065, .065), WOOD, n=16, rings=8)
+    part='grooming-brush'
+    lathe(part,'rounded-brush-base-038-014-052',
+          [(0,-.07),(.14,-.07),(.18,-.06),(.19,-.025),(.19,.025),(.18,.06),(.14,.07),(0,.07)],
+          lambda p:tint_mix('#ae8055','#c99b70',.4+.18*math.sin(p[2]*11+p[0]*8)),n=32,sz=.26/.19)
+    lathe(part,'oval-inset-bristle-cushion',[(0,-.082),(.14,-.082),(.16,-.076),(.15,-.063),(0,-.063)],
+          '#738d82','fabric',n=32,sz=.224/.16)
+    handle_loft(part)
     for i in range(24):
-        x, z = -.12 + (i % 4) * .08, -.18 + (i // 4) * .072
-        tip = (x + .004 * (1 if x > 0 else -1), -.201, z + .003)
-        tube(part, f'bristle-shaft-{i:02}', [(x, -.075, z), (x, -.14, z), tip],
-             lambda t: .0085 - .002 * t, '#f0ddbd', sides=6)
-        ellipsoid(part, f'rounded-bristle-tip-{i:02}', tip, (.008, .009, .008), CREAM, n=8, rings=4)
+        row,column=i//4,i%4
+        x=(-.115+column*(.23/3))*(.85 if row in (0,5) else 1.)
+        z=-.165+row*.066
+        tip=(x+.004*(1 if x>0 else -1),-.201,z+.003)
+        tube(part,f'bristle-shaft-{i:02}',[(x,-.075,z),(x,-.14,z),tip],
+             lambda t:.0085-.002*t,'#e9d8ba',sides=6)
+        ellipsoid(part,f'rounded-bristle-tip-{i:02}',tip,(.008,.009,.008),CREAM,n=8,rings=4)
 
 
 def food():
-    part = 'dog-food'
+    part='dog-food'
     for i in range(9):
-        center = (math.cos(i * 2.4) * .25, i % 2 * .04, math.sin(i * 2.4) * .25)
-        ellipsoid(part, f'scored-kibble-{i:02}', center, (.07, .055, .07),
-                  '#a87340' if i % 2 else '#b9854d', n=16, rings=8,
-                  deform=lambda u, v: 1 - .045 * math.sin(3 * u) ** 2 * math.cos(v) ** 2 -
-                  .025 * math.exp(-(v / .14) ** 2))
+        center=(math.cos(i*2.4)*.25,i%2*.04,math.sin(i*2.4)*.25)
+        lathe(part,f'scored-kibble-{i:02}',
+              [(0,-.055),(.045,-.055),(.064,-.038),(.07,-.012),(.07,.012),(.064,.038),(.045,.055),(0,.055)],
+              lambda p,c=center,i=i:tint_mix('#9b6a3d' if i%2 else '#a87543','#c79459',
+                  smoothstep(c[1]-.025,c[1]+.04,p[1])*.62),n=16,center=center)
 
 
 def main():

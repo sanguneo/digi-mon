@@ -16,6 +16,7 @@ try {
   const { buildWorldModel, disposeModel } = await vite.ssrLoadModule('/src/garden-models.ts');
   const { EMPTY_GAME_STATE, GARDEN_SPOTS } = await vite.ssrLoadModule('/src/game-state.ts');
   const { WORLD_CATALOGS, WORLDS } = await vite.ssrLoadModule('/src/garden-worlds.ts');
+  const { parseEnvironmentAsset } = await vite.ssrLoadModule('/src/environment-asset.ts');
   const { parsePropAsset } = await vite.ssrLoadModule('/src/prop-asset.ts');
   const bytes = async (name) => {
     const data = await readFile(new URL(`../../public/models/${name}.glb`, import.meta.url));
@@ -42,7 +43,8 @@ try {
     const parse = module[`parse${name[0].toUpperCase() + name.slice(1)}Asset`];
     const primary = await parse(await bytes(name));
     const propTemplate = await parsePropAsset(subject, await bytes(`props-${subject}`));
-    templates.push(primary, propTemplate);
+    const environmentTemplate = await parseEnvironmentAsset(subject, await bytes(`environment-${subject}`));
+    templates.push(primary, propTemplate, environmentTemplate);
     result[subject] = [];
     for (const stage of [0, 1, 2, 3]) {
       const entry = {};
@@ -51,7 +53,7 @@ try {
           growthMilestones: [1, 2, 3].slice(0, stage),
           placements: catalog ? Object.fromEntries(WORLD_CATALOGS[subject].map((item, i) => [item.id, GARDEN_SPOTS[i % GARDEN_SPOTS.length].id])) : {},
         };
-        const model = buildWorldModel(subject, world, { batch: true, [`${name}Template`]: primary, propTemplate });
+        const model = buildWorldModel(subject, world, { batch: true, [`${name}Template`]: primary, propTemplate, environmentTemplate });
         const full = summarize(model.root);
         // Independent ceilings remain meaningful even when the exact fixture changes.
         assert.ok(full[0] <= 115_000, `${subject} stage${stage}: >115k resident triangles`);

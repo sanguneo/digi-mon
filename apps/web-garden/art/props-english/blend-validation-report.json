@@ -1,50 +1,52 @@
 {
   "status": "pass",
-  "blender_version": "5.2.1 LTS",
+  "blender_version": "4.3.2",
+  "blend_sha256": "4fbf6e2cb30bfcb2b0fae1c1ab8dcf9e9661efda5751c6ee05e6292861f38b4f",
+  "glb_sha256": "9912bd183e7d89e08033c35472a4e2e9ec71cd1aba572f418a776a5bfa07d52d",
   "objects": 9,
   "meshes": 8,
   "materials": 3,
   "forbidden_datablocks": [],
   "parts": {
     "bubble-rock": {
-      "triangles": 2072,
-      "closed_manifold_edges": 3108,
-      "signed_volume": 0.238379360812562
+      "triangles": 2936,
+      "closed_manifold_edges": 4404,
+      "signed_volume": 0.21103195735880864
     },
     "bubble-trail": {
-      "triangles": 3240,
-      "closed_manifold_edges": 4860,
-      "signed_volume": 0.0030479599620599506
+      "triangles": 3260,
+      "closed_manifold_edges": 4890,
+      "signed_volume": 0.0027007883912291576
     },
     "coral-garden": {
-      "triangles": 2482,
-      "closed_manifold_edges": 3723,
-      "signed_volume": 0.04183073626628417
+      "triangles": 3398,
+      "closed_manifold_edges": 5097,
+      "signed_volume": 0.04269695548101084
     },
     "fish-food": {
-      "triangles": 840,
-      "closed_manifold_edges": 1260,
-      "signed_volume": 0.00320085447719057
+      "triangles": 1440,
+      "closed_manifold_edges": 2160,
+      "signed_volume": 0.0037222197187634265
     },
     "ribbon-kelp": {
-      "triangles": 780,
-      "closed_manifold_edges": 1170,
-      "signed_volume": 0.023699964685909687
+      "triangles": 2204,
+      "closed_manifold_edges": 3306,
+      "signed_volume": 0.01637709380426873
     },
     "shell-arch": {
-      "triangles": 2036,
-      "closed_manifold_edges": 3054,
-      "signed_volume": 0.23732265326159205
+      "triangles": 3028,
+      "closed_manifold_edges": 4542,
+      "signed_volume": 0.0837803833233085
     },
     "star-lamp": {
-      "triangles": 2520,
-      "closed_manifold_edges": 3780,
-      "signed_volume": 0.043708836896040014
+      "triangles": 2880,
+      "closed_manifold_edges": 4320,
+      "signed_volume": 0.05103804142901012
     },
     "treasure-chest": {
-      "triangles": 1780,
-      "closed_manifold_edges": 2670,
-      "signed_volume": 0.15419655635266194
+      "triangles": 2900,
+      "closed_manifold_edges": 4350,
+      "signed_volume": 0.15211675825778656
     }
   }
 }

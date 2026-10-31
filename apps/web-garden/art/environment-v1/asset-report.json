@@ -1,0 +1,50 @@
+[
+  {
+    "subject": "korean",
+    "parts": {
+      "static-environment": {
+        "triangles": 17858,
+        "features": 99
+      },
+      "garden-sprig": {
+        "triangles": 1238,
+        "features": 6
+      },
+      "watering-drops": {
+        "triangles": 1008,
+        "features": 7
+      }
+    },
+    "triangles": 20104,
+    "bytes": 536692,
+    "sha256": "a7778f1b011fdad4817c78f27eed75ec73df82f81c66beacf55c02d1877426db"
+  },
+  {
+    "subject": "english",
+    "parts": {
+      "static-environment": {
+        "triangles": 4286,
+        "features": 28
+      },
+      "aquatic-sprig": {
+        "triangles": 888,
+        "features": 3
+      }
+    },
+    "triangles": 5174,
+    "bytes": 343032,
+    "sha256": "eaf604964aa1d56708d13feb4b64669fa25bd42178b2c1f4eac85bc2d56b2bb8"
+  },
+  {
+    "subject": "math",
+    "parts": {
+      "static-environment": {
+        "triangles": 17858,
+        "features": 99
+      }
+    },
+    "triangles": 17858,
+    "bytes": 475040,
+    "sha256": "92100d0a0de2027b987cd5ec808d2bd4f83823918a0403fb0ecc21304f9f69f0"
+  }
+]
