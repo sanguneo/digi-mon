@@ -8,6 +8,8 @@ import { loadPuppyAsset, PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { loadTreeAsset, TREE_ASSET_URL } from './tree-asset.ts';
 import { loadFishAsset, FISH_ASSET_URL } from './fish-asset.ts';
 import { loadPropAsset, PROP_ASSET_URLS } from './prop-asset.ts';
+import { createWorldLighting, type WorldLightPreset } from './garden-lighting.ts';
+export type { WorldLightPreset } from './garden-lighting.ts';
 
 export async function prepareWorldAssets(subject: Subject): Promise<WorldModelAssets> {
   const [primary, propTemplate] = await Promise.all([
@@ -39,7 +41,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.02;
+  renderer.toneMappingExposure = 1.0;
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(subject === 'english' ? '#c6e3df' : '#e6ecd7');
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 80);
@@ -53,18 +55,20 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   controls.enabled = false;
   canvas.style.touchAction = 'pan-y';
   controls.target.set(0, worldFraming(subject, growthStage(world), 1).targetY, 0.25);
-  const light = new THREE.DirectionalLight('#fff0d9', 2.8);
-  light.position.set(-5, 9, 6);
-  light.castShadow = true;
-  light.shadow.mapSize.set(1024, 1024);
-  Object.assign(light.shadow.camera, { left: -7, right: 7, top: 7, bottom: -7, near: 0.5, far: 25 });
-  light.shadow.bias = -0.0005;
-  light.shadow.normalBias = 0.04;
-  scene.add(light, new THREE.HemisphereLight('#fff9ed', '#738367', 1.55));
-  const fill = new THREE.DirectionalLight('#c4e9f0', 0.8);
-  fill.position.set(5, 4, -4); scene.add(fill);
+  const releaseFailedRenderer = () => {
+    controls.dispose();
+    renderer.dispose();
+    renderer.forceContextLoss();
+  };
+  const lighting = (() => {
+    try { return createWorldLighting(renderer, scene, subject); }
+    catch (error) { releaseFailedRenderer(); throw error; }
+  })();
   let currentWorld = world;
-  let model = buildWorldModel(subject, world, { ...assets, batch: true });
+  let model = (() => {
+    try { return buildWorldModel(subject, world, { ...assets, batch: true }); }
+    catch (error) { lighting.dispose(); releaseFailedRenderer(); throw error; }
+  })();
   let activeCare: CareEvent | null = null;
   let careTransition = '';
   const careState = (phase: 'idle' | 'approach' | 'respond' | 'settle' | 'settled') => {
@@ -154,6 +158,7 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
   canvas.dataset.assetSource = subject === 'korean' ? TREE_ASSET_URL : subject === 'english' ? FISH_ASSET_URL : PUPPY_ASSET_URL;
   canvas.dataset.propAssetSource = PROP_ASSET_URLS[subject];
   canvas.dataset.stage = String(model.root.userData.stage);
+  canvas.dataset.lighting = 'daylight';
   canvas.dataset.careId = '0';
   careState('idle');
 
@@ -191,6 +196,12 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       controls.enabled = enabled;
       canvas.style.touchAction = enabled ? 'none' : 'pan-y';
     },
+    lighting(preset: WorldLightPreset) {
+      if (disposed || lost) return;
+      lighting.setPreset(preset);
+      canvas.dataset.lighting = preset;
+      draw();
+    },
     camera(action: CameraAction) {
       if (action === 'home') { home(); return; }
       spherical.setFromVector3(camera.position.clone().sub(controls.target));
@@ -217,13 +228,14 @@ export function createWorldRenderer(canvas: HTMLCanvasElement, subject: Subject,
       controls.removeEventListener('change', draw);
       controls.dispose();
       disposeModel(model.root);
-      light.shadow.dispose();
+      lighting.dispose();
       scene.clear();
       renderer.dispose();
       if (!lost) renderer.forceContextLoss();
       delete canvas.dataset.renderer;
       delete canvas.dataset.assetSource;
       delete canvas.dataset.propAssetSource;
+      delete canvas.dataset.lighting;
     },
   };
 }

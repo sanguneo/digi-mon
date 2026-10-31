@@ -11,7 +11,9 @@ import { WORLD_CATALOGS, WORLDS } from './garden-worlds.ts';
 // and batched. Includes Korean procedural droplets; no prop triangles can mask
 // environment regressions. Tuples: triangles, meshes, geometries, materials.
 import baseline from './prop-baseline.test-fixture.json';
-// Actual shipped libraries, all four stages, empty/full catalogs, idle and every
+// Measured shipped companions and libraries; regenerate explicitly with
+// node apps/web-garden/art/quality/measure-world-budgets.mjs --write.
+// All four stages, empty/full catalogs, idle and every
 // care action at t=1.4. Full budgets include hidden growth and pooled care resources;
 // active budgets count visible subtrees only, not all cached library parts.
 import budgets from './prop-budgets.test-fixture.json';
@@ -125,7 +127,12 @@ describe('world render batching', () => {
       const world = { ...worldAt(subject, stage), ...(!catalog ? { placements: {} } : {}) };
       const model = buildWorldModel(subject, world, { batch: true });
       const budget = budgets[subject][stage]![catalog ? 'catalog' : 'empty'];
-      expect(summarize(model.root)).toEqual(budget.full);
+      const full = summarize(model.root);
+      // A regenerated snapshot must not silently raise the mobile scene ceiling.
+      expect(full[0]).toBeLessThanOrEqual(115_000);
+      expect(full[1]).toBeLessThanOrEqual(36);
+      expect(full[3]).toBeLessThanOrEqual(14);
+      expect(full).toEqual(budget.full);
       expect(summarize(model.root, false, true)).toEqual(budget.idle);
       const actors = model.root.children.filter(object => ['growing-tree', 'fish', 'puppy'].includes(object.name));
       expect(actors.map(actor => summarize(actor))).toEqual(budget.actors);

@@ -106,7 +106,8 @@ center; controls stay quiet, explicit and outside the canvas.
 
 - Korean: a rounded, leafy tree and growing plants on a moss-green island.
 - English: a glass-edged aquarium with sand, aquatic plants and friendly swimming fish.
-- Math: a floppy-eared puppy in a soft grassy play yard.
+- Math: a compact baby Shiba Inu with rounded upright ears, cream cheek/chest
+  markings and a plush curled tail in a soft grassy play yard.
 - Palette: leaf `#78a85b`, deep leaf `#315344`, water `#9edce4`, sand `#f3d9a4`,
   puppy caramel `#bd8053`, coral `#ed997e`. Keep the existing rounded Korean sans type.
 - Mobile first: compact title and subject controls, canvas, immediately reachable care
@@ -121,9 +122,10 @@ center; controls stay quiet, explicit and outside the canvas.
   The [Blender puppy contract](../../docs/design/companion-art.md#blender-puppy-replacement)
   defines its source, motion pivots, resource budget and focused verification.
   The same document specifies the tree/fish stage and motion contracts. Current
-  verification uses numerical geometry and browser DOM/network assertions.
-  Image generation and rendered previews are prohibited. Any needed image recognition
-  or OCR is delegated to Claude Opus or Sonnet, never Fable.
+  verification combines numerical geometry and browser DOM/network assertions with
+  direct inspection of Blender renders and actual-app captures. Compare silhouettes,
+  shading and care poses at desktop and phone sizes; numerical tests alone do not
+  certify visual quality.
 
 ### Participation and care
 

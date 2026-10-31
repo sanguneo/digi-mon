@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "glb_sha256": "d5709e719fdcb54aa2f9502299411f15c07be9607b70724d3e55e85d4361a08b",
+  "method": "Actual exported root patches transformed through 17 angles; bidirectional rays against isolated connected body core",
+  "attachments": {
+    "tail": {
+      "samples": 17,
+      "rootPatchVertices": 9,
+      "minimumClearance": 0.03702087528670085
+    },
+    "pectoral-fin": {
+      "samples": 17,
+      "rootPatchVertices": 9,
+      "minimumClearance": 0.04989265152131339
+    }
+  }
+}

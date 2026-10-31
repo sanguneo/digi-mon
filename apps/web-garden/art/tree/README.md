@@ -1,4 +1,8 @@
-# Blender growing tree
+# Blender growing tree — historical source
+
+The active tree is now [tree-v2](../tree-v2/README.md). This directory preserves
+the previous design and its measurements; use the active source to rebuild the
+canonical runtime asset.
 
 Original project-authored geometry under the repository MIT license. Blender is
 needed only to edit or rebuild the asset, not to run the app.

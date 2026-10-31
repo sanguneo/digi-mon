@@ -8,8 +8,8 @@ import { WORLD_CATALOGS, type CareEvent } from './garden-worlds.ts';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { readShippedAssetBytes } from './puppy-asset.test-fixture.ts';
 
-const { prepare, create, care, dispose, update } = vi.hoisted(() => ({
-  prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(),
+const { prepare, create, care, dispose, update, lighting } = vi.hoisted(() => ({
+  prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(), lighting: vi.fn(),
 }));
 vi.mock('./garden-renderer.ts', () => ({
   prepareWorldAssets: prepare,
@@ -39,9 +39,46 @@ function statusChanged(container: HTMLElement, status: string) {
 beforeEach(() => {
   vi.resetAllMocks();
   vi.stubGlobal('matchMedia', () => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
-  create.mockImplementation(() => ({ care, dispose, update, setMotion: vi.fn(), setGestures: vi.fn(), camera: vi.fn() }));
+  create.mockImplementation(() => ({ care, dispose, update, lighting, setMotion: vi.fn(), setGestures: vi.fn(), camera: vi.fn() }));
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+
+test('optional lighting buttons change only the view, support repeated choices and reset on world changes and retry', async () => {
+  prepare.mockResolvedValue({});
+  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} />);
+  const ready = statusChanged(view.container, 'ready');
+  await act(async () => {}); await ready;
+  fireEvent.click(screen.getByText('시점과 움직임 조절'));
+  const warm = screen.getByRole('button', { name: '따뜻한 옆빛' });
+  const daylight = screen.getByRole('button', { name: '부드러운 낮빛' });
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenLastCalledWith('warm-side');
+  expect(warm.getAttribute('aria-pressed')).toBe('true');
+  expect(daylight.getAttribute('aria-pressed')).toBe('false');
+  const calls = lighting.mock.calls.length;
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenCalledTimes(calls);
+  expect(care).not.toHaveBeenCalled();
+  expect(create).toHaveBeenCalledTimes(1);
+
+  const nextReady = statusChanged(view.container, 'ready');
+  await act(async () => { view.rerender(<GardenScene subject="english" world={EMPTY_GAME_STATE.worlds.english} />); });
+  await nextReady;
+  expect(lighting).toHaveBeenLastCalledWith('daylight');
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenLastCalledWith('warm-side');
+  const onLost = create.mock.lastCall![3] as () => void;
+  act(() => onLost());
+  expect(warm.hasAttribute('disabled')).toBe(true);
+  const retryReady = statusChanged(view.container, 'ready');
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: '3D 다시 열기' })); });
+  await retryReady;
+  expect(lighting).toHaveBeenLastCalledWith('daylight');
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  expect(care).not.toHaveBeenCalled();
+});
 
 for (const subject of ['korean', 'english', 'math'] as const) {
   const nextSubject = subject === 'korean' ? 'english' : 'korean';

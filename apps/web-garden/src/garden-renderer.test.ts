@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { BufferGeometry, Mesh, type Scene } from 'three';
+import { BufferGeometry, Mesh, PMREMGenerator, WebGLRenderer, type Scene } from 'three';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createWorldRenderer, prepareWorldAssets } from './garden-renderer.ts';
 import { assetsFor, readShippedAssetBytes, readShippedPuppy, shippedAssets } from './puppy-asset.test-fixture.ts';
@@ -19,6 +19,8 @@ vi.mock('three', async () => {
   const three = await vi.importActual<typeof import('three')>('three');
   return { ...three, WebGLRenderer: class {
     shadowMap = {}; setPixelRatio() {} setSize() {} render(scene: Scene) { gpuDraw(scene); } dispose() {} forceContextLoss() {}
+  }, PMREMGenerator: class {
+    fromScene() { return new three.WebGLRenderTarget(384, 512); } dispose() {}
   } };
 });
 const frames = new Map<number, FrameRequestCallback>();
@@ -44,6 +46,49 @@ beforeEach(() => {
   vi.stubGlobal('IntersectionObserver', class { constructor(callback: IntersectionObserverCallback) { observeIntersection = callback; } observe() {} disconnect = disconnect; });
 });
 afterEach(() => { document.body.replaceChildren(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+
+test('a failed studio probe releases the renderer before the existing retry boundary takes over', () => {
+  const failure = new Error('Probe target allocation failed');
+  vi.spyOn(PMREMGenerator.prototype, 'fromScene').mockImplementation(() => { throw failure; });
+  const disposed = vi.spyOn(WebGLRenderer.prototype, 'dispose');
+  const contextReleased = vi.spyOn(WebGLRenderer.prototype, 'forceContextLoss');
+  const element = canvas();
+  expect(() => createWorldRenderer(element, 'math', EMPTY_GAME_STATE.worlds.math, () => {}, assetsFor('math'))).toThrow(failure);
+  expect(disposed).toHaveBeenCalledTimes(1);
+  expect(contextReleased).toHaveBeenCalledTimes(1);
+  expect(element.dataset.renderer).toBeUndefined();
+  expect(frames.size).toBe(0);
+});
+
+test('growth, camera moves and repeated care reuse one studio probe instead of regenerating GPU targets', () => {
+  const generate = vi.spyOn(PMREMGenerator.prototype, 'fromScene');
+  const element = canvas();
+  const runtime = createWorldRenderer(element, 'math', EMPTY_GAME_STATE.worlds.math, () => {}, assetsFor('math'));
+  const scene = gpuDraw.mock.lastCall![0] as Scene;
+  const environment = scene.environment;
+  expect(environment).not.toBeNull();
+  const materials = new Set<import('three').Material>();
+  scene.traverse((object) => {
+    if (object instanceof Mesh) for (const material of Array.isArray(object.material) ? object.material : [object.material]) materials.add(material);
+  });
+  const versions = [...materials].map((material) => material.version);
+  const drawn = gpuDraw.mock.calls.length;
+  runtime.lighting('warm-side');
+  expect(gpuDraw).toHaveBeenCalledTimes(drawn + 1);
+  expect(element.dataset.lighting).toBe('warm-side');
+  expect(frames.size).toBe(0);
+  expect([...materials].map((material) => material.version)).toEqual(versions);
+  for (const stage of [1, 2, 3] as const) {
+    runtime.update({ ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) });
+    runtime.care({ id: stage, subject: 'math', action: 'brush' });
+    runtime.camera('left');
+    expect(scene.environment).toBe(environment);
+  }
+  expect(generate).toHaveBeenCalledTimes(1);
+  runtime.dispose();
+  expect(scene.environment).toBeNull();
+  expect(element.dataset.lighting).toBeUndefined();
+});
 
 test.each(['korean', 'english', 'math'] as const)('%s care phase events are transition-only, repeat clicks restart, and care updates allocate no new geometry', (subject) => {
   const element = canvas();

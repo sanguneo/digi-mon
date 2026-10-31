@@ -1,4 +1,8 @@
-# Fish v2 - active model
+# Fish v2 — historical model
+
+The active model is now [fish-v3](../fish-v3/README.md). This directory preserves
+the previous design and its milestone evidence; use the active source to rebuild
+the canonical runtime asset. The statements below describe that earlier milestone.
 
 New baby-fish geometry authored in Blender 5.2.1 LTS from the English redesign
 brief. This is not a refinement of the rejected fish silhouette. The canonical
