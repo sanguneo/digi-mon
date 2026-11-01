@@ -1,0 +1,162 @@
+{
+  "status": "review candidate; not remotely published",
+  "base_remote_commit": "d4f4ef0a9e7695c19040ed9b78df758ef87cc950",
+  "base_tree": "9ce038554c9710ece719dfb6ac1025c84214006b",
+  "scope": {
+    "catalog": 24,
+    "care_groups": 7,
+    "tree_growth_stages": 4,
+    "environment_libraries": 3
+  },
+  "validation": {
+    "garden_tests": {
+      "passed": 304,
+      "total": 304,
+      "files": 22,
+      "seconds": 85.91,
+      "command": "npm test -w @digi-mon/web-garden -- --maxWorkers=2",
+      "note": "Unchanged tests and 30-second limits. Initial concurrent-render run had four CPU-contention timeouts; quiet rerun passed all304."
+    },
+    "strengthened_environment_attribute_tests": {
+      "passed": 9,
+      "total": 9
+    },
+    "garden_strict_typecheck_and_build": "pass",
+    "root_verify_24_stages": "pass",
+    "generated_artifact_freshness": "pass",
+    "markdown_files": 29,
+    "audit_findings": 0,
+    "tree_contact_poses": 185,
+    "tree_reopen_glb_and_runtime": "pass",
+    "all_prop_glb_bounds_cloning_care_cavities": "pass",
+    "tree_exact_geometry": "Independent GLB all-non-color-byte check and18editable-Blender-mesh vertex/topology/transform hashes pass"
+  },
+  "full_world_hard_limits": {
+    "triangles": 115000,
+    "meshes": 36,
+    "materials": 14
+  },
+  "scene_measurements": {
+    "korean": {
+      "full": [
+        101456,
+        35,
+        30,
+        7
+      ],
+      "visible_idle": [
+        95780,
+        30,
+        25,
+        7
+      ]
+    },
+    "english": {
+      "full": [
+        100274,
+        34,
+        28,
+        12
+      ],
+      "visible_idle": [
+        93630,
+        30,
+        24,
+        12
+      ]
+    },
+    "math": {
+      "full": [
+        84976,
+        22,
+        19,
+        9
+      ],
+      "visible_idle": [
+        77874,
+        18,
+        16,
+        9
+      ]
+    }
+  },
+  "visual_review": {
+    "method": "actual Three buildWorldModel exported to GLB and rendered offline in Blender Cycles",
+    "stage0_stage3_and_full_catalog_all_subjects": "inspected",
+    "all31props_matched_before_after": "inspected",
+    "tree_allstages_and3matureangles": "Original geometry preserved exactly; all four stages reviewed in matched color-only before/after Cycles renders",
+    "care_and_light_views": "inspected: Koreanwater, Englishfeed, mathfeed/brush, Koreanmatchedkeydirection change",
+    "full_catalog_comparison": "Matched same catalog placements, camera, samples and lighting across all three subjects, inspected after color-only tree restoration"
+  },
+  "limits": [
+    "Browser GPU shader compilation, integrated WebGL screenshots, actual touch devices and FPS not verified; prior sandbox/socket/protocol routes remain blocked and were not retried.",
+    "Runtime is PBR/raster PCF shadowing, not real-time ray tracing.",
+    "Some interior tree bark collars remain visible.",
+    "Existing out-of-scope math generator type diagnostics remain warnings in the unchanged root type gate; production garden chunk642.27kB remains above500kB warning."
+  ],
+  "preserved_heroes": {
+    "fish": "d5709e719fdcb54aa2f9502299411f15c07be9607b70724d3e55e85d4361a08b",
+    "puppy": "66986258aa30fa2d291fb8453dde27c0369ebe75b4d9c60304d2d970883fe667"
+  },
+  "assets": {
+    "environment-english.glb": {
+      "bytes": 343032,
+      "sha256": "eaf604964aa1d56708d13feb4b64669fa25bd42178b2c1f4eac85bc2d56b2bb8"
+    },
+    "environment-korean.glb": {
+      "bytes": 536692,
+      "sha256": "a7778f1b011fdad4817c78f27eed75ec73df82f81c66beacf55c02d1877426db"
+    },
+    "environment-math.glb": {
+      "bytes": 475040,
+      "sha256": "92100d0a0de2027b987cd5ec808d2bd4f83823918a0403fb0ecc21304f9f69f0"
+    },
+    "fish.glb": {
+      "bytes": 1017224,
+      "sha256": "d5709e719fdcb54aa2f9502299411f15c07be9607b70724d3e55e85d4361a08b"
+    },
+    "props-english.glb": {
+      "bytes": 915072,
+      "sha256": "9912bd183e7d89e08033c35472a4e2e9ec71cd1aba572f418a776a5bfa07d52d"
+    },
+    "props-korean.glb": {
+      "bytes": 1636456,
+      "sha256": "3c3aacab48adc76794a97ef878a15b24197663935f50f7271937c80edd2833a2"
+    },
+    "props-math.glb": {
+      "bytes": 1328044,
+      "sha256": "a3c5d4dae0104065ff3f0e4426b1872eba92fb067cd9ae854d7db8181711f05e"
+    },
+    "puppy.glb": {
+      "bytes": 1062044,
+      "sha256": "66986258aa30fa2d291fb8453dde27c0369ebe75b4d9c60304d2d970883fe667"
+    },
+    "tree.glb": {
+      "bytes": 3713992,
+      "sha256": "7516921fb980d168f551cac1857c072230d7ca73863b9858167d64e94bb7c06e"
+    }
+  },
+  "patch_validation": {
+    "base_tree": "9ce038554c9710ece719dfb6ac1025c84214006b",
+    "complete_patch_files": 69,
+    "pristine_application": "pass; all 69 files byte-identical; disjoint group patches also checked"
+  },
+  "tree_revision": {
+    "direction": "owner requested original v2 shape with candidate palette only",
+    "glb_color_only": {
+      "baseline_sha256": "556268ada2bb9c74afd06352bfded94c9981c26c27209afe6392f6cdbf88a0ba",
+      "output_sha256": "7516921fb980d168f551cac1857c072230d7ca73863b9858167d64e94bb7c06e",
+      "changed_color_vertices": 43711,
+      "json_materials_nodes_transforms_identical": true,
+      "all_non_color_binary_bytes_identical": true,
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0",
+        "indices"
+      ],
+      "bytes": 3713992
+    },
+    "editable_meshes_bit_identical": 18
+  }
+}

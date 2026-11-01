@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { BufferGeometry, Mesh, type Scene } from 'three';
+import { BufferGeometry, Mesh, PMREMGenerator, WebGLRenderer, type Scene } from 'three';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createWorldRenderer, prepareWorldAssets } from './garden-renderer.ts';
 import { assetsFor, readShippedAssetBytes, readShippedPuppy, shippedAssets } from './puppy-asset.test-fixture.ts';
@@ -8,6 +8,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PUPPY_ASSET_URL } from './puppy-asset.ts';
 import { TREE_ASSET_URL } from './tree-asset.ts';
 import { FISH_ASSET_URL } from './fish-asset.ts';
+import { ENVIRONMENT_ASSET_URLS } from './environment-asset.ts';
 import { PROP_ASSET_URLS } from './prop-asset.ts';
 import { EMPTY_GAME_STATE, careForWorld, type WorldState } from './game-state.ts';
 
@@ -19,6 +20,8 @@ vi.mock('three', async () => {
   const three = await vi.importActual<typeof import('three')>('three');
   return { ...three, WebGLRenderer: class {
     shadowMap = {}; setPixelRatio() {} setSize() {} render(scene: Scene) { gpuDraw(scene); } dispose() {} forceContextLoss() {}
+  }, PMREMGenerator: class {
+    fromScene() { return new three.WebGLRenderTarget(384, 512); } dispose() {}
   } };
 });
 const frames = new Map<number, FrameRequestCallback>();
@@ -44,6 +47,49 @@ beforeEach(() => {
   vi.stubGlobal('IntersectionObserver', class { constructor(callback: IntersectionObserverCallback) { observeIntersection = callback; } observe() {} disconnect = disconnect; });
 });
 afterEach(() => { document.body.replaceChildren(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+
+test('a failed studio probe releases the renderer before the existing retry boundary takes over', () => {
+  const failure = new Error('Probe target allocation failed');
+  vi.spyOn(PMREMGenerator.prototype, 'fromScene').mockImplementation(() => { throw failure; });
+  const disposed = vi.spyOn(WebGLRenderer.prototype, 'dispose');
+  const contextReleased = vi.spyOn(WebGLRenderer.prototype, 'forceContextLoss');
+  const element = canvas();
+  expect(() => createWorldRenderer(element, 'math', EMPTY_GAME_STATE.worlds.math, () => {}, assetsFor('math'))).toThrow(failure);
+  expect(disposed).toHaveBeenCalledTimes(1);
+  expect(contextReleased).toHaveBeenCalledTimes(1);
+  expect(element.dataset.renderer).toBeUndefined();
+  expect(frames.size).toBe(0);
+});
+
+test('growth, camera moves and repeated care reuse one studio probe instead of regenerating GPU targets', () => {
+  const generate = vi.spyOn(PMREMGenerator.prototype, 'fromScene');
+  const element = canvas();
+  const runtime = createWorldRenderer(element, 'math', EMPTY_GAME_STATE.worlds.math, () => {}, assetsFor('math'));
+  const scene = gpuDraw.mock.lastCall![0] as Scene;
+  const environment = scene.environment;
+  expect(environment).not.toBeNull();
+  const materials = new Set<import('three').Material>();
+  scene.traverse((object) => {
+    if (object instanceof Mesh) for (const material of Array.isArray(object.material) ? object.material : [object.material]) materials.add(material);
+  });
+  const versions = [...materials].map((material) => material.version);
+  const drawn = gpuDraw.mock.calls.length;
+  runtime.lighting('warm-side');
+  expect(gpuDraw).toHaveBeenCalledTimes(drawn + 1);
+  expect(element.dataset.lighting).toBe('warm-side');
+  expect(frames.size).toBe(0);
+  expect([...materials].map((material) => material.version)).toEqual(versions);
+  for (const stage of [1, 2, 3] as const) {
+    runtime.update({ ...EMPTY_GAME_STATE.worlds.math, growthMilestones: ([1, 2, 3] as const).slice(0, stage) });
+    runtime.care({ id: stage, subject: 'math', action: 'brush' });
+    runtime.camera('left');
+    expect(scene.environment).toBe(environment);
+  }
+  expect(generate).toHaveBeenCalledTimes(1);
+  runtime.dispose();
+  expect(scene.environment).toBeNull();
+  expect(element.dataset.lighting).toBeUndefined();
+});
 
 test.each(['korean', 'english', 'math'] as const)('%s care phase events are transition-only, repeat clicks restart, and care updates allocate no new geometry', (subject) => {
   const element = canvas();
@@ -103,7 +149,7 @@ test.each([['korean', TREE_ASSET_URL], ['english', FISH_ASSET_URL], ['math', PUP
   const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockRejectedValue(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
   await expect(prepareWorldAssets(subject)).rejects.toBe(failure);
-  expect(load.mock.calls).toEqual([[url], [PROP_ASSET_URLS[subject]], [url], [PROP_ASSET_URLS[subject]]]);
+  expect(load.mock.calls).toEqual([[url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]], [url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]]]);
 });
 
 test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_URL]] as const)('%s real asset growth and context retry release owned scenes without poisoning templates or replaying history', (subject, name, url) => {
@@ -122,6 +168,7 @@ test.each([['korean', 'tree', TREE_ASSET_URL], ['english', 'fish', FISH_ASSET_UR
   const runtime = createWorldRenderer(element, subject, world, lost, assetsFor(subject));
   expect(element.dataset.assetSource).toBe(url);
   expect(element.dataset.propAssetSource).toBe(PROP_ASSET_URLS[subject]);
+  expect(element.dataset.environmentAssetSource).toBe(ENVIRONMENT_ASSET_URLS[subject]);
   expect(element.dataset.careState).toBe('idle');
   const scene = gpuDraw.mock.lastCall![0] as Scene;
   runtime.setMotion(true);
@@ -205,11 +252,12 @@ test('successful preparation caches each real shipped GLB independently and neve
     [3, 'math', 'puppyTemplate', PUPPY_ASSET_URL],
   ] as const) {
     const [first, concurrent] = await Promise.all([prepareWorldAssets(subject), prepareWorldAssets(subject)]);
-    expect(Object.keys(first)).toEqual([key, 'propTemplate']);
+    expect(Object.keys(first)).toEqual([key, 'propTemplate', 'environmentTemplate']);
     expect(first.propTemplate === concurrent.propTemplate).toBe(true);
+    expect(first.environmentTemplate === concurrent.environmentTemplate).toBe(true);
     expect(first[key] === concurrent[key]).toBe(true);
     expect((await prepareWorldAssets(subject))[key] === first[key]).toBe(true);
-    expect(load).toHaveBeenCalledTimes(index * 2);
-    expect(load.mock.calls.slice(-2)).toEqual([[url], [PROP_ASSET_URLS[subject]]]);
+    expect(load).toHaveBeenCalledTimes(index * 3);
+    expect(load.mock.calls.slice(-3)).toEqual([[url], [PROP_ASSET_URLS[subject]], [ENVIRONMENT_ASSET_URLS[subject]]]);
   }
 });

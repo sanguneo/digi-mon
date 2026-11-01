@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "editable_meshes": 18,
+  "vertices_topology_local_transforms_bit_identical": true,
+  "meshes": {
+    "sprout-leaf-left-blade": "8c1cb67a12929cae3c888a4c07c1a3145d8442011b3490a67346317d4b092ab7",
+    "sprout-leaf-right-blade": "23dc53f93b811fdc8442f22a9be08d6e14a5cb12b1823eea0403e3c4d7f77a70",
+    "stage-0-soil": "f18e45aab1c625442c9f4db56cadfa4013e59b50362045f8ab4ff78b5d0c3b6e",
+    "stage-0-stem-roots": "9072fd37889ef3285f993c12bbaed4511c82ff59d0c8b6c76b8b40da8e1aca4f",
+    "stage-1-attachment-sockets": "728f1dac0f6ff1783ad2e6b2444b20bfd5ce080c5bed63c473c2430590dc469b",
+    "stage-1-leaf-sprays": "488ad6619818cd8485e012b1ba4b55f8f04394920721c6f1d95c922f7d8c65ca",
+    "stage-1-soil": "d0fc3ef6f46ad8b56e012186647a7f6e8636a6d8821d765873b90f81053e1411",
+    "stage-1-trunk-roots-branches": "925987814df36427e49ccca05177016254f8ffd99106ac7d1bb0bc08a759afdf",
+    "stage-2-attachment-sockets": "00d7deaba6766878c101ee0f6708d9830bf308e2676c55ae39e29f36e9d71886",
+    "stage-2-blossoms": "a2904d7961ea53ba4340e7c3a4daa56e3bcaee707e8dedb9b89f197f62d1c6a3",
+    "stage-2-leaf-sprays": "67e8125c32cefb3ffa0bae3a631ff2765a33b6d57da6738e26b20f6ccdbf9dc0",
+    "stage-2-soil": "f18e45aab1c625442c9f4db56cadfa4013e59b50362045f8ab4ff78b5d0c3b6e",
+    "stage-2-trunk-roots-branches": "1e053ef74ed60a9bb03a26dca749c35b1b697fbd504f99639f7f7e4547080f85",
+    "stage-3-attachment-sockets": "00d7deaba6766878c101ee0f6708d9830bf308e2676c55ae39e29f36e9d71886",
+    "stage-3-fruit": "22a3cea0d3e4238674c3c1834d15bc0430fd611a2ae95d111a39b881f1b56162",
+    "stage-3-leaf-sprays": "67e8125c32cefb3ffa0bae3a631ff2765a33b6d57da6738e26b20f6ccdbf9dc0",
+    "stage-3-soil": "f18e45aab1c625442c9f4db56cadfa4013e59b50362045f8ab4ff78b5d0c3b6e",
+    "stage-3-trunk-roots-branches": "1e053ef74ed60a9bb03a26dca749c35b1b697fbd504f99639f7f7e4547080f85"
+  }
+}

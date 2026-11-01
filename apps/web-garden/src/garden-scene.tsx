@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useRef, useState } from 'react';
 import type { Subject } from './api.ts';
 import { growthStage, type WorldState } from './game-state.ts';
 import { WORLDS, type CareEvent } from './garden-worlds.ts';
-import type { CameraAction, WorldRenderer } from './garden-renderer.ts';
+import type { CameraAction, WorldLightPreset, WorldRenderer } from './garden-renderer.ts';
 
 const CAMERA_BUTTONS: readonly [CameraAction, string][] = [
   ['left', '왼쪽 보기'], ['right', '오른쪽 보기'], ['up', '위에서 보기'],
@@ -22,6 +22,7 @@ export function GardenScene({ subject, world, careEvent = null, children }: { su
   const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [paused, setPaused] = useState(false);
   const [gestures, setGestures] = useState(false);
+  const [lightPreset, setLightPreset] = useState<WorldLightPreset>('daylight');
   const definition = WORLDS[subject];
   const stage = growthStage(world);
 
@@ -38,6 +39,7 @@ export function GardenScene({ subject, world, careEvent = null, children }: { su
     consumedCare.current = latestCare.current?.id ?? 0;
     setStatus('loading');
     setGestures(false);
+    setLightPreset('daylight');
     const canvas = canvasRef.current!;
     import('./garden-renderer.ts').then(async ({ createWorldRenderer, prepareWorldAssets }) => {
       if (cancelled) return;
@@ -66,6 +68,7 @@ export function GardenScene({ subject, world, careEvent = null, children }: { su
   useEffect(() => { runtimeRef.current?.update(world); }, [world]);
   useEffect(() => { runtimeRef.current?.setMotion(!paused && !reducedMotion); }, [paused, reducedMotion, status]);
   useEffect(() => { runtimeRef.current?.setGestures(gestures); }, [gestures, status]);
+  useEffect(() => { runtimeRef.current?.lighting(lightPreset); }, [lightPreset, status]);
   useEffect(() => {
     if (!careEvent || careEvent.id <= consumedCare.current) return;
     consumedCare.current = careEvent.id;
@@ -111,6 +114,14 @@ export function GardenScene({ subject, world, careEvent = null, children }: { su
           </button>
           <button className="dm-btn dm-btn--quiet" type="button" disabled={status !== 'ready' || reducedMotion} aria-pressed={paused || reducedMotion} onClick={() => setPaused((value) => !value)}>
             {paused || reducedMotion ? '움직임 멈춤' : '움직임 멈추기'}
+          </button>
+        </div>
+        <div className="world-camera__options" role="group" aria-label="풍경 조명">
+          <button className="dm-btn dm-btn--quiet" type="button" disabled={status !== 'ready'} aria-pressed={lightPreset === 'daylight'} onClick={() => setLightPreset('daylight')}>
+            부드러운 낮빛
+          </button>
+          <button className="dm-btn dm-btn--quiet" type="button" disabled={status !== 'ready'} aria-pressed={lightPreset === 'warm-side'} onClick={() => setLightPreset('warm-side')}>
+            따뜻한 옆빛
           </button>
         </div>
         <p>{gestures ? '한 손가락으로 돌리고, 두 손가락으로 가까이 봐요. 위 버튼을 끄면 다시 페이지가 스크롤돼요.' : '풍경 위에서도 위아래로 스크롤할 수 있어요. 시점은 위 버튼으로 바꿔요.'}</p>

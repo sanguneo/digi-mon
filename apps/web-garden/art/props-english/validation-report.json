@@ -1,23 +1,23 @@
 {
   "status": "pass",
-  "glb_bytes": 643832,
-  "sha256": "73827e9c298ba5a8af7a8968803645113b012ef00fd2588de7a93a64d5d46de7",
+  "glb_bytes": 915072,
+  "sha256": "9912bd183e7d89e08033c35472a4e2e9ec71cd1aba572f418a776a5bfa07d52d",
   "coordinates": "Y-up, all node transforms identity, historic local origins",
   "root": "english-props",
   "bounds_tolerance": 2e-06,
   "materials": [
     {
-      "name": "english-satin",
-      "pbrMetallicRoughness": {
-        "metallicFactor": 0,
-        "roughnessFactor": 0.3400000035762787
-      }
-    },
-    {
       "name": "english-matte",
       "pbrMetallicRoughness": {
         "metallicFactor": 0,
-        "roughnessFactor": 0.8199999928474426
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    {
+      "name": "english-satin",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.36000001430511475
       }
     },
     {
@@ -28,13 +28,13 @@
       }
     }
   ],
-  "triangles": 15750,
-  "primitives": 8,
+  "triangles": 22046,
+  "primitives": 10,
   "parts": {
     "shell-arch": {
-      "triangles": 2036,
+      "triangles": 3028,
       "primitives": 1,
-      "export_vertices": 1254,
+      "export_vertices": 1824,
       "bounds": {
         "min": [
           -0.6800000071525574,
@@ -58,23 +58,23 @@
         ]
       },
       "max_baseline_bounds_error": 2.384185793236071e-08,
-      "max_normal_length_error": 1.3730295078673294e-07,
-      "minimum_triangle_area": 0.00020462150417208496,
-      "minimum_uv_triangle_area": 0.0002481091818307135,
+      "max_normal_length_error": 1.1668244592755173e-07,
+      "minimum_triangle_area": 0.00011301695096303595,
+      "minimum_uv_triangle_area": 0.00011910062904441077,
       "uv_min": [
         0.0,
         0.0
       ],
       "uv_max": [
         1.0,
-        0.9533103108406067
+        1.0
       ],
-      "unique_vertex_colors": 6
+      "unique_vertex_colors": 191
     },
     "ribbon-kelp": {
-      "triangles": 780,
+      "triangles": 2204,
       "primitives": 1,
-      "export_vertices": 796,
+      "export_vertices": 1624,
       "bounds": {
         "min": [
           -0.651674747467041,
@@ -98,23 +98,23 @@
         ]
       },
       "max_baseline_bounds_error": 2.3841857821338408e-08,
-      "max_normal_length_error": 1.1424699475348632e-07,
-      "minimum_triangle_area": 0.00036831195814474027,
-      "minimum_uv_triangle_area": 0.0003653157615080005,
+      "max_normal_length_error": 1.355934193814079e-07,
+      "minimum_triangle_area": 1.0658665792029343e-05,
+      "minimum_uv_triangle_area": 3.145347148070243e-05,
       "uv_min": [
         0.0,
         0.0
       ],
       "uv_max": [
         1.0,
-        1.0
+        0.994589626789093
       ],
-      "unique_vertex_colors": 4
+      "unique_vertex_colors": 126
     },
     "coral-garden": {
-      "triangles": 2482,
+      "triangles": 3398,
       "primitives": 1,
-      "export_vertices": 2346,
+      "export_vertices": 2566,
       "bounds": {
         "min": [
           -0.5600000023841858,
@@ -138,23 +138,24 @@
         ]
       },
       "max_baseline_bounds_error": 2.384185793236071e-08,
-      "max_normal_length_error": 1.1864834625896492e-07,
-      "minimum_triangle_area": 5.436941624690345e-05,
-      "minimum_uv_triangle_area": 4.010530252607225e-05,
+      "max_normal_length_error": 1.2680186434188556e-07,
+      "minimum_triangle_area": 2.284854505221525e-05,
+      "minimum_uv_triangle_area": 1.6587363152353873e-05,
       "uv_min": [
-        0.005063521210104227,
-        0.005081355571746826
+        0.005288422107696533,
+        0.0009241104125976562
       ],
       "uv_max": [
-        0.9949791431427002,
-        0.973944365978241
+        0.9960474967956543,
+        0.9636424779891968
       ],
-      "unique_vertex_colors": 6
+      "unique_vertex_colors": 1680,
+      "connected_components": 1
     },
     "bubble-rock": {
-      "triangles": 2072,
-      "primitives": 1,
-      "export_vertices": 1532,
+      "triangles": 2936,
+      "primitives": 2,
+      "export_vertices": 2286,
       "bounds": {
         "min": [
           -0.5,
@@ -178,23 +179,23 @@
         ]
       },
       "max_baseline_bounds_error": 9.536743172944284e-09,
-      "max_normal_length_error": 1.1404241440082785e-07,
-      "minimum_triangle_area": 1.943055045889351e-05,
-      "minimum_uv_triangle_area": 1.2262227244264068e-05,
+      "max_normal_length_error": 1.0888275125964242e-07,
+      "minimum_triangle_area": 1.863047697840092e-06,
+      "minimum_uv_triangle_area": 2.2998686617370367e-06,
       "uv_min": [
-        0.031879276037216187,
-        0.010905742645263672
+        0.042960524559020996,
+        0.00186997652053833
       ],
       "uv_max": [
-        0.9681206941604614,
-        0.9611814022064209
+        0.957039475440979,
+        0.9235579371452332
       ],
-      "unique_vertex_colors": 5
+      "unique_vertex_colors": 355
     },
     "treasure-chest": {
-      "triangles": 1780,
-      "primitives": 1,
-      "export_vertices": 2328,
+      "triangles": 2900,
+      "primitives": 2,
+      "export_vertices": 3784,
       "bounds": {
         "min": [
           -0.375,
@@ -218,9 +219,9 @@
         ]
       },
       "max_baseline_bounds_error": 1.3113021890553966e-08,
-      "max_normal_length_error": 9.797888833595891e-08,
-      "minimum_triangle_area": 2.928782836753019e-06,
-      "minimum_uv_triangle_area": 6.8721536735649735e-06,
+      "max_normal_length_error": 1.1703628310932856e-07,
+      "minimum_triangle_area": 1.4041511738907062e-06,
+      "minimum_uv_triangle_area": 1.3092535713354891e-06,
       "uv_min": [
         0.0,
         0.0
@@ -229,12 +230,12 @@
         1.0,
         1.0
       ],
-      "unique_vertex_colors": 14
+      "unique_vertex_colors": 18
     },
     "star-lamp": {
-      "triangles": 2520,
+      "triangles": 2880,
       "primitives": 1,
-      "export_vertices": 2072,
+      "export_vertices": 1798,
       "bounds": {
         "min": [
           -0.4474346935749054,
@@ -258,23 +259,24 @@
         ]
       },
       "max_baseline_bounds_error": 7.152557435219364e-09,
-      "max_normal_length_error": 1.1211319828063893e-07,
-      "minimum_triangle_area": 1.912577572164722e-05,
-      "minimum_uv_triangle_area": 1.88417081048442e-05,
+      "max_normal_length_error": 1.2617735190012525e-07,
+      "minimum_triangle_area": 5.523423698586996e-05,
+      "minimum_uv_triangle_area": 7.123671701236844e-05,
       "uv_min": [
-        0.0,
-        0.0
+        0.009607372805476189,
+        0.0103302001953125
       ],
       "uv_max": [
-        1.0,
-        1.0
+        0.9903926253318787,
+        0.9911155104637146
       ],
-      "unique_vertex_colors": 7
+      "unique_vertex_colors": 10,
+      "connected_components": 1
     },
     "fish-food": {
-      "triangles": 840,
+      "triangles": 1440,
       "primitives": 1,
-      "export_vertices": 663,
+      "export_vertices": 1018,
       "bounds": {
         "min": [
           -0.10999999940395355,
@@ -298,18 +300,18 @@
         ]
       },
       "max_baseline_bounds_error": 1.0728836041806744e-08,
-      "max_normal_length_error": 9.32542549847426e-08,
-      "minimum_triangle_area": 0.00011307411641417238,
-      "minimum_uv_triangle_area": 0.0012828267701692209,
+      "max_normal_length_error": 9.108560949933064e-08,
+      "minimum_triangle_area": 5.9503256123271486e-05,
+      "minimum_uv_triangle_area": 0.000835899548221164,
       "uv_min": [
-        0.0499742291867733,
-        0.035798072814941406
+        0.04253600910305977,
+        0.04565155506134033
       ],
       "uv_max": [
-        0.9500257968902588,
-        0.9642019271850586
+        0.9574639797210693,
+        0.9792045950889587
       ],
-      "unique_vertex_colors": 2,
+      "unique_vertex_colors": 11,
       "connected_component_bounds": [
         {
           "min": [
@@ -424,9 +426,9 @@
       ]
     },
     "bubble-trail": {
-      "triangles": 3240,
+      "triangles": 3260,
       "primitives": 1,
-      "export_vertices": 2530,
+      "export_vertices": 2660,
       "bounds": {
         "min": [
           -0.5028494000434875,
@@ -450,16 +452,16 @@
         ]
       },
       "max_baseline_bounds_error": 2.1207432698844286e-08,
-      "max_normal_length_error": 8.200213774678389e-08,
-      "minimum_triangle_area": 2.0012647316539784e-05,
-      "minimum_uv_triangle_area": 1.4594048125537995e-05,
+      "max_normal_length_error": 1.2587256059681806e-07,
+      "minimum_triangle_area": 3.5261750429366364e-06,
+      "minimum_uv_triangle_area": 9.400268028869618e-06,
       "uv_min": [
-        0.0026559527032077312,
-        0.0018213391304016113
+        0.004073153715580702,
+        0.0027931928634643555
       ],
       "uv_max": [
-        0.9973440766334534,
-        0.9981786608695984
+        0.9959268569946289,
+        0.9972067475318909
       ],
       "unique_vertex_colors": 2,
       "connected_component_bounds": [
@@ -687,93 +689,108 @@
     }
   },
   "forbidden_resources": [],
-  "visual_review": "Not performed; no image operations authorized",
+  "visual_review": "This validator is numerical only; actual-GLB studio review is recorded separately",
   "parts_within_3500_triangles": 8,
-  "blender_version": "5.2.1 LTS",
+  "blender_version": "4.3.2",
   "source_geometry_features": {
     "shell-arch": [
       {
-        "kind": "thick-fluted-scallop",
+        "kind": "concave-fluted-upper-valve",
         "ribs": 9,
-        "radial_rings": 7
+        "wall_thickness": 0.06
       },
       {
-        "kind": "pearl",
-        "count": 1
+        "kind": "open-lower-pearl-cradle",
+        "recessed_floor": true,
+        "pearl_seated": true
       }
     ],
     "ribbon-kelp": [
       {
-        "kind": "solid-curved-ribbon",
+        "kind": "cupped-swept-kelp",
         "blade": 0,
-        "longitudinal_sections": 16
+        "longitudinal_sections": 24,
+        "thin_lenticular_section": true
       },
       {
-        "kind": "solid-curved-ribbon",
+        "kind": "cupped-swept-kelp",
         "blade": 1,
-        "longitudinal_sections": 16
+        "longitudinal_sections": 24,
+        "thin_lenticular_section": true
       },
       {
-        "kind": "solid-curved-ribbon",
+        "kind": "cupped-swept-kelp",
         "blade": 2,
-        "longitudinal_sections": 16
+        "longitudinal_sections": 24,
+        "thin_lenticular_section": true
       },
       {
-        "kind": "solid-curved-ribbon",
+        "kind": "cupped-swept-kelp",
         "blade": 3,
-        "longitudinal_sections": 16
+        "longitudinal_sections": 24,
+        "thin_lenticular_section": true
       },
       {
-        "kind": "solid-curved-ribbon",
+        "kind": "cupped-swept-kelp",
         "blade": 4,
-        "longitudinal_sections": 16
+        "longitudinal_sections": 24,
+        "thin_lenticular_section": true
       }
     ],
     "coral-garden": [
       {
-        "kind": "branching-coral",
+        "kind": "rounded-branching-coral",
         "stalk": 0,
-        "side_branches": 3
+        "side_branches": 2
       },
       {
-        "kind": "branching-coral",
+        "kind": "rounded-branching-coral",
         "stalk": 1,
-        "side_branches": 3
+        "side_branches": 2
       },
       {
-        "kind": "branching-coral",
+        "kind": "rounded-branching-coral",
         "stalk": 2,
-        "side_branches": 3
+        "side_branches": 2
+      },
+      {
+        "kind": "continuous-fused-coral",
+        "single_connected_root": true,
+        "rounded_branch_transitions": true
       }
     ],
     "bubble-rock": [
       {
-        "kind": "irregular-rock",
-        "surface_ripple": 0.12
+        "kind": "single-sculpted-rounded-stone",
+        "low_frequency_asymmetry": true,
+        "roughness_role": "matte"
       },
       {
-        "kind": "opaque-bubble-forms",
+        "kind": "airy-bubble-rings",
         "count": 4,
-        "highlight_relief": true
+        "small_curved_glints": true
       }
     ],
     "treasure-chest": [
       {
         "kind": "curved-beveled-barrel-lid",
-        "open_angle_degrees": 23,
-        "profile_sections": 16
+        "open_angle_degrees": 27,
+        "profile_sections": 24,
+        "attached_hinges": 2
       },
       {
         "kind": "hollow-interior",
         "lip_sides": 4,
-        "curved_bands": 2
+        "curved_bands": 2,
+        "rounded_front_planks": 3
       }
     ],
     "star-lamp": [
       {
-        "kind": "continuous-thick-starfish",
-        "lobes": 5,
-        "relief_nodules": 16
+        "kind": "puffed-rounded-seastar",
+        "arms": 5,
+        "continuous_soft_rim": true,
+        "raised_noise_removed": true
       }
     ],
     "fish-food": [
@@ -784,7 +801,8 @@
           0.0,
           0
         ],
-        "radius": 0.055
+        "radius": 0.055,
+        "soft_grain_exponent": 0.88
       },
       {
         "kind": "pellet",
@@ -793,7 +811,8 @@
           0.085,
           0
         ],
-        "radius": 0.055
+        "radius": 0.055,
+        "soft_grain_exponent": 0.88
       },
       {
         "kind": "pellet",
@@ -802,7 +821,8 @@
           0.17,
           0
         ],
-        "radius": 0.055
+        "radius": 0.055,
+        "soft_grain_exponent": 0.88
       },
       {
         "kind": "pellet",
@@ -811,7 +831,8 @@
           0.255,
           0
         ],
-        "radius": 0.055
+        "radius": 0.055,
+        "soft_grain_exponent": 0.88
       },
       {
         "kind": "pellet",
@@ -820,7 +841,8 @@
           0.34,
           0
         ],
-        "radius": 0.055
+        "radius": 0.055,
+        "soft_grain_exponent": 0.88
       }
     ],
     "bubble-trail": [
@@ -832,7 +854,8 @@
           0
         ],
         "major_radius": 0.12,
-        "tube_radius": 0.014
+        "tube_radius": 0.014,
+        "curved_glint": true
       },
       {
         "kind": "bubble-ring",
@@ -842,7 +865,8 @@
           0
         ],
         "major_radius": 0.19,
-        "tube_radius": 0.014
+        "tube_radius": 0.014,
+        "curved_glint": true
       },
       {
         "kind": "bubble-ring",
@@ -852,7 +876,8 @@
           0
         ],
         "major_radius": 0.12,
-        "tube_radius": 0.014
+        "tube_radius": 0.014,
+        "curved_glint": true
       },
       {
         "kind": "bubble-ring",
@@ -862,7 +887,8 @@
           0
         ],
         "major_radius": 0.19,
-        "tube_radius": 0.014
+        "tube_radius": 0.014,
+        "curved_glint": true
       },
       {
         "kind": "bubble-ring",
@@ -872,9 +898,12 @@
           0
         ],
         "major_radius": 0.12,
-        "tube_radius": 0.014
+        "tube_radius": 0.014,
+        "curved_glint": true
       }
     ]
   },
-  "blend_bytes": 459241
+  "blend_bytes": 643458,
+  "source_sha256": "f831ddb1a8dd38b10a5703657e6fcccfc2f2b1393b41d7670174401be85b9516",
+  "blend_sha256": "4fbf6e2cb30bfcb2b0fae1c1ab8dcf9e9661efda5751c6ee05e6292861f38b4f"
 }

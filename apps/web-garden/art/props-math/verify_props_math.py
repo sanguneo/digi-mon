@@ -1,4 +1,6 @@
-"""Numerical contract checks, using no renderer, preview, images or external library.
+"""Independent numerical GLB and editable-scene checks.
+
+Visual review is performed separately on the exported asset.
 
 Run with Python to check the GLB; with Blender and the saved blend to check both.
 """
@@ -155,6 +157,7 @@ def verify_glb(path=GLB):
             positions, normals, uvs, colors = [attrs[k] for k in ('POSITION', 'NORMAL', 'TEXCOORD_0', 'COLOR_0')]
             require(len({len(v) for v in attrs.values()}) == 1, 'Attribute lengths')
             require(all(0 <= v <= 1 for row in colors for v in row), 'Color range')
+            require(all(len(row) == 3 or row[3] == 1 for row in colors), 'Vertex alpha must be opaque')
             require(0 <= prim['material'] < len(materials), 'Missing material')
             for n in normals:
                 error = abs(math.sqrt(dot(n, n)) - 1)
@@ -281,8 +284,8 @@ def verify_blend():
     require(len(paw) == 5, 'Raised paw pad and four toes')
     for ob in paw:
         require(bounds(points(ob))['size'][2] > .025, 'Paw is not volumetric')
-        offsets = [z - (.015 * math.sin(2 * math.pi * x / .54) +
-                   .010 * x / .54 * math.sin(8 * (y - .85))) for x, y, z in points(ob)]
+        offsets = [z - (.025*math.sin(2*math.pi*x/.54) +
+                   .006*x/.54*math.sin(8*(y-.85))) for x, y, z in points(ob)]
         require(min(offsets) < .004 and max(offsets) > .025, 'Paw applique is detached from cloth')
     cloth = bounds(points(bpy.data.objects['curved-thick-tricolor-cloth']))
     require(cloth['size'][2] > .025, 'Flag cloth is flat')

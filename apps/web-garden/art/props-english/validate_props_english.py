@@ -130,7 +130,7 @@ def validate(path, baseline_path):
               'coordinates': 'Y-up, all node transforms identity, historic local origins',
               'root': 'english-props', 'bounds_tolerance': TOLERANCE,
               'materials': materials, 'triangles': 0, 'primitives': 0, 'parts': {},
-              'forbidden_resources': [], 'visual_review': 'Not performed; no image operations authorized'}
+              'forbidden_resources': [], 'visual_review': 'This validator is numerical only; actual-GLB studio review is recorded separately'}
     for name in IDS:
         node = nodes[names.index(name)]
         require(not node.get('children'), f'{name}: expected direct leaf mesh')
@@ -182,6 +182,10 @@ def validate(path, baseline_path):
                 'uv_min': [min(v[a] for v in uv_values) for a in range(2)],
                 'uv_max': [max(v[a] for v in uv_values) for a in range(2)],
                 'unique_vertex_colors': len(color_values)}
+        if name in ('coral-garden', 'star-lamp'):
+            groups = components(positions, indices)
+            require(len(groups) == 1, f'{name}: expected one connected organic volume')
+            part['connected_components'] = len(groups)
         if name in ('fish-food', 'bubble-trail'):
             groups = components(positions, indices)
             part['connected_component_bounds'] = groups

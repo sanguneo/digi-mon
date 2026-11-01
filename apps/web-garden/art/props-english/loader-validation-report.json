@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "glb_sha256": "9912bd183e7d89e08033c35472a4e2e9ec71cd1aba572f418a776a5bfa07d52d",
+  "command": "node --test apps/web-garden/art/props-english/english-props.test.ts",
+  "tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "coverage": [
+    "eight identity parts, finite attributes and per-part budgets",
+    "separate matte/satin/wood roles",
+    "actual GLB shell cavity rays",
+    "real cloneModelAsset independent ownership and exact care/catalog transforms"
+  ]
+}

@@ -6,11 +6,12 @@ import { buildWorldModel as buildModel, disposeModel, type WorldModelAssets } fr
 import { parsePuppyAsset } from './puppy-asset.ts';
 import { parseTreeAsset } from './tree-asset.ts';
 import { parseFishAsset } from './fish-asset.ts';
+import { parseEnvironmentAsset } from './environment-asset.ts';
 import { parsePropAsset } from './prop-asset.ts';
 import type { Subject } from './api.ts';
 import type { Object3D } from 'three';
 
-export async function readShippedAssetBytes(name: 'puppy' | 'tree' | 'fish' | `props-${Subject}`) {
+export async function readShippedAssetBytes(name: 'puppy' | 'tree' | 'fish' | `props-${Subject}` | `environment-${Subject}`) {
   // Resolve as a Node filesystem path: Vite rewrites the static new URL(asset,
   // import.meta.url) form to an HTTP URL in jsdom's browser-like environment.
   const bytes = await readFile(resolve(dirname(fileURLToPath(import.meta.url)), `../public/models/${name}.glb`));
@@ -26,18 +27,22 @@ export async function readShippedTree() { return parseTreeAsset(await readShippe
 export async function readShippedFish() { return parseFishAsset(await readShippedAssetBytes('fish')); }
 
 export let shippedAssets: WorldModelAssets;
+export let shippedEnvironments: Record<Subject, Object3D>;
 export let shippedProps: Record<Subject, Object3D>;
-export function assetsFor(subject: Subject): WorldModelAssets { return { ...shippedAssets, propTemplate: shippedProps[subject] }; }
+export function assetsFor(subject: Subject): WorldModelAssets { return { ...shippedAssets, propTemplate: shippedProps[subject], environmentTemplate: shippedEnvironments[subject] }; }
 beforeAll(async () => {
   const [puppyTemplate, treeTemplate, fishTemplate, korean, english, math] = await Promise.all([
     readShippedPuppy(), readShippedTree(), readShippedFish(),
     ...(['korean', 'english', 'math'] as const).map(async subject => parsePropAsset(subject, await readShippedAssetBytes(`props-${subject}`))),
   ]);
+  const environments = await Promise.all((['korean', 'english', 'math'] as const).map(async subject => parseEnvironmentAsset(subject, await readShippedAssetBytes(`environment-${subject}`))));
+  shippedEnvironments = { korean: environments[0]!, english: environments[1]!, math: environments[2]! };
   shippedAssets = { puppyTemplate, treeTemplate, fishTemplate };
   shippedProps = { korean: korean!, english: english!, math: math! };
 });
 afterAll(() => {
   if (shippedAssets) for (const template of Object.values(shippedAssets)) disposeModel(template);
+  if (shippedEnvironments) for (const template of Object.values(shippedEnvironments)) disposeModel(template);
   if (shippedProps) for (const template of Object.values(shippedProps)) disposeModel(template);
 });
 

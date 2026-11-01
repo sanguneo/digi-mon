@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "glb_sha256": "d5709e719fdcb54aa2f9502299411f15c07be9607b70724d3e55e85d4361a08b",
+  "triangles": 32608,
+  "meshes": 7,
+  "materials": [
+    {
+      "name": "clownfish-satin-skin",
+      "roughness": 0.5
+    },
+    {
+      "name": "clownfish-expressive-eye",
+      "roughness": 0.30000001192092896
+    },
+    {
+      "name": "clownfish-soft-fin",
+      "roughness": 0.6399999856948853
+    }
+  ],
+  "renderer_or_image_analysis_performed": false
+}

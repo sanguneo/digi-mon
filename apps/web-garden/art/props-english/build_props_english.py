@@ -1,4 +1,4 @@
-"""Complete English prop library. Blender 5.2.1, no images or rendering.
+"""Refined cute marine prop library. Blender 4.3.2; separate actual-GLB studio review.
 
 blender --background --factory-startup --python-exit-code 1 --python build_props_english.py
 Geometry is authored Y-up, baked to Blender Z-up, and exported Y-up.
@@ -6,6 +6,7 @@ Every object has identity transforms; each part is one independently usable mesh
 """
 from pathlib import Path
 import json
+import hashlib
 import math
 import runpy
 import bpy
@@ -27,14 +28,16 @@ def linear(hex_color):
 class Shape:
     def __init__(self):
         self.vertices, self.faces, self.colors, self.features = [], [], [], []
+        self.face_roles, self.role = [], 'matte'
 
     def vertex(self, xyz, color):
         self.vertices.append(tuple(xyz))
-        self.colors.append(linear(color) if isinstance(color, str) else color)
+        self.colors.append(linear(color) if isinstance(color, str) else color(tuple(xyz)) if callable(color) else color)
         return len(self.vertices) - 1
 
     def face(self, *indices):
         self.faces.append(tuple(indices))
+        self.face_roles.append(self.role)
 
     def feature(self, kind, **data):
         self.features.append({'kind': kind, **data})
@@ -107,134 +110,166 @@ class Shape:
         bmesh.ops.create_cube(bm, size=1)
         for vert in bm.verts:
             vert.co = Vector(tuple(vert.co[a] * size[a] for a in range(3)))
-        bmesh.ops.bevel(bm, geom=list(bm.edges), offset=bevel, segments=2, affect='EDGES')
+        bmesh.ops.bevel(bm, geom=list(bm.edges), offset=bevel, segments=3, affect='EDGES')
         ids = {v: self.vertex(tuple(v.co[a] + center[a] for a in range(3)), color) for v in bm.verts}
         for face in bm.faces:
             self.face(*(ids[v] for v in face.verts))
         bm.free()
 
 
+def blend_color(a,b,t):
+    a,b=linear(a),linear(b)
+    return tuple(x*(1-t)+y*t for x,y in zip(a,b))
+
+
 def shell():
-    s = Shape()
-    # Thick scallop fan: sculpted ribs on both surfaces and a scalloped edge.
-    steps, rings = 56, 7
-    layers = []
-    for back in (False, True):
-        tip = s.vertex((0, .075, -.07 if back else .045), '#e2ac9c' if back else '#f9debf')
-        rows = []
-        for j in range(1, rings + 1):
-            t = j / rings
-            row = []
-            for i in range(steps + 1):
-                a = i * math.pi / steps
-                flute = .5 + .5 * math.cos(a * 18)
-                scallop = 1 - .038 * (1 - flute) * t ** 3
-                x = .68 * math.cos(a) * t * scallop
-                y = .075 + .825 * math.sin(a) * t * scallop
-                z = (-.11 - .065 * math.sin(t * math.pi) - .012 * flute * t) if back else (
-                    .015 + .10 * math.sin(t * math.pi * .85) + .043 * flute * t)
-                color = '#efc0a9' if back else ('#fff0dc' if flute > .55 else '#edc1ac')
-                row.append(s.vertex((x, y, z), color))
+    s=Shape();s.role='satin'
+    # Thick concave upper valve: interior recedes behind the scalloped rim.
+    steps,rings=48,9;layers=[]
+    for back in (False,True):
+        tip=s.vertex((0,.075,-.125 if back else -.075),'#dcac9b' if back else '#f4dfc8')
+        rows=[]
+        for j in range(1,rings+1):
+            t=j/rings;row=[]
+            for i in range(steps+1):
+                a=i*math.pi/steps;flute=.5+.5*math.cos(a*18)
+                scallop=1-.035*(1-flute)*t**4
+                x=.68*math.cos(a)*t*scallop;y=.075+.825*math.sin(a)*t*scallop
+                inner=-.075+.24*t*t+.014*flute*t
+                z=inner-(.060+.015*math.sin(math.pi*t)) if back else inner
+                c=blend_color('#e8c4af' if back else '#eacbb5','#fff0dc',(.25+.75*flute)*(.35+.65*t))
+                row.append(s.vertex((x,y,z),c))
             rows.append(row)
-        for i in range(steps):
-            s.face(tip, rows[0][i], rows[0][i + 1])
-        for a, b in zip(rows, rows[1:]):
-            for i in range(steps):
-                s.face(a[i], b[i], b[i + 1], a[i + 1])
-        layers.append((tip, rows))
-    front, back = layers
-    for i in range(steps):
-        s.face(front[1][-1][i], back[1][-1][i], back[1][-1][i + 1], front[1][-1][i + 1])
-    for edge in (0, steps):
-        a = [front[0]] + [r[edge] for r in front[1]]
-        b = [back[0]] + [r[edge] for r in back[1]]
-        for j in range(rings):
-            s.face(a[j], b[j], b[j + 1], a[j + 1])
-    s.sphere((0, .15, .24), (.14, .14, .14), '#fff2d6', 20, 12)
-    s.feature('thick-fluted-scallop', ribs=9, radial_rings=rings)
-    s.feature('pearl', count=1)
+        for i in range(steps):s.face(tip,rows[0][i],rows[0][i+1])
+        for a,b in zip(rows,rows[1:]):
+            for i in range(steps):s.face(a[i],b[i],b[i+1],a[i+1])
+        layers.append((tip,rows))
+    front,back=layers
+    for i in range(steps):s.face(front[1][-1][i],back[1][-1][i],back[1][-1][i+1],front[1][-1][i+1])
+    for edge in (0,steps):
+        a=[front[0]]+[r[edge] for r in front[1]];b=[back[0]]+[r[edge] for r in back[1]]
+        for j in range(rings):s.face(a[j],b[j],b[j+1],a[j+1])
+    # Lower valve is a real open dish with wall thickness and a recessed floor.
+    layers=[]
+    for outside in (False,True):
+        center=s.vertex((0,.025 if outside else .075,.10),'#e9c3ac' if outside else '#fff0d8');rows=[]
+        for j in range(1,6):
+            t=j/5;row=[]
+            for i in range(32):
+                a=i*TAU/32;flute=.5+.5*math.cos(a*12)
+                row.append(s.vertex((.45*t*math.cos(a),(.025 if outside else .075)+(.140 if outside else .095)*t*t,.10+.27*t*math.sin(a)),blend_color('#ecc9ae','#fff0dc',.3+.5*t+.15*flute)))
+            rows.append(row)
+        for i in range(32):s.face(center,rows[0][i],rows[0][(i+1)%32])
+        for a,b in zip(rows,rows[1:]):
+            for i in range(32):s.face(a[i],b[i],b[(i+1)%32],a[(i+1)%32])
+        layers.append(rows[-1])
+    for i in range(32):s.face(layers[0][i],layers[1][i],layers[1][(i+1)%32],layers[0][(i+1)%32])
+    s.sphere((0,.205,.10),(.13,.13,.13),'#fff1d6',24,14)
+    s.feature('concave-fluted-upper-valve',ribs=9,wall_thickness=.06)
+    s.feature('open-lower-pearl-cradle',recessed_floor=True,pearl_seated=True)
     return s
 
 
 def kelp():
-    s = Shape()
-    for blade, (base, lean, height) in enumerate([(-.24, -.34, .86), (-.13, -.10, 1.08),
-                                                (0, .10, 1.2), (.15, .40, .96), (.24, .12, .74)]):
-        rows = []
-        for j in range(17):
-            t = j / 16
-            x = base + lean * t + .065 * math.sin(t * TAU + blade * .65) * math.sin(t * math.pi)
-            y = height * t
-            z = .052 * math.sin(t * TAU + blade) * math.sin(t * math.pi)
-            width = .015 + .074 * math.sin(math.pi * t) ** .65
-            twist = .75 * math.sin(t * math.pi * 1.5 + blade * .7)
-            row = []
-            for side, depth in ((-1, -.012), (1, -.012), (1, .012), (-1, .012)):
-                row.append(s.vertex((x + side * width * math.cos(twist), y,
-                                     z + side * width * math.sin(twist) + depth),
-                                    '#398c80' if depth < 0 else ('#64af98' if side < 0 else '#88c1a3')))
+    s=Shape()
+    blades=[(-.23,-.35,.88,-.35),(-.12,-.16,1.08,.15),(0,.07,1.20,-.12),(.14,.38,.99,.5),(.24,.17,.75,-.4)]
+    for blade,(base,lean,height,phase) in enumerate(blades):
+        rows=[]
+        for j in range(25):
+            t=j/24;wave=math.sin(math.pi*t)
+            x=base+lean*(t*t*(3-2*t))+.08*math.sin(t*TAU+phase)*wave
+            y=height*t;z=.055*math.sin(t*math.pi*1.4+phase)*wave
+            width=.007+.083*wave**.8
+            twist=.55*math.sin(t*math.pi*1.6+phase)
+            row=[]
+            for k in range(8):
+                a=k*TAU/8;u=width*math.cos(a);v=.010*math.sin(a)*(1-.55*t)
+                c=blend_color('#347f76','#91bea2',.18+.62*t+.12*math.sin(a))
+                row.append(s.vertex((x+u*math.cos(twist)-v*math.sin(twist),y,z+u*math.sin(twist)+v*math.cos(twist)),c))
             rows.append(row)
         s.face(*reversed(rows[0]))
-        for a, b in zip(rows, rows[1:]):
-            for k in range(4):
-                n = (k + 1) % 4
-                s.face(a[k], b[k], b[n], a[n])
-        s.face(*rows[-1])
-        s.feature('solid-curved-ribbon', blade=blade, longitudinal_sections=16)
-    s.sphere((0, .025, 0), (.3, .04, .08), '#477e73', 12, 6, .06)
+        for a,b in zip(rows,rows[1:]):
+            for k in range(8):s.face(a[k],b[k],b[(k+1)%8],a[(k+1)%8])
+        s.face(*rows[-1]);s.feature('cupped-swept-kelp',blade=blade,longitudinal_sections=24,thin_lenticular_section=True)
+    s.sphere((0,.025,0),(.29,.045,.075),'#477e73',16,8)
     return s
 
 
 def coral():
-    s = Shape()
-    s.sphere((0, -.07, 0), (.40, .06, .11), '#c58e92', 16, 6, .13)
-    for i, (x, height, lean) in enumerate([(-.29, .64, -.13), (0, .85, .035), (.28, .70, .12)]):
-        color = ['#e79f94', '#edb1a1', '#d98e93'][i]
-        points = [(x + lean * (j / 8) ** 1.3, -.09 + height * j / 8,
-                   .014 * math.sin(j * .65 + i)) for j in range(9)]
-        s.tube(points, [.068 - .040 * j / 8 for j in range(9)], color, 9)
-        s.sphere(points[-1], (.029, .035, .029), '#f5c8af', 10, 6)
-        for branch, (level, direction) in enumerate(((.35, -1), (.52, 1), (.69, -1))):
-            start = (x + lean * level ** 1.3, -.09 + height * level, 0)
-            reach = (.17 if branch < 2 else .12) * direction
-            points = [(start[0] + reach * math.sin(t * math.pi / 2),
-                       start[1] + .20 * t + .055 * t * t, .025 * math.sin(t * math.pi + i))
-                      for t in (0, .2, .4, .6, .8, 1)]
-            s.tube(points, [.040, .038, .034, .029, .022, .017], color, 8)
-            s.sphere(points[-1], (.022, .027, .023), '#f4c0a7', 8, 6)
-        s.feature('branching-coral', stalk=i, side_branches=3)
+    s=Shape()
+    s.sphere((0,-.07,0),(.40,.065,.105),'#d99d95',20,8,.04)
+    for i,(x,height,lean) in enumerate([(-.29,.65,-.10),(0,.85,.025),(.28,.71,.09)]):
+        points=[(x+lean*(j/12)**1.4,-.09+height*j/12,.012*math.sin(j*.40+i)) for j in range(13)]
+        radii=[.064-.027*j/12 for j in range(13)]
+        s.tube(points,radii,'#e8ac9c',12)
+        s.sphere(points[-1],(.037,.040,.037),'#e8ac9c',16,10)
+        for branch,(level,direction) in enumerate(((.37,-1),(.61,1))):
+            start=(x+lean*level**1.4,-.09+height*level,.012*math.sin(level*4.8+i))
+            reach=(.19 if branch==0 else .155)*direction
+            points=[(start[0]+reach*math.sin(t*math.pi/2),start[1]+.17*t+.065*t*t,start[2]+.017*math.sin(t*math.pi+i)) for t in [j/8 for j in range(9)]]
+            radii=[.047-.016*j/8 for j in range(9)]
+            s.tube(points,radii,'#e8ac9c',12);s.sphere(points[-1],(.032,.036,.032),'#e8ac9c',16,10)
+        s.feature('rounded-branching-coral',stalk=i,side_branches=2)
+    s=fuse_organic(s,.012,3400)
+    s.colors=[blend_color('#d78f91','#efbaa5',max(0,min(1,(v[1]+.12)/1.0))) for v in s.vertices]
+    s.feature('continuous-fused-coral',single_connected_root=True,rounded_branch_transitions=True)
     return s
 
 
+def fuse_organic(shape,voxel,target):
+    mesh=bpy.data.meshes.new('temporary-organic-union');mesh.from_pydata(shape.vertices,[],shape.faces);mesh.update()
+    # All overlapping closed inputs must face outward BEFORE voxel union;
+    # inverted tip caps otherwise subtract cavities instead of joining roots.
+    bm=bmesh.new();bm.from_mesh(mesh);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(mesh);bm.free()
+    obj=bpy.data.objects.new('temporary-organic-union',mesh);bpy.context.collection.objects.link(obj)
+    bpy.ops.object.select_all(action='DESELECT');obj.select_set(True);bpy.context.view_layer.objects.active=obj
+    remesh=obj.modifiers.new('joined living branch roots','REMESH');remesh.mode='VOXEL';remesh.voxel_size=voxel;remesh.use_smooth_shade=True;bpy.ops.object.modifier_apply(modifier=remesh.name)
+    smooth=obj.modifiers.new('soft organic forks','SMOOTH');smooth.factor=.45;smooth.iterations=3;bpy.ops.object.modifier_apply(modifier=smooth.name)
+    tri=obj.modifiers.new('triangulate authored union','TRIANGULATE');bpy.ops.object.modifier_apply(modifier=tri.name)
+    if len(obj.data.polygons)>target:
+        dec=obj.modifiers.new('local coral budget','DECIMATE');dec.ratio=target/len(obj.data.polygons);bpy.ops.object.modifier_apply(modifier=dec.name)
+    result=Shape();result.features=list(shape.features)
+    for v in obj.data.vertices:result.vertex(v.co,'#e5a798')
+    for f in obj.data.polygons:result.face(*f.vertices)
+    data=obj.data;old_name=mesh.name;data_name=data.name
+    bpy.data.objects.remove(obj,do_unlink=True)
+    for name in set((old_name,data_name)):
+        block=bpy.data.meshes.get(name)
+        if block is not None and block.users==0:bpy.data.meshes.remove(block)
+    return result
+
+
 def bubble_rock():
-    s = Shape()
-    s.sphere((0, .20, 0), (.5, .27, .38), '#91afb0', 20, 10, .12)
-    s.sphere((-.25, .12, .20), (.18, .13, .13), '#b3c7bf', 12, 6, .1)
-    s.sphere((.21, .25, .20), (.21, .15, .13), '#a2beba', 12, 6, .08)
+    s=Shape()
+    s.sphere((0,.20,0),(.50,.27,.38),lambda p:blend_color('#7c9c9b','#b7c9b8',max(0,min(1,(p[1]+.05)/.58))),28,16,.045)
+    s.feature('single-sculpted-rounded-stone',low_frequency_asymmetry=True,roughness_role='matte')
+    s.role='satin'
     for i in range(4):
-        center = (math.sin(i) * .15, .5 + i * .3, 0)
-        s.sphere(center, (.09, .09, .09), '#bce5df', 16, 10)
-        s.sphere((center[0] - .027, center[1] + .035, .078), (.025, .029, .008), '#effff0', 8, 6)
-    s.feature('irregular-rock', surface_ripple=.12)
-    s.feature('opaque-bubble-forms', count=4, highlight_relief=True)
+        center=(math.sin(i)*.15,.5+i*.3,0)
+        s.torus(center,.080,.010,'#bce5df',28,8)
+        s.tube([(center[0]-.052+.022*t,center[1]+.045+.021*math.sin(t*math.pi),.010) for t in (0,.25,.5,.75,1)],[.006,.007,.007,.006,.003],'#f1fff4',8)
+    s.feature('airy-bubble-rings',count=4,small_curved_glints=True)
     return s
 
 
 def chest():
-    s = Shape()
+    s = Shape(); s.role='wood'
     # Open trough, inset floor, and four-sided interior lip expose real depth.
     s.bevel_box((0, .055, 0), (.73, .09, .49), '#8d6448')
-    s.bevel_box((0, .25, .22), (.73, .39, .055), '#ad7c51')
+    for y,c in ((.12,'#a97850'),(.25,'#b38358'),(.38,'#b98b5d')):
+        s.bevel_box((0,y,.22),(.73,.124,.060),c,.013)
     s.bevel_box((0, .25, -.22), (.73, .39, .055), '#9b704d')
     for x in (-.34, .34):
         s.bevel_box((x, .25, 0), (.065, .39, .44), '#a8764e')
     s.bevel_box((0, .11, 0), (.60, .025, .36), '#614f42', .007)
+    s.role='satin'
     for z in (-.19, .19):
         s.bevel_box((0, .445, z), (.65, .025, .036), '#d3aa6a', .008)
     for x in (-.31, .31):
         s.bevel_box((x, .445, 0), (.035, .025, .38), '#d3aa6a', .008)
     # Barrel lid with inset end rings forming bevels, opened about the back hinge.
-    angle = math.radians(23)
+    s.role='wood'
+    angle = math.radians(27)
 
     def lid_point(x, a, inset: float = 0):
         z = (.22 - inset) * math.cos(a)
@@ -245,90 +280,87 @@ def chest():
 
     rows = []
     for x, inset in ((-.36, .016), (-.343, 0), (.343, 0), (.36, .016)):
-        rows.append([s.vertex(lid_point(x, j * math.pi / 16, inset),
-                              '#bc8e5e' if j % 4 else '#9c704e') for j in range(17)])
+        rows.append([s.vertex(lid_point(x, j * math.pi / 24, inset),
+                              '#bc8e5e' if j % 4 else '#9c704e') for j in range(25)])
     for a, b in zip(rows, rows[1:]):
-        for j in range(16):
+        for j in range(24):
             s.face(a[j], b[j], b[j + 1], a[j + 1])
         s.face(a[-1], b[-1], b[0], a[0])
     s.face(*reversed(rows[0]))
     s.face(*rows[-1])
+    s.role='satin'
     # Bronze bands follow the lid curvature and continue down both body faces.
     for x in (-.235, .235):
         s.tube([lid_point(x, j * math.pi / 20, -.009) for j in range(21)], [.018] * 21, '#dfbc74', 6)
         s.bevel_box((x, .245, .253), (.048, .38, .018), '#d8b16b', .006)
         s.bevel_box((x, .245, -.253), (.048, .38, .018), '#c6a165', .006)
-    s.bevel_box((0, .30, .272), (.10, .14, .045), '#f2d380', .012)
+    s.bevel_box((0, .30, .272), (.10, .14, .045), '#eacb86', .020)
     s.bevel_box((0, .31, .296), (.018, .041, .008), '#695644', .003)
     for x in (-.23, .23):
         for y in (.11, .39):
             s.sphere((x, y, .27), (.012, .012, .009), '#f6d890', 8, 4)
-    s.feature('curved-beveled-barrel-lid', open_angle_degrees=23, profile_sections=16)
-    s.feature('hollow-interior', lip_sides=4, curved_bands=2)
+    # Actual knuckles bridge the back wall and the lid; no floating top.
+    for x in (-.30,.30):
+        s.tube([(x-.05,.445,-.215),(x+.05,.445,-.215)],[.027,.027],'#c5a26e',12)
+        s.bevel_box((x,.417,-.233),(.075,.09,.035),'#c7a773',.010)
+        s.tube([(x,.445,-.215),lid_point(x,math.pi,.008)],[.025,.023],'#c7a773',12)
+    s.feature('curved-beveled-barrel-lid', open_angle_degrees=27, profile_sections=24,attached_hinges=2)
+    s.feature('hollow-interior', lip_sides=4, curved_bands=2,rounded_front_planks=3)
     return s
 
 
 def star():
-    s = Shape()
-    segments, rings = 60, 5
-    surfaces = []
-    for back in (False, True):
-        center = s.vertex((0, .37, -.075 if back else .082), '#d6aa67' if back else '#ffe4a4')
-        rows = []
-        for j in range(1, rings + 1):
-            t = j / rings
-            row = []
-            for i in range(segments):
-                a = math.pi / 2 + i * TAU / segments
-                # Continuous rounded five-lobe outline, not intersecting ovals.
-                radius = .295 + .145 * math.cos(5 * (a - math.pi / 2))
-                z = -.035 - .04 * (1 - t * t) if back else .025 + .060 * (1 - t * t)
-                row.append(s.vertex((radius * t * math.cos(a), .37 + radius * t * math.sin(a), z),
-                                    '#d9b171' if back else ('#f4cc81' if j == rings else '#f8d993')))
-            rows.append(row)
+    s=Shape();segments,rings=96,16
+    def surface(phi,a):
+        wave=.5+.5*math.cos(5*(a-math.pi/2))
+        radius=.19+.22*(wave*wave*(3-2*wave))
+        return (radius*math.sin(phi)*math.cos(a),.37+radius*math.sin(phi)*math.sin(a),.095*math.cos(phi))
+    first=s.vertex(surface(0,0),'#ffe5ad');rows=[]
+    for j in range(1,rings):
+        phi=math.pi*j/rings;row=[]
         for i in range(segments):
-            k = (i + 1) % segments
-            s.face(center, rows[0][i], rows[0][k])
-        for a, b in zip(rows, rows[1:]):
-            for i in range(segments):
-                k = (i + 1) % segments
-                s.face(a[i], b[i], b[k], a[k])
-        surfaces.append(rows[-1])
-    a, b = surfaces
+            a=i*TAU/segments;p=surface(phi,a)
+            color=blend_color('#e5bb77','#ffe5ad',.35+.55*max(0,math.cos(phi)))
+            row.append(s.vertex(p,color))
+        rows.append(row)
+    last=s.vertex(surface(math.pi,0),'#e5bb77')
     for i in range(segments):
-        k = (i + 1) % segments
-        s.face(a[i], b[i], b[k], a[k])
-    for i in range(5):
-        angle = math.pi / 2 + i * TAU / 5
-        for j in range(3):
-            r = .10 + j * .093
-            z = .025 + .06 * (1 - (r / .44) ** 2)
-            s.sphere((r * math.cos(angle), .37 + r * math.sin(angle), z),
-                     (.018 - j * .002, .018 - j * .002, .012), '#fff0bc', 8, 6)
-    s.sphere((0, .37, .086), (.030, .030, .012), '#ffe9ad', 12, 6)
-    s.feature('continuous-thick-starfish', lobes=5, relief_nodules=16)
+        k=(i+1)%segments;s.face(first,rows[0][i],rows[0][k]);s.face(last,rows[-1][k],rows[-1][i])
+    for a,b in zip(rows,rows[1:]):
+        for i in range(segments):s.face(a[i],b[i],b[(i+1)%segments],a[(i+1)%segments])
+    s.feature('puffed-rounded-seastar',arms=5,continuous_soft_rim=True,raised_noise_removed=True)
     return s
 
 
 def food():
-    s = Shape()
+    s=Shape();s.role='wood'
     for i in range(5):
-        center = ((i % 2 - .5) * .11, i * .085, 0)
-        s.sphere(center, (.055,) * 3, '#a47248' if i % 2 else '#9b643c', 12, 8)
-        s.feature('pellet', center=list(center), radius=.055)
+        center=((i%2-.5)*.11,i*.085,0);start=len(s.vertices)
+        s.sphere(center,(.055,)*3,lambda p:blend_color('#a77448','#c79a63',.30+.35*(p[1]-center[1])/.055),16,10)
+        # Rounded grain rather than a perfectly spherical bead; principal-axis
+        # extrema and the five care centers remain exactly unchanged.
+        for j in range(start,len(s.vertices)):
+            q=[(s.vertices[j][k]-center[k])/.055 for k in range(3)]
+            s.vertices[j]=tuple(center[k]+.055*math.copysign(abs(q[k])**.88,q[k]) for k in range(3))
+        s.feature('pellet',center=list(center),radius=.055,soft_grain_exponent=.88)
     return s
 
 
 def trail():
-    s = Shape()
+    s=Shape();s.role='satin'
     for i in range(5):
-        center = (math.sin(i * 1.6) * .3, i * .3, 0)
-        radius = .12 + i % 2 * .07
-        # Opaque open rings retain the deliberately shallow care silhouette.
-        # Ten tube sides preserve the baseline's exact minimum Z extent.
-        s.torus(center, radius, .014, '#c6f3ed', 24, 10)
-        s.sphere((center[0] - .055, center[1] + .07, .02), (.026, .04, .02), '#e5fff4', 12, 8)
-        s.feature('bubble-ring', center=list(center), major_radius=radius, tube_radius=.014)
+        center=(math.sin(i*1.6)*.3,i*.3,0);radius=.12+i%2*.07
+        start=len(s.vertices);s.torus(center,radius,.014,'#b8e7e1',32,8)
+        for j in range(start,len(s.vertices)):
+            x,y,z=s.vertices[j];s.vertices[j]=(x,y,z*math.sin(math.pi*.4))
+        # A small closed curved glint, still at the original highlight center.
+        begin=len(s.vertices);glint=(center[0]-.055,center[1]+.07,.02)
+        points=[(math.cos(a)*.020,math.sin(a)*.036,0) for a in [math.pi*.58+k*math.pi*.70/8 for k in range(9)]]
+        s.tube(points,[.003,.006,.008,.009,.009,.008,.006,.004,.002],'#effff4',8)
+        verts=s.vertices[begin:];lo=[min(p[k] for p in verts) for k in range(3)];hi=[max(p[k] for p in verts) for k in range(3)]
+        for j in range(begin,len(s.vertices)):
+            v=s.vertices[j];s.vertices[j]=tuple(glint[k]+((v[k]-lo[k])/(hi[k]-lo[k])-.5)*[.052,.08,.04][k] for k in range(3))
+        s.feature('bubble-ring',center=list(center),major_radius=radius,tube_radius=.014,curved_glint=True)
     return s
 
 
@@ -348,10 +380,13 @@ def make_material(name, roughness):
     return material
 
 
-def make_object(name, shape, material, root):
+def make_object(name, shape, materials, root):
     mesh = bpy.data.meshes.new(name + '-geometry')
     mesh.from_pydata([(x, -z, y) for x, y, z in shape.vertices], [], shape.faces)
     mesh.update()
+    used=list(dict.fromkeys(shape.face_roles))
+    for role in used:mesh.materials.append(materials[role])
+    for face,role in zip(mesh.polygons,shape.face_roles):face.material_index=used.index(role)
     bm = bmesh.new()
     bm.from_mesh(mesh)
     # Triangulate before UV projection so curved quads cannot collapse in UV.
@@ -364,7 +399,6 @@ def make_object(name, shape, material, root):
     for datum, rgba in zip(color.data, shape.colors):
         datum.color = rgba
     mesh.color_attributes.active_color = color
-    mesh.materials.append(material)
     # Deterministic tri-planar UVs. Overlaps intentional for texture-free colors.
     uv = mesh.uv_layers.new(name='UVMap')
     low = [min(v.co[a] for v in mesh.vertices) for a in range(3)]
@@ -379,6 +413,11 @@ def make_object(name, shape, material, root):
     obj = bpy.data.objects.new(name, mesh)
     bpy.context.collection.objects.link(obj)
     obj.parent = root
+    if name=='treasure-chest':
+        bpy.context.view_layer.objects.active=obj
+        bpy.ops.object.select_all(action='DESELECT');obj.select_set(True)
+        mod=obj.modifiers.new('calm planar wood normals','WEIGHTED_NORMAL');mod.keep_sharp=True;mod.weight=40
+        bpy.ops.object.modifier_apply(modifier=mod.name)
     obj['geometry_features'] = json.dumps(shape.features)
     obj['coordinates'] = 'Y-up export; identity local transform; historic origin retained'
     return obj
@@ -394,8 +433,8 @@ def main():
                    bpy.data.lights, bpy.data.images, bpy.data.actions):
         for block in list(blocks):
             blocks.remove(block)
-    roles = {'matte': make_material('english-matte', .82),
-             'satin': make_material('english-satin', .34),
+    roles = {'matte': make_material('english-matte', .80),
+             'satin': make_material('english-satin', .36),
              'wood': make_material('english-wood', .68)}
     root = bpy.data.objects.new('english-props', None)
     bpy.context.collection.objects.link(root)
@@ -409,26 +448,27 @@ def main():
         shape = builder()
         if name not in ('fish-food', 'bubble-trail'):
             shape.fit(name)
-        make_object(name, shape, roles[role], root)
+        make_object(name, shape, roles, root)
         features[name] = shape.features
     bpy.context.view_layer.objects.active = bpy.data.objects['shell-arch']
     bpy.ops.object.select_all(action='SELECT')
-    bpy.ops.wm.save_as_mainfile(filepath=str(HERE / 'props-english.blend'))
+    bpy.context.preferences.filepaths.file_preview_type='NONE'
+    bpy.ops.wm.save_as_mainfile(filepath=str(HERE / 'props-english.blend'),compress=True)
     GLB.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.export_scene.gltf(filepath=str(GLB), export_format='GLB',
                               export_yup=True, export_apply=True, export_animations=False,
                               export_cameras=False, export_lights=False,
                               export_texcoords=True, export_normals=True,
-                              export_vertex_color='NAME', export_vertex_color_name='Color',
-                              export_all_vertex_colors=False,
                               export_tangents=False, export_materials='EXPORT',
                               export_attributes=False, export_extras=False,
-                              export_image_format='NONE')
+                              export_image_format='AUTO')
     validate = runpy.run_path(str(HERE / 'validate_props_english.py'))['validate']
     report = validate(GLB, HERE / 'baseline-bounds.json')
     report['blender_version'] = bpy.app.version_string
     report['source_geometry_features'] = features
     report['blend_bytes'] = (HERE / 'props-english.blend').stat().st_size
+    report['source_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    report['blend_sha256'] = hashlib.sha256((HERE / 'props-english.blend').read_bytes()).hexdigest()
     (HERE / 'validation-report.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'status': report['status'], 'triangles': report['triangles'],
                       'glb_bytes': report['glb_bytes'], 'parts': len(report['parts'])}))

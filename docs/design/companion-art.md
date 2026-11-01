@@ -12,11 +12,17 @@ quiet supporting scenery, softened borders and explicit native care controls.
 
 - Sprout: shaped pointed leaves with midribs, a soil nest and seed shell; later stages
   have bark marks, articulated leafy crown, blossoms and fruit with stems/leaves.
-- Fish: warm apricot body against deeper cool water, scalloped fins with rays, gill,
-  mouth, limited scale accents and restrained eye highlights. A larger starting fish
-  and closer stage-aware camera must not erase subsequent visible size growth.
-- Puppy: caramel fur, cream muzzle/paws, brow and cheek details, separated floppy
-  ears, articulated head/tail and readable feeding posture. Fur is matte, not plastic.
+- Fish: an appealing orange clownfish with three curved creamy-white bands, fine
+  dark edges, a larger rounded head and warm expressive eyes. Retain a laterally
+  compressed short body, recognizable snout, continuous dorsal/anal fins and a
+  narrow peduncle with rounded fan tail. Avoid a sphere with stripes or disconnected
+  fin tabs. The owner approved this stylized v5 proportion on 2026-10-31; growth
+  scaling and close stage-aware framing must still communicate progression.
+- Puppy: a cute baby Shiba Inu with warm tan fur, cream urajiro cheeks/chest/belly,
+  small rounded upright triangular ears, a short muzzle and a plush curled tail.
+  Use simple soft volumes and short limbs, not anatomical undulations, sculpted
+  brow ridges or a forehead tuft. Keep articulated head/tail and readable feeding
+  posture. Fur is matte, not plastic.
 - House: an explicitly extruded upright triangular gable, horizontal eaves and ridge
   above the walls; no rotated triangular cylinder whose point faces downward.
 - Aquarium: open viewing face with no upper front rail crossing the actor. Back/side
@@ -24,15 +30,18 @@ quiet supporting scenery, softened borders and explicit native care controls.
 
 ## Blender puppy replacement
 
-The first Blender-authored mesh is the puppy only. Author it locally in Blender
-from a reproducible Python script, retain the editable `.blend`, and ship a
-self-contained `public/models/puppy.glb`. No downloaded model, texture service or
-runtime Blender dependency is introduced. Other worlds and scenery remain procedural.
+Author the puppy locally in Blender from a reproducible Python script, retain the
+editable `.blend`, and ship a self-contained `public/models/puppy.glb`. No downloaded
+model, texture service or runtime Blender dependency is introduced. Companion and
+prop and supporting-environment sources are authored separately.
 
-Use connected, smoothly shaped body/shoulder/haunch volumes, defined paws, a connected
-skull/cheek/muzzle form, eye sockets and thick curved ears with inner folds. Spend
-geometry on silhouettes and curvature, not many tiny fur spheres. Preserve the warm
-caramel/cream palette and existing matte/satin material distinction.
+Use a clean oval body, visibly thinner gently tapered limbs and small paws, with no
+shoulder caps, ankle cuffs, swollen feet or pinched wavy transitions. The head
+should read as one soft baby-like volume with broad cheeks, a short muzzle and small
+upright triangular ears with rounded tips. Avoid adult fox-like sharpness, lumpy
+anatomy and disconnected ball joints. Prioritize an appealing clean silhouette over
+extra contour detail. Preserve the warm tan/cream palette and matte/satin material
+distinction. This baby-Shiba direction reflects the owner’s latest puppy revision.
 
 The exported asset is Y-up, faces +Z and rests on y=0. Its identity root is
 `puppy-asset`; body, head and tail remain independently addressable. Head pivot is
@@ -47,18 +56,18 @@ colors and independent motion frames through cloning and batching; each live ins
 owns its disposable resources. Math-world asset loading must be lazy, failures
 must reach the existing retry surface, and abandoned loads must not install a renderer.
 
-Verification is primarily actual-GLB parsing and model/lifecycle/browser assertions.
-The puppy's earlier preview belongs to the completed milestone. Subsequent model
-work forbids image generation and rendered previews. The main agent does not perform
-image analysis or OCR; any needed recognition is delegated to Claude Opus or Sonnet,
-never Fable. Validate geometry, asset loading and behavior in code; do not run the
-earlier preview workflow.
+Verification combines actual-GLB parsing and model/lifecycle/browser assertions
+with direct visual review. Render matched Blender views and real-app screenshots
+before and after changes; inspect silhouette, curvature, surface response, contacts,
+all growth stages and animated care poses. Keep preview cameras/lights out of the
+runtime GLBs. Numerical checks establish contracts and budgets, not appearance.
 
 ## Blender tree and fish replacement
 
 Author the remaining growing companions locally in Blender, retaining Python source,
-editable `.blend` files and self-contained `tree.glb` and `fish.glb`. No textures,
-downloaded models, rendered previews or image-analysis tools are used.
+editable `.blend` files and self-contained `tree.glb` and `fish.glb`. No downloaded
+models or texture-service dependencies are introduced. Visual inspection of original
+Blender renders and the integrated game is part of acceptance.
 
 The tree asset has an identity `tree-asset` root with four independent stage roots,
 `tree-stage-0` through `tree-stage-3`. Clone only the active stage. Sprout leaves have
@@ -71,15 +80,17 @@ Budget each active stage at no more than 35,000 triangles, the complete asset at
 
 The fish asset has an identity `fish-asset` root, Y-up and forward +X. Its named tail,
 pectoral fin and mouth use the existing pivots `(-0.65,0,0)`, `(0,-0.13,0.28)` and
-`(0.68,-0.05,0)`. Use a connected tapered body, shaped gill/head forms and thick curved
-fins. Growth markings/fin details supplement existing scaling, and the companion fish
+`(0.68,-0.05,0)`. Use one connected, smoothly controlled body loft with a short soft forehead,
+large shallow orange iris/pupil and a small smile. Keep thin curved fins with
+buried roots, rather than bulky disconnected lobes. Growth markings/fin details
+supplement existing scaling, and the companion fish
 reuses an independently owned clone with a separate palette. Hard budget: 35,000
 triangles/3 MB, seven primitives and three simple materials.
 
 All three subjects load only their own required asset. Failed loads remain retryable,
 abandoned scene loads cannot install stale renderers, cached templates are immutable,
 and owned clones preserve authored normals/colors and dispose without harming other
-instances. Unchanged environment and decoration geometry retains its measured budget.
+instances. Supporting environment and decoration geometry has independent measured budgets.
 
 ## Secondary prop libraries
 
@@ -112,10 +123,9 @@ use up to 8,000. Validate every required ID, bounds, normals, UVs, colors and re
 counts from the actual exported GLB. Clone only parts used by the current scene,
 preserve independent instance transforms and dispose owned resources exactly once.
 
-The user permits quick real-app screenshots at important milestones, sent directly
-to Telegram without main-agent inspection or analysis. Any needed image recognition
-or OCR is delegated to Claude Opus or Sonnet only, with minimal scope. Fable,
-Blender previews and image generation are not used.
+Capture and inspect actual-app screenshots at important milestones. Review evidence
+locally and deliver useful comparisons with the implementation; external messaging
+or publication remains a separate user-authorized action.
 
 ## Materials and rendering
 
@@ -124,7 +134,7 @@ restrained satin fish/ceramic, water and transparent glass. Opaque batching reta
 roughness/metalness by surface role and linear vertex color within independently
 moving coordinate systems. Do not discard geometry/normals/UVs to meet a draw budget.
 Reuse one batch material per role, not one material/draw per color or detail.
-Keep the unchanged procedural environment's batching and geometry budgets independent
+Keep the authored environment's resource and geometry budgets independent
 of authored actors and props. Consolidated GLB parts retain their material roles;
 full-scene resource budgets are measured for the actual subject, stage and placements
 instead of forcing new assets into the earlier primitive-only material limits.
@@ -173,5 +183,56 @@ a consistent rounded stroke style. No prose-pinning tests.
 
 Lead owns code-driven browser checks at phone/tablet sizes, including stage zero and
 maturity, care repeat/completion, reduced motion, pause, scrolling, retry and console
-errors. Model and behavior checks do not certify appearance. Under the current user
-instruction, do not generate or analyze image evidence.
+errors. Model and behavior checks do not certify appearance. Include inspected Blender and
+actual-app evidence, with known rendering/device limitations stated explicitly.
+
+## Sculpted companion and lighting refinement (2026-10)
+
+Active authoring sources are `art/puppy-v3`, `art/fish-v3` and `art/tree-v3` in the
+garden workspace. Previous versions remain historical references. The original
+Blender geometry is editable and reproducible without downloaded assets. Invest
+triangles in clean rounded silhouettes, blended attachment roots, thick swept fins,
+folded leaves and hidden articulated roots rather than blanket subdivision.
+
+Differentiate matte organic surfaces from eyes/noses, waxy leaves and satin fruit
+with exported glTF roughness roles. The real-time renderer uses standard Three.js
+PBR, a locally generated 128px prefiltered studio probe, shaped key/fill/rim lights
+and one 1024px PCF shadow map. The probe is computed once per renderer and disposed
+with it; it is not an animated reflection capture or a remote HDR dependency.
+The optional lighting controls stay inside the existing collapsed camera panel.
+They change actual light direction and reflection orientation on demand, without
+new game state, time rewards or a continuously running lighting animation.
+
+The web renderer is rasterized, **not real-time ray tracing**. Blender Cycles
+preview images use offline path tracing to inspect curvature, junctions, contact
+shadows and highlight response. Clearly label those images; they do not certify
+browser GPU output or mobile frame rate. Keep source/GLB validation, full-scene
+resource budgets, camera projection checks and live browser QA distinct.
+
+Measure every stage with empty/full placement catalogs and each care action using
+`art/quality/measure-world-budgets.mjs`. Preserve independent hard ceilings in the
+regression tests so refreshing exact measurements cannot hide a performance
+regression. The existing subject-lazy loading, stage selection, immutable templates,
+independent clones, reduced-motion behavior and disposal contracts still apply.
+
+## Surrounding-world refinement (2026-10 follow-on)
+
+The owner explicitly included the growing tree and all surrounding assets. Preserve
+all 24 catalog identities and seven care groups described above, not generic
+substitutes. The new `art/environment-v1` inventory covers the full land/aquarium
+supporting set. The owner preferred the original tree shape: `art/tree-v3` now
+preserves exact published v2 geometry in every growth stage and changes vertex
+colors only. Material response and all transforms stay unchanged. The approved Shiba and
+clownfish sources and exported bytes remain unchanged.
+
+Avoid lumpy added anatomy, pillow shrubs, faceted paper leaves and disconnected
+attachment roots. Use restrained rounded silhouettes, purposeful hollow spaces,
+continuous swept stems/cloth/foliage and surface-appropriate PBR roughness. Specific
+stories remain readable: book-reading cat, yellow dandelion, fish pond, picnic
+basket, strawberry patch, mushroom home, bird bath and marine/puppy care tools.
+
+Each subject lazily loads only its own environment, primary actor and prop library.
+The added environment request uses the same retry/abandoned-load boundary and
+independent-clone ownership as the existing assets. Preserve contact surfaces,
+placement footprints, care timing and mobile framing. No new state, dependencies,
+remote service or learning/reward changes are required by this art revision.

@@ -8,8 +8,8 @@ import { WORLD_CATALOGS, type CareEvent } from './garden-worlds.ts';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { readShippedAssetBytes } from './puppy-asset.test-fixture.ts';
 
-const { prepare, create, care, dispose, update } = vi.hoisted(() => ({
-  prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(),
+const { prepare, create, care, dispose, update, lighting } = vi.hoisted(() => ({
+  prepare: vi.fn(), create: vi.fn(), care: vi.fn(), dispose: vi.fn(), update: vi.fn(), lighting: vi.fn(),
 }));
 vi.mock('./garden-renderer.ts', () => ({
   prepareWorldAssets: prepare,
@@ -39,9 +39,46 @@ function statusChanged(container: HTMLElement, status: string) {
 beforeEach(() => {
   vi.resetAllMocks();
   vi.stubGlobal('matchMedia', () => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
-  create.mockImplementation(() => ({ care, dispose, update, setMotion: vi.fn(), setGestures: vi.fn(), camera: vi.fn() }));
+  create.mockImplementation(() => ({ care, dispose, update, lighting, setMotion: vi.fn(), setGestures: vi.fn(), camera: vi.fn() }));
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+
+test('optional lighting buttons change only the view, support repeated choices and reset on world changes and retry', async () => {
+  prepare.mockResolvedValue({});
+  const view = render(<GardenScene subject="math" world={EMPTY_GAME_STATE.worlds.math} />);
+  const ready = statusChanged(view.container, 'ready');
+  await act(async () => {}); await ready;
+  fireEvent.click(screen.getByText('시점과 움직임 조절'));
+  const warm = screen.getByRole('button', { name: '따뜻한 옆빛' });
+  const daylight = screen.getByRole('button', { name: '부드러운 낮빛' });
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenLastCalledWith('warm-side');
+  expect(warm.getAttribute('aria-pressed')).toBe('true');
+  expect(daylight.getAttribute('aria-pressed')).toBe('false');
+  const calls = lighting.mock.calls.length;
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenCalledTimes(calls);
+  expect(care).not.toHaveBeenCalled();
+  expect(create).toHaveBeenCalledTimes(1);
+
+  const nextReady = statusChanged(view.container, 'ready');
+  await act(async () => { view.rerender(<GardenScene subject="english" world={EMPTY_GAME_STATE.worlds.english} />); });
+  await nextReady;
+  expect(lighting).toHaveBeenLastCalledWith('daylight');
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  fireEvent.click(warm);
+  expect(lighting).toHaveBeenLastCalledWith('warm-side');
+  const onLost = create.mock.lastCall![3] as () => void;
+  act(() => onLost());
+  expect(warm.hasAttribute('disabled')).toBe(true);
+  const retryReady = statusChanged(view.container, 'ready');
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: '3D 다시 열기' })); });
+  await retryReady;
+  expect(lighting).toHaveBeenLastCalledWith('daylight');
+  expect(daylight.getAttribute('aria-pressed')).toBe('true');
+  expect(care).not.toHaveBeenCalled();
+});
 
 for (const subject of ['korean', 'english', 'math'] as const) {
   const nextSubject = subject === 'korean' ? 'english' : 'korean';
@@ -137,7 +174,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     expect(care).toHaveBeenCalledTimes(1);
   });
 
-  test.each(['503', 'missing-part'] as const)(`${subject}: actual prop library %s reaches unavailable and retry preserves placements without care replay`, async (failure) => {
+  test.each([['prop', '503'], ['prop', 'missing-part'], ['environment', '503'], ['environment', 'missing-part']] as const)(`${subject}: actual %s library %s reaches unavailable and retry preserves placements without care replay`, async (kind, failure) => {
     vi.resetModules();
     const actual = await vi.importActual<typeof import('./garden-renderer.ts')>('./garden-renderer.ts');
     let completed = deferred<void>();
@@ -146,12 +183,14 @@ for (const subject of ['korean', 'english', 'math'] as const) {
       finally { completed.resolve(); }
     });
     let fail = true;
-    const propUrl = `/models/props-${subject}.glb`;
+    const propUrl = `/models/${kind === 'prop' ? 'props' : 'environment'}-${subject}.glb`;
+    const partId = kind === 'prop' ? WORLD_CATALOGS[subject][0]!.id : 'static-environment';
+    const templateKey = kind === 'prop' ? 'propTemplate' : 'environmentTemplate';
     const load = vi.spyOn(GLTFLoader.prototype, 'loadAsync').mockImplementation(async url => {
       if (url === propUrl && fail && failure === '503') throw new Error('503');
       const name = url.split('/').pop()!.replace('.glb', '') as Parameters<typeof readShippedAssetBytes>[0];
       const parsed = await new GLTFLoader().parseAsync(await readShippedAssetBytes(name), '');
-      if (url === propUrl && fail) parsed.scene.getObjectByName(WORLD_CATALOGS[subject][0]!.id)!.removeFromParent();
+      if (url === propUrl && fail) parsed.scene.getObjectByName(partId)!.removeFromParent();
       return parsed;
     });
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
@@ -161,7 +200,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     await act(async () => { await completed.promise; });
     await unavailable;
     expect(create).not.toHaveBeenCalled(); expect(warn).toHaveBeenCalledTimes(1);
-    expect(load.mock.calls.map(([url]) => url).sort()).toEqual([propUrl, `/models/${subject === 'korean' ? 'tree' : subject === 'english' ? 'fish' : 'puppy'}.glb`].sort());
+    expect(load.mock.calls.map(([url]) => url).sort()).toEqual([`/models/props-${subject}.glb`, `/models/environment-${subject}.glb`, `/models/${subject === 'korean' ? 'tree' : subject === 'english' ? 'fish' : 'puppy'}.glb`].sort());
     fail = false;
     completed = deferred<void>();
     const ready = statusChanged(view.container, 'ready');
@@ -170,7 +209,7 @@ for (const subject of ['korean', 'english', 'math'] as const) {
     await ready;
     expect(load.mock.calls.filter(([url]) => url === propUrl)).toHaveLength(2);
     expect(create.mock.calls[0]![2]).toBe(world);
-    expect((create.mock.calls[0]![4] as WorldModelAssets).propTemplate!.getObjectByName(WORLD_CATALOGS[subject][0]!.id)).toBeDefined();
+    expect((create.mock.calls[0]![4] as WorldModelAssets)[templateKey]!.getObjectByName(partId)).toBeDefined();
     expect(care).not.toHaveBeenCalled();
   });
 

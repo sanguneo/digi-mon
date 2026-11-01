@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "glb_sha256": "66986258aa30fa2d291fb8453dde27c0369ebe75b4d9c60304d2d970883fe667",
+  "loader": "Three GLTFLoader.parseAsync",
+  "triangles": 31808,
+  "meshes": 6,
+  "standard_vertex_color_materials": 4,
+  "bounds_y_up": {
+    "min": [
+      -0.776459276676178,
+      0,
+      -1.2671054601669312
+    ],
+    "max": [
+      0.7758982181549072,
+      2.3274142742156982,
+      1.282606840133667
+    ]
+  },
+  "rendering_performed": false
+}

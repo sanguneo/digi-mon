@@ -14,3 +14,7 @@
 *.hwp binary
 *.pdf binary
 *.docx binary
+
+# Blender authoring/runtime assets must retain their exact validated bytes.
+*.blend binary
+*.glb binary

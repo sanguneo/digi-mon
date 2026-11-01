@@ -1,4 +1,8 @@
-# Puppy v2 - active model
+# Puppy v2 — historical model
+
+The active model is now [puppy-v3](../puppy-v3/README.md). This directory preserves
+the previous design and its milestone evidence; use the active source to rebuild
+the canonical runtime asset. The statements below describe that earlier milestone.
 
 Fresh warm-cream toy/chibi puppy, authored from new cross-sections and soft
 volumes. This is not a modification or import of the previous puppy geometry.

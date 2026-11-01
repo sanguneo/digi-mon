@@ -7,35 +7,9 @@ import { clonePuppyAsset } from './puppy-asset.ts';
 import { cloneTreeAsset } from './tree-asset.ts';
 import { cloneFishAsset } from './fish-asset.ts';
 import { createPropInstancer } from './prop-asset.ts';
+import { createEnvironmentInstancer } from './environment-asset.ts';
 
 type Point = readonly [number, number, number];
-const LEAF = '#78a85b';
-
-type Surface = 'organic' | 'wood' | 'satin' | 'water';
-const ROUGHNESS: Record<Surface, number> = { organic: 0.92, wood: 0.84, satin: 0.42, water: 0.16 };
-function material(color: string, surface: Surface) {
-  const result = new THREE.MeshStandardMaterial({ color, roughness: ROUGHNESS[surface] });
-  result.name = surface;
-  return result;
-}
-function mesh(parent: THREE.Object3D, geometry: THREE.BufferGeometry, color: string, position: Point, scale: Point = [1, 1, 1], surface: Surface = parent.userData.surface ?? 'organic') {
-  const result = new THREE.Mesh(geometry, material(color, surface));
-  result.position.set(...position);
-  result.scale.set(...scale);
-  result.castShadow = true;
-  result.receiveShadow = true;
-  parent.add(result);
-  return result;
-}
-function orb(parent: THREE.Object3D, color: string, position: Point, scale: Point, surface?: Surface) {
-  return mesh(parent, new THREE.SphereGeometry(1, 20, 14), color, position, scale, surface);
-}
-function box(parent: THREE.Object3D, color: string, position: Point, scale: Point, surface?: Surface) {
-  return mesh(parent, new THREE.BoxGeometry(1, 1, 1), color, position, scale, surface);
-}
-function cylinder(parent: THREE.Object3D, color: string, position: Point, radius: number, height: number, top = radius, surface?: Surface) {
-  return mesh(parent, new THREE.CylinderGeometry(top, radius, height, 24), color, position, [1, 1, 1], surface);
-}
 function group(parent: THREE.Object3D, name: string, position: Point = [0, 0, 0]) {
   const result = new THREE.Group();
   result.name = name;
@@ -44,32 +18,6 @@ function group(parent: THREE.Object3D, name: string, position: Point = [0, 0, 0]
   parent.add(result);
   return result;
 }
-function flower(parent: THREE.Object3D, position: Point, color: string, size = 1) {
-  const result = group(parent, 'flower', position);
-  cylinder(result, LEAF, [0, 0.2, 0], 0.035, 0.4);
-  for (let i = 0; i < 5; i++) {
-    const angle = i * Math.PI * 2 / 5;
-    orb(result, color, [Math.cos(angle) * 0.14, 0.44 + Math.sin(angle) * 0.14, 0], [0.12, 0.12, 0.06]);
-  }
-  orb(result, '#f7c951', [0, 0.44, 0.045], [0.09, 0.09, 0.06]);
-  result.scale.setScalar(size);
-  return result;
-}
-function plant(parent: THREE.Object3D, position: Point, height: number, color = LEAF) {
-  const result = group(parent, 'plant', position);
-  cylinder(result, '#508849', [0, height / 2, 0], 0.035, height);
-  for (let i = 0; i < 4; i++) {
-    const side = i % 2 ? -1 : 1;
-    const leaf = orb(result, color, [side * 0.16, height * (0.3 + i * 0.19), 0], [0.27, 0.1, 0.13]);
-    leaf.rotation.z = side * 0.5;
-  }
-  return result;
-}
-
-function stroke(parent: THREE.Object3D, color: string, points: Point[], radius = 0.015, surface?: Surface) {
-  return mesh(parent, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map((p) => new THREE.Vector3(...p))), 12, radius, 5, false), color, [0, 0, 0], [1, 1, 1], surface);
-}
-
 function tree(parent: THREE.Object3D, stage: number, template: THREE.Object3D) {
   const result = group(parent, 'growing-tree', [0, 0, stage === 0 ? 0.2 : -0.5]);
   const asset = cloneTreeAsset(template, stage);
@@ -116,13 +64,15 @@ export type CarePhase = 'idle' | 'approach' | 'respond' | 'settle';
 type CarePose = { action: CareAction; time: number; reach: number; touch: number; acknowledge: number };
 const ramp = (time: number, from: number, to: number) => THREE.MathUtils.smoothstep(time, from, to);
 
-export type WorldModelAssets = { puppyTemplate?: THREE.Object3D; treeTemplate?: THREE.Object3D; fishTemplate?: THREE.Object3D; propTemplate?: THREE.Object3D };
+export type WorldModelAssets = { puppyTemplate?: THREE.Object3D; treeTemplate?: THREE.Object3D; fishTemplate?: THREE.Object3D; propTemplate?: THREE.Object3D; environmentTemplate?: THREE.Object3D };
 
-export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate, treeTemplate, fishTemplate, propTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
+export function buildWorldModel(subject: Subject, world: WorldState, { batch = false, puppyTemplate, treeTemplate, fishTemplate, propTemplate, environmentTemplate }: WorldModelAssets & { batch?: boolean } = {}) {
   if (subject === 'math' && !puppyTemplate) throw new Error('Math world requires the loaded puppy asset');
   if (subject === 'korean' && !treeTemplate) throw new Error('Korean world requires the loaded tree asset');
   if (subject === 'english' && !fishTemplate) throw new Error('English world requires the loaded fish asset');
   if (!propTemplate) throw new Error(`${subject} world requires the loaded prop library`);
+  if (!environmentTemplate) throw new Error(`${subject} world requires the loaded environment library`);
+  const environment = createEnvironmentInstancer(subject, environmentTemplate);
   const instantiate = createPropInstancer(subject, propTemplate);
   const decoration = (parent: THREE.Object3D, id: string) => {
     const wrapper = group(parent, `decoration:${id}`);
@@ -133,6 +83,11 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
   root.name = `world:${subject}`;
   const stage = growthStage(world);
   root.userData.stage = stage;
+  root.add(environment('static-environment'));
+  const backgroundPlant = (position: Point, height: number) => {
+    const plant = environment(subject === 'english' ? 'aquatic-sprig' : 'garden-sprig');
+    plant.name = 'plant'; plant.position.set(...position); plant.scale.y = height; root.add(plant);
+  };
   const animated: ((time: number, care: CarePose | null) => void)[] = [];
   // Pools are built once. Hidden care props retain their own batch coordinate frame.
   const moving = new Set<THREE.Object3D>();
@@ -145,26 +100,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
   };
   const aquarium = subject === 'english';
   if (aquarium) {
-    box(root, '#75a8ab', [0, -0.35, 0], [8.9, 0.65, 6.4]);
-    box(root, '#f3d9a4', [0, -0.01, 0], [8.55, 0.14, 6.1]);
-    for (const x of [-4.3, 4.3]) for (const z of [-3.05, 3.05]) {
-      box(root, '#b7e4de', [x, 2.1, z], [0.07, 4.25, 0.07]);
-    }
-    for (const y of [0, 4.2]) {
-      for (const x of [-4.3, 4.3]) box(root, '#b7e4de', [x, y, 0], [0.09, 0.09, 6.15]);
-      // A cutaway viewing face: no upper front rail can intersect the fish silhouette.
-      for (const z of y === 0 ? [-3.05, 3.05] : [-3.05]) box(root, '#8cb8b5', [0, y, z], [8.65, 0.06, 0.06]);
-    }
-    // Subtle back and side glass; leave the front visually open so fish stay legible.
-    const glass = new THREE.MeshStandardMaterial({ color: '#6faeaf', transparent: true, opacity: 0.18, roughness: 0.2, depthWrite: false, side: THREE.DoubleSide });
-    glass.name = 'glass';
-    for (const x of [-4.3, 4.3]) {
-      const pane = new THREE.Mesh(new THREE.PlaneGeometry(6.1, 4.2), glass);
-      pane.position.set(x, 2.1, 0); pane.rotation.y = Math.PI / 2; root.add(pane);
-    }
-    const back = new THREE.Mesh(new THREE.PlaneGeometry(8.6, 4.2), glass);
-    back.position.set(0, 2.1, -3.05); root.add(back);
-    for (let i = 0; i < 3 + stage; i++) plant(root, [-3.4 + i * 1.15, 0.08, -2.4], 1.0 + i % 3 * 0.36, '#67a897');
+    for (let i = 0; i < 3 + stage; i++) backgroundPlant([-3.4 + i * 1.15, 0.08, -2.4], 1.0 + i % 3 * 0.36);
     const swimmer = fish(root, stage, fishTemplate!);
     moving.add(swimmer.result); moving.add(swimmer.tail); moving.add(swimmer.fin); moving.add(swimmer.mouth);
     swimmer.result.position.set(0, 2.0, 0.55);
@@ -200,22 +136,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       animated.push((time) => { friend.result.position.x = -2.0 + Math.sin(time * 0.45) * 0.5; friend.tail.rotation.y = Math.sin(time * 3) * 0.2; });
     }
     if (stage === 3) decoration(root, 'coral-garden').position.set(2.9, 0.1, -2);
-    // A waterline only on the back; highlights never span the viewing face.
-    stroke(root, '#b7ddd2', [[-4.15, 3.85, -3], [0, 3.87, -3], [4.15, 3.85, -3]], 0.018, 'water');
   } else {
-    cylinder(root, '#aa8b62', [0, -0.4, 0], 4.75, 0.7, 4.85, 'wood');
-    cylinder(root, '#adc18d', [0, -0.025, 0], 4.85, 0.12);
-    for (let i = 0; i < 8; i++) {
-      const angle = i / 8 * Math.PI * 2;
-      orb(root, '#87ae69', [Math.cos(angle) * 4.15, 0.08, Math.sin(angle) * 4.15], [0.55, 0.16, 0.4]);
-    }
-    for (let i = 0; i < 7; i++) orb(root, '#e9d8b1', [1.1 + Math.sin(i * 0.5) * 0.55, 0.065, 2.9 - i * 0.75], [0.32, 0.045, 0.2]);
-    for (let i = 0; i < 6; i++) flower(root, [-3.4 + i * 0.35, 0.1, 1.4 + i % 2 * 0.4], i % 2 ? '#f6d999' : '#f1b7b0', 0.7);
-    for (let i = 0; i < 9; i++) {
-      const x = -3.6 + i * 0.9;
-      cylinder(root, '#e7d7b4', [x, 0.38, -2.9], 0.055, 0.75);
-    }
-    box(root, '#e7d7b4', [0, 0.42, -2.9], [7.3, 0.11, 0.07]);
     if (subject === 'korean') {
       const growing = tree(root, stage, treeTemplate!);
       moving.add(growing);
@@ -229,7 +150,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
       const can = group(water, 'care-tool', [-1.25, 1.45, 0.55]); moving.add(can);
       can.add(instantiate('watering-can'));
       const drops = group(water, 'care-drops'); moving.add(drops);
-      for (let i = 0; i < 7; i++) orb(drops, '#69afc7', [-0.85 + i % 3 * 0.17, 0.2 + i * 0.12, 0.55], [0.04, 0.085, 0.04], 'water');
+      drops.add(environment('watering-drops'));
       const sun = prop('sunlight');
       sun.add(instantiate('sunlight-token'));
       sun.position.set(1.65, stage === 0 ? 2.2 : 3.35, 0);
@@ -245,7 +166,7 @@ export function buildWorldModel(subject: Subject, world: WorldState, { batch = f
         water.scale.setScalar(1 - ramp(care?.time ?? 0, 2.6, CARE_DURATION));
         sun.scale.setScalar(1 - ramp(care?.time ?? 0, 2.6, CARE_DURATION));
       });
-      for (let i = 0; i <= stage; i++) plant(root, [-2.6 + i * 0.55, 0.1, -0.8], 0.45 + stage * 0.2);
+      for (let i = 0; i <= stage; i++) backgroundPlant([-2.6 + i * 0.55, 0.1, -0.8], 0.45 + stage * 0.2);
       const pond = decoration(root, 'tiny-pond'); pond.position.set(2.9, 0.03, 0.15); pond.scale.setScalar(1.25);
     } else {
       const dog = puppy(root, stage, puppyTemplate!);

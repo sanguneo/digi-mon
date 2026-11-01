@@ -1,8 +1,8 @@
 import { defineConfig } from '@playwright/test';
 import base from './playwright.studio.config.ts';
 
-// These specs contain code-only assertions. Do not run image-producing specs
-// through this entry point; the user owns appearance review.
+// Fast code-only asset/behavior checks. Visual acceptance is separately captured
+// with art/quality/capture-worlds.mjs and inspected alongside Blender renders.
 export default defineConfig(base, {
   testMatch: [
     'nature-assets.spec.ts', 'prop-assets.spec.ts', 'puppy-asset.spec.ts', 'care-reactions.spec.ts',

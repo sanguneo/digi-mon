@@ -6,12 +6,11 @@ import { disposeModel } from './garden-models.ts';
 import { buildWorldModel } from './puppy-asset.test-fixture.ts';
 import { WORLD_CATALOGS, WORLDS } from './garden-worlds.ts';
 
-// Executed Git 127ad25 before replacing props. Removed only declared prop
-// subtrees and primary actors, then measured the remaining environment both raw
-// and batched. Includes Korean procedural droplets; no prop triangles can mask
-// environment regressions. Tuples: triangles, meshes, geometries, materials.
-import baseline from './prop-baseline.test-fixture.json';
-// Actual shipped libraries, all four stages, empty/full catalogs, idle and every
+// Historical primitive scenery remains a comparison reference in the fixture;
+// authored environment limits below are independent of regenerated snapshots.
+// Measured shipped companions and libraries; regenerate explicitly with
+// node apps/web-garden/art/quality/measure-world-budgets.mjs --write.
+// All four stages, empty/full catalogs, idle and every
 // care action at t=1.4. Full budgets include hidden growth and pooled care resources;
 // active budgets count visible subtrees only, not all cached library parts.
 import budgets from './prop-budgets.test-fixture.json';
@@ -35,6 +34,7 @@ function resources(root: Object3D, sceneryOnly = false, visibleOnly = false) {
     if (sceneryOnly) {
       let ancestor: Object3D | null = object;
       while (ancestor) {
+        if (ancestor.userData.environmentAsset) break;
         if (ancestor.userData.assetSource) return;
         ancestor = ancestor.parent;
       }
@@ -125,7 +125,12 @@ describe('world render batching', () => {
       const world = { ...worldAt(subject, stage), ...(!catalog ? { placements: {} } : {}) };
       const model = buildWorldModel(subject, world, { batch: true });
       const budget = budgets[subject][stage]![catalog ? 'catalog' : 'empty'];
-      expect(summarize(model.root)).toEqual(budget.full);
+      const full = summarize(model.root);
+      // A regenerated snapshot must not silently raise the mobile scene ceiling.
+      expect(full[0]).toBeLessThanOrEqual(115_000);
+      expect(full[1]).toBeLessThanOrEqual(36);
+      expect(full[3]).toBeLessThanOrEqual(14);
+      expect(full).toEqual(budget.full);
       expect(summarize(model.root, false, true)).toEqual(budget.idle);
       const actors = model.root.children.filter(object => ['growing-tree', 'fish', 'puppy'].includes(object.name));
       expect(actors.map(actor => summarize(actor))).toEqual(budget.actors);
@@ -136,34 +141,24 @@ describe('world render batching', () => {
       disposeModel(model.root);
     }
   });
-  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i retains independently measured unchanged environment resources`, (stage) => {
-    for (const batch of [false, true]) {
-      const model = buildWorldModel(subject, worldAt(subject, stage), { batch });
-      expect(summarize(model.root, true)).toEqual(baseline[subject][stage]![batch ? 'batchedEnvironment' : 'environment']);
-      disposeModel(model.root);
-    }
-  });
-
-  test.each(['korean', 'english', 'math'] as const)('%s initial scenery cuts draw submissions and GPU resources without dropping any world triangles', (subject) => {
-    const original = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject]);
-    const batched = buildWorldModel(subject, EMPTY_GAME_STATE.worlds[subject], { batch: true });
-    // Only procedural scenery is batched now. Authored actors already have
-    // consolidated primitives and independently owned materials; exact complete
-    // world budgets below account for those instead of weakening this invariant.
-    const before = resources(original.root, true);
-    const after = resources(batched.root, true);
-    // Removing props changes the denominator, not the batching algorithm. Preserve
-    // the exact Git127ad25 unchanged-environment ratio (English includes 3 glass panes).
-    const measured = baseline[subject][0]!;
-    expect(after.meshes.length / before.meshes.length).toBe(measured.batchedEnvironment[1]! / measured.environment[1]!);
-    expect(after.geometries.size / before.geometries.size).toBe(measured.batchedEnvironment[2]! / measured.environment[2]!);
-    expect(after.materials.size).toBe(measured.batchedEnvironment[3]);
+  for (const subject of ['korean', 'english', 'math'] as const) test.each([0, 1, 2, 3])(`${subject} stage %i keeps independently bounded authored environment resources`, (stage) => {
+    const original = buildWorldModel(subject, worldAt(subject, stage));
+    const batched = buildWorldModel(subject, worldAt(subject, stage), { batch: true });
+    const before = resources(original.root, true), after = resources(batched.root, true);
+    // Whole scenery, including repeated plants and pooled droplets. Shared geometry
+    // saves memory but does not hide the per-instance submitted triangle count.
+    expect(after.triangles).toBeLessThanOrEqual(subject === 'english' ? 14_000 : 26_000);
+    expect(after.meshes.length).toBeLessThanOrEqual(10);
+    expect(after.materials.size).toBeLessThanOrEqual(3);
+    expect(summarize(original.root, true)).toEqual(summarize(batched.root, true));
+    expect(before.triangles).toBeGreaterThan(0);
     expect(resources(batched.root).triangles).toBe(resources(original.root).triangles);
-    for (const mesh of after.meshes.filter((object) => object.name === 'static-batch')) {
-      expect(mesh.geometry.groups).toHaveLength(0);
-      expect(mesh.castShadow).toBe(true);
-      expect(mesh.receiveShadow).toBe(true);
-      expect([0.92, 0.84, 0.42, 0.16]).toContain((mesh.material as MeshStandardMaterial).roughness);
+    for (const object of after.meshes) {
+      const material = object.material as MeshStandardMaterial;
+      expect(material.vertexColors).toBe(true);
+      expect(object.geometry.getAttribute('normal')).toBeDefined();
+      if (material.transparent) { expect(object.castShadow).toBe(false); expect(material.depthWrite).toBe(false); }
+      else { expect(object.castShadow).toBe(true); expect(object.receiveShadow).toBe(true); }
     }
     disposeModel(original.root); disposeModel(batched.root);
   });

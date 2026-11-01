@@ -1,0 +1,14 @@
+{
+  "baseline_sha256": "556268ada2bb9c74afd06352bfded94c9981c26c27209afe6392f6cdbf88a0ba",
+  "output_sha256": "7516921fb980d168f551cac1857c072230d7ca73863b9858167d64e94bb7c06e",
+  "changed_color_vertices": 43711,
+  "json_materials_nodes_transforms_identical": true,
+  "all_non_color_binary_bytes_identical": true,
+  "preserved_attributes": [
+    "POSITION",
+    "NORMAL",
+    "TEXCOORD_0",
+    "indices"
+  ],
+  "bytes": 3713992
+}
