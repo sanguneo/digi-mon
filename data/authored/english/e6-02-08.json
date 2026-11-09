@@ -1,0 +1,464 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[6영02-08]",
+  "skill": "예시문을 참고하여 목적에 맞는 간단한 글을 쓰는 표준",
+  "items": [
+    {
+      "id": "16303cf94fea",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We learn about animals and the earth in ___ class.",
+      "answer": "science",
+      "distractors": [
+        "music",
+        "history",
+        "kitchen"
+      ],
+      "solution": [
+        "빈칸에 'science'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19de192315f2",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The ___ is hot and bright in the sky.",
+      "answer": "sun",
+      "distractors": [
+        "desk",
+        "box",
+        "pen"
+      ],
+      "solution": [
+        "빈칸에 'sun'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24669f7a5ca6",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We learn about old kings in ___ class.",
+      "answer": "history",
+      "distractors": [
+        "science",
+        "music",
+        "garden"
+      ],
+      "solution": [
+        "빈칸에 'history'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2feacd2347c2",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We buy fruit and fish at the ___.",
+      "answer": "market",
+      "distractors": [
+        "library",
+        "zoo",
+        "school"
+      ],
+      "solution": [
+        "빈칸에 'market'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "301e70e34754",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I draw a ___ of my dog.",
+      "answer": "picture",
+      "distractors": [
+        "question",
+        "king",
+        "ice"
+      ],
+      "solution": [
+        "빈칸에 'picture'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "354710d2e23f",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Put up your ___ if you have a question.",
+      "answer": "hand",
+      "distractors": [
+        "nose",
+        "egg",
+        "book"
+      ],
+      "solution": [
+        "빈칸에 'hand'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d164a2754dc",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I drink a glass of ___.",
+      "answer": "milk",
+      "distractors": [
+        "book",
+        "pen",
+        "desk"
+      ],
+      "solution": [
+        "빈칸에 'milk'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e01206bdc5c",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Trees turn red and yellow in ___.",
+      "answer": "autumn",
+      "distractors": [
+        "spring",
+        "music",
+        "library"
+      ],
+      "solution": [
+        "빈칸에 'autumn'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44980665402b",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "There are four people in my ___.",
+      "answer": "family",
+      "distractors": [
+        "desk",
+        "sun",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'family'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ec2954ad41e",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I sing songs in ___ class.",
+      "answer": "music",
+      "distractors": [
+        "science",
+        "history",
+        "kitchen"
+      ],
+      "solution": [
+        "빈칸에 'music'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "55410b1f8751",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "A ___ can swim in the water.",
+      "answer": "fish",
+      "distractors": [
+        "desk",
+        "book",
+        "tree"
+      ],
+      "solution": [
+        "빈칸에 'fish'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80082ca63cde",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I smell with my ___.",
+      "answer": "nose",
+      "distractors": [
+        "hand",
+        "desk",
+        "book"
+      ],
+      "solution": [
+        "빈칸에 'nose'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c63dd610c13",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Mina is my ___. We play together every day.",
+      "answer": "friend",
+      "distractors": [
+        "desk",
+        "pen",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'friend'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "95373da333cf",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I put my books in the ___.",
+      "answer": "box",
+      "distractors": [
+        "sun",
+        "milk",
+        "lion"
+      ],
+      "solution": [
+        "빈칸에 'box'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e7cf5e5b479",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My mom cooks dinner in the ___.",
+      "answer": "kitchen",
+      "distractors": [
+        "library",
+        "zoo",
+        "school"
+      ],
+      "solution": [
+        "빈칸에 'kitchen'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f2e89494e10",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I write a ___ to my grandfather.",
+      "answer": "letter",
+      "distractors": [
+        "ball",
+        "lion",
+        "milk"
+      ],
+      "solution": [
+        "빈칸에 'letter'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a4918b0ed2c1",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Flowers grow in the ___.",
+      "answer": "garden",
+      "distractors": [
+        "kitchen",
+        "library",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'garden'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a892531ccb48",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "It is raining. Take your ___.",
+      "answer": "umbrella",
+      "distractors": [
+        "book",
+        "ball",
+        "pen"
+      ],
+      "solution": [
+        "빈칸에 'umbrella'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9e8e9b4c199",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The teacher asks a ___, and I answer it.",
+      "answer": "question",
+      "distractors": [
+        "letter",
+        "picture",
+        "number"
+      ],
+      "solution": [
+        "빈칸에 'question'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be6070c00ab2",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Please ___ the door.",
+      "answer": "open",
+      "distractors": [
+        "apple",
+        "red",
+        "king"
+      ],
+      "solution": [
+        "빈칸에 'open'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0d99a9c83e4",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We can see a lion at the ___.",
+      "answer": "zoo",
+      "distractors": [
+        "library",
+        "kitchen",
+        "market"
+      ],
+      "solution": [
+        "빈칸에 'zoo'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f60881e24f81",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Snow falls in ___.",
+      "answer": "winter",
+      "distractors": [
+        "summer",
+        "science",
+        "music"
+      ],
+      "solution": [
+        "빈칸에 'winter'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f71dd2983f88",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We borrow books at the ___.",
+      "answer": "library",
+      "distractors": [
+        "kitchen",
+        "garden",
+        "zoo"
+      ],
+      "solution": [
+        "빈칸에 'library'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb69c9a0c817",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "An ___ is a red fruit.",
+      "answer": "apple",
+      "distractors": [
+        "egg",
+        "umbrella",
+        "ice"
+      ],
+      "solution": [
+        "빈칸에 'apple'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

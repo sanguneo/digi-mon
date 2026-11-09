@@ -1,0 +1,540 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[6영02-04]",
+  "skill": "주변 사람이나 사물을 간단한 문장으로 소개하거나 묘사하는 표준",
+  "items": [
+    {
+      "id": "06b2def29fa8",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 운동화가 새것이라고 말할 때",
+      "answer": "My shoes are new.",
+      "distractors": [
+        "My shoes are old.",
+        "My socks are new.",
+        "My shoes are big."
+      ],
+      "solution": [
+        "내 운동화가 새것이라고 말할 때 쓰는 문장은 'My shoes are new.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "076ee2532498",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 선생님이 친절하고 똑똑하다고 말할 때",
+      "answer": "My teacher is kind and clever.",
+      "distractors": [
+        "My teacher is tall and clever.",
+        "My friend is kind and clever.",
+        "My teacher is busy."
+      ],
+      "solution": [
+        "우리 선생님이 친절하고 똑똑하다고 말할 때 쓰는 문장은 'My teacher is kind and clever.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0d71cba1272b",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "토끼가 귀가 길다고 말할 때",
+      "answer": "The rabbit has long ears.",
+      "distractors": [
+        "The rabbit has short ears.",
+        "The rabbit has long legs.",
+        "The dog has long ears."
+      ],
+      "solution": [
+        "토끼가 귀가 길다고 말할 때 쓰는 문장은 'The rabbit has long ears.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "112396983a0d",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 친구가 웃는 얼굴이라고 말할 때",
+      "answer": "My friend has a nice smile.",
+      "distractors": [
+        "My friend has a big nose.",
+        "My friend has long hair.",
+        "My brother has a nice smile."
+      ],
+      "solution": [
+        "내 친구가 웃는 얼굴이라고 말할 때 쓰는 문장은 'My friend has a nice smile.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "31a8e941ea69",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 강아지를 소개할 때",
+      "answer": "This is my dog.",
+      "distractors": [
+        "This is my cat.",
+        "I like dogs.",
+        "The dog is big."
+      ],
+      "solution": [
+        "내 강아지를 소개할 때 쓰는 문장은 'This is my dog.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "376a5a52d158",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 꿈이 의사라고 말할 때",
+      "answer": "I want to be a doctor.",
+      "distractors": [
+        "I want to be a cook.",
+        "My dad is a doctor.",
+        "I am a doctor."
+      ],
+      "solution": [
+        "내 꿈이 의사라고 말할 때 쓰는 문장은 'I want to be a doctor.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "47ab6ec13d12",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 친구 이름이 민수라고 소개할 때",
+      "answer": "This is my friend, Minsu.",
+      "distractors": [
+        "This is my brother, Minsu.",
+        "My name is Minsu.",
+        "Minsu is tall."
+      ],
+      "solution": [
+        "내 친구 이름이 민수라고 소개할 때 쓰는 문장은 'This is my friend, Minsu.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "52dd37bc2fb9",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 고양이가 하얗다고 말할 때",
+      "answer": "My cat is white.",
+      "distractors": [
+        "My cat is black.",
+        "My dog is white.",
+        "My cat is small."
+      ],
+      "solution": [
+        "우리 고양이가 하얗다고 말할 때 쓰는 문장은 'My cat is white.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f72bbee68bb",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 엄마가 친절하다고 말할 때",
+      "answer": "My mom is kind.",
+      "distractors": [
+        "My mom is busy.",
+        "My dad is kind.",
+        "My mom is tall."
+      ],
+      "solution": [
+        "우리 엄마가 친절하다고 말할 때 쓰는 문장은 'My mom is kind.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "612a84e1caa2",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 학교에 큰 도서관이 있다고 말할 때",
+      "answer": "My school has a big library.",
+      "distractors": [
+        "My school has a small library.",
+        "My house has a big library.",
+        "My school has a big garden."
+      ],
+      "solution": [
+        "우리 학교에 큰 도서관이 있다고 말할 때 쓰는 문장은 'My school has a big library.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a05ba88bd5d",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "고양이 털이 부드럽다고 말할 때",
+      "answer": "The cat is soft.",
+      "distractors": [
+        "The cat is fat.",
+        "The dog is soft.",
+        "The cat is black."
+      ],
+      "solution": [
+        "고양이 털이 부드럽다고 말할 때 쓰는 문장은 'The cat is soft.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b7d5d072223",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 가방이 파랗다고 말할 때",
+      "answer": "My bag is blue.",
+      "distractors": [
+        "My bag is red.",
+        "My cap is blue.",
+        "My bag is big."
+      ],
+      "solution": [
+        "내 가방이 파랗다고 말할 때 쓰는 문장은 'My bag is blue.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6c122a2d829b",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 동생이 여섯 살이고 수영을 좋아한다고 말할 때",
+      "answer": "My brother is six. He likes swimming.",
+      "distractors": [
+        "My brother is seven. He likes swimming.",
+        "My brother is six. He likes skating.",
+        "My sister is six. She likes swimming."
+      ],
+      "solution": [
+        "내 동생이 여섯 살이고 수영을 좋아한다고 말할 때 쓰는 문장은 'My brother is six. He likes swimming.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "70955d0e34ca",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "친구가 키가 크다고 말할 때",
+      "answer": "My friend is tall.",
+      "distractors": [
+        "My friend is short.",
+        "My friend is kind.",
+        "I am tall."
+      ],
+      "solution": [
+        "친구가 키가 크다고 말할 때 쓰는 문장은 'My friend is tall.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "78a50b77918d",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 아빠가 요리를 잘한다고 말할 때",
+      "answer": "My dad is good at cooking.",
+      "distractors": [
+        "My mom is good at cooking.",
+        "My dad is good at singing.",
+        "My dad likes eating."
+      ],
+      "solution": [
+        "우리 아빠가 요리를 잘한다고 말할 때 쓰는 문장은 'My dad is good at cooking.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a227d1988d30",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 집에 정원이 있다고 말할 때",
+      "answer": "My house has a garden.",
+      "distractors": [
+        "My school has a garden.",
+        "My house has a kitchen.",
+        "My house is small."
+      ],
+      "solution": [
+        "우리 집에 정원이 있다고 말할 때 쓰는 문장은 'My house has a garden.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afdff73e56a4",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내가 스케이트를 탈 줄 안다고 말할 때",
+      "answer": "I can skate.",
+      "distractors": [
+        "I can ski.",
+        "I can not skate.",
+        "I want to skate."
+      ],
+      "solution": [
+        "내가 스케이트를 탈 줄 안다고 말할 때 쓰는 문장은 'I can skate.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b27e24c3f5ba",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내가 노래를 잘한다고 말할 때",
+      "answer": "I am good at singing.",
+      "distractors": [
+        "I am good at cooking.",
+        "I like singing.",
+        "She is good at singing."
+      ],
+      "solution": [
+        "내가 노래를 잘한다고 말할 때 쓰는 문장은 'I am good at singing.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c43f7af66d1c",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 여동생을 소개할 때",
+      "answer": "This is my sister.",
+      "distractors": [
+        "This is my brother.",
+        "She is happy.",
+        "I am a student."
+      ],
+      "solution": [
+        "내 여동생을 소개할 때 쓰는 문장은 'This is my sister.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c87d346f15b5",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내가 좋아하는 수업이 과학이라고 말할 때",
+      "answer": "My favorite class is science.",
+      "distractors": [
+        "My favorite class is math.",
+        "My favorite food is pizza.",
+        "I do not like science."
+      ],
+      "solution": [
+        "내가 좋아하는 수업이 과학이라고 말할 때 쓰는 문장은 'My favorite class is science.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cee53979cb7a",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "코끼리가 크다고 말할 때",
+      "answer": "The elephant is big.",
+      "distractors": [
+        "The elephant is small.",
+        "The mouse is big.",
+        "The elephant is gray."
+      ],
+      "solution": [
+        "코끼리가 크다고 말할 때 쓰는 문장은 'The elephant is big.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d442b9fbac05",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내가 피아노를 칠 수 있다고 말할 때",
+      "answer": "I can play the piano.",
+      "distractors": [
+        "I can play soccer.",
+        "I can not play the piano.",
+        "She can play the piano."
+      ],
+      "solution": [
+        "내가 피아노를 칠 수 있다고 말할 때 쓰는 문장은 'I can play the piano.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d6975fa57353",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내가 열두 살이라고 말할 때",
+      "answer": "I am twelve years old.",
+      "distractors": [
+        "I am eleven years old.",
+        "She is twelve years old.",
+        "I have twelve books."
+      ],
+      "solution": [
+        "내가 열두 살이라고 말할 때 쓰는 문장은 'I am twelve years old.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d98e7b9547b8",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 할아버지가 바닷가 근처에 사신다고 말할 때",
+      "answer": "My grandfather lives near the sea.",
+      "distractors": [
+        "My grandfather lives near the mountain.",
+        "My uncle lives near the sea.",
+        "My grandfather likes the sea."
+      ],
+      "solution": [
+        "우리 할아버지가 바닷가 근처에 사신다고 말할 때 쓰는 문장은 'My grandfather lives near the sea.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e26d1e0a165a",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 반에 학생이 스무 명 있다고 말할 때",
+      "answer": "There are twenty students in my class.",
+      "distractors": [
+        "There are twelve students in my class.",
+        "There are twenty desks in my class.",
+        "I have twenty friends."
+      ],
+      "solution": [
+        "우리 반에 학생이 스무 명 있다고 말할 때 쓰는 문장은 'There are twenty students in my class.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3605246bc03",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우리 할아버지가 매일 아침 걷는다고 말할 때",
+      "answer": "My grandfather walks every morning.",
+      "distractors": [
+        "My grandfather runs every evening.",
+        "My father walks every morning.",
+        "My grandfather sleeps every morning."
+      ],
+      "solution": [
+        "우리 할아버지가 매일 아침 걷는다고 말할 때 쓰는 문장은 'My grandfather walks every morning.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f7610dace1d3",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 방을 소개할 때",
+      "answer": "This is my room.",
+      "distractors": [
+        "This is my school.",
+        "This is my bag.",
+        "My room is cold."
+      ],
+      "solution": [
+        "내 방을 소개할 때 쓰는 문장은 'This is my room.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fd1eea90f005",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "내 짝을 소개하며 노래를 잘한다고 말할 때",
+      "answer": "She is my partner. She is good at singing.",
+      "distractors": [
+        "She is my partner. She is good at dancing.",
+        "He is my brother. He is good at singing.",
+        "She is my teacher. She likes singing."
+      ],
+      "solution": [
+        "내 짝을 소개하며 노래를 잘한다고 말할 때 쓰는 문장은 'She is my partner. She is good at singing.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

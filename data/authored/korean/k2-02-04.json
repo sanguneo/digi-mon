@@ -1,0 +1,844 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[2국02-04]",
+  "skill": "인물의 마음과 생각을 짐작하며 읽기",
+  "items": [
+    {
+      "id": "033c6e9cd41b",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "놀이터에서 신나게 놀고 있는데 엄마가 집에 가자고 부르셨습니다. 아린이는 미끄럼틀을 자꾸 돌아보았습니다.",
+      "answer": "아쉬운 마음",
+      "distractors": [
+        "무서운 마음",
+        "고마운 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "더 놀고 싶어서 미끄럼틀을 자꾸 돌아보는 모습에서 아쉬운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0974e1938aa2",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "내일은 가족과 바다에 가는 날입니다. 수호는 가방을 몇 번이나 다시 싸며 잠을 이루지 못했습니다.",
+      "answer": "설레는 마음",
+      "distractors": [
+        "슬픈 마음",
+        "화난 마음",
+        "미안한 마음"
+      ],
+      "solution": [
+        "기다리던 나들이를 앞두고 잠을 못 이루는 모습에서 설레는 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "118dc2eb9f2c",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "조용한 교실에서 갑자기 풍선이 펑 터졌습니다. 아이들은 깜짝 놀라 펄쩍 뛰었습니다.",
+      "answer": "놀란 마음",
+      "distractors": [
+        "고마운 마음",
+        "아쉬운 마음",
+        "미안한 마음"
+      ],
+      "solution": [
+        "갑작스러운 소리에 펄쩍 뛰는 모습은 놀랐을 때의 모습이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13b6b497588e",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "길에서 지갑을 주워 주인에게 돌려주었습니다. 주인 아주머니께서 고맙다며 하율이의 손을 꼭 잡으셨습니다.",
+      "answer": "고마운 마음",
+      "distractors": [
+        "화난 마음",
+        "무서운 마음",
+        "부끄러운 마음"
+      ],
+      "solution": [
+        "잃어버린 지갑을 되찾은 아주머니가 손을 꼭 잡는 모습에서 고마운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "152ecf450705",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "준서는 아끼던 연필을 잃어버렸습니다. 준서는 고개를 숙이고 눈물을 뚝뚝 흘렸습니다.",
+      "answer": "슬픈 마음",
+      "distractors": [
+        "기쁜 마음",
+        "설레는 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "아끼던 물건을 잃고 눈물을 흘리는 모습에서 슬픈 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16440662565f",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "동생이 하준이의 일기장을 몰래 읽고 친구들에게 이야기했습니다. 하준이는 얼굴이 붉어진 채 동생에게 소리쳤습니다.",
+      "answer": "화난 마음",
+      "distractors": [
+        "고마운 마음",
+        "설레는 마음",
+        "기쁜 마음"
+      ],
+      "solution": [
+        "일기장을 몰래 읽고 퍼뜨린 동생에게 소리치는 모습에서 화난 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2989e520bd1e",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "발표하다가 이름을 잘못 말했습니다. 친구들이 웃자 지안이의 얼굴이 빨개졌습니다.",
+      "answer": "부끄러운 마음",
+      "distractors": [
+        "고마운 마음",
+        "자랑스러운 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "실수한 뒤에 얼굴이 빨개지는 것은 부끄러울 때다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a10d5de4d7a",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "친구들 앞에서 노래를 부르기로 했습니다. 차례가 되자 소윤이는 얼굴을 손으로 가리고 작게 웅얼거렸습니다.",
+      "answer": "부끄러운 마음",
+      "distractors": [
+        "화난 마음",
+        "자랑스러운 마음",
+        "고마운 마음"
+      ],
+      "solution": [
+        "여러 사람 앞에서 얼굴을 가리고 작게 말하는 것은 부끄러울 때의 모습이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d62c4b1cfd6",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "하린이는 생일에 갖고 싶던 그림책을 선물로 받았습니다. 하린이는 책을 꼭 안고 깡충깡충 뛰었습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "슬픈 마음",
+        "무서운 마음",
+        "화난 마음"
+      ],
+      "solution": [
+        "갖고 싶던 선물을 받고 깡충깡충 뛰는 모습에서 기쁜 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "318000fc9e92",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "다음 주에 처음으로 동물원에 갑니다. 도현이는 달력에 동그라미를 치고 날마다 남은 날을 세었습니다.",
+      "answer": "설레는 마음",
+      "distractors": [
+        "슬픈 마음",
+        "부끄러운 마음",
+        "화난 마음"
+      ],
+      "solution": [
+        "갈 날을 날마다 세는 모습에서 그날을 기다리는 설레는 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "342fe194a9d1",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "기르던 금붕어가 어항에서 움직이지 않았습니다. 시우는 어항 앞에 쪼그리고 앉아 한참을 울었습니다.",
+      "answer": "슬픈 마음",
+      "distractors": [
+        "설레는 마음",
+        "자랑스러운 마음",
+        "기쁜 마음"
+      ],
+      "solution": [
+        "아끼던 금붕어를 잃고 한참 우는 모습에서 슬픈 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b162e730229",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "번개가 번쩍이고 천둥이 크게 울렸습니다. 동생은 귀를 막고 언니 옆에 바짝 붙어 앉았습니다.",
+      "answer": "무서운 마음",
+      "distractors": [
+        "설레는 마음",
+        "자랑스러운 마음",
+        "고마운 마음"
+      ],
+      "solution": [
+        "천둥소리에 귀를 막고 언니 옆에 붙어 앉는 모습에서 무서운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c20178cbff5",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "받아쓰기에서 처음으로 백 점을 받았습니다. 유나는 시험지를 들고 집까지 한달음에 달려갔습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "슬픈 마음",
+        "미안한 마음",
+        "무서운 마음"
+      ],
+      "solution": [
+        "처음 받은 백 점 시험지를 들고 달려가는 모습에서 기쁜 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40fa157f2c09",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "동생이 처음으로 혼자 신발 끈을 묶었습니다. 누나는 동생의 머리를 쓰다듬으며 활짝 웃었습니다.",
+      "answer": "자랑스러운 마음",
+      "distractors": [
+        "미안한 마음",
+        "무서운 마음",
+        "슬픈 마음"
+      ],
+      "solution": [
+        "동생이 해낸 일을 보고 머리를 쓰다듬으며 웃는 모습에서 자랑스러운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "43fb7c1b688b",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "단짝 친구가 먼 곳으로 이사를 갑니다. 하은이는 떠나는 차가 보이지 않을 때까지 손을 흔들었습니다.",
+      "answer": "아쉬운 마음",
+      "distractors": [
+        "화난 마음",
+        "자랑스러운 마음",
+        "무서운 마음"
+      ],
+      "solution": [
+        "떠나는 친구를 끝까지 바라보며 손을 흔드는 모습에서 헤어지기 아쉬운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4518281a7b09",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "정성껏 쌓은 모래성이 파도에 휩쓸려 사라졌습니다. 태오는 모래사장에 털썩 주저앉았습니다.",
+      "answer": "슬픈 마음",
+      "distractors": [
+        "기쁜 마음",
+        "고마운 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "애써 만든 모래성이 사라지고 털썩 주저앉는 모습에서 슬프고 속상한 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5581ff411869",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "수업 시간에 짝꿍과 떠들다가 선생님과 눈이 마주쳤습니다. 이안이는 얼른 고개를 숙이고 입을 꾹 다물었습니다.",
+      "answer": "부끄러운 마음",
+      "distractors": [
+        "자랑스러운 마음",
+        "기쁜 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "잘못하다 들킨 뒤 고개를 숙이고 입을 다무는 모습에서 부끄러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "631a6ec213bd",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "친구가 지호의 공책에 몰래 낙서를 했습니다. 지호는 얼굴을 찡그리고 친구를 노려보았습니다.",
+      "answer": "화난 마음",
+      "distractors": [
+        "기쁜 마음",
+        "고마운 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "자기 공책에 낙서한 친구를 노려보는 모습에서 화난 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6cdde248f65f",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "민지는 뛰어가다가 친구의 그림을 밟았습니다. 민지는 그림을 털어 주며 친구의 얼굴을 살폈습니다.",
+      "answer": "미안한 마음",
+      "distractors": [
+        "자랑스러운 마음",
+        "기쁜 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "자기 잘못으로 친구 그림이 더러워졌으니 미안한 마음이 든다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7bfbbcb18e2a",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "처음 본 친구가 다가와 같이 놀자고 했습니다. 지민이는 친구 손을 잡고 미끄럼틀로 달려갔습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "무서운 마음",
+        "화난 마음",
+        "미안한 마음"
+      ],
+      "solution": [
+        "같이 놀자는 말에 손을 잡고 달려가는 모습에서 기쁜 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80b2f14c5d4d",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "엄마가 아끼시는 컵을 깨뜨렸습니다. 서진이는 깨진 조각 앞에서 엄마가 오시기를 기다리며 손을 꼼지락거렸습니다.",
+      "answer": "걱정스러운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "자랑스러운 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "엄마가 아끼던 컵을 깨고 손을 꼼지락거리며 기다리는 모습에서 걱정스러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c3fb2200b32",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "민우는 친구에게 빌린 책을 찢었습니다. 민우는 테이프로 책을 붙이며 친구에게 뭐라고 말할지 고민했습니다.",
+      "answer": "미안한 마음",
+      "distractors": [
+        "자랑스러운 마음",
+        "설레는 마음",
+        "기쁜 마음"
+      ],
+      "solution": [
+        "빌린 책을 찢고 친구에게 할 말을 고민하는 모습에서 미안한 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "98b305780e90",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "소풍 날 아침, 창밖을 보니 비가 주룩주룩 내렸습니다. 윤서는 김밥 도시락을 바라보며 한숨을 쉬었습니다.",
+      "answer": "아쉬운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "고마운 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "기다리던 소풍 날 비가 와서 한숨을 쉬는 모습에서 아쉬운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a3368b01ef1d",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "놀이공원에서 엄마 손을 놓쳤습니다. 주변에 모르는 사람만 있자 아인이는 울음을 터뜨렸습니다.",
+      "answer": "무서운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "자랑스러운 마음",
+        "고마운 마음"
+      ],
+      "solution": [
+        "엄마를 잃고 모르는 사람 사이에서 우는 모습에서 무서운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a81c7935d95a",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "아빠가 출장에서 돌아오셨습니다. 서윤이는 현관으로 뛰어나가 아빠 품에 와락 안겼습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "무서운 마음",
+        "미안한 마음",
+        "화난 마음"
+      ],
+      "solution": [
+        "기다리던 아빠를 보고 뛰어가 안기는 모습에서 기쁜 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "adfa5c60109c",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "줄다리기에서 아깝게 졌습니다. 우리 반 친구들은 줄을 놓지 못하고 한참 동안 서 있었습니다.",
+      "answer": "아쉬운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "고마운 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "아깝게 진 뒤에 줄을 놓지 못하는 모습에서 아쉬운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b064d764a470",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "친구와 약속한 시간보다 한참 늦게 도착했습니다. 은우는 숨을 헐떡이며 친구에게 고개를 숙였습니다.",
+      "answer": "미안한 마음",
+      "distractors": [
+        "자랑스러운 마음",
+        "설레는 마음",
+        "놀란 마음"
+      ],
+      "solution": [
+        "약속에 늦어 친구에게 고개를 숙이는 모습에서 미안한 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b2550cd5687b",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "할머니께서 손수 뜬 목도리를 주셨습니다. 지우는 목도리를 두르고 할머니 품에 안겼습니다.",
+      "answer": "고마운 마음",
+      "distractors": [
+        "화난 마음",
+        "부끄러운 마음",
+        "무서운 마음"
+      ],
+      "solution": [
+        "할머니가 정성껏 만든 선물을 받고 안기는 모습에서 고마운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b830d7e5baa0",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "비가 오는데 우산이 없었습니다. 짝꿍이 우산을 같이 쓰자고 했습니다. 도윤이는 짝꿍에게 몇 번이나 인사했습니다.",
+      "answer": "고마운 마음",
+      "distractors": [
+        "화난 마음",
+        "무서운 마음",
+        "슬픈 마음"
+      ],
+      "solution": [
+        "자기를 도와준 짝꿍에게 여러 번 인사하는 모습에서 고마운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bdf72ae1f8e8",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "넘어져서 무릎을 다쳤습니다. 지나가던 언니가 일으켜 주고 밴드를 붙여 주었습니다. 나은이는 언니에게 꾸벅 인사했습니다.",
+      "answer": "고마운 마음",
+      "distractors": [
+        "화난 마음",
+        "부끄러운 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "다친 자기를 도와준 언니에게 인사하는 모습에서 고마운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c9f4beb8a72e",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "문을 열자 친구들이 한꺼번에 \"생일 축하해!\" 하고 외쳤습니다. 하준이는 눈이 동그래지고 입이 떡 벌어졌습니다.",
+      "answer": "놀란 마음",
+      "distractors": [
+        "슬픈 마음",
+        "화난 마음",
+        "미안한 마음"
+      ],
+      "solution": [
+        "생각하지 못한 일에 눈이 동그래지고 입이 벌어지는 것은 놀랐을 때의 모습이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cab7c5c7e4b3",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "동생과 다투다가 동생을 밀었습니다. 동생이 울자 형은 동생 옆에 앉아 조용히 등을 토닥였습니다.",
+      "answer": "미안한 마음",
+      "distractors": [
+        "자랑스러운 마음",
+        "기쁜 마음",
+        "설레는 마음"
+      ],
+      "solution": [
+        "자기가 밀어서 우는 동생의 등을 토닥이는 모습에서 미안한 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc99a53cdf28",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "선생님께서 가은이의 그림을 교실 앞에 붙여 주셨습니다. 가은이는 쉬는 시간마다 그림 앞에 가서 서 있었습니다.",
+      "answer": "자랑스러운 마음",
+      "distractors": [
+        "부끄러운 마음",
+        "슬픈 마음",
+        "화난 마음"
+      ],
+      "solution": [
+        "자기 그림이 교실 앞에 붙자 자꾸 그 앞에 가 보는 모습에서 자랑스러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cd1dc5562851",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "캄캄한 밤에 창밖에서 쿵 소리가 났습니다. 서아는 이불을 머리끝까지 덮어쓰고 몸을 떨었습니다.",
+      "answer": "무서운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "고마운 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "이불을 덮어쓰고 몸을 떠는 모습은 무서울 때 하는 행동이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2c94bbd028d",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "동생이 저녁이 되어도 집에 오지 않았습니다. 형은 대문 앞을 왔다 갔다 하며 골목을 자꾸 내다보았습니다.",
+      "answer": "걱정스러운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "부끄러운 마음",
+        "고마운 마음"
+      ],
+      "solution": [
+        "오지 않는 동생을 기다리며 골목을 자꾸 내다보는 모습에서 걱정스러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d7636e2bfd9b",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "우리 반이 줄다리기에서 이겼습니다. 반 친구들은 서로 손을 맞잡고 운동장을 한 바퀴 돌았습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "아쉬운 마음",
+        "미안한 마음",
+        "걱정스러운 마음"
+      ],
+      "solution": [
+        "이긴 뒤에 손을 맞잡고 운동장을 도는 모습에서 기쁜 마음을 짐작할 수 있다. 아쉬움은 졌을 때 드는 마음이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dcb6c8709949",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "학예회에서 연극을 마치자 박수가 쏟아졌습니다. 다은이는 무대에서 고개를 숙여 인사하며 활짝 웃었습니다.",
+      "answer": "자랑스러운 마음",
+      "distractors": [
+        "미안한 마음",
+        "무서운 마음",
+        "화난 마음"
+      ],
+      "solution": [
+        "연극을 잘 마치고 박수를 받으며 웃는 모습에서 자랑스러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dea638b6f60d",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "커다란 개가 으르렁거리며 다가왔습니다. 채원이는 엄마 손을 꼭 잡고 엄마 뒤로 숨었습니다.",
+      "answer": "무서운 마음",
+      "distractors": [
+        "고마운 마음",
+        "기쁜 마음",
+        "아쉬운 마음"
+      ],
+      "solution": [
+        "으르렁거리는 개를 피해 엄마 뒤로 숨는 모습에서 무서운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e2963d1336ac",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "동생이 서준이가 만든 블록 성을 발로 차서 무너뜨렸습니다. 서준이는 주먹을 꽉 쥐고 소리를 질렀습니다.",
+      "answer": "화난 마음",
+      "distractors": [
+        "고마운 마음",
+        "설레는 마음",
+        "기쁜 마음"
+      ],
+      "solution": [
+        "애써 만든 것이 무너지고 주먹을 쥐며 소리를 지르는 것은 화가 났을 때의 모습이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6b7cb891fb1",
+      "difficulty": 1,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "엄마가 깜짝 선물로 강아지 인형을 사 오셨습니다. 로아는 인형을 받자마자 엄마 볼에 뽀뽀했습니다.",
+      "answer": "기쁜 마음",
+      "distractors": [
+        "화난 마음",
+        "슬픈 마음",
+        "걱정스러운 마음"
+      ],
+      "solution": [
+        "선물을 받고 엄마에게 뽀뽀하는 모습에서 기쁜 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6f1fb12e312",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "형이 서진이의 숙제를 몰래 도와주었습니다. 서진이는 형 방에 아끼던 사탕을 살며시 놓고 나왔습니다.",
+      "answer": "고마운 마음",
+      "distractors": [
+        "화난 마음",
+        "부끄러운 마음",
+        "무서운 마음"
+      ],
+      "solution": [
+        "도와준 형에게 아끼던 사탕을 두고 나오는 모습에서 고마운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e84346fe9249",
+      "difficulty": 3,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "처음 가는 학원 앞에서 준호는 문고리를 잡았다 놓았다 했습니다. 준호는 엄마를 자꾸 돌아보았습니다.",
+      "answer": "걱정스러운 마음",
+      "distractors": [
+        "화난 마음",
+        "자랑스러운 마음",
+        "고마운 마음"
+      ],
+      "solution": [
+        "낯선 곳에 들어가지 못하고 엄마를 돌아보는 모습에서 걱정스러운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e92b9968a81e",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "할아버지께서 편찮으셔서 병원에 가셨습니다. 민호는 밥을 먹다가도 자꾸 전화기를 쳐다보았습니다.",
+      "answer": "걱정스러운 마음",
+      "distractors": [
+        "기쁜 마음",
+        "설레는 마음",
+        "자랑스러운 마음"
+      ],
+      "solution": [
+        "아프신 할아버지 소식을 기다리며 전화기를 자꾸 보는 모습에서 걱정스러운 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ed27ed323d2e",
+      "difficulty": 2,
+      "instruction": "인물의 마음으로 알맞은 것을 고르시오.",
+      "stem": "예린이는 달리기 대회에서 일등을 했습니다. 예린이는 목에 건 메달을 가족에게 보여 주었습니다.",
+      "answer": "자랑스러운 마음",
+      "distractors": [
+        "미안한 마음",
+        "무서운 마음",
+        "슬픈 마음"
+      ],
+      "solution": [
+        "일등을 하고 메달을 가족에게 보여 주는 모습에서 자랑스러운 마음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

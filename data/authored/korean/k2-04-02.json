@@ -1,0 +1,578 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[2국04-02]",
+  "skill": "소리와 표기의 차이를 고려하여 읽고 쓰기",
+  "items": [
+    {
+      "id": "0bdc7ff11cb2",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "가치 놀아요.",
+      "answer": "같이 놀아요.",
+      "distractors": [
+        "갇이 놀아요.",
+        "갖이 놀아요.",
+        "가티 놀아요."
+      ],
+      "solution": [
+        "'같다'의 뜻이 살아 있는 말이므로 '같이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1153e7e59bd0",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바다에서 조개를 주섰습니다.",
+      "answer": "바다에서 조개를 주웠습니다.",
+      "distractors": [
+        "바다에서 조개를 줏었습니다.",
+        "바다에서 조개를 주었습니다.",
+        "바다에서 조개를 줍었습니다."
+      ],
+      "solution": [
+        "'줍다'는 '주워, 주웠다'로 바뀌어 쓰인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15d170fd1f4b",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "비치 반짝입니다.",
+      "answer": "빛이 반짝입니다.",
+      "distractors": [
+        "빗이 반짝입니다.",
+        "빋이 반짝입니다.",
+        "비지 반짝입니다."
+      ],
+      "solution": [
+        "낱말 '빛'에 '이'가 붙었으니 '빛이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "295e08dd8b51",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바테 씨앗을 심었습니다.",
+      "answer": "밭에 씨앗을 심었습니다.",
+      "distractors": [
+        "받에 씨앗을 심었습니다.",
+        "밧에 씨앗을 심었습니다.",
+        "바체 씨앗을 심었습니다."
+      ],
+      "solution": [
+        "낱말 '밭'의 받침 ㅌ을 살려 '밭에'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "554d65d74684",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "오시 예뻐요.",
+      "answer": "옷이 예뻐요.",
+      "distractors": [
+        "옫이 예뻐요.",
+        "오시 예버요.",
+        "옺이 예뻐요."
+      ],
+      "solution": [
+        "낱말 '옷'에 '이'가 붙었으니 '옷이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c9b395fa714",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "소니 차가워요.",
+      "answer": "손이 차가워요.",
+      "distractors": [
+        "손니 차가워요.",
+        "손이 차가와요.",
+        "솜이 차가워요."
+      ],
+      "solution": [
+        "낱말 '손'에 '이'가 붙었으니 '손이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5cc8faf53e35",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "눈사라믈 만들었습니다.",
+      "answer": "눈사람을 만들었습니다.",
+      "distractors": [
+        "눈사람울 만들었습니다.",
+        "눈살암을 만들었습니다.",
+        "눈사라물 만들었습니다."
+      ],
+      "solution": [
+        "낱말 '눈사람'에 '을'이 붙었으니 '눈사람을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "617d6874d13d",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "고미 잡니다.",
+      "answer": "곰이 잡니다.",
+      "distractors": [
+        "곰미 잡니다.",
+        "곤이 잡니다.",
+        "고기 잡니다."
+      ],
+      "solution": [
+        "낱말 '곰'에 '이'가 붙었으니 '곰이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6437e2d38323",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "저근 상자를 주세요.",
+      "answer": "작은 상자를 주세요.",
+      "distractors": [
+        "적은 상자를 주세요.",
+        "작근 상자를 주세요.",
+        "자근 상자를 주세요."
+      ],
+      "solution": [
+        "'작다'의 받침 ㄱ을 살려 '작은'으로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "65091f2aa8ac",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "하느리 파랗습니다.",
+      "answer": "하늘이 파랗습니다.",
+      "distractors": [
+        "한을이 파랗습니다.",
+        "하늘리 파랗습니다.",
+        "하늬리 파랗습니다."
+      ],
+      "solution": [
+        "낱말 '하늘'에 '이'가 붙었으니 '하늘이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6993212c407d",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "숩에 갔습니다.",
+      "answer": "숲에 갔습니다.",
+      "distractors": [
+        "숫에 갔습니다.",
+        "수페 갔습니다.",
+        "숩페 갔습니다."
+      ],
+      "solution": [
+        "낱말 '숲'의 받침 ㅍ을 살려 '숲에'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7b1ea9849e4e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "국물을 마시고 시퍼요.",
+      "answer": "국물을 마시고 싶어요.",
+      "distractors": [
+        "궁물을 마시고 싶어요.",
+        "국물을 마시고 십퍼요.",
+        "궁물을 마시고 시퍼요."
+      ],
+      "solution": [
+        "'싶다'의 받침 ㅍ을 살려 '싶어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7b4ea7965e61",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "떡볶끼를 먹었습니다.",
+      "answer": "떡볶이를 먹었습니다.",
+      "distractors": [
+        "떡복이를 먹었습니다.",
+        "떡뽁이를 먹었습니다.",
+        "떡보끼를 먹었습니다."
+      ],
+      "solution": [
+        "'볶다'에서 온 말이므로 소리가 [떡뽀끼]여도 '떡볶이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7e99eab3d202",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "동생이 우서요.",
+      "answer": "동생이 웃어요.",
+      "distractors": [
+        "동생이 웆어요.",
+        "동생이 욷어요.",
+        "동생이 우써요."
+      ],
+      "solution": [
+        "'웃다'의 받침 ㅅ을 살려 '웃어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "856ddf9b4162",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "할머니께서 웃끼셨습니다.",
+      "answer": "할머니께서 웃기셨습니다.",
+      "distractors": [
+        "할머니께서 욷기셨습니다.",
+        "할머니께서 우끼셨습니다.",
+        "할머니께서 웃키셨습니다."
+      ],
+      "solution": [
+        "'웃다'에서 온 말이므로 소리가 [욷끼]여도 '웃기셨습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b0b29b6aa13",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "창무늘 활짝 열었습니다.",
+      "answer": "창문을 활짝 열었습니다.",
+      "distractors": [
+        "창문늘 활짝 열었습니다.",
+        "창물을 활짝 열었습니다.",
+        "창무를 활짝 열었습니다."
+      ],
+      "solution": [
+        "낱말 '창문'에 '을'이 붙었으니 '창문을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9115f2bd662b",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "궁무리 뜨겁습니다.",
+      "answer": "국물이 뜨겁습니다.",
+      "distractors": [
+        "궁물이 뜨겁습니다.",
+        "국무리 뜨겁습니다.",
+        "국믈이 뜨겁습니다."
+      ],
+      "solution": [
+        "'국'과 '물'이 만난 말이므로 소리가 [궁물]이어도 '국물'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "930ffb630c7c",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "물이 기퍼요.",
+      "answer": "물이 깊어요.",
+      "distractors": [
+        "물이 깁어요.",
+        "물이 깊퍼요.",
+        "물이 깁퍼요."
+      ],
+      "solution": [
+        "'깊다'의 받침 ㅍ을 살려 '깊어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97b2e9e09d03",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "무를 마셔요.",
+      "answer": "물을 마셔요.",
+      "distractors": [
+        "물를 마셔요.",
+        "무릉 마셔요.",
+        "뭇을 마셔요."
+      ],
+      "solution": [
+        "낱말 '물'에 '을'이 붙었으니 '물을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "abd0757c09cc",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "부어게서 요리를 합니다.",
+      "answer": "부엌에서 요리를 합니다.",
+      "distractors": [
+        "부억에서 요리를 합니다.",
+        "부업에서 요리를 합니다.",
+        "부엌게서 요리를 합니다."
+      ],
+      "solution": [
+        "낱말 '부엌'의 받침 ㅋ을 살려 '부엌에서'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afacaf80b847",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "꼬치 피었습니다.",
+      "answer": "꽃이 피었습니다.",
+      "distractors": [
+        "꼿이 피었습니다.",
+        "꼳이 피었습니다.",
+        "꽃치 피었습니다."
+      ],
+      "solution": [
+        "낱말 '꽃'에 '이'가 붙었으니 '꽃이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b44e4bb47f73",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바블 먹었습니다.",
+      "answer": "밥을 먹었습니다.",
+      "distractors": [
+        "밥을 머겄습니다.",
+        "바블 머겄습니다.",
+        "밥울 먹었습니다."
+      ],
+      "solution": [
+        "낱말 '밥'에 '을'이 붙었으니 '밥을'로 쓰고, '먹다'를 살려 '먹었습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba842ba8c9c7",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "달기 알을 낳았습니다.",
+      "answer": "닭이 알을 낳았습니다.",
+      "distractors": [
+        "닥이 알을 낳았습니다.",
+        "달이 알을 낳았습니다.",
+        "닭기 알을 낳았습니다."
+      ],
+      "solution": [
+        "낱말 '닭'에 '이'가 붙었으니 '닭이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bdfca6d533db",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "동생 소늘 잡았습니다.",
+      "answer": "동생 손을 잡았습니다.",
+      "distractors": [
+        "동생 손늘 잡았습니다.",
+        "동생 솜을 잡았습니다.",
+        "동생 소를 잡았습니다."
+      ],
+      "solution": [
+        "낱말 '손'에 '을'이 붙었으니 '손을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cec6bab4e670",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바미 되었습니다.",
+      "answer": "밤이 되었습니다.",
+      "distractors": [
+        "반이 되었습니다.",
+        "밤미 되었습니다.",
+        "밥이 되었습니다."
+      ],
+      "solution": [
+        "낱말 '밤'에 '이'가 붙었으니 '밤이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cecb57391d31",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "그림을 그려서 부텨요.",
+      "answer": "그림을 그려서 붙여요.",
+      "distractors": [
+        "그림을 그려서 붓여요.",
+        "그림을 그려서 붇여요.",
+        "그림을 그려서 부쳐요."
+      ],
+      "solution": [
+        "'붙다'에서 온 '붙이다'이므로 '붙여요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1d7196e4297",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "나뭇니피 떨어졌습니다.",
+      "answer": "나뭇잎이 떨어졌습니다.",
+      "distractors": [
+        "나뭇입이 떨어졌습니다.",
+        "나무입이 떨어졌습니다.",
+        "나뭇잎피 떨어졌습니다."
+      ],
+      "solution": [
+        "낱말 '나뭇잎'에 '이'가 붙었으니 '나뭇잎이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e33bc9880aa1",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "의자에 안자요.",
+      "answer": "의자에 앉아요.",
+      "distractors": [
+        "의자에 안저요.",
+        "의자에 앉자요.",
+        "의자에 안아요."
+      ],
+      "solution": [
+        "'앉다'의 받침 ㄵ을 살려 '앉아요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6d8ab8fec48",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "책을 일거요.",
+      "answer": "책을 읽어요.",
+      "distractors": [
+        "책을 익어요.",
+        "챙을 읽어요.",
+        "책을 일어요."
+      ],
+      "solution": [
+        "'읽다'의 받침 ㄺ을 살려 '읽어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1071a43ff4c",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "신발을 신꼬 나갔습니다.",
+      "answer": "신발을 신고 나갔습니다.",
+      "distractors": [
+        "신발을 싣고 나갔습니다.",
+        "신발을 신코 나갔습니다.",
+        "신발을 싱고 나갔습니다."
+      ],
+      "solution": [
+        "'신다'에 '고'가 붙은 말이므로 소리가 [신꼬]여도 '신고'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국02-04]",
+  "skill": "사실과 의견을 구분하고 의견 비교하기",
+  "items": [
+    {
+      "id": "013554627fe6",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 노래가 올해 나온 노래 가운데 가장 좋습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 좋다'는 듣는 사람마다 다르다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "125b28904512",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "축구는 누구나 좋아할 만한 운동입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'좋아할 만하다'는 글쓴이의 생각이고 모두가 같다고 확인할 수 없다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "12fda5d9916d",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "지구는 해의 둘레를 돕니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "과학 자료로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13f67dda5502",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "학교까지 걸어가는 길은 너무 멉니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'너무 멀다'는 걷는 사람이 느끼는 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d9c90021d80",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 동네 공원은 아주 멋진 곳입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'멋지다'는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1f96aba4a425",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "소방관은 세상에서 가장 멋진 직업입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 멋지다'는 글쓴이의 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23a6f2f82b1a",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "김치찌개는 세상에서 제일 맛있는 음식입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'제일 맛있다'는 먹는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "245290fa3bf2",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "겨울이 되면 해가 일찍 집니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "해 지는 시각을 재 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "30d086890cfb",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "달은 밤하늘에서 모양이 바뀌어 보입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "여러 날 밤하늘을 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "30dfaba19050",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "무지개를 보면 누구나 행복해집니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "행복한지는 사람마다 다르고 모두가 그렇다고 확인할 수 없다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32784c6b8e9f",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 마을 병원 선생님이 가장 친절하십니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 친절하다'는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a059a09ba1b",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 책은 모두 백 쪽입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "쪽수를 세어 보면 누구나 같은 답을 얻는다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3fda816e169e",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "방학은 조금 더 길어야 합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'길어야 한다'는 글쓴이가 바라는 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "401fee380cf3",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "어제 우리 마을에 비가 내렸습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "날씨 기록으로 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4bba3f28e933",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "고래는 새끼를 낳아 젖을 먹여 기릅니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "책이나 자료로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5cc16f55ad0b",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 학교 운동장에는 축구 골대가 두 개 있습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "운동장에 가 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "65b61ec845e5",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리나라의 수도는 서울입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "지도나 사전으로 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6c9a47929f8d",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "얼음은 따뜻한 곳에 두면 녹습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "실험으로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71771aad6768",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "거북은 느려서 답답한 동물입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'답답하다'는 보는 사람의 느낌이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "735a4167a96e",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "아침에는 빵보다 밥을 먹는 것이 낫습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'낫다'는 견주는 사람의 판단이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "73fe33c82a3b",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "토끼는 풀과 채소를 먹습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "토끼를 길러 보거나 자료를 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "762145d755c0",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "거북은 등에 단단한 껍데기가 있습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "거북을 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "78139bb1f748",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 반 교실에는 창문이 네 개 있습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "창문을 세어 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7965adbb5449",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "사과는 가을에 많이 거둡니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "농사 자료로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88336168991e",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 학교는 1950년에 세워졌습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "학교 기록으로 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e65006c6d8d",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "밤하늘의 별을 보는 일은 정말 즐겁습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'즐겁다'는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "910765a71718",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 책은 백 쪽이나 되어서 읽기 지루합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "쪽수는 확인할 수 있지만 '지루하다'는 읽는 사람의 느낌이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "915a04301d38",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "수영은 가장 재미있는 운동입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 재미있다'는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9551ddf399e6",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "사과는 깎아 먹는 것보다 껍질째 먹는 것이 맛있습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'맛있다'는 먹는 사람의 판단이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96b939cac467",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "해바라기는 여름에 노란 꽃을 피웁니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "해바라기를 길러 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96d4252d0235",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 공원은 우리 동네에서 가장 쉬기 좋은 곳입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 쉬기 좋다'는 글쓴이의 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "989f0d50c309",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "토끼는 집에서 기르기에 가장 좋은 동물입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 좋다'는 사람마다 생각이 다르다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "98d88df5489b",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "일주일은 칠 일입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "달력을 보면 누구나 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9dd4939799f8",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 학교 도서관은 2층에 있습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "가서 보면 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fa1ced3ec59",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "개미는 다리가 여섯 개입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "개미를 관찰하면 다리 수를 셀 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fe3cf3690c1",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "급식에 과일이 더 자주 나와야 합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'나와야 한다'는 글쓴이가 바라는 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a247aa4fff71",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "연필은 샤프보다 글씨 쓰기에 편합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'편하다'는 쓰는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2fda66a10d0",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 마을에는 병원이 두 곳 있습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "마을을 둘러보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a7dbcff9b4b0",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "보름달이 초승달보다 아름답습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'아름답다'는 보는 사람의 느낌이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aaae5e9e3ff2",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "벌은 꽃에서 꿀을 모읍니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "관찰하거나 자료를 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd906d0419c9",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 공원은 작년 봄에 문을 열었습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "공원 안내판이나 기록으로 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1211bccb43a",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "소방서 전화번호는 119입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "누구나 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c34bbd8b81b5",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 학교는 오래되어서 더 멋있습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'더 멋있다'는 보는 사람의 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cce771514f37",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "이 연필은 길이가 15센티미터입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "자로 재 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d13102564650",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "축구보다 피구가 더 재미있습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'더 재미있다'는 사람마다 다르다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e21f6911eccd",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "무지개는 비가 그친 뒤에 보일 때가 많습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "관찰로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e37f07a7430c",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "닭고기는 모든 고기 가운데 가장 맛있습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'가장 맛있다'는 사람마다 다르다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e657def1805d",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 집에서 학교까지 걸어서 십 분 걸립니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "시계를 보며 걸어 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e83739e99948",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "얼음과자는 겨울에 먹어야 더 맛있습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'더 맛있다'는 먹는 사람의 판단이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e9115f9a3d3a",
+      "difficulty": 3,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "벌은 무서워서 가까이 가기 싫은 곤충입니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'무섭다', '싫다'는 사람마다 다르게 느낀다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea67db519ed7",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "강아지보다 고양이가 더 귀엽습니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'더 귀엽다'는 보는 사람의 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee82769d89a1",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "비 오는 날은 기분이 우울합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "비 오는 날을 좋아하는 사람도 있으니 느낌은 사람마다 다르다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eec4702908fd",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "물은 0도에서 얼기 시작합니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "실험으로 확인할 수 있는 내용이다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f38a2cfd2e9e",
+      "difficulty": 1,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "닭은 알을 낳습니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "닭을 기르는 곳에서 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f720f5b22505",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "우리 반 학생은 모두 스물다섯 명입니다.",
+      "answer": "사실",
+      "distractors": [
+        "의견",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "반 학생을 세어 보면 확인할 수 있다.",
+        "그러므로 사실을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fe658a95951e",
+      "difficulty": 2,
+      "instruction": "다음 문장이 사실인지 의견인지 고르시오.",
+      "stem": "교실 창문은 더 커야 합니다.",
+      "answer": "의견",
+      "distractors": [
+        "사실",
+        "질문",
+        "명령"
+      ],
+      "solution": [
+        "'커야 한다'는 글쓴이가 바라는 생각이다.",
+        "그러므로 의견을 나타내는 문장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

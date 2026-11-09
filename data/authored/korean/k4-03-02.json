@@ -1,0 +1,388 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국03-02]",
+  "skill": "절차와 결과가 드러나는 보고 글쓰기",
+  "items": [
+    {
+      "id": "01688f2d014d",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'신발 신기'의 차례입니다.\n1. 신발 안에 발을 넣는다\n2. □\n3. 현관문을 열고 나간다",
+      "answer": "신발 끈을 묶는다",
+      "distractors": [
+        "신발을 벗는다",
+        "신발을 빤다",
+        "신발장을 정리한다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '신발 끈을 묶는다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "07fd9fe87f5f",
+      "difficulty": 3,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'샌드위치 만들기'의 차례입니다.\n1. 식빵 한 장에 잼을 바른다\n2. 치즈와 채소를 올린다\n3. □\n4. 반으로 잘라 접시에 담는다",
+      "answer": "남은 식빵으로 덮는다",
+      "distractors": [
+        "식빵을 산다",
+        "접시를 씻는다",
+        "샌드위치를 먹는다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '남은 식빵으로 덮는다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0ec3b5fe42f7",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'라면 끓이기'의 차례입니다.\n1. 냄비에 물을 붓는다\n2. □\n3. 4분 동안 더 끓인다",
+      "answer": "물이 끓으면 면과 수프를 넣는다",
+      "distractors": [
+        "그릇에 담아 먹는다",
+        "냄비를 씻는다",
+        "면을 냉장고에 넣는다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '물이 끓으면 면과 수프를 넣는다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24f90b921565",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'라디오 듣기'의 차례입니다.\n1. 라디오를 켠다\n2. □\n3. 소리 크기를 알맞게 한다",
+      "answer": "듣고 싶은 방송에 맞춘다",
+      "distractors": [
+        "라디오를 끈다",
+        "라디오를 산다",
+        "건전지를 버린다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '듣고 싶은 방송에 맞춘다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "288e34b1be0d",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'화분에 씨앗 심기'의 차례입니다.\n1. 화분에 흙을 담는다\n2. □\n3. 흙을 덮고 물을 준다",
+      "answer": "흙에 구멍을 내고 씨앗을 넣는다",
+      "distractors": [
+        "싹이 튼 것을 옮겨 심는다",
+        "열매를 딴다",
+        "꽃이 핀 것을 구경한다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '흙에 구멍을 내고 씨앗을 넣는다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "28d88d2b7638",
+      "difficulty": 3,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'물 끓는 온도 재기'의 차례입니다.\n1. 비커에 물을 담는다\n2. □\n3. 물이 끓을 때 온도계 눈금을 읽는다\n4. 잰 온도를 적는다",
+      "answer": "알코올램프로 물을 데운다",
+      "distractors": [
+        "온도계를 닦아 넣는다",
+        "물을 버린다",
+        "비커를 산다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '알코올램프로 물을 데운다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29be6dad3db5",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'손 씻기'의 차례입니다.\n1. 손에 물을 묻힌다\n2. 비누칠을 한다\n3. □\n4. 수건으로 닦는다",
+      "answer": "흐르는 물에 비누를 헹군다",
+      "distractors": [
+        "비누를 산다",
+        "손톱을 깎는다",
+        "물을 끈다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '흐르는 물에 비누를 헹군다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c0acc3aab5e",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'교실 청소하기'의 차례입니다.\n1. 의자를 책상 위에 올린다\n2. □\n3. 걸레로 바닥을 닦는다\n4. 의자를 내려놓는다",
+      "answer": "바닥을 쓴다",
+      "distractors": [
+        "수업을 시작한다",
+        "창문을 닫고 집에 간다",
+        "걸레를 산다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '바닥을 쓴다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4493ff30aeb3",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'종이배 접기'의 차례입니다.\n1. 색종이를 반으로 접는다\n2. □\n3. 아래쪽을 펼쳐 배 모양을 만든다",
+      "answer": "모서리를 접어 지붕 모양을 만든다",
+      "distractors": [
+        "배를 물에 띄운다",
+        "색종이를 산다",
+        "가위로 자른다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '모서리를 접어 지붕 모양을 만든다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5a4646b1c5c4",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'책 빌리기'의 차례입니다.\n1. 읽고 싶은 책을 고른다\n2. □\n3. 빌린 책을 가방에 넣는다",
+      "answer": "대출 창구에 책을 낸다",
+      "distractors": [
+        "책을 반납한다",
+        "책을 다 읽는다",
+        "도서관을 나온다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '대출 창구에 책을 낸다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71a7ae0e39e3",
+      "difficulty": 3,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'콩나물 기르기'의 차례입니다.\n1. 콩을 하룻밤 물에 불린다\n2. 구멍 난 그릇에 콩을 담는다\n3. □\n4. 자란 콩나물을 거둔다",
+      "answer": "검은 천을 덮고 하루에 여러 번 물을 준다",
+      "distractors": [
+        "콩나물을 무쳐 먹는다",
+        "콩을 밭에 심는다",
+        "그릇을 햇볕에 말린다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '검은 천을 덮고 하루에 여러 번 물을 준다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7297fa371835",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'달걀 삶기'의 차례입니다.\n1. 냄비에 달걀과 물을 넣는다\n2. □\n3. 다 익은 달걀을 찬물에 담근다",
+      "answer": "불을 켜고 물을 끓인다",
+      "distractors": [
+        "달걀 껍데기를 깐다",
+        "달걀을 산다",
+        "냄비를 정리한다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '불을 켜고 물을 끓인다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7aff22bb2747",
+      "difficulty": 3,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'주먹밥 만들기'의 차례입니다.\n1. 밥에 참기름과 소금을 넣는다\n2. 고루 섞는다\n3. □\n4. 김 가루를 묻힌다",
+      "answer": "한 주먹씩 쥐어 동그랗게 뭉친다",
+      "distractors": [
+        "밥을 짓기 위해 쌀을 산다",
+        "주먹밥을 먹는다",
+        "그릇을 씻는다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '한 주먹씩 쥐어 동그랗게 뭉친다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "99070f3c853b",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'편지 보내기'의 차례입니다.\n1. 편지를 쓴다\n2. 봉투에 넣는다\n3. □\n4. 우체통에 넣는다",
+      "answer": "우표를 붙인다",
+      "distractors": [
+        "답장을 읽는다",
+        "편지를 찢는다",
+        "우체국에 전화한다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '우표를 붙인다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1a8c1d4a51c",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'과학 실험 보고서 쓰기'의 차례입니다.\n1. 실험 목적을 쓴다\n2. 실험 방법을 쓴다\n3. □\n4. 알게 된 점을 쓴다",
+      "answer": "실험 결과를 쓴다",
+      "distractors": [
+        "실험 도구를 산다",
+        "보고서 제목을 지운다",
+        "친구에게 보고서를 빌린다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '실험 결과를 쓴다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c727abf46e79",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'자전거 타기'의 차례입니다.\n1. □\n2. 자전거에 앉는다\n3. 페달을 밟아 나아간다",
+      "answer": "안전모를 쓴다",
+      "distractors": [
+        "자전거를 세운다",
+        "자전거를 닦는다",
+        "브레이크를 고친다"
+      ],
+      "solution": [
+        "첫째에는 앞뒤 일과 이어지는 '안전모를 쓴다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cf62122ae28c",
+      "difficulty": 3,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'강낭콩 관찰 일지 쓰기'의 차례입니다.\n1. 관찰한 날짜를 쓴다\n2. □\n3. 달라진 점을 글로 쓴다",
+      "answer": "강낭콩의 모습을 그린다",
+      "distractors": [
+        "강낭콩을 먹는다",
+        "일지를 버린다",
+        "강낭콩을 산다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '강낭콩의 모습을 그린다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1263e0c2627",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'우유 마시기'의 차례입니다.\n1. 우유갑을 연다\n2. □\n3. 우유를 마신다",
+      "answer": "컵에 우유를 따른다",
+      "distractors": [
+        "우유갑을 헹군다",
+        "우유를 산다",
+        "컵을 씻는다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '컵에 우유를 따른다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f40ae37d5eb8",
+      "difficulty": 1,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'이 닦기'의 차례입니다.\n1. 칫솔에 치약을 짠다\n2. □\n3. 물로 입을 헹군다",
+      "answer": "이를 구석구석 닦는다",
+      "distractors": [
+        "치약 뚜껑을 산다",
+        "칫솔을 버린다",
+        "세수를 한다"
+      ],
+      "solution": [
+        "둘째에는 앞뒤 일과 이어지는 '이를 구석구석 닦는다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fc1d0b8b878a",
+      "difficulty": 2,
+      "instruction": "차례에 맞게 할 때 □에 들어갈 일을 고르시오.",
+      "stem": "'빨래 널기'의 차례입니다.\n1. 세탁기에서 빨래를 꺼낸다\n2. 빨래를 털어 주름을 편다\n3. □\n4. 마른 빨래를 갠다",
+      "answer": "빨래 건조대에 넌다",
+      "distractors": [
+        "빨래를 다시 넣는다",
+        "세제를 산다",
+        "옷장을 닫는다"
+      ],
+      "solution": [
+        "셋째에는 앞뒤 일과 이어지는 '빨래 건조대에 넌다'가 들어가야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

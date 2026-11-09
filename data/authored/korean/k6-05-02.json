@@ -1,0 +1,426 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국05-02]",
+  "skill": "비유적 표현 효과에 유의한 작품 감상",
+  "items": [
+    {
+      "id": "09794cd805d3",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "책은 마음의 창문입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 책을 창문이라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0dafe3ac6ae3",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "바람이 나뭇잎에게 속삭입니다.",
+      "answer": "의인 표현",
+      "distractors": [
+        "직유",
+        "은유",
+        "비유가 쓰이지 않음"
+      ],
+      "solution": [
+        "바람이 사람처럼 속삭인다고 했으므로 의인 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "14858b069858",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "친구의 웃음은 햇살입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 웃음을 햇살이라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15e820e7c7d3",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "시냇물이 노래를 부르며 흘러갑니다.",
+      "answer": "의인 표현",
+      "distractors": [
+        "직유",
+        "은유",
+        "비유가 쓰이지 않음"
+      ],
+      "solution": [
+        "시냇물이 사람처럼 노래를 부른다고 했으므로 의인 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "197d85781abb",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "달님이 창문으로 살며시 들여다봅니다.",
+      "answer": "의인 표현",
+      "distractors": [
+        "직유",
+        "은유",
+        "비유가 쓰이지 않음"
+      ],
+      "solution": [
+        "달이 사람처럼 들여다본다고 했으므로 의인 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1b58e171cd87",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "그 아이는 달리기가 바람처럼 빠릅니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'처럼'을 써서 빠르기를 바람에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "31b8462c5b3f",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "시간은 쏜살입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 시간을 쏜살이라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "344aebd69f7e",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "운동장에서 친구들과 공을 찼습니다.",
+      "answer": "비유가 쓰이지 않음",
+      "distractors": [
+        "직유",
+        "은유",
+        "의인 표현"
+      ],
+      "solution": [
+        "있었던 일을 그대로 적었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4dca414f074f",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "우리 언니는 걸어 다니는 사전입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 언니를 사전이라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62c87927feb9",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "우리 할머니 손은 약손입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 할머니 손을 약손이라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d0c9a220e9f",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "아기 손은 단풍잎 같습니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'같다'를 써서 아기 손을 단풍잎에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7252d91a6d0d",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "구름이 솜사탕같이 뭉게뭉게 떠 있습니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'같이'를 써서 구름을 솜사탕에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88e6864f45f7",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "우리 집 고양이는 하루에 열 시간 넘게 잡니다.",
+      "answer": "비유가 쓰이지 않음",
+      "distractors": [
+        "직유",
+        "은유",
+        "의인 표현"
+      ],
+      "solution": [
+        "고양이가 자는 시간을 그대로 적었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "95ac4e663df0",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "별이 보석처럼 반짝입니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'처럼'을 써서 별을 보석에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9619c5827527",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "내 마음은 호수입니다.",
+      "answer": "은유",
+      "distractors": [
+        "직유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "견주는 말 없이 마음을 호수라고 바로 일렀으므로 은유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9c1f60004103",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "창밖에 비가 내립니다.",
+      "answer": "비유가 쓰이지 않음",
+      "distractors": [
+        "직유",
+        "은유",
+        "의인 표현"
+      ],
+      "solution": [
+        "비 오는 모습을 그대로 적었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4e6e2063fbf",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "우리 학교 운동장에는 나무가 많습니다.",
+      "answer": "비유가 쓰이지 않음",
+      "distractors": [
+        "직유",
+        "은유",
+        "의인 표현"
+      ],
+      "solution": [
+        "운동장의 모습을 그대로 적었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b746b0bf0257",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "오늘 점심으로 김밥을 먹었습니다.",
+      "answer": "비유가 쓰이지 않음",
+      "distractors": [
+        "직유",
+        "은유",
+        "의인 표현"
+      ],
+      "solution": [
+        "있었던 일을 그대로 적었을 뿐 견주는 말이 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b783d1a7593f",
+      "difficulty": 3,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "꽃들이 고개를 들고 봄을 반깁니다.",
+      "answer": "의인 표현",
+      "distractors": [
+        "직유",
+        "은유",
+        "비유가 쓰이지 않음"
+      ],
+      "solution": [
+        "꽃이 사람처럼 고개를 들고 반긴다고 했으므로 의인 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "befaf607f364",
+      "difficulty": 2,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "아빠 목소리는 천둥처럼 큽니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'처럼'을 써서 목소리를 천둥에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc7bd0fb2b7a",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "해님이 방긋 웃으며 인사합니다.",
+      "answer": "의인 표현",
+      "distractors": [
+        "직유",
+        "은유",
+        "비유가 쓰이지 않음"
+      ],
+      "solution": [
+        "해가 사람처럼 웃고 인사한다고 했으므로 의인 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f4c17ffea3e2",
+      "difficulty": 1,
+      "instruction": "다음 문장에 쓰인 표현을 고르시오.",
+      "stem": "내 동생의 볼은 사과처럼 빨갛습니다.",
+      "answer": "직유",
+      "distractors": [
+        "은유",
+        "비유가 쓰이지 않음",
+        "의인 표현"
+      ],
+      "solution": [
+        "'처럼'을 써서 볼을 사과에 견주었으므로 직유다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

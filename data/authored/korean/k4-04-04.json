@@ -1,0 +1,464 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국04-04]",
+  "skill": "높임·지시·접속 표현을 상황에 맞게 사용",
+  "items": [
+    {
+      "id": "0e61b715f85f",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "아버지께 신문을 건네는 장면입니다.",
+      "answer": "아버지, 신문을 드릴게요.",
+      "distractors": [
+        "아버지, 신문을 줄게.",
+        "아버지, 신문 받아.",
+        "아버지, 신문을 준다."
+      ],
+      "solution": [
+        "웃어른께 주는 일은 '드리다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "114c470faf5b",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지께서 신문을 읽으시는 장면입니다.",
+      "answer": "할아버지께서 신문을 읽으십니다.",
+      "distractors": [
+        "할아버지가 신문을 읽는다.",
+        "할아버지께서 신문을 읽어.",
+        "할아버지가 신문을 읽어요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '께서'와 '-으시-'를 함께 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d6f6a059773",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "교장 선생님께서 운동장에 나오신 장면입니다.",
+      "answer": "교장 선생님께서 운동장에 나오셨습니다.",
+      "distractors": [
+        "교장 선생님이 운동장에 나왔다.",
+        "교장 선생님께서 운동장에 나왔어.",
+        "교장 선생님이 운동장에 나왔습니다."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '께서'와 '-시-'를 함께 써서 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3197067707e2",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "아버지께 전화가 왔다고 알리는 장면입니다.",
+      "answer": "아버지, 전화 받으세요.",
+      "distractors": [
+        "아버지, 전화 받아.",
+        "아버지, 전화 왔다.",
+        "아버지, 전화 받아라."
+      ],
+      "solution": [
+        "웃어른께 부탁할 때는 '-으세요'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c8e7e11b85f",
+      "difficulty": 1,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지께서 주무시는 장면입니다.",
+      "answer": "할아버지께서 방에서 주무십니다.",
+      "distractors": [
+        "할아버지가 방에서 잡니다.",
+        "할아버지께서 방에서 잔다.",
+        "할아버지가 방에서 자요."
+      ],
+      "solution": [
+        "'자다'의 높임 표현은 '주무시다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e5d19830858",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께 공책을 내는 장면입니다.",
+      "answer": "선생님께 공책을 드렸습니다.",
+      "distractors": [
+        "선생님한테 공책을 줬다.",
+        "선생님에게 공책을 주었다.",
+        "선생님께 공책을 줬어."
+      ],
+      "solution": [
+        "웃어른께 주는 일은 '께'와 '드리다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "407b56cbbf0f",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "아버지께서 집에 계시는지 묻는 장면입니다.",
+      "answer": "아버지께서 집에 계시니?",
+      "distractors": [
+        "아버지가 집에 있니?",
+        "아버지께서 집에 있어?",
+        "아버지 집에 있냐?"
+      ],
+      "solution": [
+        "사람이 있는 것을 높일 때는 '계시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "450a506293aa",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께 질문하는 장면입니다.",
+      "answer": "선생님, 여쭈어볼 것이 있습니다.",
+      "distractors": [
+        "선생님, 물어볼 게 있어.",
+        "선생님, 묻고 싶은 것이 있다.",
+        "선생님, 질문 있어."
+      ],
+      "solution": [
+        "웃어른께 묻는 일은 '여쭈다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54b22b3f4128",
+      "difficulty": 1,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니의 나이를 묻는 장면입니다.",
+      "answer": "할머니, 연세가 어떻게 되세요?",
+      "distractors": [
+        "할머니, 나이가 몇 살이야?",
+        "할머니, 나이가 어떻게 돼?",
+        "할머니는 몇 살이니?"
+      ],
+      "solution": [
+        "'나이'의 높임 표현은 '연세'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5a47f6100763",
+      "difficulty": 1,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니께 잘 자라고 인사하는 장면입니다.",
+      "answer": "할머니, 안녕히 주무세요.",
+      "distractors": [
+        "할머니, 잘 자.",
+        "할머니, 잘 자요.",
+        "할머니, 푹 자."
+      ],
+      "solution": [
+        "'자다'의 높임 표현인 '주무시다'를 써서 '안녕히 주무세요'로 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62fd021ece81",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께 인사하는 장면입니다.",
+      "answer": "선생님, 안녕히 계세요.",
+      "distractors": [
+        "선생님, 잘 있어.",
+        "선생님, 안녕.",
+        "선생님, 잘 있어라."
+      ],
+      "solution": [
+        "웃어른께는 '안녕히 계세요'처럼 높여 인사한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "705a6fad5169",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니를 찾아뵙는 장면입니다.",
+      "answer": "오늘 할머니를 뵈러 갑니다.",
+      "distractors": [
+        "오늘 할머니를 보러 간다.",
+        "오늘 할머니 보러 가.",
+        "오늘 할머니를 만나러 간다."
+      ],
+      "solution": [
+        "웃어른을 만나는 일은 '뵙다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7afb87f4143f",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니께서 시장에 가신다고 말하는 장면입니다.",
+      "answer": "할머니께서 시장에 가십니다.",
+      "distractors": [
+        "할머니가 시장에 간다.",
+        "할머니께서 시장에 가.",
+        "할머니가 시장 가요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '께서'와 '-시-'를 함께 써서 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8119cc65f5e8",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지께서 돌아가신 일을 알리는 장면입니다.",
+      "answer": "작년에 할아버지께서 돌아가셨습니다.",
+      "distractors": [
+        "작년에 할아버지가 죽었습니다.",
+        "작년에 할아버지께서 죽었다.",
+        "작년에 할아버지가 죽었어."
+      ],
+      "solution": [
+        "'죽다'의 높임 표현은 '돌아가시다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "881a2a018371",
+      "difficulty": 1,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니께서 식사하시는 장면입니다.",
+      "answer": "할머니께서 진지를 드십니다.",
+      "distractors": [
+        "할머니가 밥을 먹습니다.",
+        "할머니께서 밥을 먹는다.",
+        "할머니가 진지를 먹어요."
+      ],
+      "solution": [
+        "'밥'은 '진지'로, '먹다'는 '드시다'로 높이고 '께서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b3afc6d02f6",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "아버지께서 잡수시는 장면입니다.",
+      "answer": "아버지께서 과일을 잡수십니다.",
+      "distractors": [
+        "아버지가 과일을 먹습니다.",
+        "아버지께서 과일을 먹는다.",
+        "아버지가 과일을 먹어."
+      ],
+      "solution": [
+        "'먹다'는 '잡수시다'나 '드시다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2b13c0693f7",
+      "difficulty": 1,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지 댁에 가는 장면입니다.",
+      "answer": "주말에 할아버지 댁에 갑니다.",
+      "distractors": [
+        "주말에 할아버지 집에 간다.",
+        "주말에 할아버지네 집 가.",
+        "주말에 할아버지 집 놀러 간다."
+      ],
+      "solution": [
+        "웃어른의 '집'은 '댁'으로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6e8f3c71f39",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할머니께 생신 축하를 드리는 장면입니다.",
+      "answer": "할머니, 생신 축하드립니다.",
+      "distractors": [
+        "할머니, 생일 축하해.",
+        "할머니, 생일 축하한다.",
+        "할머니, 생일 잘 보내."
+      ],
+      "solution": [
+        "웃어른의 '생일'은 '생신'으로 높이고 '축하드립니다'로 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c429d4542a3c",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께서 교실에 계시는 장면입니다.",
+      "answer": "선생님께서 교실에 계십니다.",
+      "distractors": [
+        "선생님이 교실에 있습니다.",
+        "선생님께서 교실에 있다.",
+        "선생님이 교실에 있어요."
+      ],
+      "solution": [
+        "사람이 있는 것을 높일 때는 '계시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce27205cacfe",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지께서 편찮으신 장면입니다.",
+      "answer": "할아버지께서 편찮으십니다.",
+      "distractors": [
+        "할아버지가 아픕니다.",
+        "할아버지께서 아프다.",
+        "할아버지가 아파요."
+      ],
+      "solution": [
+        "'아프다'의 높임 표현은 '편찮으시다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d147677c33b5",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "어머니께 물을 가져다드리는 장면입니다.",
+      "answer": "어머니, 물 가져다드릴까요?",
+      "distractors": [
+        "엄마, 물 가져다줄까?",
+        "어머니, 물 줄까?",
+        "엄마, 물 마실래?"
+      ],
+      "solution": [
+        "웃어른께 주는 일은 '드리다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d9bfda5c3a05",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "어머니께서 할머니를 모시고 오는 장면입니다.",
+      "answer": "어머니께서 할머니를 모시고 오셨습니다.",
+      "distractors": [
+        "어머니께서 할머니를 데리고 왔습니다.",
+        "어머니가 할머니를 데려왔다.",
+        "엄마가 할머니를 데리고 왔어."
+      ],
+      "solution": [
+        "웃어른을 함께 오게 할 때는 '데리다' 대신 '모시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da55201758b4",
+      "difficulty": 3,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께서 말씀하시는 장면입니다.",
+      "answer": "선생님께서 숙제를 말씀하셨습니다.",
+      "distractors": [
+        "선생님이 숙제를 말했다.",
+        "선생님께서 숙제를 말했어.",
+        "선생님이 숙제를 얘기했다."
+      ],
+      "solution": [
+        "웃어른이 말하는 것은 '말씀하시다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e3d88bab9efb",
+      "difficulty": 2,
+      "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
+      "stem": "선생님의 이름을 묻는 장면입니다.",
+      "answer": "선생님, 성함이 어떻게 되세요?",
+      "distractors": [
+        "선생님, 이름이 뭐야?",
+        "선생님, 이름이 뭐니?",
+        "선생님 이름은 뭐다."
+      ],
+      "solution": [
+        "'이름'의 높임 표현은 '성함'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국01-01]",
+  "skill": "대화에서 생략된 내용을 추론하며 듣기",
+  "items": [
+    {
+      "id": "02f0992ae60c",
+      "difficulty": 2,
+      "instruction": "준우가 빠뜨린 준비물로 알맞은 것은 무엇입니까?",
+      "stem": "\"준우야, 그림 그릴 준비 다 했어?\"\n\"도화지랑 물감은 챙겼는데, 물감을 짤 곳이 없네.\"",
+      "answer": "물감 짤 팔레트",
+      "distractors": [
+        "그림 그릴 도화지",
+        "여러 색 물감",
+        "연필 깎는 칼"
+      ],
+      "solution": [
+        "도화지와 물감은 챙겼고 물감을 짤 곳이 없다고 했으니 빠진 것은 팔레트다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0791cdadbad4",
+      "difficulty": 2,
+      "instruction": "두 사람이 있는 곳으로 알맞은 것은 무엇입니까?",
+      "stem": "\"여기서는 조용히 해야 해.\"\n\"알았어. 이 책 다 읽으면 빌려 가자.\"",
+      "answer": "학교 도서관",
+      "distractors": [
+        "학교 운동장",
+        "동네 수영장",
+        "놀이공원 매표소"
+      ],
+      "solution": [
+        "조용히 해야 하고 책을 빌려 가는 곳이니 도서관이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0ff235718abe",
+      "difficulty": 2,
+      "instruction": "서아가 하려는 말로 알맞은 것은 무엇입니까?",
+      "stem": "\"서아야, 이 케이크 같이 먹을래?\"\n\"고마워. 그런데 나 방금 점심을 아주 많이 먹었어.\"",
+      "answer": "지금은 먹기 어렵다",
+      "distractors": [
+        "케이크를 더 달라",
+        "케이크가 맛없다",
+        "점심을 굶었다"
+      ],
+      "solution": [
+        "방금 많이 먹었다는 말로 지금은 먹기 어렵다는 뜻을 돌려 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "18c3343b68a3",
+      "difficulty": 2,
+      "instruction": "할머니께서 하신 말의 뜻으로 알맞은 것은 무엇입니까?",
+      "stem": "\"할머니, 이 반찬 더 드릴까요?\"\n\"아이고, 배가 불러서 숟가락 들 힘도 없구나.\"",
+      "answer": "더 먹지 않겠다",
+      "distractors": [
+        "반찬을 더 달라",
+        "숟가락이 무겁다",
+        "힘이 세다"
+      ],
+      "solution": [
+        "배가 너무 불러 더 먹지 않겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c24ac583945",
+      "difficulty": 3,
+      "instruction": "하준이가 시험을 어떻게 보았는지로 알맞은 것은 무엇입니까?",
+      "stem": "\"하준아, 받아쓰기 어땠어?\"\n\"이번 주에 매일 연습한 보람이 있었어.\"",
+      "answer": "잘 보았다",
+      "distractors": [
+        "많이 틀렸다",
+        "시험을 보지 못했다",
+        "연습을 하지 않았다"
+      ],
+      "solution": [
+        "연습한 보람이 있었다고 했으니 시험을 잘 보았다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2fd45d10b313",
+      "difficulty": 3,
+      "instruction": "수민이가 전화를 받지 않은 까닭으로 알맞은 것은 무엇입니까?",
+      "stem": "\"수민아, 어제 왜 전화 안 받았어?\"\n\"공연장에 있었거든. 공연 중에는 전화를 꺼 둬야 하잖아.\"",
+      "answer": "공연을 보고 있었다",
+      "distractors": [
+        "전화기를 잃어버렸다",
+        "잠을 자고 있었다",
+        "전화가 고장 났다"
+      ],
+      "solution": [
+        "공연 중이라 전화를 꺼 두었다고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3250ecb01961",
+      "difficulty": 3,
+      "instruction": "선생님이 학생에게 하려는 말로 알맞은 것은 무엇입니까?",
+      "stem": "\"선생님, 저 다 풀었어요.\"\n\"그래? 마지막 문제는 한 번 더 살펴볼래?\"",
+      "answer": "마지막 문제가 틀렸다",
+      "distractors": [
+        "모두 맞았다",
+        "처음 문제가 틀렸다",
+        "시험을 다시 본다"
+      ],
+      "solution": [
+        "마지막 문제를 다시 보라는 말로 그 문제가 틀렸다는 뜻을 돌려 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b44ca619524",
+      "difficulty": 2,
+      "instruction": "오늘이 어떤 날인지로 알맞은 것은 무엇입니까?",
+      "stem": "\"오늘 케이크에 초를 열두 개 꽂았어.\"\n\"와, 축하해! 선물은 뭐 받았어?\"",
+      "answer": "누군가의 생일",
+      "distractors": [
+        "학교 졸업식",
+        "설날 아침",
+        "가을 운동회"
+      ],
+      "solution": [
+        "케이크에 초를 꽂고 축하하며 선물을 물으니 생일이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e997b0cebe4",
+      "difficulty": 3,
+      "instruction": "두 사람이 내일 만나기로 한 때로 알맞은 것은 무엇입니까?",
+      "stem": "\"내일 학교 끝나고 놀자.\"\n\"좋아. 마지막 수업 끝나면 정문에서 보자.\"",
+      "answer": "수업이 끝난 뒤",
+      "distractors": [
+        "아침 등교 전",
+        "점심 먹는 시간",
+        "늦은 밤"
+      ],
+      "solution": [
+        "마지막 수업이 끝나면 정문에서 보자고 했으니 만나는 때는 수업이 끝난 뒤다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6e2a35027692",
+      "difficulty": 1,
+      "instruction": "두 사람이 할 일로 알맞은 것은 무엇입니까?",
+      "stem": "\"배고프다. 우리 뭐 먹을까?\"\n\"저기 김밥 가게 있다. 가자.\"",
+      "answer": "김밥 먹기",
+      "distractors": [
+        "책 읽기",
+        "축구 하기",
+        "낮잠 자기"
+      ],
+      "solution": [
+        "배가 고파 김밥 가게에 가자고 했으니 두 사람은 김밥을 먹으러 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "781d1202838b",
+      "difficulty": 3,
+      "instruction": "지호가 늦은 까닭으로 알맞은 것은 무엇입니까?",
+      "stem": "\"지호야, 왜 이렇게 늦었어?\"\n\"버스를 탔는데 길이 꽉 막혀서 꼼짝도 안 했어.\"",
+      "answer": "차가 많이 막혔다",
+      "distractors": [
+        "늦잠을 잤다",
+        "길을 잃었다",
+        "버스를 놓쳤다"
+      ],
+      "solution": [
+        "길이 꽉 막혀 버스가 움직이지 않았다고 했으니 차가 막혀서 늦었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "89ef16bc7795",
+      "difficulty": 2,
+      "instruction": "형이 동생에게 바라는 일로 알맞은 것은 무엇입니까?",
+      "stem": "\"형, 이 상자 좀 같이 들어 줄래?\"\n\"지금 손에 짐이 가득이야. 조금만 기다려 줄래?\"",
+      "answer": "잠시 기다려 주기",
+      "distractors": [
+        "혼자 상자 들기",
+        "짐 대신 들기",
+        "상자 버리기"
+      ],
+      "solution": [
+        "형은 손이 바빠 조금만 기다려 달라고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c6ecaa474d4",
+      "difficulty": 2,
+      "instruction": "민서가 겪은 일로 알맞은 것은 무엇입니까?",
+      "stem": "\"민서야, 무릎에 그거 밴드야?\"\n\"응, 계단에서 발을 헛디뎠어.\"",
+      "answer": "넘어져서 다쳤다",
+      "distractors": [
+        "상을 받았다",
+        "무릎이 가렵다",
+        "밴드를 샀다"
+      ],
+      "solution": [
+        "계단에서 발을 헛디디고 무릎에 밴드를 붙였으니 넘어져 다쳤다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fa8bf82d741",
+      "difficulty": 2,
+      "instruction": "아빠가 부탁하는 일로 알맞은 것은 무엇입니까?",
+      "stem": "\"아빠, 방이 너무 추워요.\"\n\"창문이 열려 있구나. 네가 가까이 있지?\"",
+      "answer": "창문 닫기",
+      "distractors": [
+        "난로 끄기",
+        "창문 열기",
+        "방 청소하기"
+      ],
+      "solution": [
+        "추운 까닭이 열린 창문이고 가까이 있느냐고 물었으니 창문을 닫아 달라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5cf3924e517",
+      "difficulty": 3,
+      "instruction": "은서가 고른 옷으로 알맞은 것은 무엇입니까?",
+      "stem": "\"은서야, 무슨 옷 입을 거야?\"\n\"오늘 많이 춥다길래 제일 두꺼운 걸로 골랐어.\"",
+      "answer": "두꺼운 외투",
+      "distractors": [
+        "반소매 티셔츠",
+        "얇은 블라우스",
+        "물놀이 수영복"
+      ],
+      "solution": [
+        "춥다고 해서 가장 두꺼운 옷을 골랐으니 두꺼운 외투가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afce53c287da",
+      "difficulty": 2,
+      "instruction": "민호의 기분으로 알맞은 것은 무엇입니까?",
+      "stem": "\"민호야, 왜 그렇게 웃어?\"\n\"우리 반이 축구 대회에서 우승했거든!\"",
+      "answer": "기쁜 기분",
+      "distractors": [
+        "슬픈 기분",
+        "무서운 기분",
+        "지루한 기분"
+      ],
+      "solution": [
+        "반이 우승해서 웃고 있으니 기쁜 기분이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b0cc94de030d",
+      "difficulty": 1,
+      "instruction": "대화에서 오늘 날씨로 알맞은 것은 무엇입니까?",
+      "stem": "\"너 왜 우비를 입고 왔어?\"\n\"나올 때 하늘에서 계속 물방울이 떨어졌거든.\"",
+      "answer": "비가 내린다",
+      "distractors": [
+        "햇볕이 쨍쨍하다",
+        "눈이 펑펑 온다",
+        "바람 한 점 없이 맑다"
+      ],
+      "solution": [
+        "하늘에서 물방울이 떨어진다고 했으니 비가 내리는 날씨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b42ebb715519",
+      "difficulty": 2,
+      "instruction": "두 사람이 내일 가져가야 할 것으로 알맞은 것은 무엇입니까?",
+      "stem": "\"내일 일기 예보 봤어?\"\n\"응. 오후부터 비가 온대.\"",
+      "answer": "접는 우산",
+      "distractors": [
+        "까만 선글라스",
+        "종이 부채",
+        "물놀이 수영복"
+      ],
+      "solution": [
+        "오후에 비가 온다고 했으니 우산을 챙겨야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ccb9f9d0307a",
+      "difficulty": 1,
+      "instruction": "엄마가 하려는 말로 알맞은 것은 무엇입니까?",
+      "stem": "\"엄마, 저 나가서 놀아도 돼요?\"\n\"숙제는 다 했니?\"",
+      "answer": "숙제를 먼저 하라",
+      "distractors": [
+        "지금 바로 나가라",
+        "숙제를 하지 마라",
+        "밥을 먹어라"
+      ],
+      "solution": [
+        "놀러 나가기 전에 숙제를 물었으니 숙제부터 하라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d3b510965d53",
+      "difficulty": 3,
+      "instruction": "지우가 사려는 물건으로 알맞은 것은 무엇입니까?",
+      "stem": "\"지우야, 문방구에 왜 가?\"\n\"글씨를 쓰다가 틀리면 지울 게 없어서.\"",
+      "answer": "새 지우개",
+      "distractors": [
+        "새 연필",
+        "새 공책",
+        "긴 자"
+      ],
+      "solution": [
+        "틀린 글씨를 지울 물건이 없다고 했으니 지우개를 사려 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e0629165a29a",
+      "difficulty": 3,
+      "instruction": "윤아가 지금 있는 곳으로 알맞은 것은 무엇입니까?",
+      "stem": "\"윤아야, 어디야?\"\n\"지금 의사 선생님 기다리고 있어. 내 차례가 거의 다 됐어.\"",
+      "answer": "동네 병원",
+      "distractors": [
+        "우리 학교",
+        "전통 시장",
+        "동네 영화관"
+      ],
+      "solution": [
+        "의사 선생님 차례를 기다리는 곳은 병원이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef595d9d7a75",
+      "difficulty": 1,
+      "instruction": "민지가 지금 하고 싶은 일로 알맞은 것은 무엇입니까?",
+      "stem": "\"민지야, 왜 자꾸 하품을 해?\"\n\"어젯밤에 늦게까지 책을 읽었거든.\"",
+      "answer": "잠을 자고 싶다",
+      "distractors": [
+        "밥을 먹고 싶다",
+        "달리기를 하고 싶다",
+        "노래를 부르고 싶다"
+      ],
+      "solution": [
+        "늦게 자서 하품을 하니 졸려서 자고 싶은 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

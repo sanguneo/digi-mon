@@ -1,0 +1,408 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국04-05]",
+  "skill": "시간 표현을 상황에 맞게 이해하고 사용",
+  "items": [
+    {
+      "id": "0ee5fd8b0652",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "모레 우리 반은 박물관에 □",
+      "answer": "갈 것입니다",
+      "distractors": [
+        "갔습니다",
+        "가고 있었습니다",
+        "갔었습니다"
+      ],
+      "solution": [
+        "'모레'는 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ab5cd633b3d",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "작년 여름에 바다에서 수영을 □",
+      "answer": "했습니다",
+      "distractors": [
+        "합니다",
+        "할 것입니다",
+        "하고 있습니다"
+      ],
+      "solution": [
+        "'작년'은 과거를 나타내는 말이다.",
+        "과거 표현인 '했습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a86eecaf4bc",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "요즘 나는 줄넘기를 열심히 □",
+      "answer": "연습하고 있습니다",
+      "distractors": [
+        "연습했었습니다",
+        "연습할 것이었습니다",
+        "연습할 것입니다"
+      ],
+      "solution": [
+        "'요즘'은 현재를 나타내는 말이다.",
+        "현재 표현인 '연습하고 있습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a92751b3d70",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "어젯밤에 무서운 꿈을 □",
+      "answer": "꾸었습니다",
+      "distractors": [
+        "꿀 것입니다",
+        "꾸고 있습니다",
+        "꾸겠습니다"
+      ],
+      "solution": [
+        "'어젯밤'은 과거를 나타내는 말이다.",
+        "과거 표현인 '꾸었습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e1106bb207e",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "다음 달에 사촌 형이 우리 집에 □",
+      "answer": "올 것입니다",
+      "distractors": [
+        "왔었습니다",
+        "와 있었습니다",
+        "오고 있었습니다"
+      ],
+      "solution": [
+        "'다음 달'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57c3765de94d",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "지난주에 학급 회의를 □",
+      "answer": "열었습니다",
+      "distractors": [
+        "열 것입니다",
+        "열고 있습니다",
+        "열겠습니다"
+      ],
+      "solution": [
+        "'지난주'는 과거를 나타내는 말이다.",
+        "과거 표현인 '열었습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f88d51a1b2e",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "방금 엄마가 빵을 □",
+      "answer": "구우셨습니다",
+      "distractors": [
+        "구우실 것입니다",
+        "구우십니다",
+        "구우시겠습니다"
+      ],
+      "solution": [
+        "'방금'은 과거를 나타내는 말이다.",
+        "과거 표현인 '구우셨습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "629935d9a718",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "이번 겨울에 스키를 처음 □",
+      "answer": "배울 것입니다",
+      "distractors": [
+        "배웠습니다",
+        "배우고 있었습니다",
+        "배웠었습니다"
+      ],
+      "solution": [
+        "'이번 겨울'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ba7222729bf",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "지금 동생이 방에서 □",
+      "answer": "자고 있습니다",
+      "distractors": [
+        "잤었습니다",
+        "잘 것입니다",
+        "자고 있었습니다"
+      ],
+      "solution": [
+        "'지금'은 현재를 나타내는 말이다.",
+        "현재 표현인 '자고 있습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8688a9b907d6",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "내일 아침에 일찍 □",
+      "answer": "일어날 것입니다",
+      "distractors": [
+        "일어났습니다",
+        "일어났었습니다",
+        "일어나고 있었습니다"
+      ],
+      "solution": [
+        "'내일'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9455ea4d1029",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "지금 밖에는 눈이 □",
+      "answer": "내리고 있습니다",
+      "distractors": [
+        "내렸었습니다",
+        "내릴 것이었습니다",
+        "내렸습니다"
+      ],
+      "solution": [
+        "'지금'은 현재를 나타내는 말이다.",
+        "현재 표현인 '내리고 있습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a9283cc33abd",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "어제 친구와 공원에서 □",
+      "answer": "놀았습니다",
+      "distractors": [
+        "놀 것입니다",
+        "놀겠습니다",
+        "놀고 있을 것입니다"
+      ],
+      "solution": [
+        "'어제'는 과거를 나타내는 말이다.",
+        "과거 표현인 '놀았습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac341dc2d65b",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "내일 저녁에 가족과 영화를 □",
+      "answer": "볼 것입니다",
+      "distractors": [
+        "보았습니다",
+        "봤었습니다",
+        "보고 있었습니다"
+      ],
+      "solution": [
+        "'내일'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4ec84528251",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "옛날에 이 마을에는 큰 연못이 □",
+      "answer": "있었습니다",
+      "distractors": [
+        "있을 것입니다",
+        "있습니다",
+        "있겠습니다"
+      ],
+      "solution": [
+        "'옛날'은 과거를 나타내는 말이다.",
+        "과거 표현인 '있었습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b646471f61ac",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "아까 운동장에서 넘어져 무릎을 □",
+      "answer": "다쳤습니다",
+      "distractors": [
+        "다칠 것입니다",
+        "다치고 있습니다",
+        "다치겠습니다"
+      ],
+      "solution": [
+        "'아까'는 과거를 나타내는 말이다.",
+        "과거 표현인 '다쳤습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd5709a73fab",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "그저께 할머니 댁에 □",
+      "answer": "다녀왔습니다",
+      "distractors": [
+        "다녀올 것입니다",
+        "다녀옵니다",
+        "다녀오겠습니다"
+      ],
+      "solution": [
+        "'그저께'는 과거를 나타내는 말이다.",
+        "과거 표현인 '다녀왔습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf6257ece193",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "곧 기차가 역에 □",
+      "answer": "도착할 것입니다",
+      "distractors": [
+        "도착했습니다",
+        "도착했었습니다",
+        "도착하고 있었습니다"
+      ],
+      "solution": [
+        "'곧'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e33a80e5d8fc",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "다음 주 토요일에 언니가 피아노 대회에 □",
+      "answer": "나갈 것입니다",
+      "distractors": [
+        "나갔습니다",
+        "나가고 있었습니다",
+        "나갔었습니다"
+      ],
+      "solution": [
+        "'다음 주 토요일'은 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea5a596b93df",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "십 년 뒤에 나는 선생님이 □",
+      "answer": "되어 있을 것입니다",
+      "distractors": [
+        "되었습니다",
+        "되었었습니다",
+        "되고 있었습니다"
+      ],
+      "solution": [
+        "'십 년 뒤'는 미래를 나타내는 말이다.",
+        "그래서 앞으로 일어날 일을 나타내는 서술어를 고른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee751653e7b8",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "어제 아침에 나는 우유를 □",
+      "answer": "마셨습니다",
+      "distractors": [
+        "마실 것입니다",
+        "마시겠습니다",
+        "마시고 있을 것입니다"
+      ],
+      "solution": [
+        "'어제'는 과거를 나타내는 말이다.",
+        "과거 표현인 '마셨습니다'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

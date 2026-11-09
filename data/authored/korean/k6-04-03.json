@@ -1,0 +1,1984 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국04-03]",
+  "skill": "고유어와 관용 표현의 가치와 상황별 사용",
+  "items": [
+    {
+      "id": "067c79f8bc28",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'엎질러진 물'",
+      "answer": "다시 되돌릴 수 없는 일",
+      "distractors": [
+        "몹시 애타게 기다리다",
+        "지나치게 칭찬하다",
+        "잘난 체하다가 창피를 당하다"
+      ],
+      "solution": [
+        "'엎질러진 물'은 '다시 되돌릴 수 없는 일'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0804b6151c37",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 어떤 일에서 벗어나지 못하게 하다",
+      "answer": "발목을 잡다",
+      "distractors": [
+        "어깨가 무겁다",
+        "미역국을 먹다",
+        "한술 더 뜨다"
+      ],
+      "solution": [
+        "'어떤 일에서 벗어나지 못하게 하다'를 이르는 관용 표현은 '발목을 잡다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0baeb1f4347c",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'파김치가 되다'",
+      "answer": "몹시 지쳐서 기운이 없다",
+      "distractors": [
+        "잊히지 않고 자꾸 떠오르다",
+        "남을 깔보고 비웃다",
+        "맡은 책임이 크다"
+      ],
+      "solution": [
+        "'파김치가 되다'는 '몹시 지쳐서 기운이 없다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0ee4d14fe168",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'가슴을 펴다'",
+      "answer": "당당하게 행동하다",
+      "distractors": [
+        "아주 조용하게",
+        "잘난 체하다가 창피를 당하다",
+        "깜짝 놀라 겁이 나다"
+      ],
+      "solution": [
+        "'가슴을 펴다'는 '당당하게 행동하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0f0d011821a4",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 아주 조용하게",
+      "answer": "쥐 죽은 듯",
+      "distractors": [
+        "손이 크다",
+        "입에 침이 마르다",
+        "코웃음을 치다"
+      ],
+      "solution": [
+        "'아주 조용하게'를 이르는 관용 표현은 '쥐 죽은 듯'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "10b8400b55ff",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 몹시 지쳐서 기운이 없다",
+      "answer": "파김치가 되다",
+      "distractors": [
+        "발목을 잡다",
+        "귀가 얇다",
+        "발이 넓다"
+      ],
+      "solution": [
+        "'몹시 지쳐서 기운이 없다'를 이르는 관용 표현은 '파김치가 되다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "127a9b8a60de",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'가슴이 철렁하다'",
+      "answer": "깜짝 놀라 겁이 나다",
+      "distractors": [
+        "몹시 바쁘다",
+        "함께 일하는 사람끼리 잘 어울린다",
+        "적극적으로 나서서 돕다"
+      ],
+      "solution": [
+        "'가슴이 철렁하다'는 '깜짝 놀라 겁이 나다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1423873c4404",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'간이 크다'",
+      "answer": "겁이 없고 대담하다",
+      "distractors": [
+        "다른 사람을 거듭 칭찬하다",
+        "몹시 바쁘다",
+        "씀씀이가 넉넉하다"
+      ],
+      "solution": [
+        "'간이 크다'는 '겁이 없고 대담하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1490400120f1",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'얼굴이 두껍다'",
+      "answer": "부끄러움을 모른다",
+      "distractors": [
+        "함께 일하는 사람끼리 잘 어울린다",
+        "남을 깔보고 비웃다",
+        "겁이 없고 대담하다"
+      ],
+      "solution": [
+        "'얼굴이 두껍다'는 '부끄러움을 모른다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16f691eb0a40",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 넓은 세상을 모르는 사람",
+      "answer": "우물 안 개구리",
+      "distractors": [
+        "손이 맵다",
+        "손발이 맞다",
+        "국수를 먹다"
+      ],
+      "solution": [
+        "'넓은 세상을 모르는 사람'을 이르는 관용 표현은 '우물 안 개구리'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c259e1e1eae",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'허리띠를 졸라매다'",
+      "answer": "돈을 아껴 쓰다",
+      "distractors": [
+        "이미 한 것보다 더 심하게 하다",
+        "근심으로 기가 죽다",
+        "아는 사람이 많다"
+      ],
+      "solution": [
+        "'허리띠를 졸라매다'는 '돈을 아껴 쓰다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c43c32bab57",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'머리를 맞대다'",
+      "answer": "함께 모여 의논하다",
+      "distractors": [
+        "결혼식을 올리다",
+        "남이 잘되어 샘이 나다",
+        "잘난 체하다가 창피를 당하다"
+      ],
+      "solution": [
+        "'머리를 맞대다'는 '함께 모여 의논하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ca72ef7f449",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 몹시 바쁘다",
+      "answer": "눈코 뜰 새 없다",
+      "distractors": [
+        "손에 땀을 쥐다",
+        "눈에 밟히다",
+        "코웃음을 치다"
+      ],
+      "solution": [
+        "'몹시 바쁘다'를 이르는 관용 표현은 '눈코 뜰 새 없다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d71f7e235ad",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'머리가 굵다'",
+      "answer": "어른처럼 생각하게 되다",
+      "distractors": [
+        "여러 사람이 같은 의견을 말하다",
+        "이루기가 몹시 어려운 일",
+        "남이 잘되어 샘이 나다"
+      ],
+      "solution": [
+        "'머리가 굵다'는 '어른처럼 생각하게 되다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "21af4f64ecfe",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'발이 넓다'",
+      "answer": "아는 사람이 많다",
+      "distractors": [
+        "씀씀이가 넉넉하다",
+        "말을 함부로 옮기지 않는다",
+        "남의 말을 쉽게 믿는다"
+      ],
+      "solution": [
+        "'발이 넓다'는 '아는 사람이 많다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3004d51c9300",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 들은 말에 갑자기 관심이 생기다",
+      "answer": "귀가 번쩍 뜨이다",
+      "distractors": [
+        "손이 많이 가다",
+        "비행기를 태우다",
+        "눈이 높다"
+      ],
+      "solution": [
+        "'들은 말에 갑자기 관심이 생기다'를 이르는 관용 표현은 '귀가 번쩍 뜨이다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "33418c02e3f1",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 근심으로 기가 죽다",
+      "answer": "코가 빠지다",
+      "distractors": [
+        "눈에 밟히다",
+        "발 벗고 나서다",
+        "입이 짧다"
+      ],
+      "solution": [
+        "'근심으로 기가 죽다'를 이르는 관용 표현은 '코가 빠지다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "397ff3bb2829",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'발이 묶이다'",
+      "answer": "몸을 움직일 수 없는 형편이 되다",
+      "distractors": [
+        "몹시 놀라거나 감탄하다",
+        "들은 말에 갑자기 관심이 생기다",
+        "넓은 세상을 모르는 사람"
+      ],
+      "solution": [
+        "'발이 묶이다'는 '몸을 움직일 수 없는 형편이 되다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3af07ce357af",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 도움을 청하거나 도와주다",
+      "answer": "손을 내밀다",
+      "distractors": [
+        "가슴을 펴다",
+        "하늘의 별 따기",
+        "배가 아프다"
+      ],
+      "solution": [
+        "'도움을 청하거나 도와주다'를 이르는 관용 표현은 '손을 내밀다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3af683d34493",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'비행기를 태우다'",
+      "answer": "지나치게 칭찬하다",
+      "distractors": [
+        "돈을 아껴 쓰다",
+        "남의 말을 쉽게 믿는다",
+        "나쁜 일을 그만두다"
+      ],
+      "solution": [
+        "'비행기를 태우다'는 '지나치게 칭찬하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3afcf761e096",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손을 내밀다'",
+      "answer": "도움을 청하거나 도와주다",
+      "distractors": [
+        "들은 말에 갑자기 관심이 생기다",
+        "보기만 하고 가질 수 없는 것",
+        "부끄러움을 모른다"
+      ],
+      "solution": [
+        "'손을 내밀다'는 '도움을 청하거나 도와주다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3cc5a8d3276d",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 다시 되돌릴 수 없는 일",
+      "answer": "엎질러진 물",
+      "distractors": [
+        "귀가 번쩍 뜨이다",
+        "우물 안 개구리",
+        "얼굴이 두껍다"
+      ],
+      "solution": [
+        "'다시 되돌릴 수 없는 일'을 이르는 관용 표현은 '엎질러진 물'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e5ee762e13b",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 지나치게 칭찬하다",
+      "answer": "비행기를 태우다",
+      "distractors": [
+        "쥐 죽은 듯",
+        "코가 납작해지다",
+        "가슴이 철렁하다"
+      ],
+      "solution": [
+        "'지나치게 칭찬하다'를 이르는 관용 표현은 '비행기를 태우다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40dfb0f22234",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손이 맵다'",
+      "answer": "손으로 때리는 힘이 세다",
+      "distractors": [
+        "제값보다 비싸게 사다",
+        "다른 사람을 거듭 칭찬하다",
+        "알면서도 모르는 체하다"
+      ],
+      "solution": [
+        "'손이 맵다'는 '손으로 때리는 힘이 세다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42ef87218905",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 부끄러움을 모른다",
+      "answer": "얼굴이 두껍다",
+      "distractors": [
+        "혀를 내두르다",
+        "입이 무겁다",
+        "눈코 뜰 새 없다"
+      ],
+      "solution": [
+        "'부끄러움을 모른다'를 이르는 관용 표현은 '얼굴이 두껍다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4473ffb7b047",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈이 빠지게 기다리다'",
+      "answer": "몹시 애타게 기다리다",
+      "distractors": [
+        "아주 짧은 동안",
+        "몹시 지쳐서 기운이 없다",
+        "근심으로 기가 죽다"
+      ],
+      "solution": [
+        "'눈이 빠지게 기다리다'는 '몹시 애타게 기다리다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4496e42d9876",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손발이 맞다'",
+      "answer": "함께 일하는 사람끼리 잘 어울린다",
+      "distractors": [
+        "남이 잘되어 샘이 나다",
+        "몹시 지쳐서 기운이 없다",
+        "고르는 기준이 까다롭다"
+      ],
+      "solution": [
+        "'손발이 맞다'는 '함께 일하는 사람끼리 잘 어울린다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "487ac9588571",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'어깨가 무겁다'",
+      "answer": "맡은 책임이 크다",
+      "distractors": [
+        "말을 함부로 옮기지 않는다",
+        "상대에게 지거나 존경을 나타내다",
+        "알면서도 모르는 체하다"
+      ],
+      "solution": [
+        "'어깨가 무겁다'는 '맡은 책임이 크다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ab0f9343540",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 이미 한 것보다 더 심하게 하다",
+      "answer": "한술 더 뜨다",
+      "distractors": [
+        "손에 땀을 쥐다",
+        "간이 크다",
+        "코가 납작해지다"
+      ],
+      "solution": [
+        "'이미 한 것보다 더 심하게 하다'를 이르는 관용 표현은 '한술 더 뜨다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62591a2660d3",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'미역국을 먹다'",
+      "answer": "시험에서 떨어지다",
+      "distractors": [
+        "남의 말을 쉽게 믿는다",
+        "몹시 바쁘다",
+        "함께 모여 의논하다"
+      ],
+      "solution": [
+        "'미역국을 먹다'는 '시험에서 떨어지다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "633211b8f0dd",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 손으로 때리는 힘이 세다",
+      "answer": "손이 맵다",
+      "distractors": [
+        "시치미를 떼다",
+        "코가 납작해지다",
+        "고개를 숙이다"
+      ],
+      "solution": [
+        "'손으로 때리는 힘이 세다'를 이르는 관용 표현은 '손이 맵다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6494e1aebbf4",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 결혼식을 올리다",
+      "answer": "국수를 먹다",
+      "distractors": [
+        "한술 더 뜨다",
+        "배가 아프다",
+        "눈에 밟히다"
+      ],
+      "solution": [
+        "'결혼식을 올리다'를 이르는 관용 표현은 '국수를 먹다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "64a4720927ab",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 잊히지 않고 자꾸 떠오르다",
+      "answer": "눈에 밟히다",
+      "distractors": [
+        "손을 씻다",
+        "입에 침이 마르다",
+        "귀가 얇다"
+      ],
+      "solution": [
+        "'잊히지 않고 자꾸 떠오르다'를 이르는 관용 표현은 '눈에 밟히다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "652ae43c1f4a",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'귀가 얇다'",
+      "answer": "남의 말을 쉽게 믿는다",
+      "distractors": [
+        "아슬아슬해서 마음을 졸이다",
+        "같은 말을 너무 많이 듣다",
+        "맡은 책임이 크다"
+      ],
+      "solution": [
+        "'귀가 얇다'는 '남의 말을 쉽게 믿는다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "65da3a833f7a",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 겁이 없고 대담하다",
+      "answer": "간이 크다",
+      "distractors": [
+        "눈 깜짝할 사이",
+        "시치미를 떼다",
+        "발목을 잡다"
+      ],
+      "solution": [
+        "'겁이 없고 대담하다'를 이르는 관용 표현은 '간이 크다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6981f21b7cf8",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'입에 침이 마르다'",
+      "answer": "다른 사람을 거듭 칭찬하다",
+      "distractors": [
+        "남을 깔보고 비웃다",
+        "겁이 없고 대담하다",
+        "아는 사람이 많다"
+      ],
+      "solution": [
+        "'입에 침이 마르다'는 '다른 사람을 거듭 칭찬하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a4f77febb15",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈을 붙이다'",
+      "answer": "잠을 잠깐 자다",
+      "distractors": [
+        "어떤 일에서 벗어나지 못하게 하다",
+        "제값보다 비싸게 사다",
+        "어른처럼 생각하게 되다"
+      ],
+      "solution": [
+        "'눈을 붙이다'는 '잠을 잠깐 자다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ec42ed85fce",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'혀를 내두르다'",
+      "answer": "몹시 놀라거나 감탄하다",
+      "distractors": [
+        "함께 모여 의논하다",
+        "같은 말을 너무 많이 듣다",
+        "결혼식을 올리다"
+      ],
+      "solution": [
+        "'혀를 내두르다'는 '몹시 놀라거나 감탄하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6fd972fd79d0",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 보기만 하고 가질 수 없는 것",
+      "answer": "그림의 떡",
+      "distractors": [
+        "발목을 잡다",
+        "바가지를 쓰다",
+        "머리가 굵다"
+      ],
+      "solution": [
+        "'보기만 하고 가질 수 없는 것'을 이르는 관용 표현은 '그림의 떡'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "701daa70c9dc",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 이루기가 몹시 어려운 일",
+      "answer": "하늘의 별 따기",
+      "distractors": [
+        "한술 더 뜨다",
+        "코가 빠지다",
+        "발이 넓다"
+      ],
+      "solution": [
+        "'이루기가 몹시 어려운 일'을 이르는 관용 표현은 '하늘의 별 따기'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7172a0609725",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'그림의 떡'",
+      "answer": "보기만 하고 가질 수 없는 것",
+      "distractors": [
+        "함께 모여 의논하다",
+        "몹시 놀라거나 감탄하다",
+        "몸을 움직일 수 없는 형편이 되다"
+      ],
+      "solution": [
+        "'그림의 떡'은 '보기만 하고 가질 수 없는 것'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "72bcf5d451db",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손이 많이 가다'",
+      "answer": "일하는 데 품이 많이 든다",
+      "distractors": [
+        "잊히지 않고 자꾸 떠오르다",
+        "적극적으로 나서서 돕다",
+        "음식을 가려 먹거나 적게 먹는다"
+      ],
+      "solution": [
+        "'손이 많이 가다'는 '일하는 데 품이 많이 든다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "79a114b07ee2",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 상대에게 지거나 존경을 나타내다",
+      "answer": "고개를 숙이다",
+      "distractors": [
+        "바가지를 쓰다",
+        "가슴이 철렁하다",
+        "시치미를 떼다"
+      ],
+      "solution": [
+        "'상대에게 지거나 존경을 나타내다'를 이르는 관용 표현은 '고개를 숙이다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7baa8baaef65",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 남을 깔보고 비웃다",
+      "answer": "코웃음을 치다",
+      "distractors": [
+        "귀에 못이 박히다",
+        "손발이 맞다",
+        "간이 크다"
+      ],
+      "solution": [
+        "'남을 깔보고 비웃다'를 이르는 관용 표현은 '코웃음을 치다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7bd2c9eb1228",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 남이 잘되어 샘이 나다",
+      "answer": "배가 아프다",
+      "distractors": [
+        "간이 크다",
+        "손이 맵다",
+        "국수를 먹다"
+      ],
+      "solution": [
+        "'남이 잘되어 샘이 나다'를 이르는 관용 표현은 '배가 아프다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7dca63132355",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 아는 사람이 많다",
+      "answer": "발이 넓다",
+      "distractors": [
+        "간이 크다",
+        "머리를 맞대다",
+        "가슴이 철렁하다"
+      ],
+      "solution": [
+        "'아는 사람이 많다'를 이르는 관용 표현은 '발이 넓다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "857718dfc93e",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'시치미를 떼다'",
+      "answer": "알면서도 모르는 체하다",
+      "distractors": [
+        "아는 사람이 많다",
+        "씀씀이가 넉넉하다",
+        "말을 함부로 옮기지 않는다"
+      ],
+      "solution": [
+        "'시치미를 떼다'는 '알면서도 모르는 체하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "86285563f9ed",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 아주 쉬운 일",
+      "answer": "식은 죽 먹기",
+      "distractors": [
+        "손에 땀을 쥐다",
+        "손이 많이 가다",
+        "손을 내밀다"
+      ],
+      "solution": [
+        "'아주 쉬운 일'을 이르는 관용 표현은 '식은 죽 먹기'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8cc3f3027c23",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 함께 일하는 사람끼리 잘 어울린다",
+      "answer": "손발이 맞다",
+      "distractors": [
+        "손을 씻다",
+        "얼굴이 두껍다",
+        "눈 깜짝할 사이"
+      ],
+      "solution": [
+        "'함께 일하는 사람끼리 잘 어울린다'를 이르는 관용 표현은 '손발이 맞다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e249428a565",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'발 벗고 나서다'",
+      "answer": "적극적으로 나서서 돕다",
+      "distractors": [
+        "몹시 놀라거나 감탄하다",
+        "말을 함부로 옮기지 않는다",
+        "나쁜 일을 그만두다"
+      ],
+      "solution": [
+        "'발 벗고 나서다'는 '적극적으로 나서서 돕다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9187e93f18dd",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'배가 아프다'",
+      "answer": "남이 잘되어 샘이 나다",
+      "distractors": [
+        "씀씀이가 넉넉하다",
+        "이미 한 것보다 더 심하게 하다",
+        "아주 짧은 동안"
+      ],
+      "solution": [
+        "'배가 아프다'는 '남이 잘되어 샘이 나다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9314e24f0576",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 맡은 책임이 크다",
+      "answer": "어깨가 무겁다",
+      "distractors": [
+        "얼굴이 두껍다",
+        "눈이 높다",
+        "입에 침이 마르다"
+      ],
+      "solution": [
+        "'맡은 책임이 크다'를 이르는 관용 표현은 '어깨가 무겁다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "93442ace4bdd",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'발목을 잡다'",
+      "answer": "어떤 일에서 벗어나지 못하게 하다",
+      "distractors": [
+        "다른 사람을 거듭 칭찬하다",
+        "깜짝 놀라 겁이 나다",
+        "맡은 책임이 크다"
+      ],
+      "solution": [
+        "'발목을 잡다'는 '어떤 일에서 벗어나지 못하게 하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "942cdf6a7651",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'한술 더 뜨다'",
+      "answer": "이미 한 것보다 더 심하게 하다",
+      "distractors": [
+        "아주 짧은 동안",
+        "제값보다 비싸게 사다",
+        "남을 깔보고 비웃다"
+      ],
+      "solution": [
+        "'한술 더 뜨다'는 '이미 한 것보다 더 심하게 하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97c159562392",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 잘난 체하다가 창피를 당하다",
+      "answer": "코가 납작해지다",
+      "distractors": [
+        "눈에 밟히다",
+        "파김치가 되다",
+        "발목을 잡다"
+      ],
+      "solution": [
+        "'잘난 체하다가 창피를 당하다'를 이르는 관용 표현은 '코가 납작해지다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "981b55a1c838",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 어른처럼 생각하게 되다",
+      "answer": "머리가 굵다",
+      "distractors": [
+        "눈을 붙이다",
+        "발이 넓다",
+        "귀에 못이 박히다"
+      ],
+      "solution": [
+        "'어른처럼 생각하게 되다'를 이르는 관용 표현은 '머리가 굵다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9893edda387f",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈 깜짝할 사이'",
+      "answer": "아주 짧은 동안",
+      "distractors": [
+        "시험에서 떨어지다",
+        "아슬아슬해서 마음을 졸이다",
+        "제값보다 비싸게 사다"
+      ],
+      "solution": [
+        "'눈 깜짝할 사이'는 '아주 짧은 동안'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9937459ad03d",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'하늘의 별 따기'",
+      "answer": "이루기가 몹시 어려운 일",
+      "distractors": [
+        "시험에서 떨어지다",
+        "당당하게 행동하다",
+        "아주 쉬운 일"
+      ],
+      "solution": [
+        "'하늘의 별 따기'는 '이루기가 몹시 어려운 일'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e10008fd329",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 제값보다 비싸게 사다",
+      "answer": "바가지를 쓰다",
+      "distractors": [
+        "손이 크다",
+        "한술 더 뜨다",
+        "발 벗고 나서다"
+      ],
+      "solution": [
+        "'제값보다 비싸게 사다'를 이르는 관용 표현은 '바가지를 쓰다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a055d59de5d1",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'식은 죽 먹기'",
+      "answer": "아주 쉬운 일",
+      "distractors": [
+        "몹시 바쁘다",
+        "알면서도 모르는 체하다",
+        "살이 오르고 혈색이 좋아지다"
+      ],
+      "solution": [
+        "'식은 죽 먹기'는 '아주 쉬운 일'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a1ac86bb4c99",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 여러 사람이 같은 의견을 말하다",
+      "answer": "입을 모으다",
+      "distractors": [
+        "귀가 얇다",
+        "손을 씻다",
+        "고개를 숙이다"
+      ],
+      "solution": [
+        "'여러 사람이 같은 의견을 말하다'를 이르는 관용 표현은 '입을 모으다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a38e05faea69",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 돈을 아껴 쓰다",
+      "answer": "허리띠를 졸라매다",
+      "distractors": [
+        "시치미를 떼다",
+        "얼굴이 피다",
+        "입이 무겁다"
+      ],
+      "solution": [
+        "'돈을 아껴 쓰다'를 이르는 관용 표현은 '허리띠를 졸라매다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a4217968c9a8",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 몹시 애타게 기다리다",
+      "answer": "눈이 빠지게 기다리다",
+      "distractors": [
+        "손발이 맞다",
+        "국수를 먹다",
+        "얼굴이 피다"
+      ],
+      "solution": [
+        "'몹시 애타게 기다리다'를 이르는 관용 표현은 '눈이 빠지게 기다리다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a7872695b267",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 함께 모여 의논하다",
+      "answer": "머리를 맞대다",
+      "distractors": [
+        "귀가 얇다",
+        "발 벗고 나서다",
+        "손발이 맞다"
+      ],
+      "solution": [
+        "'함께 모여 의논하다'를 이르는 관용 표현은 '머리를 맞대다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac42935a9da1",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'귀에 못이 박히다'",
+      "answer": "같은 말을 너무 많이 듣다",
+      "distractors": [
+        "깜짝 놀라 겁이 나다",
+        "남의 말을 쉽게 믿는다",
+        "시험에서 떨어지다"
+      ],
+      "solution": [
+        "'귀에 못이 박히다'는 '같은 말을 너무 많이 듣다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac6444344034",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 시험에서 떨어지다",
+      "answer": "미역국을 먹다",
+      "distractors": [
+        "손이 맵다",
+        "발이 넓다",
+        "바가지를 쓰다"
+      ],
+      "solution": [
+        "'시험에서 떨어지다'를 이르는 관용 표현은 '미역국을 먹다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ae82c5bd2a98",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'입이 무겁다'",
+      "answer": "말을 함부로 옮기지 않는다",
+      "distractors": [
+        "어떤 일에서 벗어나지 못하게 하다",
+        "손으로 때리는 힘이 세다",
+        "함께 모여 의논하다"
+      ],
+      "solution": [
+        "'입이 무겁다'는 '말을 함부로 옮기지 않는다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af12ff4378cd",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 적극적으로 나서서 돕다",
+      "answer": "발 벗고 나서다",
+      "distractors": [
+        "한술 더 뜨다",
+        "머리를 맞대다",
+        "파김치가 되다"
+      ],
+      "solution": [
+        "'적극적으로 나서서 돕다'를 이르는 관용 표현은 '발 벗고 나서다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1a099641b73",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 살이 오르고 혈색이 좋아지다",
+      "answer": "얼굴이 피다",
+      "distractors": [
+        "혀를 내두르다",
+        "발이 묶이다",
+        "우물 안 개구리"
+      ],
+      "solution": [
+        "'살이 오르고 혈색이 좋아지다'를 이르는 관용 표현은 '얼굴이 피다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b24c1987591a",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'귀가 번쩍 뜨이다'",
+      "answer": "들은 말에 갑자기 관심이 생기다",
+      "distractors": [
+        "알면서도 모르는 체하다",
+        "돈을 아껴 쓰다",
+        "말을 함부로 옮기지 않는다"
+      ],
+      "solution": [
+        "'귀가 번쩍 뜨이다'는 '들은 말에 갑자기 관심이 생기다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b335df449e78",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 당당하게 행동하다",
+      "answer": "가슴을 펴다",
+      "distractors": [
+        "그림의 떡",
+        "얼굴이 두껍다",
+        "어깨가 무겁다"
+      ],
+      "solution": [
+        "'당당하게 행동하다'를 이르는 관용 표현은 '가슴을 펴다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4f0478473f1",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 같은 말을 너무 많이 듣다",
+      "answer": "귀에 못이 박히다",
+      "distractors": [
+        "발 벗고 나서다",
+        "발목을 잡다",
+        "손이 맵다"
+      ],
+      "solution": [
+        "'같은 말을 너무 많이 듣다'를 이르는 관용 표현은 '귀에 못이 박히다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be7e584808c0",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 고르는 기준이 까다롭다",
+      "answer": "눈이 높다",
+      "distractors": [
+        "입이 무겁다",
+        "고개를 숙이다",
+        "코가 납작해지다"
+      ],
+      "solution": [
+        "'고르는 기준이 까다롭다'를 이르는 관용 표현은 '눈이 높다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bfb2aa00a1b1",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 나쁜 일을 그만두다",
+      "answer": "손을 씻다",
+      "distractors": [
+        "눈에 밟히다",
+        "혀를 내두르다",
+        "가슴이 철렁하다"
+      ],
+      "solution": [
+        "'나쁜 일을 그만두다'를 이르는 관용 표현은 '손을 씻다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c0d722522495",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'고개를 숙이다'",
+      "answer": "상대에게 지거나 존경을 나타내다",
+      "distractors": [
+        "몹시 바쁘다",
+        "나쁜 일을 그만두다",
+        "남의 말을 쉽게 믿는다"
+      ],
+      "solution": [
+        "'고개를 숙이다'는 '상대에게 지거나 존경을 나타내다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c2b69b82bf6b",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'입을 모으다'",
+      "answer": "여러 사람이 같은 의견을 말하다",
+      "distractors": [
+        "씀씀이가 넉넉하다",
+        "다른 사람을 거듭 칭찬하다",
+        "남을 깔보고 비웃다"
+      ],
+      "solution": [
+        "'입을 모으다'는 '여러 사람이 같은 의견을 말하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c38df7015e60",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 몹시 놀라거나 감탄하다",
+      "answer": "혀를 내두르다",
+      "distractors": [
+        "어깨가 무겁다",
+        "손에 땀을 쥐다",
+        "귀에 못이 박히다"
+      ],
+      "solution": [
+        "'몹시 놀라거나 감탄하다'를 이르는 관용 표현은 '혀를 내두르다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c4ab2ab8d2ac",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'코가 납작해지다'",
+      "answer": "잘난 체하다가 창피를 당하다",
+      "distractors": [
+        "고르는 기준이 까다롭다",
+        "아주 짧은 동안",
+        "몹시 지쳐서 기운이 없다"
+      ],
+      "solution": [
+        "'코가 납작해지다'는 '잘난 체하다가 창피를 당하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c92fdd460993",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 남의 말을 쉽게 믿는다",
+      "answer": "귀가 얇다",
+      "distractors": [
+        "미역국을 먹다",
+        "손에 땀을 쥐다",
+        "시치미를 떼다"
+      ],
+      "solution": [
+        "'남의 말을 쉽게 믿는다'를 이르는 관용 표현은 '귀가 얇다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cbc1ea3f35db",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 몸을 움직일 수 없는 형편이 되다",
+      "answer": "발이 묶이다",
+      "distractors": [
+        "바가지를 쓰다",
+        "가슴을 펴다",
+        "식은 죽 먹기"
+      ],
+      "solution": [
+        "'몸을 움직일 수 없는 형편이 되다'를 이르는 관용 표현은 '발이 묶이다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cd471032bacb",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'입이 짧다'",
+      "answer": "음식을 가려 먹거나 적게 먹는다",
+      "distractors": [
+        "남의 말을 쉽게 믿는다",
+        "나쁜 일을 그만두다",
+        "상대에게 지거나 존경을 나타내다"
+      ],
+      "solution": [
+        "'입이 짧다'는 '음식을 가려 먹거나 적게 먹는다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce5e48fe7b69",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 씀씀이가 넉넉하다",
+      "answer": "손이 크다",
+      "distractors": [
+        "머리를 맞대다",
+        "가슴이 철렁하다",
+        "발 벗고 나서다"
+      ],
+      "solution": [
+        "'씀씀이가 넉넉하다'를 이르는 관용 표현은 '손이 크다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d3bc4e476532",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 말을 함부로 옮기지 않는다",
+      "answer": "입이 무겁다",
+      "distractors": [
+        "눈코 뜰 새 없다",
+        "손발이 맞다",
+        "바가지를 쓰다"
+      ],
+      "solution": [
+        "'말을 함부로 옮기지 않는다'를 이르는 관용 표현은 '입이 무겁다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d3bc966bfd76",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'국수를 먹다'",
+      "answer": "결혼식을 올리다",
+      "distractors": [
+        "몹시 놀라거나 감탄하다",
+        "이미 한 것보다 더 심하게 하다",
+        "몹시 지쳐서 기운이 없다"
+      ],
+      "solution": [
+        "'국수를 먹다'는 '결혼식을 올리다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d431136a3ba4",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 아슬아슬해서 마음을 졸이다",
+      "answer": "손에 땀을 쥐다",
+      "distractors": [
+        "눈이 높다",
+        "가슴이 철렁하다",
+        "손이 크다"
+      ],
+      "solution": [
+        "'아슬아슬해서 마음을 졸이다'를 이르는 관용 표현은 '손에 땀을 쥐다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d501bbd595ca",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈코 뜰 새 없다'",
+      "answer": "몹시 바쁘다",
+      "distractors": [
+        "깜짝 놀라 겁이 나다",
+        "알면서도 모르는 체하다",
+        "남이 잘되어 샘이 나다"
+      ],
+      "solution": [
+        "'눈코 뜰 새 없다'는 '몹시 바쁘다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d8ff79a357db",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'바가지를 쓰다'",
+      "answer": "제값보다 비싸게 사다",
+      "distractors": [
+        "몹시 지쳐서 기운이 없다",
+        "아주 짧은 동안",
+        "손으로 때리는 힘이 세다"
+      ],
+      "solution": [
+        "'바가지를 쓰다'는 '제값보다 비싸게 사다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d98a8d4b35fb",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 음식을 가려 먹거나 적게 먹는다",
+      "answer": "입이 짧다",
+      "distractors": [
+        "코가 납작해지다",
+        "가슴이 철렁하다",
+        "미역국을 먹다"
+      ],
+      "solution": [
+        "'음식을 가려 먹거나 적게 먹는다'를 이르는 관용 표현은 '입이 짧다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d9e4b23511db",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'코웃음을 치다'",
+      "answer": "남을 깔보고 비웃다",
+      "distractors": [
+        "겁이 없고 대담하다",
+        "손으로 때리는 힘이 세다",
+        "상대에게 지거나 존경을 나타내다"
+      ],
+      "solution": [
+        "'코웃음을 치다'는 '남을 깔보고 비웃다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "deabdebef38f",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈이 높다'",
+      "answer": "고르는 기준이 까다롭다",
+      "distractors": [
+        "이미 한 것보다 더 심하게 하다",
+        "나쁜 일을 그만두다",
+        "남을 깔보고 비웃다"
+      ],
+      "solution": [
+        "'눈이 높다'는 '고르는 기준이 까다롭다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dee94d0a41a5",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손을 씻다'",
+      "answer": "나쁜 일을 그만두다",
+      "distractors": [
+        "잘난 체하다가 창피를 당하다",
+        "다른 사람을 거듭 칭찬하다",
+        "잊히지 않고 자꾸 떠오르다"
+      ],
+      "solution": [
+        "'손을 씻다'는 '나쁜 일을 그만두다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1a3fd8d6d46",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손에 땀을 쥐다'",
+      "answer": "아슬아슬해서 마음을 졸이다",
+      "distractors": [
+        "알면서도 모르는 체하다",
+        "잘난 체하다가 창피를 당하다",
+        "함께 일하는 사람끼리 잘 어울린다"
+      ],
+      "solution": [
+        "'손에 땀을 쥐다'는 '아슬아슬해서 마음을 졸이다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e833ff065b27",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'얼굴이 피다'",
+      "answer": "살이 오르고 혈색이 좋아지다",
+      "distractors": [
+        "아슬아슬해서 마음을 졸이다",
+        "일하는 데 품이 많이 든다",
+        "지나치게 칭찬하다"
+      ],
+      "solution": [
+        "'얼굴이 피다'는 '살이 오르고 혈색이 좋아지다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e910c575eb1d",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'쥐 죽은 듯'",
+      "answer": "아주 조용하게",
+      "distractors": [
+        "다시 되돌릴 수 없는 일",
+        "잊히지 않고 자꾸 떠오르다",
+        "적극적으로 나서서 돕다"
+      ],
+      "solution": [
+        "'쥐 죽은 듯'은 '아주 조용하게'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e96174a7d9cd",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 일하는 데 품이 많이 든다",
+      "answer": "손이 많이 가다",
+      "distractors": [
+        "입에 침이 마르다",
+        "코웃음을 치다",
+        "발이 묶이다"
+      ],
+      "solution": [
+        "'일하는 데 품이 많이 든다'를 이르는 관용 표현은 '손이 많이 가다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ed06296c378a",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 다른 사람을 거듭 칭찬하다",
+      "answer": "입에 침이 마르다",
+      "distractors": [
+        "파김치가 되다",
+        "어깨가 무겁다",
+        "손을 씻다"
+      ],
+      "solution": [
+        "'다른 사람을 거듭 칭찬하다'를 이르는 관용 표현은 '입에 침이 마르다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee9a05281936",
+      "difficulty": 1,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'우물 안 개구리'",
+      "answer": "넓은 세상을 모르는 사람",
+      "distractors": [
+        "겁이 없고 대담하다",
+        "아주 짧은 동안",
+        "몹시 지쳐서 기운이 없다"
+      ],
+      "solution": [
+        "'우물 안 개구리'는 '넓은 세상을 모르는 사람'을 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eef083ee9aa7",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'손이 크다'",
+      "answer": "씀씀이가 넉넉하다",
+      "distractors": [
+        "손으로 때리는 힘이 세다",
+        "잘난 체하다가 창피를 당하다",
+        "함께 모여 의논하다"
+      ],
+      "solution": [
+        "'손이 크다'는 '씀씀이가 넉넉하다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1866fed7d8c",
+      "difficulty": 2,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'눈에 밟히다'",
+      "answer": "잊히지 않고 자꾸 떠오르다",
+      "distractors": [
+        "손으로 때리는 힘이 세다",
+        "아는 사람이 많다",
+        "아슬아슬해서 마음을 졸이다"
+      ],
+      "solution": [
+        "'눈에 밟히다'는 '잊히지 않고 자꾸 떠오르다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1e574ea2835",
+      "difficulty": 3,
+      "instruction": "관용 표현의 뜻을 고르시오.",
+      "stem": "'코가 빠지다'",
+      "answer": "근심으로 기가 죽다",
+      "distractors": [
+        "손으로 때리는 힘이 세다",
+        "함께 일하는 사람끼리 잘 어울린다",
+        "결혼식을 올리다"
+      ],
+      "solution": [
+        "'코가 빠지다'는 '근심으로 기가 죽다'를 이르는 관용 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f50f9125a5cb",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 깜짝 놀라 겁이 나다",
+      "answer": "가슴이 철렁하다",
+      "distractors": [
+        "고개를 숙이다",
+        "국수를 먹다",
+        "입이 무겁다"
+      ],
+      "solution": [
+        "'깜짝 놀라 겁이 나다'를 이르는 관용 표현은 '가슴이 철렁하다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f64861366f72",
+      "difficulty": 1,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 아주 짧은 동안",
+      "answer": "눈 깜짝할 사이",
+      "distractors": [
+        "발이 넓다",
+        "손이 크다",
+        "얼굴이 두껍다"
+      ],
+      "solution": [
+        "'아주 짧은 동안'을 이르는 관용 표현은 '눈 깜짝할 사이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f9e8abe9b766",
+      "difficulty": 3,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 알면서도 모르는 체하다",
+      "answer": "시치미를 떼다",
+      "distractors": [
+        "코가 납작해지다",
+        "입에 침이 마르다",
+        "발목을 잡다"
+      ],
+      "solution": [
+        "'알면서도 모르는 체하다'를 이르는 관용 표현은 '시치미를 떼다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fc3c5efc1053",
+      "difficulty": 2,
+      "instruction": "뜻에 알맞은 관용 표현을 고르시오.",
+      "stem": "뜻: 잠을 잠깐 자다",
+      "answer": "눈을 붙이다",
+      "distractors": [
+        "눈 깜짝할 사이",
+        "파김치가 되다",
+        "입을 모으다"
+      ],
+      "solution": [
+        "'잠을 잠깐 자다'를 이르는 관용 표현은 '눈을 붙이다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

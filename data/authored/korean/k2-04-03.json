@@ -1,0 +1,692 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[2국04-03]",
+  "skill": "문장과 문장 부호를 알맞게 쓰기",
+  "items": [
+    {
+      "id": "0325f746d2c3",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "동생이 줄넘기를 합니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "096a716439be",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "너는 어디에 사니□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0ad8e1e2313e",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "누가 내 지우개를 가져갔을까□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "스스로 묻는 문장도 묻는 문장이므로 끝에 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "149d349ec8a7",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "내일 소풍 가는 곳이 어디입니까□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ff46a99431c",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "동생은 그림책을 좋아합니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23fba6871b1a",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "이 연필은 누구 것이니□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3991a8f5c680",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "우리 학교 운동장은 넓습니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39deebd5afda",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "오늘 점심은 무엇일까□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3f07b6327e34",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "우리 언제 도서관에 갈까□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4399c105c73b",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "사과□ 배, 포도를 샀습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "낱말을 늘어놓거나 부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "443e92dad41c",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "너는 무슨 과일을 좋아하니□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "47f0aee230a9",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "나는 아침마다 우유를 마십니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4fb2728b2125",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "선생님□ 질문이 있습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "604ae6f609ed",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "와, 무지개가 떴다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "675ab12db0e0",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "할머니□ 진지 드세요.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6aeb68d67927",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "아이고, 깜짝이야□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "76a1c59b199c",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "토끼□ 거북, 다람쥐가 숲에서 만났습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "낱말을 늘어놓거나 부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7d1184780500",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "동생이 마당에서 공을 찹니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8d60fe610ebd",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "아버지께서 저녁을 지으십니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b05022510ed",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "필통에는 연필□ 지우개, 자가 들어 있습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "낱말을 늘어놓거나 부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b4e3565396e",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "와, 이 꽃 정말 예쁘다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d8bdc2ef4d5",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "고양이가 의자 밑에서 잡니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f06b4292ad7",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "숙제는 다 했니□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad9b8d09186e",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "엄마□ 저 다녀왔습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "adeae252d5d1",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "오늘은 날씨가 맑습니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1642c323e2e",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "비가 와서 우산을 썼습니다□",
+      "answer": "마침표(.)",
+      "distractors": [
+        "물음표(?)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "설명하거나 알리는 문장 끝에는 마침표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b450a3533aa3",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "우아, 눈이 정말 많이 왔다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b71f89a29c1f",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "불이야, 모두 밖으로 나가요□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "급하게 외치는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c7fd04326a5d",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "우리 강아지 정말 귀엽다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cedfeb4d862d",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "봄□ 여름, 가을, 겨울은 사계절입니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "낱말을 늘어놓거나 부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d7257d4cb912",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "빨강□ 노랑, 파랑 크레파스를 골랐습니다.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "낱말을 늘어놓거나 부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da4093fcbe06",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "만세, 우리가 이겼다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dec1599e2afa",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "지금 몇 시입니까□",
+      "answer": "물음표(?)",
+      "distractors": [
+        "마침표(.)",
+        "느낌표(!)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e0f025935c75",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "앗, 뜨거워□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e35c4a9dc3e2",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "야호, 방학이다□",
+      "answer": "느낌표(!)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "쉼표(,)"
+      ],
+      "solution": [
+        "느낌을 세게 나타내는 문장 끝에는 느낌표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3b36afea7f7",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 문장 부호를 고르시오.",
+      "stem": "민수야□ 같이 놀자.",
+      "answer": "쉼표(,)",
+      "distractors": [
+        "마침표(.)",
+        "물음표(?)",
+        "느낌표(!)"
+      ],
+      "solution": [
+        "부르는 말 뒤에는 쉼표를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

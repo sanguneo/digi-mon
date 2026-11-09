@@ -1,0 +1,692 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[4영02-08]",
+  "skill": "자기 주변 주제 담화의 주요 정보를 묻거나 답하는 표준",
+  "items": [
+    {
+      "id": "00c50d055e1f",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What time is it?",
+      "answer": "It is two.",
+      "distractors": [
+        "It is a clock.",
+        "It is my clock.",
+        "I have time."
+      ],
+      "solution": [
+        "'What time is it?'에 알맞은 대답은 'It is two.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "03ecd249ca50",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is it a pig?",
+      "answer": "No, it is not.",
+      "distractors": [
+        "No, I do not.",
+        "No, I can not.",
+        "It is pink."
+      ],
+      "solution": [
+        "'Is it a pig?'에 알맞은 대답은 'No, it is not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "044c32f9ad2a",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you have a sister?",
+      "answer": "Yes, I have a sister.",
+      "distractors": [
+        "Yes, she is my sister.",
+        "No, I am not a sister.",
+        "She is nine."
+      ],
+      "solution": [
+        "'Do you have a sister?'에 알맞은 대답은 'Yes, I have a sister.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "053240a3cad2",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who is she?",
+      "answer": "She is my mom.",
+      "distractors": [
+        "She is tall.",
+        "He is my dad.",
+        "It is my bag."
+      ],
+      "solution": [
+        "'Who is she?'에 알맞은 대답은 'She is my mom.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0a55e467a132",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What color is it?",
+      "answer": "It is blue.",
+      "distractors": [
+        "It is a pen.",
+        "It is on the desk.",
+        "I like it."
+      ],
+      "solution": [
+        "'What color is it?'에 알맞은 대답은 'It is blue.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0b9a731189cf",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Can you sing?",
+      "answer": "Yes, I can.",
+      "distractors": [
+        "Yes, I do.",
+        "Yes, it is.",
+        "I like songs."
+      ],
+      "solution": [
+        "'Can you sing?'에 알맞은 대답은 'Yes, I can.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17d8ac25337c",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is my bag?",
+      "answer": "It is on the chair.",
+      "distractors": [
+        "It is a bag.",
+        "It is brown.",
+        "I have a bag."
+      ],
+      "solution": [
+        "'Where is my bag?'에 알맞은 대답은 'It is on the chair.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17ec546e2199",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What animal do you like?",
+      "answer": "I like rabbits.",
+      "distractors": [
+        "It is a zoo.",
+        "I am a rabbit.",
+        "Yes, I like."
+      ],
+      "solution": [
+        "'What animal do you like?'에 알맞은 대답은 'I like rabbits.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1deca7f4a1c1",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What do you want?",
+      "answer": "I want some water.",
+      "distractors": [
+        "I am water.",
+        "It is water.",
+        "Yes, I want."
+      ],
+      "solution": [
+        "'What do you want?'에 알맞은 대답은 'I want some water.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "224465c12d12",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many pencils do you have?",
+      "answer": "I have five pencils.",
+      "distractors": [
+        "It is a pencil.",
+        "They are long.",
+        "I like pencils."
+      ],
+      "solution": [
+        "'How many pencils do you have?'에 알맞은 대답은 'I have five pencils.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "274a3bed33bc",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is it a dog?",
+      "answer": "Yes, it is.",
+      "distractors": [
+        "Yes, I am.",
+        "Yes, I can.",
+        "It is a cat."
+      ],
+      "solution": [
+        "'Is it a dog?'에 알맞은 대답은 'Yes, it is.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2ec6a7e8dde7",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is she your friend?",
+      "answer": "Yes, she is.",
+      "distractors": [
+        "Yes, he is.",
+        "Yes, I do.",
+        "She is nine."
+      ],
+      "solution": [
+        "'Is she your friend?'에 알맞은 대답은 'Yes, she is.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3afef5602755",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What color is your bag?",
+      "answer": "It is yellow.",
+      "distractors": [
+        "It is a bag.",
+        "It is big.",
+        "I have a bag."
+      ],
+      "solution": [
+        "'What color is your bag?'에 알맞은 대답은 'It is yellow.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d6f1d211f8c",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you like milk?",
+      "answer": "No, I do not.",
+      "distractors": [
+        "No, it is not.",
+        "No, I can not.",
+        "It is milk."
+      ],
+      "solution": [
+        "'Do you like milk?'에 알맞은 대답은 'No, I do not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40ff15d50612",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Are you happy?",
+      "answer": "Yes, I am.",
+      "distractors": [
+        "Yes, I do.",
+        "Yes, it is.",
+        "I am nine."
+      ],
+      "solution": [
+        "'Are you happy?'에 알맞은 대답은 'Yes, I am.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "440c4eb28f9c",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Can you swim?",
+      "answer": "Yes, I can.",
+      "distractors": [
+        "Yes, I am.",
+        "Yes, it is.",
+        "I like fish."
+      ],
+      "solution": [
+        "'Can you swim?'에 알맞은 대답은 'Yes, I can.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "625a7d015312",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is this your pen?",
+      "answer": "Yes, it is.",
+      "distractors": [
+        "Yes, I do.",
+        "No, I can not.",
+        "It is a pen."
+      ],
+      "solution": [
+        "'Is this your pen?'에 알맞은 대답은 'Yes, it is.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "648221095bfe",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How are you?",
+      "answer": "I am fine, thank you.",
+      "distractors": [
+        "I am ten years old.",
+        "It is cold.",
+        "My name is Yuna."
+      ],
+      "solution": [
+        "'How are you?'에 알맞은 대답은 'I am fine, thank you.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "671c7f4532eb",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Are you tired?",
+      "answer": "No, I am not.",
+      "distractors": [
+        "No, I do not.",
+        "No, it is not.",
+        "I am nine."
+      ],
+      "solution": [
+        "'Are you tired?'에 알맞은 대답은 'No, I am not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "69ca80924172",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you have a pen?",
+      "answer": "Yes, I have a pen.",
+      "distractors": [
+        "Yes, it is a pen.",
+        "The pen is red.",
+        "I am a pen."
+      ],
+      "solution": [
+        "'Do you have a pen?'에 알맞은 대답은 'Yes, I have a pen.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "70001283caee",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What is that?",
+      "answer": "It is a ball.",
+      "distractors": [
+        "It is big.",
+        "Yes, it is.",
+        "I have a ball."
+      ],
+      "solution": [
+        "'What is that?'에 알맞은 대답은 'It is a ball.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74218714244a",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you like apples?",
+      "answer": "Yes, I do.",
+      "distractors": [
+        "Yes, it is.",
+        "No, I am not.",
+        "It is red."
+      ],
+      "solution": [
+        "'Do you like apples?'에 알맞은 대답은 'Yes, I do.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74cbea1cbd6e",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Can you dance?",
+      "answer": "No, I can not.",
+      "distractors": [
+        "No, I do not.",
+        "No, it is not.",
+        "I like music."
+      ],
+      "solution": [
+        "'Can you dance?'에 알맞은 대답은 'No, I can not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80846a2d7e5d",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is it cold?",
+      "answer": "Yes, it is.",
+      "distractors": [
+        "Yes, I do.",
+        "Yes, I can.",
+        "It is a coat."
+      ],
+      "solution": [
+        "'Is it cold?'에 알맞은 대답은 'Yes, it is.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8455d5fa5d16",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is the ball?",
+      "answer": "It is in the box.",
+      "distractors": [
+        "It is a ball.",
+        "It is big.",
+        "I like balls."
+      ],
+      "solution": [
+        "'Where is the ball?'에 알맞은 대답은 'It is in the box.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8a4bfa7ce543",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How old are you?",
+      "answer": "I am nine years old.",
+      "distractors": [
+        "I am fine, thank you.",
+        "It is a cat.",
+        "My name is Jiho."
+      ],
+      "solution": [
+        "'How old are you?'에 알맞은 대답은 'I am nine years old.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "93e1d2d4d1fd",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What do you like?",
+      "answer": "I like soccer.",
+      "distractors": [
+        "I am nine.",
+        "It is soccer.",
+        "Yes, I do."
+      ],
+      "solution": [
+        "'What do you like?'에 알맞은 대답은 'I like soccer.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9edcf781ad19",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who is this?",
+      "answer": "This is my grandfather.",
+      "distractors": [
+        "It is my book.",
+        "He is tall.",
+        "I am a boy."
+      ],
+      "solution": [
+        "'Who is this?'에 알맞은 대답은 'This is my grandfather.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a07b39c62ec7",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What is this?",
+      "answer": "It is a book.",
+      "distractors": [
+        "It is red.",
+        "Yes, it is.",
+        "I am happy."
+      ],
+      "solution": [
+        "'What is this?'에 알맞은 대답은 'It is a book.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a0d9258d0db3",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who is he?",
+      "answer": "He is my brother.",
+      "distractors": [
+        "She is my sister.",
+        "He is tall.",
+        "It is my brother."
+      ],
+      "solution": [
+        "'Who is he?'에 알맞은 대답은 'He is my brother.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2f7bad168e2",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many apples?",
+      "answer": "Six apples.",
+      "distractors": [
+        "They are red.",
+        "It is an apple.",
+        "I like apples."
+      ],
+      "solution": [
+        "'How many apples?'에 알맞은 대답은 'Six apples.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c21983aa9b60",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How is the weather?",
+      "answer": "It is hot.",
+      "distractors": [
+        "It is a hat.",
+        "I am ten.",
+        "It is my home."
+      ],
+      "solution": [
+        "'How is the weather?'에 알맞은 대답은 'It is hot.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c9b63f3564ba",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is the cat?",
+      "answer": "It is under the table.",
+      "distractors": [
+        "It is black.",
+        "It is a cat.",
+        "Yes, it is."
+      ],
+      "solution": [
+        "'Where is the cat?'에 알맞은 대답은 'It is under the table.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d71bedc56615",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you like cats?",
+      "answer": "No, I do not.",
+      "distractors": [
+        "No, I am not.",
+        "No, it is not.",
+        "It is a cat."
+      ],
+      "solution": [
+        "'Do you like cats?'에 알맞은 대답은 'No, I do not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eb8e52d8069d",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many dogs?",
+      "answer": "Three dogs.",
+      "distractors": [
+        "It is a dog.",
+        "Yes, I do.",
+        "They are brown."
+      ],
+      "solution": [
+        "'How many dogs?'에 알맞은 대답은 'Three dogs.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb3a12491267",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What is your name?",
+      "answer": "My name is Tom.",
+      "distractors": [
+        "I am fine.",
+        "It is my name.",
+        "I am nine years old."
+      ],
+      "solution": [
+        "'What is your name?'에 알맞은 대답은 'My name is Tom.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}
