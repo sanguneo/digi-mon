@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import { once } from 'node:events';
 import { execFile } from 'node:child_process';
-import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -302,6 +302,38 @@ test('CLI refuses to run without LLM settings and runs end to end against a fake
     assert.equal(loadAuthoredCorpus(root)[0].items.length, 2);
   } finally {
     server.close();
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('CLI --candidates gates a hand-written candidate file without LLM settings', async () => {
+  const bareEnv = { PATH: process.env.PATH, SYSTEMROOT: process.env.SYSTEMROOT };
+  const root = tmpRoot();
+  try {
+    const file = path.join(root, 'k4-02-04.json');
+    writeFileSync(file, JSON.stringify({ standardCode: '[4국02-04]', model: 'worker', ...JSON.parse(KOREAN_BATCH) }), 'utf8');
+    const run = await runCli(
+      ['--subject', 'korean', '--candidates', file, '--corpus-root', root, '--json'],
+      { ...bareEnv, DIGIMON_GGW_LINTER: path.join(root, 'missing-linter.ts') },
+    );
+    assert.equal(run.code, 0, run.stderr);
+    const [summary] = JSON.parse(run.stdout);
+    assert.equal(summary.standardCode, '[4국02-04]');
+    assert.equal(summary.requested, 8);
+    // 문장 린터가 없으므로 '아니라' 문항도 통과하고, 나머지 게이트 탈락은 LLM 경로와 같다.
+    assert.equal(summary.accepted.length, 3);
+    assert.deepEqual(summary.rejectionsByGate, { 'korean-text': 1, 'answer-leak': 1, schema: 2, duplicate: 1 });
+    assert.ok(summary.rejected.every((r) => typeof r.stem === 'string'));
+    const [corpus] = loadAuthoredCorpus(root);
+    assert.equal(corpus.items.length, 3);
+    assert.deepEqual(corpus.items[0].provenance, { model: 'worker', prompt: 'digi-mon/authoring-prompt@1' });
+
+    const noCode = path.join(root, 'no-code.json');
+    writeFileSync(noCode, KOREAN_BATCH, 'utf8');
+    const refused = await runCli(['--subject', 'korean', '--candidates', noCode, '--corpus-root', root], bareEnv);
+    assert.equal(refused.code, 2);
+    assert.match(refused.stderr, /standardCode/);
+  } finally {
     rmSync(root, { recursive: true, force: true });
   }
 });

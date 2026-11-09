@@ -205,6 +205,34 @@ export async function authorStandard({
   };
 }
 
+/**
+ * 후보 파일을 읽는다. 파일은 LLM 응답과 같은 꼴({"items":[...]})이고, 성취기준 코드
+ * (standardCode)와 작성 모델(model)을 위에 더 적을 수 있다.
+ */
+export function readCandidatesFile(file) {
+  const text = readFileSync(file, 'utf8');
+  const items = parseCandidates(text);
+  const data = JSON.parse(text.replace(/^\uFEFF/, ''));
+  return {
+    items,
+    standardCode: typeof data?.standardCode === 'string' ? data.standardCode : undefined,
+    model: typeof data?.model === 'string' && data.model.trim() ? data.model.trim() : 'candidates-file',
+  };
+}
+
+/**
+ * LLM 을 부르지 않고 미리 쓴 후보를 그대로 돌려주는 client. authorStandard 에
+ * count·batchSize 를 후보 수로, maxRounds 를 1 로 주면 후보 전부가 한 번에 게이트를 지난다.
+ */
+export function candidatesClient(items, model = 'candidates-file') {
+  return {
+    model,
+    async complete() {
+      return JSON.stringify({ items });
+    },
+  };
+}
+
 /** 탈락 사유를 게이트별로 센다. */
 export function summarizeRejections(rejected) {
   const byGate = {};
