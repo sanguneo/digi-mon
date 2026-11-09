@@ -4,12 +4,12 @@ import { readFileSync } from 'node:fs';
 export const MATH_GENERATOR_REVIEW = Object.freeze({
   schema: 'digi-mon/generator-set-review@1',
   subject: 'math',
-  generatorCount: 152,
-  reviewFingerprint: '5cd12d9624b3ee3bb501090ce654babf2e8c84619794de2651396b3e55297b9d',
+  generatorCount: 195,
+  reviewFingerprint: '7685477df32f3b5aeccc4cb22d2f388ec91e08d2ffeecac1119278ece1de018b',
   fingerprintIncludes: ['generator-contracts', 'generator-source-files'],
   curriculumReference: 'reference/[별책8] 수학과 교육과정.md',
   decision: 'approved',
-  note: '2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.',
+  note: '2022 개정 수학과 교육과정과 대조한 고정 집합. 2026-09-06 생활 맥락 변경 4종과 2026-11-10 확장 생성기 43종의 독립 정렬 재검토 근거는 docs/math-content-delta-review.md에 기록한다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.',
 });
 
 function mathGenerators(generators) {
