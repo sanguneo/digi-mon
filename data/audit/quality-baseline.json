@@ -42,7 +42,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "55cc5435e1f9c6fbb2d95f1b7a292f77771a5080245011c129abf1b7566d022c",
+      "worksheetFingerprint": "f12ed9d21b1a7659e88bbb3d294a9e05bf3b9348bef163fd27dc4c95e96492ca",
       "standardsUsed": [
         "[2수01-02]",
         "[2수01-04]",
@@ -70,7 +70,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "8deca7a09ae3af5a330a39cc5b229db8fdc303d993df262e2a9dba779a6346eb",
+      "worksheetFingerprint": "4dccf3dd041d3dbadf23cedfdb8660fc2878cd18b1086a42c7f04a69bca57947",
       "standardsUsed": [
         "[2수01-03]",
         "[2수01-05]",
@@ -98,7 +98,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "4e151b71014ecf58205c622e0ce2215135959788a6857fb1a90bbdb85781ee97",
+      "worksheetFingerprint": "ee3217bc23af5e2974a2be4091e43ddc6ebac6a6f9e9a3aa6623e9db74904363",
       "standardsUsed": [
         "[2수01-02]",
         "[2수01-04]",
@@ -126,7 +126,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "247d7f40861cd012fd1513ba17c7ced196893c270e65325a7e1ca305d3c39a67",
+      "worksheetFingerprint": "0b0deb1c1f3a156a78900877343df38bae7e1e7e7235402bd15e4fa0b458c3ab",
       "standardsUsed": [
         "[4수01-13]",
         "[4수01-14]",
@@ -154,7 +154,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "2348eddd8157baf222ccbf532ce11d92ba8d33a9bc6b0e983ce05abbeb8a3ffa",
+      "worksheetFingerprint": "72639ab1ccdfeb96124b778aa68f1547388621ea0fed02aa3c52e075954ca32f",
       "standardsUsed": [
         "[4수01-08]",
         "[4수01-09]",
@@ -183,7 +183,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "48820c6786b342b0a80fdc2c4e7c7db127fc644e508b773cf761ffda7c5573d8",
+      "worksheetFingerprint": "0bedb8b703c52ffe2012a41415227fc857230fb6e3a144c72f0051ff795169f5",
       "standardsUsed": [
         "[4수01-07]",
         "[4수01-11]",
@@ -212,7 +212,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "2444a67e3199533bb52c441ca995da9d56357503dfa07ec909b64173a757d0b2",
+      "worksheetFingerprint": "fb93e7024493d4f707cb217bb07ef95e36fcb5ed38b5718f2138af80c85fce35",
       "standardsUsed": [
         "[6수01-03]",
         "[6수01-04]",
@@ -240,7 +240,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "2c43f50cace0ec953e91bbc5d5166e409adcbaf66da0d51641a8067543e5f6cf",
+      "worksheetFingerprint": "c5c2251a990fda5be113f487c84fbb21dbcfd9fd700619c16ef0323c9d872eb3",
       "standardsUsed": [
         "[6수01-06]",
         "[6수01-12]",
@@ -269,7 +269,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "fdd4b795948ae6de93b5a9cff94570d794596010f62a31bff4304caf529a09eb",
+      "worksheetFingerprint": "986ea7d03464b4af7e8f4d2cb43bf4dbce9cee14e6dbeabb26a8650bb2d4f77d",
       "standardsUsed": [
         "[6수01-04]",
         "[6수01-11]",
@@ -663,5 +663,5 @@
       }
     }
   ],
-  "fingerprint": "58c6eee20402a82425465da12617a5d50b04774ecc6f44f9a674176e735591b7"
+  "fingerprint": "fafe9d69cfd6197059546d5c0e4ebd5bf6514d71b0df19c9007326fe397fbd3d"
 }

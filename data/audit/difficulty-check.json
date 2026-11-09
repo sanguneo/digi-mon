@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-check@1",
   "note": "계산 크기 대리 지표다. 실제 정답률이 아니다. 응답 데이터가 쌓이면 response-log 가 판정한다.",
   "samplesPerLevel": 80,
-  "numericGeneratorCount": 120,
+  "numericGeneratorCount": 154,
   "flatCount": 0,
   "declaredSingle": [
     {
@@ -246,6 +246,51 @@
       "generatorId": "math.g56.rm.s04-04.likelihood-word",
       "code": "[6수04-04]",
       "note": "난이도 1은 확실함·불가능함, 2 이상은 반반·가능성이 낮음까지 구별한다."
+    },
+    {
+      "generatorId": "math.g12.no.s06.missing-digit",
+      "code": "[2수01-06]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다."
+    },
+    {
+      "generatorId": "math.g12.no.s11.times-compare",
+      "code": "[2수01-11]",
+      "note": "난이도 1은 2단과 5단, 2는 2단부터 5단까지, 3은 2단부터 9단까지의 곱을 비교한다."
+    },
+    {
+      "generatorId": "math.g12.gm.s09.elapsed-time",
+      "code": "[2수03-09]",
+      "note": "난이도 1은 10분 단위로 시가 바뀌지 않는 계산, 2는 5분 단위로 시가 바뀔 수 있는 계산, 3은 1분 단위로 시가 바뀌는 계산이다."
+    },
+    {
+      "generatorId": "math.g12.gm.s13.length-add-sub",
+      "code": "[2수03-13]",
+      "note": "난이도 1은 cm끼리 받아올림·받아내림이 없고, 2는 cm끼리 더해 100cm를 넘는 덧셈, 3은 cm에서 받아내림이 있는 뺄셈이다."
+    },
+    {
+      "generatorId": "math.g34.no.s03.missing-digit",
+      "code": "[4수01-03]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다."
+    },
+    {
+      "generatorId": "math.g34.no.s15.mixed-add-sub",
+      "code": "[4수01-15]",
+      "note": "난이도 1은 분수 부분끼리 받아올림·받아내림이 없는 계산, 2는 분수 부분의 합이 1 이상인 덧셈, 3은 자연수에서 1을 받아내리는 뺄셈이다."
+    },
+    {
+      "generatorId": "math.g34.mr.s02-02.expression-sequence",
+      "code": "[4수02-02]",
+      "note": "난이도 1은 백 단위로 커지는 덧셈식, 2는 덧셈식이나 뺄셈식, 3은 곱셈식의 배열이다."
+    },
+    {
+      "generatorId": "math.g34.mr.s03-16.length-add-sub",
+      "code": "[4수03-16]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 작은 단위끼리 더해 큰 단위로 받아올리는 덧셈, 3은 큰 단위에서 받아내리는 뺄셈이다."
+    },
+    {
+      "generatorId": "math.g56.no.s08.mixed-add-sub",
+      "code": "[6수01-08]",
+      "note": "난이도 1은 한 분모가 다른 분모의 배수인 덧셈, 2는 두 분모의 최소공배수로 통분하는 덧셈, 3은 통분한 뒤 자연수에서 받아내림이 있는 뺄셈이다."
     },
     {
       "generatorId": "korean.g12.gr.s03-01.spelling",
@@ -3465,6 +3510,890 @@
           "maxMagnitude": 1,
           "steps": 2,
           "paramMagnitude": 20.475
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.no.s06.compare-expressions",
+      "code": "[2수01-06]",
+      "skill": "두 식의 계산 결과 크기 비교하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.788,
+          "steps": 3,
+          "paramMagnitude": 0
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 3,
+          "paramMagnitude": 0
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 3,
+          "paramMagnitude": 0
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.no.s09.story-box",
+      "code": "[2수01-09]",
+      "skill": "문장제에서 처음 수나 바뀐 수를 □로 놓고 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 3,
+          "paramMagnitude": 20.525
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 3,
+          "paramMagnitude": 58.813
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 3,
+          "paramMagnitude": 101.088
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.pd.s01.repeat-pattern",
+      "code": "[2수02-01]",
+      "skill": "되풀이되는 수의 배열에서 빈칸 채우기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 2
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.913,
+          "steps": 2,
+          "paramMagnitude": 3
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 4
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.pd.s01.hundred-chart",
+      "code": "[2수02-01]",
+      "skill": "수 배열표의 규칙으로 수 찾기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 50.462
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 48.825
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 52.263
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.pd.s02.own-rule",
+      "code": "[2수02-02]",
+      "skill": "정한 규칙에 따라 수를 늘어놓고 몇째 수 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 53.625
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.025,
+          "steps": 2,
+          "paramMagnitude": 48.575
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.013,
+          "steps": 2,
+          "paramMagnitude": 68.638
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.gm.s08.hours-minutes",
+      "code": "[2수03-08]",
+      "skill": "시간을 몇 분 또는 몇 시간 몇 분으로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.313,
+          "steps": 2,
+          "paramMagnitude": 56.375
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.612,
+          "steps": 2,
+          "paramMagnitude": 89.3
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 134.925
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.gm.s09.weekday",
+      "code": "[2수03-09]",
+      "skill": "1주일이 7일임을 이용하여 같은 달 날짜의 요일 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.825,
+          "steps": 2,
+          "paramMagnitude": 35.962
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 33.7
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 35.487
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.gm.s09.period-convert",
+      "code": "[2수03-09]",
+      "skill": "1주일·1년·1일·1시간의 관계로 기간 바꾸어 나타내기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.938,
+          "steps": 2,
+          "paramMagnitude": 25.775
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.962,
+          "steps": 2,
+          "paramMagnitude": 26.625
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.188,
+          "steps": 2,
+          "paramMagnitude": 65.813
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g12.pd.s04-02.tally",
+      "code": "[2수04-02]",
+      "skill": "조사한 자료를 분류하여 세고 비교하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.45,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1.512,
+          "steps": 2,
+          "paramMagnitude": 0
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s03.story",
+      "code": "[4수01-03]",
+      "skill": "세 자리 수의 덧셈과 뺄셈 문장제",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 3,
+          "paramMagnitude": 600.35
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 3,
+          "paramMagnitude": 754.337
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 3,
+          "paramMagnitude": 1118.825
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s04.story-multiply",
+      "code": "[4수01-04]",
+      "skill": "같은 수씩 여러 묶음인 상황을 곱셈식으로 나타내고 계산하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.487,
+          "steps": 3,
+          "paramMagnitude": 28.938
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3.7,
+          "steps": 3,
+          "paramMagnitude": 298.762
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3.587,
+          "steps": 3,
+          "paramMagnitude": 82.25
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s06.story-remainder",
+      "code": "[4수01-06]",
+      "skill": "나머지가 있는 나눗셈 상황에서 몫과 나머지의 뜻 해석하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 52.525
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 331.587
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 743.487
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s06.find-dividend",
+      "code": "[4수01-06]",
+      "skill": "몫과 나머지로 나누어지는 수 구하기(나누는 수가 한 자리 수)",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.887,
+          "steps": 2,
+          "paramMagnitude": 13.162
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.55,
+          "steps": 2,
+          "paramMagnitude": 28.988
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.85,
+          "steps": 2,
+          "paramMagnitude": 63.125
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s07.find-dividend",
+      "code": "[4수01-07]",
+      "skill": "몫과 나머지로 나누어지는 수 구하기(나누는 수가 두 자리 수)",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.813,
+          "steps": 2,
+          "paramMagnitude": 50.25
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 61.575
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 69.525
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.no.s10.to-improper",
+      "code": "[4수01-10]",
+      "skill": "대분수를 가분수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.488,
+          "steps": 2,
+          "paramMagnitude": 7.662
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.938,
+          "steps": 2,
+          "paramMagnitude": 13.688
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.35,
+          "steps": 2,
+          "paramMagnitude": 23.762
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.mr.s02-01.nth-term",
+      "code": "[4수02-01]",
+      "skill": "일정하게 변하는 수의 배열에서 몇째 수 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.188,
+          "steps": 2,
+          "paramMagnitude": 6.5
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.587,
+          "steps": 2,
+          "paramMagnitude": 8.125
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3.025,
+          "steps": 2,
+          "paramMagnitude": 8.938
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g34.gd.s24.angle-add-sub",
+      "code": "[4수03-24]",
+      "skill": "각도의 합과 차 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.725,
+          "steps": 2,
+          "paramMagnitude": 159.125
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.712,
+          "steps": 2,
+          "paramMagnitude": 149.875
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.688,
+          "steps": 2,
+          "paramMagnitude": 162.5
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s04.gcd-story",
+      "code": "[6수01-04]",
+      "skill": "최대공약수를 이용하여 똑같이 나누어 주는 문제 해결하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 40.475
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 75.9
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.813,
+          "steps": 2,
+          "paramMagnitude": 196.787
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s05.lcm-story",
+      "code": "[6수01-05]",
+      "skill": "최소공배수를 이용하여 다시 동시에 일어나는 때 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 16.825
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.138,
+          "steps": 2,
+          "paramMagnitude": 25
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.737,
+          "steps": 2,
+          "paramMagnitude": 48.862
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s05.multiples-in-range",
+      "code": "[6수01-05]",
+      "skill": "주어진 범위에 있는 배수의 개수 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2,
+          "steps": 2,
+          "paramMagnitude": 47.438
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.675,
+          "steps": 2,
+          "paramMagnitude": 139.238
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3,
+          "steps": 2,
+          "paramMagnitude": 451.175
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s06.equivalent-blank",
+      "code": "[6수01-06]",
+      "skill": "크기가 같은 분수가 되도록 빈칸 채우기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.775,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.95,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.45,
+          "steps": 2,
+          "paramMagnitude": 0
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s09.mixed-times",
+      "code": "[6수01-09]",
+      "skill": "대분수의 곱셈",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.625,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.725,
+          "steps": 2,
+          "paramMagnitude": 0
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1.738,
+          "steps": 2,
+          "paramMagnitude": 0
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s10.share-story",
+      "code": "[6수01-10]",
+      "skill": "똑같이 나누는 상황에서 몫을 분수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1,
+          "steps": 2,
+          "paramMagnitude": 7.938
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.775,
+          "steps": 2,
+          "paramMagnitude": 25.038
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1.988,
+          "steps": 2,
+          "paramMagnitude": 48.837
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s11.mixed-divide",
+      "code": "[6수01-11]",
+      "skill": "대분수를 분수로 나누기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.137,
+          "steps": 3,
+          "paramMagnitude": 0
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.425,
+          "steps": 3,
+          "paramMagnitude": 0
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1.938,
+          "steps": 3,
+          "paramMagnitude": 0
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s12.compare-fraction-decimal",
+      "code": "[6수01-12]",
+      "skill": "분수와 소수의 크기 비교하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.313,
+          "steps": 2,
+          "paramMagnitude": 8.55
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 1.825,
+          "steps": 2,
+          "paramMagnitude": 16.413
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 1.925,
+          "steps": 2,
+          "paramMagnitude": 37.388
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.no.s12.decimal-to-fraction",
+      "code": "[6수01-12]",
+      "skill": "소수를 기약분수로 나타내기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 1.475,
+          "steps": 2,
+          "paramMagnitude": 5.8
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.45,
+          "steps": 2,
+          "paramMagnitude": 55.975
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3.513,
+          "steps": 2,
+          "paramMagnitude": 2597.725
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s02-01.rule-table",
+      "code": "[6수02-01]",
+      "skill": "대응표에서 규칙을 찾아 다른 값 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.337,
+          "steps": 2,
+          "paramMagnitude": 19.55
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.212,
+          "steps": 2,
+          "paramMagnitude": 19.8
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.587,
+          "steps": 2,
+          "paramMagnitude": 26.675
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s02-03.percent",
+      "code": "[6수02-03]",
+      "skill": "비율을 백분율로 나타내고 백분율로 양 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.3,
+          "steps": 2,
+          "paramMagnitude": 74.85
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 3.362,
+          "steps": 1.425,
+          "paramMagnitude": 1595.375
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 4.463,
+          "steps": 1.525,
+          "paramMagnitude": 9884.25
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s02-05.share-story",
+      "code": "[6수02-05]",
+      "skill": "전체를 주어진 비로 비례배분하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.013,
+          "steps": 2,
+          "paramMagnitude": 54.987
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.625,
+          "steps": 2,
+          "paramMagnitude": 163.188
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3.188,
+          "steps": 2,
+          "paramMagnitude": 670.1
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s03-11.perimeter-inverse",
+      "code": "[6수03-11]",
+      "skill": "둘레를 알 때 변의 길이 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.063,
+          "steps": 2,
+          "paramMagnitude": 59.112
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.337,
+          "steps": 2,
+          "paramMagnitude": 112.5
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.638,
+          "steps": 2,
+          "paramMagnitude": 157.65
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s03-13.rectangle-inverse",
+      "code": "[6수03-13]",
+      "skill": "넓이를 알 때 직사각형의 변의 길이 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.075,
+          "steps": 2,
+          "paramMagnitude": 56.2
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.45,
+          "steps": 2,
+          "paramMagnitude": 143.5
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.987,
+          "steps": 2,
+          "paramMagnitude": 653.8
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s03-14.area-inverse",
+      "code": "[6수03-14]",
+      "skill": "넓이를 알 때 평행사변형·삼각형·사다리꼴·마름모의 길이 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.462,
+          "steps": 2,
+          "paramMagnitude": 135.262
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.388,
+          "steps": 2,
+          "paramMagnitude": 85.787
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.987,
+          "steps": 2,
+          "paramMagnitude": 473.587
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s03-16.circle-measure",
+      "code": "[6수03-16]",
+      "skill": "원주율을 이용하여 원주, 지름, 원의 넓이 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.15,
+          "steps": 2,
+          "paramMagnitude": 307.063
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.212,
+          "steps": 2,
+          "paramMagnitude": 317.962
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 2.763,
+          "steps": 2,
+          "paramMagnitude": 326.55
+        }
+      },
+      "meaningful": true
+    },
+    {
+      "generatorId": "math.g56.rm.s03-19.volume-inverse",
+      "code": "[6수03-19]",
+      "skill": "부피를 알 때 직육면체의 모서리 길이 구하기",
+      "byDifficulty": {
+        "1": {
+          "samples": 80,
+          "maxMagnitude": 2.888,
+          "steps": 2,
+          "paramMagnitude": 383.925
+        },
+        "2": {
+          "samples": 80,
+          "maxMagnitude": 2.813,
+          "steps": 2,
+          "paramMagnitude": 355.913
+        },
+        "3": {
+          "samples": 80,
+          "maxMagnitude": 3.362,
+          "steps": 2,
+          "paramMagnitude": 1458.7
         }
       },
       "meaningful": true

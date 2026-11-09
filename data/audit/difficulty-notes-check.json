@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 47,
+  "categoricalCount": 56,
   "problemCount": 0,
   "problems": [],
   "rows": [
@@ -306,6 +306,141 @@
         "1": 4,
         "2": 8,
         "3": 8
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s06.missing-digit",
+      "code": "[2수01-06]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 119,
+        "3": 118
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s11.times-compare",
+      "code": "[2수01-11]",
+      "note": "난이도 1은 2단과 5단, 2는 2단부터 5단까지, 3은 2단부터 9단까지의 곱을 비교한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 95,
+        "2": 103,
+        "3": 116
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s09.elapsed-time",
+      "code": "[2수03-09]",
+      "note": "난이도 1은 10분 단위로 시가 바뀌지 않는 계산, 2는 5분 단위로 시가 바뀔 수 있는 계산, 3은 1분 단위로 시가 바뀌는 계산이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 67,
+        "2": 113,
+        "3": 119
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s13.length-add-sub",
+      "code": "[2수03-13]",
+      "note": "난이도 1은 cm끼리 받아올림·받아내림이 없고, 2는 cm끼리 더해 100cm를 넘는 덧셈, 3은 cm에서 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g34.no.s03.missing-digit",
+      "code": "[4수01-03]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g34.no.s15.mixed-add-sub",
+      "code": "[4수01-15]",
+      "note": "난이도 1은 분수 부분끼리 받아올림·받아내림이 없는 계산, 2는 분수 부분의 합이 1 이상인 덧셈, 3은 자연수에서 1을 받아내리는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 117,
+        "3": 117
+      }
+    },
+    {
+      "generatorId": "math.g34.mr.s02-02.expression-sequence",
+      "code": "[4수02-02]",
+      "note": "난이도 1은 백 단위로 커지는 덧셈식, 2는 덧셈식이나 뺄셈식, 3은 곱셈식의 배열이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 116,
+        "2": 118,
+        "3": 110
+      }
+    },
+    {
+      "generatorId": "math.g34.mr.s03-16.length-add-sub",
+      "code": "[4수03-16]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 작은 단위끼리 더해 큰 단위로 받아올리는 덧셈, 3은 큰 단위에서 받아내리는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g56.no.s08.mixed-add-sub",
+      "code": "[6수01-08]",
+      "note": "난이도 1은 한 분모가 다른 분모의 배수인 덧셈, 2는 두 분모의 최소공배수로 통분하는 덧셈, 3은 통분한 뒤 자연수에서 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 117,
+        "2": 119,
+        "3": 116
       }
     },
     {

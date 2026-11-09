@@ -38,15 +38,15 @@ Markdown으로 고정한다. 외부 저장소를 읽지 않으며, LF 정규화 
 자동채점 불가 분류   54 성취기준
 전체                248 성취기준 (수학 121 · 국어 87 · 영어 40)
 
-생성기 193개
+생성기 236개
 verify-generators      문항 생성 검산 실패 0건 · SVG 렌더 37,985건
-mutation-test          틀린 답 21,603개 주입 → 통과 0개 · 무력한 검산 0개
-check-korean           문면 73,436건 → 조사·표기 위반 0건
+mutation-test          틀린 답 26,358개 주입 → 통과 0개 · 무력한 검산 0개
+check-korean           문면 86,703건 → 조사·표기 위반 0건
 check-vocabulary       문항 2,460개 / 낱말 3,547건 → 학년 어휘 위반 0건
 check-fact-tables      사실 표 6종 114짝 → 구조 문제 0건
-check-difficulty       numeric 120 / single 26 / categorical 47 · 평평 0 · 축 불일치 0
-check-difficulty-notes categorical 47개 → 노트와 코드 불일치 0건
-check-capacity         포화 100/193 · 관측 문항 용량 118,861개 · 상한 미신고 0건
+check-difficulty       numeric 154 / single 26 / categorical 56 · 평평 0 · 축 불일치 0
+check-difficulty-notes categorical 56개 → 노트와 코드 불일치 0건
+check-capacity         포화 102/236 · 관측 문항 용량 172,954개 · 상한 미신고 0건
 check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) · 순환·역행 0
 ```
 
@@ -54,7 +54,7 @@ check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) 
 
 | 교과 | 자동채점 | 생성기 | 전략 | 영역별 |
 |---|---:|---:|---|---|
-| 수학 | **118/120** | 152 | parametric | 수와 연산 42/42 · 변화와 관계 10/10 · 도형과 측정 54/56 · 자료와 가능성 12/12 |
+| 수학 | **118/120** | 195 | parametric | 수와 연산 42/42 · 변화와 관계 10/10 · 도형과 측정 54/56 · 자료와 가능성 12/12 |
 | 국어 | 23/49 | 29 | mixed | **문법 12/12** · 읽기 3/11 · 문학 2/10 · 쓰기 4/6 · 듣기말하기 2/5 · 매체 0/4 |
 | 영어 | 9/25 | 12 | mixed | 이해 2/12 · 표현 7/13 |
 
@@ -367,7 +367,7 @@ src/curriculum/   교육과정 지식. prerequisites · scoring-policy · units
 src/engine/       rng(시드 결정적) · item(계약) · registry(생성기 등록·커버리지) · worksheet(조립)
                   rational(정수 유리수·고정소수점) · hangul(자모 계산) · korean-number(조사)
                   response-log(정답률 집계·난이도 역전 탐지)
-src/generators/   math/ 9파일 152개 · korean/ 2파일 29개 · english/ 2파일 12개
+src/generators/   math/ 12파일 195개 · korean/ 2파일 29개 · english/ 2파일 12개
                   corpus(문장제 공용 어휘 — 이름·사물·단위명사)
 src/render/       svg-base · figure-svg(디스패치) · figure-geometry34 · worksheet-text
 src/server/       app(라우터) · grade(무상태 채점)
