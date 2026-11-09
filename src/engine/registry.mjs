@@ -8,6 +8,7 @@ import { generators as mathG34GeometryData } from '../generators/math/g34-geomet
 import { generators as mathG56NumberOperations } from '../generators/math/g56-number-operations.mjs';
 import { generators as mathG56RelationsMeasurement } from '../generators/math/g56-relations-measurement.mjs';
 import { generators as mathG12Extended } from '../generators/math/g12-extended.mjs';
+import { generators as mathG34Extended } from '../generators/math/g34-extended.mjs';
 import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { generators as englishLetters } from '../generators/english/letters.mjs';
 import { generators as koreanSentences } from '../generators/korean/sentences.mjs';
@@ -40,6 +41,7 @@ const MODULES = [
   { file: 'math/g56-number-operations.mjs', generators: mathG56NumberOperations },
   { file: 'math/g56-relations-measurement.mjs', generators: mathG56RelationsMeasurement },
   { file: 'math/g12-extended.mjs', generators: mathG12Extended },
+  { file: 'math/g34-extended.mjs', generators: mathG34Extended },
   { file: 'korean/grammar.mjs', generators: koreanGrammar },
   { file: 'english/letters.mjs', generators: englishLetters },
   { file: 'korean/sentences.mjs', generators: koreanSentences },
