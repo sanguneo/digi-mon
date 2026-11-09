@@ -55,6 +55,20 @@
       "generatorCount": 0,
       "generators": [],
       "examples": []
+    },
+    "josa-after-quote": {
+      "label": "따옴표 뒤 조사",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
+    },
+    "space-between-quote-josa": {
+      "label": "따옴표와 조사 사이 공백",
+      "count": 0,
+      "generatorCount": 0,
+      "generators": [],
+      "examples": []
     }
   }
 }

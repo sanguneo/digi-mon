@@ -22,7 +22,9 @@
  * 어휘는 학년군 목록에서만 고른다. 목록 밖 낱말은 게이트가 잡는다.
  */
 import { buildChoices } from '../../engine/item.mjs';
-import { josaEul, josaEun, josaI } from '../../engine/korean-number.mjs';
+import {
+  josaEul, josaEun, josaI, particle,
+} from '../../engine/korean-number.mjs';
 import {
   ASPIRATED_PAIRS,
   BASIC_CONSONANTS,
@@ -52,6 +54,9 @@ import {
   wordsOfLength,
   wordsWithFinal,
 } from '../../curriculum/korean-vocab.mjs';
+
+/** 사전 순서 풀이에서 몇째 글자인지 읽는 말. '1번째' 보다 교과서 표기에 가깝다. */
+const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째'];
 
 const bandOf = { 1: '1-2', 2: '1-2', 3: '1-2' };
 
@@ -374,10 +379,10 @@ const dictionaryOrder = {
       answer: { value: sorted, display, accepts: [display, sorted.join(' ')] },
       solution: [
         '국어사전은 첫 자음, 모음, 받침 순서로 낱말을 싣는다.',
-        `${sorted[0]}${josaI(sorted[0])} ${sorted[1]}보다 앞에 오는 까닭은 ${diff.position}번째 글자의 ${PART_NAMES[diff.part]}이 앞서기 때문이다.`,
+        `${sorted[0]}${particle(sorted[0], '과', '와')} ${sorted[1]}${josaEun(sorted[1])} ${ORDINALS[diff.position - 1]} 글자의 ${PART_NAMES[diff.part]}에서 갈리고, ${sorted[0]}${josaI(sorted[0])} 먼저 실린다.`,
         // 목록 끝에 서술격 조사를 붙이면 '나이'+'이다' 가 '나이이다' 가 된다.
         // 낱말이 무엇으로 끝나든 읽히게 문장 구조를 바꾼다.
-        `순서대로 쓰면 ${display} 순서다.`,
+        `국어사전에는 ${display} 차례로 실린다.`,
       ],
       dedupeKey: `dict-order:${sorted.join('-')}`,
       difficulty,
@@ -555,7 +560,7 @@ const standardWord = {
       choices: buildChoices(rng, correct, wrong),
       answer: { value: correct, display: correct, accepts: [correct] },
       solution: [
-        `'${spec.dialect}'는 ${spec.region} 지역에서 쓰는 방언이고 표준어는 '${spec.standard}'이다.`,
+        `'${spec.dialect}'${josaEun(spec.dialect)} ${spec.region} 지역에서 쓰는 방언이고 표준어는 '${spec.standard}'이다.`,
         '방언은 지역의 문화를 담고 있어 표준어와 함께 소중하다.',
       ],
       dedupeKey: `standard-word:${spec.standard}:${askStandard ? 's' : 'd'}`,
@@ -700,8 +705,8 @@ const tenseAgreement = {
       choices: buildChoices(rng, spec.form, [...spec.wrong, ...extra].slice(0, 3)),
       answer: { value: spec.form, display: spec.form, accepts: [spec.form] },
       solution: [
-        `'${spec.adverb}'는 ${spec.tense}를 나타내는 말이다.`,
-        `${spec.tense} 표현인 '${spec.form}'이 알맞다.`,
+        `'${spec.adverb}'${josaEun(spec.adverb)} ${spec.tense}를 나타내는 말이다.`,
+        `${spec.tense} 표현인 '${spec.form}'${josaI(spec.form)} 알맞다.`,
       ],
       // 난이도 3은 오답 선택지를 더 섞으므로 같은 부사라도 다른 문항이다.
       // 키에 난이도를 넣지 않으면 학습지 중복 제거가 서로 다른 문항을 같다고 본다.

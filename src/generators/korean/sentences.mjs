@@ -96,7 +96,7 @@ const findOpinionWord = {
       stem: spec.text,
       choices: buildChoices(rng, word, rng.shuffle(others).slice(0, 3)),
       answer: { value: word, display: word, accepts: [word] },
-      solution: [`${spec.basis}.`, `그 말이 '${word}' 이다.`],
+      solution: [`${spec.basis}.`, `그러므로 의견을 만드는 말은 '${word}'이다.`],
       dedupeKey: `opinion-word:${spec.text}`,
       difficulty,
     };
@@ -133,7 +133,7 @@ const figurativeKind = {
         stem: spec.text,
         choices: buildChoices(rng, correct, [correct === '비유' ? '비유가 아님' : '비유', '질문', '명령']),
         answer: { value: correct, display: correct, accepts: [correct] },
-        solution: [spec.basis, `그러므로 ${correct}이다.`],
+        solution: [spec.basis, correct === '비유' ? '그러므로 비유가 쓰인 문장이다.' : '그러므로 비유가 쓰이지 않은 문장이다.'],
         dedupeKey: `figurative-is:${spec.text}`,
         difficulty,
       };
@@ -146,7 +146,7 @@ const figurativeKind = {
       stem: spec.text,
       choices: buildChoices(rng, correct, wrong),
       answer: { value: correct, display: correct, accepts: [correct] },
-      solution: [spec.basis, `그러므로 ${correct}이다.`],
+      solution: [spec.basis, correct === '비유가 아님' ? '그러므로 비유가 쓰이지 않은 문장이다.' : `그러므로 ${correct}${josaI(correct)} 쓰인 문장이다.`],
       dedupeKey: `figurative-kind:${spec.text}`,
       difficulty,
     };
@@ -177,7 +177,7 @@ const findVehicle = {
       instruction: '무엇에 견주었는지 찾아 쓰시오.',
       stem: spec.text,
       answer: { value: spec.vehicle, display: spec.vehicle, accepts: [spec.vehicle] },
-      solution: [spec.basis, `'${spec.vehicle}' 에 견주었다.`],
+      solution: [spec.basis, `'${spec.vehicle}'에 견주었다.`],
       dedupeKey: `vehicle:${spec.text}`,
       difficulty,
     };
@@ -240,7 +240,7 @@ const readingBreak = {
 
     return {
       params: { words: spec.words, breakAfter: spec.breakAfter },
-      instruction: '한 번 끊어 읽기에 알맞은 것을 고르시오. (∨ 는 끊어 읽는 자리)',
+      instruction: '한 번 끊어 읽기에 알맞은 것을 고르시오. (∨는 끊어 읽는 자리)',
       stem: spec.words.join(' '),
       choices: buildChoices(rng, correct, [...new Set(wrong)].slice(0, 3)),
       answer: { value: correct, display: correct, accepts: [correct] },
@@ -335,7 +335,7 @@ const mindGuess = {
       stem: spec.text,
       choices: buildChoices(rng, spec.feeling, wrong),
       answer: { value: spec.feeling, display: spec.feeling, accepts: [spec.feeling] },
-      solution: [spec.basis, `그러므로 '${spec.feeling}'가 알맞다.`],
+      solution: [spec.basis, `그러므로 '${spec.feeling}'${josaI(spec.feeling)} 알맞다.`],
       dedupeKey: `mind:${spec.text}`,
       difficulty,
     };
@@ -402,7 +402,7 @@ const fixSentence = {
     const shown = rng.pick(spec.wrongs);
     return {
       params: { right: spec.right, wrongs: spec.wrongs },
-      instruction: '이 문장을 맞춤법과 띄어쓰기가 모두 바르게 고친 것을 고르시오.',
+      instruction: '이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.',
       stem: shown,
       choices: buildChoices(rng, spec.right, spec.wrongs),
       answer: { value: spec.right, display: spec.right, accepts: [spec.right] },
@@ -511,7 +511,7 @@ const dialogueInference = {
       stem: spec.lines.map((l) => `"${l}"`).join('\n'),
       choices: buildChoices(rng, spec.answer, spec.wrong),
       answer: { value: spec.answer, display: spec.answer, accepts: [spec.answer] },
-      solution: [spec.basis, `그러므로 '${spec.answer}'가 알맞다.`],
+      solution: [spec.basis, `그러므로 '${spec.answer}'${josaI(spec.answer)} 알맞다.`],
       dedupeKey: `inference:${spec.lines[0]}`,
       difficulty,
     };
