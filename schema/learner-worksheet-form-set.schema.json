@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learner-worksheet-form-set.schema.json",
+  "title": "digi-mon learner worksheet form set projection",
+  "type": "object",
+  "required": [
+    "schema",
+    "engineVersion",
+    "seed",
+    "formCount",
+    "blueprintAttempt",
+    "options",
+    "blueprint",
+    "forms",
+    "fingerprint"
+  ],
+  "properties": {
+    "schema": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/schema"
+    },
+    "engineVersion": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/engineVersion"
+    },
+    "seed": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/seed"
+    },
+    "formCount": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/formCount"
+    },
+    "blueprintAttempt": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/blueprintAttempt"
+    },
+    "options": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/options"
+    },
+    "blueprint": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/blueprint"
+    },
+    "forms": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["label", "worksheet"],
+        "properties": {
+          "label": {
+            "$ref": "./worksheet-form-set.schema.json#/properties/forms/items/properties/label"
+          },
+          "worksheet": {
+            "$ref": "./learner-worksheet.schema.json"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "fingerprint": {
+      "$ref": "./worksheet-form-set.schema.json#/properties/fingerprint"
+    }
+  },
+  "additionalProperties": false
+}

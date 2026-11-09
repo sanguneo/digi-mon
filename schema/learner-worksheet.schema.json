@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learner-worksheet.schema.json",
+  "title": "digi-mon learner worksheet projection",
+  "type": "object",
+  "required": [
+    "schema",
+    "engineVersion",
+    "seed",
+    "fingerprint",
+    "title",
+    "requested",
+    "produced",
+    "shortfall",
+    "options",
+    "modeSelection",
+    "corpus",
+    "standardsUsed",
+    "difficultyHistogram",
+    "items"
+  ],
+  "properties": {
+    "schema": { "$ref": "./worksheet.schema.json#/properties/schema" },
+    "engineVersion": {
+      "$ref": "./worksheet.schema.json#/properties/engineVersion"
+    },
+    "seed": { "$ref": "./worksheet.schema.json#/properties/seed" },
+    "fingerprint": {
+      "$ref": "./worksheet.schema.json#/properties/fingerprint"
+    },
+    "title": { "$ref": "./worksheet.schema.json#/properties/title" },
+    "requested": { "$ref": "./worksheet.schema.json#/properties/requested" },
+    "produced": { "$ref": "./worksheet.schema.json#/properties/produced" },
+    "shortfall": { "$ref": "./worksheet.schema.json#/properties/shortfall" },
+    "options": { "$ref": "./worksheet.schema.json#/properties/options" },
+    "modeSelection": {
+      "$ref": "./worksheet.schema.json#/properties/modeSelection"
+    },
+    "corpus": { "$ref": "./worksheet.schema.json#/properties/corpus" },
+    "standardsUsed": {
+      "$ref": "./worksheet.schema.json#/properties/standardsUsed"
+    },
+    "difficultyHistogram": {
+      "$ref": "./worksheet.schema.json#/properties/difficultyHistogram"
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "./learner-item.schema.json" }
+    },
+    "formSet": { "$ref": "./worksheet.schema.json#/properties/formSet" }
+  },
+  "additionalProperties": false
+}

@@ -5,9 +5,13 @@
 | 계약 | 현재 버전 | 스키마 |
 |---|---|---|
 | canonical item | `digi-mon/item@2` | `schema/item.schema.json` |
+| learner item projection | canonical item version follows | `schema/learner-item.schema.json` |
 | learning support | `digi-mon/learning-support@1` | `schema/learning-support.schema.json` |
+| learner learning support projection | learning support version follows | `schema/learner-learning-support.schema.json` |
 | worksheet | `digi-mon/worksheet@5` | `schema/worksheet.schema.json` |
+| learner worksheet projection | worksheet version follows | `schema/learner-worksheet.schema.json` |
 | worksheet form set | `digi-mon/worksheet-form-set@4` | `schema/worksheet-form-set.schema.json` |
+| learner worksheet form set projection | form set version follows | `schema/learner-worksheet-form-set.schema.json` |
 | mode selection | `digi-mon/mode-selection@1` | worksheet schema 내부 |
 | grading result | `digi-mon/grading-result@1` | `schema/grading-result.schema.json` |
 | learning gate request | `digi-mon/learning-gate-request@1` | `schema/learning-gate-request.schema.json` |

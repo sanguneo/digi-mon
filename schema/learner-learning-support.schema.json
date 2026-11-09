@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learner-learning-support.schema.json",
+  "title": "digi-mon learner learning support projection",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "objective"
+  ],
+  "properties": {
+    "schema": {
+      "$ref": "./learning-support.schema.json#/properties/schema"
+    },
+    "status": {
+      "$ref": "./learning-support.schema.json#/properties/status"
+    },
+    "objective": {
+      "$ref": "./learning-support.schema.json#/properties/objective"
+    },
+    "review": {
+      "$ref": "./learning-support.schema.json#/properties/review"
+    },
+    "materials": {
+      "$ref": "./learning-support.schema.json#/properties/materials"
+    },
+    "hints": {
+      "$ref": "./learning-support.schema.json#/properties/hints"
+    },
+    "teacher": false
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "objective-only" } },
+        "required": ["status"]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["review"] },
+            { "required": ["materials"] },
+            { "required": ["hints"] }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "const": "guided-candidate" } },
+        "required": ["status"]
+      },
+      "then": {
+        "required": ["review", "materials", "hints"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

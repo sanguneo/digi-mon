@@ -102,7 +102,29 @@
     },
     "corpus": {
       "type": "object",
-      "required": ["taxonomyVersion", "integrity"]
+      "required": ["taxonomyVersion", "integrity"],
+      "properties": {
+        "taxonomyVersion": {
+          "const": "digi-mon/curriculum-corpus@1"
+        },
+        "integrity": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["file", "sha256"],
+            "properties": {
+              "file": { "type": "string", "minLength": 1 },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     },
     "standardsUsed": {
       "type": "array",

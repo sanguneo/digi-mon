@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/digi-mon/learner-item.schema.json",
+  "title": "digi-mon learner item projection",
+  "type": "object",
+  "required": [
+    "id",
+    "schema",
+    "standardCode",
+    "specId",
+    "subject",
+    "subjectKorean",
+    "gradeBand",
+    "domain",
+    "generatorId",
+    "skill",
+    "learningSupport",
+    "difficulty",
+    "format",
+    "scoring",
+    "stem"
+  ],
+  "properties": {
+    "schema": { "$ref": "./item.schema.json#/properties/schema" },
+    "number": { "$ref": "./item.schema.json#/properties/number" },
+    "id": { "$ref": "./item.schema.json#/properties/id" },
+    "standardCode": { "$ref": "./item.schema.json#/properties/standardCode" },
+    "specId": { "$ref": "./item.schema.json#/properties/specId" },
+    "subject": { "$ref": "./item.schema.json#/properties/subject" },
+    "subjectKorean": { "$ref": "./item.schema.json#/properties/subjectKorean" },
+    "gradeBand": { "$ref": "./item.schema.json#/properties/gradeBand" },
+    "domain": { "$ref": "./item.schema.json#/properties/domain" },
+    "module": { "$ref": "./item.schema.json#/properties/module" },
+    "generatorId": { "$ref": "./item.schema.json#/properties/generatorId" },
+    "assessmentMappings": {
+      "$ref": "./item.schema.json#/properties/assessmentMappings"
+    },
+    "curriculum": { "$ref": "./item.schema.json#/properties/curriculum" },
+    "skill": { "$ref": "./item.schema.json#/properties/skill" },
+    "learningSupport": {
+      "$ref": "./learner-learning-support.schema.json"
+    },
+    "difficulty": { "$ref": "./item.schema.json#/properties/difficulty" },
+    "format": { "$ref": "./item.schema.json#/properties/format" },
+    "scoring": { "$ref": "./item.schema.json#/properties/scoring" },
+    "stem": { "$ref": "./item.schema.json#/properties/stem" },
+    "instruction": { "$ref": "./item.schema.json#/properties/instruction" },
+    "choices": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["label", "text"],
+        "properties": {
+          "label": {
+            "$ref": "./item.schema.json#/properties/choices/items/properties/label"
+          },
+          "text": {
+            "$ref": "./item.schema.json#/properties/choices/items/properties/text"
+          },
+          "correct": false
+        },
+        "additionalProperties": false
+      }
+    },
+    "figure": {
+      "type": "object",
+      "properties": {
+        "spec": false
+      },
+      "additionalProperties": true
+    },
+    "answer": false,
+    "solution": false,
+    "params": false,
+    "dedupeKey": false
+  },
+  "additionalProperties": true
+}

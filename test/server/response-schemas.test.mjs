@@ -38,9 +38,13 @@ function readSchema(name) {
 const SCHEMA_FILES = [
   ['generator-topic-alignment.schema.json', 'https://example.invalid/digi-mon/generator-topic-alignment.schema.json'],
   ['learning-support.schema.json'],
+  ['learner-learning-support.schema.json'],
   ['item.schema.json'],
+  ['learner-item.schema.json'],
   ['worksheet.schema.json'],
+  ['learner-worksheet.schema.json'],
   ['worksheet-form-set.schema.json'],
+  ['learner-worksheet-form-set.schema.json'],
   ['grading-result.schema.json'],
   ['learning-gate-recommendation.schema.json'],
 ];
@@ -60,6 +64,11 @@ function assertValid(name, payload) {
     true,
     `${name}: ${JSON.stringify(validate.errors?.slice(0, 5), null, 2)}`,
   );
+}
+
+function assertInvalid(name, payload) {
+  const validate = validatorFor(name);
+  assert.equal(validate(payload), false, `${name}: payload should be rejected`);
 }
 
 let server;
@@ -109,6 +118,46 @@ test('POST /v1/worksheets response validates against worksheet.schema.json', asy
   }
 });
 
+test('learner worksheet response validates against its projection schema', async () => {
+  const issued = await request('/v1/worksheets', {
+    method: 'POST',
+    body: { subject: 'math', count: 5, seed: 'schema-learner-worksheet' },
+  });
+  assert.equal(issued.status, 200, JSON.stringify(issued.body));
+  assertValid('learner-worksheet.schema.json', issued.body);
+
+  for (const secret of ['answer', 'solution', 'params', 'dedupeKey']) {
+    const leaked = structuredClone(issued.body);
+    leaked.items[0][secret] = secret === 'solution' ? ['leaked'] : {};
+    assertInvalid('learner-worksheet.schema.json', leaked);
+  }
+
+  const teacherNote = structuredClone(issued.body);
+  teacherNote.items[0].learningSupport.teacher = {
+    lookFor: ['leaked'],
+    intervention: 'leaked',
+  };
+  assertInvalid('learner-worksheet.schema.json', teacherNote);
+});
+
+test('worksheet schema contracts corpus identity fields', async () => {
+  const issued = await request('/v1/worksheets?includeAnswers=true', {
+    method: 'POST',
+    token: TEACHER_TOKEN,
+    body: { subject: 'math', count: 1, seed: 'schema-corpus-identity' },
+  });
+  assert.equal(issued.status, 200, JSON.stringify(issued.body));
+  assertValid('worksheet.schema.json', issued.body);
+
+  for (const corpus of [
+    { ...issued.body.corpus, taxonomyVersion: 1 },
+    { ...issued.body.corpus, integrity: [{ file: '', sha256: 'not-a-hash' }] },
+    { ...issued.body.corpus, unknown: true },
+  ]) {
+    assertInvalid('worksheet.schema.json', { ...issued.body, corpus });
+  }
+});
+
 test('POST /v1/worksheet-forms response validates against worksheet-form-set.schema.json', async () => {
   const issued = await request('/v1/worksheet-forms?includeAnswers=true', {
     method: 'POST',
@@ -117,6 +166,19 @@ test('POST /v1/worksheet-forms response validates against worksheet-form-set.sch
   });
   assert.equal(issued.status, 200, JSON.stringify(issued.body));
   assertValid('worksheet-form-set.schema.json', issued.body);
+});
+
+test('learner worksheet forms contain only valid learner projections', async () => {
+  const issued = await request('/v1/worksheet-forms', {
+    method: 'POST',
+    body: { subject: 'math', count: 4, formCount: 2, seed: 'schema-learner-forms' },
+  });
+  assert.equal(issued.status, 200, JSON.stringify(issued.body));
+  assertValid('learner-worksheet-form-set.schema.json', issued.body);
+
+  const leaked = structuredClone(issued.body);
+  leaked.forms[0].worksheet.items[0].dedupeKey = 'leaked';
+  assertInvalid('learner-worksheet-form-set.schema.json', leaked);
 });
 
 test('POST /v1/grade response validates against grading-result.schema.json', async () => {

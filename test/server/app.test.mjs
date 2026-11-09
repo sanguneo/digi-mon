@@ -149,6 +149,8 @@ test('learner item exposes guidance without teacher-only notes or answers', asyn
   assert.equal(Object.hasOwn(item.learningSupport, 'teacher'), false);
   assert.equal(Object.hasOwn(item, 'answer'), false);
   assert.equal(Object.hasOwn(item, 'solution'), false);
+  assert.equal(Object.hasOwn(item, 'params'), false);
+  assert.equal(Object.hasOwn(item, 'dedupeKey'), false);
 });
 
 test('item issuance excludes previously exposed learner item ids', async () => {
@@ -193,7 +195,9 @@ test('HTTP form issuance preserves projections, exclusions, and grading provenan
   assert.equal(learner.body.schema, 'digi-mon/worksheet-form-set@4');
   assert.equal(learner.body.forms.length, 3);
   assert.ok(learner.body.forms.every(({ worksheet }) =>
-    !Object.hasOwn(worksheet.items[0], 'answer')));
+    ['answer', 'solution', 'params', 'dedupeKey'].every(
+      (secret) => !Object.hasOwn(worksheet.items[0], secret),
+    )));
 
   const excludedItemId = learner.body.forms[0].worksheet.items[0].id;
   const teacher = await request('/v1/worksheet-forms', {
@@ -379,7 +383,9 @@ test('learner endpoints strip answers and teacher answers require authorization'
   assert.equal(learner.status, 200);
   assert.equal(typeof learner.body.fingerprint, 'string');
   assert.equal(Object.hasOwn(learner.body.items[0], 'answer'), false);
+  assert.equal(Object.hasOwn(learner.body.items[0], 'solution'), false);
   assert.equal(Object.hasOwn(learner.body.items[0], 'params'), false);
+  assert.equal(Object.hasOwn(learner.body.items[0], 'dedupeKey'), false);
 
   const denied = await request('/v1/worksheets', {
     method: 'POST',

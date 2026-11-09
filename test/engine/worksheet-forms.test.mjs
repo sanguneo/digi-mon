@@ -9,6 +9,10 @@ import { buildWorksheet } from '../../src/engine/worksheet.mjs';
 import { buildWorksheetFormSet } from '../../src/engine/worksheet-forms.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const TEST_CORPUS = {
+  schema: 'digi-mon/curriculum-corpus@1',
+  integrity: [{ file: 'test-corpus.json', sha256: '0'.repeat(64) }],
+};
 
 function readSchema(name) {
   return JSON.parse(readFileSync(path.join(ROOT, 'schema', name), 'utf8'));
@@ -63,7 +67,7 @@ function fixture({ constant = false } = {}) {
   ]);
   return {
     spine: {
-      corpus: { schema: 'test-corpus', integrity: [] },
+      corpus: TEST_CORPUS,
       standards: [standard(codeA), standard(codeB)],
     },
     registry: {
@@ -165,7 +169,7 @@ test('form set deterministically skips a blueprint that cannot fill every form',
     [codeB, [generator('expandable', codeB)]],
   ]);
   const spine = {
-    corpus: { schema: 'test-corpus', integrity: [] },
+    corpus: TEST_CORPUS,
     standards: [standard(codeA), standard(codeB)],
   };
   const registry = {
@@ -223,7 +227,7 @@ test('form set retries when a generator drifts from the blueprint difficulty', (
     [codeB, [stable]],
   ]);
   const spine = {
-    corpus: { schema: 'test-corpus', integrity: [] },
+    corpus: TEST_CORPUS,
     standards: [standard(codeA), standard(codeB)],
   };
   const registry = {
