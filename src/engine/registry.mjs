@@ -10,6 +10,9 @@ import { generators as mathG56RelationsMeasurement } from '../generators/math/g5
 import { generators as mathG12Extended } from '../generators/math/g12-extended.mjs';
 import { generators as mathG34Extended } from '../generators/math/g34-extended.mjs';
 import { generators as mathG56Extended } from '../generators/math/g56-extended.mjs';
+import { generators as mathG12Extended2 } from '../generators/math/g12-extended2.mjs';
+import { generators as mathG34Extended2 } from '../generators/math/g34-extended2.mjs';
+import { generators as mathG56Extended2 } from '../generators/math/g56-extended2.mjs';
 import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { generators as englishLetters } from '../generators/english/letters.mjs';
 import { generators as koreanSentences } from '../generators/korean/sentences.mjs';
@@ -44,6 +47,9 @@ const MODULES = [
   { file: 'math/g12-extended.mjs', generators: mathG12Extended },
   { file: 'math/g34-extended.mjs', generators: mathG34Extended },
   { file: 'math/g56-extended.mjs', generators: mathG56Extended },
+  { file: 'math/g12-extended2.mjs', generators: mathG12Extended2 },
+  { file: 'math/g34-extended2.mjs', generators: mathG34Extended2 },
+  { file: 'math/g56-extended2.mjs', generators: mathG56Extended2 },
   { file: 'korean/grammar.mjs', generators: koreanGrammar },
   { file: 'english/letters.mjs', generators: englishLetters },
   { file: 'korean/sentences.mjs', generators: koreanSentences },
