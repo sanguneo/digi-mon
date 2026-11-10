@@ -87,3 +87,39 @@ km·m 길이의 합과 차를 함께 다룬다. 검토자도 이 근거를 적�
 
 이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값과 생성기 수를 갱신한다.
 변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
+
+
+## 2026-11-10 2차 확장 생성기 70종
+
+- 검토일: 2026-11-10
+- 비교 기준: `2b69493`
+- 판정: 1차 changes-needed, 수정 뒤 2차 approve
+- 방법: 구현 담당과 다른 에이전트가 읽기 전용으로 소스와 공식 성취기준·적용 시 고려 사항을 대조하고, 저장소 밖 스크립트로 문항을 문면만 보고 다시 풀었다(verify를 부르지 않음).
+- 범위: 새 파일 `src/generators/math/g12-extended2.mjs`(15종), `g34-extended2.mjs`(27종), `g56-extended2.mjs`(28종)과 1차 생성기 수정(`hours-minutes`, `period-convert`, `to-improper`, `lcm-story`, `circle-measure`, `hundred-chart` 난이도 축 표시).
+
+1차 검토는 42,000문항(70종 × 시드 200 × 난이도 3)을 다시 풀어 정답 불일치 19건, 답이 둘 이상 되는 문항 104건을 찾았고 차단 9건을 냈다. 모두 고쳤다.
+
+| 지적 | 생성기 | 수정 |
+|---|---|---|
+| 문면을 만든 뒤 수를 1 바꿔 문면과 답이 어긋남 | `math.g34.mr.s03-16.length-story`, `s03-19.capacity-story`, `s03-23.weight-story` | 큰 단위로 딱 떨어지는 경우는 다시 뽑고, 문면·params·답을 같은 수에서 만든다 |
+| 맨 앞 □에 `0부터 9까지` | `math.g34.no.s02.blank-digit-count` | 맨 앞 자리는 `1부터 9까지` |
+| 2학년 규칙 문항에 세 자리 덧셈 | `math.g12.pd.s01.alternating-steps`, `growing-step`, `math.g12.pd.s02.rule-first-over` | 99 이하로 두고, 큰 수는 한 자리만 바뀌는 뛰어 세기만 |
+| 동치 관계가 두 자리 수 범위를 넘음 | `math.g34.mr.s02-03.balance-ops` | 모든 수 99 이하, 난이도는 구조로(범주형) |
+| 대응 관계 식이 두 연산 | `math.g56.rm.s02-01.correspondence-inverse`, `math.g34.mr.s02-01.correspondence-table` | 한 연산 식만. 3~4학년은 한 단계 규칙의 배열 표로 바꿈 |
+| 네 자리 수의 제곱근이 필요 | `math.g56.rm.s03-16.circle-applied`, `s03-17.surface-area-plus` | 넓이에서 반지름·겉넓이에서 모서리를 구할 때 2~15 또는 10의 배수 |
+| 큰 원 안 작은 원 조건 누락 | `math.g34.gd.s06.circles-in-row` | `양 끝의 작은 원이 큰 원에 꼭 맞게` |
+| 어휘 | `math.g56.rm.s02-05.share-advanced`, `math.g34.no.s07.story-two-digit` | `두 모둠이`, `몇 봉지` |
+| 곱셈구구를 넘는 기간 환산 | `math.g12.gm.s09.period-convert` | 주일 9, 년 4, 일 3, 시간 4까지 |
+
+비차단 제안(시간 상한, 하마 무게, 반 인원, 단가, 철근 무게, 어색한 문장, 자연수 답의 `기약분수로` 지시)도 반영했다.
+
+재검토에서 70종 42,000문항과 바뀐 1차 생성기 36,000문항을 다시 풀어 정답 불일치 0건, 답이 둘 이상 되는 문항 0건이었다. 범주형 난이도 노트(`hundred-chart`, `growing-step`, `balance-ops`)도 실제 문항과 대조했고, `balance-ops` 2단계 노트는 지적에 따라 `곱셈구구 곱이 들어가기도 하며`로 고쳤다.
+
+검토한 수학 생성기는 265개이며 현재 소스 집합의 지문값은 다음과 같다.
+
+```text
+917c0876fab78c308c55bc1a05a05712c71a2c927f586b0430d173cb3c2e4fa3
+```
+
+이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값과 생성기 수를 갱신한다.
+변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
