@@ -5,6 +5,25 @@
   "skill": "대화에서 생략된 내용을 추론하며 듣기",
   "items": [
     {
+      "id": "005bc108f4ae",
+      "difficulty": 2,
+      "instruction": "대화에서 나의 말에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"숙제 다 했니?\"\n나: \"수학은요.\"",
+      "answer": "수학 숙제만 다 했다",
+      "distractors": [
+        "숙제를 하나도 안 했다",
+        "숙제를 모두 다 했다",
+        "수학 숙제만 못 했다"
+      ],
+      "solution": [
+        "수학은 했다고 답했으니 다른 숙제는 아직 남았고 수학 숙제만 끝냈다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "02f0992ae60c",
       "difficulty": 2,
       "instruction": "준우가 빠뜨린 준비물로 알맞은 것은 무엇입니까?",
@@ -17,6 +36,25 @@
       ],
       "solution": [
         "도화지와 물감은 챙겼고 물감을 짤 곳이 없다고 했으니 빠진 것은 팔레트다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "078b4f3f1db0",
+      "difficulty": 1,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"너는 몇 학년이야?\"\n나: \"육 학년.\"",
+      "answer": "나는 육 학년이다",
+      "distractors": [
+        "나는 육 학년에 간다",
+        "나는 육 학년을 마쳤다",
+        "나는 육 학년을 가르친다"
+      ],
+      "solution": [
+        "학년을 묻는 말에 육 학년이라고 답했으니 나는 육 학년이라는 말이 생략되었다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -43,6 +81,44 @@
       }
     },
     {
+      "id": "0bfc66b8abe0",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 두 사람이 이야기하는 사람이 누구인지 가장 알맞은 것을 고르시오.",
+      "stem": "\"그분이 우리 학교에 처음 오신 날 기억나?\"\n\"응. 아침마다 교문에서 우리 이름을 하나하나 불러 주셨잖아.\"",
+      "answer": "학교 교장 선생님",
+      "distractors": [
+        "동네 가게 주인",
+        "같은 반 친구",
+        "버스 운전기사"
+      ],
+      "solution": [
+        "학교에 오셔서 교문에서 학생 이름을 불러 주신 분이니 교장 선생님이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0c8c5fdbaa61",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 동생이 형에게 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"형, 이 퍼즐 너무 어려워.\"\n\"그래? 형도 그거 맞추는 데 한참 걸렸어.\"",
+      "answer": "퍼즐을 함께 맞춰 달라",
+      "distractors": [
+        "퍼즐을 버려 달라",
+        "퍼즐을 새로 사 달라",
+        "퍼즐을 숨겨 달라"
+      ],
+      "solution": [
+        "동생은 퍼즐이 어렵다고 형에게 말하며 도움을 바라고 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "0ff235718abe",
       "difficulty": 2,
       "instruction": "서아가 하려는 말로 알맞은 것은 무엇입니까?",
@@ -55,6 +131,63 @@
       ],
       "solution": [
         "방금 많이 먹었다는 말로 지금은 먹기 어렵다는 뜻을 돌려 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1074c77e0e09",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 민재가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"민재야, 이번 주말에 등산 갈래?\"\n\"토요일에는 할머니 댁에 가고, 일요일에는 피아노 대회가 있어.\"",
+      "answer": "이번 주말에는 갈 수 없다",
+      "distractors": [
+        "토요일에 함께 가자",
+        "일요일에 함께 가자",
+        "주말에 할 일이 없다"
+      ],
+      "solution": [
+        "토요일과 일요일 모두 일이 있다고 했으니 이번 주말에는 등산을 갈 수 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "135206206e84",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 지환이가 놓친 것으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"지환아, 왜 정류장에서 뛰어와?\"\n\"눈앞에서 문이 닫히더니 그냥 출발해 버렸어.\"",
+      "answer": "타려던 버스",
+      "distractors": [
+        "학교 수업",
+        "친구와의 약속",
+        "받아쓰기 시험"
+      ],
+      "solution": [
+        "정류장에서 문이 닫히고 출발했으니 버스를 놓쳤다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16a29f441655",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 두 사람이 있는 곳으로 알맞은 것을 고르시오.",
+      "stem": "\"이번 역에서 내려야 해?\"\n\"아니, 다음 역이야. 문 열리면 바로 내리자.\"",
+      "answer": "달리는 지하철 안",
+      "distractors": [
+        "학교 도서관",
+        "동네 놀이터",
+        "우리 집 거실"
+      ],
+      "solution": [
+        "역에서 내리고 문이 열리는 곳이니 지하철 안이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -81,6 +214,63 @@
       }
     },
     {
+      "id": "19830d5c85bf",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 두 사람이 함께 하기로 한 일로 알맞은 것을 고르시오.",
+      "stem": "\"이번 주말에 공원 쓰레기 줍기 봉사가 있대.\"\n\"나도 신청했어. 장갑이랑 집게는 거기서 준대.\"",
+      "answer": "공원 청소 봉사",
+      "distractors": [
+        "공원 축구 시합",
+        "공원 그림 그리기",
+        "공원 자전거 타기"
+      ],
+      "solution": [
+        "쓰레기 줍기 봉사를 함께 신청했으니 공원 청소를 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1aca3b841bd2",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 할머니께서 지금 계신 곳으로 알맞은 것을 고르시오.",
+      "stem": "\"할머니, 지금 어디세요?\"\n\"표 끊고 기다리는 중이다. 이십 분 뒤에 기차가 온다는구나.\"",
+      "answer": "기차역 대합실",
+      "distractors": [
+        "동네 시장",
+        "고속 도로",
+        "바닷가 모래밭"
+      ],
+      "solution": [
+        "표를 끊고 기차를 기다리는 곳이니 기차역이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1b21bcdd6974",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 두 사람이 내린 결정으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"소풍 가는 날 비가 오면 어떡하지?\"\n\"일기 예보 보니까 그날 하루 종일 비가 온대.\"\n\"그럼 교실에서 김밥 먹고 영화 보는 걸로 하자.\"\n\"좋아, 선생님께 말씀드리자.\"",
+      "answer": "교실에서 소풍을 대신한다",
+      "distractors": [
+        "비를 맞으며 소풍을 간다",
+        "소풍 날짜를 미룬다",
+        "소풍을 아예 취소한다"
+      ],
+      "solution": [
+        "비가 와서 교실에서 김밥을 먹고 영화를 보기로 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "1c24ac583945",
       "difficulty": 3,
       "instruction": "하준이가 시험을 어떻게 보았는지로 알맞은 것은 무엇입니까?",
@@ -93,6 +283,139 @@
       ],
       "solution": [
         "연습한 보람이 있었다고 했으니 시험을 잘 보았다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c9b5cc983d3",
+      "difficulty": 2,
+      "instruction": "대화에서 나의 말에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"점심에 피자 먹을래, 국수 먹을래?\"\n나: \"어제 피자 먹었어.\"",
+      "answer": "오늘은 국수를 먹고 싶다",
+      "distractors": [
+        "오늘도 피자를 먹고 싶다",
+        "오늘은 굶고 싶다",
+        "어제 국수를 먹었다"
+      ],
+      "solution": [
+        "어제 피자를 먹었다고 했으니 오늘은 다른 국수를 먹겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "21dfb0d7a3ce",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 하은이가 늦게 일어난 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"하은아, 오늘 왜 지각했어?\"\n\"알람 시계 건전지가 다 닳았더라고.\"",
+      "answer": "알람이 울리지 않았다",
+      "distractors": [
+        "버스를 잘못 탔다",
+        "길에서 친구를 만났다",
+        "배가 많이 아팠다"
+      ],
+      "solution": [
+        "건전지가 닳았다고 했으니 알람이 울리지 않아 늦게 일어났다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2626fd959e07",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 지금 계절로 알맞은 것을 고르시오.",
+      "stem": "\"밖에 나가 보니 온 세상이 하얗더라.\"\n\"응, 눈사람 만들러 가자.\"",
+      "answer": "추운 겨울",
+      "distractors": [
+        "따뜻한 봄",
+        "더운 여름",
+        "선선한 가을"
+      ],
+      "solution": [
+        "온 세상이 하얗고 눈사람을 만들자고 했으니 눈이 내린 겨울이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "26b233dc52fa",
+      "difficulty": 3,
+      "instruction": "대화에서 나의 대답에 담긴 뜻으로 가장 알맞은 것을 고르시오.",
+      "stem": "가: \"이 문제 정말 쉽지?\"\n나: \"글쎄, 나는 세 번이나 다시 풀었어.\"",
+      "answer": "나에게는 쉽지 않았다",
+      "distractors": [
+        "나도 아주 쉬웠다",
+        "문제를 풀지 않았다",
+        "문제가 틀렸다"
+      ],
+      "solution": [
+        "세 번이나 다시 풀었다고 했으니 쉽지 않았다는 말을 돌려 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "26c8a005c4bb",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 경민이의 성적이 어떠한지 가장 알맞은 것을 고르시오.",
+      "stem": "\"경민아, 받아쓰기 몇 개 틀렸어?\"\n\"선생님이 내 공책에 동그라미만 잔뜩 그려 주셨어.\"",
+      "answer": "하나도 틀리지 않았다",
+      "distractors": [
+        "많이 틀렸다",
+        "반쯤 맞았다",
+        "시험을 보지 않았다"
+      ],
+      "solution": [
+        "공책에 동그라미만 있다고 했으니 모두 맞았다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "278c60df46fe",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 시우가 친구에게 바라는 것으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"시우야, 내가 빌린 만화책 다 읽었어?\"\n\"응. 그런데 그거 우리 형이 내일 친구한테 빌려주기로 했대.\"",
+      "answer": "만화책을 오늘 돌려주기",
+      "distractors": [
+        "만화책을 계속 빌려 가기",
+        "형에게 직접 빌리기",
+        "새 만화책 사 오기"
+      ],
+      "solution": [
+        "형이 내일 다른 사람에게 빌려주기로 했다고 하니 오늘 돌려 달라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29e4af4ea7c6",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 효주가 처한 상황으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"효주야, 같이 집에 가자.\"\n\"먼저 가. 나는 오늘 우리 모둠이 교실 청소 당번이야.\"",
+      "answer": "청소를 하고 가야 한다",
+      "distractors": [
+        "친구가 싫어서 피한다",
+        "집에 가기 싫다",
+        "길을 잘 모른다"
+      ],
+      "solution": [
+        "오늘 청소 당번이라 먼저 가라고 했으니 청소를 마치고 가야 한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -138,6 +461,63 @@
       }
     },
     {
+      "id": "38da7615d3bb",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 아빠가 집에 늦게 오신 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"아빠, 오늘 왜 이렇게 늦으셨어요?\"\n\"회사 일이 늦게 끝났는데 버스까지 한참 안 오더구나.\"",
+      "answer": "일이 늦게 끝나고 버스가 늦었다",
+      "distractors": [
+        "길을 잃어버렸다",
+        "친구를 만나 놀았다",
+        "지갑을 두고 와서 다시 갔다"
+      ],
+      "solution": [
+        "회사 일이 늦게 끝났고 버스도 늦게 와서 늦으셨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "390dc7dc6c80",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 두 사람이 가려는 곳으로 알맞은 것을 고르시오.",
+      "stem": "\"표는 샀어? 곧 상영 시작이래.\"\n\"응, 팝콘도 샀어. 들어가자.\"",
+      "answer": "동네 영화관",
+      "distractors": [
+        "학교 도서관",
+        "동네 병원",
+        "시내 수영장"
+      ],
+      "solution": [
+        "상영 시작을 기다리고 팝콘을 샀으니 영화관에 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a3b17387d4f",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 오늘 저녁 식사로 알맞은 것을 고르시오.",
+      "stem": "\"엄마, 오늘 저녁은 뭐예요?\"\n\"시장에서 떡이랑 어묵을 사 왔어. 고추장도 꺼내 놓았고.\"",
+      "answer": "매콤한 떡볶이",
+      "distractors": [
+        "김 말은 김밥",
+        "고소한 볶음밥",
+        "시원한 냉면"
+      ],
+      "solution": [
+        "떡, 어묵, 고추장으로 만드는 음식은 떡볶이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "3b44ca619524",
       "difficulty": 2,
       "instruction": "오늘이 어떤 날인지로 알맞은 것은 무엇입니까?",
@@ -150,6 +530,310 @@
       ],
       "solution": [
         "케이크에 초를 꽂고 축하하며 선물을 물으니 생일이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b7d11ef3d91",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 예준이가 잃어버린 물건으로 알맞은 것을 고르시오.",
+      "stem": "\"예준아, 왜 문 앞에 서 있어?\"\n\"문을 열어야 하는데 주머니에 아무리 찾아도 없어.\"",
+      "answer": "현관 열쇠",
+      "distractors": [
+        "필통 지우개",
+        "운동화 끈",
+        "공책 한 권"
+      ],
+      "solution": [
+        "문을 열 물건이 주머니에 없다고 했으니 열쇠를 잃어버렸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3bc7d2a07c19",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 하린이가 친구의 부탁을 어떻게 했는지 가장 알맞은 것을 고르시오.",
+      "stem": "\"하린아, 이 책 좀 빌려줄 수 있어?\"\n\"이거 오늘 저녁까지 다 읽어야 하는데, 내일 아침에 줘도 될까?\"",
+      "answer": "내일 빌려주겠다고 했다",
+      "distractors": [
+        "빌려줄 수 없다고 했다",
+        "지금 바로 빌려주었다",
+        "다른 책을 빌려주었다"
+      ],
+      "solution": [
+        "오늘 저녁까지 읽고 내일 아침에 주겠다고 했으니 내일 빌려주겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3dd917013b9f",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 정우가 오늘 아침에 겪은 일로 가장 알맞은 것을 고르시오.",
+      "stem": "\"정우야, 신발이 왜 그렇게 젖었어?\"\n\"오다가 물웅덩이를 못 보고 그대로 밟았거든.\"",
+      "answer": "물웅덩이를 밟았다",
+      "distractors": [
+        "개울에 빠졌다",
+        "비가 그쳤다",
+        "신발을 빨았다"
+      ],
+      "solution": [
+        "물웅덩이를 못 보고 밟았다고 했으니 그래서 신발이 젖었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3fde82cd33e5",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 아빠가 하시려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"아빠, 저 강아지 키우고 싶어요.\"\n\"강아지는 매일 산책도 시켜야 하고 밥도 챙겨야 해. 할 수 있겠니?\"",
+      "answer": "책임질 수 있는지 생각해 보아라",
+      "distractors": [
+        "강아지를 당장 사 주겠다",
+        "강아지를 키울 수 없다",
+        "강아지 대신 고양이를 키워라"
+      ],
+      "solution": [
+        "해야 할 일을 알려 주며 할 수 있는지 물으셨으니 책임을 생각해 보라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "419add7aefb7",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 아라가 한 실수로 가장 알맞은 것을 고르시오.",
+      "stem": "\"아라야, 왜 도서관 앞에서 서성거려?\"\n\"오늘이 도서관 쉬는 날인 줄 모르고 왔어. 문이 잠겨 있더라.\"",
+      "answer": "쉬는 날을 확인하지 않았다",
+      "distractors": [
+        "도서관 위치를 잊어버렸다",
+        "빌린 책을 잃어버렸다",
+        "도서관 카드를 두고 왔다"
+      ],
+      "solution": [
+        "쉬는 날인 줄 모르고 왔다고 했으니 미리 확인하지 않은 것이 실수다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4988112e3cf9",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 가게 주인이 하려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"아저씨, 이 빵 하나 주세요.\"\n\"어쩌지? 그 빵은 아침에 벌써 다 팔렸단다. 내일 일찍 오렴.\"",
+      "answer": "지금은 그 빵이 없다",
+      "distractors": [
+        "그 빵은 팔지 않는다",
+        "그 빵은 아주 비싸다",
+        "그 빵을 오늘 새로 굽는다"
+      ],
+      "solution": [
+        "아침에 다 팔렸다고 했으니 지금은 그 빵이 없다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "49b7e787a143",
+      "difficulty": 1,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"어디 가니?\"\n나: \"수영장.\"",
+      "answer": "수영장에 간다",
+      "distractors": [
+        "수영장에서 왔다",
+        "수영장을 싫어한다",
+        "수영장이 닫혔다"
+      ],
+      "solution": [
+        "어디 가는지 물었으니 수영장에 간다는 말이 생략되었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a9a332b2ab1",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 지금이 언제인지 알맞은 것을 고르시오.",
+      "stem": "\"얘들아, 이제 일어나야지. 해가 떴다.\"\n\"엄마, 오 분만 더 잘게요.\"",
+      "answer": "이른 아침",
+      "distractors": [
+        "늦은 밤",
+        "점심 시간",
+        "해 질 녘"
+      ],
+      "solution": [
+        "해가 떴고 일어나라고 깨우니 아침이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4d468a846f3a",
+      "difficulty": 1,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"너는 어떤 과일을 좋아해?\"\n나: \"수박.\"",
+      "answer": "나는 수박을 좋아한다",
+      "distractors": [
+        "나는 수박을 싫어한다",
+        "나는 수박을 샀다",
+        "나는 수박을 먹었다"
+      ],
+      "solution": [
+        "좋아하는 과일을 묻는 말에 수박이라고 답했으니 수박을 좋아한다는 말이 생략되었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4e9e0e8f2393",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 남희가 한 말의 뜻으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"남희야, 오늘 학교 끝나고 뭐 해?\"\n\"오늘은 내 동생 생일이라서 케이크 사러 엄마랑 빵집에 가.\"",
+      "answer": "오늘은 함께 놀기 어렵다",
+      "distractors": [
+        "오늘 같이 놀자",
+        "생일 잔치에 와 달라",
+        "빵집에서 만나자"
+      ],
+      "solution": [
+        "동생 생일이라 엄마와 빵집에 간다고 했으니 함께 놀기 어렵다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ff10209862a",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 지아가 가방을 메지 않은 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"지아야, 가방은 어디 두고 왔어?\"\n\"아까 교실에 두고 화장실에 들렀다가 바로 나왔어.\"",
+      "answer": "교실에 두고 나왔다",
+      "distractors": [
+        "버스에서 잃어버렸다",
+        "집에 두고 학교에 왔다",
+        "친구에게 빌려주었다"
+      ],
+      "solution": [
+        "가방을 교실에 두고 화장실에 들렀다가 바로 나왔다고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "50c9a91739e5",
+      "difficulty": 1,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"이 우산 누구 거야?\"\n나: \"내 거.\"",
+      "answer": "이 우산은 내 것이다",
+      "distractors": [
+        "이 우산은 형 것이다",
+        "이 우산을 빌려 달라",
+        "이 우산은 새것이다"
+      ],
+      "solution": [
+        "누구의 우산인지 물었으니 이 우산이 내 것이라는 말이 생략되었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "522ef1f9502a",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 이모가 하시려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"이모, 이 그림 제가 그렸어요.\"\n\"어머, 사진인 줄 알았네.\"",
+      "answer": "그림을 아주 잘 그렸다",
+      "distractors": [
+        "사진을 다시 찍어라",
+        "그림이 흐릿하다",
+        "그림을 잘못 그렸다"
+      ],
+      "solution": [
+        "사진인 줄 알았다는 말로 그림을 아주 잘 그렸다고 칭찬하셨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54685f9755fd",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 연서가 오늘 체육을 하지 못한 까닭으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"연서야, 체육 시간에 왜 구경만 했어?\"\n\"지난주에 손목을 삐었는데 아직 붕대를 풀면 안 된대.\"",
+      "answer": "손목이 아직 다 낫지 않았다",
+      "distractors": [
+        "체육복을 안 가져왔다",
+        "체육을 싫어한다",
+        "감기에 걸렸다"
+      ],
+      "solution": [
+        "손목을 삐어 아직 붕대를 감고 있으니 체육을 할 수 없었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "58ca9e22527c",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 시아가 사려는 물건으로 알맞은 것을 고르시오.",
+      "stem": "\"시아야, 문구점에 왜 가?\"\n\"수학 시간에 원을 그려야 하는데 동그라미가 자꾸 찌그러져.\"",
+      "answer": "원을 그릴 컴퍼스",
+      "distractors": [
+        "글씨 쓸 볼펜",
+        "종이 붙일 풀",
+        "책 넣을 가방"
+      ],
+      "solution": [
+        "원을 바르게 그릴 도구가 필요하니 컴퍼스를 사려 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5b45e175225d",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 가영이가 다음에 할 일로 알맞은 것을 고르시오.",
+      "stem": "\"가영아, 손에 물감이 잔뜩 묻었네.\"\n\"어머, 그러네. 금방 다녀올게.\"",
+      "answer": "손 씻으러 가기",
+      "distractors": [
+        "물감 사러 가기",
+        "그림 그리러 가기",
+        "친구 부르러 가기"
+      ],
+      "solution": [
+        "손에 물감이 묻었다는 말을 듣고 금방 다녀온다고 했으니 손을 씻으러 간다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -176,6 +860,139 @@
       }
     },
     {
+      "id": "5fa9d4669af3",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 아빠가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"아빠, 저 텔레비전 더 봐도 돼요?\"\n\"벌써 밤 열 시가 넘었구나.\"",
+      "answer": "이제 잠자리에 들어라",
+      "distractors": [
+        "텔레비전을 더 보아라",
+        "숙제를 먼저 하여라",
+        "밥을 더 먹어라"
+      ],
+      "solution": [
+        "밤 열 시가 넘었다는 말로 이제 그만 보고 자라고 돌려 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "60719bc2bc0a",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 승민이가 느끼는 마음으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"승민아, 짝이 전학 간다며?\"\n\"응. 내일부터 옆자리가 비어 있을 걸 생각하니 자꾸 창밖만 보게 돼.\"",
+      "answer": "허전하고 서운하다",
+      "distractors": [
+        "홀가분하고 기쁘다",
+        "화가 나고 억울하다",
+        "무섭고 떨린다"
+      ],
+      "solution": [
+        "짝이 떠나 옆자리가 빌 것을 생각하며 창밖만 본다고 했으니 서운한 마음이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "60cd324ea3f9",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 수호가 받은 선물로 알맞은 것을 고르시오.",
+      "stem": "\"수호야, 생일 선물 뭐 받았어?\"\n\"이제 밤에도 별을 크게 볼 수 있어. 달 표면도 보이더라.\"",
+      "answer": "천체 망원경",
+      "distractors": [
+        "손목 시계",
+        "새 축구공",
+        "두꺼운 그림책"
+      ],
+      "solution": [
+        "밤에 별을 크게 보고 달 표면까지 보이는 물건은 천체 망원경이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "622b2fd59d27",
+      "difficulty": 2,
+      "instruction": "대화에서 나의 말에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"우유랑 주스 중에 뭐 마실래?\"\n나: \"나는 우유 못 마셔.\"",
+      "answer": "주스를 마시겠다",
+      "distractors": [
+        "우유를 마시겠다",
+        "둘 다 마시겠다",
+        "아무것도 안 마시겠다"
+      ],
+      "solution": [
+        "우유를 못 마신다고 했으니 남은 주스를 마시겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "624067a4ce07",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 예린이가 하려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"예린아, 이 노래 어때? 내가 직접 지었어.\"\n\"음, 가사는 참 좋다. 그런데 가운데 부분이 조금 길게 느껴져.\"",
+      "answer": "가운데 부분을 줄이면 좋겠다",
+      "distractors": [
+        "노래를 처음부터 다시 지어라",
+        "가사를 모두 바꾸면 좋겠다",
+        "노래가 아주 완벽하다"
+      ],
+      "solution": [
+        "가사는 좋다고 하면서 가운데가 길다고 했으니 그 부분을 줄이자는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62c4b612526c",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 은비 엄마가 하시려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"엄마, 저 이번 수학 시험 팔십 점 받았어요.\"\n\"지난번에는 육십 점이었지? 많이 올랐구나.\"",
+      "answer": "노력한 것을 칭찬한다",
+      "distractors": [
+        "점수가 낮아서 아쉽다",
+        "다음에는 백 점을 받아라",
+        "시험을 다시 보아라"
+      ],
+      "solution": [
+        "지난번보다 점수가 많이 올랐다고 하셨으니 노력을 칭찬하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "639ae884c005",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 엄마가 하시려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"엄마, 제 체육복 어디 있어요?\"\n\"어제 세탁기에 넣었는데 아직 베란다에 널려 있을걸.\"",
+      "answer": "베란다에 가 보아라",
+      "distractors": [
+        "세탁기를 돌려라",
+        "새 체육복을 사자",
+        "오늘은 체육복을 입지 마라"
+      ],
+      "solution": [
+        "체육복이 베란다에 널려 있을 거라고 하셨으니 그곳에 가 보라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "6e2a35027692",
       "difficulty": 1,
       "instruction": "두 사람이 할 일로 알맞은 것은 무엇입니까?",
@@ -188,6 +1005,25 @@
       ],
       "solution": [
         "배가 고파 김밥 가게에 가자고 했으니 두 사람은 김밥을 먹으러 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6e8d428389ff",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 선생님께서 학생들에게 바라는 일로 알맞은 것을 고르시오.",
+      "stem": "\"선생님, 교실이 너무 시끄러워요.\"\n\"다들 자리에 앉아 볼까? 지금부터 받아쓰기를 할 거예요.\"",
+      "answer": "조용히 자리에 앉기",
+      "distractors": [
+        "운동장에 나가 놀기",
+        "교실 청소하기",
+        "짝과 이야기 나누기"
+      ],
+      "solution": [
+        "받아쓰기를 한다며 자리에 앉으라고 하셨으니 조용히 앉으라는 말이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -214,6 +1050,101 @@
       }
     },
     {
+      "id": "7ab0dfa05f0d",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 두 사람이 하려는 운동으로 알맞은 것을 고르시오.",
+      "stem": "\"라켓 챙겼어?\"\n\"응. 셔틀콕도 두 개 가져왔어.\"",
+      "answer": "배드민턴 치기",
+      "distractors": [
+        "축구공 차기",
+        "수영장에서 헤엄치기",
+        "줄넘기 넘기"
+      ],
+      "solution": [
+        "라켓과 셔틀콕을 쓰는 운동은 배드민턴이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7d3b6dd54d42",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 형이 동생에게 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"형, 내 자전거 바퀴에 바람이 빠졌어.\"\n\"창고에 펌프 있잖아. 나 지금 숙제하는 중이야.\"",
+      "answer": "펌프로 직접 바람을 넣어라",
+      "distractors": [
+        "지금 바로 같이 고쳐 주겠다",
+        "자전거를 새로 사 주겠다",
+        "오늘은 자전거를 타지 마라"
+      ],
+      "solution": [
+        "펌프가 창고에 있다고 알려 주고 자기는 숙제 중이라 했으니 직접 넣으라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7f200fc2f933",
+      "difficulty": 3,
+      "instruction": "대화에서 나의 대답에 담긴 뜻으로 가장 알맞은 것을 고르시오.",
+      "stem": "가: \"이 국 좀 싱겁지 않아?\"\n나: \"나는 벌써 물을 두 컵이나 마셨는데.\"",
+      "answer": "국이 짜다",
+      "distractors": [
+        "국이 싱겁다",
+        "국이 차갑다",
+        "국이 맛있다"
+      ],
+      "solution": [
+        "국을 먹고 물을 두 컵이나 마셨다고 했으니 국이 짜다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "850efa87f2c8",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 지후가 산 것으로 알맞은 것을 고르시오.",
+      "stem": "\"지후야, 문방구 다녀왔어?\"\n\"응. 이제 일기 쓸 곳이 생겼어.\"",
+      "answer": "새 일기장",
+      "distractors": [
+        "새 필통",
+        "새 가방",
+        "새 우산"
+      ],
+      "solution": [
+        "일기 쓸 곳이 생겼다고 했으니 일기장을 샀다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "89ac28911ca3",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 두 사람이 무엇을 하려는지 알맞은 것을 고르시오.",
+      "stem": "\"씨앗은 몇 개씩 넣을까?\"\n\"구멍마다 두세 개씩 넣고 흙을 살짝 덮어 줘.\"",
+      "answer": "밭에 씨앗 심기",
+      "distractors": [
+        "바다에서 조개 줍기",
+        "꽃다발 만들기",
+        "과일 따기"
+      ],
+      "solution": [
+        "구멍에 씨앗을 넣고 흙을 덮으니 씨앗을 심고 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "89ef16bc7795",
       "difficulty": 2,
       "instruction": "형이 동생에게 바라는 일로 알맞은 것은 무엇입니까?",
@@ -226,6 +1157,25 @@
       ],
       "solution": [
         "형은 손이 바빠 조금만 기다려 달라고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8a81e144ac5f",
+      "difficulty": 2,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"형은 무슨 운동을 잘해?\"\n나: \"수영. 나는 달리기.\"",
+      "answer": "나는 달리기를 잘한다",
+      "distractors": [
+        "나는 달리기를 못한다",
+        "나는 수영을 잘한다",
+        "형은 달리기를 잘한다"
+      ],
+      "solution": [
+        "형은 수영을 잘하고 나는 달리기를 잘한다고 답했다. 뒤의 말에서 '잘한다'가 생략되었다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -252,6 +1202,120 @@
       }
     },
     {
+      "id": "9279a2ac2927",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 엄마가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"엄마, 친구 집에서 놀다 와도 돼요?\"\n\"그래. 그런데 저녁 먹기 전까지는 와야 해. 오늘은 할머니가 오시거든.\"",
+      "answer": "저녁 전에 돌아와라",
+      "distractors": [
+        "친구 집에서 자고 와라",
+        "할머니 댁에 가거라",
+        "저녁을 먹고 오너라"
+      ],
+      "solution": [
+        "저녁 먹기 전까지 와야 한다고 하셨으니 일찍 돌아오라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9420c618a43f",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 할머니께서 하시려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"할머니, 저 다녀오겠습니다.\"\n\"그래. 그런데 오늘 바람이 꽤 세더구나. 목도리는 했니?\"",
+      "answer": "목도리를 하고 나가거라",
+      "distractors": [
+        "오늘은 나가지 마라",
+        "바람이 불지 않는다",
+        "목도리를 벗어라"
+      ],
+      "solution": [
+        "바람이 세다며 목도리를 했느냐고 물으셨으니 목도리를 하고 나가라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9690d373e6f0",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 재희가 지금 바라는 것으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"재희야, 내가 숙제 도와줄까?\"\n\"고마워. 그런데 이번에는 혼자 끝까지 해 보고 싶어.\"",
+      "answer": "스스로 해 보는 것",
+      "distractors": [
+        "친구가 대신 해 주는 것",
+        "숙제를 미루는 것",
+        "선생님께 묻는 것"
+      ],
+      "solution": [
+        "혼자 끝까지 해 보고 싶다고 했으니 스스로 하기를 바란다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "976e862baf9f",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 할아버지께서 부탁하신 일로 알맞은 것을 고르시오.",
+      "stem": "\"할아버지, 신문 읽으세요?\"\n\"그래. 그런데 글씨가 작아서 잘 안 보이는구나. 내 안경 어디 있니?\"",
+      "answer": "안경 찾아 드리기",
+      "distractors": [
+        "신문 읽어 드리기",
+        "신문 사다 드리기",
+        "불 꺼 드리기"
+      ],
+      "solution": [
+        "글씨가 안 보인다며 안경이 어디 있는지 물으셨으니 안경을 찾아 달라는 부탁이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9bd9bc696d3e",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 나연이가 다음에 할 일로 알맞은 것을 고르시오.",
+      "stem": "\"나연아, 화분 잎이 축 처졌네.\"\n\"그러고 보니 일주일 동안 물 주는 걸 깜빡했어.\"",
+      "answer": "화분에 물 주기",
+      "distractors": [
+        "화분 버리기",
+        "잎 따 주기",
+        "화분 옮겨 심기"
+      ],
+      "solution": [
+        "일주일 동안 물을 주지 않아 잎이 처졌다. 그러므로 나연이는 화분에 물을 준다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f4c17a8e17c",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 수아가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"수아야, 같이 줄넘기하자.\"\n\"미안해. 나 어제부터 발목이 아파.\"",
+      "answer": "지금은 줄넘기를 할 수 없다",
+      "distractors": [
+        "지금 줄넘기를 하고 싶다",
+        "발목이 다 나아서 괜찮다",
+        "줄넘기 대신 달리기를 하자"
+      ],
+      "solution": [
+        "발목이 아프다는 말로 지금은 줄넘기를 할 수 없다고 돌려 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9fa8bf82d741",
       "difficulty": 2,
       "instruction": "아빠가 부탁하는 일로 알맞은 것은 무엇입니까?",
@@ -271,6 +1335,25 @@
       }
     },
     {
+      "id": "a2d0aa44cc9b",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 서준이가 지금 어떤 상태인지 고르시오.",
+      "stem": "\"서준아, 점심 먹으러 가자.\"\n\"좋아. 아침을 못 먹어서 배에서 꼬르륵 소리가 나.\"",
+      "answer": "배가 고프다",
+      "distractors": [
+        "배가 아프다",
+        "졸음이 온다",
+        "목이 마르다"
+      ],
+      "solution": [
+        "아침을 굶고 배에서 소리가 난다고 했으니 배가 고픈 상태다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "a5cf3924e517",
       "difficulty": 3,
       "instruction": "은서가 고른 옷으로 알맞은 것은 무엇입니까?",
@@ -283,6 +1366,82 @@
       ],
       "solution": [
         "춥다고 해서 가장 두꺼운 옷을 골랐으니 두꺼운 외투가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a7dee6957030",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 오늘 소풍이 어떻게 되었는지 알맞은 것을 고르시오.",
+      "stem": "\"오늘 소풍 재미있었어?\"\n\"아침부터 천둥이 치고 비가 쏟아져서 교실에만 있었어.\"",
+      "answer": "비 때문에 가지 못했다",
+      "distractors": [
+        "계획대로 다녀왔다",
+        "오후에 다시 출발했다",
+        "소풍 장소를 바꾸었다"
+      ],
+      "solution": [
+        "비가 쏟아져 교실에만 있었다고 했으니 소풍을 가지 못했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa205b172d5e",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 오늘 날씨로 알맞은 것을 고르시오.",
+      "stem": "\"우와, 땀이 줄줄 흐르네.\"\n\"그러게. 그늘에서 시원한 물 좀 마시자.\"",
+      "answer": "아주 덥다",
+      "distractors": [
+        "눈이 온다",
+        "몹시 춥다",
+        "바람이 차다"
+      ],
+      "solution": [
+        "땀이 흐르고 그늘과 시원한 물을 찾으니 더운 날씨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aba8c7bc2fad",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 동생이 바라는 것으로 알맞은 것을 고르시오.",
+      "stem": "\"누나, 이 병뚜껑이 너무 꽉 닫혀 있어.\"\n\"어디 봐. 정말 단단하네.\"",
+      "answer": "병뚜껑을 열어 주기",
+      "distractors": [
+        "병을 깨끗이 씻어 주기",
+        "병에 물을 채워 주기",
+        "병뚜껑을 새로 사 주기"
+      ],
+      "solution": [
+        "동생은 뚜껑이 꽉 닫혀 있다고 말하며 누나에게 병을 건넸으니 열어 달라는 부탁이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af1b86686e2b",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 동생의 기분으로 알맞은 것을 고르시오.",
+      "stem": "\"형, 나 오늘 선생님께 칭찬 스티커 세 장이나 받았어!\"\n\"와, 정말 잘했구나.\"",
+      "answer": "뿌듯한 기분",
+      "distractors": [
+        "서운한 기분",
+        "억울한 기분",
+        "무서운 기분"
+      ],
+      "solution": [
+        "칭찬 스티커를 세 장이나 받아 형에게 자랑하니 뿌듯한 기분이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -328,6 +1487,25 @@
       }
     },
     {
+      "id": "b32d0defcb06",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 태민이의 처지로 가장 알맞은 것을 고르시오.",
+      "stem": "\"태민아, 오늘 축구 할 수 있어?\"\n\"엄마가 학원 끝나면 바로 오라고 하셨어. 동생을 봐야 하거든.\"",
+      "answer": "오늘은 축구를 하기 어렵다",
+      "distractors": [
+        "학원을 빠지고 축구를 하겠다",
+        "동생과 같이 축구를 하겠다",
+        "축구는 싫어한다"
+      ],
+      "solution": [
+        "학원이 끝나면 바로 집에 가서 동생을 봐야 하니 축구를 하기 어렵다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "b42ebb715519",
       "difficulty": 2,
       "instruction": "두 사람이 내일 가져가야 할 것으로 알맞은 것은 무엇입니까?",
@@ -340,6 +1518,196 @@
       ],
       "solution": [
         "오후에 비가 온다고 했으니 우산을 챙겨야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4f974d382a2",
+      "difficulty": 3,
+      "instruction": "대화에서 나의 대답에 담긴 뜻으로 가장 알맞은 것을 고르시오.",
+      "stem": "가: \"이번 소풍 때 놀이 기구 탈 거지?\"\n나: \"나는 높은 데 올라가면 다리가 후들거려.\"",
+      "answer": "높은 놀이 기구는 타기 싫다",
+      "distractors": [
+        "놀이 기구를 아주 좋아한다",
+        "다리를 다쳐서 못 걷는다",
+        "소풍에 가지 않겠다"
+      ],
+      "solution": [
+        "높은 곳에서 다리가 떨린다고 했으니 높은 놀이 기구는 타고 싶지 않다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4fd5affe6d2",
+      "difficulty": 1,
+      "instruction": "대화에서 나의 말 뒤에 생략된 내용으로 알맞은 것을 고르시오.",
+      "stem": "가: \"내일 몇 시에 만날까?\"\n나: \"열 시.\"",
+      "answer": "열 시에 만나자",
+      "distractors": [
+        "열 시에 잠을 자자",
+        "열 시에 밥을 먹자",
+        "열 시까지 숙제를 하자"
+      ],
+      "solution": [
+        "만날 시간을 물었으니 열 시에 만나자는 말이 생략되었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be3e7a4455fa",
+      "difficulty": 3,
+      "instruction": "대화에서 나의 대답에 담긴 뜻으로 가장 알맞은 것을 고르시오.",
+      "stem": "가: \"우리 집에 강아지 데려와도 될까?\"\n나: \"나 강아지 털만 닿아도 재채기가 나.\"",
+      "answer": "강아지와 함께 있기 어렵다",
+      "distractors": [
+        "강아지를 아주 좋아한다",
+        "강아지를 키우고 싶다",
+        "재채기가 다 나았다"
+      ],
+      "solution": [
+        "털만 닿아도 재채기가 난다고 했으니 강아지와 함께 있기 어렵다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be8f1e4c8606",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 윤서가 학교에 가져가야 할 것으로 알맞은 것을 고르시오.",
+      "stem": "\"윤서야, 내일 미술 시간에 뭐 해?\"\n\"찰흙으로 그릇을 빚는대.\"",
+      "answer": "찰흙과 찰흙판",
+      "distractors": [
+        "물감과 붓",
+        "리코더와 악보",
+        "공책과 연필"
+      ],
+      "solution": [
+        "찰흙으로 그릇을 빚는다고 했으니 찰흙과 찰흙판이 있어야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c0c56b77c36c",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 준호가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"준호야, 이 귤 하나 먹을래?\"\n\"나 방금 세 개나 먹었어.\"",
+      "answer": "더 먹지 않겠다",
+      "distractors": [
+        "귤을 더 달라",
+        "귤이 맛없다",
+        "귤을 사러 가자"
+      ],
+      "solution": [
+        "방금 세 개나 먹었다고 했으니 더 먹지 않겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1ef38db112b",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 할아버지께서 손자에게 하시려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"할아버지, 저 이 돌다리 뛰어서 건너도 돼요?\"\n\"어제 비가 많이 와서 돌이 미끄러울 텐데.\"",
+      "answer": "조심해서 천천히 건너라",
+      "distractors": [
+        "빨리 뛰어서 건너라",
+        "돌다리를 새로 놓아라",
+        "비가 더 오기를 기다려라"
+      ],
+      "solution": [
+        "돌이 미끄럽다고 하셨으니 뛰지 말고 조심해서 건너라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c2402c0bd53a",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 진우가 지금 겪고 있는 일로 알맞은 것을 고르시오.",
+      "stem": "\"진우야, 왜 계속 코를 훌쩍여?\"\n\"어제 비 맞고 와서 그런지 목도 칼칼해.\"",
+      "answer": "감기에 걸렸다",
+      "distractors": [
+        "배탈이 났다",
+        "다리를 다쳤다",
+        "잠이 모자라다"
+      ],
+      "solution": [
+        "비를 맞은 뒤 콧물이 나고 목이 아프니 감기에 걸렸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5a4593e4f06",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 동준이가 시합 결과를 어떻게 여기는지 고르시오.",
+      "stem": "\"동준아, 시합 어땠어?\"\n\"한 골 차로 졌어. 다음에는 꼭 이기고 말 거야.\"",
+      "answer": "아쉽지만 다시 해 보겠다",
+      "distractors": [
+        "이겨서 아주 기쁘다",
+        "다시는 하지 않겠다",
+        "시합에 나가지 않았다"
+      ],
+      "solution": [
+        "한 골 차로 졌고 다음에는 이기겠다고 했으니 아쉬워하며 다짐하고 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c70f5cfebe98",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 민아가 왜 웃었는지 가장 알맞은 것을 고르시오.",
+      "stem": "\"민아야, 왜 혼자 웃어?\"\n\"아까 우리 강아지가 제 꼬리를 잡으려고 한참 빙빙 돌았거든.\"",
+      "answer": "강아지 모습이 우스웠다",
+      "distractors": [
+        "강아지가 아팠다",
+        "강아지를 잃어버렸다",
+        "강아지가 짖었다"
+      ],
+      "solution": [
+        "강아지가 제 꼬리를 잡으려고 빙빙 돈 모습이 우스워서 웃었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc9bcc0b113f",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 은우가 찾는 물건으로 알맞은 것을 고르시오.",
+      "stem": "\"은우야, 뭘 그렇게 찾아?\"\n\"이 종이를 반으로 잘라야 하는데 자를 게 없네.\"",
+      "answer": "종이 자를 가위",
+      "distractors": [
+        "글씨 쓸 연필",
+        "종이 붙일 풀",
+        "선 그을 자"
+      ],
+      "solution": [
+        "종이를 자를 물건을 찾고 있으니 가위가 알맞다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -385,6 +1753,82 @@
       }
     },
     {
+      "id": "d9e285115aa0",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 소윤이가 늦게 온 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"소윤아, 왜 이렇게 늦었어?\"\n\"집을 나서는데 갑자기 비가 와서 다시 들어갔다 왔어.\"",
+      "answer": "우산을 가지러 다시 들어갔다",
+      "distractors": [
+        "늦잠을 자서 늦게 나왔다",
+        "버스를 반대로 탔다",
+        "친구를 기다려 주었다"
+      ],
+      "solution": [
+        "비가 와서 다시 집에 들어갔다 왔으니 우산을 가지러 간 것으로 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db6904f62b2b",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 수빈이가 하려는 말로 가장 알맞은 것을 고르시오.",
+      "stem": "\"수빈아, 우리 모둠 발표를 네가 맡아 줄래?\"\n\"나는 그림 그리는 건 자신 있는데, 앞에 나가서 말하는 건 좀.\"",
+      "answer": "그림은 맡고 발표는 어렵다",
+      "distractors": [
+        "발표를 기꺼이 맡겠다",
+        "그림도 발표도 싫다",
+        "다른 모둠으로 가겠다"
+      ],
+      "solution": [
+        "그림은 자신 있지만 앞에서 말하는 건 어렵다고 했으니 그림을 맡겠다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "de0a6538517a",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 도윤이의 기분으로 알맞은 것을 고르시오.",
+      "stem": "\"도윤아, 표정이 왜 그래?\"\n\"열심히 만든 모래성을 파도가 한 번에 쓸어 가 버렸어.\"",
+      "answer": "속상한 기분",
+      "distractors": [
+        "신나는 기분",
+        "자랑스러운 기분",
+        "편안한 기분"
+      ],
+      "solution": [
+        "열심히 만든 모래성이 무너졌으니 속상한 기분이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "df0b64babf27",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 주원이가 화가 난 까닭으로 가장 알맞은 것을 고르시오.",
+      "stem": "\"주원아, 왜 그렇게 얼굴이 빨개?\"\n\"방금 내가 그린 그림을 동생이 크레파스로 다 덧칠해 버렸어.\"",
+      "answer": "동생이 그림을 망쳐서",
+      "distractors": [
+        "그림을 잃어버려서",
+        "크레파스가 부러져서",
+        "그림 대회에서 떨어져서"
+      ],
+      "solution": [
+        "동생이 그림 위에 크레파스로 덧칠했으니 그림을 망쳐서 화가 났다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "e0629165a29a",
       "difficulty": 3,
       "instruction": "윤아가 지금 있는 곳으로 알맞은 것은 무엇입니까?",
@@ -404,6 +1848,82 @@
       }
     },
     {
+      "id": "e3cb386f16dc",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 할머니께서 걱정하시는 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"할머니, 저 반소매 입고 나갈게요.\"\n\"얘야, 바깥바람이 아직 차단다. 감기 걸릴라.\"",
+      "answer": "날씨가 아직 쌀쌀하다",
+      "distractors": [
+        "옷이 너무 크다",
+        "옷이 더러워졌다",
+        "밖에 비가 온다"
+      ],
+      "solution": [
+        "바깥바람이 차서 감기에 걸릴까 걱정하셨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e4bb1d2c28ec",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 은찬이가 화분을 옮긴 까닭으로 알맞은 것을 고르시오.",
+      "stem": "\"은찬아, 화분을 왜 창가로 옮겼어?\"\n\"방 안쪽에 두었더니 잎 색깔이 누렇게 변하더라.\"",
+      "answer": "햇빛을 잘 받게 하려고",
+      "distractors": [
+        "물을 덜 주려고",
+        "방을 넓게 쓰려고",
+        "화분을 버리려고"
+      ],
+      "solution": [
+        "안쪽에서 잎이 누렇게 변해 창가로 옮겼다. 그러므로 햇빛을 잘 받게 하려고 옮겼다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e5ab61f3ce45",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 아이가 엄마에게 부탁하는 것으로 알맞은 것을 고르시오.",
+      "stem": "\"엄마, 목이 말라요.\"\n\"그래, 냉장고에 보리차 있단다.\"",
+      "answer": "마실 것 주기",
+      "distractors": [
+        "밥 차려 주기",
+        "옷 입혀 주기",
+        "책 읽어 주기"
+      ],
+      "solution": [
+        "목이 마르다고 했으니 마실 것을 달라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e7189a5fdcf0",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 현우가 반에서 맡은 일로 알맞은 것을 고르시오.",
+      "stem": "\"현우야, 아침마다 왜 그렇게 일찍 와?\"\n\"어항 물고기 밥도 주고 화분에 물도 줘야 하거든.\"",
+      "answer": "교실 생물 돌보기",
+      "distractors": [
+        "칠판 지우기",
+        "급식 나누기",
+        "우유 나르기"
+      ],
+      "solution": [
+        "물고기 밥과 화분 물을 챙기니 교실의 생물을 돌보는 일을 맡았다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "ef595d9d7a75",
       "difficulty": 1,
       "instruction": "민지가 지금 하고 싶은 일로 알맞은 것은 무엇입니까?",
@@ -416,6 +1936,177 @@
       ],
       "solution": [
         "늦게 자서 하품을 하니 졸려서 자고 싶은 마음을 짐작할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "efcaeb29782c",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 두 사람이 나눈 이야기의 때로 가장 알맞은 것을 고르시오.",
+      "stem": "\"드디어 내일부터 방학이네.\"\n\"응. 오늘 성적표 받고 대청소까지 하니까 진짜 끝났다는 느낌이야.\"",
+      "answer": "방학식 날",
+      "distractors": [
+        "개학식 날",
+        "입학식 날",
+        "운동회 날"
+      ],
+      "solution": [
+        "내일부터 방학이고 오늘 성적표를 받았으니 방학식 날이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0474c027150",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 아빠가 지금 하시는 일로 알맞은 것을 고르시오.",
+      "stem": "\"아빠, 뭐 하세요?\"\n\"앞치마 두르고 양파 써는 중이야. 눈이 맵구나.\"",
+      "answer": "음식 만들기",
+      "distractors": [
+        "자동차 닦기",
+        "빨래 개기",
+        "책 읽기"
+      ],
+      "solution": [
+        "앞치마를 두르고 양파를 썰고 있으니 음식을 만드는 중이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f09c81ea31c6",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 언니가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"언니, 내 머리끈 못 봤어?\"\n\"어제 네가 욕실에서 머리 감았잖아.\"",
+      "answer": "욕실에 있을 것이다",
+      "distractors": [
+        "언니가 가져갔다",
+        "머리끈을 버렸다",
+        "가방 속에 있다"
+      ],
+      "solution": [
+        "어제 욕실에서 머리를 감았다고 했으니 머리끈이 욕실에 있을 것이라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1a06ad9fae9",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 두 사람이 있는 곳으로 알맞은 것을 고르시오.",
+      "stem": "\"여기 미끄럼틀이 새로 생겼네.\"\n\"그네도 있어. 우리 그네부터 타자.\"",
+      "answer": "동네 놀이터",
+      "distractors": [
+        "학교 교실",
+        "과일 가게",
+        "동네 병원"
+      ],
+      "solution": [
+        "미끄럼틀과 그네가 있는 곳은 놀이터다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f6a9bc0e4f5d",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 두 사람이 있는 곳으로 알맞은 것을 고르시오.",
+      "stem": "\"이 사과 한 봉지에 얼마예요?\"\n\"오천 원이에요. 두 봉지 사시면 덤으로 하나 더 드릴게요.\"",
+      "answer": "과일 가게",
+      "distractors": [
+        "학교 교실",
+        "동네 병원",
+        "기차역 대합실"
+      ],
+      "solution": [
+        "사과 값을 묻고 덤을 준다고 하니 과일을 파는 가게다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f6bd5afe5991",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 민규가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"민규야, 이 장난감 기차 너 줄까?\"\n\"고마워. 그런데 나는 이제 장난감 기차 가지고 놀 나이는 지났어.\"",
+      "answer": "장난감 기차는 필요 없다",
+      "distractors": [
+        "장난감 기차를 꼭 갖고 싶다",
+        "장난감 기차를 고쳐 달라",
+        "장난감 기차를 사러 가자"
+      ],
+      "solution": [
+        "이제 가지고 놀 나이가 지났다고 했으니 필요 없다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f9defd79bfb6",
+      "difficulty": 1,
+      "instruction": "대화를 읽고 다은이가 지금 하고 싶은 일로 알맞은 것을 고르시오.",
+      "stem": "\"다은아, 땀을 왜 이렇게 흘려?\"\n\"운동장을 다섯 바퀴나 뛰었어. 목이 바싹 말라.\"",
+      "answer": "시원한 물 마시기",
+      "distractors": [
+        "수학 문제 풀기",
+        "큰 소리로 노래하기",
+        "침대에서 낮잠 자기"
+      ],
+      "solution": [
+        "운동장을 뛰고 목이 마르다고 했으니 물을 마시고 싶다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fec1421f0e79",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 솔이가 걱정하는 일로 알맞은 것을 고르시오.",
+      "stem": "\"솔아, 내일 발표 준비 다 했어?\"\n\"자료는 다 만들었는데 사람들 앞에 서면 목소리가 떨려서.\"",
+      "answer": "떨려서 발표를 잘 못할까 봐",
+      "distractors": [
+        "자료를 다 만들지 못할까 봐",
+        "발표 날짜를 잊을까 봐",
+        "친구가 발표를 대신할까 봐"
+      ],
+      "solution": [
+        "자료는 다 만들었지만 사람들 앞에서 목소리가 떨린다고 걱정했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fffa40285676",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 친구가 서진이에게 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "\"나 오늘 새 운동화 신고 왔어.\"\n\"서진아, 그런데 신발 끈이 풀렸어.\"",
+      "answer": "신발 끈을 다시 묶어라",
+      "distractors": [
+        "신발을 벗어라",
+        "운동화를 바꾸어 신어라",
+        "운동화가 멋지다"
+      ],
+      "solution": [
+        "신발 끈이 풀렸다고 알려 주었으니 다시 묶으라는 말이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

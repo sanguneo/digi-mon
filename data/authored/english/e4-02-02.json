@@ -1,0 +1,2308 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[4영02-02]",
+  "skill": "알파벳 대소문자를 구별하여 쓰는 초기 쓰기 표준",
+  "items": [
+    {
+      "id": "003aff636aed",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "box",
+      "answer": "BOX",
+      "distractors": [
+        "BOx",
+        "bOX",
+        "BoX"
+      ],
+      "solution": [
+        "box의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 BOX이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0699ed3d3014",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "FISH",
+      "answer": "fish",
+      "distractors": [
+        "fisH",
+        "Fish",
+        "fiSh"
+      ],
+      "solution": [
+        "FISH의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 fish이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "08d587ad0ff0",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "bALL",
+      "answer": "Ball",
+      "distractors": [
+        "BALL",
+        "ball",
+        "BalL"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Ball이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0a559ea7e42a",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "wATER",
+      "answer": "Water",
+      "distractors": [
+        "WATER",
+        "water",
+        "WateR"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Water이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0adcd36d719a",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "uMBRELLA",
+      "answer": "Umbrella",
+      "distractors": [
+        "UMBRELLA",
+        "umbrella",
+        "UmbrellA"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Umbrella이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0e422c2d3d00",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "유나와 내가 친구라고 말합니다.",
+      "answer": "Yuna and I are friends.",
+      "distractors": [
+        "yuna and I are friends.",
+        "yuna and i are friends.",
+        "Yuna And I are friends."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Yuna and I are friends.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0f80e292063b",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "king",
+      "answer": "KING",
+      "distractors": [
+        "KINg",
+        "kING",
+        "KInG"
+      ],
+      "solution": [
+        "king의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 KING이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "11a4638b6cd1",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나는 사과를 좋아한다고 말합니다.",
+      "answer": "I like apples.",
+      "distractors": [
+        "i like apples.",
+        "I Like apples.",
+        "I like Apples."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'I like apples.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1df2bbeea1a0",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "yELLOW",
+      "answer": "Yellow",
+      "distractors": [
+        "YELLOW",
+        "yellow",
+        "YelloW"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Yellow이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2327a074b6a6",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "MILK",
+      "answer": "milk",
+      "distractors": [
+        "milK",
+        "Milk",
+        "miLk"
+      ],
+      "solution": [
+        "MILK의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 milk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23abfeabae15",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "PEN",
+      "answer": "pen",
+      "distractors": [
+        "peN",
+        "Pen",
+        "pEn"
+      ],
+      "solution": [
+        "PEN의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 pen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "241dfac9294c",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "ball",
+      "answer": "BALL",
+      "distractors": [
+        "BALl",
+        "bALL",
+        "BAlL"
+      ],
+      "solution": [
+        "ball의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 BALL이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "26777b715761",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "톰이 자기 이름을 말합니다.",
+      "answer": "My name is Tom.",
+      "distractors": [
+        "my name is Tom.",
+        "My name is tom.",
+        "My Name is Tom."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Tom.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "286c51bda4a1",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "zOO",
+      "answer": "Zoo",
+      "distractors": [
+        "ZOO",
+        "zoo",
+        "ZoO"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Zoo이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "288266f4f24b",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "FACE",
+      "answer": "face",
+      "distractors": [
+        "facE",
+        "Face",
+        "faCe"
+      ],
+      "solution": [
+        "FACE의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 face이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2921c7286c40",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "LION",
+      "answer": "lion",
+      "distractors": [
+        "lioN",
+        "Lion",
+        "liOn"
+      ],
+      "solution": [
+        "LION의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 lion이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a97001816be",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "zoo",
+      "answer": "ZOO",
+      "distractors": [
+        "ZOo",
+        "zOO",
+        "ZoO"
+      ],
+      "solution": [
+        "zoo의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 ZOO이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2c14d278f9c0",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "oPEN",
+      "answer": "Open",
+      "distractors": [
+        "OPEN",
+        "open",
+        "OpeN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Open이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2ff7f11d5136",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "egg",
+      "answer": "EGG",
+      "distractors": [
+        "EGg",
+        "eGG",
+        "EgG"
+      ],
+      "solution": [
+        "egg의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 EGG이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3185eba9d690",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "door",
+      "answer": "DOOR",
+      "distractors": [
+        "DOOr",
+        "dOOR",
+        "DOoR"
+      ],
+      "solution": [
+        "door의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 DOOR이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "34e8fbeaa6b7",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "umbrella",
+      "answer": "UMBRELLA",
+      "distractors": [
+        "UMBRELLa",
+        "uMBRELLA",
+        "UMBReLLA"
+      ],
+      "solution": [
+        "umbrella의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 UMBRELLA이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "38cad2d84856",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "HAND",
+      "answer": "hand",
+      "distractors": [
+        "hanD",
+        "Hand",
+        "haNd"
+      ],
+      "solution": [
+        "HAND의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 hand이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "391fedb49b02",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "cat",
+      "answer": "CAT",
+      "distractors": [
+        "CAt",
+        "cAT",
+        "CaT"
+      ],
+      "solution": [
+        "cat의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 CAT이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39545d98de9b",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "APPLE",
+      "answer": "apple",
+      "distractors": [
+        "applE",
+        "Apple",
+        "apPle"
+      ],
+      "solution": [
+        "APPLE의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 apple이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c1eb8de7f9d",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "GIRL",
+      "answer": "girl",
+      "distractors": [
+        "girL",
+        "Girl",
+        "giRl"
+      ],
+      "solution": [
+        "GIRL의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 girl이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3dd16b211042",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "내가 도와줄 수 있냐고 묻습니다.",
+      "answer": "Can I help you?",
+      "distractors": [
+        "can I help you?",
+        "Can i help you?",
+        "Can I Help you?"
+      ],
+      "solution": [
+        "묻는 문장도 첫 글자는 대문자로 쓴다.",
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3ea6d03d7185",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "DESK",
+      "answer": "desk",
+      "distractors": [
+        "desK",
+        "Desk",
+        "deSk"
+      ],
+      "solution": [
+        "DESK의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 desk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "413c41c63d16",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "NOSE",
+      "answer": "nose",
+      "distractors": [
+        "nosE",
+        "Nose",
+        "noSe"
+      ],
+      "solution": [
+        "NOSE의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 nose이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41508f5e7630",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "민수가 자기 이름을 말합니다.",
+      "answer": "My name is Minsu.",
+      "distractors": [
+        "my name is Minsu.",
+        "My name is minsu.",
+        "My Name is Minsu."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Minsu.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41b7aadf0f82",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나와 지호가 열 살이라고 말합니다.",
+      "answer": "Jiho and I are ten.",
+      "distractors": [
+        "jiho and I are ten.",
+        "jiho and i are ten.",
+        "Jiho And I are ten."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Jiho and I are ten.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42dbfab4d331",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "pEN",
+      "answer": "Pen",
+      "distractors": [
+        "PEN",
+        "pen",
+        "PeN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Pen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "43137f0ff345",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "dOG",
+      "answer": "Dog",
+      "distractors": [
+        "DOG",
+        "dog",
+        "DoG"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Dog이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "46152fea68c1",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "hand",
+      "answer": "HAND",
+      "distractors": [
+        "HANd",
+        "hAND",
+        "HAnD"
+      ],
+      "solution": [
+        "hand의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 HAND이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "494dcebb8a11",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "톰이 키가 크다고 말합니다.",
+      "answer": "Tom is tall.",
+      "distractors": [
+        "tom is tall.",
+        "Tom Is tall.",
+        "Tom is Tall."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Tom is tall.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ec28c10d509",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "fACE",
+      "answer": "Face",
+      "distractors": [
+        "FACE",
+        "face",
+        "FacE"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Face이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54c2640abba0",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "YELLOW",
+      "answer": "yellow",
+      "distractors": [
+        "yelloW",
+        "Yellow",
+        "yelLow"
+      ],
+      "solution": [
+        "YELLOW의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 yellow이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57a0b6569999",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "bOX",
+      "answer": "Box",
+      "distractors": [
+        "BOX",
+        "box",
+        "BoX"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Box이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5a399bba2a4b",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "에이미가 어디 있냐고 묻습니다.",
+      "answer": "Where is Amy?",
+      "distractors": [
+        "where is Amy?",
+        "Where is amy?",
+        "Where Is Amy?"
+      ],
+      "solution": [
+        "묻는 문장도 첫 글자는 대문자로 쓴다.",
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5bf205acc259",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "tree",
+      "answer": "TREE",
+      "distractors": [
+        "TREe",
+        "tREE",
+        "TReE"
+      ],
+      "solution": [
+        "tree의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 TREE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "630b97e7cbdf",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "bOOK",
+      "answer": "Book",
+      "distractors": [
+        "BOOK",
+        "book",
+        "BooK"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Book이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6540ec19c9ff",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "sun",
+      "answer": "SUN",
+      "distractors": [
+        "SUn",
+        "sUN",
+        "SuN"
+      ],
+      "solution": [
+        "sun의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 SUN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "65f8784acef8",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "WATER",
+      "answer": "water",
+      "distractors": [
+        "wateR",
+        "Water",
+        "waTer"
+      ],
+      "solution": [
+        "WATER의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 water이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66f30632b1f8",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "유나가 몇 살이냐고 묻습니다.",
+      "answer": "How old is Yuna?",
+      "distractors": [
+        "how old is Yuna?",
+        "How old is yuna?",
+        "How Old is Yuna?"
+      ],
+      "solution": [
+        "묻는 문장도 첫 글자는 대문자로 쓴다.",
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "68d1625d35d7",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "girl",
+      "answer": "GIRL",
+      "distractors": [
+        "GIRl",
+        "gIRL",
+        "GIrL"
+      ],
+      "solution": [
+        "girl의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 GIRL이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6933bd82a8c6",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "DOOR",
+      "answer": "door",
+      "distractors": [
+        "dooR",
+        "Door",
+        "doOr"
+      ],
+      "solution": [
+        "DOOR의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 door이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "69e3b512ef7a",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "open",
+      "answer": "OPEN",
+      "distractors": [
+        "OPEn",
+        "oPEN",
+        "OPeN"
+      ],
+      "solution": [
+        "open의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 OPEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a9c25b70055",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "queen",
+      "answer": "QUEEN",
+      "distractors": [
+        "QUEEn",
+        "qUEEN",
+        "QUeEN"
+      ],
+      "solution": [
+        "queen의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 QUEEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6af002ac7273",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "fISH",
+      "answer": "Fish",
+      "distractors": [
+        "FISH",
+        "fish",
+        "FisH"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Fish이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "722f743bf8f0",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "미나와 에이미가 자매라고 말합니다.",
+      "answer": "Mina and Amy are sisters.",
+      "distractors": [
+        "mina and Amy are sisters.",
+        "mina and amy are sisters.",
+        "Mina And Amy are sisters."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Mina and Amy are sisters.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "78f7555ec568",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "톰이 피자를 좋아하냐고 묻습니다.",
+      "answer": "Does Tom like pizza?",
+      "distractors": [
+        "does Tom like pizza?",
+        "Does tom like pizza?",
+        "Does Tom Like pizza?"
+      ],
+      "solution": [
+        "묻는 문장도 첫 글자는 대문자로 쓴다.",
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "792444aeb699",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "face",
+      "answer": "FACE",
+      "distractors": [
+        "FACe",
+        "fACE",
+        "FAcE"
+      ],
+      "solution": [
+        "face의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 FACE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7eae355e1163",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "지호가 축구를 좋아한다고 말합니다.",
+      "answer": "Jiho likes soccer.",
+      "distractors": [
+        "jiho likes soccer.",
+        "Jiho Likes soccer.",
+        "Jiho likes Soccer."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Jiho likes soccer.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "813832b988a5",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "fish",
+      "answer": "FISH",
+      "distractors": [
+        "FISh",
+        "fISH",
+        "FIsH"
+      ],
+      "solution": [
+        "fish의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 FISH이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "85fb20068ac2",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "미나를 친구라고 소개합니다.",
+      "answer": "This is Mina.",
+      "distractors": [
+        "this is Mina.",
+        "This is mina.",
+        "This Is Mina."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'This is Mina.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b294826d2c9",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "SUN",
+      "answer": "sun",
+      "distractors": [
+        "suN",
+        "Sun",
+        "sUn"
+      ],
+      "solution": [
+        "SUN의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 sun이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8cc51d6b6a21",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "KING",
+      "answer": "king",
+      "distractors": [
+        "kinG",
+        "King",
+        "kiNg"
+      ],
+      "solution": [
+        "KING의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 king이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f823e2976cd",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "apple",
+      "answer": "APPLE",
+      "distractors": [
+        "APPLe",
+        "aPPLE",
+        "APpLE"
+      ],
+      "solution": [
+        "apple의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 APPLE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "919095e7ff08",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "dog",
+      "answer": "DOG",
+      "distractors": [
+        "DOg",
+        "dOG",
+        "DoG"
+      ],
+      "solution": [
+        "dog의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 DOG이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9221ac91bafc",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "jump",
+      "answer": "JUMP",
+      "distractors": [
+        "JUMp",
+        "jUMP",
+        "JUmP"
+      ],
+      "solution": [
+        "jump의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 JUMP이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9384de671ddf",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "JUMP",
+      "answer": "jump",
+      "distractors": [
+        "jumP",
+        "Jump",
+        "juMp"
+      ],
+      "solution": [
+        "JUMP의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 jump이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96d7bb8b4b84",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "yellow",
+      "answer": "YELLOW",
+      "distractors": [
+        "YELLOw",
+        "yELLOW",
+        "YELlOW"
+      ],
+      "solution": [
+        "yellow의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 YELLOW이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97f478091d18",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "dESK",
+      "answer": "Desk",
+      "distractors": [
+        "DESK",
+        "desk",
+        "DesK"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Desk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d018d1f0052",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "톰과 내가 학교에 간다고 말합니다.",
+      "answer": "Tom and I go to school.",
+      "distractors": [
+        "tom and I go to school.",
+        "tom and i go to school.",
+        "Tom And I go to school."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Tom and I go to school.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a13499409e76",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "유나가 자기 이름을 말합니다.",
+      "answer": "My name is Yuna.",
+      "distractors": [
+        "my name is Yuna.",
+        "My name is yuna.",
+        "My Name is Yuna."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Yuna.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a1dac6254919",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "milk",
+      "answer": "MILK",
+      "distractors": [
+        "MILk",
+        "mILK",
+        "MIlK"
+      ],
+      "solution": [
+        "milk의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 MILK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5329caba19d",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나는 열 살이라고 말합니다.",
+      "answer": "I am ten years old.",
+      "distractors": [
+        "i am ten years old.",
+        "I Am ten years old.",
+        "I am ten years Old."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'I am ten years old.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a736271d6d32",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "sUN",
+      "answer": "Sun",
+      "distractors": [
+        "SUN",
+        "sun",
+        "SuN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Sun이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a77819ad4ccb",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "water",
+      "answer": "WATER",
+      "distractors": [
+        "WATEr",
+        "wATER",
+        "WAtER"
+      ],
+      "solution": [
+        "water의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 WATER이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa35ff7c4981",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나는 수영할 수 있다고 말합니다.",
+      "answer": "I can swim.",
+      "distractors": [
+        "i can swim.",
+        "I Can swim.",
+        "I can Swim."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'I can swim.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa9b77432f11",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "aPPLE",
+      "answer": "Apple",
+      "distractors": [
+        "APPLE",
+        "apple",
+        "ApplE"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Apple이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1787fe53b55",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "jUMP",
+      "answer": "Jump",
+      "distractors": [
+        "JUMP",
+        "jump",
+        "JumP"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Jump이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1812025c9f3",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "eGG",
+      "answer": "Egg",
+      "distractors": [
+        "EGG",
+        "egg",
+        "EgG"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Egg이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b5641c42dba0",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "violin",
+      "answer": "VIOLIN",
+      "distractors": [
+        "VIOLIn",
+        "vIOLIN",
+        "VIOlIN"
+      ],
+      "solution": [
+        "violin의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 VIOLIN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b88e38754d75",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "BOOK",
+      "answer": "book",
+      "distractors": [
+        "booK",
+        "Book",
+        "boOk"
+      ],
+      "solution": [
+        "BOOK의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 book이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba2f4172e864",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "nose",
+      "answer": "NOSE",
+      "distractors": [
+        "NOSe",
+        "nOSE",
+        "NOsE"
+      ],
+      "solution": [
+        "nose의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 NOSE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba6259eab535",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "qUEEN",
+      "answer": "Queen",
+      "distractors": [
+        "QUEEN",
+        "queen",
+        "QueeN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Queen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb27afe2d51f",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "book",
+      "answer": "BOOK",
+      "distractors": [
+        "BOOk",
+        "bOOK",
+        "BOoK"
+      ],
+      "solution": [
+        "book의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 BOOK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bdca9af5d8af",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "에이미가 자기 이름을 말합니다.",
+      "answer": "My name is Amy.",
+      "distractors": [
+        "my name is Amy.",
+        "My name is amy.",
+        "My Name is Amy."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Amy.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be20da9a575f",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "vIOLIN",
+      "answer": "Violin",
+      "distractors": [
+        "VIOLIN",
+        "violin",
+        "VioliN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Violin이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bfbe273bc0fc",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "iCE",
+      "answer": "Ice",
+      "distractors": [
+        "ICE",
+        "ice",
+        "IcE"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Ice이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c004ca7c0e8d",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "BOX",
+      "answer": "box",
+      "distractors": [
+        "boX",
+        "Box",
+        "bOx"
+      ],
+      "solution": [
+        "BOX의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 box이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c186c12e5f62",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "nOSE",
+      "answer": "Nose",
+      "distractors": [
+        "NOSE",
+        "nose",
+        "NosE"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Nose이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3973db613e6",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "CAT",
+      "answer": "cat",
+      "distractors": [
+        "caT",
+        "Cat",
+        "cAt"
+      ],
+      "solution": [
+        "CAT의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 cat이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3d5d3b5c851",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "rED",
+      "answer": "Red",
+      "distractors": [
+        "RED",
+        "red",
+        "ReD"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Red이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c71073f69921",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "민수와 내가 함께 논다고 말합니다.",
+      "answer": "Minsu and I play together.",
+      "distractors": [
+        "minsu and I play together.",
+        "minsu and i play together.",
+        "Minsu And I play together."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Minsu and I play together.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8260b5c9e81",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "desk",
+      "answer": "DESK",
+      "distractors": [
+        "DESk",
+        "dESK",
+        "DEsK"
+      ],
+      "solution": [
+        "desk의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 DESK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cbd1d3ab7faa",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "tREE",
+      "answer": "Tree",
+      "distractors": [
+        "TREE",
+        "tree",
+        "TreE"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Tree이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cdd5cb5698d0",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "미나가 자기 이름을 말합니다.",
+      "answer": "My name is Mina.",
+      "distractors": [
+        "my name is Mina.",
+        "My name is mina.",
+        "My Name is Mina."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Mina.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce12ab90b6b9",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "red",
+      "answer": "RED",
+      "distractors": [
+        "REd",
+        "rED",
+        "ReD"
+      ],
+      "solution": [
+        "red의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 RED이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cf4ca9cae2c1",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "VIOLIN",
+      "answer": "violin",
+      "distractors": [
+        "violiN",
+        "Violin",
+        "vioLin"
+      ],
+      "solution": [
+        "VIOLIN의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 violin이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cff56d924447",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "pen",
+      "answer": "PEN",
+      "distractors": [
+        "PEn",
+        "pEN",
+        "PeN"
+      ],
+      "solution": [
+        "pen의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 PEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0073ab0f4c7",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "ZOO",
+      "answer": "zoo",
+      "distractors": [
+        "zoO",
+        "Zoo",
+        "zOo"
+      ],
+      "solution": [
+        "ZOO의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 zoo이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d02d91a7a297",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "TREE",
+      "answer": "tree",
+      "distractors": [
+        "treE",
+        "Tree",
+        "trEe"
+      ],
+      "solution": [
+        "TREE의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 tree이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0848c72579f",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "ice",
+      "answer": "ICE",
+      "distractors": [
+        "ICe",
+        "iCE",
+        "IcE"
+      ],
+      "solution": [
+        "ice의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 ICE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d1e92d2a008c",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "cAT",
+      "answer": "Cat",
+      "distractors": [
+        "CAT",
+        "cat",
+        "CaT"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Cat이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d72e98ce2c86",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "에이미가 고양이를 기른다고 말합니다.",
+      "answer": "Amy has a cat.",
+      "distractors": [
+        "amy has a cat.",
+        "Amy Has a cat.",
+        "Amy has a Cat."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'Amy has a cat.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d7bc3f3f14fa",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "gIRL",
+      "answer": "Girl",
+      "distractors": [
+        "GIRL",
+        "girl",
+        "GirL"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Girl이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da83d169c654",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "RED",
+      "answer": "red",
+      "distractors": [
+        "reD",
+        "Red",
+        "rEd"
+      ],
+      "solution": [
+        "RED의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 red이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db1f3064e2ce",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "OPEN",
+      "answer": "open",
+      "distractors": [
+        "opeN",
+        "Open",
+        "opEn"
+      ],
+      "solution": [
+        "OPEN의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 open이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e0d61a0b2504",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "mILK",
+      "answer": "Milk",
+      "distractors": [
+        "MILK",
+        "milk",
+        "MilK"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Milk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1248beb1155",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "hAND",
+      "answer": "Hand",
+      "distractors": [
+        "HAND",
+        "hand",
+        "HanD"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Hand이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e358b7374916",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "dOOR",
+      "answer": "Door",
+      "distractors": [
+        "DOOR",
+        "door",
+        "DooR"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Door이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e555a74c015d",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 대문자로 바르게 쓴 것을 고르시오.",
+      "stem": "lion",
+      "answer": "LION",
+      "distractors": [
+        "LIOn",
+        "lION",
+        "LIoN"
+      ],
+      "solution": [
+        "lion의 글자를 하나도 빠짐없이 대문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 LION이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e5b00c32b2d2",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "kING",
+      "answer": "King",
+      "distractors": [
+        "KING",
+        "king",
+        "KinG"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 King이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e93a2a70228b",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나도 우유를 좋아한다고 말합니다.",
+      "answer": "I like milk, too.",
+      "distractors": [
+        "i like milk, too.",
+        "I Like milk, too.",
+        "I like milk, Too."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'I like milk, too.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e9b18fbb1754",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "DOG",
+      "answer": "dog",
+      "distractors": [
+        "doG",
+        "Dog",
+        "dOg"
+      ],
+      "solution": [
+        "DOG의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 dog이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ebcff7990516",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "EGG",
+      "answer": "egg",
+      "distractors": [
+        "egG",
+        "Egg",
+        "eGg"
+      ],
+      "solution": [
+        "EGG의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 egg이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1a30e11bcac",
+      "difficulty": 3,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "UMBRELLA",
+      "answer": "umbrella",
+      "distractors": [
+        "umbrellA",
+        "Umbrella",
+        "umbrElla"
+      ],
+      "solution": [
+        "UMBRELLA의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 umbrella이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f2023963c475",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "BALL",
+      "answer": "ball",
+      "distractors": [
+        "balL",
+        "Ball",
+        "baLl"
+      ],
+      "solution": [
+        "BALL의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 ball이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f323c5a30568",
+      "difficulty": 2,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "나는 개가 있다고 말합니다.",
+      "answer": "I have a dog.",
+      "distractors": [
+        "i have a dog.",
+        "I Have a dog.",
+        "I have a Dog."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'I have a dog.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3406e0f919c",
+      "difficulty": 1,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "지호가 자기 이름을 말합니다.",
+      "answer": "My name is Jiho.",
+      "distractors": [
+        "my name is Jiho.",
+        "My name is jiho.",
+        "My Name is Jiho."
+      ],
+      "solution": [
+        "문장의 첫 글자, 사람 이름의 첫 글자, 나를 뜻하는 I는 대문자로 쓴다.",
+        "바르게 쓴 문장은 'My name is Jiho.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f9d5c58dae77",
+      "difficulty": 3,
+      "instruction": "대문자와 소문자를 바르게 쓴 문장을 고르시오.",
+      "stem": "민수가 학생이냐고 묻습니다.",
+      "answer": "Is Minsu a student?",
+      "distractors": [
+        "is Minsu a student?",
+        "Is minsu a student?",
+        "Is Minsu A student?"
+      ],
+      "solution": [
+        "묻는 문장도 첫 글자는 대문자로 쓴다.",
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fa3e68e406e5",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자만 대문자로 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "lION",
+      "answer": "Lion",
+      "distractors": [
+        "LION",
+        "lion",
+        "LioN"
+      ],
+      "solution": [
+        "첫 글자 하나만 대문자로 쓰고 나머지 글자는 소문자로 쓴다.",
+        "바르게 고쳐 쓴 낱말은 Lion이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fbc29503e6cb",
+      "difficulty": 2,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "QUEEN",
+      "answer": "queen",
+      "distractors": [
+        "queeN",
+        "Queen",
+        "quEen"
+      ],
+      "solution": [
+        "QUEEN의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 queen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fdbba8b715c6",
+      "difficulty": 1,
+      "instruction": "낱말을 모두 소문자로 바르게 쓴 것을 고르시오.",
+      "stem": "ICE",
+      "answer": "ice",
+      "distractors": [
+        "icE",
+        "Ice",
+        "iCe"
+      ],
+      "solution": [
+        "ICE의 글자를 하나도 빠짐없이 소문자로 바꿔 쓴다.",
+        "바르게 쓴 낱말은 ice이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

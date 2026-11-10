@@ -5,6 +5,25 @@
   "skill": "한글 자모 이름과 소릿값을 알고 발음·쓰기",
   "items": [
     {
+      "id": "015b0a1dcd24",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅂ, ㅓ, ㄹ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "벌",
+      "distractors": [
+        "별",
+        "물",
+        "풀"
+      ],
+      "solution": [
+        "ㅂ, ㅓ, ㄹ을 모아 쓰면 '벌'이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "01f8396d61c2",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -65,6 +84,83 @@
       }
     },
     {
+      "id": "0b3bf982aafc",
+      "difficulty": 3,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "고양이",
+      "answer": "이응",
+      "distractors": [
+        "미음",
+        "니은",
+        "기역"
+      ],
+      "solution": [
+        "'고양이'에서 받침이 있는 글자는 '양'이다.",
+        "'양'의 받침 ㅇ의 이름은 '이응'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0e441530d97e",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅍ, ㅜ, ㄹ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "풀",
+      "distractors": [
+        "물",
+        "벌",
+        "북"
+      ],
+      "solution": [
+        "ㅍ, ㅜ, ㄹ을 모아 쓰면 '풀'이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13ea9ca44290",
+      "difficulty": 2,
+      "instruction": "이름에 알맞은 자음자를 고르시오.",
+      "stem": "키읔",
+      "answer": "ㅋ",
+      "distractors": [
+        "ㄱ",
+        "ㅌ",
+        "ㄲ"
+      ],
+      "solution": [
+        "'키읔'은 자음자 ㅋ의 이름이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "140c000aff7c",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'지붕'과 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "장갑",
+      "distractors": [
+        "참새",
+        "수건",
+        "치과"
+      ],
+      "solution": [
+        "'지붕'과 '장갑'은 모두 첫소리가 ㅈ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "14d7a70772e3",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -78,6 +174,84 @@
       "solution": [
         "'지구'의 첫 글자 '지'의 첫소리는 ㅈ이다.",
         "ㅈ의 이름은 '지읒'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1566a8048d4b",
+      "difficulty": 2,
+      "instruction": "이름에 알맞은 자음자를 고르시오.",
+      "stem": "티읕",
+      "answer": "ㅌ",
+      "distractors": [
+        "ㄷ",
+        "ㅋ",
+        "ㅊ"
+      ],
+      "solution": [
+        "'티읕'은 자음자 ㅌ의 이름이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "20a81ce7ae82",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "지붕",
+      "answer": "이응",
+      "distractors": [
+        "미음",
+        "니은",
+        "기역"
+      ],
+      "solution": [
+        "'지붕'에서 받침이 있는 글자는 '붕'이다.",
+        "'붕'의 받침 ㅇ의 이름은 '이응'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "22f6a2f4ed5b",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "허리",
+      "answer": "히읗",
+      "distractors": [
+        "이응",
+        "피읖",
+        "티읕"
+      ],
+      "solution": [
+        "'허리'의 첫 글자 '허'의 첫소리는 ㅎ이다.",
+        "ㅎ의 이름은 '히읗'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "25fab714045e",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅂ, ㅕ, ㄹ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "별",
+      "distractors": [
+        "벌",
+        "병",
+        "빛"
+      ],
+      "solution": [
+        "ㅂ, ㅕ, ㄹ을 모아 쓰면 '별'이 된다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -125,6 +299,26 @@
       }
     },
     {
+      "id": "275f0b534590",
+      "difficulty": 2,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "빨강",
+      "answer": "쌍비읍",
+      "distractors": [
+        "비읍",
+        "피읖",
+        "쌍디귿"
+      ],
+      "solution": [
+        "'빨강'의 첫 글자 '빨'의 첫소리는 ㅃ이다.",
+        "ㅃ의 이름은 '쌍비읍'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "2ca98a076378",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -158,6 +352,64 @@
       "solution": [
         "'다람쥐'의 첫 글자 '다'의 첫소리는 ㄷ이다.",
         "ㄷ의 이름은 '디귿'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "33c6e4630612",
+      "difficulty": 2,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄲ",
+      "answer": "쌍기역",
+      "distractors": [
+        "기역",
+        "키읔",
+        "쌍디귿"
+      ],
+      "solution": [
+        "자음자 ㄲ의 이름은 '쌍기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3691dce975a4",
+      "difficulty": 2,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅎ, ㅐ를 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "해",
+      "distractors": [
+        "배",
+        "새",
+        "비"
+      ],
+      "solution": [
+        "ㅎ, ㅐ를 모아 쓰면 '해'가 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "372dd41962fd",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "거북",
+      "answer": "기역",
+      "distractors": [
+        "니은",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'거북'에서 받침이 있는 글자는 '북'이다.",
+        "'북'의 받침 ㄱ의 이름은 '기역'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -225,6 +477,85 @@
       }
     },
     {
+      "id": "40b36022583f",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "누나",
+      "answer": "니은",
+      "distractors": [
+        "디귿",
+        "리을",
+        "미음"
+      ],
+      "solution": [
+        "'누나'의 첫 글자 '누'의 첫소리는 ㄴ이다.",
+        "ㄴ의 이름은 '니은'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41b1d60cbd9e",
+      "difficulty": 2,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅅ, ㅐ를 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "새",
+      "distractors": [
+        "해",
+        "배",
+        "비"
+      ],
+      "solution": [
+        "ㅅ, ㅐ를 모아 쓰면 '새'가 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44e3686a5ce2",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "구슬",
+      "answer": "리을",
+      "distractors": [
+        "니은",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'구슬'에서 받침이 있는 글자는 '슬'이다.",
+        "'슬'의 받침 ㄹ의 이름은 '리을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "45c06823a34c",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'거북'의 첫 글자 '거'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅓ",
+      "distractors": [
+        "ㅏ",
+        "ㅕ",
+        "ㅗ"
+      ],
+      "solution": [
+        "'거'는 ㄱ과 ㅓ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅓ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "477fbdffa0ec",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -238,6 +569,25 @@
       "solution": [
         "'학교'의 첫 글자 '학'의 첫소리는 ㅎ이다.",
         "ㅎ의 이름은 '히읗'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4c0dda254420",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅇ",
+      "answer": "이응",
+      "distractors": [
+        "히읗",
+        "미음",
+        "니은"
+      ],
+      "solution": [
+        "자음자 ㅇ의 이름은 '이응'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -265,6 +615,26 @@
       }
     },
     {
+      "id": "4cdd2d368bb7",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "개미",
+      "answer": "기역",
+      "distractors": [
+        "키읔",
+        "쌍기역",
+        "니은"
+      ],
+      "solution": [
+        "'개미'의 첫 글자 '개'의 첫소리는 ㄱ이다.",
+        "ㄱ의 이름은 '기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "4ef96b5b6ddb",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -278,6 +648,64 @@
       "solution": [
         "'거울'의 첫 글자 '거'의 첫소리는 ㄱ이다.",
         "ㄱ의 이름은 '기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5392d903fb4d",
+      "difficulty": 2,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "파랑",
+      "answer": "피읖",
+      "distractors": [
+        "비읍",
+        "티읕",
+        "히읗"
+      ],
+      "solution": [
+        "'파랑'의 첫 글자 '파'의 첫소리는 ㅍ이다.",
+        "ㅍ의 이름은 '피읖'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54315716550b",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'사과'와 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "수박",
+      "distractors": [
+        "지구",
+        "치마",
+        "하늘"
+      ],
+      "solution": [
+        "'사과'와 '수박'은 모두 첫소리가 ㅅ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "552337805b52",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅍ",
+      "answer": "피읖",
+      "distractors": [
+        "비읍",
+        "티읕",
+        "히읗"
+      ],
+      "solution": [
+        "자음자 ㅍ의 이름은 '피읖'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -305,6 +733,45 @@
       }
     },
     {
+      "id": "619e158d1967",
+      "difficulty": 2,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "초록",
+      "answer": "치읓",
+      "distractors": [
+        "지읒",
+        "티읕",
+        "키읔"
+      ],
+      "solution": [
+        "'초록'의 첫 글자 '초'의 첫소리는 ㅊ이다.",
+        "ㅊ의 이름은 '치읓'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "648576b6b358",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'파랑'과 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "포도",
+      "distractors": [
+        "바다",
+        "버스",
+        "허리"
+      ],
+      "solution": [
+        "'파랑'과 '포도'는 모두 첫소리가 ㅍ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "67b9fc2900f2",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -325,6 +792,104 @@
       }
     },
     {
+      "id": "696c2ec383a8",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'나비'의 첫 글자 '나'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅏ",
+      "distractors": [
+        "ㅓ",
+        "ㅗ",
+        "ㅑ"
+      ],
+      "solution": [
+        "'나'는 ㄴ과 ㅏ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅏ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a3579dfd0d0",
+      "difficulty": 2,
+      "instruction": "이름에 알맞은 자음자를 고르시오.",
+      "stem": "히읗",
+      "answer": "ㅎ",
+      "distractors": [
+        "ㅇ",
+        "ㅍ",
+        "ㅌ"
+      ],
+      "solution": [
+        "'히읗'은 자음자 ㅎ의 이름이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ab005587e9a",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'유리'의 첫 글자 '유'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅠ",
+      "distractors": [
+        "ㅜ",
+        "ㅛ",
+        "ㅡ"
+      ],
+      "solution": [
+        "'유'는 ㅇ과 ㅠ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅠ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6abbc51514f2",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "다리",
+      "answer": "디귿",
+      "distractors": [
+        "티읕",
+        "쌍디귿",
+        "니은"
+      ],
+      "solution": [
+        "'다리'의 첫 글자 '다'의 첫소리는 ㄷ이다.",
+        "ㄷ의 이름은 '디귿'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6abe256a9f50",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'토끼'와 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "토마토",
+      "distractors": [
+        "두부",
+        "고기",
+        "포도"
+      ],
+      "solution": [
+        "'토끼'와 '토마토'는 모두 첫소리가 ㅌ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "6af6fb811a42",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -338,6 +903,44 @@
       "solution": [
         "'고기'의 첫 글자 '고'의 첫소리는 ㄱ이다.",
         "ㄱ의 이름은 '기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b6ff52c350c",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'고추'와 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "구름",
+      "distractors": [
+        "노래",
+        "토끼",
+        "허리"
+      ],
+      "solution": [
+        "'고추'와 '구름'은 모두 첫소리가 ㄱ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ca5b0596b31",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅊ",
+      "answer": "치읓",
+      "distractors": [
+        "지읒",
+        "티읕",
+        "키읔"
+      ],
+      "solution": [
+        "자음자 ㅊ의 이름은 '치읓'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -405,6 +1008,25 @@
       }
     },
     {
+      "id": "748b569f713c",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅈ",
+      "answer": "지읒",
+      "distractors": [
+        "치읓",
+        "쌍지읒",
+        "시옷"
+      ],
+      "solution": [
+        "자음자 ㅈ의 이름은 '지읒'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "77e6f584dd67",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -418,6 +1040,44 @@
       "solution": [
         "'오리'의 첫 글자 '오'의 첫소리는 ㅇ이다.",
         "ㅇ의 이름은 '이응'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7a8a35253610",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅅ",
+      "answer": "시옷",
+      "distractors": [
+        "쌍시옷",
+        "지읒",
+        "치읓"
+      ],
+      "solution": [
+        "자음자 ㅅ의 이름은 '시옷'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7c8104ce159d",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㄱ, ㅗ, ㅁ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "곰",
+      "distractors": [
+        "공",
+        "솜",
+        "밥"
+      ],
+      "solution": [
+        "ㄱ, ㅗ, ㅁ을 모아 쓰면 '곰'이 된다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -485,6 +1145,44 @@
       }
     },
     {
+      "id": "8917f830729e",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄷ",
+      "answer": "디귿",
+      "distractors": [
+        "티읕",
+        "쌍디귿",
+        "니은"
+      ],
+      "solution": [
+        "자음자 ㄷ의 이름은 '디귿'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8cb809210c0f",
+      "difficulty": 2,
+      "instruction": "이름에 알맞은 자음자를 고르시오.",
+      "stem": "비읍",
+      "answer": "ㅂ",
+      "distractors": [
+        "ㅍ",
+        "ㅃ",
+        "ㅁ"
+      ],
+      "solution": [
+        "'비읍'은 자음자 ㅂ의 이름이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "8dbc432a9a60",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -498,6 +1196,26 @@
       "solution": [
         "'단추'의 첫 글자 '단'의 첫소리는 ㄷ이다.",
         "ㄷ의 이름은 '디귿'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e804d1c85c7",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'기차'의 첫 글자 '기'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅣ",
+      "distractors": [
+        "ㅡ",
+        "ㅏ",
+        "ㅓ"
+      ],
+      "solution": [
+        "'기'는 ㄱ과 ㅣ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅣ이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -605,6 +1323,25 @@
       }
     },
     {
+      "id": "970bb201c452",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㄴ, ㅜ, ㄴ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "눈",
+      "distractors": [
+        "손",
+        "물",
+        "숲"
+      ],
+      "solution": [
+        "ㄴ, ㅜ, ㄴ을 모아 쓰면 '눈'이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9ad22ef829ff",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -638,6 +1375,25 @@
       "solution": [
         "'장갑'의 첫 글자 '장'의 첫소리는 ㅈ이다.",
         "ㅈ의 이름은 '지읒'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a322d7f09f02",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄴ",
+      "answer": "니은",
+      "distractors": [
+        "디귿",
+        "리을",
+        "미음"
+      ],
+      "solution": [
+        "자음자 ㄴ의 이름은 '니은'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -705,6 +1461,46 @@
       }
     },
     {
+      "id": "add1dca21f86",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'여우'의 첫 글자 '여'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅕ",
+      "distractors": [
+        "ㅑ",
+        "ㅓ",
+        "ㅛ"
+      ],
+      "solution": [
+        "'여'는 ㅇ과 ㅕ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅕ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ae28abb85799",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "아기",
+      "answer": "이응",
+      "distractors": [
+        "히읗",
+        "미음",
+        "니은"
+      ],
+      "solution": [
+        "'아기'의 첫 글자 '아'의 첫소리는 ㅇ이다.",
+        "ㅇ의 이름은 '이응'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "aee8694e848e",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -725,6 +1521,181 @@
       }
     },
     {
+      "id": "b436f7b421b6",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'도토리'의 첫 글자 '도'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅗ",
+      "distractors": [
+        "ㅜ",
+        "ㅛ",
+        "ㅓ"
+      ],
+      "solution": [
+        "'도'는 ㄷ과 ㅗ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅗ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b684541b1688",
+      "difficulty": 2,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅉ",
+      "answer": "쌍지읒",
+      "distractors": [
+        "지읒",
+        "치읓",
+        "쌍시옷"
+      ],
+      "solution": [
+        "자음자 ㅉ의 이름은 '쌍지읒'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6fd25d9f823",
+      "difficulty": 2,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅃ",
+      "answer": "쌍비읍",
+      "distractors": [
+        "비읍",
+        "피읖",
+        "쌍디귿"
+      ],
+      "solution": [
+        "자음자 ㅃ의 이름은 '쌍비읍'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b771e26855e9",
+      "difficulty": 2,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅆ",
+      "answer": "쌍시옷",
+      "distractors": [
+        "시옷",
+        "쌍지읒",
+        "쌍기역"
+      ],
+      "solution": [
+        "자음자 ㅆ의 이름은 '쌍시옷'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b99c363e4b8d",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅅ, ㅗ, ㄴ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "손",
+      "distractors": [
+        "솜",
+        "눈",
+        "공"
+      ],
+      "solution": [
+        "ㅅ, ㅗ, ㄴ을 모아 쓰면 '손'이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9a37cc61c7b",
+      "difficulty": 2,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'두부'의 첫 글자 '두'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅜ",
+      "distractors": [
+        "ㅗ",
+        "ㅠ",
+        "ㅡ"
+      ],
+      "solution": [
+        "'두'는 ㄷ과 ㅜ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅜ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb623987dee8",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "가을",
+      "answer": "리을",
+      "distractors": [
+        "니은",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'가을'에서 받침이 있는 글자는 '을'이다.",
+        "'을'의 받침 ㄹ의 이름은 '리을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be1e7026eeb4",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "보라",
+      "answer": "비읍",
+      "distractors": [
+        "피읖",
+        "쌍비읍",
+        "미음"
+      ],
+      "solution": [
+        "'보라'의 첫 글자 '보'의 첫소리는 ㅂ이다.",
+        "ㅂ의 이름은 '비읍'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf3d84833304",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅎ",
+      "answer": "히읗",
+      "distractors": [
+        "이응",
+        "피읖",
+        "티읕"
+      ],
+      "solution": [
+        "자음자 ㅎ의 이름은 '히읗'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "bf85f58c214b",
       "difficulty": 1,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -738,6 +1709,104 @@
       "solution": [
         "'여우'의 첫 글자 '여'의 첫소리는 ㅇ이다.",
         "ㅇ의 이름은 '이응'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1d5a657c698",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅁ",
+      "answer": "미음",
+      "distractors": [
+        "비읍",
+        "니은",
+        "이응"
+      ],
+      "solution": [
+        "자음자 ㅁ의 이름은 '미음'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3ee4f6239f8",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "저녁",
+      "answer": "지읒",
+      "distractors": [
+        "치읓",
+        "쌍지읒",
+        "시옷"
+      ],
+      "solution": [
+        "'저녁'의 첫 글자 '저'의 첫소리는 ㅈ이다.",
+        "ㅈ의 이름은 '지읒'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5dc20e76de6",
+      "difficulty": 3,
+      "instruction": "낱말의 첫 글자에 쓰인 모음자를 고르시오.",
+      "stem": "'개미'의 첫 글자 '개'에 쓰인 모음자는 무엇입니까?",
+      "answer": "ㅐ",
+      "distractors": [
+        "ㅔ",
+        "ㅏ",
+        "ㅒ"
+      ],
+      "solution": [
+        "'개'는 ㄱ과 ㅐ를 모아 쓴 글자다.",
+        "그래서 모음자는 ㅐ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8b6292ea620",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'바구니'와 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "버스",
+      "distractors": [
+        "나무",
+        "다리",
+        "파랑"
+      ],
+      "solution": [
+        "'바구니'와 '버스'는 모두 첫소리가 ㅂ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c9aa71df5204",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "마늘",
+      "answer": "리을",
+      "distractors": [
+        "니은",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'마늘'에서 받침이 있는 글자는 '늘'이다.",
+        "'늘'의 받침 ㄹ의 이름은 '리을'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -825,6 +1894,102 @@
       }
     },
     {
+      "id": "d18d64fb7b8e",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅂ",
+      "answer": "비읍",
+      "distractors": [
+        "피읖",
+        "쌍비읍",
+        "미음"
+      ],
+      "solution": [
+        "자음자 ㅂ의 이름은 '비읍'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2396f7bef95",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "여름",
+      "answer": "미음",
+      "distractors": [
+        "니은",
+        "이응",
+        "비읍"
+      ],
+      "solution": [
+        "'여름'에서 받침이 있는 글자는 '름'이다.",
+        "'름'의 받침 ㅁ의 이름은 '미음'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d4b86e4a785d",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅋ",
+      "answer": "키읔",
+      "distractors": [
+        "기역",
+        "티읕",
+        "쌍기역"
+      ],
+      "solution": [
+        "자음자 ㅋ의 이름은 '키읔'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d524b5c3c67a",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㅌ",
+      "answer": "티읕",
+      "distractors": [
+        "디귿",
+        "키읔",
+        "치읓"
+      ],
+      "solution": [
+        "자음자 ㅌ의 이름은 '티읕'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d797ecd302a9",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄹ",
+      "answer": "리을",
+      "distractors": [
+        "니은",
+        "디귿",
+        "미음"
+      ],
+      "solution": [
+        "자음자 ㄹ의 이름은 '리을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "df8e2983139b",
       "difficulty": 1,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -865,6 +2030,85 @@
       }
     },
     {
+      "id": "e195da4cf534",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "수건",
+      "answer": "니은",
+      "distractors": [
+        "리을",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'수건'에서 받침이 있는 글자는 '건'이다.",
+        "'건'의 받침 ㄴ의 이름은 '니은'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e269538d3eae",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "오늘",
+      "answer": "리을",
+      "distractors": [
+        "니은",
+        "미음",
+        "이응"
+      ],
+      "solution": [
+        "'오늘'에서 받침이 있는 글자는 '늘'이다.",
+        "'늘'의 받침 ㄹ의 이름은 '리을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e53098ee602c",
+      "difficulty": 1,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄱ",
+      "answer": "기역",
+      "distractors": [
+        "키읔",
+        "쌍기역",
+        "니은"
+      ],
+      "solution": [
+        "자음자 ㄱ의 이름은 '기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e55e23445340",
+      "difficulty": 2,
+      "instruction": "낱말의 받침에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "바람",
+      "answer": "미음",
+      "distractors": [
+        "니은",
+        "이응",
+        "비읍"
+      ],
+      "solution": [
+        "'바람'에서 받침이 있는 글자는 '람'이다.",
+        "'람'의 받침 ㅁ의 이름은 '미음'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "e7ac11a05231",
       "difficulty": 1,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -885,6 +2129,63 @@
       }
     },
     {
+      "id": "e7df3b77d214",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'하늘'과 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "허리",
+      "distractors": [
+        "오리",
+        "가위",
+        "머리"
+      ],
+      "solution": [
+        "'하늘'과 '허리'는 모두 첫소리가 ㅎ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e93c3616e8e7",
+      "difficulty": 2,
+      "instruction": "자음자의 이름을 고르시오.",
+      "stem": "ㄸ",
+      "answer": "쌍디귿",
+      "distractors": [
+        "디귿",
+        "티읕",
+        "쌍기역"
+      ],
+      "solution": [
+        "자음자 ㄸ의 이름은 '쌍디귿'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec98d31688a4",
+      "difficulty": 2,
+      "instruction": "첫소리가 같은 낱말을 고르시오.",
+      "stem": "'다리미'와 첫소리가 같은 낱말은 무엇입니까?",
+      "answer": "두부",
+      "distractors": [
+        "토마토",
+        "나비",
+        "머리"
+      ],
+      "solution": [
+        "'다리미'와 '두부'는 모두 첫소리가 ㄷ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "ed958f78a360",
       "difficulty": 2,
       "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
@@ -898,6 +2199,83 @@
       "solution": [
         "'기차'의 첫 글자 '기'의 첫소리는 ㄱ이다.",
         "ㄱ의 이름은 '기역'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef9731064170",
+      "difficulty": 2,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅂ, ㅐ를 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "배",
+      "distractors": [
+        "비",
+        "새",
+        "해"
+      ],
+      "solution": [
+        "ㅂ, ㅐ를 모아 쓰면 '배'가 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f18cb08d5bbc",
+      "difficulty": 2,
+      "instruction": "이름에 알맞은 자음자를 고르시오.",
+      "stem": "리을",
+      "answer": "ㄹ",
+      "distractors": [
+        "ㄴ",
+        "ㄷ",
+        "ㅁ"
+      ],
+      "solution": [
+        "'리을'은 자음자 ㄹ의 이름이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3d4873bad30",
+      "difficulty": 3,
+      "instruction": "자음자와 모음자를 모아 쓴 글자를 고르시오.",
+      "stem": "ㅁ, ㅜ, ㄹ을 차례대로 모아 쓰면 어떤 글자가 됩니까?",
+      "answer": "물",
+      "distractors": [
+        "풀",
+        "북",
+        "눈"
+      ],
+      "solution": [
+        "ㅁ, ㅜ, ㄹ을 모아 쓰면 '물'이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f53dfa4e9407",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "사과",
+      "answer": "시옷",
+      "distractors": [
+        "쌍시옷",
+        "지읒",
+        "치읓"
+      ],
+      "solution": [
+        "'사과'의 첫 글자 '사'의 첫소리는 ㅅ이다.",
+        "ㅅ의 이름은 '시옷'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -978,6 +2356,26 @@
       "solution": [
         "'머리'의 첫 글자 '머'의 첫소리는 ㅁ이다.",
         "ㅁ의 이름은 '미음'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fbb866871fa2",
+      "difficulty": 1,
+      "instruction": "낱말의 첫소리에 쓰인 자음자의 이름을 고르시오.",
+      "stem": "바지",
+      "answer": "비읍",
+      "distractors": [
+        "피읖",
+        "쌍비읍",
+        "미음"
+      ],
+      "solution": [
+        "'바지'의 첫 글자 '바'의 첫소리는 ㅂ이다.",
+        "ㅂ의 이름은 '비읍'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

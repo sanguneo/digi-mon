@@ -5,6 +5,120 @@
   "skill": "알파벳 대소문자와 문장 부호를 문장에서 바르게 사용하는 표준",
   "items": [
     {
+      "id": "086a0a36fd77",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'고마워, 지호야'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Thank you, Jiho.",
+      "distractors": [
+        "thank you, Jiho.",
+        "Thank you, Jiho?",
+        "Thank you, jiho."
+      ],
+      "solution": [
+        "부르는 이름 앞에 쉼표를 찍고, 이름은 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0bc3f0c52a60",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'나는 걸어서 학교에 갑니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I walk to school.",
+      "distractors": [
+        "i walk to school.",
+        "I walk to school?",
+        "I walk to School."
+      ],
+      "solution": [
+        "첫 글자를 대문자로 쓰고 문장 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0dc6142d051c",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'나는 사과와 바나나를 좋아합니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I like apples and bananas.",
+      "distractors": [
+        "i like apples and bananas.",
+        "I like apples and bananas?",
+        "I like Apples and bananas."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0e7b2755ac05",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'나는 연필이 세 자루 있습니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I have three pencils.",
+      "distractors": [
+        "i have three pencils.",
+        "I have three pencils?",
+        "I have Three pencils."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "11ee750d72f9",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'책상 위에 책이 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Is there a book on the desk?",
+      "distractors": [
+        "is there a book on the desk?",
+        "Is there a book on the desk.",
+        "Is There a book on the desk?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1578caa629de",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "How tall is your brother",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "18b146297327",
       "difficulty": 3,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -43,6 +157,82 @@
       }
     },
     {
+      "id": "19b7ffbf0110",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'유나와 에이미는 어디에 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Where are Yuna and Amy?",
+      "distractors": [
+        "where are Yuna and Amy?",
+        "Where are Yuna and Amy.",
+        "Where are yuna and Amy?"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 찍고, 두 사람 이름 모두 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19bb5fd6e1d0",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 무엇을 원하니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What do you want?",
+      "distractors": [
+        "what do you want?",
+        "What do you want.",
+        "What do you Want?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d04bad582cc",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'미안해, 톰'을 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I am sorry, Tom.",
+      "distractors": [
+        "i am sorry, Tom.",
+        "I am sorry, Tom?",
+        "I am sorry, tom."
+      ],
+      "solution": [
+        "부르는 이름 앞에 쉼표를 찍고, 이름은 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d07df7156a9",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'나는 개 한 마리와 고양이 두 마리를 기릅니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I have a dog and two cats.",
+      "distractors": [
+        "i have a dog and two cats.",
+        "I have a dog and two cats?",
+        "I have a Dog and two cats."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "1d5ba116e805",
       "difficulty": 1,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -55,6 +245,63 @@
       ],
       "solution": [
         "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1df1dc33990d",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "에이미가 쓴 생일 초대장에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "can you come to my party?",
+      "distractors": [
+        "We will have pizza.",
+        "Please come.",
+        "See you at my house."
+      ],
+      "solution": [
+        "묻는 문장의 첫 글자는 대문자로 써서 'Can you come to my party?'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23b1e3a77271",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 개를 좋아하니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Do you like dogs?",
+      "distractors": [
+        "do you like dogs?",
+        "Do you like dogs.",
+        "Do you like Dogs?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24f5fc81508e",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "톰이 쓴 여행 일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "We went to the Beach.",
+      "distractors": [
+        "It was hot.",
+        "I swam in the sea.",
+        "What a fun day!"
+      ],
+      "solution": [
+        "beach는 보통 낱말이므로 소문자로 써서 'We went to the beach.'로 써야 한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -81,6 +328,25 @@
       }
     },
     {
+      "id": "27a0e9975d28",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 멋진 날이구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a nice day!",
+      "distractors": [
+        "what a nice day!",
+        "What a nice day?",
+        "What a nice Day!"
+      ],
+      "solution": [
+        "감탄하는 문장은 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "28366a3baf0e",
       "difficulty": 2,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -100,6 +366,139 @@
       }
     },
     {
+      "id": "28b22032f37d",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "미나가 쓴 가족 소개 글에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "My sister and i are tall.",
+      "distractors": [
+        "There are four people in my family.",
+        "My dad is a cook.",
+        "My mom is kind."
+      ],
+      "solution": [
+        "나를 뜻하는 I는 문장 가운데에서도 대문자로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2c36f43c65d0",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'내 연필은 어디에 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Where is my pencil?",
+      "distractors": [
+        "where is my pencil?",
+        "Where is my pencil.",
+        "Where is My pencil?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2ee4d59b1f8f",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "How many pencils do you have",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2fd65764d140",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "톰이 쓴 주말 계획에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "I will play baseball with minsu.",
+      "distractors": [
+        "I will get up early.",
+        "I will read a book.",
+        "It will be fun."
+      ],
+      "solution": [
+        "사람 이름은 문장 끝에 와도 대문자로 시작하므로 'Minsu'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "33a5f4e01bf9",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 어디에 가고 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Where are you going?",
+      "distractors": [
+        "where are you going?",
+        "Where are you going.",
+        "Where Are you going?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3594ef5322ba",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "민수가 친구에게 보낸 문자에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "Where are you!",
+      "distractors": [
+        "I am at the park.",
+        "Come here.",
+        "Are you at home?"
+      ],
+      "solution": [
+        "묻는 문장이므로 끝에 물음표를 찍어 'Where are you?'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "38569733d06e",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'우리는 공원에서 축구를 합니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "We play soccer in the park.",
+      "distractors": [
+        "we play soccer in the park.",
+        "We play soccer in the park?",
+        "We play soccer in the Park."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "3a51d91f67c8",
       "difficulty": 3,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -112,6 +511,101 @@
       ],
       "solution": [
         "감탄하는 문장은 첫 글자를 대문자로 쓰고 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a8f19789959",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "미나가 친구에게 쓴 쪽지에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "where is your house?",
+      "distractors": [
+        "I am at home.",
+        "Come to my house.",
+        "Do you have a cat?"
+      ],
+      "solution": [
+        "묻는 문장의 첫 글자는 대문자로 써야 하므로 'Where is your house?'로 고쳐야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d10891d0179",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'에이미는 어디에 사니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Where does Amy live?",
+      "distractors": [
+        "where does Amy live?",
+        "Where does Amy live.",
+        "Where does amy live?"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 찍고, 사람 이름은 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41c7f8331ca8",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 예쁜 정원이구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a pretty garden!",
+      "distractors": [
+        "what a pretty garden!",
+        "What a pretty garden?",
+        "What a pretty Garden!"
+      ],
+      "solution": [
+        "놀라움을 나타내는 문장이므로 끝에 느낌표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "474d13eb1708",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'지금 몇 시니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What time is it?",
+      "distractors": [
+        "what time is it?",
+        "What time is it.",
+        "What Time is it?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "48e0bca58e77",
+      "difficulty": 3,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "minsu and i play tennis.",
+      "answer": "Minsu and I play tennis.",
+      "distractors": [
+        "Minsu and i play tennis.",
+        "minsu and I play tennis.",
+        "Minsu and I play Tennis."
+      ],
+      "solution": [
+        "사람 이름과 I는 대문자로 쓰고, 운동 이름은 소문자로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -176,6 +670,253 @@
       }
     },
     {
+      "id": "510a025dcf33",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "지호가 쓴 학교 소개 글에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "Our school is big?",
+      "distractors": [
+        "There is a big library.",
+        "We have a garden.",
+        "I like my school."
+      ],
+      "solution": [
+        "묻는 문장이 아니므로 'Our school is big.'처럼 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5315357fc0ce",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 키가 큰 나무구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a tall tree!",
+      "distractors": [
+        "what a tall tree!",
+        "What a tall tree?",
+        "What a Tall tree!"
+      ],
+      "solution": [
+        "놀라움을 나타내는 문장이므로 끝에 느낌표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54cf6274dd5c",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'미나와 나는 같은 반입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Mina and I are in the same class.",
+      "distractors": [
+        "mina and I are in the same class.",
+        "Mina and I are in the same class?",
+        "Mina and i are in the same class."
+      ],
+      "solution": [
+        "사람 이름과 나를 뜻하는 I는 문장 가운데에서도 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "598e8641c368",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 남동생이 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Do you have a brother?",
+      "distractors": [
+        "do you have a brother?",
+        "Do you have a brother.",
+        "Do you have a Brother?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5bbe682b8562",
+      "difficulty": 1,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Can you swim fast",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e3797295b41",
+      "difficulty": 1,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "do you have a dog?",
+      "answer": "Do you have a dog?",
+      "distractors": [
+        "do you have a dog.",
+        "Do you have a Dog?",
+        "Do You have a dog?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "60abc563dbeb",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 무슨 색을 좋아하니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What color do you like?",
+      "distractors": [
+        "what color do you like?",
+        "What color do you like.",
+        "What Color do you like?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62a119d6c9ee",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 재미있는 게임이구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a fun game!",
+      "distractors": [
+        "what a fun game!",
+        "What a fun game?",
+        "What a fun Game!"
+      ],
+      "solution": [
+        "감탄하는 문장은 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "632dfa152430",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "지호가 쓴 자기소개 글에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "My name is jiho.",
+      "distractors": [
+        "I am twelve years old.",
+        "I like soccer.",
+        "I have a sister."
+      ],
+      "solution": [
+        "사람 이름은 대문자로 시작하므로 'My name is Jiho.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6349aab1d7a4",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'이것은 무엇이니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What is this?",
+      "distractors": [
+        "what is this?",
+        "What is this.",
+        "What is This?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6f1c7c3e4271",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 수영할 수 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Can you swim?",
+      "distractors": [
+        "can you swim?",
+        "Can you swim.",
+        "Can You swim?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7493934c4e8d",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "유나가 친구와 나눈 대화에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "Do you like Music?",
+      "distractors": [
+        "Yes, I do.",
+        "I like music too.",
+        "What is your favorite song?"
+      ],
+      "solution": [
+        "music은 보통 낱말이므로 소문자로 써서 'Do you like music?'으로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7714d20c1e9e",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'유나는 내 가장 친한 친구입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Yuna is my best friend.",
+      "distractors": [
+        "yuna is my best friend.",
+        "Yuna is my best friend?",
+        "Yuna is my Best friend."
+      ],
+      "solution": [
+        "사람 이름은 대문자로 시작하고, 문장 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "7809a1693595",
       "difficulty": 2,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -188,6 +929,139 @@
       ],
       "solution": [
         "사람 이름은 대문자로 시작하고 운동 이름은 소문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7cb36bf61161",
+      "difficulty": 3,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'민수와 지호는 형제입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Minsu and Jiho are brothers.",
+      "distractors": [
+        "minsu and Jiho are brothers.",
+        "Minsu and Jiho are brothers?",
+        "Minsu and jiho are brothers."
+      ],
+      "solution": [
+        "사람 이름은 문장 가운데에서도 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "807d7752e045",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "유나가 할머니께 쓴 편지에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "How are you.",
+      "distractors": [
+        "I miss you.",
+        "I am fine.",
+        "See you again."
+      ],
+      "solution": [
+        "안부를 묻는 문장이므로 끝에 물음표를 찍어 'How are you?'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "828fa02a9370",
+      "difficulty": 3,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "yes i can.",
+      "answer": "Yes, I can.",
+      "distractors": [
+        "Yes I can.",
+        "yes, I can.",
+        "Yes, i can."
+      ],
+      "solution": [
+        "첫 글자와 I를 대문자로 쓰고, Yes 뒤에 쉼표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "83dbb6522042",
+      "difficulty": 2,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "no, i am not.",
+      "answer": "No, I am not.",
+      "distractors": [
+        "No, i am not.",
+        "no, I am not.",
+        "No I am not?"
+      ],
+      "solution": [
+        "첫 글자와 I를 대문자로 쓰고, No 뒤에 쉼표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "873e45df957a",
+      "difficulty": 3,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "My grandfather has a garden",
+      "answer": "마침표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "사실을 알려 주는 문장이므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "87b60e01376b",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'내 남동생은 일곱 살입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "My brother is seven years old.",
+      "distractors": [
+        "my brother is seven years old.",
+        "My brother is seven years old?",
+        "My Brother is seven years old."
+      ],
+      "solution": [
+        "첫 글자를 대문자로 쓰고 문장 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8829ba628077",
+      "difficulty": 1,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "i go to school by bus",
+      "answer": "I go to school by bus.",
+      "distractors": [
+        "I go to school by bus",
+        "i go to school by bus.",
+        "I go to School by bus."
+      ],
+      "solution": [
+        "첫 글자 I를 대문자로 쓰고 문장 끝에 마침표를 찍는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -214,6 +1088,63 @@
       }
     },
     {
+      "id": "8de120e68884",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Does Mina like bananas",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "93d307a92a09",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'그것은 얼마니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "How much is it?",
+      "distractors": [
+        "how much is it?",
+        "How much is it.",
+        "How Much is it?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "94e0d12f827f",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'이분은 우리 선생님입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "This is my teacher.",
+      "distractors": [
+        "this is my teacher.",
+        "This is my teacher?",
+        "This is my Teacher."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "96893f61e212",
       "difficulty": 3,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -226,6 +1157,25 @@
       ],
       "solution": [
         "부르는 이름 뒤에는 쉼표를 찍고, 문장 가운데 낱말은 소문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a33b9b6ae63",
+      "difficulty": 3,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "where is yuna.",
+      "answer": "Where is Yuna?",
+      "distractors": [
+        "Where is yuna?",
+        "where is Yuna?",
+        "Where is Yuna."
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 찍고, 사람 이름은 대문자로 시작한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -252,6 +1202,44 @@
       }
     },
     {
+      "id": "a2358f0518b0",
+      "difficulty": 1,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Who is your best friend",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a28ed1e080f4",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'나는 매일 아침 우유를 마십니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "I drink milk every morning.",
+      "distractors": [
+        "i drink milk every morning.",
+        "I drink milk every morning?",
+        "I drink Milk every morning."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "a3258afe7779",
       "difficulty": 2,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -264,6 +1252,25 @@
       ],
       "solution": [
         "첫 글자와 I는 대문자로 쓰고 No 뒤에 쉼표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a53d6aa45b3e",
+      "difficulty": 3,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "what a big cake.",
+      "answer": "What a big cake!",
+      "distractors": [
+        "What a big cake.",
+        "what a big cake!",
+        "What a Big cake!"
+      ],
+      "solution": [
+        "감탄하는 문장은 첫 글자를 대문자로 쓰고 끝에 느낌표를 찍는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -290,6 +1297,101 @@
       }
     },
     {
+      "id": "aaa0bc10dad5",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "What a long tail",
+      "answer": "느낌표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "'What a'로 시작해 감탄하는 문장이므로 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aaf39a5c5b0c",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'톰은 피아노를 칠 수 있습니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Tom can play the piano.",
+      "distractors": [
+        "tom can play the piano.",
+        "Tom can play the piano?",
+        "Tom can play the Piano."
+      ],
+      "solution": [
+        "사람 이름은 대문자로 시작하고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac34a012fea4",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'응, 좋아해'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Yes, I do.",
+      "distractors": [
+        "yes, I do.",
+        "Yes, I do?",
+        "Yes, i do."
+      ],
+      "solution": [
+        "대답하는 문장도 첫 글자와 I를 대문자로 쓰고, Yes 뒤에 쉼표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad7eb971848d",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 큰 수박이구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a big watermelon!",
+      "distractors": [
+        "what a big watermelon!",
+        "What a big watermelon?",
+        "What a big Watermelon!"
+      ],
+      "solution": [
+        "놀라움을 나타내는 문장이므로 끝에 느낌표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b029a23b05a5",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'지호는 빨간 모자를 좋아합니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Jiho likes the red cap.",
+      "distractors": [
+        "jiho likes the red cap.",
+        "Jiho likes the red cap?",
+        "Jiho likes the Red cap."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "b1836deed64f",
       "difficulty": 2,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -302,6 +1404,139 @@
       ],
       "solution": [
         "첫 글자만 대문자로 쓰고 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b68fef470a8a",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "What a big house",
+      "answer": "느낌표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "'What a'로 시작해 감탄하는 문장이므로 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6ec0e3e40cb",
+      "difficulty": 2,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "we like Spring.",
+      "answer": "We like spring.",
+      "distractors": [
+        "we like spring.",
+        "We like Spring.",
+        "We Like spring."
+      ],
+      "solution": [
+        "첫 글자는 대문자로 쓰고, 계절 이름은 소문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b82e32b1b217",
+      "difficulty": 1,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "지호가 쓴 운동 일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "i run every morning.",
+      "distractors": [
+        "I like running.",
+        "It is good for me.",
+        "Do you run too?"
+      ],
+      "solution": [
+        "문장의 첫 글자이면서 나를 뜻하는 I는 대문자로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b837bb3cb8e1",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "What a nice smile",
+      "answer": "느낌표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "'What a'로 시작해 감탄하는 문장이므로 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be68bd09e7c0",
+      "difficulty": 1,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "My uncle is a pilot",
+      "answer": "마침표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "사실을 알려 주는 문장이므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "beeac5bf1039",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'우리 엄마는 간호사입니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "My mom is a nurse.",
+      "distractors": [
+        "my mom is a nurse.",
+        "My mom is a nurse?",
+        "My mom is a Nurse."
+      ],
+      "solution": [
+        "첫 글자를 대문자로 쓰고 문장 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf20a9df6685",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'안녕, 미나야'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Hello, Mina.",
+      "distractors": [
+        "hello, Mina.",
+        "Hello, Mina?",
+        "Hello, mina."
+      ],
+      "solution": [
+        "인사 뒤에 쉼표를 찍고, 사람 이름은 대문자로 시작한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -328,6 +1563,25 @@
       }
     },
     {
+      "id": "c1672e03aea5",
+      "difficulty": 3,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "this is my friend tom.",
+      "answer": "This is my friend, Tom.",
+      "distractors": [
+        "This is my friend, tom.",
+        "this is my friend, Tom.",
+        "This is my Friend, Tom."
+      ],
+      "solution": [
+        "첫 글자와 사람 이름은 대문자로 쓰고, 이름 앞에 쉼표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "c1b049a1195f",
       "difficulty": 1,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -347,6 +1601,44 @@
       }
     },
     {
+      "id": "c90075824216",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "에이미가 쓴 날씨 일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "It is cold today!?",
+      "distractors": [
+        "It is snowing.",
+        "I wear my coat.",
+        "I like winter."
+      ],
+      "solution": [
+        "문장 끝에는 문장 부호를 하나만 찍으므로 'It is cold today.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb5e38239036",
+      "difficulty": 1,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Where do you play soccer",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "cd0dd8bbed52",
       "difficulty": 1,
       "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
@@ -359,6 +1651,348 @@
       ],
       "solution": [
         "문장의 첫 글자와 사람 이름의 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2e088ae1fca",
+      "difficulty": 3,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "미나가 쓴 요리 일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "I made a cake with my mom?",
+      "distractors": [
+        "It was good.",
+        "My dad liked it.",
+        "What a big cake!"
+      ],
+      "solution": [
+        "묻는 문장이 아니므로 'I made a cake with my mom.'처럼 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d4a8dc2a1891",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'오늘은 비가 옵니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "It is raining today.",
+      "distractors": [
+        "it is raining today.",
+        "It is raining today?",
+        "It is Raining today."
+      ],
+      "solution": [
+        "문장의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d5b57734887a",
+      "difficulty": 1,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'민수는 키가 큽니다'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "Minsu is tall.",
+      "distractors": [
+        "minsu is tall.",
+        "Minsu is tall?",
+        "Minsu is Tall."
+      ],
+      "solution": [
+        "사람 이름의 첫 글자는 대문자로 쓰고, 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dac95237c76b",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 어떻게 학교에 가니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "How do you go to school?",
+      "distractors": [
+        "how do you go to school?",
+        "How do you go to school.",
+        "How do you go to School?"
+      ],
+      "solution": [
+        "물어보는 문장이므로 끝에 물음표를 찍고, 첫 글자는 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db1c9e73c451",
+      "difficulty": 3,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "What a fast horse",
+      "answer": "느낌표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "'What a'로 시작해 감탄하는 문장이므로 끝에 느낌표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dc6f27f8c59b",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'톰은 몇 살이니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "How old is Tom?",
+      "distractors": [
+        "how old is Tom?",
+        "How old is Tom.",
+        "How old is tom?"
+      ],
+      "solution": [
+        "묻는 문장 끝에는 물음표를 찍고, 사람 이름은 문장 끝에 와도 대문자로 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dcd154f3952f",
+      "difficulty": 2,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "amy can dance well.",
+      "answer": "Amy can dance well.",
+      "distractors": [
+        "amy can Dance well.",
+        "Amy can dance well?",
+        "AMY can dance well."
+      ],
+      "solution": [
+        "사람 이름이 문장 맨 앞에 오므로 첫 글자를 대문자로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "df67f3939c30",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Tom lives near the river",
+      "answer": "마침표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "사실을 알려 주는 문장이므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1c612b3d97e",
+      "difficulty": 1,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "We have lunch at twelve",
+      "answer": "마침표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "사실을 알려 주는 문장이므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e350f0816776",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "민수가 쓴 동물원 일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "what a big lion!",
+      "distractors": [
+        "I went to the zoo.",
+        "I saw a lion.",
+        "It was very big."
+      ],
+      "solution": [
+        "감탄하는 문장도 첫 글자는 대문자로 써서 'What a big lion!'으로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e438f03e4320",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "유나가 쓴 반려동물 소개 글에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "My cat is Small.",
+      "distractors": [
+        "This is my cat.",
+        "She is white.",
+        "She likes fish."
+      ],
+      "solution": [
+        "small은 보통 낱말이므로 'My cat is small.'처럼 소문자로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e83fb70f0627",
+      "difficulty": 3,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Jiho goes to bed at ten",
+      "answer": "마침표",
+      "distractors": [
+        "물음표",
+        "쉼표",
+        "큰따옴표"
+      ],
+      "solution": [
+        "사실을 알려 주는 문장이므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f00fe3cebc28",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'너는 무엇을 하고 있니'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What are you doing?",
+      "distractors": [
+        "what are you doing?",
+        "What are you doing.",
+        "What are You doing?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f251eac5e067",
+      "difficulty": 2,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "my dad is a doctor?",
+      "answer": "My dad is a doctor.",
+      "distractors": [
+        "my dad is a doctor.",
+        "My dad is a doctor?",
+        "My Dad is a Doctor."
+      ],
+      "solution": [
+        "첫 글자를 대문자로 쓰고, 묻는 문장이 아니므로 끝에 마침표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3633910b1ba",
+      "difficulty": 2,
+      "instruction": "다음 문장을 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "how old is your sister.",
+      "answer": "How old is your sister?",
+      "distractors": [
+        "how old is your sister?",
+        "How old is your sister.",
+        "How old is your Sister?"
+      ],
+      "solution": [
+        "묻는 문장은 첫 글자를 대문자로 쓰고 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f792a9227669",
+      "difficulty": 2,
+      "instruction": "대문자나 문장 부호를 잘못 쓴 문장을 고르시오.",
+      "stem": "민수의 그림일기에 나오는 문장입니다. 이 가운데 하나는 대문자나 문장 부호를 잘못 썼습니다.",
+      "answer": "I like my dog?",
+      "distractors": [
+        "My dog is white.",
+        "He likes the ball.",
+        "What a nice day!"
+      ],
+      "solution": [
+        "묻는 문장이 아니므로 끝에 마침표를 찍어 'I like my dog.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8dd9d2a87b3",
+      "difficulty": 2,
+      "instruction": "문장 끝에 찍을 알맞은 문장 부호를 고르시오.",
+      "stem": "Is your mom a teacher",
+      "answer": "물음표",
+      "distractors": [
+        "마침표",
+        "쉼표",
+        "느낌표"
+      ],
+      "solution": [
+        "무엇인가를 묻는 문장이므로 끝에 물음표를 찍는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fbf034a88577",
+      "difficulty": 2,
+      "instruction": "대문자와 문장 부호를 바르게 쓴 문장을 고르시오.",
+      "stem": "'정말 긴 기차구나'를 영어로 바르게 쓴 문장은 어느 것입니까?",
+      "answer": "What a long train!",
+      "distractors": [
+        "what a long train!",
+        "What a long train?",
+        "What a long Train!"
+      ],
+      "solution": [
+        "감탄하는 문장은 끝에 느낌표를 찍는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

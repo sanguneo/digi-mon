@@ -5,6 +5,44 @@
   "skill": "높임·지시·접속 표현을 상황에 맞게 사용",
   "items": [
     {
+      "id": "037803acb601",
+      "difficulty": 2,
+      "instruction": "높임 표현이 되도록 □에 들어갈 알맞은 낱말을 고르시오.",
+      "stem": "할아버지께 □ 여쭈었더니 일흔이라고 하셨습니다.",
+      "answer": "연세",
+      "distractors": [
+        "진지",
+        "성함",
+        "댁"
+      ],
+      "solution": [
+        "'나이'를 높여 이르는 말은 '연세'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0964c54e2046",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "오늘은 내 생일입니다.",
+      "answer": "그래서 친구들을 집에 초대했습니다.",
+      "distractors": [
+        "그러나 친구들을 집에 초대했습니다.",
+        "하지만 친구들을 집에 초대했습니다.",
+        "왜냐하면 친구들을 집에 초대했습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "0e61b715f85f",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -24,6 +62,25 @@
       }
     },
     {
+      "id": "0ec8b3d21f64",
+      "difficulty": 3,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "교장 선생님□ 우리에게 상을 주셨습니다.",
+      "answer": "께서",
+      "distractors": [
+        "께",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람이 문장의 주인일 때는 '이'나 '가' 대신 '께서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "114c470faf5b",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -36,6 +93,272 @@
       ],
       "solution": [
         "웃어른의 행동에는 '께서'와 '-으시-'를 함께 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1401e7189390",
+      "difficulty": 1,
+      "instruction": "높임 표현이 되도록 □에 들어갈 알맞은 낱말을 고르시오.",
+      "stem": "할아버지, □ 드셨어요?",
+      "answer": "진지",
+      "distractors": [
+        "연세",
+        "성함",
+        "댁"
+      ],
+      "solution": [
+        "'밥'을 높여 이르는 말은 '진지'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19103ee07f98",
+      "difficulty": 2,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "복도에서 교장 선생님을 만난 일을 쓴 글입니다.",
+      "answer": "교장 선생님한테 꽃을 줬습니다.",
+      "distractors": [
+        "교장 선생님께 인사를 드렸습니다.",
+        "교장 선생님께서 손을 흔드셨습니다.",
+        "교장 선생님께서 천천히 걸어가셨습니다."
+      ],
+      "solution": [
+        "웃어른께 줄 때는 '께'와 '드리다'를 써서 '교장 선생님께 꽃을 드렸습니다.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19cd881e74f2",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "전화로 친구에게 내가 있는 곳을 알려 줍니다.",
+      "answer": "나는 지금 여기 도서관에 있어.",
+      "distractors": [
+        "나는 지금 거기 도서관에 있어.",
+        "나는 지금 저기 도서관에 있어.",
+        "나는 지금 그곳 도서관에 있어."
+      ],
+      "solution": [
+        "말하는 사람이 있는 곳은 '여기'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1a65fd2e637f",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "어머니께서 맛있는 떡볶이를 만들어 주셨습니다.",
+      "answer": "그래서 기분이 좋았습니다.",
+      "distractors": [
+        "하지만 기분이 좋았습니다.",
+        "그러나 기분이 좋았습니다.",
+        "왜냐하면 기분이 좋았습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ad5ac45a81c",
+      "difficulty": 2,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "할머니 댁에 다녀온 날을 쓴 글입니다.",
+      "answer": "할머니가 일찍 잤습니다.",
+      "distractors": [
+        "할머니께서 반갑게 맞아 주셨습니다.",
+        "할머니께 인사를 드렸습니다.",
+        "할머니께서 진지를 드셨습니다."
+      ],
+      "solution": [
+        "할머니의 행동이므로 '할머니께서 일찍 주무셨습니다.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1b91c8e9a269",
+      "difficulty": 1,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할머니□ 시장에 가셨습니다.",
+      "answer": "께서",
+      "distractors": [
+        "께",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람이 문장의 주인일 때는 '이'나 '가' 대신 '께서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1cc912452e13",
+      "difficulty": 2,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "선생님과 이야기를 나눈 일을 쓴 글입니다.",
+      "answer": "선생님이 내 공책을 봤습니다.",
+      "distractors": [
+        "선생님께 질문을 여쭈었습니다.",
+        "선생님께서 웃으며 대답하셨습니다.",
+        "선생님께서 칭찬해 주셨습니다."
+      ],
+      "solution": [
+        "선생님의 행동이므로 '선생님께서 내 공책을 보셨습니다.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1e45f5bfe3f1",
+      "difficulty": 3,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "전화를 받았더니 아버지 친구분께서 아버지를 찾으십니다.",
+      "answer": "아버지께서는 지금 집에 안 계십니다.",
+      "distractors": [
+        "아버지는 지금 집에 없어요.",
+        "아버지 지금 집에 없어.",
+        "아버지가 지금 집에 없다."
+      ],
+      "solution": [
+        "아버지를 높여 '계시다'를 쓰고, 듣는 웃어른께도 '-ㅂ니다'로 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ea8219d7ada",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "할머니 댁은 멀리 있습니다.",
+      "answer": "그래서 기차를 타고 갑니다.",
+      "distractors": [
+        "그러나 기차를 타고 갑니다.",
+        "왜냐하면 기차를 타고 갑니다.",
+        "하지만 기차를 타고 갑니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1eb5b4937bc5",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "멀리 언덕 위에 있는 집을 가리키며 말합니다.",
+      "answer": "저 집이 우리 할머니 댁이야.",
+      "distractors": [
+        "이 집이 우리 할머니 댁이야.",
+        "그 집이 우리 할머니 댁이야.",
+        "여기 집이 우리 할머니 댁이야."
+      ],
+      "solution": [
+        "두 사람에게서 멀리 있는 것은 '저'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "20517b504768",
+      "difficulty": 1,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "선생님께 숙제를 다 했다고 말씀드립니다.",
+      "answer": "선생님, 숙제를 다 했습니다.",
+      "distractors": [
+        "선생님, 숙제 다 했어.",
+        "선생님, 숙제 끝났다.",
+        "선생님, 숙제 다 했거든."
+      ],
+      "solution": [
+        "선생님께는 '-습니다'처럼 높여 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "220f4a96ee24",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "내 책상 위에 있는 지우개를 친구에게 건네며 말합니다.",
+      "answer": "이 지우개 써.",
+      "distractors": [
+        "그 지우개 써.",
+        "저 지우개 써.",
+        "저기 지우개 써."
+      ],
+      "solution": [
+        "말하는 사람 가까이 있는 것은 '이'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "22807c663efa",
+      "difficulty": 2,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "나는 선생님□ 꽃을 드렸습니다.",
+      "answer": "께",
+      "distractors": [
+        "께서",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람에게 무엇을 할 때는 '에게' 대신 '께'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2b3bda08aee7",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "나는 아침을 먹었습니다.",
+      "answer": "그리고 이를 닦았습니다.",
+      "distractors": [
+        "그러나 이를 닦았습니다.",
+        "왜냐하면 이를 닦았습니다.",
+        "하지만 이를 닦았습니다."
+      ],
+      "solution": [
+        "앞 문장에 비슷한 내용을 더하므로 '그리고'로 잇는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -81,6 +404,63 @@
       }
     },
     {
+      "id": "3b21f0c9c0a3",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "친구가 어제 읽은 책 이야기를 하자 그 책에 대해 묻습니다.",
+      "answer": "그 책은 누가 썼어?",
+      "distractors": [
+        "이 책은 누가 썼어?",
+        "저 책은 누가 썼어?",
+        "저기 책은 누가 썼어?"
+      ],
+      "solution": [
+        "앞에서 이야기한 것을 다시 가리킬 때는 '그'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b52523d2d82",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "어머니께서 부엌에서 국을 □",
+      "answer": "끓이십니다.",
+      "distractors": [
+        "끓입니다.",
+        "끓인다.",
+        "끓여요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b8fb0b529f4",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할아버지, 어디 □",
+      "answer": "가세요?",
+      "distractors": [
+        "가?",
+        "가니?",
+        "가냐?"
+      ],
+      "solution": [
+        "웃어른께 물을 때는 '-세요'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "3c8e7e11b85f",
       "difficulty": 1,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -93,6 +473,25 @@
       ],
       "solution": [
         "'자다'의 높임 표현은 '주무시다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3df8220f96f9",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "오늘은 학교에 일찍 갔습니다.",
+      "answer": "왜냐하면 청소 당번이었기 때문입니다.",
+      "distractors": [
+        "그래서 청소 당번이었기 때문입니다.",
+        "그러나 청소 당번이었기 때문입니다.",
+        "그리고 청소 당번이었기 때문입니다."
+      ],
+      "solution": [
+        "뒤 문장이 앞 일의 까닭을 말하므로 '왜냐하면'으로 잇는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -119,6 +518,25 @@
       }
     },
     {
+      "id": "3f5e5c88a20a",
+      "difficulty": 3,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "나는 매운 음식을 못 먹습니다.",
+      "answer": "하지만 형은 매운 음식을 잘 먹습니다.",
+      "distractors": [
+        "그래서 형은 매운 음식을 잘 먹습니다.",
+        "왜냐하면 형은 매운 음식을 잘 먹습니다.",
+        "그러므로 형은 매운 음식을 잘 먹습니다."
+      ],
+      "solution": [
+        "앞뒤 내용이 서로 반대되므로 '그러나'나 '하지만'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "407b56cbbf0f",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -138,6 +556,101 @@
       }
     },
     {
+      "id": "408aebded031",
+      "difficulty": 1,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "할머니께 전화를 건 일을 쓴 글입니다.",
+      "answer": "할머니, 밥 먹었어?",
+      "distractors": [
+        "할머니, 잘 지내셨어요?",
+        "할머니, 보고 싶어요.",
+        "할머니, 진지 드셨어요?"
+      ],
+      "solution": [
+        "할머니께는 '할머니, 진지 드셨어요?'처럼 높여 말해야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40e19bad8d97",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "나는 수학을 좋아합니다.",
+      "answer": "그리고 과학도 좋아합니다.",
+      "distractors": [
+        "그러나 과학도 좋아합니다.",
+        "왜냐하면 과학도 좋아합니다.",
+        "하지만 과학도 좋아합니다."
+      ],
+      "solution": [
+        "앞 문장에 비슷한 내용을 더하므로 '그리고'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41bae6f11208",
+      "difficulty": 2,
+      "instruction": "높임 표현이 되도록 □에 들어갈 알맞은 낱말을 고르시오.",
+      "stem": "선생님, □ 여쭈어봐도 될까요?",
+      "answer": "성함",
+      "distractors": [
+        "진지",
+        "연세",
+        "댁"
+      ],
+      "solution": [
+        "'이름'을 높여 이르는 말은 '성함'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4252d2b23731",
+      "difficulty": 2,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "선생님□ 칠판에 글씨를 쓰십니다.",
+      "answer": "께서",
+      "distractors": [
+        "께",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람이 문장의 주인일 때는 '이'나 '가' 대신 '께서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44867e07dbf4",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "나는 선생님께 모르는 문제를 □",
+      "answer": "여쭈어보았습니다.",
+      "distractors": [
+        "물어보았습니다.",
+        "물어봤다.",
+        "물었어요."
+      ],
+      "solution": [
+        "웃어른께 물을 때는 '여쭈다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "450a506293aa",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -150,6 +663,101 @@
       ],
       "solution": [
         "웃어른께 묻는 일은 '여쭈다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4583fe272f5d",
+      "difficulty": 1,
+      "instruction": "높임 표현이 되도록 □에 들어갈 알맞은 낱말을 고르시오.",
+      "stem": "주말에 할머니 □에 놀러 갑니다.",
+      "answer": "댁",
+      "distractors": [
+        "진지",
+        "연세",
+        "성함"
+      ],
+      "solution": [
+        "'집'을 높여 이르는 말은 '댁'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "45f8d8ff4b7c",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "비가 많이 내렸습니다.",
+      "answer": "그래서 우산을 쓰고 나갔습니다.",
+      "distractors": [
+        "그러나 우산을 쓰고 나갔습니다.",
+        "하지만 우산을 쓰고 나갔습니다.",
+        "왜냐하면 우산을 쓰고 나갔습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "46b1fddda0b0",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "날씨가 무척 추웠습니다.",
+      "answer": "그래서 두꺼운 외투를 입었습니다.",
+      "distractors": [
+        "하지만 두꺼운 외투를 입었습니다.",
+        "그러나 두꺼운 외투를 입었습니다.",
+        "왜냐하면 두꺼운 외투를 입었습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4cc3f96b59d1",
+      "difficulty": 3,
+      "instruction": "되풀이되는 말을 지시 표현으로 알맞게 바꾼 문장을 고르시오.",
+      "stem": "어제 공원에 갔습니다. 공원에는 꽃이 많았습니다.",
+      "answer": "그곳에는 꽃이 많았습니다.",
+      "distractors": [
+        "그것에는 꽃이 많았습니다.",
+        "저것에는 꽃이 많았습니다.",
+        "이것에는 꽃이 많았습니다."
+      ],
+      "solution": [
+        "앞 문장의 장소인 '공원'을 다시 가리키므로 '그곳'을 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4dd91f6f3542",
+      "difficulty": 3,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "나는 할아버지□ 안부 전화를 드렸습니다.",
+      "answer": "께",
+      "distractors": [
+        "께서",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람에게 무엇을 할 때는 '에게' 대신 '께'를 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -195,6 +803,63 @@
       }
     },
     {
+      "id": "5aeb776a2c10",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "우리 집에는 강아지가 있습니다.",
+      "answer": "그리고 고양이도 있습니다.",
+      "distractors": [
+        "그러나 고양이도 있습니다.",
+        "그래서 고양이도 있습니다.",
+        "왜냐하면 고양이도 있습니다."
+      ],
+      "solution": [
+        "앞 문장에 비슷한 내용을 더하므로 '그리고'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "61db1fbef581",
+      "difficulty": 2,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "수업 시간에 선생님께 화장실에 다녀와도 되는지 여쭙니다.",
+      "answer": "선생님, 화장실에 다녀와도 될까요?",
+      "distractors": [
+        "선생님, 화장실 갔다 올게.",
+        "선생님, 화장실 다녀온다.",
+        "선생님, 나 화장실 갈래."
+      ],
+      "solution": [
+        "선생님께 허락을 구할 때는 '-ㄹ까요?'처럼 높여 묻는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62e00cc8a2d3",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "동생이 엉엉 울었습니다.",
+      "answer": "왜냐하면 장난감이 부서졌기 때문입니다.",
+      "distractors": [
+        "그래서 장난감이 부서졌기 때문입니다.",
+        "그러나 장난감이 부서졌기 때문입니다.",
+        "그리고 장난감이 부서졌기 때문입니다."
+      ],
+      "solution": [
+        "뒤 문장이 앞 일의 까닭을 말하므로 '왜냐하면'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "62fd021ece81",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -207,6 +872,44 @@
       ],
       "solution": [
         "웃어른께는 '안녕히 계세요'처럼 높여 인사한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66f178843bb4",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "내 손에 든 연필을 친구에게 보여 주며 말합니다.",
+      "answer": "이 연필은 내 거야.",
+      "distractors": [
+        "그 연필은 내 거야.",
+        "저 연필은 내 거야.",
+        "저기 있는 연필은 내 거야."
+      ],
+      "solution": [
+        "말하는 사람 가까이 있는 것은 '이'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6999632783ae",
+      "difficulty": 1,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "할머니께서 주신 용돈을 받으며 말씀드립니다.",
+      "answer": "할머니, 고맙습니다.",
+      "distractors": [
+        "할머니, 고마워.",
+        "할머니, 잘 받을게.",
+        "할머니, 고맙다."
+      ],
+      "solution": [
+        "웃어른께 고마움을 말할 때는 '고맙습니다'로 높여 말한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -233,6 +936,63 @@
       }
     },
     {
+      "id": "70d4f3991621",
+      "difficulty": 2,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "교장 선생님께서 이름을 물으십니다.",
+      "answer": "제 이름은 김민준입니다.",
+      "distractors": [
+        "내 이름은 김민준이야.",
+        "나는 김민준이다.",
+        "김민준이라고 해."
+      ],
+      "solution": [
+        "웃어른께 나를 말할 때는 '나' 대신 '저'를 쓰고 '-ㅂ니다'로 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7262f8473aef",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "바로 앞에 있는 친구가 서 있는 곳이 미끄러워 보여서 말합니다.",
+      "answer": "거기는 미끄러우니 조심해.",
+      "distractors": [
+        "여기는 미끄러우니 조심해.",
+        "저기는 미끄러우니 조심해.",
+        "이쪽은 미끄러우니 조심해."
+      ],
+      "solution": [
+        "듣는 사람이 있는 곳은 '거기'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7315c2690215",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "선생님, 이 문제를 어떻게 푸는지 □",
+      "answer": "가르쳐 주세요.",
+      "distractors": [
+        "가르쳐 줘.",
+        "가르쳐 주라.",
+        "가르쳐 줄래?"
+      ],
+      "solution": [
+        "웃어른께 부탁할 때는 '-세요'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "7afb87f4143f",
       "difficulty": 3,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -245,6 +1005,44 @@
       ],
       "solution": [
         "웃어른의 행동에는 '께서'와 '-시-'를 함께 써서 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7eb4f76ea928",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할머니께서 손을 흔들며 □",
+      "answer": "웃으십니다.",
+      "distractors": [
+        "웃습니다.",
+        "웃는다.",
+        "웃어요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80c48088cd4e",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "나는 할머니께 선물을 □",
+      "answer": "드렸습니다.",
+      "distractors": [
+        "주었습니다.",
+        "주었다.",
+        "줬어요."
+      ],
+      "solution": [
+        "웃어른께 무엇을 줄 때는 '드리다'를 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -271,6 +1069,25 @@
       }
     },
     {
+      "id": "8330629dd956",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "운동장 건너편에 보이는 큰 나무를 가리키며 말합니다.",
+      "answer": "저 나무 밑에서 만나자.",
+      "distractors": [
+        "이 나무 밑에서 만나자.",
+        "그 나무 밑에서 만나자.",
+        "이쪽 나무 밑에서 만나자."
+      ],
+      "solution": [
+        "두 사람에게서 멀리 있는 것은 '저'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "881a2a018371",
       "difficulty": 1,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -290,6 +1107,139 @@
       }
     },
     {
+      "id": "8b833fb09065",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "아버지께서 회사에 □",
+      "answer": "가셨습니다.",
+      "distractors": [
+        "갔습니다.",
+        "갔다.",
+        "갔어요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8d0d05b9d251",
+      "difficulty": 3,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "공원에 가려고 신발을 신었습니다.",
+      "answer": "그런데 갑자기 비가 내렸습니다.",
+      "distractors": [
+        "그래서 갑자기 비가 내렸습니다.",
+        "왜냐하면 갑자기 비가 내렸습니다.",
+        "그러므로 갑자기 비가 내렸습니다."
+      ],
+      "solution": [
+        "앞 일과 다른 일이 생겼으므로 '그런데'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f0b625c1bee",
+      "difficulty": 3,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "할아버지 생신날의 일을 쓴 글입니다.",
+      "answer": "할아버지께 케이크를 줬습니다.",
+      "distractors": [
+        "할아버지 생신을 축하드렸습니다.",
+        "할아버지께서 선물을 받으셨습니다.",
+        "할아버지께서 크게 웃으셨습니다."
+      ],
+      "solution": [
+        "웃어른께 줄 때는 '드리다'를 써서 '케이크를 드렸습니다.'로 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96b9521eaf51",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "형은 축구를 좋아합니다.",
+      "answer": "그러나 나는 야구를 좋아합니다.",
+      "distractors": [
+        "그래서 나는 야구를 좋아합니다.",
+        "왜냐하면 나는 야구를 좋아합니다.",
+        "그러므로 나는 야구를 좋아합니다."
+      ],
+      "solution": [
+        "앞뒤 내용이 서로 반대되므로 '그러나'나 '하지만'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "988665a62388",
+      "difficulty": 1,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "할머니께서 오셔서 현관문을 열어 드립니다.",
+      "answer": "할머니, 어서 오세요.",
+      "distractors": [
+        "할머니, 어서 와.",
+        "할머니, 왔어?",
+        "할머니, 들어와."
+      ],
+      "solution": [
+        "웃어른을 맞을 때는 '어서 오세요'처럼 높여 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "98fa6e6cc447",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "하늘 높이 날아가는 비행기를 보고 말합니다.",
+      "answer": "저 비행기 좀 봐.",
+      "distractors": [
+        "이 비행기 좀 봐.",
+        "그 비행기 좀 봐.",
+        "여기 비행기 좀 봐."
+      ],
+      "solution": [
+        "두 사람에게서 멀리 있는 것은 '저'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ad6e439bf2e",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할아버지께서 감기에 걸려 □",
+      "answer": "편찮으십니다.",
+      "distractors": [
+        "아픕니다.",
+        "아프다.",
+        "아파요."
+      ],
+      "solution": [
+        "웃어른이 아플 때는 '편찮으시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9b3afc6d02f6",
       "difficulty": 3,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -302,6 +1252,63 @@
       ],
       "solution": [
         "'먹다'는 '잡수시다'나 '드시다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ccef91ce222",
+      "difficulty": 3,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "나는 어머니□ 꽃을 사 드렸습니다.",
+      "answer": "께",
+      "distractors": [
+        "께서",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람에게 무엇을 할 때는 '에게' 대신 '께'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9dc35eac7af7",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "선생님께서 들고 계신 그림을 보고 여쭙니다.",
+      "answer": "선생님, 그 그림은 누가 그렸어요?",
+      "distractors": [
+        "선생님, 이 그림은 누가 그렸어요?",
+        "선생님, 저 그림은 누가 그렸어요?",
+        "선생님, 저기 그림은 누가 그렸어요?"
+      ],
+      "solution": [
+        "듣는 사람이 가진 것은 '그'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f685f6cfe93",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "밤새 눈이 많이 내렸습니다.",
+      "answer": "그래서 친구들과 눈사람을 만들었습니다.",
+      "distractors": [
+        "하지만 친구들과 눈사람을 만들었습니다.",
+        "왜냐하면 친구들과 눈사람을 만들었습니다.",
+        "그러나 친구들과 눈사람을 만들었습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -347,6 +1354,196 @@
       }
     },
     {
+      "id": "acafe60b52a1",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "주말에 시골에 가서 할아버지를 □",
+      "answer": "뵈었습니다.",
+      "distractors": [
+        "보았습니다.",
+        "봤다.",
+        "봤어요."
+      ],
+      "solution": [
+        "웃어른을 만날 때는 '뵙다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b35638298be9",
+      "difficulty": 2,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "동생이 아버지□ 편지를 보냈습니다.",
+      "answer": "께",
+      "distractors": [
+        "께서",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람에게 무엇을 할 때는 '에게' 대신 '께'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3a8d0c93159",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할머니께서 아침 일찍 □",
+      "answer": "일어나셨습니다.",
+      "distractors": [
+        "일어났습니다.",
+        "일어났다.",
+        "일어났어요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6dff5d98b6e",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "교실 창문을 활짝 열었습니다.",
+      "answer": "왜냐하면 교실 안이 더웠기 때문입니다.",
+      "distractors": [
+        "그래서 교실 안이 더웠기 때문입니다.",
+        "그러나 교실 안이 더웠기 때문입니다.",
+        "하지만 교실 안이 더웠기 때문입니다."
+      ],
+      "solution": [
+        "뒤 문장이 앞 일의 까닭을 말하므로 '왜냐하면'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b71dd64a7cbd",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "내가 앉은 자리를 가리키며 친구에게 말합니다.",
+      "answer": "여기가 내 자리야.",
+      "distractors": [
+        "거기가 내 자리야.",
+        "저기가 내 자리야.",
+        "저쪽이 내 자리야."
+      ],
+      "solution": [
+        "말하는 사람이 있는 곳은 '여기'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b80983dd6cdd",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "선생님께서 우리에게 동화책을 □",
+      "answer": "읽어 주십니다.",
+      "distractors": [
+        "읽어 줍니다.",
+        "읽어 준다.",
+        "읽어 줘요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bc04dae2eb57",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "버스를 타려고 열심히 달렸습니다.",
+      "answer": "그러나 버스를 놓쳤습니다.",
+      "distractors": [
+        "그래서 버스를 놓쳤습니다.",
+        "왜냐하면 버스를 놓쳤습니다.",
+        "그러므로 버스를 놓쳤습니다."
+      ],
+      "solution": [
+        "앞뒤 내용이 서로 반대되므로 '그러나'나 '하지만'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bc224a98b036",
+      "difficulty": 3,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "선생님께서 내일 받아쓰기 시험을 본다고 □",
+      "answer": "말씀하셨습니다.",
+      "distractors": [
+        "말했습니다.",
+        "말했다.",
+        "얘기했어요."
+      ],
+      "solution": [
+        "웃어른이 말할 때는 '말씀하시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c11521f6a592",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "친구가 어제 놀이공원에 다녀왔다고 하자 묻습니다.",
+      "answer": "거기 재미있었어?",
+      "distractors": [
+        "여기 재미있었어?",
+        "저기 재미있었어?",
+        "이곳 재미있었어?"
+      ],
+      "solution": [
+        "앞에서 이야기한 곳을 다시 가리킬 때는 '거기'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c118b8898fb3",
+      "difficulty": 1,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "배가 몹시 아팠습니다.",
+      "answer": "그래서 병원에 갔습니다.",
+      "distractors": [
+        "그러나 병원에 갔습니다.",
+        "하지만 병원에 갔습니다.",
+        "왜냐하면 병원에 갔습니다."
+      ],
+      "solution": [
+        "앞 문장이 까닭이고 뒤 문장이 결과이므로 '그래서'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "c429d4542a3c",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -359,6 +1556,63 @@
       ],
       "solution": [
         "사람이 있는 것을 높일 때는 '계시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c81a5f404b14",
+      "difficulty": 3,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "줄넘기 대회를 앞두고 열심히 연습했습니다.",
+      "answer": "그러나 대회에서 지고 말았습니다.",
+      "distractors": [
+        "그래서 대회에서 지고 말았습니다.",
+        "왜냐하면 대회에서 지고 말았습니다.",
+        "그러므로 대회에서 지고 말았습니다."
+      ],
+      "solution": [
+        "앞뒤 내용이 서로 반대되므로 '그러나'나 '하지만'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c9eb47177a03",
+      "difficulty": 3,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "물을 세 컵이나 마셨습니다.",
+      "answer": "왜냐하면 목이 몹시 말랐기 때문입니다.",
+      "distractors": [
+        "그래서 목이 몹시 말랐기 때문입니다.",
+        "그러나 목이 몹시 말랐기 때문입니다.",
+        "그리고 목이 몹시 말랐기 때문입니다."
+      ],
+      "solution": [
+        "뒤 문장이 앞 일의 까닭을 말하므로 '왜냐하면'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "caaf9593ad26",
+      "difficulty": 3,
+      "instruction": "높임 표현을 잘못 쓴 문장을 고르시오.",
+      "stem": "아버지께 쓴 편지의 한 부분입니다.",
+      "answer": "아버지가 숙제를 봐 줘서 좋았어.",
+      "distractors": [
+        "아버지, 늘 고맙습니다.",
+        "아버지, 건강하세요.",
+        "아버지께서 해 주신 음식이 맛있었어요."
+      ],
+      "solution": [
+        "아버지의 행동이므로 '아버지께서 숙제를 봐 주셔서 좋았어요.'로 써야 한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -404,6 +1658,25 @@
       }
     },
     {
+      "id": "d6e67343eab5",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 지시 표현을 쓴 말을 고르시오.",
+      "stem": "친구가 손에 들고 있는 공책을 가리키며 묻습니다.",
+      "answer": "그 공책은 어디서 샀어?",
+      "distractors": [
+        "이 공책은 어디서 샀어?",
+        "저 공책은 어디서 샀어?",
+        "저기 공책은 어디서 샀어?"
+      ],
+      "solution": [
+        "듣는 사람 가까이 있는 것은 '그'로 가리킨다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "d9bfda5c3a05",
       "difficulty": 3,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -442,6 +1715,82 @@
       }
     },
     {
+      "id": "dc82c15e9f7c",
+      "difficulty": 1,
+      "instruction": "높임 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할아버지□ 마당에서 꽃을 가꾸십니다.",
+      "answer": "께서",
+      "distractors": [
+        "께",
+        "에게",
+        "에서"
+      ],
+      "solution": [
+        "높일 사람이 문장의 주인일 때는 '이'나 '가' 대신 '께서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "de75c5a2268c",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "숙제를 다 했습니다.",
+      "answer": "그리고 일기도 썼습니다.",
+      "distractors": [
+        "그러나 일기도 썼습니다.",
+        "왜냐하면 일기도 썼습니다.",
+        "하지만 일기도 썼습니다."
+      ],
+      "solution": [
+        "앞 문장에 비슷한 내용을 더하므로 '그리고'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dff4aa110e8e",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "우리 반은 운동장에 모였습니다.",
+      "answer": "그리고 줄을 맞추어 섰습니다.",
+      "distractors": [
+        "그러나 줄을 맞추어 섰습니다.",
+        "왜냐하면 줄을 맞추어 섰습니다.",
+        "하지만 줄을 맞추어 섰습니다."
+      ],
+      "solution": [
+        "앞 문장에 비슷한 내용을 더하므로 '그리고'로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e22b9cdb0acb",
+      "difficulty": 1,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "옆집 할머니를 만나 아침 인사를 합니다.",
+      "answer": "할머니, 안녕하세요?",
+      "distractors": [
+        "할머니, 안녕?",
+        "할머니, 잘 잤어?",
+        "할머니, 좋은 아침이야."
+      ],
+      "solution": [
+        "웃어른께는 '안녕하세요?'처럼 높여 인사한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "e3d88bab9efb",
       "difficulty": 2,
       "instruction": "웃어른께 높임 표현을 바르게 쓴 문장을 고르시오.",
@@ -454,6 +1803,196 @@
       ],
       "solution": [
         "'이름'의 높임 표현은 '성함'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e76504f69a75",
+      "difficulty": 3,
+      "instruction": "되풀이되는 말을 지시 표현으로 알맞게 바꾼 문장을 고르시오.",
+      "stem": "동생이 그림을 그렸습니다. 나는 동생 그림을 벽에 붙였습니다.",
+      "answer": "나는 그것을 벽에 붙였습니다.",
+      "distractors": [
+        "나는 그곳을 벽에 붙였습니다.",
+        "나는 여기를 벽에 붙였습니다.",
+        "나는 저기를 벽에 붙였습니다."
+      ],
+      "solution": [
+        "앞 문장의 '그림'을 다시 가리키므로 '그것'을 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea83d2a81eea",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할아버지께서 저녁을 맛있게 □",
+      "answer": "잡수셨습니다.",
+      "distractors": [
+        "먹었습니다.",
+        "먹었다.",
+        "먹었어요."
+      ],
+      "solution": [
+        "'먹다'를 높일 때는 '잡수시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec89b132b737",
+      "difficulty": 3,
+      "instruction": "되풀이되는 말을 지시 표현으로 알맞게 바꾼 문장을 고르시오.",
+      "stem": "나는 새 운동화를 샀습니다. 새 운동화는 무척 가볍습니다.",
+      "answer": "그것은 무척 가볍습니다.",
+      "distractors": [
+        "저것은 무척 가볍습니다.",
+        "여기는 무척 가볍습니다.",
+        "거기는 무척 가볍습니다."
+      ],
+      "solution": [
+        "앞 문장의 '새 운동화'를 다시 가리키므로 '그것'을 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f5b0fea7836c",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "동생은 키가 작습니다.",
+      "answer": "하지만 힘은 무척 셉니다.",
+      "distractors": [
+        "그래서 힘은 무척 셉니다.",
+        "왜냐하면 힘은 무척 셉니다.",
+        "그러므로 힘은 무척 셉니다."
+      ],
+      "solution": [
+        "앞뒤 내용이 서로 반대되므로 '그러나'나 '하지만'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f626b22c83e6",
+      "difficulty": 2,
+      "instruction": "앞 문장과 자연스럽게 이어지는 문장을 고르시오.",
+      "stem": "약속 시간에 늦었습니다.",
+      "answer": "왜냐하면 늦잠을 잤기 때문입니다.",
+      "distractors": [
+        "그래서 늦잠을 잤기 때문입니다.",
+        "그러나 늦잠을 잤기 때문입니다.",
+        "그리고 늦잠을 잤기 때문입니다."
+      ],
+      "solution": [
+        "뒤 문장이 앞 일의 까닭을 말하므로 '왜냐하면'으로 잇는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f6e995134c00",
+      "difficulty": 2,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "할아버지께 저녁을 드시라고 말씀드립니다.",
+      "answer": "할아버지, 진지 드세요.",
+      "distractors": [
+        "할아버지, 밥 먹어.",
+        "할아버지, 밥 먹어요.",
+        "할아버지, 진지 먹어."
+      ],
+      "solution": [
+        "'밥'은 '진지'로, '먹다'는 '드시다'로 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f7faa34bd762",
+      "difficulty": 1,
+      "instruction": "상황에 알맞게 높여 말한 것을 고르시오.",
+      "stem": "아침에 아버지께 학교에 다녀오겠다고 인사합니다.",
+      "answer": "아버지, 학교에 다녀오겠습니다.",
+      "distractors": [
+        "아버지, 학교 갔다 올게.",
+        "아버지, 학교 간다.",
+        "아버지, 나 학교 가."
+      ],
+      "solution": [
+        "웃어른께 인사할 때는 '-겠습니다'처럼 높여 말한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f837612061c0",
+      "difficulty": 1,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할아버지께서 텔레비전을 □",
+      "answer": "보십니다.",
+      "distractors": [
+        "봅니다.",
+        "본다.",
+        "봐요."
+      ],
+      "solution": [
+        "웃어른의 행동에는 '-시-'를 넣어 높인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fce6f3345ad4",
+      "difficulty": 2,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "할머니께서 거실에 □",
+      "answer": "계십니다.",
+      "distractors": [
+        "있습니다.",
+        "있다.",
+        "있어요."
+      ],
+      "solution": [
+        "'있다'를 높일 때는 '계시다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fe0b6df5b945",
+      "difficulty": 3,
+      "instruction": "웃어른을 높이는 표현이 되도록 □에 들어갈 말을 고르시오.",
+      "stem": "아버지께서 할머니를 병원에 □",
+      "answer": "모시고 가셨습니다.",
+      "distractors": [
+        "데리고 가셨습니다.",
+        "데리고 갔습니다.",
+        "데려갔어요."
+      ],
+      "solution": [
+        "웃어른과 함께 갈 때는 '데리다' 대신 '모시다'를 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

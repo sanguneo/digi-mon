@@ -1,0 +1,2326 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[4영01-02]",
+  "skill": "알파벳 대소문자를 식별하여 읽는 초기 문자 인식 표준",
+  "items": [
+    {
+      "id": "02ee7ef6f527",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "CAT",
+      "answer": "cat",
+      "distractors": [
+        "book",
+        "dog",
+        "egg"
+      ],
+      "solution": [
+        "CAT의 글자를 모두 소문자로 바꿔 쓴 낱말은 cat이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "04000495dc74",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "z",
+      "answer": "Z",
+      "distractors": [
+        "S",
+        "N",
+        "X"
+      ],
+      "solution": [
+        "소문자 z의 대문자는 Z이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "07b8344aa131",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "zoo",
+      "answer": "ZOO",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "zoo의 글자를 모두 대문자로 바꿔 쓴 낱말은 ZOO이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "09afb8ce7406",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "ZOO",
+      "answer": "zoo",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "ZOO의 글자를 모두 소문자로 바꿔 쓴 낱말은 zoo이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0d04334410da",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "b",
+      "answer": "B",
+      "distractors": [
+        "D",
+        "P",
+        "R"
+      ],
+      "solution": [
+        "소문자 b의 대문자는 B이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0dc75ef64835",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "desk",
+      "answer": "DESK",
+      "distractors": [
+        "DOG",
+        "DOOR",
+        "APPLE"
+      ],
+      "solution": [
+        "desk의 글자를 모두 대문자로 바꿔 쓴 낱말은 DESK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "113086e51b10",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "UMBRELLA",
+      "answer": "umbrella",
+      "distractors": [
+        "apple",
+        "queen",
+        "violin"
+      ],
+      "solution": [
+        "UMBRELLA의 글자를 모두 소문자로 바꿔 쓴 낱말은 umbrella이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "11b2f9d0996f",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "SUN",
+      "answer": "sun",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "SUN의 글자를 모두 소문자로 바꿔 쓴 낱말은 sun이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "11baae2ef2e3",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "v",
+      "answer": "V",
+      "distractors": [
+        "U",
+        "W",
+        "Y"
+      ],
+      "solution": [
+        "소문자 v의 대문자는 V이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1810b9eed36f",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "R",
+      "answer": "r",
+      "distractors": [
+        "n",
+        "v",
+        "t"
+      ],
+      "solution": [
+        "대문자 R의 소문자는 r이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ba9b934fd74",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 대문자를 고르시오.",
+      "stem": "V □ X Y",
+      "answer": "W",
+      "distractors": [
+        "M",
+        "U",
+        "E"
+      ],
+      "solution": [
+        "알파벳 순서에서 V 다음은 W이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1bb1fe519024",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "nose",
+      "answer": "NOSE",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "nose의 글자를 모두 대문자로 바꿔 쓴 낱말은 NOSE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c09d0bea75c",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "fish",
+      "answer": "FISH",
+      "distractors": [
+        "FACE",
+        "APPLE",
+        "BOOK"
+      ],
+      "solution": [
+        "fish의 글자를 모두 대문자로 바꿔 쓴 낱말은 FISH이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1cf758688d2e",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "K",
+      "answer": "k",
+      "distractors": [
+        "h",
+        "x",
+        "y"
+      ],
+      "solution": [
+        "대문자 K의 소문자는 k이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2256d9257ad2",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "DESK",
+      "answer": "desk",
+      "distractors": [
+        "dog",
+        "door",
+        "apple"
+      ],
+      "solution": [
+        "DESK의 글자를 모두 소문자로 바꿔 쓴 낱말은 desk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "233ae4fbf06f",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "u",
+      "answer": "U",
+      "distractors": [
+        "V",
+        "N",
+        "W"
+      ],
+      "solution": [
+        "소문자 u의 대문자는 U이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24645966dc59",
+      "difficulty": 1,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "O",
+      "answer": "o",
+      "distractors": [
+        "a",
+        "c",
+        "e"
+      ],
+      "solution": [
+        "대문자 O의 소문자는 o이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "27e53856ebc1",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "F",
+      "answer": "f",
+      "distractors": [
+        "t",
+        "l",
+        "k"
+      ],
+      "solution": [
+        "대문자 F의 소문자는 f이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2c4a40b930c7",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "violin",
+      "answer": "VIOLIN",
+      "distractors": [
+        "APPLE",
+        "QUEEN",
+        "WATER"
+      ],
+      "solution": [
+        "violin의 글자를 모두 대문자로 바꿔 쓴 낱말은 VIOLIN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2c69f4a5bf6d",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "TREE",
+      "answer": "tree",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "TREE의 글자를 모두 소문자로 바꿔 쓴 낱말은 tree이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d1aeeba201d",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "YELLOW",
+      "answer": "yellow",
+      "distractors": [
+        "apple",
+        "queen",
+        "violin"
+      ],
+      "solution": [
+        "YELLOW의 글자를 모두 소문자로 바꿔 쓴 낱말은 yellow이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2f5984a78dfe",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "EGG",
+      "answer": "egg",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "EGG의 글자를 모두 소문자로 바꿔 쓴 낱말은 egg이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3099240fc763",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "G",
+      "answer": "g",
+      "distractors": [
+        "q",
+        "j",
+        "y"
+      ],
+      "solution": [
+        "대문자 G의 소문자는 g이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "321c95db720c",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 소문자를 고르시오.",
+      "stem": "k □ m n",
+      "answer": "l",
+      "distractors": [
+        "i",
+        "j",
+        "t"
+      ],
+      "solution": [
+        "알파벳 순서에서 k 다음은 l이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "343467a7a11e",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "g",
+      "answer": "G",
+      "distractors": [
+        "C",
+        "Q",
+        "O"
+      ],
+      "solution": [
+        "소문자 g의 대문자는 G이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35315aea62c7",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "w",
+      "answer": "W",
+      "distractors": [
+        "M",
+        "V",
+        "U"
+      ],
+      "solution": [
+        "소문자 w의 대문자는 W이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3753747ac47f",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "ice",
+      "answer": "ICE",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "ice의 글자를 모두 대문자로 바꿔 쓴 낱말은 ICE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39cce92b319d",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "L",
+      "answer": "l",
+      "distractors": [
+        "i",
+        "j",
+        "t"
+      ],
+      "solution": [
+        "대문자 L의 소문자는 l이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39e10bb0b646",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "sun",
+      "answer": "SUN",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "sun의 글자를 모두 대문자로 바꿔 쓴 낱말은 SUN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42a36b787091",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "a",
+      "answer": "A",
+      "distractors": [
+        "H",
+        "V",
+        "R"
+      ],
+      "solution": [
+        "소문자 a의 대문자는 A이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44ae0e5ec968",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 대문자를 고르시오.",
+      "stem": "B □ D E",
+      "answer": "C",
+      "distractors": [
+        "G",
+        "O",
+        "Q"
+      ],
+      "solution": [
+        "알파벳 순서에서 B 다음은 C이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4cb6170ba2fa",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "red",
+      "answer": "RED",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "red의 글자를 모두 대문자로 바꿔 쓴 낱말은 RED이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4dc72605262a",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "hand",
+      "answer": "HAND",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "hand의 글자를 모두 대문자로 바꿔 쓴 낱말은 HAND이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ef37fa6f1b1",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "n",
+      "answer": "N",
+      "distractors": [
+        "M",
+        "H",
+        "U"
+      ],
+      "solution": [
+        "소문자 n의 대문자는 N이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "505b848ec610",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "girl",
+      "answer": "GIRL",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "girl의 글자를 모두 대문자로 바꿔 쓴 낱말은 GIRL이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54300a2b74d0",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "egg",
+      "answer": "EGG",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "egg의 글자를 모두 대문자로 바꿔 쓴 낱말은 EGG이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57cbfb8a03c5",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "W",
+      "answer": "w",
+      "distractors": [
+        "m",
+        "v",
+        "u"
+      ],
+      "solution": [
+        "대문자 W의 소문자는 w이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5880d189464a",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 소문자를 고르시오.",
+      "stem": "m □ o p",
+      "answer": "n",
+      "distractors": [
+        "u",
+        "h",
+        "f"
+      ],
+      "solution": [
+        "알파벳 순서에서 m 다음은 n이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "59b75228689f",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "I",
+      "answer": "i",
+      "distractors": [
+        "l",
+        "j",
+        "t"
+      ],
+      "solution": [
+        "대문자 I의 소문자는 i이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5daa090f54e1",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "box",
+      "answer": "BOX",
+      "distractors": [
+        "BOOK",
+        "BALL",
+        "CAT"
+      ],
+      "solution": [
+        "box의 글자를 모두 대문자로 바꿔 쓴 낱말은 BOX이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e019e1551ae",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "NOSE",
+      "answer": "nose",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "NOSE의 글자를 모두 소문자로 바꿔 쓴 낱말은 nose이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f4fed82db27",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "open",
+      "answer": "OPEN",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "open의 글자를 모두 대문자로 바꿔 쓴 낱말은 OPEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f711f79cff2",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "Q",
+      "answer": "q",
+      "distractors": [
+        "p",
+        "g",
+        "d"
+      ],
+      "solution": [
+        "대문자 Q의 소문자는 q이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "60240f6a243f",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 대문자를 고르시오.",
+      "stem": "J □ L M",
+      "answer": "K",
+      "distractors": [
+        "X",
+        "H",
+        "R"
+      ],
+      "solution": [
+        "알파벳 순서에서 J 다음은 K이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "619844c8cfe0",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "ICE",
+      "answer": "ice",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "ICE의 글자를 모두 소문자로 바꿔 쓴 낱말은 ice이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "629d8dd78d27",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "DOOR",
+      "answer": "door",
+      "distractors": [
+        "dog",
+        "desk",
+        "apple"
+      ],
+      "solution": [
+        "DOOR의 글자를 모두 소문자로 바꿔 쓴 낱말은 door이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "64e74f366a75",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "t",
+      "answer": "T",
+      "distractors": [
+        "I",
+        "F",
+        "L"
+      ],
+      "solution": [
+        "소문자 t의 대문자는 T이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66582ffb8f2a",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "cat",
+      "answer": "CAT",
+      "distractors": [
+        "BOOK",
+        "DOG",
+        "EGG"
+      ],
+      "solution": [
+        "cat의 글자를 모두 대문자로 바꿔 쓴 낱말은 CAT이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66f3d8349743",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "N",
+      "answer": "n",
+      "distractors": [
+        "m",
+        "u",
+        "h"
+      ],
+      "solution": [
+        "대문자 N의 소문자는 n이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b9cd2526a79",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "J",
+      "answer": "j",
+      "distractors": [
+        "i",
+        "g",
+        "y"
+      ],
+      "solution": [
+        "대문자 J의 소문자는 j이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6f870bccfb77",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 대문자를 고르시오.",
+      "stem": "D □ F G",
+      "answer": "E",
+      "distractors": [
+        "B",
+        "H",
+        "K"
+      ],
+      "solution": [
+        "알파벳 순서에서 D 다음은 E이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "715a72d268d6",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "KING",
+      "answer": "king",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "KING의 글자를 모두 소문자로 바꿔 쓴 낱말은 king이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "715ae9761cf1",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "ball",
+      "answer": "BALL",
+      "distractors": [
+        "BOOK",
+        "BOX",
+        "APPLE"
+      ],
+      "solution": [
+        "ball의 글자를 모두 대문자로 바꿔 쓴 낱말은 BALL이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "72b551e1ab56",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "MILK",
+      "answer": "milk",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "MILK의 글자를 모두 소문자로 바꿔 쓴 낱말은 milk이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "738ea037a226",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "E",
+      "answer": "e",
+      "distractors": [
+        "c",
+        "a",
+        "o"
+      ],
+      "solution": [
+        "대문자 E의 소문자는 e이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "765b1307b8a2",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "tree",
+      "answer": "TREE",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "tree의 글자를 모두 대문자로 바꿔 쓴 낱말은 TREE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "76a6ebd026ef",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "PEN",
+      "answer": "pen",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "PEN의 글자를 모두 소문자로 바꿔 쓴 낱말은 pen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "776770cb03c5",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "apple",
+      "answer": "APPLE",
+      "distractors": [
+        "BOOK",
+        "FISH",
+        "GIRL"
+      ],
+      "solution": [
+        "apple의 글자를 모두 대문자로 바꿔 쓴 낱말은 APPLE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "77f02606f19c",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "h",
+      "answer": "H",
+      "distractors": [
+        "N",
+        "K",
+        "A"
+      ],
+      "solution": [
+        "소문자 h의 대문자는 H이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7bfbabd22356",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "A",
+      "answer": "a",
+      "distractors": [
+        "o",
+        "e",
+        "d"
+      ],
+      "solution": [
+        "대문자 A의 소문자는 a이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7ce22fff1dfb",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "BOOK",
+      "answer": "book",
+      "distractors": [
+        "box",
+        "ball",
+        "apple"
+      ],
+      "solution": [
+        "BOOK의 글자를 모두 소문자로 바꿔 쓴 낱말은 book이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7f68813402ba",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "Y",
+      "answer": "y",
+      "distractors": [
+        "v",
+        "g",
+        "j"
+      ],
+      "solution": [
+        "대문자 Y의 소문자는 y이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "83005ac55e41",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "l",
+      "answer": "L",
+      "distractors": [
+        "I",
+        "J",
+        "T"
+      ],
+      "solution": [
+        "소문자 l의 대문자는 L이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "857cd10ccbdd",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "pen",
+      "answer": "PEN",
+      "distractors": [
+        "BOOK",
+        "CAT",
+        "DOG"
+      ],
+      "solution": [
+        "pen의 글자를 모두 대문자로 바꿔 쓴 낱말은 PEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c0943a0d592",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "x",
+      "answer": "X",
+      "distractors": [
+        "K",
+        "Y",
+        "Z"
+      ],
+      "solution": [
+        "소문자 x의 대문자는 X이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8d9954f3c440",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "P",
+      "answer": "p",
+      "distractors": [
+        "q",
+        "b",
+        "d"
+      ],
+      "solution": [
+        "대문자 P의 소문자는 p이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90ac71622295",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "queen",
+      "answer": "QUEEN",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "FISH"
+      ],
+      "solution": [
+        "queen의 글자를 모두 대문자로 바꿔 쓴 낱말은 QUEEN이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90e1092b88e8",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "LION",
+      "answer": "lion",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "LION의 글자를 모두 소문자로 바꿔 쓴 낱말은 lion이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9203e0ad75a5",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "book",
+      "answer": "BOOK",
+      "distractors": [
+        "BOX",
+        "BALL",
+        "APPLE"
+      ],
+      "solution": [
+        "book의 글자를 모두 대문자로 바꿔 쓴 낱말은 BOOK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "924c26e34756",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "face",
+      "answer": "FACE",
+      "distractors": [
+        "FISH",
+        "APPLE",
+        "BOOK"
+      ],
+      "solution": [
+        "face의 글자를 모두 대문자로 바꿔 쓴 낱말은 FACE이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9258c9b2d68a",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "water",
+      "answer": "WATER",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "FISH"
+      ],
+      "solution": [
+        "water의 글자를 모두 대문자로 바꿔 쓴 낱말은 WATER이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "938f0e1cfe8d",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 소문자를 고르시오.",
+      "stem": "s □ u v",
+      "answer": "t",
+      "distractors": [
+        "f",
+        "l",
+        "i"
+      ],
+      "solution": [
+        "알파벳 순서에서 s 다음은 t이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "94c5f695b4f8",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "lion",
+      "answer": "LION",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "lion의 글자를 모두 대문자로 바꿔 쓴 낱말은 LION이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "95343481bb41",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "X",
+      "answer": "x",
+      "distractors": [
+        "k",
+        "z",
+        "y"
+      ],
+      "solution": [
+        "대문자 X의 소문자는 x이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "985b6217c2fa",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "dog",
+      "answer": "DOG",
+      "distractors": [
+        "DESK",
+        "DOOR",
+        "BOOK"
+      ],
+      "solution": [
+        "dog의 글자를 모두 대문자로 바꿔 쓴 낱말은 DOG이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9c8113b43132",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "s",
+      "answer": "S",
+      "distractors": [
+        "Z",
+        "C",
+        "G"
+      ],
+      "solution": [
+        "소문자 s의 대문자는 S이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e4122b96788",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "yellow",
+      "answer": "YELLOW",
+      "distractors": [
+        "APPLE",
+        "QUEEN",
+        "VIOLIN"
+      ],
+      "solution": [
+        "yellow의 글자를 모두 대문자로 바꿔 쓴 낱말은 YELLOW이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f485259f632",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "OPEN",
+      "answer": "open",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "OPEN의 글자를 모두 소문자로 바꿔 쓴 낱말은 open이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a33fae77181c",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "C",
+      "answer": "c",
+      "distractors": [
+        "e",
+        "o",
+        "a"
+      ],
+      "solution": [
+        "대문자 C의 소문자는 c이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a40f9da8d56a",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "door",
+      "answer": "DOOR",
+      "distractors": [
+        "DOG",
+        "DESK",
+        "APPLE"
+      ],
+      "solution": [
+        "door의 글자를 모두 대문자로 바꿔 쓴 낱말은 DOOR이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a56ce51bdb00",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "r",
+      "answer": "R",
+      "distractors": [
+        "P",
+        "B",
+        "K"
+      ],
+      "solution": [
+        "소문자 r의 대문자는 R이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ade0ec55564b",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "WATER",
+      "answer": "water",
+      "distractors": [
+        "apple",
+        "book",
+        "fish"
+      ],
+      "solution": [
+        "WATER의 글자를 모두 소문자로 바꿔 쓴 낱말은 water이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b253ee87d5fb",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "H",
+      "answer": "h",
+      "distractors": [
+        "n",
+        "b",
+        "k"
+      ],
+      "solution": [
+        "대문자 H의 소문자는 h이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b51606d78d61",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "y",
+      "answer": "Y",
+      "distractors": [
+        "V",
+        "X",
+        "T"
+      ],
+      "solution": [
+        "소문자 y의 대문자는 Y이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b7670bff66fc",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "king",
+      "answer": "KING",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "king의 글자를 모두 대문자로 바꿔 쓴 낱말은 KING이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba545bdea7bf",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "BALL",
+      "answer": "ball",
+      "distractors": [
+        "book",
+        "box",
+        "apple"
+      ],
+      "solution": [
+        "BALL의 글자를 모두 소문자로 바꿔 쓴 낱말은 ball이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb86e2c2d061",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "d",
+      "answer": "D",
+      "distractors": [
+        "B",
+        "O",
+        "P"
+      ],
+      "solution": [
+        "소문자 d의 대문자는 D이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bcd8194f1adf",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "T",
+      "answer": "t",
+      "distractors": [
+        "f",
+        "l",
+        "i"
+      ],
+      "solution": [
+        "대문자 T의 소문자는 t이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c061e2ab42a3",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "FACE",
+      "answer": "face",
+      "distractors": [
+        "fish",
+        "apple",
+        "book"
+      ],
+      "solution": [
+        "FACE의 글자를 모두 소문자로 바꿔 쓴 낱말은 face이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c6bee7cf6a67",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "k",
+      "answer": "K",
+      "distractors": [
+        "X",
+        "H",
+        "R"
+      ],
+      "solution": [
+        "소문자 k의 대문자는 K이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c7c66f4b301f",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "U",
+      "answer": "u",
+      "distractors": [
+        "n",
+        "v",
+        "w"
+      ],
+      "solution": [
+        "대문자 U의 소문자는 u이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c7cb1f0fd1bf",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "umbrella",
+      "answer": "UMBRELLA",
+      "distractors": [
+        "APPLE",
+        "QUEEN",
+        "VIOLIN"
+      ],
+      "solution": [
+        "umbrella의 글자를 모두 대문자로 바꿔 쓴 낱말은 UMBRELLA이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c967f6058baf",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "i",
+      "answer": "I",
+      "distractors": [
+        "L",
+        "J",
+        "T"
+      ],
+      "solution": [
+        "소문자 i의 대문자는 I이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "caa5c5443d07",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "m",
+      "answer": "M",
+      "distractors": [
+        "N",
+        "W",
+        "V"
+      ],
+      "solution": [
+        "소문자 m의 대문자는 M이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb132f0ee1a4",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "BOX",
+      "answer": "box",
+      "distractors": [
+        "book",
+        "ball",
+        "cat"
+      ],
+      "solution": [
+        "BOX의 글자를 모두 소문자로 바꿔 쓴 낱말은 box이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ccfca3a65ccb",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "Z",
+      "answer": "z",
+      "distractors": [
+        "s",
+        "x",
+        "n"
+      ],
+      "solution": [
+        "대문자 Z의 소문자는 z이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce3069ad7ac4",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "f",
+      "answer": "F",
+      "distractors": [
+        "E",
+        "P",
+        "T"
+      ],
+      "solution": [
+        "소문자 f의 대문자는 F이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce6793703b87",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "milk",
+      "answer": "MILK",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "milk의 글자를 모두 대문자로 바꿔 쓴 낱말은 MILK이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cf72818108c0",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "M",
+      "answer": "m",
+      "distractors": [
+        "n",
+        "w",
+        "u"
+      ],
+      "solution": [
+        "대문자 M의 소문자는 m이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d34335aa8848",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "RED",
+      "answer": "red",
+      "distractors": [
+        "book",
+        "cat",
+        "dog"
+      ],
+      "solution": [
+        "RED의 글자를 모두 소문자로 바꿔 쓴 낱말은 red이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d356102af370",
+      "difficulty": 1,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "DOG",
+      "answer": "dog",
+      "distractors": [
+        "desk",
+        "door",
+        "book"
+      ],
+      "solution": [
+        "DOG의 글자를 모두 소문자로 바꿔 쓴 낱말은 dog이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d504830e7f97",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "D",
+      "answer": "d",
+      "distractors": [
+        "b",
+        "p",
+        "q"
+      ],
+      "solution": [
+        "대문자 D의 소문자는 d이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dd0e3c237015",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "FISH",
+      "answer": "fish",
+      "distractors": [
+        "face",
+        "apple",
+        "book"
+      ],
+      "solution": [
+        "FISH의 글자를 모두 소문자로 바꿔 쓴 낱말은 fish이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1f24f74e416",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 대문자를 고르시오.",
+      "stem": "P □ R S",
+      "answer": "Q",
+      "distractors": [
+        "O",
+        "G",
+        "D"
+      ],
+      "solution": [
+        "알파벳 순서에서 P 다음은 Q이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e24ce94a73a9",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "c",
+      "answer": "C",
+      "distractors": [
+        "G",
+        "O",
+        "Q"
+      ],
+      "solution": [
+        "소문자 c의 대문자는 C이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6af73eabfe3",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "QUEEN",
+      "answer": "queen",
+      "distractors": [
+        "apple",
+        "book",
+        "fish"
+      ],
+      "solution": [
+        "QUEEN의 글자를 모두 소문자로 바꿔 쓴 낱말은 queen이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea000b83ab2e",
+      "difficulty": 2,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "S",
+      "answer": "s",
+      "distractors": [
+        "z",
+        "c",
+        "x"
+      ],
+      "solution": [
+        "대문자 S의 소문자는 s이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea295dacf292",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "B",
+      "answer": "b",
+      "distractors": [
+        "d",
+        "p",
+        "q"
+      ],
+      "solution": [
+        "대문자 B의 소문자는 b이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ede25c339671",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "j",
+      "answer": "J",
+      "distractors": [
+        "I",
+        "L",
+        "G"
+      ],
+      "solution": [
+        "소문자 j의 대문자는 J이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee30e5feb827",
+      "difficulty": 2,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "e",
+      "answer": "E",
+      "distractors": [
+        "F",
+        "B",
+        "H"
+      ],
+      "solution": [
+        "소문자 e의 대문자는 E이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee750314a1ca",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "p",
+      "answer": "P",
+      "distractors": [
+        "B",
+        "R",
+        "D"
+      ],
+      "solution": [
+        "소문자 p의 대문자는 P이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef3ba1b6f043",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 대문자로 쓴 것을 고르시오.",
+      "stem": "jump",
+      "answer": "JUMP",
+      "distractors": [
+        "APPLE",
+        "BOOK",
+        "CAT"
+      ],
+      "solution": [
+        "jump의 글자를 모두 대문자로 바꿔 쓴 낱말은 JUMP이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef8076f10a81",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 소문자를 고르시오.",
+      "stem": "g □ i j",
+      "answer": "h",
+      "distractors": [
+        "n",
+        "b",
+        "k"
+      ],
+      "solution": [
+        "알파벳 순서에서 g 다음은 h이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f276e67e80dc",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "GIRL",
+      "answer": "girl",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "GIRL의 글자를 모두 소문자로 바꿔 쓴 낱말은 girl이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f4b81f967888",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "HAND",
+      "answer": "hand",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "HAND의 글자를 모두 소문자로 바꿔 쓴 낱말은 hand이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f4daaef978b2",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 소문자를 고르시오.",
+      "stem": "a □ c d",
+      "answer": "b",
+      "distractors": [
+        "p",
+        "q",
+        "h"
+      ],
+      "solution": [
+        "알파벳 순서에서 a 다음은 b이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f73f9a2fec59",
+      "difficulty": 3,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "q",
+      "answer": "Q",
+      "distractors": [
+        "O",
+        "G",
+        "P"
+      ],
+      "solution": [
+        "소문자 q의 대문자는 Q이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f9e54172e58f",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "APPLE",
+      "answer": "apple",
+      "distractors": [
+        "book",
+        "fish",
+        "girl"
+      ],
+      "solution": [
+        "APPLE의 글자를 모두 소문자로 바꿔 쓴 낱말은 apple이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fbae59044e13",
+      "difficulty": 2,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "JUMP",
+      "answer": "jump",
+      "distractors": [
+        "apple",
+        "book",
+        "cat"
+      ],
+      "solution": [
+        "JUMP의 글자를 모두 소문자로 바꿔 쓴 낱말은 jump이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fcadb1cd6d26",
+      "difficulty": 3,
+      "instruction": "같은 낱말을 소문자로 쓴 것을 고르시오.",
+      "stem": "VIOLIN",
+      "answer": "violin",
+      "distractors": [
+        "apple",
+        "queen",
+        "water"
+      ],
+      "solution": [
+        "VIOLIN의 글자를 모두 소문자로 바꿔 쓴 낱말은 violin이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fd3a193af434",
+      "difficulty": 3,
+      "instruction": "같은 글자의 소문자를 고르시오.",
+      "stem": "V",
+      "answer": "v",
+      "distractors": [
+        "u",
+        "w",
+        "y"
+      ],
+      "solution": [
+        "대문자 V의 소문자는 v이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fe6fce000306",
+      "difficulty": 1,
+      "instruction": "같은 글자의 대문자를 고르시오.",
+      "stem": "o",
+      "answer": "O",
+      "distractors": [
+        "Q",
+        "C",
+        "D"
+      ],
+      "solution": [
+        "소문자 o의 대문자는 O이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

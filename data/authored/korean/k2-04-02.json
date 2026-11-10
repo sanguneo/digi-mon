@@ -5,6 +5,122 @@
   "skill": "소리와 표기의 차이를 고려하여 읽고 쓰기",
   "items": [
     {
+      "id": "00b8bf0c1f09",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "나비가 꼬체 앉았어요.",
+      "answer": "나비가 꽃에 앉았어요.",
+      "distractors": [
+        "나비가 꼿에 앉았어요.",
+        "나비가 꽅에 앉았어요.",
+        "나비가 꼳에 앉았어요."
+      ],
+      "solution": [
+        "'꼬체'처럼 소리 나지만 '꽃에'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "01f4982c56f5",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "지호가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "소미 부드러워요.",
+      "distractors": [
+        "아침에 일어났어요.",
+        "참새가 짹짹 울어요.",
+        "닭다리를 먹어요."
+      ],
+      "solution": [
+        "'소미'는 소리 나는 대로 썼다.",
+        "'솜이'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0531b763f7ea",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'닭이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[달기]",
+      "distractors": [
+        "[다기]",
+        "[닥이]",
+        "[달이]"
+      ],
+      "solution": [
+        "'닭이'는 [달기]로 소리 나지만 글자는 '닭이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "05d53c84b0f9",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "도윤이가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "머리를 감꼬 나왔어요.",
+      "distractors": [
+        "강아지가 짖어요.",
+        "하늘에 구름이 떠 있어요.",
+        "사탕이 달아요."
+      ],
+      "solution": [
+        "'감꼬'는 소리 나는 대로 썼다.",
+        "'감고'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "081b26eb6dd1",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "국쑤를 먹어요.",
+      "answer": "국수를 먹어요.",
+      "distractors": [
+        "굮수를 먹어요.",
+        "국수를 멍어요.",
+        "궁수를 먹어요."
+      ],
+      "solution": [
+        "'국쑤'처럼 소리 나지만 '국수'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "08acfded2bc9",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바다에 파도가 노파요.",
+      "answer": "바다에 파도가 높아요.",
+      "distractors": [
+        "바다에 파도가 놉아요.",
+        "바다에 파도가 놓아요.",
+        "바다에 파도가 높파요."
+      ],
+      "solution": [
+        "'노파요'처럼 소리 나지만 '높아요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "0bdc7ff11cb2",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -17,6 +133,44 @@
       ],
       "solution": [
         "'같다'의 뜻이 살아 있는 말이므로 '같이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0dcbaab0a313",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "해가 발가요.",
+      "answer": "해가 밝아요.",
+      "distractors": [
+        "해가 밝가요.",
+        "해가 발아요.",
+        "해가 박아요."
+      ],
+      "solution": [
+        "'발가요'처럼 소리 나지만 '밝아요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "113e325c112c",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'밭에'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[바테]",
+      "distractors": [
+        "[바세]",
+        "[바체]",
+        "[받에]"
+      ],
+      "solution": [
+        "'밭에'는 [바테]로 소리 나지만 글자는 '밭에'로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -43,6 +197,44 @@
       }
     },
     {
+      "id": "12abca8fd501",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "나무에 이피 났어요.",
+      "answer": "나무에 잎이 났어요.",
+      "distractors": [
+        "나무에 입이 났어요.",
+        "나무에 잎피 났어요.",
+        "나무에 잇이 났어요."
+      ],
+      "solution": [
+        "'이피'처럼 소리 나지만 '잎이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13d4a6ab2562",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "무르플 다쳤어요.",
+      "answer": "무릎을 다쳤어요.",
+      "distractors": [
+        "무릅을 다쳤어요.",
+        "무릇을 다쳤어요.",
+        "무르블 다쳤어요."
+      ],
+      "solution": [
+        "'무르플'처럼 소리 나지만 '무릎을'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "15d170fd1f4b",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -55,6 +247,121 @@
       ],
       "solution": [
         "낱말 '빛'에 '이'가 붙었으니 '빛이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17f5eac32d11",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "소미 부드러워요.",
+      "answer": "솜이 부드러워요.",
+      "distractors": [
+        "솜미 부드러워요.",
+        "솝이 부드러워요.",
+        "손이 부드러워요."
+      ],
+      "solution": [
+        "'소미'처럼 소리 나지만 '솜이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1865513b00be",
+      "difficulty": 2,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "일기를 쓰다가 낱말을 확인합니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "책을",
+      "distractors": [
+        "머리",
+        "치마",
+        "지구"
+      ],
+      "solution": [
+        "'책을'은 [채글]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19a807462df6",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "손을 깨끄시 씻어요.",
+      "answer": "손을 깨끗이 씻어요.",
+      "distractors": [
+        "손을 깨끋이 씻어요.",
+        "손을 깨끗히 씻어요.",
+        "손을 깨끄치 씻어요."
+      ],
+      "solution": [
+        "'깨끄시'처럼 소리 나지만 '깨끗이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c3d7ffa8e7a",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "머리를 비스로 빗어요.",
+      "answer": "머리를 빗으로 빗어요.",
+      "distractors": [
+        "머리를 빛으로 빗어요.",
+        "머리를 빋으로 빗어요.",
+        "머리를 빗스로 빗어요."
+      ],
+      "solution": [
+        "'비스로'처럼 소리 나지만 '빗으로'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d7a36908f8f",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'잎이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[이피]",
+      "distractors": [
+        "[이비]",
+        "[입이]",
+        "[이시]"
+      ],
+      "solution": [
+        "'잎이'는 [이피]로 소리 나지만 글자는 '잎이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2443807454a7",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'부엌에'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[부어케]",
+      "distractors": [
+        "[부어게]",
+        "[부억에]",
+        "[부엌게]"
+      ],
+      "solution": [
+        "'부엌에'는 [부어케]로 소리 나지만 글자는 '부엌에'로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -81,6 +388,199 @@
       }
     },
     {
+      "id": "348248bf7312",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "숟까락으로 먹어요.",
+      "answer": "숟가락으로 먹어요.",
+      "distractors": [
+        "숫가락으로 먹어요.",
+        "숟까락으로 머거요.",
+        "숟가락으로 먹거요."
+      ],
+      "solution": [
+        "'숟까락'처럼 소리 나지만 '숟가락'으로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "352f06484dd9",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "물꼬기가 헤엄쳐요.",
+      "answer": "물고기가 헤엄쳐요.",
+      "distractors": [
+        "물코기가 헤엄쳐요.",
+        "뭄고기가 헤엄쳐요.",
+        "물고기가 혜엄쳐요."
+      ],
+      "solution": [
+        "'물꼬기'처럼 소리 나지만 '물고기'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3f4aae90276e",
+      "difficulty": 3,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "책에서 찾은 낱말을 적습니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "같이",
+      "distractors": [
+        "나비",
+        "구두",
+        "두부"
+      ],
+      "solution": [
+        "'같이'는 [가치]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40ead4768f32",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "바께 나가 놀아요.",
+      "answer": "밖에 나가 놀아요.",
+      "distractors": [
+        "박에 나가 놀아요.",
+        "밖게 나가 놀아요.",
+        "밗에 나가 놀아요."
+      ],
+      "solution": [
+        "'바께'처럼 소리 나지만 '밖에'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "420b173af158",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "일기를 써씀니다.",
+      "answer": "일기를 썼습니다.",
+      "distractors": [
+        "일기를 썻습니다.",
+        "일기를 썼슴니다.",
+        "일기를 써습니다."
+      ],
+      "solution": [
+        "'써씀니다'처럼 소리 나지만 '썼습니다'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "427801fa85e9",
+      "difficulty": 1,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "그림 카드에 낱말을 씁니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "눈이",
+      "distractors": [
+        "구두",
+        "두부",
+        "노래"
+      ],
+      "solution": [
+        "'눈이'는 [누니]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42d4323a0b27",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "아치메 일어났어요.",
+      "answer": "아침에 일어났어요.",
+      "distractors": [
+        "아칌에 일어났어요.",
+        "아침애 일어났어요.",
+        "아칭에 일어났어요."
+      ],
+      "solution": [
+        "'아치메'처럼 소리 나지만 '아침에'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44982bc2f02e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "책쌍에 앉아요.",
+      "answer": "책상에 앉아요.",
+      "distractors": [
+        "책상에 안자요.",
+        "챙상에 앉아요.",
+        "책상애 앉아요."
+      ],
+      "solution": [
+        "'책쌍'처럼 소리 나지만 '책상'으로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4988c61119c2",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'많이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[마니]",
+      "distractors": [
+        "[만히]",
+        "[마히]",
+        "[만이]"
+      ],
+      "solution": [
+        "'많이'는 [마니]로 소리 나지만 글자는 '많이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53aeac58f8d7",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "민수가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "어르미 녹았어요.",
+      "distractors": [
+        "손을 씻어요.",
+        "조개껍질을 주웠어요.",
+        "일기를 썼습니다."
+      ],
+      "solution": [
+        "'어르미'는 소리 나는 대로 썼다.",
+        "'얼음이'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "554d65d74684",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -93,6 +593,44 @@
       ],
       "solution": [
         "낱말 '옷'에 '이'가 붙었으니 '옷이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "56753f8dca96",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'빛이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[비치]",
+      "distractors": [
+        "[비시]",
+        "[비지]",
+        "[빋이]"
+      ],
+      "solution": [
+        "'빛이'는 [비치]로 소리 나지만 글자는 '빛이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5930ce23405c",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "어르미 녹았어요.",
+      "answer": "얼음이 녹았어요.",
+      "distractors": [
+        "얼음미 녹았어요.",
+        "어름미 녹았어요.",
+        "얼믐이 녹았어요."
+      ],
+      "solution": [
+        "'어르미'처럼 소리 나지만 '얼음이'로 써야 바른 표기다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -157,6 +695,46 @@
       }
     },
     {
+      "id": "61b896d2021e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "태오가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "잠짜리가 날아요.",
+      "distractors": [
+        "친구와 함께 놀았어요.",
+        "옆집 친구와 놀았어요.",
+        "밖에 나가 놀아요."
+      ],
+      "solution": [
+        "'잠짜리'는 소리 나는 대로 썼다.",
+        "'잠자리'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "63de9b19da85",
+      "difficulty": 1,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "낱말 카드를 정리합니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "많이",
+      "distractors": [
+        "노래",
+        "머리",
+        "치마"
+      ],
+      "solution": [
+        "'많이'는 [마니]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "6437e2d38323",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -195,6 +773,26 @@
       }
     },
     {
+      "id": "658861b41d61",
+      "difficulty": 2,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "편지를 쓰다가 낱말을 살펴봅니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "숲에",
+      "distractors": [
+        "사과",
+        "포도",
+        "기차"
+      ],
+      "solution": [
+        "'숲에'는 [수페]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "6993212c407d",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -207,6 +805,121 @@
       ],
       "solution": [
         "낱말 '숲'의 받침 ㅍ을 살려 '숲에'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "69a28800592c",
+      "difficulty": 1,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "받아쓰기를 하기 전에 낱말을 살펴봅니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "꽃이",
+      "distractors": [
+        "나무",
+        "바다",
+        "오리"
+      ],
+      "solution": [
+        "'꽃이'는 [꼬치]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ba82eea1558",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'국수'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[국쑤]",
+      "distractors": [
+        "[국수]",
+        "[구쑤]",
+        "[궁수]"
+      ],
+      "solution": [
+        "'국수'는 [국쑤]로 소리 나지만 글자는 '국수'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6c4dd00ffd46",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "조은 냄새가 나요.",
+      "answer": "좋은 냄새가 나요.",
+      "distractors": [
+        "좃은 냄새가 나요.",
+        "존은 냄새가 나요.",
+        "좇은 냄새가 나요."
+      ],
+      "solution": [
+        "'조은'처럼 소리 나지만 '좋은'으로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d623ad86114",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "참새가 짹짹 우러요.",
+      "answer": "참새가 짹짹 울어요.",
+      "distractors": [
+        "참새가 짹짹 우어요.",
+        "참새가 짹짹 울러요.",
+        "참새가 짹짹 웊어요."
+      ],
+      "solution": [
+        "'우러요'처럼 소리 나지만 '울어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7246dedfd200",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'맑아요'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[말가요]",
+      "distractors": [
+        "[마가요]",
+        "[막아요]",
+        "[말아요]"
+      ],
+      "solution": [
+        "'맑아요'는 [말가요]로 소리 나지만 글자는 '맑아요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "727924f67a8a",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "조개껍찔을 주웠어요.",
+      "answer": "조개껍질을 주웠어요.",
+      "distractors": [
+        "조개껍칠을 주웠어요.",
+        "조개겁질을 주웠어요.",
+        "조개껍질을 주섰어요."
+      ],
+      "solution": [
+        "'껍찔'처럼 소리 나지만 '껍질'로 써야 바른 표기다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -271,6 +984,83 @@
       }
     },
     {
+      "id": "8074d5308af0",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "노피 날아요.",
+      "answer": "높이 날아요.",
+      "distractors": [
+        "놉이 날아요.",
+        "놓이 날아요.",
+        "노삐 날아요."
+      ],
+      "solution": [
+        "'노피'처럼 소리 나지만 '높이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "831c6fe4f793",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "모래로 성을 싸아요.",
+      "answer": "모래로 성을 쌓아요.",
+      "distractors": [
+        "모래로 성을 쌍아요.",
+        "모래로 성을 싿아요.",
+        "모래로 성을 쌋아요."
+      ],
+      "solution": [
+        "'싸아요'처럼 소리 나지만 '쌓아요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "841e192f98fd",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'책을'을 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[채글]",
+      "distractors": [
+        "[채클]",
+        "[책글]",
+        "[채을]"
+      ],
+      "solution": [
+        "'책을'은 [채글]로 소리 나지만 글자는 '책을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8422bbbea38e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "수아가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "사탕이 다라요.",
+      "distractors": [
+        "국수를 먹어요.",
+        "길가에 꽃이 피었어요.",
+        "날씨가 춥지 않아요."
+      ],
+      "solution": [
+        "'다라요'는 소리 나는 대로 썼다.",
+        "'달아요'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "856ddf9b4162",
       "difficulty": 3,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -309,6 +1099,26 @@
       }
     },
     {
+      "id": "8b3186bc2c94",
+      "difficulty": 1,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "선생님께서 낱말을 불러 주십니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "빛이",
+      "distractors": [
+        "오리",
+        "모자",
+        "우유"
+      ],
+      "solution": [
+        "'빛이'는 [비치]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9115f2bd662b",
       "difficulty": 3,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -321,6 +1131,25 @@
       ],
       "solution": [
         "'국'과 '물'이 만난 말이므로 소리가 [궁물]이어도 '국물'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "91983d3029b4",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'앉아요'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[안자요]",
+      "distractors": [
+        "[안다요]",
+        "[앉자요]",
+        "[안사요]"
+      ],
+      "solution": [
+        "'앉아요'는 [안자요]로 소리 나지만 글자는 '앉아요'로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -347,6 +1176,63 @@
       }
     },
     {
+      "id": "94cb76ac1932",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'밥을'을 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[바블]",
+      "distractors": [
+        "[바플]",
+        "[밥블]",
+        "[밤을]"
+      ],
+      "solution": [
+        "'밥을'은 [바블]로 소리 나지만 글자는 '밥을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "969d2152ffb9",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'꽃이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[꼬치]",
+      "distractors": [
+        "[꼬시]",
+        "[꼳이]",
+        "[꽃이]"
+      ],
+      "solution": [
+        "'꽃이'는 [꼬치]로 소리 나지만 글자는 '꽃이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "978a50d5ced7",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "하늘에 구르미 떠 있어요.",
+      "answer": "하늘에 구름이 떠 있어요.",
+      "distractors": [
+        "하늘에 구름미 떠 있어요.",
+        "하늘에 구릅이 떠 있어요.",
+        "하늘에 굴음이 떠 있어요."
+      ],
+      "solution": [
+        "'구르미'처럼 소리 나지만 '구름이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "97b2e9e09d03",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -359,6 +1245,197 @@
       ],
       "solution": [
         "낱말 '물'에 '을'이 붙었으니 '물을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "999de0f62d8b",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "감기에 걸려 코가 마켜요.",
+      "answer": "감기에 걸려 코가 막혀요.",
+      "distractors": [
+        "감기에 걸려 코가 막켜요.",
+        "감기에 걸려 코가 맊혀요.",
+        "감기에 걸려 코가 맏혀요."
+      ],
+      "solution": [
+        "'마켜요'처럼 소리 나지만 '막혀요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a8d6ef18756",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "시냇물이 말가요.",
+      "answer": "시냇물이 맑아요.",
+      "distractors": [
+        "시냇물이 막아요.",
+        "시냇물이 말아요.",
+        "시냇물이 맑가요."
+      ],
+      "solution": [
+        "'말가요'처럼 소리 나지만 '맑아요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9be06acce2d8",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "사탕이 다라요.",
+      "answer": "사탕이 달아요.",
+      "distractors": [
+        "사탕이 닳아요.",
+        "사탕이 달라요.",
+        "사탕이 닭아요."
+      ],
+      "solution": [
+        "'다라요'처럼 소리 나지만 '달아요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9cac0c1cb67c",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "유나가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "바께 나가 놀아요.",
+      "distractors": [
+        "머리를 빗으로 빗어요.",
+        "해가 밝아요.",
+        "책상에 앉아요."
+      ],
+      "solution": [
+        "'바께'는 소리 나는 대로 썼다.",
+        "'밖에'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2669da567ef",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "연피를 깎았어요.",
+      "answer": "연필을 깎았어요.",
+      "distractors": [
+        "연필를 깎았어요.",
+        "연필을 깍았어요.",
+        "연핀을 깎았어요."
+      ],
+      "solution": [
+        "'연피를'처럼 소리 나지만 '연필을'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a583f29062f0",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "엽찝 친구와 놀았어요.",
+      "answer": "옆집 친구와 놀았어요.",
+      "distractors": [
+        "엽집 친구와 놀았어요.",
+        "옆찝 친구와 놀았어요.",
+        "엿집 친구와 놀았어요."
+      ],
+      "solution": [
+        "'엽찝'처럼 소리 나지만 '옆집'으로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a69350a27f08",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "강아지가 지저요.",
+      "answer": "강아지가 짖어요.",
+      "distractors": [
+        "강아지가 짓어요.",
+        "강아지가 짇어요.",
+        "강아지가 지져요."
+      ],
+      "solution": [
+        "'지저요'처럼 소리 나지만 '짖어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6ad97c8cfb2",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "손을 씨서요.",
+      "answer": "손을 씻어요.",
+      "distractors": [
+        "손을 씼어요.",
+        "손을 씯어요.",
+        "손을 씿어요."
+      ],
+      "solution": [
+        "'씨서요'처럼 소리 나지만 '씻어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a94532a63c7e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "머리를 감꼬 나왔어요.",
+      "answer": "머리를 감고 나왔어요.",
+      "distractors": [
+        "머리를 감코 나왔어요.",
+        "머리를 깜고 나왔어요.",
+        "머리를 감고 나와써요."
+      ],
+      "solution": [
+        "'감꼬'처럼 소리 나지만 '감고'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aba344bb0be9",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "친구와 함께 노라써요.",
+      "answer": "친구와 함께 놀았어요.",
+      "distractors": [
+        "친구와 함께 놀랐어요.",
+        "친구와 함께 놓았어요.",
+        "친구와 함께 노았어요."
+      ],
+      "solution": [
+        "'노라써요'처럼 소리 나지만 '놀았어요'로 써야 바른 표기다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -385,6 +1462,25 @@
       }
     },
     {
+      "id": "ae6c3d579d44",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "꽃이 마니 피었어요.",
+      "answer": "꽃이 많이 피었어요.",
+      "distractors": [
+        "꽃이 만히 피었어요.",
+        "꽃이 맣이 피었어요.",
+        "꽃이 많니 피었어요."
+      ],
+      "solution": [
+        "'마니'처럼 소리 나지만 '많이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "afacaf80b847",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -397,6 +1493,25 @@
       ],
       "solution": [
         "낱말 '꽃'에 '이'가 붙었으니 '꽃이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afda3710976f",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'숲에'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[수페]",
+      "distractors": [
+        "[수베]",
+        "[숩에]",
+        "[수에]"
+      ],
+      "solution": [
+        "'숲에'는 [수페]로 소리 나지만 글자는 '숲에'로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -423,6 +1538,102 @@
       }
     },
     {
+      "id": "b584ea406578",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "학꾜에 가요.",
+      "answer": "학교에 가요.",
+      "distractors": [
+        "학꾜애 가요.",
+        "핚교에 가요.",
+        "하교에 가요."
+      ],
+      "solution": [
+        "'학꾜'처럼 소리 나지만 '학교'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b5e859eeba36",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'국물'을 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[궁물]",
+      "distractors": [
+        "[국물]",
+        "[굼물]",
+        "[구물]"
+      ],
+      "solution": [
+        "'국물'은 [궁물]로 소리 나지만 글자는 '국물'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b63771f149c6",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "닥따리를 먹어요.",
+      "answer": "닭다리를 먹어요.",
+      "distractors": [
+        "닭따리를 먹어요.",
+        "닥다리를 먹어요.",
+        "달다리를 먹어요."
+      ],
+      "solution": [
+        "'닥따리'처럼 소리 나지만 '닭다리'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6388c43ba20",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "서연이가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "종이배를 만드러요.",
+      "distractors": [
+        "꽃이 많이 피었어요.",
+        "무릎을 다쳤어요.",
+        "얼음이 녹았어요."
+      ],
+      "solution": [
+        "'만드러요'는 소리 나는 대로 썼다.",
+        "'만들어요'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b841d6e619df",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'읽어요'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[일거요]",
+      "distractors": [
+        "[이거요]",
+        "[익어요]",
+        "[일러요]"
+      ],
+      "solution": [
+        "'읽어요'는 [일거요]로 소리 나지만 글자는 '읽어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "ba842ba8c9c7",
       "difficulty": 3,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -442,6 +1653,26 @@
       }
     },
     {
+      "id": "bddb8dc8e35c",
+      "difficulty": 2,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "동생에게 낱말 쓰기를 가르쳐 줍니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "옷이",
+      "distractors": [
+        "모자",
+        "우유",
+        "사과"
+      ],
+      "solution": [
+        "'옷이'는 [오시]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "bdfca6d533db",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -454,6 +1685,82 @@
       ],
       "solution": [
         "낱말 '손'에 '을'이 붙었으니 '손을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c23dc1d35c55",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'깊이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[기피]",
+      "distractors": [
+        "[기비]",
+        "[깁이]",
+        "[기히]"
+      ],
+      "solution": [
+        "'깊이'는 [기피]로 소리 나지만 글자는 '깊이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c23f50cb6d70",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "종이배를 만드러요.",
+      "answer": "종이배를 만들어요.",
+      "distractors": [
+        "종이배를 만드어요.",
+        "종이배를 만들러요.",
+        "종이배를 만듷어요."
+      ],
+      "solution": [
+        "'만드러요'처럼 소리 나지만 '만들어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c541f34652a3",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "할머니 댁에 가써요.",
+      "answer": "할머니 댁에 갔어요.",
+      "distractors": [
+        "할머니 댁에 갓어요.",
+        "할머니 댁에 같어요.",
+        "할머니 댁에 갔서요."
+      ],
+      "solution": [
+        "'가써요'처럼 소리 나지만 '갔어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb97ea71cdca",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "잠짜리가 날아요.",
+      "answer": "잠자리가 날아요.",
+      "distractors": [
+        "잠차리가 날아요.",
+        "잠짜리가 나라요.",
+        "잡자리가 날아요."
+      ],
+      "solution": [
+        "'잠짜리'처럼 소리 나지만 '잠자리'로 써야 바른 표기다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -499,6 +1806,199 @@
       }
     },
     {
+      "id": "d3469f32adca",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'놓아요'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[노아요]",
+      "distractors": [
+        "[노하요]",
+        "[논아요]",
+        "[노타요]"
+      ],
+      "solution": [
+        "'놓아요'는 [노아요]로 소리 나지만 글자는 '놓아요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d6e81188f5dd",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "하은이가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "시냇물이 말가요.",
+      "distractors": [
+        "숟가락으로 먹어요.",
+        "좋은 냄새가 나요.",
+        "솜이 부드러워요."
+      ],
+      "solution": [
+        "'말가요'는 소리 나는 대로 썼다.",
+        "'맑아요'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d72b2ff0b044",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'설날'을 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[설랄]",
+      "distractors": [
+        "[선날]",
+        "[서날]",
+        "[설난]"
+      ],
+      "solution": [
+        "'설날'은 [설랄]로 소리 나지만 글자는 '설날'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d8bda0443db5",
+      "difficulty": 3,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "공책에 낱말을 옮겨 적습니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "밥을",
+      "distractors": [
+        "포도",
+        "기차",
+        "나비"
+      ],
+      "solution": [
+        "'밥을'은 [바블]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d9e925cab2cc",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "팓삥수를 먹었어요.",
+      "answer": "팥빙수를 먹었어요.",
+      "distractors": [
+        "팥삥수를 먹었어요.",
+        "팟빙수를 먹었어요.",
+        "팓빙수를 먹었어요."
+      ],
+      "solution": [
+        "'팓삥수'처럼 소리 나지만 '팥빙수'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "de9eb388ed4f",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'먹어요'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[머거요]",
+      "distractors": [
+        "[머꺼요]",
+        "[멍어요]",
+        "[먹거요]"
+      ],
+      "solution": [
+        "'먹어요'는 [머거요]로 소리 나지만 글자는 '먹어요'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "def5c28bca5d",
+      "difficulty": 3,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'같이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[가치]",
+      "distractors": [
+        "[가티]",
+        "[가시]",
+        "[갇이]"
+      ],
+      "solution": [
+        "'같이'는 [가치]로 소리 나지만 글자는 '같이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "df57ec45c257",
+      "difficulty": 3,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "친구와 낱말 퀴즈를 합니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "밭에",
+      "distractors": [
+        "의자",
+        "나무",
+        "바다"
+      ],
+      "solution": [
+        "'밭에'는 [바테]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e0051d928f28",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "길까에 꽃이 피었어요.",
+      "answer": "길가에 꽃이 피었어요.",
+      "distractors": [
+        "길카에 꽃이 피었어요.",
+        "길가에 꼬치 피었어요.",
+        "깃가에 꽃이 피었어요."
+      ],
+      "solution": [
+        "'길까'처럼 소리 나지만 '길가'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e16c950cb948",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "날씨가 춥찌 않아요.",
+      "answer": "날씨가 춥지 않아요.",
+      "distractors": [
+        "날씨가 춥치 않아요.",
+        "날씨가 출지 않아요.",
+        "날씨가 춥지 안아요."
+      ],
+      "solution": [
+        "'춥찌'처럼 소리 나지만 '춥지'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "e1d7196e4297",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -537,6 +2037,26 @@
       }
     },
     {
+      "id": "e56d7fab2bbf",
+      "difficulty": 2,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "칠판에 낱말을 씁니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "깊이",
+      "distractors": [
+        "지구",
+        "의자",
+        "나무"
+      ],
+      "solution": [
+        "'깊이'는 [기피]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "e6d8ab8fec48",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -556,6 +2076,45 @@
       }
     },
     {
+      "id": "e80475df590b",
+      "difficulty": 3,
+      "instruction": "소리와 글자가 다른 낱말을 고르시오.",
+      "stem": "엄마와 낱말 놀이를 합니다. 소리와 글자가 다른 낱말은 어느 것입니까?",
+      "answer": "학교",
+      "distractors": [
+        "바다",
+        "오리",
+        "모자"
+      ],
+      "solution": [
+        "'학교'는 [학꾜]로 소리 나서 소리와 글자가 다르다.",
+        "나머지 낱말은 소리 나는 대로 써도 글자와 같다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ecfb497d0fe1",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'옷이'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[오시]",
+      "distractors": [
+        "[오지]",
+        "[옫이]",
+        "[옷이]"
+      ],
+      "solution": [
+        "'옷이'는 [오시]로 소리 나지만 글자는 '옷이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "f1071a43ff4c",
       "difficulty": 2,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -568,6 +2127,44 @@
       ],
       "solution": [
         "'신다'에 '고'가 붙은 말이므로 소리가 [신꼬]여도 '신고'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1a9cf838718",
+      "difficulty": 1,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "신발을 버서요.",
+      "answer": "신발을 벗어요.",
+      "distractors": [
+        "신발을 벚어요.",
+        "신발을 벋어요.",
+        "신발을 벗서요."
+      ],
+      "solution": [
+        "'버서요'처럼 소리 나지만 '벗어요'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f620731e566e",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 바르게 읽은 것을 고르시오.",
+      "stem": "'학교'를 소리 나는 대로 읽으면 어떻게 됩니까?",
+      "answer": "[학꾜]",
+      "distractors": [
+        "[하교]",
+        "[학교]",
+        "[항교]"
+      ],
+      "solution": [
+        "'학교'는 [학꾜]로 소리 나지만 글자는 '학교'로 쓴다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

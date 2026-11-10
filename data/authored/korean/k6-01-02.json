@@ -5,6 +5,82 @@
   "skill": "주장과 근거의 타당성을 평가하며 듣기",
   "items": [
     {
+      "id": "007a768dcb04",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 물건을 아껴 써야 한다.",
+      "answer": "물건을 만드는 데 많은 자원이 들기 때문이다.",
+      "distractors": [
+        "물건은 가게에서 팔기 때문이다.",
+        "새 물건은 반짝거리기 때문이다.",
+        "내 필통이 파란색이기 때문이다."
+      ],
+      "solution": [
+        "물건을 만드는 데 자원이 든다는 내용이 아껴 써야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0137a6855157",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 학교 도서관에 새 책을 더 들여놓아야 한다.",
+      "answer": "새 책은 종이 냄새가 좋기 때문이다.",
+      "distractors": [
+        "읽고 싶은 책이 없다는 학생이 많기 때문이다.",
+        "오래된 책은 찢어진 것이 많기 때문이다.",
+        "새로운 지식을 담은 책이 계속 나오기 때문이다."
+      ],
+      "solution": [
+        "종이 냄새가 좋다는 것은 한 사람의 느낌일 뿐 새 책이 필요한 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "04112e030e83",
+      "difficulty": 2,
+      "instruction": "근거들이 뒷받침하는 주장으로 알맞은 것을 고르시오.",
+      "stem": "근거 1: 밤늦게 화면을 보면 잠이 잘 오지 않는다.\n근거 2: 오래 들여다보면 눈이 쉽게 피로해진다.",
+      "answer": "잠들기 전에는 휴대 전화를 멀리 두어야 한다.",
+      "distractors": [
+        "휴대 전화를 새것으로 바꾸어야 한다.",
+        "밤에는 불을 모두 켜 두어야 한다.",
+        "눈이 나쁘면 안경을 써야 한다."
+      ],
+      "solution": [
+        "두 근거 모두 밤에 화면을 오래 볼 때 생기는 문제다. 그러므로 잠들기 전에는 휴대 전화를 멀리 두자는 주장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "047e445133de",
+      "difficulty": 1,
+      "instruction": "근거들이 뒷받침하는 주장으로 알맞은 것을 고르시오.",
+      "stem": "근거 1: 책을 읽으면 아는 낱말이 늘어난다.\n근거 2: 책 속 인물을 만나며 생각이 넓어진다.",
+      "answer": "책을 꾸준히 읽어야 한다.",
+      "distractors": [
+        "책을 많이 사야 한다.",
+        "책꽂이를 정리해야 한다.",
+        "도서관을 새로 지어야 한다."
+      ],
+      "solution": [
+        "두 근거 모두 책을 읽을 때 얻는 점이다. 그러므로 책을 꾸준히 읽자는 주장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "049da0f60528",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -18,6 +94,63 @@
       "solution": [
         "'방과 후에도 책을 읽고 싶은 학생이 많기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1668088e9725",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 마을 도서관을 밤늦게까지 열어야 한다.",
+      "answer": "도서관 건물은 벽돌로 지었기 때문이다.",
+      "distractors": [
+        "낮에 일하는 어른들도 책을 빌릴 수 있기 때문이다.",
+        "밤에 조용히 공부할 곳이 필요한 사람이 많기 때문이다.",
+        "방과 후 학원을 마친 학생도 들를 수 있기 때문이다."
+      ],
+      "solution": [
+        "건물 재료는 늦게까지 열어야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "169d65747319",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 놀이 기구를 탈 때는 차례를 지켜야 한다.",
+      "answer": "차례를 지키지 않으면 다툼이 생기고 다칠 수 있기 때문이다.",
+      "distractors": [
+        "놀이 기구는 색이 화려하기 때문이다.",
+        "놀이터에 모래가 있기 때문이다.",
+        "나는 그네를 제일 좋아하기 때문이다."
+      ],
+      "solution": [
+        "다툼과 다침을 막는다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16d01b307c51",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 교실 문을 세게 닫지 말아야 한다.",
+      "answer": "문에 손가락이 끼어 크게 다칠 수 있기 때문이다.",
+      "distractors": [
+        "문에 이름표가 붙어 있기 때문이다.",
+        "교실 문은 나무로 만들었기 때문이다.",
+        "나는 조용한 것을 좋아하기 때문이다."
+      ],
+      "solution": [
+        "손가락이 끼어 다칠 수 있다는 내용이 주장을 바로 뒷받침한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -45,6 +178,44 @@
       }
     },
     {
+      "id": "1e4cf18dcf34",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 비 오는 날에는 밝은색 옷을 입어야 한다.",
+      "answer": "어두운 날에도 운전자 눈에 잘 띄기 때문이다.",
+      "distractors": [
+        "밝은색 옷이 유행이기 때문이다.",
+        "비가 오면 옷이 젖기 때문이다.",
+        "내가 노란색을 좋아하기 때문이다."
+      ],
+      "solution": [
+        "운전자 눈에 잘 띈다는 내용이 안전과 이어져 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1f9957f0dc91",
+      "difficulty": 2,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 큰 소리로 노래를 부르면 기분이 밝아진다.\n근거 2: 친구들과 함께 부르면 서로 더 친해진다.",
+      "answer": "반 친구들과 함께 노래를 부르자.",
+      "distractors": [
+        "노래 대회를 없애야 한다.",
+        "음악 시간을 줄여야 한다.",
+        "혼자서만 노래를 불러야 한다."
+      ],
+      "solution": [
+        "기분이 밝아지고 친해진다는 두 까닭은 함께 노래하자는 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "1fa414733aa6",
       "difficulty": 1,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -58,6 +229,82 @@
       "solution": [
         "'손에 묻은 세균이 음식과 함께 몸에 들어갈 수 있기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2121a6c9d35d",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 수업 시간에 발표할 때는 손을 들고 말해야 한다.",
+      "answer": "여러 사람이 한꺼번에 말하면 아무 말도 잘 들리지 않기 때문이다.",
+      "distractors": [
+        "손을 들면 팔이 길어 보이기 때문이다.",
+        "교실에 책상이 많기 때문이다.",
+        "나는 발표를 자주 하기 때문이다."
+      ],
+      "solution": [
+        "한꺼번에 말하면 들리지 않는다는 내용이 차례를 지켜야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23cdabf2c5a7",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 공원에 쓰레기통을 더 놓아야 한다.\n근거: 쓰레기통은 초록색으로 칠하면 예쁘기 때문이다.",
+      "answer": "주장과 관계없는 근거를 들었다",
+      "distractors": [
+        "근거가 사실과 다르다",
+        "몇 사람의 경험만 들었다",
+        "주장과 근거가 같은 말이다"
+      ],
+      "solution": [
+        "쓰레기통 색깔은 쓰레기통을 더 놓아야 하는 까닭과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "240821aefa14",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 앞 문구점에서 불량 식품을 팔지 말아야 한다.",
+      "answer": "몸에 해로운 재료가 들어 있어 어린이 건강을 해칠 수 있기 때문이다.",
+      "distractors": [
+        "불량 식품은 값이 싸기 때문이다.",
+        "문구점 주인이 친절하기 때문이다.",
+        "불량 식품은 봉지가 화려하기 때문이다."
+      ],
+      "solution": [
+        "어린이 건강을 해친다는 내용이 팔지 말아야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2534c4c782a0",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 학교 급식에 지역 농산물을 써야 한다.",
+      "answer": "지역 농산물 상자는 크기 때문이다.",
+      "distractors": [
+        "가까운 곳에서 와서 신선하기 때문이다.",
+        "먼 곳에서 실어 올 때보다 연료가 덜 들기 때문이다.",
+        "우리 지역 농민에게 도움이 되기 때문이다."
+      ],
+      "solution": [
+        "상자 크기는 지역 농산물을 써야 하는 까닭이 되지 않는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -85,6 +332,177 @@
       }
     },
     {
+      "id": "27aee43b74e2",
+      "difficulty": 3,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 걸어서 등교하는 학생이 많은데 학교 앞 인도가 좁다.\n근거 2: 비 오는 날 우산을 쓰면 인도에서 서로 부딪힌다.",
+      "answer": "학교 앞 인도를 넓혀야 한다.",
+      "distractors": [
+        "비 오는 날 등교를 늦춰야 한다.",
+        "우산을 쓰지 말아야 한다.",
+        "모두 버스로 등교해야 한다."
+      ],
+      "solution": [
+        "인도가 좁아 불편하다는 두 까닭은 인도를 넓히자는 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29a7fa93b82d",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 화단에 이름표를 달아야 한다.",
+      "answer": "꽃과 나무 이름을 알게 되어 식물에 관심이 생기기 때문이다.",
+      "distractors": [
+        "이름표는 종이로 만들 수 있기 때문이다.",
+        "화단에 개미가 많기 때문이다.",
+        "나는 장미를 가장 좋아하기 때문이다."
+      ],
+      "solution": [
+        "식물 이름을 알고 관심이 생긴다는 내용이 이름표를 달아야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2cdabf3b5dab",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 우리 학교 급식을 바꾸어야 한다.\n근거: 나는 오늘 나온 생선을 싫어하기 때문이다.",
+      "answer": "자기 취향만 근거로 들었다",
+      "distractors": [
+        "근거가 사실이 아니다",
+        "주장이 둘이다",
+        "근거가 두 개이다"
+      ],
+      "solution": [
+        "생선을 싫어한다는 것은 한 사람의 취향이라 급식을 바꿀 까닭으로는 약하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "31672df4136d",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 모든 학생이 매일 피아노를 배워야 한다.\n근거: 내 친구는 피아노를 배우고 나서 상을 받았기 때문이다.",
+      "answer": "한 사람의 경험만 들었다",
+      "distractors": [
+        "주장과 근거가 같은 말이다",
+        "근거가 너무 길다",
+        "주장이 너무 짧다"
+      ],
+      "solution": [
+        "친구 한 명이 상을 받았다는 일만으로 모든 학생이 배워야 한다고 말하기 어렵다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "319a9a3949ab",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 숲을 함부로 베지 말아야 한다.",
+      "answer": "나무는 키가 크고 잎이 넓기 때문이다.",
+      "distractors": [
+        "숲은 많은 동물의 집이기 때문이다.",
+        "나무가 맑은 공기를 만들기 때문이다.",
+        "나무뿌리가 흙이 쓸려 내려가는 것을 막기 때문이다."
+      ],
+      "solution": [
+        "나무의 생김새만 말한 것은 숲을 지켜야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "31bb811dba0f",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 가족끼리 대화 시간을 가져야 한다.",
+      "answer": "거실 소파가 크고 푹신하기 때문이다.",
+      "distractors": [
+        "서로의 고민을 알고 도울 수 있기 때문이다.",
+        "가족 사이가 더 가까워지기 때문이다.",
+        "오해가 생겨도 쉽게 풀 수 있기 때문이다."
+      ],
+      "solution": [
+        "소파가 푹신하다는 것은 대화 시간을 가져야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3235df3aed8b",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 반려동물을 끝까지 책임지고 길러야 한다.",
+      "answer": "강아지는 꼬리를 흔들기 때문이다.",
+      "distractors": [
+        "버려진 동물은 혼자 살아가기 어렵기 때문이다.",
+        "동물도 아픔을 느끼는 생명이기 때문이다.",
+        "가족이 되기로 한 약속이기 때문이다."
+      ],
+      "solution": [
+        "꼬리를 흔든다는 내용은 끝까지 책임져야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "334c9501b8b7",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 고양이는 모두 물을 싫어한다.\n근거: 우리 집 고양이가 목욕을 싫어하기 때문이다.",
+      "answer": "한 가지 예만 보고 모두라고 했다",
+      "distractors": [
+        "주장과 관계없는 내용이다",
+        "주장을 그대로 되풀이했다",
+        "자기 취향만 들었다"
+      ],
+      "solution": [
+        "고양이 한 마리의 예만으로 모든 고양이가 그렇다고 말할 수 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "34541356c52c",
+      "difficulty": 3,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 학생 수가 늘어 도서관 자리가 늘 모자란다.\n근거 2: 비 오는 날 쉬는 시간에 갈 곳이 없다는 학생이 많다.",
+      "answer": "학교에 쉼터 공간을 더 만들어야 한다.",
+      "distractors": [
+        "도서관 책을 줄여야 한다.",
+        "비 오는 날에는 학교를 쉬어야 한다.",
+        "쉬는 시간을 없애야 한다."
+      ],
+      "solution": [
+        "자리가 모자라고 갈 곳이 없다는 두 까닭은 쉼터를 더 만들자는 주장을 함께 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "354d225117f5",
       "difficulty": 1,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -98,6 +516,25 @@
       "solution": [
         "'일회용 컵은 쉽게 썩지 않아 쓰레기가 늘어나기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35f075d9e64b",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 점심시간에 교실에서 음악을 틀자.\n가: 나는 노래 듣기를 좋아하기 때문이다.\n나: 조용한 음악은 마음을 편안하게 해 주기 때문이다.",
+      "answer": "나의 근거만 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "나의 말은 많은 사람에게 해당하는 좋은 점이지만 가의 말은 한 사람의 취향이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -125,6 +562,253 @@
       }
     },
     {
+      "id": "37e78282296e",
+      "difficulty": 2,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 교실에 화분을 두자.\n가: 식물이 교실 공기를 맑게 해 주기 때문이다.\n나: 내가 꽃집 앞을 자주 지나가기 때문이다.",
+      "answer": "가의 근거만 타당하다",
+      "distractors": [
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "가의 말은 화분을 둘 까닭이 되지만 나의 말은 주장과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "410941b69ab2",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 어린이 보호 구역에서는 자동차가 천천히 달려야 한다.",
+      "answer": "어린이 보호 구역 표지판은 노란색이기 때문이다.",
+      "distractors": [
+        "어린이는 갑자기 길로 뛰어들 수 있기 때문이다.",
+        "천천히 달려야 급히 멈출 수 있기 때문이다.",
+        "어린이는 키가 작아 운전자 눈에 잘 띄지 않기 때문이다."
+      ],
+      "solution": [
+        "표지판 색깔은 천천히 달려야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44cb4efb1943",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 운동장에 그늘막을 더 설치해야 한다.",
+      "answer": "여름에 햇볕을 피할 곳이 없어 쉬는 시간에 학생들이 지치기 때문이다.",
+      "distractors": [
+        "그늘막은 여러 색으로 만들 수 있기 때문이다.",
+        "운동장 모래가 고운 편이기 때문이다.",
+        "나는 그늘에서 책 읽기를 좋아하기 때문이다."
+      ],
+      "solution": [
+        "햇볕을 피할 곳이 없어 학생들이 지친다는 내용이 주장을 뒷받침한다. 마지막 것은 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "48ccae8bb86a",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 인터넷에서 본 정보는 다른 자료와 비교해 보아야 한다.",
+      "answer": "인터넷에는 틀린 정보도 섞여 있기 때문이다.",
+      "distractors": [
+        "인터넷은 아주 빠르기 때문이다.",
+        "인터넷에는 정보가 많기 때문이다.",
+        "나는 인터넷 검색을 잘하기 때문이다."
+      ],
+      "solution": [
+        "틀린 정보가 섞여 있다는 내용이 비교해 보아야 하는 까닭이 된다. 정보가 많다는 것만으로는 비교할 까닭이 생기지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "49e1845e1fe9",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교에서 우유 급식을 하자.\n가: 우리 형이 우유를 좋아하기 때문이다.\n나: 우유 팩은 네모나서 쌓기 쉽기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하지 않다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다"
+      ],
+      "solution": [
+        "가의 말은 한 사람의 취향이고 나의 말은 주장과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a40f660f10f",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 학교 수업을 오후 네 시에 끝내야 한다.\n근거: 모든 나라 학교가 오후 네 시에 끝나기 때문이다.",
+      "answer": "확인되지 않은 내용을 근거로 들었다",
+      "distractors": [
+        "주장이 근거보다 길다",
+        "근거에 숫자가 없다",
+        "자기 취향만 근거로 들었다"
+      ],
+      "solution": [
+        "모든 나라 학교가 같은 시간에 끝난다는 말은 확인되지 않았고 사실과도 맞지 않다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a724083f19a",
+      "difficulty": 2,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교 계단에 미끄럼 방지 띠를 붙이자.\n가: 띠를 붙이면 계단이 예뻐 보이기 때문이다.\n나: 비 오는 날 계단에서 미끄러지는 학생이 많기 때문이다.",
+      "answer": "나의 근거만 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "나의 말은 안전과 이어져 타당하지만 가의 말은 겉모습만 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4acbc0b0343a",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교 도서관에 만화책을 들여놓자.\n가: 책 읽기를 싫어하던 학생도 도서관에 오게 되기 때문이다.\n나: 그림과 글을 함께 보며 내용을 쉽게 알 수 있기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "두 사람 모두 만화책을 들여놓을 때 생기는 좋은 점을 들었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4bef0ebeca99",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 공공장소에서는 작은 목소리로 말해야 한다.",
+      "answer": "큰 소리는 주변 사람들에게 불편을 주기 때문이다.",
+      "distractors": [
+        "내 목소리가 예쁘기 때문이다.",
+        "공공장소에는 의자가 많기 때문이다.",
+        "친구가 귓속말을 좋아하기 때문이다."
+      ],
+      "solution": [
+        "주변 사람에게 불편을 준다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4e6ba58feca4",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 에너지를 아끼기 위해 계단을 이용해야 한다.",
+      "answer": "승강기를 덜 쓰면 그만큼 전기를 아낄 수 있기 때문이다.",
+      "distractors": [
+        "계단은 오르기 힘들기 때문이다.",
+        "승강기는 빠르기 때문이다.",
+        "우리 아파트가 높기 때문이다."
+      ],
+      "solution": [
+        "전기를 아낄 수 있다는 내용이 주장과 바로 이어진다. 나머지는 계단을 이용할 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4f93536bbea3",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 길을 건널 때는 좌우를 잘 살펴야 한다.",
+      "answer": "신호등이 세 가지 색이기 때문이다.",
+      "distractors": [
+        "갑자기 달려오는 차가 있을 수 있기 때문이다.",
+        "오토바이가 인도 가까이 지나갈 수 있기 때문이다.",
+        "운전자가 어린이를 못 볼 수 있기 때문이다."
+      ],
+      "solution": [
+        "신호등 색의 개수는 좌우를 살펴야 하는 까닭과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "50412ffb21ff",
+      "difficulty": 2,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 아침 운동 시간을 만들자.\n가: 몸을 움직이면 잠이 깨고 수업에 집중이 잘 되기 때문이다.\n나: 꾸준히 운동하면 몸이 튼튼해지기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "두 사람 모두 아침 운동이 주는 좋은 점을 들어 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5371d2eea715",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 하루에 한 번은 창문을 열어 환기해야 한다.",
+      "answer": "창문에 예쁜 커튼을 달 수 있기 때문이다.",
+      "distractors": [
+        "바깥의 맑은 공기가 들어오기 때문이다.",
+        "방 안에 쌓인 먼지가 빠져나가기 때문이다.",
+        "답답한 냄새가 사라지기 때문이다."
+      ],
+      "solution": [
+        "커튼을 달 수 있다는 내용은 환기와 관계가 없다. 나머지는 모두 환기가 필요한 까닭이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "5c1295eb3424",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -138,6 +822,63 @@
       "solution": [
         "'자전거를 타는 사람이 차와 부딪히지 않고 다닐 수 있기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5dd33f930a5d",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 텃밭을 만들어 채소를 길러야 한다.",
+      "answer": "직접 기르며 식물이 자라는 과정을 배울 수 있기 때문이다.",
+      "distractors": [
+        "텃밭 흙은 갈색이기 때문이다.",
+        "채소 이름이 재미있기 때문이다.",
+        "나는 상추를 먹기 싫기 때문이다."
+      ],
+      "solution": [
+        "식물이 자라는 과정을 배운다는 내용이 텃밭을 만들어야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e2322f29289",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 우리 반 청소 당번을 돌아가며 맡아야 한다.",
+      "answer": "모두가 교실을 깨끗이 할 책임을 함께 나눌 수 있기 때문이다.",
+      "distractors": [
+        "빗자루가 교실 뒤에 있기 때문이다.",
+        "청소 시간이 오후이기 때문이다.",
+        "나는 걸레질을 잘하기 때문이다."
+      ],
+      "solution": [
+        "책임을 함께 나눈다는 내용이 돌아가며 맡아야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "632751d34579",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 친구와 다투었을 때는 먼저 사과해야 한다.",
+      "answer": "사과는 짧게 말할 수 있기 때문이다.",
+      "distractors": [
+        "서로 서운한 마음을 빨리 풀 수 있기 때문이다.",
+        "다툼이 더 커지는 것을 막을 수 있기 때문이다.",
+        "다시 사이좋게 지낼 수 있기 때문이다."
+      ],
+      "solution": [
+        "짧게 말할 수 있다는 것은 먼저 사과해야 하는 까닭이 되지 않는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -165,6 +906,158 @@
       }
     },
     {
+      "id": "654ca908b13e",
+      "difficulty": 1,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 손에는 눈에 보이지 않는 세균이 많다.\n근거 2: 손을 잘 씻으면 감기에 덜 걸린다.",
+      "answer": "손을 자주 씻어야 한다.",
+      "distractors": [
+        "비누를 아껴 써야 한다.",
+        "손톱을 길러야 한다.",
+        "장갑을 끼고 다녀야 한다."
+      ],
+      "solution": [
+        "두 까닭 모두 손 씻기와 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "678ad47ec5a4",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 동물원 동물에게 먹이를 함부로 주지 말아야 한다.",
+      "answer": "사람이 주는 음식이 동물의 몸에 맞지 않아 병이 날 수 있기 때문이다.",
+      "distractors": [
+        "동물원 동물은 사람을 좋아하기 때문이다.",
+        "동물원 입장료가 비싸기 때문이다.",
+        "과자 봉지가 바스락거리기 때문이다."
+      ],
+      "solution": [
+        "동물이 병이 날 수 있다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a99236a55c2",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 복도에서는 뛰지 말아야 한다.",
+      "answer": "뛰다가 다른 친구와 부딪혀 다칠 수 있기 때문이다.",
+      "distractors": [
+        "복도 바닥이 회색이기 때문이다.",
+        "복도에 창문이 많기 때문이다.",
+        "나는 달리기를 잘하기 때문이다."
+      ],
+      "solution": [
+        "부딪혀 다칠 수 있다는 내용이 주장을 바로 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d0f67ad6dd8",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 아침밥을 꼭 먹고 등교해야 한다.",
+      "answer": "아침을 먹어야 오전 수업에 집중할 힘이 생기기 때문이다.",
+      "distractors": [
+        "아침밥은 엄마가 차려 주시기 때문이다.",
+        "나는 아침에 빵을 좋아하기 때문이다.",
+        "식탁이 부엌에 있기 때문이다."
+      ],
+      "solution": [
+        "오전 수업에 집중할 힘이 생긴다는 내용이 주장과 바로 이어진다. 나머지는 주장과 관계없거나 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d2bf137af44",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 장바구니를 들고 시장에 가야 한다.",
+      "answer": "비닐봉지를 덜 쓰면 버려지는 쓰레기가 줄기 때문이다.",
+      "distractors": [
+        "장바구니에 꽃무늬가 있기 때문이다.",
+        "시장에 사람이 많기 때문이다.",
+        "우리 집에 장바구니가 두 개 있기 때문이다."
+      ],
+      "solution": [
+        "비닐 쓰레기가 줄어든다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "75be99f290c7",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 운동장에 인조 잔디를 깔아야 한다.\n근거: 인조 잔디는 초록색이라 보기에 좋기 때문이다.",
+      "answer": "겉모습만 들어 까닭이 약하다",
+      "distractors": [
+        "한 사람의 경험만 들었다",
+        "주장을 그대로 되풀이했다",
+        "확인되지 않은 소문이다"
+      ],
+      "solution": [
+        "보기에 좋다는 겉모습만으로는 잔디를 깔아야 할 까닭이 약하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "77668342aa2d",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 비 오는 날에는 학교에 가지 않아도 된다.\n근거: 비를 맞으면 옷이 젖기 때문이다.",
+      "answer": "근거에 비해 주장이 지나치다",
+      "distractors": [
+        "근거가 사실과 다르다",
+        "한 사람의 취향만 들었다",
+        "주장을 그대로 되풀이했다"
+      ],
+      "solution": [
+        "옷이 젖는다는 것은 사실이지만 학교에 가지 않아도 될 만큼의 까닭은 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "779f1f4a3b17",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 산에 갈 때는 쓰레기를 되가져와야 한다.",
+      "answer": "등산 가방은 어깨에 메기 때문이다.",
+      "distractors": [
+        "산에 사는 동물이 쓰레기를 먹고 탈이 날 수 있기 때문이다.",
+        "산이 더러워지면 다음 사람이 불쾌하기 때문이다.",
+        "산에는 쓰레기를 치울 사람이 거의 없기 때문이다."
+      ],
+      "solution": [
+        "가방을 메는 방법은 쓰레기를 되가져와야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "786264651a75",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -178,6 +1071,25 @@
       "solution": [
         "'학생들이 좋아하는 음식을 넣으면 남기는 음식이 줄기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "79251ca64076",
+      "difficulty": 2,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 쉬는 시간에 복도에서 공놀이를 하지 말자.\n가: 공이 창문을 깨뜨리거나 친구가 다칠 수 있기 때문이다.\n나: 복도에서는 다른 반 수업에 방해가 되기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "두 사람 모두 복도 공놀이의 위험과 피해를 들어 타당하다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -218,6 +1130,44 @@
       "solution": [
         "'동네 상인들이 살아가는 데 힘이 되기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7d8bea19178c",
+      "difficulty": 2,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 운동장에서 공을 차다가 지나가던 친구가 다친 일이 있었다.\n근거 2: 점심시간에 운동장에 사람이 아주 많다.",
+      "answer": "운동장에서 공놀이 구역을 따로 정해야 한다.",
+      "distractors": [
+        "운동장을 더 넓게 넓혀야 한다.",
+        "점심시간을 줄여야 한다.",
+        "축구공을 새로 사야 한다."
+      ],
+      "solution": [
+        "친구가 다친 일과 사람이 많다는 까닭은 공놀이 구역을 나누자는 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "865e0a9c244a",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 교실에 학급 문고를 만들어야 한다.",
+      "answer": "쉬는 시간에도 가까이에서 책을 쉽게 꺼내 읽을 수 있기 때문이다.",
+      "distractors": [
+        "책꽂이를 칠하면 예쁘기 때문이다.",
+        "우리 반 교실이 삼 층에 있기 때문이다.",
+        "나는 동화책을 많이 가지고 있기 때문이다."
+      ],
+      "solution": [
+        "가까이에서 책을 쉽게 읽을 수 있다는 내용이 학급 문고가 필요한 까닭이 된다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -285,6 +1235,25 @@
       }
     },
     {
+      "id": "8e1870d0a0c9",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 버스 안에서는 자리에 앉거나 기둥을 꼭 붙잡아야 한다.",
+      "answer": "버스가 갑자기 멈추면 넘어질 수 있기 때문이다.",
+      "distractors": [
+        "버스 기둥은 노란색이기 때문이다.",
+        "버스 안에 의자가 많기 때문이다.",
+        "나는 버스 타기를 좋아하기 때문이다."
+      ],
+      "solution": [
+        "갑자기 멈출 때 넘어질 수 있다는 내용이 주장과 바로 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9002f232bce3",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -298,6 +1267,120 @@
       "solution": [
         "'충분히 쉬어야 다음 수업에 집중할 수 있기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "91ed1dc04e54",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 여름에 냉방기를 너무 차갑게 틀지 말아야 한다.",
+      "answer": "안팎이 너무 차이 나면 감기에 걸리기 쉽고 전기도 많이 들기 때문이다.",
+      "distractors": [
+        "냉방기는 벽에 달려 있기 때문이다.",
+        "여름에는 해가 길기 때문이다.",
+        "나는 시원한 것이 좋기 때문이다."
+      ],
+      "solution": [
+        "감기와 전기 낭비라는 두 가지 문제가 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "926aee3c06a5",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 우리 반 학생은 모두 축구를 좋아한다.\n근거: 어제 운동장에서 세 명이 축구를 했기 때문이다.",
+      "answer": "몇 사람만 보고 모두라고 했다",
+      "distractors": [
+        "근거에 숫자가 들어 있다",
+        "축구는 운동이 아니다",
+        "운동장이 너무 넓다"
+      ],
+      "solution": [
+        "세 명이 축구를 했다는 것만으로 반 전체가 좋아한다고 할 수 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "959d2782f2f9",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 우리 동네 빵집이 우리나라에서 가장 맛있다.\n근거: 우리 엄마가 그렇게 말씀하셨기 때문이다.",
+      "answer": "한 사람의 생각만 들었다",
+      "distractors": [
+        "주장과 관계없는 내용이다",
+        "주장을 그대로 되풀이했다",
+        "확인된 사실을 들었다"
+      ],
+      "solution": [
+        "엄마 한 분의 생각만으로 나라에서 가장 맛있다고 할 수 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a004ac33a58",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 이 운동화를 사면 누구나 달리기를 잘하게 된다.\n근거: 광고에서 그렇게 말했기 때문이다.",
+      "answer": "광고의 말을 따져 보지 않았다",
+      "distractors": [
+        "자기 취향만 들었다",
+        "주장을 그대로 되풀이했다",
+        "주장과 관계없는 내용이다"
+      ],
+      "solution": [
+        "광고는 물건을 팔려고 하는 말이라 확인하지 않고 믿기 어렵다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d9e7392238e",
+      "difficulty": 2,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 어두운 곳에서 책을 읽으면 눈이 쉽게 나빠진다.\n근거 2: 밝은 곳에서 읽어야 글자가 또렷하게 보인다.",
+      "answer": "책은 밝은 곳에서 읽어야 한다.",
+      "distractors": [
+        "책을 적게 읽어야 한다.",
+        "안경을 꼭 써야 한다.",
+        "밤에는 불을 꺼야 한다."
+      ],
+      "solution": [
+        "두 까닭 모두 밝은 곳에서 읽어야 하는 까닭이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e0d76acd7da",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교 운동회를 봄에 열자.\n가: 봄에는 덥지도 춥지도 않아 뛰기 좋기 때문이다.\n나: 내 생일이 봄에 있기 때문이다.",
+      "answer": "가의 근거만 타당하다",
+      "distractors": [
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "가의 말은 날씨와 이어져 타당하지만 나의 말은 운동회와 관계가 없다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -325,6 +1408,25 @@
       }
     },
     {
+      "id": "a2cd31cc8209",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 꾸준히 일기를 써야 한다.",
+      "answer": "일기장 표지가 알록달록하기 때문이다.",
+      "distractors": [
+        "하루를 돌아보며 반성할 수 있기 때문이다.",
+        "글쓰기 실력이 늘기 때문이다.",
+        "소중한 일을 오래 기억할 수 있기 때문이다."
+      ],
+      "solution": [
+        "일기장 표지는 일기를 써야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "a36d9b2f2e24",
       "difficulty": 1,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -338,6 +1440,120 @@
       "solution": [
         "'빨간불에 건너면 차에 부딪힐 수 있기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "adb5149a6119",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 자기 전에 이를 닦아야 한다.",
+      "answer": "밤새 입안에 남은 음식 찌꺼기가 이를 썩게 하기 때문이다.",
+      "distractors": [
+        "칫솔 색깔이 여러 가지이기 때문이다.",
+        "치약 맛이 달콤하기 때문이다.",
+        "욕실에 거울이 있기 때문이다."
+      ],
+      "solution": [
+        "음식 찌꺼기가 이를 썩게 한다는 내용이 이를 닦아야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afb96f445055",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 모둠 활동에서는 역할을 고르게 나누어야 한다.",
+      "answer": "한 사람에게 일이 몰리지 않아야 모두가 함께 배울 수 있기 때문이다.",
+      "distractors": [
+        "모둠 친구가 네 명이기 때문이다.",
+        "모둠 책상이 동그랗기 때문이다.",
+        "나는 발표하기를 좋아하기 때문이다."
+      ],
+      "solution": [
+        "모두가 함께 배울 수 있다는 내용이 역할을 나누어야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b28f518a5957",
+      "difficulty": 2,
+      "instruction": "근거들이 뒷받침하는 주장으로 알맞은 것을 고르시오.",
+      "stem": "근거 1: 플라스틱은 썩는 데 아주 오랜 시간이 걸린다.\n근거 2: 바다에 버려진 플라스틱을 먹고 아픈 동물이 많다.",
+      "answer": "플라스틱 사용을 줄여야 한다.",
+      "distractors": [
+        "바다에서 수영을 하지 말아야 한다.",
+        "동물을 집에서 길러야 한다.",
+        "플라스틱 장난감을 모아야 한다."
+      ],
+      "solution": [
+        "두 근거 모두 플라스틱이 주는 피해다. 그러므로 플라스틱을 줄이자는 주장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3c851e9821f",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 아침마다 줄넘기를 해야 한다.",
+      "answer": "줄넘기 줄은 여러 색으로 팔기 때문이다.",
+      "distractors": [
+        "몸이 가벼워지고 튼튼해지기 때문이다.",
+        "짧은 시간에 땀을 낼 수 있기 때문이다.",
+        "좁은 곳에서도 할 수 있기 때문이다."
+      ],
+      "solution": [
+        "줄 색깔은 줄넘기를 해야 하는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b667be5334da",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교에서 휴대 전화 사용 시간을 정해야 한다.",
+      "answer": "수업 중에 휴대 전화를 보면 공부에 집중하기 어렵기 때문이다.",
+      "distractors": [
+        "휴대 전화 화면이 크기 때문이다.",
+        "요즘 새 휴대 전화가 나왔기 때문이다.",
+        "휴대 전화는 가방에 넣을 수 있기 때문이다."
+      ],
+      "solution": [
+        "수업 집중을 방해한다는 내용이 사용 시간을 정해야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb705e696254",
+      "difficulty": 3,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 전통 놀이에는 조상들의 지혜가 담겨 있다.\n근거 2: 여럿이 함께하며 협동하는 마음을 기를 수 있다.",
+      "answer": "학교에서 전통 놀이를 자주 해야 한다.",
+      "distractors": [
+        "전통 놀이 도구를 박물관에 두어야 한다.",
+        "혼자 하는 놀이를 늘려야 한다.",
+        "놀이 시간을 줄이고 공부해야 한다."
+      ],
+      "solution": [
+        "조상의 지혜와 협동심이라는 두 까닭은 전통 놀이를 자주 하자는 주장을 뒷받침한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -365,6 +1581,25 @@
       }
     },
     {
+      "id": "c0e4a66802ea",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 학교에 자전거 보관대를 만들어야 한다.",
+      "answer": "자전거는 바퀴가 두 개이기 때문이다.",
+      "distractors": [
+        "자전거로 오는 학생이 늘고 있기 때문이다.",
+        "아무 데나 세워 두면 통행에 방해가 되기 때문이다.",
+        "자전거를 잃어버리는 일을 막을 수 있기 때문이다."
+      ],
+      "solution": [
+        "바퀴 개수는 보관대를 만들어야 하는 까닭과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "c2113893e21d",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -378,6 +1613,196 @@
       "solution": [
         "'서로의 좋은 점을 알게 되어 반 분위기가 따뜻해지기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c303a36e225c",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 친구의 별명을 함부로 부르지 말아야 한다.",
+      "answer": "듣는 친구가 마음에 상처를 받을 수 있기 때문이다.",
+      "distractors": [
+        "별명은 짧아서 부르기 쉽기 때문이다.",
+        "우리 반 친구가 스무 명이기 때문이다.",
+        "나도 별명이 있기 때문이다."
+      ],
+      "solution": [
+        "친구가 상처를 받을 수 있다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3da6345f44d",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 우리 마을 하천을 깨끗하게 지켜야 한다.",
+      "answer": "하천이 더러워지면 그곳에 사는 물고기와 새가 살기 어렵기 때문이다.",
+      "distractors": [
+        "하천은 바다로 흘러가기 때문이다.",
+        "하천 옆에 산책길이 있기 때문이다.",
+        "나는 물놀이를 좋아하기 때문이다."
+      ],
+      "solution": [
+        "생물이 살기 어려워진다는 내용이 하천을 지켜야 하는 까닭이 된다. 하천이 바다로 흘러간다는 것만으로는 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c4cde861bd01",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 누리집에 학급 소식을 자주 올려야 한다.",
+      "answer": "부모님이 학교에서 있었던 일을 쉽게 알 수 있기 때문이다.",
+      "distractors": [
+        "누리집 화면이 알록달록하기 때문이다.",
+        "컴퓨터실에 컴퓨터가 많기 때문이다.",
+        "글을 올리는 일은 어렵기 때문이다."
+      ],
+      "solution": [
+        "부모님이 학교 소식을 쉽게 안다는 좋은 점이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5899760cafb",
+      "difficulty": 2,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교 앞 횡단보도에 신호등을 설치하자.\n가: 신호등은 빨간색과 초록색이 예쁘기 때문이다.\n나: 차가 빨리 달려 길을 건너기 위험하기 때문이다.",
+      "answer": "나의 근거만 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "나의 말은 안전과 이어져 주장을 뒷받침하지만 가의 말은 색깔만 말했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5a4f65862c1",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 학교 숙제를 없애야 한다.\n근거: 숙제는 필요 없기 때문이다.",
+      "answer": "주장을 그대로 되풀이했다",
+      "distractors": [
+        "한 가지 예만 들었다",
+        "근거가 사실과 다르다",
+        "주장과 관계없는 내용이다"
+      ],
+      "solution": [
+        "숙제가 필요 없다는 말은 주장을 다시 한 것일 뿐 까닭을 알려 주지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cac6efbe64f3",
+      "difficulty": 3,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 우리 동네 놀이터를 고쳐야 한다.\n근거: 놀이터를 고쳐야 하기 때문이다.",
+      "answer": "주장을 근거에서 되풀이했다",
+      "distractors": [
+        "근거가 사실과 다르다",
+        "한 사람의 경험만 들었다",
+        "근거가 주장과 관계없다"
+      ],
+      "solution": [
+        "까닭이 주장과 같은 말이라 왜 고쳐야 하는지 알 수 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d101ffff0164",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 음식을 남기지 않을 만큼만 덜어 먹어야 한다.",
+      "answer": "남은 음식을 버리면 쓰레기가 늘고 음식이 낭비되기 때문이다.",
+      "distractors": [
+        "급식실 식판이 네모나기 때문이다.",
+        "오늘 반찬이 맛있기 때문이다.",
+        "숟가락이 무겁기 때문이다."
+      ],
+      "solution": [
+        "쓰레기와 낭비가 생긴다는 내용이 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d14858cb3413",
+      "difficulty": 1,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 걸어 다니면 다리 힘이 길러진다.\n근거 2: 자동차를 덜 타면 공기가 덜 더러워진다.",
+      "answer": "가까운 곳은 걸어서 다녀야 한다.",
+      "distractors": [
+        "자동차를 새로 사야 한다.",
+        "먼 곳으로 여행을 가야 한다.",
+        "운동화를 깨끗이 빨아야 한다."
+      ],
+      "solution": [
+        "두 까닭은 걷기의 좋은 점과 자동차를 덜 탈 때의 좋은 점이다. 그러므로 걸어서 다니자는 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d1a6fe5099da",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 채소를 골고루 먹어야 한다.",
+      "answer": "채소에는 몸에 필요한 영양소가 많이 들어 있기 때문이다.",
+      "distractors": [
+        "채소는 초록색이 많기 때문이다.",
+        "나는 오이를 싫어하기 때문이다.",
+        "채소 가게가 가깝기 때문이다."
+      ],
+      "solution": [
+        "몸에 필요한 영양소가 많다는 내용이 채소를 먹어야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d1e87aad520f",
+      "difficulty": 2,
+      "instruction": "다음 근거를 타당하다고 보기 어려운 까닭을 고르시오.",
+      "stem": "주장: 우리 반 모두 수학을 어려워한다.\n근거: 내가 수학을 어려워하기 때문이다.",
+      "answer": "자기 한 사람의 일만 보고 모두라고 했다",
+      "distractors": [
+        "주장과 관계없는 내용이다",
+        "주장을 그대로 되풀이했다",
+        "근거에 숫자가 들어 있다"
+      ],
+      "solution": [
+        "나 한 사람이 어렵다고 반 전체가 어려워한다고 할 수 없다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -405,6 +1830,44 @@
       }
     },
     {
+      "id": "d5e07a1789d6",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 친구에게 빌린 물건은 약속한 날에 돌려주어야 한다.",
+      "answer": "약속을 지켜야 서로 믿을 수 있기 때문이다.",
+      "distractors": [
+        "빌린 물건은 내 것이 아니기 때문이다.",
+        "친구 집이 가깝기 때문이다.",
+        "물건은 가방에 넣을 수 있기 때문이다."
+      ],
+      "solution": [
+        "서로 믿을 수 있다는 내용이 약속한 날에 돌려주어야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d631a7df0dbf",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 자전거를 탈 때는 안전모를 써야 한다.",
+      "answer": "넘어졌을 때 머리를 크게 다치는 일을 막아 주기 때문이다.",
+      "distractors": [
+        "안전모 모양이 멋있기 때문이다.",
+        "자전거 바퀴가 둥글기 때문이다.",
+        "친구가 새 자전거를 샀기 때문이다."
+      ],
+      "solution": [
+        "머리를 다치는 일을 막는다는 내용이 안전모를 써야 하는 까닭이 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "d8fd1c1b5917",
       "difficulty": 2,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -425,6 +1888,120 @@
       }
     },
     {
+      "id": "de1e981a5b6d",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학급 신문을 만들자.\n가: 우리 반 소식을 모두와 나눌 수 있기 때문이다.\n나: 기사를 쓰며 글쓰기 실력이 늘기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하지 않다"
+      ],
+      "solution": [
+        "두 사람 모두 학급 신문을 만들 때 얻는 좋은 점을 들었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e558dcf57cee",
+      "difficulty": 3,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 동물 실험 없이 만든 화장품도 많이 나와 있다.\n근거 2: 실험에 쓰이는 동물도 고통을 느낀다.",
+      "answer": "동물 실험을 하지 않은 물건을 고르자.",
+      "distractors": [
+        "화장품을 아예 쓰지 말아야 한다.",
+        "동물을 집에서 길러야 한다.",
+        "실험실을 더 많이 지어야 한다."
+      ],
+      "solution": [
+        "다른 물건이 있다는 점과 동물의 고통이라는 두 까닭이 함께 주장을 뒷받침한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6cbef30d88a",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 교실 안에서는 실내화를 신어야 한다.",
+      "answer": "실내화는 가게에서 쉽게 살 수 있기 때문이다.",
+      "distractors": [
+        "바깥 흙이 교실 바닥을 더럽히지 않기 때문이다.",
+        "바닥 먼지가 덜 일어나기 때문이다.",
+        "교실 바닥 청소가 쉬워지기 때문이다."
+      ],
+      "solution": [
+        "쉽게 살 수 있다는 것은 신어야 하는 까닭이 아니다. 나머지는 교실을 깨끗하게 하는 까닭이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eb4e934528ba",
+      "difficulty": 1,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 쓰레기는 분리해서 버려야 한다.",
+      "answer": "종이나 플라스틱을 다시 쓸 수 있게 되기 때문이다.",
+      "distractors": [
+        "쓰레기통이 교실 뒤에 있기 때문이다.",
+        "쓰레기봉투가 하얗기 때문이다.",
+        "청소 시간이 짧기 때문이다."
+      ],
+      "solution": [
+        "분리해서 버리면 다시 쓸 수 있다는 내용이 주장과 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1fcde8c217d",
+      "difficulty": 2,
+      "instruction": "두 근거를 읽고 이것이 뒷받침하는 주장을 고르시오.",
+      "stem": "근거 1: 계획을 세우면 해야 할 일을 빠뜨리지 않는다.\n근거 2: 남는 시간을 놀이에 알차게 쓸 수 있다.",
+      "answer": "방학 계획표를 세워야 한다.",
+      "distractors": [
+        "방학을 짧게 해야 한다.",
+        "방학 숙제를 없애야 한다.",
+        "방학에는 놀기만 해야 한다."
+      ],
+      "solution": [
+        "두 까닭은 계획을 세울 때의 좋은 점이다. 그러므로 계획표를 세우자는 주장이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3994257a7d5",
+      "difficulty": 2,
+      "instruction": "주장을 뒷받침하지 못하는 근거를 고르시오.",
+      "stem": "주장: 학교에 음수대를 더 놓아야 한다.",
+      "answer": "음수대는 반짝이는 쇠로 만들기 때문이다.",
+      "distractors": [
+        "쉬는 시간마다 음수대 앞에 줄이 길기 때문이다.",
+        "먼 층에 사는 학생은 물을 마시러 오래 걸어야 하기 때문이다.",
+        "물을 자주 마셔야 건강하기 때문이다."
+      ],
+      "solution": [
+        "음수대 재료는 더 놓아야 하는 까닭과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "f86138931c87",
       "difficulty": 1,
       "instruction": "주장을 뒷받침하는 타당한 근거를 고르시오.",
@@ -438,6 +2015,82 @@
       "solution": [
         "'발을 헛디뎌 크게 다칠 수 있기 때문이다.' 문장이 주장을 바로 뒷받침한다.",
         "나머지는 주장과 관계없거나 글쓴이 한 사람의 취향이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8d3d729a8c9",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학급 회의 결과를 게시판에 붙여 두어야 한다.",
+      "answer": "결정된 내용을 모두가 언제든 다시 확인할 수 있기 때문이다.",
+      "distractors": [
+        "게시판은 넓어서 많이 붙일 수 있기 때문이다.",
+        "회의는 매주 금요일에 하기 때문이다.",
+        "나는 글씨를 예쁘게 쓰기 때문이다."
+      ],
+      "solution": [
+        "모두가 결정을 다시 확인할 수 있다는 내용이 주장을 바로 뒷받침한다. 게시판이 넓다는 것은 붙일 수 있다는 말일 뿐 붙여야 하는 까닭은 아니다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f97ccdd8aa47",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 안에서 친구에게 존댓말을 쓰는 날을 정하자.",
+      "answer": "서로 존중하는 말을 쓰다 보면 다툼이 줄어들 수 있기 때문이다.",
+      "distractors": [
+        "존댓말은 반말보다 길기 때문이다.",
+        "우리 학교 학생이 많기 때문이다.",
+        "선생님께 존댓말을 쓰기 때문이다."
+      ],
+      "solution": [
+        "다툼이 줄어든다는 좋은 점이 주장을 뒷받침한다. 선생님께 존댓말을 쓴다는 것은 친구끼리 쓸 까닭이 되지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fca759a55fec",
+      "difficulty": 3,
+      "instruction": "주장을 뒷받침하는 가장 알맞은 근거를 고르시오.",
+      "stem": "주장: 학교 축제 때 일회용 접시 대신 다회용 그릇을 써야 한다.",
+      "answer": "씻어서 다시 쓰면 축제가 끝난 뒤 쓰레기가 크게 줄기 때문이다.",
+      "distractors": [
+        "다회용 그릇은 무겁고 단단하기 때문이다.",
+        "축제에는 사람이 많이 오기 때문이다.",
+        "일회용 접시는 값이 싸기 때문이다."
+      ],
+      "solution": [
+        "쓰레기가 줄어든다는 내용이 주장을 바로 뒷받침한다. 일회용 접시가 싸다는 것은 오히려 반대 쪽 까닭이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff5201e87ecc",
+      "difficulty": 3,
+      "instruction": "토론에서 두 사람이 든 근거를 읽고 알맞은 판단을 고르시오.",
+      "stem": "주장: 학교에 매점을 만들자.\n가: 우리 반 반장이 매점을 갖고 싶어 하기 때문이다.\n나: 매점 간판은 크게 만들 수 있기 때문이다.",
+      "answer": "두 사람 근거 모두 타당하지 않다",
+      "distractors": [
+        "가의 근거만 타당하다",
+        "나의 근거만 타당하다",
+        "두 사람 근거 모두 타당하다"
+      ],
+      "solution": [
+        "가의 말은 한 사람의 바람이고 나의 말은 주장과 관계가 없다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

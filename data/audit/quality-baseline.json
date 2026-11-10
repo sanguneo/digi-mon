@@ -297,7 +297,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "b401aa76e6174b1ac07ae1eab2a65b167cbddd9c3d8a99bbd781db2f42fd10f3",
+      "worksheetFingerprint": "bb019190fdf933082545343650f40922aa4243142f8ddc6b8f91373ffd18f70a",
       "standardsUsed": [
         "[2국02-02]",
         "[2국02-04]",
@@ -321,7 +321,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "045fc3e10d42cce6203cb95cc461b04051b5388004ee5ec17b6fe0ca1ad00dfa",
+      "worksheetFingerprint": "e7d8a7724065dfdc453310a49879df2604618d48bf4f4fc8d747cb26d15b1cf7",
       "standardsUsed": [
         "[2국02-02]",
         "[2국02-04]",
@@ -346,7 +346,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "b1587f85f8b922db12a237a647e6f844a3de8ac1653b39b5fce1e33b206b8ed2",
+      "worksheetFingerprint": "c72ce4d8d557eaad50ac93050936c3664d69943ab965d80ba897e61077909bdf",
       "standardsUsed": [
         "[2국02-02]",
         "[2국02-04]",
@@ -371,7 +371,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "29acc8edaf2fca7003236cb52ef2180af11aa1327e9a8bbdffe9036a3dd3864f",
+      "worksheetFingerprint": "2414e5030e635bda9e237d3c6bd3e202ed3e5e7ae911fab92a887103950b301a",
       "standardsUsed": [
         "[4국02-04]",
         "[4국03-02]",
@@ -397,7 +397,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "84083e14e31ef793f483e73f75699e4d17803996e1cd68700365f5b9b65e4a13",
+      "worksheetFingerprint": "bb26b919b5afcef85093096e0a18a958830abc944c4ad2ccf3ec1dfea6c0cc20",
       "standardsUsed": [
         "[4국02-04]",
         "[4국03-02]",
@@ -423,7 +423,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "e41d02dd586e851371178991fa249628259095da1f716cb39144951c43ab2a2b",
+      "worksheetFingerprint": "e0f3b86f65b032a24a83c8ccdd15867e25a4161e33dc0e359253a1fcf78512d3",
       "standardsUsed": [
         "[4국02-04]",
         "[4국03-02]",
@@ -435,8 +435,7 @@
         "[4국05-04]"
       ],
       "difficultyHistogram": {
-        "1": 2,
-        "3": 8
+        "3": 10
       }
     },
     {
@@ -450,7 +449,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "699be5a579c0a26e74dae57fae3d096b71302a251465ef549d9ea4e155c0caa3",
+      "worksheetFingerprint": "a23aa52e1f0ba39f5b95c570cc1fac558833033f97d50ee07021385697126ed1",
       "standardsUsed": [
         "[6국01-01]",
         "[6국01-02]",
@@ -477,7 +476,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "7d3a6b62bc5f1e470e08629482dc1e9904712b488905de700bd56c84d026a6d5",
+      "worksheetFingerprint": "ebada99366075236b6716e6cd6f959b8dd9fe9623a117ca40f5eceb87c5c22fa",
       "standardsUsed": [
         "[6국01-01]",
         "[6국01-02]",
@@ -505,7 +504,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "a88d2a5cacbac272f34878cefe0dada059d8e41fcc57c9129731f0eae955c4f6",
+      "worksheetFingerprint": "a5ef79e44b0109e662d92f8bf3c948d34e26b75d0bd962826d1388cc0cb54c13",
       "standardsUsed": [
         "[6국01-01]",
         "[6국01-02]",
@@ -533,7 +532,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "d8e590064058c0ead93b5b4405bd567e8a9cbc7f73888f6a4afb28e6f7330ea6",
+      "worksheetFingerprint": "c80439c077b7303615d66baaf7ba0c7b6879d7aea412a270e0484ecb2cea0e0c",
       "standardsUsed": [
         "[4영01-02]",
         "[4영01-05]",
@@ -556,7 +555,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "4e682b03c2bc1b430544f4348ea202d874b08ec7512b3f8c3334c8fbd888b3a4",
+      "worksheetFingerprint": "bcc6ed886dcbfe7b58b213da90ca0ea4deefcff56708068650af6a4aa443c225",
       "standardsUsed": [
         "[4영01-02]",
         "[4영01-05]",
@@ -565,8 +564,8 @@
         "[4영02-08]"
       ],
       "difficultyHistogram": {
-        "1": 3,
-        "2": 7
+        "1": 2,
+        "2": 8
       }
     },
     {
@@ -580,7 +579,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "04e090cd959783c85fbd18234d2615510ecf565faf7168ccf50334acd21c5454",
+      "worksheetFingerprint": "43db1ed05449a6686e63859159efa35f1f7ba5864fd7dc7fd11d183d8b0e41f2",
       "standardsUsed": [
         "[4영01-02]",
         "[4영01-05]",
@@ -589,8 +588,8 @@
         "[4영02-08]"
       ],
       "difficultyHistogram": {
-        "1": 1,
-        "3": 9
+        "1": 2,
+        "3": 8
       }
     },
     {
@@ -604,7 +603,7 @@
         "count": 10,
         "difficulty": 1
       },
-      "worksheetFingerprint": "2f649ab6e3747cdb7adf93998bb5920b605ce917781eef50505476047b2e8f85",
+      "worksheetFingerprint": "eb7ea93b4092feef8157ba0e855034e8d7591c6f7e90c7c434f784ca6afd58a2",
       "standardsUsed": [
         "[6영02-03]",
         "[6영02-04]",
@@ -626,7 +625,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "cf7b85bb7ba91ac422e56fa2a221e0ff39402588bf2d49d301937bb5449c7a80",
+      "worksheetFingerprint": "4cc2a79a17bd7d8f42e2d247069975020fa51aca412c69b7df855113c2252f04",
       "standardsUsed": [
         "[6영02-03]",
         "[6영02-04]",
@@ -649,7 +648,7 @@
         "count": 10,
         "difficulty": 3
       },
-      "worksheetFingerprint": "2aced6c6bd3f9c6d493a7fb6125d3bd02bc65bfe0908f3ff868942cc586e519f",
+      "worksheetFingerprint": "825e1a0a87e87b53b5d12b5db9ca936ea06a9b9e2f0f6876906f3914187f0a1f",
       "standardsUsed": [
         "[6영02-03]",
         "[6영02-04]",
@@ -662,5 +661,5 @@
       }
     }
   ],
-  "fingerprint": "dbb18d82668c5e7c56cb855fd13945fe05fd40bcc5b9434835ea05a4770638f5"
+  "fingerprint": "68035d39fb93a0f690c1911f795d493907ab522351ad1555ab46c4577d07a42d"
 }

@@ -5,6 +5,25 @@
   "skill": "단어 사이의 의미 관계 파악",
   "items": [
     {
+      "id": "024268ed0a29",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'가늘다'",
+      "answer": "굵다",
+      "distractors": [
+        "짧다",
+        "작다",
+        "얇다"
+      ],
+      "solution": [
+        "'가늘다'의 뜻과 맞서는 낱말은 '굵다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "1460bcfdb59d",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -24,10 +43,48 @@
       }
     },
     {
+      "id": "154432e37114",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'가깝다'",
+      "answer": "멀다",
+      "distractors": [
+        "넓다",
+        "작다",
+        "밝다"
+      ],
+      "solution": [
+        "'가깝다'의 뜻과 맞서는 낱말은 '멀다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "165d7f6aac6a",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
       "stem": "'걱정'과 '근심'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "185781a7602e",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'아버지'와 '아빠'",
       "answer": "뜻이 서로 비슷한 관계",
       "distractors": [
         "뜻이 서로 반대인 관계",
@@ -55,6 +112,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23399e31152e",
+      "difficulty": 3,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'계절'",
+      "answer": "겨울",
+      "distractors": [
+        "아침",
+        "저녁",
+        "내일"
+      ],
+      "solution": [
+        "'겨울'은 계절에 들어가는 한 가지다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -100,6 +176,44 @@
       }
     },
     {
+      "id": "24b8a6d05109",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'열다'와 '닫다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "28d8395b2bf5",
+      "difficulty": 3,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'낡다'",
+      "answer": "새롭다",
+      "distractors": [
+        "좋다",
+        "예쁘다",
+        "착하다"
+      ],
+      "solution": [
+        "'낡다'의 뜻과 맞서는 낱말은 '새롭다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "290683b04591",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -138,6 +252,25 @@
       }
     },
     {
+      "id": "2b89fb7e8b04",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'기르다'와 '키우다'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "2e5a6406b610",
       "difficulty": 1,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -150,6 +283,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "30b1e27c1605",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'좁다'",
+      "answer": "넓다",
+      "distractors": [
+        "크다",
+        "높다",
+        "길다"
+      ],
+      "solution": [
+        "'좁다'의 뜻과 맞서는 낱말은 '넓다'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -176,6 +328,82 @@
       }
     },
     {
+      "id": "30d2eb5dd52a",
+      "difficulty": 2,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'날씨'",
+      "answer": "안개",
+      "distractors": [
+        "연필",
+        "의자",
+        "접시"
+      ],
+      "solution": [
+        "'안개'는 날씨에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "351b79d420f7",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'참다'와 '견디다'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35fb8a02fe7a",
+      "difficulty": 3,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'얇다'",
+      "answer": "두껍다",
+      "distractors": [
+        "굵다",
+        "무겁다",
+        "크다"
+      ],
+      "solution": [
+        "'얇다'의 뜻과 맞서는 낱말은 '두껍다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39cb1434124a",
+      "difficulty": 1,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'당근', '오이', '배추'",
+      "answer": "채소",
+      "distractors": [
+        "과일",
+        "동물",
+        "계절"
+      ],
+      "solution": [
+        "당근, 오이, 배추는 모두 채소에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "4033e001822f",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -188,6 +416,44 @@
       ],
       "solution": [
         "'장미'는 '꽃'의 한 가지이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4916e7875805",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'나라'와 '국가'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "49df3768c0c8",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'오르다'와 '내리다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -214,6 +480,139 @@
       }
     },
     {
+      "id": "4d2d49c05119",
+      "difficulty": 2,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'의자', '책상', '옷장'",
+      "answer": "가구",
+      "distractors": [
+        "학용품",
+        "음식",
+        "과일"
+      ],
+      "solution": [
+        "의자, 책상, 옷장은 모두 가구에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4f81bac4f366",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'있다'",
+      "answer": "없다",
+      "distractors": [
+        "같다",
+        "좋다",
+        "작다"
+      ],
+      "solution": [
+        "'있다'의 뜻과 맞서는 낱말은 '없다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54e7066c0bb4",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '덥다'와 '춥다'",
+      "answer": "'위'와 '아래'",
+      "distractors": [
+        "'꽃'과 '장미'",
+        "'아이'와 '어린이'",
+        "'연필'과 '바다'"
+      ],
+      "solution": [
+        "보기와 '위'와 '아래'는 모두 뜻이 서로 반대인 관계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "576c46f871d4",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'낮'과 '밤'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "58ee76d83926",
+      "difficulty": 3,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'이르다'",
+      "answer": "늦다",
+      "distractors": [
+        "느리다",
+        "멀다",
+        "적다"
+      ],
+      "solution": [
+        "'이르다'의 뜻과 맞서는 낱말은 '늦다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c1bdec49079",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '높다'와 '낮다'",
+      "answer": "'넓다'와 '좁다'",
+      "distractors": [
+        "'높다'와 '크다'",
+        "'음식'과 '밥'",
+        "'곱다'와 '예쁘다'"
+      ],
+      "solution": [
+        "보기와 '넓다'와 '좁다'는 모두 뜻이 서로 반대인 관계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f5f4603d72f",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'바람'과 '책'",
+      "answer": "뜻이 서로 관계없는 사이",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계"
+      ],
+      "solution": [
+        "바람과 책은 뜻이 비슷하지도 반대이지도 않고 서로 포함하지도 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "63ca6845baec",
       "difficulty": 1,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -226,6 +625,63 @@
       ],
       "solution": [
         "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "64b5dfa1f8a9",
+      "difficulty": 1,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'곤충'",
+      "answer": "잠자리",
+      "distractors": [
+        "참새",
+        "거북",
+        "금붕어"
+      ],
+      "solution": [
+        "'잠자리'는 곤충에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ae5557c6a1a",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '걱정'과 '근심'",
+      "answer": "'친구'와 '동무'",
+      "distractors": [
+        "'앞'과 '뒤'",
+        "'새'와 '참새'",
+        "'책상'과 '바다'"
+      ],
+      "solution": [
+        "보기와 '친구'와 '동무'는 모두 뜻이 서로 비슷한 관계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b5715d7c337",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '말하다'와 '이야기하다'",
+      "answer": "'고치다'와 '수리하다'",
+      "distractors": [
+        "'말하다'와 '듣다'",
+        "'가구'와 '침대'",
+        "'고치다'와 '구름'"
+      ],
+      "solution": [
+        "보기와 '고치다'와 '수리하다'는 모두 뜻이 서로 비슷한 관계다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -271,6 +727,25 @@
       }
     },
     {
+      "id": "6caca1b7bb37",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'과일'과 '포도'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'포도'는 '과일'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "6e39f5d72add",
       "difficulty": 1,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -290,6 +765,25 @@
       }
     },
     {
+      "id": "6f148e6052e5",
+      "difficulty": 2,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'어머니', '아버지', '동생'",
+      "answer": "가족",
+      "distractors": [
+        "친구",
+        "이웃",
+        "학생"
+      ],
+      "solution": [
+        "어머니, 아버지, 동생은 모두 가족에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "701e6a852ef3",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -302,6 +796,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "714c6911234a",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'빠르다'",
+      "answer": "느리다",
+      "distractors": [
+        "늦다",
+        "작다",
+        "약하다"
+      ],
+      "solution": [
+        "'빠르다'의 뜻과 맞서는 낱말은 '느리다'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -385,6 +898,101 @@
       }
     },
     {
+      "id": "7c448d63a0c8",
+      "difficulty": 1,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'봄', '여름', '가을'",
+      "answer": "계절",
+      "distractors": [
+        "날씨",
+        "음식",
+        "색"
+      ],
+      "solution": [
+        "봄, 여름, 가을은 모두 계절에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "808a16c2cea1",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'우산'과 '토끼'",
+      "answer": "뜻이 서로 관계없는 사이",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계"
+      ],
+      "solution": [
+        "우산과 토끼는 뜻이 비슷하지도 반대이지도 않고 서로 포함하지도 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "83450cb9c86e",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'사과'와 '자동차'",
+      "answer": "뜻이 서로 관계없는 사이",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계"
+      ],
+      "solution": [
+        "사과와 자동차는 뜻이 비슷하지도 반대이지도 않고 서로 포함하지도 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "85335454b978",
+      "difficulty": 1,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'개미', '나비', '메뚜기'",
+      "answer": "곤충",
+      "distractors": [
+        "식물",
+        "과일",
+        "채소"
+      ],
+      "solution": [
+        "개미, 나비, 메뚜기는 모두 곤충에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "853ff48d9b56",
+      "difficulty": 3,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'비', '눈', '바람'",
+      "answer": "날씨",
+      "distractors": [
+        "계절",
+        "음식",
+        "동물"
+      ],
+      "solution": [
+        "비, 눈, 바람은 모두 날씨에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "87083fc1ccd3",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -397,6 +1005,25 @@
       ],
       "solution": [
         "'김밥'은 '음식'의 한 가지이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "87fec2233c8d",
+      "difficulty": 1,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'채소'",
+      "answer": "고추",
+      "distractors": [
+        "사과",
+        "딸기",
+        "수박"
+      ],
+      "solution": [
+        "'고추'는 채소에 들어가는 한 가지다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -461,6 +1088,25 @@
       }
     },
     {
+      "id": "8a30216afbd1",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'무겁다'",
+      "answer": "가볍다",
+      "distractors": [
+        "크다",
+        "높다",
+        "길다"
+      ],
+      "solution": [
+        "'무겁다'의 뜻과 맞서는 낱말은 '가볍다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "8a9ba881a48d",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -473,6 +1119,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8ad8eedcc47e",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'깊다'",
+      "answer": "얕다",
+      "distractors": [
+        "낮다",
+        "짧다",
+        "얇다"
+      ],
+      "solution": [
+        "'깊다'의 뜻과 맞서는 낱말은 '얕다'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -537,6 +1202,101 @@
       }
     },
     {
+      "id": "8feaf586f796",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'신발'과 '구름'",
+      "answer": "뜻이 서로 관계없는 사이",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계"
+      ],
+      "solution": [
+        "신발과 구름은 뜻이 비슷하지도 반대이지도 않고 서로 포함하지도 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90b8268bb4a5",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '과일'과 '사과'",
+      "answer": "'동물'과 '토끼'",
+      "distractors": [
+        "'크다'와 '작다'",
+        "'까닭'과 '이유'",
+        "'모자'와 '구름'"
+      ],
+      "solution": [
+        "보기와 '동물'과 '토끼'는 모두 한 낱말이 다른 낱말을 포함하는 관계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90e62ee0161c",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'그릇'과 '접시'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'접시'는 '그릇'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "92ca38eb4264",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'기쁘다'와 '슬프다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "939f6a825aa0",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'모두'와 '전부'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "94f254ae4814",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -549,6 +1309,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "983e07c62163",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계가 보기와 같은 것을 고르시오.",
+      "stem": "보기: '곤충'과 '나비'",
+      "answer": "'채소'와 '배추'",
+      "distractors": [
+        "'나비'와 '벌'",
+        "'배추'와 '무'",
+        "'곤충'과 '동무'"
+      ],
+      "solution": [
+        "보기와 '채소'와 '배추'는 모두 한 낱말이 다른 낱말을 포함하는 관계다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -575,6 +1354,25 @@
       }
     },
     {
+      "id": "9c529c2fadae",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'계절'과 '겨울'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'겨울'은 '계절'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "9d6bfe63d4e0",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -587,6 +1385,63 @@
       ],
       "solution": [
         "연필과 바다는 뜻에서 서로 이어지는 점이 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f8c3a19a9a6",
+      "difficulty": 2,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'과일'",
+      "answer": "딸기",
+      "distractors": [
+        "배추",
+        "마늘",
+        "당근"
+      ],
+      "solution": [
+        "'딸기'는 과일에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fb0c8b3644c",
+      "difficulty": 1,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'학용품'",
+      "answer": "공책",
+      "distractors": [
+        "두부",
+        "오이",
+        "장갑"
+      ],
+      "solution": [
+        "'공책'은 학용품에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fb22f35055b",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'악기'와 '북'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'북'은 '악기'에 들어가는 한 가지다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -613,6 +1468,63 @@
       }
     },
     {
+      "id": "a32b81a136c3",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'새롭다'와 '낡다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a73d316f04c0",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'가끔'과 '때때로'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa9dfce86347",
+      "difficulty": 2,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'토끼', '여우', '다람쥐'",
+      "answer": "동물",
+      "distractors": [
+        "식물",
+        "곤충",
+        "채소"
+      ],
+      "solution": [
+        "토끼, 여우, 다람쥐는 모두 동물에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "b18e14ea1b3e",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -625,6 +1537,44 @@
       ],
       "solution": [
         "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b368aa75d1b1",
+      "difficulty": 2,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'빨강', '노랑', '파랑'",
+      "answer": "색",
+      "distractors": [
+        "계절",
+        "과일",
+        "날씨"
+      ],
+      "solution": [
+        "빨강, 노랑, 파랑은 모두 색에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3b3ee911eef",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'길다'",
+      "answer": "짧다",
+      "distractors": [
+        "좁다",
+        "낮다",
+        "얕다"
+      ],
+      "solution": [
+        "'길다'의 뜻과 맞서는 낱말은 '짧다'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -689,10 +1639,86 @@
       }
     },
     {
+      "id": "ba7b171514e7",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'밝다'",
+      "answer": "어둡다",
+      "distractors": [
+        "무섭다",
+        "슬프다",
+        "춥다"
+      ],
+      "solution": [
+        "'밝다'의 뜻과 맞서는 낱말은 '어둡다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd3fbf1b685a",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'강하다'",
+      "answer": "약하다",
+      "distractors": [
+        "착하다",
+        "크다",
+        "높다"
+      ],
+      "solution": [
+        "'강하다'의 뜻과 맞서는 낱말은 '약하다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "beb278b15ac6",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'부드럽다'와 '거칠다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "c09116f614cf",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
       "stem": "'이르다'와 '늦다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c0f477ec5fcd",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'이기다'와 '지다'",
       "answer": "뜻이 서로 반대인 관계",
       "distractors": [
         "뜻이 서로 비슷한 관계",
@@ -765,6 +1791,44 @@
       }
     },
     {
+      "id": "c87898c4e8f3",
+      "difficulty": 2,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'가족'",
+      "answer": "누나",
+      "distractors": [
+        "친구",
+        "이웃",
+        "선생님"
+      ],
+      "solution": [
+        "'누나'는 가족에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "caf5903b31bd",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'신발'과 '구두'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'구두'는 '신발'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "cb17eb8ae37f",
       "difficulty": 3,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -788,6 +1852,82 @@
       "difficulty": 1,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
       "stem": "'크다'와 '작다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc2ead2064b0",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'뜨겁다'",
+      "answer": "차갑다",
+      "distractors": [
+        "춥다",
+        "어둡다",
+        "약하다"
+      ],
+      "solution": [
+        "'뜨겁다'의 뜻과 맞서는 낱말은 '차갑다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ceba0906f238",
+      "difficulty": 3,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'가족'과 '동생'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'동생'은 '가족'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d26136d10784",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'부엌'과 '주방'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d5f54144a05a",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'입다'와 '벗다'",
       "answer": "뜻이 서로 반대인 관계",
       "distractors": [
         "뜻이 서로 비슷한 관계",
@@ -841,6 +1981,25 @@
       }
     },
     {
+      "id": "da386b804e98",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'주다'와 '받다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "dce524f11420",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -853,6 +2012,25 @@
       ],
       "solution": [
         "'당근'은 '채소'의 한 가지이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e57d9b67dd7e",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'채소'와 '오이'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'오이'는 '채소'에 들어가는 한 가지다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -879,6 +2057,139 @@
       }
     },
     {
+      "id": "ea91a51c06c7",
+      "difficulty": 2,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'연필', '지우개', '공책'",
+      "answer": "학용품",
+      "distractors": [
+        "가구",
+        "채소",
+        "음식"
+      ],
+      "solution": [
+        "연필, 지우개, 공책은 모두 학용품에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec42f3368cac",
+      "difficulty": 1,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'많다'",
+      "answer": "적다",
+      "distractors": [
+        "작다",
+        "짧다",
+        "좁다"
+      ],
+      "solution": [
+        "'많다'의 뜻과 맞서는 낱말은 '적다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eceb68b1f0f1",
+      "difficulty": 1,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'쉽다'와 '어렵다'",
+      "answer": "뜻이 서로 반대인 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ed2981059ed8",
+      "difficulty": 1,
+      "instruction": "다음 낱말들을 모두 포함하는 낱말을 고르시오.",
+      "stem": "'귤', '수박', '포도'",
+      "answer": "과일",
+      "distractors": [
+        "채소",
+        "곤충",
+        "가구"
+      ],
+      "solution": [
+        "귤, 수박, 포도는 모두 과일에 들어간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1091e2e4a3e",
+      "difficulty": 2,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'새'",
+      "answer": "까치",
+      "distractors": [
+        "개미",
+        "나비",
+        "거미"
+      ],
+      "solution": [
+        "'까치'는 새에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f20c55ed93b1",
+      "difficulty": 3,
+      "instruction": "다음 낱말에 포함되는 낱말을 고르시오.",
+      "stem": "'색'",
+      "answer": "주황",
+      "distractors": [
+        "무늬",
+        "모양",
+        "소리"
+      ],
+      "solution": [
+        "'주황'은 색에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3f67f9ec291",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'운동'과 '수영'",
+      "answer": "한 낱말이 다른 낱말을 포함하는 관계",
+      "distractors": [
+        "뜻이 서로 비슷한 관계",
+        "뜻이 서로 반대인 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "'수영'은 '운동'에 들어가는 한 가지다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "f749ec3210f1",
       "difficulty": 2,
       "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
@@ -891,6 +2202,25 @@
       ],
       "solution": [
         "'바지'는 '옷'의 한 가지이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f91e4366aff8",
+      "difficulty": 2,
+      "instruction": "다음 낱말과 뜻이 반대인 낱말을 고르시오.",
+      "stem": "'거칠다'",
+      "answer": "부드럽다",
+      "distractors": [
+        "무섭다",
+        "차갑다",
+        "느리다"
+      ],
+      "solution": [
+        "'거칠다'의 뜻과 맞서는 낱말은 '부드럽다'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -929,6 +2259,25 @@
       ],
       "solution": [
         "두 낱말은 뜻이 서로 맞선다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff802fe83e02",
+      "difficulty": 2,
+      "instruction": "두 낱말의 관계로 알맞은 것을 고르시오.",
+      "stem": "'이'와 '치아'",
+      "answer": "뜻이 서로 비슷한 관계",
+      "distractors": [
+        "뜻이 서로 반대인 관계",
+        "한 낱말이 다른 낱말을 포함하는 관계",
+        "뜻이 서로 관계없는 사이"
+      ],
+      "solution": [
+        "두 낱말은 뜻이 비슷해서 바꾸어 써도 뜻이 크게 달라지지 않는다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

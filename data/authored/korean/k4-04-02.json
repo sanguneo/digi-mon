@@ -1,0 +1,2499 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국04-02]",
+  "skill": "단어 분류와 국어사전 활용",
+  "items": [
+    {
+      "id": "00f3809bd9b8",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "바위, 바구니, 바지, 바다",
+      "answer": "바지",
+      "distractors": [
+        "바위",
+        "바구니",
+        "바다"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자부터 견준다.",
+        "그래서 바지가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "01bb7871a4d1",
+      "difficulty": 2,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "오래 걸었더니 다리가 아픕니다.",
+      "answer": "사람이나 동물의 몸통 아래에 붙어 걷는 데 쓰는 부분",
+      "distractors": [
+        "물을 건너갈 수 있게 양쪽을 이어 놓은 것",
+        "물건의 아래에 붙어 몸체를 받치는 부분",
+        "강물이 흘러가는 길"
+      ],
+      "solution": [
+        "오래 걸어서 아픈 곳이므로 몸의 한 부분인 다리이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "03a7b88bd5d7",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "모래, 무늬, 머리, 마을",
+      "answer": "무늬",
+      "distractors": [
+        "모래",
+        "머리",
+        "마을"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 무늬가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "03dc7bfa01fc",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 자음자를 고르시오.",
+      "stem": "ㅋ, ㅌ, ㅍ, ㄷ",
+      "answer": "ㄷ",
+      "distractors": [
+        "ㅋ",
+        "ㅌ",
+        "ㅍ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "05bf61322fac",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "수박, 수건, 수학, 수확",
+      "answer": "수건",
+      "distractors": [
+        "수박",
+        "수학",
+        "수확"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 수건이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "06166cae4de8",
+      "difficulty": 1,
+      "instruction": "국어사전에서 '지구'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "참새, 사탕, 토마토, 필통",
+      "answer": "사탕",
+      "distractors": [
+        "참새",
+        "토마토",
+        "필통"
+      ],
+      "solution": [
+        "사탕이 '지구'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "06fe41a7745c",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "버스, 기차, 자전거, 비행기",
+      "answer": "자전거",
+      "distractors": [
+        "버스",
+        "기차",
+        "비행기"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 자전거가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "07cac9b3d660",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "포도, 거울, 사탕, 나비",
+      "answer": "거울",
+      "distractors": [
+        "포도",
+        "사탕",
+        "나비"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 거울이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "08910b953e63",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'슬퍼서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "슬프다",
+      "distractors": [
+        "기쁘다",
+        "아프다",
+        "예쁘다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'슬퍼서'의 기본형은 '슬프다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0b3b3236a541",
+      "difficulty": 3,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "할머니께서 따뜻한 차를 드십니다.",
+      "answer": "잎이나 열매를 우려서 마시는 물",
+      "distractors": [
+        "바퀴를 굴려 사람이나 짐을 나르는 것",
+        "두 수를 뺀 나머지",
+        "장기에서 쓰는 말 가운데 하나"
+      ],
+      "solution": [
+        "따뜻하게 마시는 것이므로 잎이나 열매를 우린 차이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "107d2060f157",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "항아리, 거북, 다람쥐, 연못",
+      "answer": "거북",
+      "distractors": [
+        "항아리",
+        "다람쥐",
+        "연못"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 거북이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "124396133fd9",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "우체통, 우체국, 우표, 우리",
+      "answer": "우표",
+      "distractors": [
+        "우체통",
+        "우체국",
+        "우리"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자부터 견준다.",
+        "그래서 우표가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "18282d5d3c92",
+      "difficulty": 3,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "작다, 자다, 슬프다, 착하다",
+      "answer": "자다",
+      "distractors": [
+        "작다",
+        "슬프다",
+        "착하다"
+      ],
+      "solution": [
+        "'자다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "198319eebb36",
+      "difficulty": 3,
+      "instruction": "국어사전에서 '우산'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "우유, 우리, 우체국, 우표",
+      "answer": "우리",
+      "distractors": [
+        "우유",
+        "우체국",
+        "우표"
+      ],
+      "solution": [
+        "우리가 '우산'보다 앞에 실린다.",
+        "첫째 글자가 같아서 둘째 글자부터 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1a37d159cc66",
+      "difficulty": 2,
+      "instruction": "국어사전에서 '사과'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "수박, 바지, 오리, 지구",
+      "answer": "바지",
+      "distractors": [
+        "수박",
+        "오리",
+        "지구"
+      ],
+      "solution": [
+        "바지가 '사과'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1eb2efa06f84",
+      "difficulty": 3,
+      "instruction": "국어사전의 모음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅜ' 다음에 실리는 모음자를 찾습니다.",
+      "answer": "ㅝ",
+      "distractors": [
+        "ㅠ",
+        "ㅡ",
+        "ㅟ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1fabc50601a3",
+      "difficulty": 1,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'추워서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "춥다",
+      "distractors": [
+        "덥다",
+        "뜨겁다",
+        "차갑다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'추워서'의 기본형은 '춥다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "22750c8a68d3",
+      "difficulty": 3,
+      "instruction": "국어사전의 자음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅅ' 다음에 실리는 자음자를 찾습니다.",
+      "answer": "ㅆ",
+      "distractors": [
+        "ㅇ",
+        "ㅈ",
+        "ㅊ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "22836e260076",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "아기, 아침, 아버지, 아이",
+      "answer": "아기",
+      "distractors": [
+        "아침",
+        "아버지",
+        "아이"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 아기가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "236fcc6b4212",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 모음자를 고르시오.",
+      "stem": "ㅗ, ㅏ, ㅜ, ㅣ",
+      "answer": "ㅏ",
+      "distractors": [
+        "ㅗ",
+        "ㅜ",
+        "ㅣ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "25dc1f217e27",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "도마, 두부, 다리, 동생",
+      "answer": "다리",
+      "distractors": [
+        "도마",
+        "두부",
+        "동생"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 다리가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "288858bde4e5",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "연필, 구름, 바다, 접시",
+      "answer": "구름",
+      "distractors": [
+        "연필",
+        "바다",
+        "접시"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 구름이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29aeb07032e6",
+      "difficulty": 2,
+      "instruction": "나머지 셋과 종류가 다른 낱말을 고르시오.",
+      "stem": "구름, 하늘, 춥다, 바다",
+      "answer": "춥다",
+      "distractors": [
+        "구름",
+        "하늘",
+        "바다"
+      ],
+      "solution": [
+        "'춥다'는 날씨의 성질을 나타내고 나머지는 이름을 나타낸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2cc673e7cce0",
+      "difficulty": 1,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "밤이 되자 하늘에 별이 떴습니다.",
+      "answer": "해가 진 뒤부터 다음 날 해가 뜨기 전까지",
+      "distractors": [
+        "가시 많은 껍질 속에 든 밤나무의 열매",
+        "하루를 셀 때 쓰는 말",
+        "어두운 곳을 밝히는 불"
+      ],
+      "solution": [
+        "별이 뜨는 때이므로 해가 진 뒤의 밤이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2cef383e69b8",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "토끼, 하늘, 모자, 단추",
+      "answer": "단추",
+      "distractors": [
+        "토끼",
+        "하늘",
+        "모자"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 단추가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2da737deb255",
+      "difficulty": 2,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "동생이 졸린 눈을 비볐습니다.",
+      "answer": "사물을 보는 몸의 한 부분",
+      "distractors": [
+        "겨울에 하늘에서 내리는 하얀 얼음 알갱이",
+        "식물의 싹이 처음 트는 자리",
+        "자나 저울에 길이나 무게를 표시한 금"
+      ],
+      "solution": [
+        "졸려서 비비는 눈이므로 몸의 한 부분이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "345dff65ed04",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "오리, 우유, 아기, 여우",
+      "answer": "아기",
+      "distractors": [
+        "오리",
+        "우유",
+        "여우"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 아기가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3466109fbeb7",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "소방서, 경찰서, 병원, 시장",
+      "answer": "시장",
+      "distractors": [
+        "소방서",
+        "경찰서",
+        "병원"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 시장이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "377a5218c34b",
+      "difficulty": 2,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "목장에서 말이 힘차게 달립니다.",
+      "answer": "목에 갈기가 있고 빨리 달리는 짐승",
+      "distractors": [
+        "사람이 생각이나 느낌을 소리로 나타낸 것",
+        "곡식의 양을 재는 그릇",
+        "윷놀이에서 판 위에 놓고 옮기는 조각"
+      ],
+      "solution": [
+        "목장에서 힘차게 달리므로 짐승인 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a000dd79d31",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 자음자를 고르시오.",
+      "stem": "ㅂ, ㅅ, ㄹ, ㅇ",
+      "answer": "ㄹ",
+      "distractors": [
+        "ㅂ",
+        "ㅅ",
+        "ㅇ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3bd7d5e952a2",
+      "difficulty": 3,
+      "instruction": "국어사전의 자음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅈ' 다음에 실리는 자음자를 찾습니다.",
+      "answer": "ㅉ",
+      "distractors": [
+        "ㅊ",
+        "ㅅ",
+        "ㅋ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40d64319bf4f",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "나무, 구름, 바람, 햇살",
+      "answer": "햇살",
+      "distractors": [
+        "나무",
+        "구름",
+        "바람"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 햇살이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4199cf25108e",
+      "difficulty": 2,
+      "instruction": "이름을 나타내는 낱말을 고르시오.",
+      "stem": "느리다, 거북, 보다, 깊다",
+      "answer": "거북",
+      "distractors": [
+        "느리다",
+        "보다",
+        "깊다"
+      ],
+      "solution": [
+        "'거북'은 이름을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "450284735c49",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "딸기, 포도, 수박, 귤",
+      "answer": "포도",
+      "distractors": [
+        "딸기",
+        "수박",
+        "귤"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 포도가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4546e32a35ac",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'앉았습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "앉다",
+      "distractors": [
+        "앉아서",
+        "많다",
+        "없다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'앉았습니다'의 기본형은 '앉다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "487ec570c2b2",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "모자, 모래, 모양, 모종",
+      "answer": "모래",
+      "distractors": [
+        "모자",
+        "모양",
+        "모종"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 모래가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ea0925e6337",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "바다, 바람, 바지, 바위",
+      "answer": "바다",
+      "distractors": [
+        "바람",
+        "바지",
+        "바위"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 바다가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4fc628e7c180",
+      "difficulty": 1,
+      "instruction": "모양이나 성질을 나타내는 낱말을 고르시오.",
+      "stem": "읽다, 무겁다, 앉다, 말하다",
+      "answer": "무겁다",
+      "distractors": [
+        "읽다",
+        "앉다",
+        "말하다"
+      ],
+      "solution": [
+        "'무겁다'는 모양이나 성질을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5727942770be",
+      "difficulty": 2,
+      "instruction": "국어사전을 알맞게 활용하는 방법을 고르시오.",
+      "stem": "국어사전에서 '눈'을 찾았더니 번호가 붙은 낱말이 여러 개 나옵니다.",
+      "answer": "문장에 알맞은 뜻을 골라 읽습니다.",
+      "distractors": [
+        "가장 먼저 나온 뜻만 읽습니다.",
+        "번호가 큰 뜻만 골라 읽습니다.",
+        "뜻풀이를 읽지 않고 넘어갑니다."
+      ],
+      "solution": [
+        "소리가 같아도 뜻이 다른 낱말이 있으므로 문장에 맞는 뜻을 골라야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5ab36474a5c0",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'어두워서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "어둡다",
+      "distractors": [
+        "어렵다",
+        "얇다",
+        "얕다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'어두워서'의 기본형은 '어둡다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5d104cbb853a",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "창문, 우산, 냉장고, 필통",
+      "answer": "냉장고",
+      "distractors": [
+        "창문",
+        "우산",
+        "필통"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 냉장고가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5fad4e5522a6",
+      "difficulty": 2,
+      "instruction": "나머지 셋과 종류가 다른 낱말을 고르시오.",
+      "stem": "덥다, 쉽다, 읽다, 깊다",
+      "answer": "읽다",
+      "distractors": [
+        "덥다",
+        "쉽다",
+        "깊다"
+      ],
+      "solution": [
+        "'읽다'는 움직임을 나타내고 나머지는 모양이나 성질을 나타낸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "61ea1adfa200",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "사탕, 수건, 세상, 소리",
+      "answer": "사탕",
+      "distractors": [
+        "수건",
+        "세상",
+        "소리"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 사탕이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "632b7924dae7",
+      "difficulty": 1,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "밤새 눈이 내려 마당이 하얗습니다.",
+      "answer": "겨울에 하늘에서 내리는 하얀 얼음 알갱이",
+      "distractors": [
+        "사물을 보는 몸의 한 부분",
+        "식물의 싹이 처음 트는 자리",
+        "자나 저울에 길이나 무게를 표시한 금"
+      ],
+      "solution": [
+        "하늘에서 내려 마당이 하얘졌으므로 겨울에 내리는 눈이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "673ad9b29ddd",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "의자, 칠판, 마당, 학교",
+      "answer": "마당",
+      "distractors": [
+        "의자",
+        "칠판",
+        "학교"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 마당이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6807c0b3dd4e",
+      "difficulty": 3,
+      "instruction": "국어사전에서 '고양이'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "고추, 고기, 골목, 곰",
+      "answer": "고기",
+      "distractors": [
+        "고추",
+        "골목",
+        "곰"
+      ],
+      "solution": [
+        "고기가 '고양이'보다 앞에 실린다.",
+        "첫째 글자가 같아서 둘째 글자부터 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6997ed56df1f",
+      "difficulty": 1,
+      "instruction": "국어사전에서 '모자'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "버스, 거울, 오리, 토끼",
+      "answer": "거울",
+      "distractors": [
+        "버스",
+        "오리",
+        "토끼"
+      ],
+      "solution": [
+        "거울이 '모자'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6f193ea15000",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "가방, 가위, 가족, 가을",
+      "answer": "가방",
+      "distractors": [
+        "가위",
+        "가족",
+        "가을"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 가방이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6f2027f18c7e",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "사과, 학교, 연필, 바다",
+      "answer": "학교",
+      "distractors": [
+        "사과",
+        "연필",
+        "바다"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 학교가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6fd65bbf4563",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "수박, 오리, 지붕, 기차",
+      "answer": "기차",
+      "distractors": [
+        "수박",
+        "오리",
+        "지붕"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 기차가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71c2b93ec48d",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "가위, 거미, 고추, 그림",
+      "answer": "가위",
+      "distractors": [
+        "거미",
+        "고추",
+        "그림"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 가위가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "72042d912e21",
+      "difficulty": 3,
+      "instruction": "국어사전의 자음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅂ' 다음에 실리는 자음자를 찾습니다.",
+      "answer": "ㅃ",
+      "distractors": [
+        "ㅅ",
+        "ㅍ",
+        "ㅁ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7396b94010d3",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "양말, 장갑, 비둘기, 언덕",
+      "answer": "비둘기",
+      "distractors": [
+        "양말",
+        "장갑",
+        "언덕"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 비둘기가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74321d54fd4c",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "버스, 도서관, 여우, 참새",
+      "answer": "도서관",
+      "distractors": [
+        "버스",
+        "여우",
+        "참새"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 도서관이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7457febe23e8",
+      "difficulty": 2,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "좁다, 앉다, 깊다, 빠르다",
+      "answer": "앉다",
+      "distractors": [
+        "좁다",
+        "깊다",
+        "빠르다"
+      ],
+      "solution": [
+        "'앉다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "770cf714bb46",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "지구, 접시, 주전자, 장갑",
+      "answer": "장갑",
+      "distractors": [
+        "지구",
+        "접시",
+        "주전자"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 장갑이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "776d2f0ab555",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "토끼, 개미, 참새, 나비",
+      "answer": "토끼",
+      "distractors": [
+        "개미",
+        "참새",
+        "나비"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 토끼가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "78286ef2931a",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "치마, 채소, 초록, 칫솔",
+      "answer": "채소",
+      "distractors": [
+        "치마",
+        "초록",
+        "칫솔"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 채소가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "782ad5e6d3e9",
+      "difficulty": 3,
+      "instruction": "나머지 셋과 종류가 다른 낱말을 고르시오.",
+      "stem": "크다, 작다, 길다, 자다",
+      "answer": "자다",
+      "distractors": [
+        "크다",
+        "작다",
+        "길다"
+      ],
+      "solution": [
+        "'자다'는 움직임을 나타내고 나머지는 모양이나 성질을 나타낸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "79f5930bc8bc",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'읽었습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "읽다",
+      "distractors": [
+        "읽고",
+        "읽으면",
+        "읽어야"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'읽었습니다'의 기본형은 '읽다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7d5b852a31d3",
+      "difficulty": 3,
+      "instruction": "국어사전의 모음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅏ' 다음에 실리는 모음자를 찾습니다.",
+      "answer": "ㅐ",
+      "distractors": [
+        "ㅑ",
+        "ㅓ",
+        "ㅗ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7e9451deb4ca",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "고기, 고추, 고양이, 골목",
+      "answer": "고기",
+      "distractors": [
+        "고추",
+        "고양이",
+        "골목"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 고기가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80516eef034e",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "마당, 머리, 모래, 무늬",
+      "answer": "마당",
+      "distractors": [
+        "머리",
+        "모래",
+        "무늬"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 마당이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "81159e4a9202",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 자음자를 고르시오.",
+      "stem": "ㅈ, ㅊ, ㅎ, ㅁ",
+      "answer": "ㅁ",
+      "distractors": [
+        "ㅈ",
+        "ㅊ",
+        "ㅎ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "822156135895",
+      "difficulty": 1,
+      "instruction": "이름을 나타내는 낱말을 고르시오.",
+      "stem": "넓다, 운동장, 앉다, 춥다",
+      "answer": "운동장",
+      "distractors": [
+        "넓다",
+        "앉다",
+        "춥다"
+      ],
+      "solution": [
+        "'운동장'은 이름을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8229d7c2274c",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'많아서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "많다",
+      "distractors": [
+        "많습니다",
+        "많아집니다",
+        "앉다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'많아서'의 기본형은 '많다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8477965e8710",
+      "difficulty": 3,
+      "instruction": "나머지 셋과 종류가 다른 낱말을 고르시오.",
+      "stem": "주다, 보다, 놓다, 높다",
+      "answer": "높다",
+      "distractors": [
+        "주다",
+        "보다",
+        "놓다"
+      ],
+      "solution": [
+        "'높다'는 모양이나 성질을 나타내고 나머지는 움직임을 나타낸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "868df6881ba4",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'예뻐서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "예쁘다",
+      "distractors": [
+        "기쁘다",
+        "아프다",
+        "고맙다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'예뻐서'의 기본형은 '예쁘다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "87f5407ff6f6",
+      "difficulty": 1,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "길다, 읽다, 춥다, 어둡다",
+      "answer": "읽다",
+      "distractors": [
+        "길다",
+        "춥다",
+        "어둡다"
+      ],
+      "solution": [
+        "'읽다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b83f44303b1",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "고추, 거울, 기차, 구두",
+      "answer": "기차",
+      "distractors": [
+        "고추",
+        "거울",
+        "구두"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 기차가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e9ca4ef9e7a",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "사과, 딸기, 포도, 수건",
+      "answer": "딸기",
+      "distractors": [
+        "사과",
+        "포도",
+        "수건"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 딸기가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b6492c68153",
+      "difficulty": 3,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "좋다, 놓다, 낮다, 덥다",
+      "answer": "놓다",
+      "distractors": [
+        "좋다",
+        "낮다",
+        "덥다"
+      ],
+      "solution": [
+        "'놓다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9cc698618222",
+      "difficulty": 2,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "굵다, 묻다, 얇다, 쉽다",
+      "answer": "묻다",
+      "distractors": [
+        "굵다",
+        "얇다",
+        "쉽다"
+      ],
+      "solution": [
+        "'묻다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9cdf4c23fb2a",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "개미, 숲, 토마토, 허리",
+      "answer": "개미",
+      "distractors": [
+        "숲",
+        "토마토",
+        "허리"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 개미가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f5e44d50d00",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "접시, 주전자, 지붕, 자갈",
+      "answer": "지붕",
+      "distractors": [
+        "접시",
+        "주전자",
+        "자갈"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 지붕이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ff1148d6d2c",
+      "difficulty": 3,
+      "instruction": "두 낱말의 차례를 정하는 방법으로 알맞은 것을 고르시오.",
+      "stem": "국어사전에서 '반'과 '바다'의 차례를 정하려고 합니다.",
+      "answer": "첫째 글자의 받침을 견주어 봅니다.",
+      "distractors": [
+        "둘째 글자의 모음자를 견주어 봅니다.",
+        "첫째 글자의 모음자를 견주어 봅니다.",
+        "낱말의 뜻을 견주어 봅니다."
+      ],
+      "solution": [
+        "'반'과 '바'는 자음자와 모음자가 같고 받침만 다르다.",
+        "받침이 없는 '바다'가 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a23835f5cf10",
+      "difficulty": 1,
+      "instruction": "국어사전에서 '바다'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "사과, 나비, 연필, 학교",
+      "answer": "나비",
+      "distractors": [
+        "사과",
+        "연필",
+        "학교"
+      ],
+      "solution": [
+        "나비가 '바다'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2ca66b3cbe5",
+      "difficulty": 1,
+      "instruction": "움직임을 나타내는 낱말을 고르시오.",
+      "stem": "높다, 먹다, 밝다, 가볍다",
+      "answer": "먹다",
+      "distractors": [
+        "높다",
+        "밝다",
+        "가볍다"
+      ],
+      "solution": [
+        "'먹다'는 움직임을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a31aaf509cad",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "나무, 나비, 나이, 나뭇잎",
+      "answer": "나무",
+      "distractors": [
+        "나비",
+        "나이",
+        "나뭇잎"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 나무가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5aa0d490da0",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "고기, 구름, 기차, 가방",
+      "answer": "가방",
+      "distractors": [
+        "고기",
+        "구름",
+        "기차"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 가방이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a72acfa6e0f4",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'여쭈었습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "여쭈다",
+      "distractors": [
+        "묻다",
+        "모시다",
+        "드리다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'여쭈었습니다'의 기본형은 '여쭈다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a7a6952844da",
+      "difficulty": 2,
+      "instruction": "나머지 셋과 종류가 다른 낱말을 고르시오.",
+      "stem": "사과, 의자, 바람, 먹다",
+      "answer": "먹다",
+      "distractors": [
+        "사과",
+        "의자",
+        "바람"
+      ],
+      "solution": [
+        "'먹다'는 움직임을 나타내고 나머지는 이름을 나타낸다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a80ccaf8cad9",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 자음자를 고르시오.",
+      "stem": "ㄴ, ㅅ, ㅈ, ㄱ",
+      "answer": "ㅈ",
+      "distractors": [
+        "ㄴ",
+        "ㅅ",
+        "ㄱ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a8d78b610434",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'무거운'을 국어사전에서 찾으려고 합니다.",
+      "answer": "무겁다",
+      "distractors": [
+        "무섭다",
+        "가볍다",
+        "두껍다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'무거운'의 기본형은 '무겁다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa01e94a1291",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "바람, 비, 벌, 보석",
+      "answer": "바람",
+      "distractors": [
+        "비",
+        "벌",
+        "보석"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 바람이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ab4240160ed1",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'드셨습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "드시다",
+      "distractors": [
+        "드리다",
+        "주무시다",
+        "계시다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'드셨습니다'의 기본형은 '드시다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b149b4324d60",
+      "difficulty": 3,
+      "instruction": "두 낱말의 차례를 정하는 방법으로 알맞은 것을 고르시오.",
+      "stem": "국어사전에서 '나무'와 '나비'의 차례를 정하려고 합니다.",
+      "answer": "둘째 글자의 자음자를 견주어 봅니다.",
+      "distractors": [
+        "첫째 글자의 모음자를 견주어 봅니다.",
+        "낱말의 글자 수를 견주어 봅니다.",
+        "낱말의 뜻을 견주어 봅니다."
+      ],
+      "solution": [
+        "첫째 글자 '나'가 같으므로 둘째 글자 '무'와 '비'의 자음자를 견준다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1c5d8c02517",
+      "difficulty": 1,
+      "instruction": "모양이나 성질을 나타내는 낱말을 고르시오.",
+      "stem": "먹다, 넓다, 보다, 주다",
+      "answer": "넓다",
+      "distractors": [
+        "먹다",
+        "보다",
+        "주다"
+      ],
+      "solution": [
+        "'넓다'는 모양이나 성질을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b296bbdf0794",
+      "difficulty": 1,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "강을 건너려고 다리 위를 걸었습니다.",
+      "answer": "물을 건너갈 수 있게 양쪽을 이어 놓은 것",
+      "distractors": [
+        "사람이나 동물의 몸통 아래에 붙어 걷는 데 쓰는 부분",
+        "물건의 아래에 붙어 몸체를 받치는 부분",
+        "강물이 흘러가는 길"
+      ],
+      "solution": [
+        "강을 건너려고 위를 걸었으므로 양쪽을 이어 놓은 다리이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b514836c31d6",
+      "difficulty": 2,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "후식으로 달콤한 배를 깎아 먹었습니다.",
+      "answer": "배나무에 열리는 둥글고 단 열매",
+      "distractors": [
+        "사람이나 짐을 싣고 물 위로 다니는 것",
+        "사람이나 동물의 몸에서 가슴과 다리 사이 부분",
+        "어떤 수만큼 거듭 더한 양"
+      ],
+      "solution": [
+        "깎아 먹는 달콤한 배이므로 과일인 배이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b7ee4a884665",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "필통, 지우개, 공책, 가위",
+      "answer": "필통",
+      "distractors": [
+        "지우개",
+        "공책",
+        "가위"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 필통이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b8a16d4a6dbe",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "나무, 노래, 누나, 너구리",
+      "answer": "나무",
+      "distractors": [
+        "노래",
+        "누나",
+        "너구리"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 나무가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bcecf9e1aa1b",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "두부, 노래, 잠자리, 빗자루",
+      "answer": "노래",
+      "distractors": [
+        "두부",
+        "잠자리",
+        "빗자루"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 노래가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bda9b6b0e637",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 모음자를 고르시오.",
+      "stem": "ㅏ, ㅑ, ㅓ, ㅣ",
+      "answer": "ㅣ",
+      "distractors": [
+        "ㅏ",
+        "ㅑ",
+        "ㅓ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bdbee6bc9698",
+      "difficulty": 1,
+      "instruction": "이름을 나타내는 낱말을 고르시오.",
+      "stem": "크다, 냉장고, 먹다, 밝다",
+      "answer": "냉장고",
+      "distractors": [
+        "크다",
+        "먹다",
+        "밝다"
+      ],
+      "solution": [
+        "'냉장고'는 이름을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bec9eb7c9e64",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "가을, 가구, 가뭄, 가방",
+      "answer": "가을",
+      "distractors": [
+        "가구",
+        "가뭄",
+        "가방"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자부터 견준다.",
+        "그래서 가을이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "beef56a9c3f9",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "다리, 다람쥐, 다리미, 다섯",
+      "answer": "다람쥐",
+      "distractors": [
+        "다리",
+        "다리미",
+        "다섯"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 다람쥐가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf8beb9ac3d7",
+      "difficulty": 1,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'좋았습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "좋다",
+      "distractors": [
+        "좋은",
+        "좋습니다",
+        "놓다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'좋았습니다'의 기본형은 '좋다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c02ada849e4a",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "구름, 구슬, 구두, 국자",
+      "answer": "구두",
+      "distractors": [
+        "구름",
+        "구슬",
+        "국자"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 구두가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c23b8949b1ea",
+      "difficulty": 2,
+      "instruction": "모양이 바뀌는 낱말을 국어사전에서 찾는 방법으로 알맞은 것을 고르시오.",
+      "stem": "'먹었다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "'먹다'로 바꾸어 찾습니다.",
+      "distractors": [
+        "'먹었다'를 그대로 찾습니다.",
+        "'먹어'로 바꾸어 찾습니다.",
+        "'먹고'로 바꾸어 찾습니다."
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 '-다'를 붙인 기본형으로 찾는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c6487a69e505",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "노래, 누나, 너구리, 냄비",
+      "answer": "누나",
+      "distractors": [
+        "노래",
+        "너구리",
+        "냄비"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 누나가 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ca8502b142fb",
+      "difficulty": 3,
+      "instruction": "국어사전의 모음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅡ' 다음에 실리는 모음자를 찾습니다.",
+      "answer": "ㅢ",
+      "distractors": [
+        "ㅣ",
+        "ㅜ",
+        "ㅠ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ca8faf65bab9",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'새로운'을 국어사전에서 찾으려고 합니다.",
+      "answer": "새롭다",
+      "distractors": [
+        "쉽다",
+        "낡다",
+        "무섭다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'새로운'의 기본형은 '새롭다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc5712ecea1f",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'고마워서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "고맙다",
+      "distractors": [
+        "무섭다",
+        "새롭다",
+        "가볍다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'고마워서'의 기본형은 '고맙다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cebf50ff14e5",
+      "difficulty": 2,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'가벼운'을 국어사전에서 찾으려고 합니다.",
+      "answer": "가볍다",
+      "distractors": [
+        "가깝다",
+        "가늘다",
+        "부드럽다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'가벼운'의 기본형은 '가볍다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ced6dafadc96",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "바지, 버스, 보라, 비둘기",
+      "answer": "바지",
+      "distractors": [
+        "버스",
+        "보라",
+        "비둘기"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 바지가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d1bc85139091",
+      "difficulty": 3,
+      "instruction": "국어사전의 자음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㄱ' 다음에 실리는 자음자를 찾습니다.",
+      "answer": "ㄲ",
+      "distractors": [
+        "ㄴ",
+        "ㄷ",
+        "ㅋ"
+      ],
+      "solution": [
+        "국어사전의 자음자는 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d206cdcc1679",
+      "difficulty": 1,
+      "instruction": "국어사전에서 '수건'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "여우, 고기, 지붕, 허리",
+      "answer": "고기",
+      "distractors": [
+        "여우",
+        "지붕",
+        "허리"
+      ],
+      "solution": [
+        "고기가 '수건'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da09e3a6bd92",
+      "difficulty": 2,
+      "instruction": "이름을 나타내는 낱말을 고르시오.",
+      "stem": "밝다, 무지개, 높다, 읽다",
+      "answer": "무지개",
+      "distractors": [
+        "밝다",
+        "높다",
+        "읽다"
+      ],
+      "solution": [
+        "'무지개'는 이름을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da1126344de5",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "지구, 지붕, 지도, 지우개",
+      "answer": "지구",
+      "distractors": [
+        "지붕",
+        "지도",
+        "지우개"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 지구가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da8bbd553f2c",
+      "difficulty": 3,
+      "instruction": "국어사전에서 '바람'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "바위, 바다, 바지, 반",
+      "answer": "바다",
+      "distractors": [
+        "바위",
+        "바지",
+        "반"
+      ],
+      "solution": [
+        "바다가 '바람'보다 앞에 실린다.",
+        "첫째 글자가 같아서 둘째 글자부터 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e293483c5fc7",
+      "difficulty": 1,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'늦어서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "늦다",
+      "distractors": [
+        "이르다",
+        "낡다",
+        "넓다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'늦어서'의 기본형은 '늦다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e5108c202a97",
+      "difficulty": 2,
+      "instruction": "모양이나 성질을 나타내는 낱말을 고르시오.",
+      "stem": "자다, 차갑다, 놓다, 묻다",
+      "answer": "차갑다",
+      "distractors": [
+        "자다",
+        "놓다",
+        "묻다"
+      ],
+      "solution": [
+        "'차갑다'는 모양이나 성질을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e59ae21bd646",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'가까워서'를 국어사전에서 찾으려고 합니다.",
+      "answer": "가깝다",
+      "distractors": [
+        "가볍다",
+        "가늘다",
+        "깊다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'가까워서'의 기본형은 '가깝다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6028338fa93",
+      "difficulty": 2,
+      "instruction": "모양이나 성질을 나타내는 낱말을 고르시오.",
+      "stem": "먹다, 부드럽다, 드리다, 모시다",
+      "answer": "부드럽다",
+      "distractors": [
+        "먹다",
+        "드리다",
+        "모시다"
+      ],
+      "solution": [
+        "'부드럽다'는 모양이나 성질을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e989eb264296",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 모음자를 고르시오.",
+      "stem": "ㅓ, ㅕ, ㅡ, ㅛ",
+      "answer": "ㅓ",
+      "distractors": [
+        "ㅕ",
+        "ㅡ",
+        "ㅛ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea7dd2ac9148",
+      "difficulty": 2,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "허리, 홍수, 해, 하늘",
+      "answer": "하늘",
+      "distractors": [
+        "허리",
+        "홍수",
+        "해"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 하늘이 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ed4cd0be81dc",
+      "difficulty": 3,
+      "instruction": "국어사전에서 '나비'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "나이, 나무, 냄비, 노래",
+      "answer": "나무",
+      "distractors": [
+        "나이",
+        "냄비",
+        "노래"
+      ],
+      "solution": [
+        "나무가 '나비'보다 앞에 실린다.",
+        "첫째 글자가 같아서 둘째 글자부터 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f17eda424be0",
+      "difficulty": 3,
+      "instruction": "국어사전의 모음자 차례에서 바로 뒤에 오는 것을 고르시오.",
+      "stem": "국어사전에서 'ㅗ' 다음에 실리는 모음자를 찾습니다.",
+      "answer": "ㅘ",
+      "distractors": [
+        "ㅛ",
+        "ㅜ",
+        "ㅚ"
+      ],
+      "solution": [
+        "국어사전의 모음자는 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 차례로 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f41589a09a83",
+      "difficulty": 2,
+      "instruction": "국어사전에서 '다리'보다 앞에 실리는 낱말을 고르시오.",
+      "stem": "마당, 구름, 우산, 하늘",
+      "answer": "구름",
+      "distractors": [
+        "마당",
+        "우산",
+        "하늘"
+      ],
+      "solution": [
+        "구름이 '다리'보다 앞에 실린다.",
+        "첫째 글자의 자음자나 모음자를 먼저 견주었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f546616efa64",
+      "difficulty": 1,
+      "instruction": "국어사전에서 낱말을 찾는 방법으로 알맞은 것을 고르시오.",
+      "stem": "국어사전에서 '사과'를 찾으려고 합니다.",
+      "answer": "첫째 글자의 자음자부터 차례대로 살펴봅니다.",
+      "distractors": [
+        "마지막 글자부터 거꾸로 살펴봅니다.",
+        "글자 수가 적은 낱말부터 살펴봅니다.",
+        "뜻이 비슷한 낱말끼리 모아 살펴봅니다."
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8e2dac51bb1",
+      "difficulty": 3,
+      "instruction": "모양이나 성질을 나타내는 낱말을 고르시오.",
+      "stem": "보다, 얕다, 읽다, 앉다",
+      "answer": "얕다",
+      "distractors": [
+        "보다",
+        "읽다",
+        "앉다"
+      ],
+      "solution": [
+        "'얕다'는 모양이나 성질을 나타내는 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8e3ed92e729",
+      "difficulty": 3,
+      "instruction": "국어사전에서 가장 먼저 나오는 낱말을 고르시오.",
+      "stem": "우유, 우산, 우리, 우체국",
+      "answer": "우리",
+      "distractors": [
+        "우유",
+        "우산",
+        "우체국"
+      ],
+      "solution": [
+        "첫째 글자가 모두 같으면 둘째 글자의 자음자, 모음자, 받침을 차례로 견준다.",
+        "그래서 우리가 가장 먼저 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fbe4b0ef0f7a",
+      "difficulty": 1,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "배를 타고 섬에 갔습니다.",
+      "answer": "사람이나 짐을 싣고 물 위로 다니는 것",
+      "distractors": [
+        "사람이나 동물의 몸에서 가슴과 다리 사이 부분",
+        "배나무에 열리는 둥글고 단 열매",
+        "어떤 수만큼 거듭 더한 양"
+      ],
+      "solution": [
+        "배를 타고 섬에 갔으므로 물 위로 다니는 배이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fd8147a342ae",
+      "difficulty": 2,
+      "instruction": "문장에 쓰인 낱말의 뜻을 국어사전에서 찾아 알맞은 것을 고르시오.",
+      "stem": "가을에 산에서 밤을 주웠습니다.",
+      "answer": "가시 많은 껍질 속에 든 밤나무의 열매",
+      "distractors": [
+        "해가 진 뒤부터 다음 날 해가 뜨기 전까지",
+        "하루를 셀 때 쓰는 말",
+        "어두운 곳을 밝히는 불"
+      ],
+      "solution": [
+        "산에서 주웠으므로 밤나무의 열매이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fdda2f1c14b7",
+      "difficulty": 3,
+      "instruction": "국어사전에서 찾을 때 쓰는 기본형을 고르시오.",
+      "stem": "'나았습니다'를 국어사전에서 찾으려고 합니다.",
+      "answer": "낫다",
+      "distractors": [
+        "낮다",
+        "놓다",
+        "늦다"
+      ],
+      "solution": [
+        "모양이 바뀌는 낱말은 기본형으로 바꾸어 찾는다.",
+        "'나았습니다'의 기본형은 '낫다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff0fded61174",
+      "difficulty": 1,
+      "instruction": "국어사전에서 가장 뒤에 나오는 낱말을 고르시오.",
+      "stem": "우산, 장갑, 양말, 신발",
+      "answer": "장갑",
+      "distractors": [
+        "우산",
+        "양말",
+        "신발"
+      ],
+      "solution": [
+        "국어사전은 첫째 글자의 자음자, 모음자, 받침 차례로 낱말을 싣는다.",
+        "그래서 장갑이 가장 뒤에 실린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

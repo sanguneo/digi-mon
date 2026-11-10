@@ -5,6 +5,82 @@
   "skill": "일상생활 주제 담화나 글의 세부 정보를 간단한 문장으로 묻거나 답하는 표준",
   "items": [
     {
+      "id": "00f9a1c0f2dd",
+      "difficulty": 1,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Mina and Tom played badminton in the park. After that, they ate ice cream. What did they eat?",
+      "answer": "They ate ice cream.",
+      "distractors": [
+        "They ate pizza.",
+        "They ate bread.",
+        "They ate apples."
+      ],
+      "solution": [
+        "글에서 두 사람은 배드민턴을 치고 아이스크림을 먹었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0459ab98fc2a",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "By bike.",
+      "answer": "How do you go to school?",
+      "distractors": [
+        "When do you go to school?",
+        "Where is your school?",
+        "Do you like school?"
+      ],
+      "solution": [
+        "'By bike.'는 'How do you go to school?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0d09ceb0d937",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Mina is in her room. She is drawing a picture of her cat. What is Mina doing?",
+      "answer": "She is drawing a picture.",
+      "distractors": [
+        "She is reading a book.",
+        "She is playing with her cat.",
+        "She is sleeping."
+      ],
+      "solution": [
+        "글에서 미나는 고양이 그림을 그리고 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0e6ed8e76822",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I go to bed at nine.",
+      "answer": "When do you go to bed?",
+      "distractors": [
+        "Where do you sleep?",
+        "Do you like your bed?",
+        "How old are you?"
+      ],
+      "solution": [
+        "'I go to bed at nine.'는 'When do you go to bed?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "156036c5b64b",
       "difficulty": 1,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -17,6 +93,44 @@
       ],
       "solution": [
         "'What do you have in your bag?'에 알맞은 대답은 'I have two books.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1582a7fd47f9",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Minsu goes to school by bus. His sister walks to school. How does Minsu go to school?",
+      "answer": "He goes by bus.",
+      "distractors": [
+        "He walks to school.",
+        "He goes by bike.",
+        "He goes with his dad."
+      ],
+      "solution": [
+        "글에서 민수는 버스로 학교에 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1623a31d7cfa",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Why are you happy?",
+      "answer": "Because I got a new bike.",
+      "distractors": [
+        "I am happy.",
+        "Yes, I am happy.",
+        "Because I am sick."
+      ],
+      "solution": [
+        "'Why are you happy?'에 알맞은 대답은 'Because I got a new bike.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -43,6 +157,139 @@
       }
     },
     {
+      "id": "18264af1ee09",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Tom likes sports. He plays soccer in the morning. He swims in the evening. What does Tom do in the evening?",
+      "answer": "He swims.",
+      "distractors": [
+        "He plays soccer.",
+        "He plays baseball.",
+        "He reads books."
+      ],
+      "solution": [
+        "글에서 톰은 저녁에 수영한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "187e1a498de8",
+      "difficulty": 3,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "Because I have a cold.",
+      "answer": "Why are you at home?",
+      "distractors": [
+        "Where are you?",
+        "What do you have?",
+        "Who has a cold?"
+      ],
+      "solution": [
+        "'Because I have a cold.'는 'Why are you at home?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "189c856b6074",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "My grandfather lives in the country. He has three cows and ten chickens. How many cows does he have?",
+      "answer": "He has three cows.",
+      "distractors": [
+        "He has ten cows.",
+        "He has two cows.",
+        "He has three chickens."
+      ],
+      "solution": [
+        "글에서 할아버지는 소를 세 마리 기른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1a0c4ad8dd77",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Amy has two brothers and one sister. Her sister is five years old. How many brothers does Amy have?",
+      "answer": "She has two brothers.",
+      "distractors": [
+        "She has one brother.",
+        "She has three brothers.",
+        "She has five brothers."
+      ],
+      "solution": [
+        "글에서 에이미는 오빠나 남동생이 둘 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1aadf19d3634",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where does your aunt live?",
+      "answer": "She lives near the mountain.",
+      "distractors": [
+        "She likes the mountain.",
+        "He lives near the mountain.",
+        "She is my aunt."
+      ],
+      "solution": [
+        "'Where does your aunt live?'에 알맞은 대답은 'She lives near the mountain.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1e5e02f0e9f0",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "Yes, it is mine.",
+      "answer": "Is this your pencil?",
+      "distractors": [
+        "What is this?",
+        "Where is the pencil?",
+        "Do you like pencils?"
+      ],
+      "solution": [
+        "'Yes, it is mine.'는 'Is this your pencil?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2054329beaa3",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How long is the river?",
+      "answer": "It is very long.",
+      "distractors": [
+        "It is blue.",
+        "I swim in the river.",
+        "It is near my house."
+      ],
+      "solution": [
+        "'How long is the river?'에 알맞은 대답은 'It is very long.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "2260119e2491",
       "difficulty": 2,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -55,6 +302,25 @@
       ],
       "solution": [
         "'Is your brother tall?'에 알맞은 대답은 'Yes, he is very tall.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d71f297f613",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "She is my aunt.",
+      "answer": "Who is that woman?",
+      "distractors": [
+        "Where is your aunt?",
+        "How old is she?",
+        "What does she do?"
+      ],
+      "solution": [
+        "'She is my aunt.'는 'Who is that woman?'에 알맞은 대답이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -93,6 +359,44 @@
       ],
       "solution": [
         "'When do you get up?'에 알맞은 대답은 'I get up at seven.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3576705f07c4",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "My favorite food is spaghetti. My mom makes it every weekend. It is very good. When does the mom make spaghetti?",
+      "answer": "She makes it every weekend.",
+      "distractors": [
+        "She makes it every day.",
+        "She makes it every morning.",
+        "She makes it at school."
+      ],
+      "solution": [
+        "글에서 엄마는 주말마다 스파게티를 만든다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35af5577e361",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you like carrots?",
+      "answer": "No, I do not.",
+      "distractors": [
+        "No, I am not.",
+        "Yes, I can.",
+        "They are orange."
+      ],
+      "solution": [
+        "'Do you like carrots?'에 알맞은 대답은 'No, I do not.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -157,6 +461,25 @@
       }
     },
     {
+      "id": "4050aade4e50",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Tom has a party at his house. It starts at two. What time does the party start?",
+      "answer": "At two.",
+      "distractors": [
+        "At twelve.",
+        "At three.",
+        "At his house."
+      ],
+      "solution": [
+        "글에서 파티는 두 시에 시작한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "421dc4d646d7",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -169,6 +492,44 @@
       ],
       "solution": [
         "'Where is the bank?'에 알맞은 대답은 'It is across from the park.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "47e6e0080455",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "It is warm and nice.",
+      "answer": "How is the weather today?",
+      "distractors": [
+        "What season is it?",
+        "Where is the sun?",
+        "Do you like spring?"
+      ],
+      "solution": [
+        "'It is warm and nice.'는 'How is the weather today?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4adcb7700607",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What time does the movie start?",
+      "answer": "It starts at four.",
+      "distractors": [
+        "It is a fun movie.",
+        "I am four years old.",
+        "I watch movies at home."
+      ],
+      "solution": [
+        "'What time does the movie start?'에 알맞은 대답은 'It starts at four.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -195,6 +556,139 @@
       }
     },
     {
+      "id": "4c95beaaeaad",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Jiho wants to be a doctor. He wants to help sick people. Why does Jiho want to be a doctor?",
+      "answer": "Because he wants to help sick people.",
+      "distractors": [
+        "Because he is sick.",
+        "Because he likes hospitals.",
+        "Because his dad is a doctor."
+      ],
+      "solution": [
+        "글에서 지호는 아픈 사람을 돕고 싶어 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4d80638f537c",
+      "difficulty": 1,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "It is on the table.",
+      "answer": "Where is my cup?",
+      "distractors": [
+        "What is this?",
+        "What color is my cup?",
+        "How is the weather?"
+      ],
+      "solution": [
+        "'It is on the table.'는 'Where is my cup?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4e627f30d4f9",
+      "difficulty": 1,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "Yes, I can. I swim every day.",
+      "answer": "Can you swim?",
+      "distractors": [
+        "Do you like the sea?",
+        "Where do you swim?",
+        "When do you swim?"
+      ],
+      "solution": [
+        "'Yes, I can. I swim every day.'는 'Can you swim?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4f463f20d2ad",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is this your bag?",
+      "answer": "Yes, it is mine.",
+      "distractors": [
+        "Yes, I do.",
+        "It is a big bag.",
+        "No, I am not."
+      ],
+      "solution": [
+        "'Is this your bag?'에 알맞은 대답은 'Yes, it is mine.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "51ba1c2539aa",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who is the tall boy?",
+      "answer": "He is my brother.",
+      "distractors": [
+        "He is very tall.",
+        "She is my sister.",
+        "He is in the park."
+      ],
+      "solution": [
+        "'Who is the tall boy?'에 알맞은 대답은 'He is my brother.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5671c96044d1",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What is the weather like?",
+      "answer": "It is snowing and cold.",
+      "distractors": [
+        "It is a coat.",
+        "I like snow.",
+        "It is my hat."
+      ],
+      "solution": [
+        "'What is the weather like?'에 알맞은 대답은 'It is snowing and cold.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "588d3309f43d",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Mina gets up at seven. She has breakfast at seven thirty. She goes to school at eight. What time does Mina go to school?",
+      "answer": "She goes at eight.",
+      "distractors": [
+        "She goes at seven.",
+        "She goes at seven thirty.",
+        "She goes by bus."
+      ],
+      "solution": [
+        "글에서 미나는 여덟 시에 학교에 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "5c66cda4d93f",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -207,6 +701,234 @@
       ],
       "solution": [
         "'How was your trip?'에 알맞은 대답은 'It was great.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5d0941856375",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How do you go to the library?",
+      "answer": "I walk there.",
+      "distractors": [
+        "I read books there.",
+        "It is big.",
+        "I go there at four."
+      ],
+      "solution": [
+        "'How do you go to the library?'에 알맞은 대답은 'I walk there.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f4320ae74d1",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Do you have a pencil?",
+      "answer": "Yes, I have one.",
+      "distractors": [
+        "Yes, I am.",
+        "No, it is not.",
+        "It is long."
+      ],
+      "solution": [
+        "'Do you have a pencil?'에 알맞은 대답은 'Yes, I have one.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "606677fc85cb",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Tom will visit his aunt tomorrow. He will go there by train. How will Tom go to his aunt's house?",
+      "answer": "He will go by train.",
+      "distractors": [
+        "He will go by bus.",
+        "He will walk.",
+        "He went by train."
+      ],
+      "solution": [
+        "글에서 톰은 내일 기차를 타고 간다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "619a4fbd1075",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Why do you like summer?",
+      "answer": "Because I can swim in the sea.",
+      "distractors": [
+        "Because it is cold.",
+        "I like summer.",
+        "Summer is hot."
+      ],
+      "solution": [
+        "'Why do you like summer?'에 알맞은 대답은 'Because I can swim in the sea.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "64c1fdf0a7bd",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Yuna lives in a small house. Her house is near the river. There is a big tree in the garden. Where is her house?",
+      "answer": "It is near the river.",
+      "distractors": [
+        "It is near the sea.",
+        "It is in the garden.",
+        "It is next to the school."
+      ],
+      "solution": [
+        "글에서 유나의 집은 강 근처에 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "67ea66ff50b6",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where did you buy the shoes?",
+      "answer": "I bought them at the market.",
+      "distractors": [
+        "They are new shoes.",
+        "I will buy them.",
+        "They are too big."
+      ],
+      "solution": [
+        "'Where did you buy the shoes?'에 알맞은 대답은 'I bought them at the market.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6a37c0d16626",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many people are in your family?",
+      "answer": "There are five people.",
+      "distractors": [
+        "My family is happy.",
+        "I love my family.",
+        "They are at home."
+      ],
+      "solution": [
+        "'How many people are in your family?'에 알맞은 대답은 'There are five people.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ca3d5829f39",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is the hospital?",
+      "answer": "It is next to the bank.",
+      "distractors": [
+        "It is a big building.",
+        "I am sick.",
+        "Yes, it is."
+      ],
+      "solution": [
+        "'Where is the hospital?'에 알맞은 대답은 'It is next to the bank.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7178e3c0fd5e",
+      "difficulty": 3,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I went to the beach.",
+      "answer": "Where did you go last summer?",
+      "distractors": [
+        "Where are you going now?",
+        "Do you like the beach?",
+        "What did you eat?"
+      ],
+      "solution": [
+        "'I went to the beach.'는 'Where did you go last summer?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71a8f4f03b7b",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is your mom?",
+      "answer": "She is in the kitchen.",
+      "distractors": [
+        "She is a cook.",
+        "He is in the kitchen.",
+        "She likes the kitchen."
+      ],
+      "solution": [
+        "'Where is your mom?'에 알맞은 대답은 'She is in the kitchen.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7377fe8c0eca",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How was the movie?",
+      "answer": "It was very fun.",
+      "distractors": [
+        "It is a movie.",
+        "I will see it.",
+        "I watched it at home."
+      ],
+      "solution": [
+        "'How was the movie?'에 알맞은 대답은 'It was very fun.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "758e05b19e41",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where can I buy milk?",
+      "answer": "You can buy it at the store.",
+      "distractors": [
+        "I drink milk.",
+        "It is white.",
+        "Milk is good for you."
+      ],
+      "solution": [
+        "'Where can I buy milk?'에 알맞은 대답은 'You can buy it at the store.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -252,6 +974,44 @@
       }
     },
     {
+      "id": "7823893124b6",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "It is raining today. Amy is at home. She is reading a book. Where is Amy?",
+      "answer": "She is at home.",
+      "distractors": [
+        "She is at school.",
+        "She is in the park.",
+        "She is reading."
+      ],
+      "solution": [
+        "글에서 에이미는 집에 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7b1e3c19f93c",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What did you do last weekend?",
+      "answer": "I went fishing with my dad.",
+      "distractors": [
+        "I will go fishing with my dad.",
+        "I like fishing.",
+        "My dad is a fisher."
+      ],
+      "solution": [
+        "'What did you do last weekend?'에 알맞은 대답은 'I went fishing with my dad.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "7ba2535f6706",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -271,6 +1031,25 @@
       }
     },
     {
+      "id": "7f937a399334",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What are you going to do tonight?",
+      "answer": "I am going to watch a movie.",
+      "distractors": [
+        "I watched a movie.",
+        "I like movies.",
+        "The movie is long."
+      ],
+      "solution": [
+        "'What are you going to do tonight?'에 알맞은 대답은 'I am going to watch a movie.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "839353ba6664",
       "difficulty": 1,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -283,6 +1062,44 @@
       ],
       "solution": [
         "'Where is the library?'에 알맞은 대답은 'It is next to the school.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "84b57e3523b2",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I want to be a singer.",
+      "answer": "What do you want to be?",
+      "distractors": [
+        "What do you like?",
+        "Who is your favorite singer?",
+        "Can you sing?"
+      ],
+      "solution": [
+        "'I want to be a singer.'는 'What do you want to be?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8594ee57f9c8",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What are you looking for?",
+      "answer": "I am looking for my cap.",
+      "distractors": [
+        "I am looking at the sky.",
+        "My cap is red.",
+        "It is a cap."
+      ],
+      "solution": [
+        "'What are you looking for?'에 알맞은 대답은 'I am looking for my cap.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -347,6 +1164,25 @@
       }
     },
     {
+      "id": "91d5173330d0",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How old is your sister?",
+      "answer": "She is nine years old.",
+      "distractors": [
+        "She is tall.",
+        "He is nine years old.",
+        "She likes nine."
+      ],
+      "solution": [
+        "'How old is your sister?'에 알맞은 대답은 'She is nine years old.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "91dfe8511928",
       "difficulty": 2,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -359,6 +1195,101 @@
       ],
       "solution": [
         "'What time do you have lunch?'에 알맞은 대답은 'I have lunch at twelve.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "95969c6c47ae",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who is your best friend?",
+      "answer": "My best friend is Yuna.",
+      "distractors": [
+        "I am Yuna.",
+        "She is in the park.",
+        "Yes, she is."
+      ],
+      "solution": [
+        "'Who is your best friend?'에 알맞은 대답은 'My best friend is Yuna.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "99e927edce46",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Is this your umbrella?",
+      "answer": "No, it is not.",
+      "distractors": [
+        "No, I do not.",
+        "Yes, I can.",
+        "It is raining."
+      ],
+      "solution": [
+        "'Is this your umbrella?'에 알맞은 대답은 'No, it is not.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a6a1a1130b2",
+      "difficulty": 3,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Yuna bought a blue hat and a red bag at the market. What color was the hat?",
+      "answer": "It was blue.",
+      "distractors": [
+        "It was red.",
+        "It was big.",
+        "It was at the market."
+      ],
+      "solution": [
+        "글에서 유나가 산 모자는 파란색이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9fca3eb96dc7",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What does your dad do?",
+      "answer": "He is a pilot.",
+      "distractors": [
+        "He is tall.",
+        "She is a pilot.",
+        "He likes airplanes."
+      ],
+      "solution": [
+        "'What does your dad do?'에 알맞은 대답은 'He is a pilot.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "abffafae3807",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What did you have for breakfast?",
+      "answer": "I had bread and milk.",
+      "distractors": [
+        "I will have bread.",
+        "I like breakfast.",
+        "Breakfast is at seven."
+      ],
+      "solution": [
+        "'What did you have for breakfast?'에 알맞은 대답은 'I had bread and milk.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -385,6 +1316,82 @@
       }
     },
     {
+      "id": "b363cfd16f8c",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many brothers do you have?",
+      "answer": "I have two brothers.",
+      "distractors": [
+        "My brother is tall.",
+        "He is two years old.",
+        "I like my brother."
+      ],
+      "solution": [
+        "'How many brothers do you have?'에 알맞은 대답은 'I have two brothers.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b454168b99a6",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where do you want to go?",
+      "answer": "I want to go to the zoo.",
+      "distractors": [
+        "I went to the zoo.",
+        "The zoo is big.",
+        "I like lions."
+      ],
+      "solution": [
+        "'Where do you want to go?'에 알맞은 대답은 'I want to go to the zoo.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4e48b6b24aa",
+      "difficulty": 1,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "It is ten thirty.",
+      "answer": "What time is it?",
+      "distractors": [
+        "How old are you?",
+        "When is your party?",
+        "How many books do you have?"
+      ],
+      "solution": [
+        "'It is ten thirty.'는 'What time is it?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b56358dc31c0",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where is your cap?",
+      "answer": "It is under the bed.",
+      "distractors": [
+        "It is a blue cap.",
+        "I like my cap.",
+        "Yes, it is."
+      ],
+      "solution": [
+        "'Where is your cap?'에 알맞은 대답은 'It is under the bed.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "b8c960a3e207",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -404,6 +1411,25 @@
       }
     },
     {
+      "id": "b95253f7d617",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What do you do on weekends?",
+      "answer": "I play with my friends.",
+      "distractors": [
+        "I played with my friends.",
+        "My friends are kind.",
+        "It is the weekend."
+      ],
+      "solution": [
+        "'What do you do on weekends?'에 알맞은 대답은 'I play with my friends.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "bad4f2eb8408",
       "difficulty": 2,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -416,6 +1442,63 @@
       ],
       "solution": [
         "'When do you go to bed?'에 알맞은 대답은 'I go to bed at ten.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be35cee37d09",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What animal do you like?",
+      "answer": "I like dogs.",
+      "distractors": [
+        "I have a cat.",
+        "Yes, I like them.",
+        "They are small."
+      ],
+      "solution": [
+        "'What animal do you like?'에 알맞은 대답은 'I like dogs.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "beb57a5e66ab",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "When is the soccer game?",
+      "answer": "It is at three.",
+      "distractors": [
+        "It is a soccer ball.",
+        "I like soccer.",
+        "It is in the park."
+      ],
+      "solution": [
+        "'When is the soccer game?'에 알맞은 대답은 'It is at three.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c0291c1a4d36",
+      "difficulty": 1,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Jiho has a dog. The dog is brown and small. What color is the dog?",
+      "answer": "It is brown.",
+      "distractors": [
+        "It is small.",
+        "It is white.",
+        "It is a dog."
+      ],
+      "solution": [
+        "글에서 지호의 개는 갈색이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -461,6 +1544,25 @@
       }
     },
     {
+      "id": "c36480a9e1a3",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Where were you yesterday?",
+      "answer": "I was at my grandfather's house.",
+      "distractors": [
+        "I will be at home.",
+        "I am at school.",
+        "My grandfather is kind."
+      ],
+      "solution": [
+        "'Where were you yesterday?'에 알맞은 대답은 'I was at my grandfather's house.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "cda44ae55255",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -492,6 +1594,120 @@
       ],
       "solution": [
         "'How many books do you have?'에 알맞은 대답은 'I have ten books.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d15f44a34511",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What sport do you play?",
+      "answer": "I play badminton.",
+      "distractors": [
+        "I like pizza.",
+        "It is a ball.",
+        "I am good."
+      ],
+      "solution": [
+        "'What sport do you play?'에 알맞은 대답은 'I play badminton.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d230116581c6",
+      "difficulty": 3,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I am reading a comic book.",
+      "answer": "What are you doing now?",
+      "distractors": [
+        "What did you read?",
+        "Do you like books?",
+        "Where is the book?"
+      ],
+      "solution": [
+        "'I am reading a comic book.'는 'What are you doing now?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d3a54612a85b",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "He is a farmer.",
+      "answer": "What does your grandfather do?",
+      "distractors": [
+        "Where does he live?",
+        "How old is he?",
+        "Who is he?"
+      ],
+      "solution": [
+        "'He is a farmer.'는 'What does your grandfather do?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d5dc888662ff",
+      "difficulty": 1,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Minsu went to the zoo yesterday. He saw lions and monkeys. The lions were very big. Where did Minsu go yesterday?",
+      "answer": "He went to the zoo.",
+      "distractors": [
+        "He went to the park.",
+        "He went to the market.",
+        "He went to school."
+      ],
+      "solution": [
+        "글에서 민수는 어제 동물원에 갔다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d730323c6e01",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What time do you get up?",
+      "answer": "I get up at six thirty.",
+      "distractors": [
+        "I get up in my room.",
+        "I am six years old.",
+        "It is my clock."
+      ],
+      "solution": [
+        "'What time do you get up?'에 알맞은 대답은 'I get up at six thirty.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d98dabbcbd73",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What is in the box?",
+      "answer": "There is a toy car in it.",
+      "distractors": [
+        "It is a big box.",
+        "The box is on the desk.",
+        "I have a box."
+      ],
+      "solution": [
+        "'What is in the box?'에 알맞은 대답은 'There is a toy car in it.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -537,6 +1753,44 @@
       }
     },
     {
+      "id": "dbe4dafb6d5d",
+      "difficulty": 3,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Who made this cake?",
+      "answer": "My mom made it.",
+      "distractors": [
+        "My mom will make it.",
+        "It is a big cake.",
+        "I like this cake."
+      ],
+      "solution": [
+        "'Who made this cake?'에 알맞은 대답은 'My mom made it.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "de2a249881b1",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What color is your bag?",
+      "answer": "It is green.",
+      "distractors": [
+        "It is big.",
+        "It is on the desk.",
+        "I have a bag."
+      ],
+      "solution": [
+        "'What color is your bag?'에 알맞은 대답은 'It is green.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "dfc7b3254f9f",
       "difficulty": 3,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -556,6 +1810,120 @@
       }
     },
     {
+      "id": "e89388b5594a",
+      "difficulty": 1,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Jiho has an uncle. He cooks at a big restaurant. What does the uncle do?",
+      "answer": "He is a cook.",
+      "distractors": [
+        "He is a doctor.",
+        "He is a farmer.",
+        "He is a teacher."
+      ],
+      "solution": [
+        "글에서 지호의 삼촌은 큰 식당에서 요리하므로 요리사다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea16a5f0c35f",
+      "difficulty": 1,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "Can you play the guitar?",
+      "answer": "Yes, I can.",
+      "distractors": [
+        "Yes, I do.",
+        "No, I am not.",
+        "It is my guitar."
+      ],
+      "solution": [
+        "'Can you play the guitar?'에 알맞은 대답은 'Yes, I can.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "edd240babfbf",
+      "difficulty": 2,
+      "instruction": "글을 읽고 물음에 알맞은 대답을 고르시오.",
+      "stem": "Yuna likes winter. She likes to play in the snow. What does Yuna do in winter?",
+      "answer": "She plays in the snow.",
+      "distractors": [
+        "She swims in the sea.",
+        "She plays in the garden.",
+        "She reads at the library."
+      ],
+      "solution": [
+        "글에서 유나는 겨울에 눈 속에서 노는 것을 좋아한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3e7b4d4c088",
+      "difficulty": 1,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I am twelve years old.",
+      "answer": "How old are you?",
+      "distractors": [
+        "How tall are you?",
+        "When is your party?",
+        "Who are you?"
+      ],
+      "solution": [
+        "'I am twelve years old.'는 'How old are you?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f48ae0b036c8",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "What do you want for lunch?",
+      "answer": "I want some pizza.",
+      "distractors": [
+        "I had some pizza.",
+        "Lunch is at twelve.",
+        "I am at lunch."
+      ],
+      "solution": [
+        "'What do you want for lunch?'에 알맞은 대답은 'I want some pizza.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f521de19a19c",
+      "difficulty": 2,
+      "instruction": "다음 대답에 알맞은 물음을 고르시오.",
+      "stem": "I have three cats.",
+      "answer": "How many cats do you have?",
+      "distractors": [
+        "What color is your cat?",
+        "Where is your cat?",
+        "Do you like cats?"
+      ],
+      "solution": [
+        "'I have three cats.'는 'How many cats do you have?'에 알맞은 대답이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "f63445b7f553",
       "difficulty": 2,
       "instruction": "물음에 알맞은 대답을 고르시오.",
@@ -568,6 +1936,25 @@
       ],
       "solution": [
         "'What is your favorite food?'에 알맞은 대답은 'My favorite food is pizza.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8b8eed28a80",
+      "difficulty": 2,
+      "instruction": "물음에 알맞은 대답을 고르시오.",
+      "stem": "How many pencils are in your bag?",
+      "answer": "There are five pencils.",
+      "distractors": [
+        "My bag is blue.",
+        "I like pencils.",
+        "It is a pencil."
+      ],
+      "solution": [
+        "'How many pencils are in your bag?'에 알맞은 대답은 'There are five pencils.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

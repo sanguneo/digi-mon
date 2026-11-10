@@ -1,0 +1,2003 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국04-02]",
+  "skill": "표준어와 방언 기능 및 언어 공동체 이해",
+  "items": [
+    {
+      "id": "0368db1e391e",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "가시개 어데 있노? 퍼뜩 도.",
+      "answer": "가위 어디 있니? 빨리 줘.",
+      "distractors": [
+        "가위 언제 샀니? 천천히 줘.",
+        "가방 어디 있니? 빨리 줘.",
+        "가위 어디 있니? 나중에 줘."
+      ],
+      "solution": [
+        "'가시개'는 가위, '어데'는 어디, '퍼뜩'은 빨리, '도'는 줘를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0a4888fcca9d",
+      "difficulty": 1,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "준호는 오늘 여러 사람과 말을 나눕니다.",
+      "answer": "전국 어린이 발표 대회에서 말할 때",
+      "distractors": [
+        "같은 동네 친구와 장난칠 때",
+        "고향 할아버지와 이야기할 때",
+        "사촌 동생과 놀 때"
+      ],
+      "solution": [
+        "여러 지역 사람이 듣는 발표 대회에서는 표준어가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0bb2e72dcb93",
+      "difficulty": 2,
+      "instruction": "문장에서 '개안타'가 뜻하는 말로 알맞은 것을 고르시오.",
+      "stem": "넘어졌는데 개안타.",
+      "answer": "넘어졌는데 괜찮다.",
+      "distractors": [
+        "넘어져서 아프다.",
+        "넘어져서 슬프다.",
+        "넘어져서 창피하다."
+      ],
+      "solution": [
+        "'개안타'는 경상 지역에서 괜찮다를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0c9b1b08f2e4",
+      "difficulty": 1,
+      "instruction": "제주 방언 '혼저 옵서예'를 표준어로 바꾼 말을 고르시오.",
+      "stem": "제주 공항에 내리면 '혼저 옵서예'라고 쓴 글을 볼 수 있습니다.",
+      "answer": "어서 오세요",
+      "distractors": [
+        "잘 가세요",
+        "고맙습니다",
+        "미안합니다"
+      ],
+      "solution": [
+        "'혼저 옵서예'는 손님을 맞을 때 쓰는 제주 방언으로 어서 오세요에 해당한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "12a38685293a",
+      "difficulty": 2,
+      "instruction": "표준어와 방언을 바르게 짝 지은 것을 고르시오.",
+      "stem": "경상 지역 방언에 대한 짝입니다.",
+      "answer": "가위와 가시개",
+      "distractors": [
+        "가위와 정구지",
+        "할머니와 아부지",
+        "아버지와 할매"
+      ],
+      "solution": [
+        "경상 지역에서 가위를 가시개라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "14083980e83e",
+      "difficulty": 1,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "민지는 여러 상황에서 말을 하게 되었습니다.",
+      "answer": "텔레비전 뉴스를 전할 때",
+      "distractors": [
+        "고향 친구와 놀 때",
+        "할머니와 전화할 때",
+        "동네 이웃과 인사할 때"
+      ],
+      "solution": [
+        "뉴스는 온 나라 사람이 들으므로 표준어로 전한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17c2d3a57dfe",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "우리 어무이가 할배 댁에 가셨다.",
+      "answer": "우리 어머니가 할아버지 댁에 가셨다.",
+      "distractors": [
+        "우리 할머니가 아버지 댁에 가셨다.",
+        "우리 어머니가 할머니 댁에 가셨다.",
+        "우리 아버지가 할아버지 댁에 가셨다."
+      ],
+      "solution": [
+        "'어무이'는 어머니, '할배'는 할아버지를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19f720ece1c0",
+      "difficulty": 2,
+      "instruction": "표준어와 방언의 짝이 잘못된 것을 고르시오.",
+      "stem": "다음은 표준어와 방언의 짝입니다.",
+      "answer": "감자와 정구지",
+      "distractors": [
+        "부추와 정구지",
+        "옥수수와 강냉이",
+        "어머니와 어멍"
+      ],
+      "solution": [
+        "정구지는 부추를 이르는 방언이고 감자는 강원에서 감재라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2118ed6cab25",
+      "difficulty": 2,
+      "instruction": "글을 읽고 알 수 있는 내용으로 알맞은 것을 고르시오.",
+      "stem": "같은 가위를 두고 경상 지역에서는 가시개라고 부르기도 합니다. 지역마다 같은 물건을 다르게 부르는 말이 많습니다.",
+      "answer": "같은 물건도 지역에 따라 부르는 말이 다르다",
+      "distractors": [
+        "가시개는 가위와 다른 물건이다",
+        "경상 지역에는 가위가 없다",
+        "모든 지역이 같은 말만 쓴다"
+      ],
+      "solution": [
+        "같은 물건을 지역마다 다른 말로 부르기도 한다는 내용이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "228e7848f35e",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "서아는 이번 주에 해야 할 일이 많습니다.",
+      "answer": "교과서에 실릴 글을 쓸 때",
+      "distractors": [
+        "고향 친구에게 쪽지를 쓸 때",
+        "할머니께 안부 전화를 할 때",
+        "동생과 장난칠 때"
+      ],
+      "solution": [
+        "교과서는 온 나라 학생이 읽으므로 표준어로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "292d55807150",
+      "difficulty": 2,
+      "instruction": "문장에서 '쪼매'가 뜻하는 말로 알맞은 것을 고르시오.",
+      "stem": "밥 쪼매만 더 주이소.",
+      "answer": "밥 조금만 더 주세요.",
+      "distractors": [
+        "밥 많이 더 주세요.",
+        "밥 빨리 더 주세요.",
+        "밥 이제 그만 주세요."
+      ],
+      "solution": [
+        "'쪼매'는 경상 지역에서 조금을 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32a81c8ced25",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "오메, 겁나 이쁘다잉.",
+      "answer": "어머, 아주 예쁘다.",
+      "distractors": [
+        "어머, 조금 무섭다.",
+        "어머, 아주 무섭다.",
+        "어머, 별로 안 예쁘다."
+      ],
+      "solution": [
+        "'오메'는 놀랄 때 내는 소리, '겁나'는 아주를 이르는 전라 방언이다. 무섭다는 말로 오해하기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32e2e3941eba",
+      "difficulty": 3,
+      "instruction": "방언 '정지'가 가리키는 곳을 고르시오.",
+      "stem": "할매는 정지에서 국을 끓이고 계셨다.",
+      "answer": "음식을 만드는 곳",
+      "distractors": [
+        "옷을 넣어 두는 곳",
+        "물건을 쌓아 두는 곳",
+        "잠을 자는 곳"
+      ],
+      "solution": [
+        "'정지'는 경상과 전라 지역에서 부엌을 이르는 방언이다. 국을 끓이는 곳과도 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3839732c0a08",
+      "difficulty": 2,
+      "instruction": "방언에 대한 태도로 바른 것을 고르시오.",
+      "stem": "전학 온 친구가 고향 방언으로 말하자 몇몇 친구가 웃었습니다.",
+      "answer": "방언도 소중한 말이니 존중한다",
+      "distractors": [
+        "방언은 틀린 말이라고 놀린다",
+        "방언을 쓰는 친구와 놀지 않는다",
+        "방언을 쓰지 못하게 막는다"
+      ],
+      "solution": [
+        "방언은 그 지역의 소중한 말이므로 놀리지 않고 존중해야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3bc9382dd90b",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "밥은 묵었냐?",
+      "answer": "밥은 먹었니?",
+      "distractors": [
+        "밥은 남았니?",
+        "밥은 샀니?",
+        "밥은 지었니?"
+      ],
+      "solution": [
+        "'묵다'는 먹다를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3bffa362d048",
+      "difficulty": 1,
+      "instruction": "방언을 써도 자연스러운 상황을 고르시오.",
+      "stem": "시우는 하루 동안 여러 상황에서 말을 합니다.",
+      "answer": "고향 친구들과 놀 때",
+      "distractors": [
+        "뉴스를 전할 때",
+        "전국 대회에서 발표할 때",
+        "안내 방송을 할 때"
+      ],
+      "solution": [
+        "같은 지역 친구끼리는 방언을 써도 뜻이 잘 통하고 정겹다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d85cedd1850",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "어제 친구들이랑 산에 갔드래요.",
+      "answer": "어제 친구들이랑 산에 갔대요.",
+      "distractors": [
+        "내일 친구들이랑 산에 갈래요.",
+        "어제 친구들이랑 산에 갔나요?",
+        "어제 친구들이랑 산에 갈까요?"
+      ],
+      "solution": [
+        "'-드래요'는 강원 지역 방언으로 '-대요'에 해당한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3dea34f6e4d3",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "할매, 이 정구지 퍼뜩 씻어 올게예.",
+      "answer": "할머니, 이 부추 빨리 씻어 올게요.",
+      "distractors": [
+        "할머니, 이 배추 천천히 씻어 올게요.",
+        "어머니, 이 부추 빨리 씻어 올게요.",
+        "할머니, 이 부추 조금 씻어 올게요."
+      ],
+      "solution": [
+        "'할매'는 할머니, '정구지'는 부추, '퍼뜩'은 빨리를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e3a96211d64",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "이 떡 솔찬히 맛있네잉.",
+      "answer": "이 떡 꽤 맛있네.",
+      "distractors": [
+        "이 떡 하나도 맛없네.",
+        "이 떡 조금 짜네.",
+        "이 떡 너무 딱딱하네."
+      ],
+      "solution": [
+        "'솔찬히'는 꽤, 제법을 이르는 전라 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "406f51c62382",
+      "difficulty": 1,
+      "instruction": "문장에서 '감재'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "할머니께서 삶은 감재를 한 바구니 내오셨습니다.",
+      "answer": "감자",
+      "distractors": [
+        "당근",
+        "오이",
+        "사과"
+      ],
+      "solution": [
+        "'감재'는 강원 지역에서 감자를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "410ae760d9ba",
+      "difficulty": 2,
+      "instruction": "대화를 읽고 수진이가 할머니 말을 알아듣지 못한 까닭으로 알맞은 것을 고르시오.",
+      "stem": "할머니: \"혼저 옵서예. 이디 앉읍서.\"\n수진: \"할머니, 무슨 말씀이세요?\"",
+      "answer": "할머니께서 제주 방언을 쓰셨다",
+      "distractors": [
+        "할머니 목소리가 너무 작았다",
+        "수진이가 귀가 아팠다",
+        "할머니께서 외국어를 쓰셨다"
+      ],
+      "solution": [
+        "할머니는 제주 방언을 쓰셨고 수진이는 그 말에 익숙하지 않았다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "418406522f48",
+      "difficulty": 2,
+      "instruction": "방언을 써도 자연스러운 상황을 고르시오.",
+      "stem": "예린이는 여러 사람에게 말을 전합니다.",
+      "answer": "고향 할머니와 전화로 이야기할 때",
+      "distractors": [
+        "교과서에 실릴 글을 쓸 때",
+        "공항 안내 방송을 할 때",
+        "전국 어린이 회의에서 말할 때"
+      ],
+      "solution": [
+        "같은 고향 할머니와는 방언으로 이야기해도 자연스럽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41c735cc6f3a",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "이 강냉이 억수로 달다.",
+      "answer": "이 옥수수 몹시 달다.",
+      "distractors": [
+        "이 감자 몹시 달다.",
+        "이 옥수수 조금 달다.",
+        "이 옥수수 하나도 안 달다."
+      ],
+      "solution": [
+        "'강냉이'는 옥수수, '억수로'는 몹시를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4577a80bb9f4",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "혼저 옵서예. 이디 앉읍서.",
+      "answer": "어서 오세요. 여기 앉으세요.",
+      "distractors": [
+        "잘 가세요. 저기 서세요.",
+        "어서 오세요. 저기 서세요.",
+        "잘 가세요. 여기 앉으세요."
+      ],
+      "solution": [
+        "'혼저 옵서예'는 어서 오세요, '이디'는 여기를 이르는 제주 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "463c6de67bb7",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "와 이리 춥노?",
+      "answer": "왜 이렇게 춥니?",
+      "distractors": [
+        "왜 이렇게 덥니?",
+        "언제 추워지니?",
+        "어디가 춥니?"
+      ],
+      "solution": [
+        "'와'는 왜, '춥노'는 춥니를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "472c7ed0c1ba",
+      "difficulty": 1,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "니 어데 갔다 왔노?",
+      "answer": "너 어디 갔다 왔니?",
+      "distractors": [
+        "너 언제 갔다 왔니?",
+        "너 누구랑 놀았니?",
+        "너 왜 안 갔니?"
+      ],
+      "solution": [
+        "'니'는 너, '어데'는 어디, '왔노'는 왔니에 해당하는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "480aef3df294",
+      "difficulty": 3,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "제주에 사는 수아는 오늘 여러 사람을 만납니다.",
+      "answer": "처음 온 관광객에게 길을 알려 줄 때",
+      "distractors": [
+        "같은 반 제주 친구와 놀 때",
+        "할망과 귤을 딸 때",
+        "동네 이웃과 인사할 때"
+      ],
+      "solution": [
+        "다른 지역에서 온 관광객이 알아듣게 하려면 표준어가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ab297876a51",
+      "difficulty": 2,
+      "instruction": "제주 방언 '아방'이 가리키는 사람을 고르시오.",
+      "stem": "아방은 새벽에 배를 타고 고기를 잡으러 나가셨습니다.",
+      "answer": "우리 아버지",
+      "distractors": [
+        "우리 어머니",
+        "우리 할머니",
+        "우리 누나"
+      ],
+      "solution": [
+        "'아방'은 제주 지역에서 아버지를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53fcce201c0f",
+      "difficulty": 2,
+      "instruction": "방언을 써도 자연스러운 상황을 고르시오.",
+      "stem": "태민이는 여러 곳에서 말을 합니다.",
+      "answer": "고향 마을 잔치에서 어른들께 인사할 때",
+      "distractors": [
+        "전국 토론 대회에서 발표할 때",
+        "기차역 안내 방송을 할 때",
+        "외국인에게 우리말을 가르칠 때"
+      ],
+      "solution": [
+        "같은 고향 어른들과는 방언으로 인사해도 정겹고 자연스럽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "54d79cc0a657",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "니 와 그라노?",
+      "answer": "너 왜 그러니?",
+      "distractors": [
+        "너 어디 가니?",
+        "너 뭐 먹니?",
+        "너 누구니?"
+      ],
+      "solution": [
+        "'니'는 너, '와'는 왜, '그라노'는 그러니를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "560b4206c817",
+      "difficulty": 2,
+      "instruction": "글을 읽고 알 수 있는 내용으로 알맞은 것을 고르시오.",
+      "stem": "같은 옥수수를 두고 강원 지역 사람들은 강냉이라고 부르기도 합니다. 그런데 텔레비전 뉴스에서는 옥수수라고 말합니다.",
+      "answer": "뉴스에서는 표준어를 쓴다",
+      "distractors": [
+        "강원 지역에서는 옥수수가 자라지 않는다",
+        "강냉이와 옥수수는 다른 곡식이다",
+        "뉴스에서는 방언만 쓴다"
+      ],
+      "solution": [
+        "같은 곡식을 지역에서는 방언으로, 뉴스에서는 표준어로 부른다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "56a7a6ff0415",
+      "difficulty": 1,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "밥 문나?",
+      "answer": "밥 먹었니?",
+      "distractors": [
+        "밥 남았니?",
+        "밥 맛있니?",
+        "밥 데웠니?"
+      ],
+      "solution": [
+        "'문나'는 먹었니를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c02babe306f",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "오늘 욕봤데이.",
+      "answer": "오늘 수고했다.",
+      "distractors": [
+        "오늘 혼났다.",
+        "오늘 욕을 들었다.",
+        "오늘 놀았다."
+      ],
+      "solution": [
+        "경상 지역에서 '욕보다'는 수고하다를 이르는 방언이다. 욕을 들었다는 말이 아니다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c1fa8ebe0b0",
+      "difficulty": 1,
+      "instruction": "문장에서 '가시개'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "종이를 자르게 가시개 좀 가져오너라.",
+      "answer": "가위",
+      "distractors": [
+        "연필",
+        "풀",
+        "지우개"
+      ],
+      "solution": [
+        "'가시개'는 경상 지역에서 가위를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c22174bacfa",
+      "difficulty": 3,
+      "instruction": "충청 방언 '올갱이'가 가리키는 것을 고르시오.",
+      "stem": "충청도 할머니께서 올갱이로 국을 끓이셨습니다.",
+      "answer": "냇물에 사는 다슬기",
+      "distractors": [
+        "논에 사는 개구리",
+        "바다에 사는 고래",
+        "산에 사는 다람쥐"
+      ],
+      "solution": [
+        "'올갱이'는 충청 지역에서 다슬기를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "63086fdcec50",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "뭐여? 그려, 알았어.",
+      "answer": "뭐야? 그래, 알았어.",
+      "distractors": [
+        "어디야? 아니, 몰라.",
+        "누구야? 그래, 몰라.",
+        "왜? 아니, 알았어."
+      ],
+      "solution": [
+        "'뭐여'는 뭐야, '그려'는 그래를 이르는 충청 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6f4782b8a35b",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "하은이는 여러 사람에게 글을 씁니다.",
+      "answer": "다른 지역 학교에 보내는 소개 편지를 쓸 때",
+      "distractors": [
+        "같은 고향 친구에게 문자를 보낼 때",
+        "할머니께 생신 축하 쪽지를 쓸 때",
+        "동생에게 장난 쪽지를 쓸 때"
+      ],
+      "solution": [
+        "다른 지역 사람이 읽을 글은 표준어로 써야 뜻이 잘 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "744e3b8a89c5",
+      "difficulty": 2,
+      "instruction": "경상 방언 '단디'의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "길 건널 때 단디 보고 건너래이.",
+      "answer": "단단히 잘",
+      "distractors": [
+        "아주 빨리",
+        "조금 대충",
+        "나중에 천천히"
+      ],
+      "solution": [
+        "'단디'는 경상 지역에서 단단히, 제대로를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7471bc83e8c4",
+      "difficulty": 1,
+      "instruction": "문장에서 '강냉이'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "강원도 할아버지 댁 밭에 강냉이가 잘 익었습니다.",
+      "answer": "옥수수",
+      "distractors": [
+        "감자",
+        "고추",
+        "배추"
+      ],
+      "solution": [
+        "'강냉이'는 강원 지역에서 옥수수를 이르는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "765008762b7f",
+      "difficulty": 1,
+      "instruction": "표준어와 방언을 바르게 짝 지은 것을 고르시오.",
+      "stem": "경상 지역 할머니 댁에서 들은 말을 정리했습니다.",
+      "answer": "부추와 정구지",
+      "distractors": [
+        "감자와 강냉이",
+        "바다와 어멍",
+        "가위와 짐치"
+      ],
+      "solution": [
+        "부추는 경상 지역에서 정구지라고 한다. 나머지는 짝이 맞지 않다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "766204cb6969",
+      "difficulty": 2,
+      "instruction": "제주 방언 '하르방'이 가리키는 사람을 고르시오.",
+      "stem": "제주에는 돌로 깎은 하르방이 곳곳에 서 있습니다.",
+      "answer": "나이 든 할아버지",
+      "distractors": [
+        "나이 든 할머니",
+        "우리 어머니",
+        "어린 동생"
+      ],
+      "solution": [
+        "'하르방'은 제주 지역에서 할아버지를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "79495f9096cc",
+      "difficulty": 2,
+      "instruction": "표준어와 방언을 바르게 짝 지은 것을 고르시오.",
+      "stem": "제주 지역 방언에 대한 짝입니다.",
+      "answer": "바다와 바당",
+      "distractors": [
+        "바다와 감재",
+        "할머니와 어멍",
+        "김치와 바당"
+      ],
+      "solution": [
+        "제주에서는 바다를 바당이라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7da6a8e2c7f6",
+      "difficulty": 1,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "마이 무라.",
+      "answer": "많이 먹어라.",
+      "distractors": [
+        "조금 먹어라.",
+        "천천히 먹어라.",
+        "그만 먹어라."
+      ],
+      "solution": [
+        "'마이'는 많이, '무라'는 먹어라를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7dfb4038f77f",
+      "difficulty": 3,
+      "instruction": "방언만 쓸 때 생길 수 있는 문제로 알맞은 것을 고르시오.",
+      "stem": "제주에서 온 친구가 처음 만난 친구에게 '폭삭 속았수다'라고 말했습니다.",
+      "answer": "다른 지역 사람이 뜻을 잘못 알아들을 수 있다",
+      "distractors": [
+        "같은 지역 사람끼리 정겹게 느낀다",
+        "지역의 문화를 이어 갈 수 있다",
+        "고향 사람을 쉽게 알아본다"
+      ],
+      "solution": [
+        "방언을 모르는 사람은 수고했다는 인사를 속았다는 말로 오해할 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8057a129e681",
+      "difficulty": 1,
+      "instruction": "문장에서 '할매'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "우리 할매가 만든 김치는 참 맛있습니다.",
+      "answer": "할머니",
+      "distractors": [
+        "어머니",
+        "누나",
+        "친구"
+      ],
+      "solution": [
+        "'할매'는 경상 지역에서 할머니를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80867d3af7d6",
+      "difficulty": 1,
+      "instruction": "문장에서 '정구지'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "할매가 정구지를 넣어 전을 부치셨습니다.",
+      "answer": "부추",
+      "distractors": [
+        "배추",
+        "마늘",
+        "오이"
+      ],
+      "solution": [
+        "'정구지'는 경상 지역에서 부추를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "853baf7c52ff",
+      "difficulty": 2,
+      "instruction": "문장에서 '뭐시'가 뜻하는 말로 알맞은 것을 고르시오.",
+      "stem": "그것이 뭐시여?",
+      "answer": "그것이 무엇이니?",
+      "distractors": [
+        "그것이 어디에 있니?",
+        "그것을 누가 샀니?",
+        "그것이 언제 왔니?"
+      ],
+      "solution": [
+        "전라 지역의 '뭐시'는 무엇을 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b1f554c4769",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "광주에 사는 은우는 오늘 여러 일을 합니다.",
+      "answer": "서울에서 온 전학생에게 숙제를 알려 줄 때",
+      "distractors": [
+        "같은 동네 친구와 놀 때",
+        "할머니와 시장에 갈 때",
+        "사촌 형과 전화할 때"
+      ],
+      "solution": [
+        "다른 지역에서 온 친구가 잘 알아듣게 하려면 표준어가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8d268ab84a9d",
+      "difficulty": 3,
+      "instruction": "방언을 써도 자연스러운 상황을 고르시오.",
+      "stem": "여러 상황 가운데 하나를 고릅니다.",
+      "answer": "지역 축제에서 고향 사람들과 인사할 때",
+      "distractors": [
+        "다른 지역 친구에게 길을 설명할 때",
+        "텔레비전 뉴스를 진행할 때",
+        "학교 누리집에 안내문을 올릴 때"
+      ],
+      "solution": [
+        "같은 지역 사람이 모인 축제에서는 방언이 정겹게 쓰인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "907d76ec8e8d",
+      "difficulty": 2,
+      "instruction": "문장에서 '참말로'의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "참말로 고맙네잉.",
+      "answer": "진짜로 정말",
+      "distractors": [
+        "조금 겨우",
+        "아마 혹시",
+        "나중에 다시"
+      ],
+      "solution": [
+        "전라 지역의 '참말로'는 정말, 진짜라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "91afdfb18f94",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "고맙수다.",
+      "answer": "고맙습니다.",
+      "distractors": [
+        "미안합니다.",
+        "어서 오세요.",
+        "잘 가세요."
+      ],
+      "solution": [
+        "'-수다'는 '-습니다'에 해당하는 제주 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97ec1f561d88",
+      "difficulty": 1,
+      "instruction": "방언이 쓰인 말을 고르시오.",
+      "stem": "강원 지역 친구가 한 말입니다.",
+      "answer": "어제 산에 갔드래요.",
+      "distractors": [
+        "어제 산에 갔대요.",
+        "어제 산에 갔어요.",
+        "어제 산에 다녀왔어요."
+      ],
+      "solution": [
+        "'-드래요'는 강원 지역 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9da264b47091",
+      "difficulty": 1,
+      "instruction": "표준어의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "우리나라에서는 공식적인 자리에서 쓰도록 정한 말이 있습니다.",
+      "answer": "교양 있는 사람들이 두루 쓰는 현대 서울말",
+      "distractors": [
+        "한 지역 사람들끼리만 쓰는 말",
+        "옛날 사람들만 쓰던 말",
+        "친한 친구끼리만 쓰는 말"
+      ],
+      "solution": [
+        "표준어는 교양 있는 사람들이 두루 쓰는 현대 서울말로 정한 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a0ca8bf9838c",
+      "difficulty": 2,
+      "instruction": "제주 방언 '할망'이 가리키는 사람을 고르시오.",
+      "stem": "할망이 손녀에게 옛이야기를 들려주었습니다.",
+      "answer": "나이 든 할머니",
+      "distractors": [
+        "나이 든 할아버지",
+        "우리 어머니",
+        "어린 누나"
+      ],
+      "solution": [
+        "'할망'은 제주 지역에서 할머니를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a397e1611ddc",
+      "difficulty": 1,
+      "instruction": "문장에서 '싸게'가 뜻하는 말로 알맞은 것을 고르시오.",
+      "stem": "늦겠다. 싸게 가자잉.",
+      "answer": "빨리 가자",
+      "distractors": [
+        "천천히 가자",
+        "다 같이 가자",
+        "내일 가자"
+      ],
+      "solution": [
+        "전라 지역에서 '싸게'는 빨리를 이르는 방언이다. 늦겠다는 말과도 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a464aa8279cb",
+      "difficulty": 2,
+      "instruction": "경상 방언 '얼라'가 가리키는 사람을 고르시오.",
+      "stem": "얼라가 잠들었으니 조용히 해라.",
+      "answer": "어린 아기",
+      "distractors": [
+        "나이 든 할머니",
+        "같은 반 친구",
+        "동네 아저씨"
+      ],
+      "solution": [
+        "'얼라'는 경상 지역에서 어린아이를 이르는 방언이다. 잠든 아기를 깨우지 말라는 말과도 이어진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a54cb5daa2b7",
+      "difficulty": 3,
+      "instruction": "표준어로만 된 문장을 고르시오.",
+      "stem": "시골 할머니 댁에서 들은 말입니다.",
+      "answer": "부엌에서 무를 썰어 주세요.",
+      "distractors": [
+        "정지에서 무를 썰어 주세요.",
+        "부엌에서 무시를 썰어 주세요.",
+        "부엌에서 무를 쪼매 썰어 주이소."
+      ],
+      "solution": [
+        "'정지', '무시', '쪼매', '-이소'는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6ba8c2cd395",
+      "difficulty": 2,
+      "instruction": "문장에서 '퍼뜩'이 뜻하는 말로 알맞은 것을 고르시오.",
+      "stem": "퍼뜩 와서 밥 묵어라.",
+      "answer": "빨리 와서 밥 먹어라.",
+      "distractors": [
+        "천천히 와서 밥 먹어라.",
+        "혼자 와서 밥 먹어라.",
+        "나중에 와서 밥 먹어라."
+      ],
+      "solution": [
+        "'퍼뜩'은 빨리, '묵다'는 먹다를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a739d94c02f3",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "민호는 여러 글을 쓰게 되었습니다.",
+      "answer": "박물관 안내판에 실을 설명을 쓸 때",
+      "distractors": [
+        "고향 친구에게 쪽지를 쓸 때",
+        "사촌에게 문자를 보낼 때",
+        "가족 단톡방에 인사할 때"
+      ],
+      "solution": [
+        "안내판은 여러 지역에서 온 사람이 읽으므로 표준어로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a97e7500b2cc",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "그랬어유. 괜찮아유.",
+      "answer": "그랬어요. 괜찮아요.",
+      "distractors": [
+        "그랬니? 괜찮니?",
+        "그랬대. 괜찮대.",
+        "그럴까? 괜찮을까?"
+      ],
+      "solution": [
+        "'-유'는 '-요'를 이르는 충청 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a981fe76c2b2",
+      "difficulty": 1,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "니 어데 가노?",
+      "answer": "너 어디 가니?",
+      "distractors": [
+        "너 언제 가니?",
+        "너 왜 가니?",
+        "너 누구랑 가니?"
+      ],
+      "solution": [
+        "'어데'는 어디, '가노'는 가니를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ab1ba9224f39",
+      "difficulty": 2,
+      "instruction": "방언을 소중히 여겨야 하는 까닭으로 알맞은 것을 고르시오.",
+      "stem": "할머니께서 고향 말로 옛이야기를 들려주십니다.",
+      "answer": "그 지역의 삶과 문화가 말에 남아 있다",
+      "distractors": [
+        "방언은 표준어보다 늘 바르다",
+        "방언을 쓰면 누구나 알아듣는다",
+        "방언은 글로 적을 수 없다"
+      ],
+      "solution": [
+        "방언에는 그 지역 사람들의 삶과 문화가 남아 있어 소중하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "abf09cc45b65",
+      "difficulty": 2,
+      "instruction": "방언이 쓰인 말을 고르시오.",
+      "stem": "충청 지역 친구가 한 말입니다.",
+      "answer": "나 먼저 가유.",
+      "distractors": [
+        "나 먼저 갈게.",
+        "나 먼저 가요.",
+        "나 먼저 간다."
+      ],
+      "solution": [
+        "'-유'는 충청 지역 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ae8c55e1a72a",
+      "difficulty": 1,
+      "instruction": "방언의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "같은 물건을 지역마다 다르게 부르기도 합니다.",
+      "answer": "한 지역에서 쓰는 그 지역의 말",
+      "distractors": [
+        "온 나라가 함께 쓰도록 정한 말",
+        "다른 나라에서 들어온 말",
+        "글로만 쓰는 어려운 말"
+      ],
+      "solution": [
+        "방언은 한 지역에서 쓰는 그 지역 고유의 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1f01c4b331e",
+      "difficulty": 3,
+      "instruction": "표준어와 방언의 짝이 잘못된 것을 고르시오.",
+      "stem": "전라 지역 방언을 조사해 짝을 지었습니다.",
+      "answer": "빨리와 참말로",
+      "distractors": [
+        "빨리와 싸게",
+        "무엇과 뭐시",
+        "진짜와 참말로"
+      ],
+      "solution": [
+        "참말로는 진짜를 이르는 방언이고 빨리는 전라에서 싸게라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b227d024abe7",
+      "difficulty": 1,
+      "instruction": "문장에서 '바당'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "제주 사람들은 바당에서 해산물을 땁니다.",
+      "answer": "바다",
+      "distractors": [
+        "하늘",
+        "언덕",
+        "연못"
+      ],
+      "solution": [
+        "'바당'은 제주 지역에서 바다를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b34999414ce6",
+      "difficulty": 2,
+      "instruction": "표준어를 정해 두면 좋은 점으로 알맞은 것을 고르시오.",
+      "stem": "온 나라 학생들이 같은 교과서로 공부합니다.",
+      "answer": "어느 지역 사람이든 같은 뜻으로 읽을 수 있다",
+      "distractors": [
+        "지역마다 다른 교과서를 만들 수 있다",
+        "방언을 배우지 않아도 된다",
+        "글자 수가 줄어든다"
+      ],
+      "solution": [
+        "표준어로 쓰면 어느 지역 사람이 읽어도 뜻이 같게 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b669b5f659eb",
+      "difficulty": 2,
+      "instruction": "제주 방언 '곱닥하다'의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "꽃이 참 곱닥하다.",
+      "answer": "곱고 예쁘다",
+      "distractors": [
+        "크고 무겁다",
+        "작고 귀엽다",
+        "시끄럽고 밝다"
+      ],
+      "solution": [
+        "'곱닥하다'는 제주 지역에서 곱다, 예쁘다를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b96b25d43b67",
+      "difficulty": 1,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "고마 해라.",
+      "answer": "그만해라.",
+      "distractors": [
+        "빨리 해라.",
+        "다시 해라.",
+        "같이 해라."
+      ],
+      "solution": [
+        "'고마'는 그만을 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9ca475d9462",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "도윤이는 여러 곳에서 말할 기회가 생겼습니다.",
+      "answer": "기차역 안내 방송을 할 때",
+      "distractors": [
+        "동네 시장에서 이웃과 인사할 때",
+        "고향 사촌과 놀 때",
+        "가족끼리 저녁을 먹을 때"
+      ],
+      "solution": [
+        "안내 방송은 여러 지역 사람이 듣기 때문에 표준어로 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba3b0dbc20ff",
+      "difficulty": 1,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "하준이는 학교에서 여러 역할을 맡았습니다.",
+      "answer": "학교 방송부에서 전교생에게 안내할 때",
+      "distractors": [
+        "쉬는 시간에 짝과 놀 때",
+        "같은 동네 친구와 집에 갈 때",
+        "사촌 동생과 장난칠 때"
+      ],
+      "solution": [
+        "학교 방송은 여러 지역에서 온 학생이 모두 들으므로 표준어로 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ba707ae94eae",
+      "difficulty": 2,
+      "instruction": "경상 방언 '억수로'의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "오늘 날씨가 억수로 덥네.",
+      "answer": "몹시 매우",
+      "distractors": [
+        "조금 약간",
+        "가끔 이따금",
+        "벌써 이미"
+      ],
+      "solution": [
+        "'억수로'는 경상 지역에서 매우, 몹시를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb1a539619b0",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "어멍, 바당에 감수다.",
+      "answer": "어머니, 바다에 갑니다.",
+      "distractors": [
+        "할머니, 바다에 갑니다.",
+        "어머니, 산에 갑니다.",
+        "어머니, 바다에서 왔습니다."
+      ],
+      "solution": [
+        "'어멍'은 어머니, '바당'은 바다, '-수다'는 '-습니다'에 해당하는 제주 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd7f64970901",
+      "difficulty": 3,
+      "instruction": "방언 '무시'가 가리키는 것을 고르시오.",
+      "stem": "무시를 숭덩숭덩 썰어 국에 넣었다.",
+      "answer": "하얀 뿌리채소인 무",
+      "distractors": [
+        "잎이 넓은 배추",
+        "붉은빛의 당근",
+        "둥근 감자"
+      ],
+      "solution": [
+        "'무시'는 경상과 전라 지역 등에서 무를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bfcebc6e4f88",
+      "difficulty": 3,
+      "instruction": "글을 읽고 글쓴이가 하려는 말로 알맞은 것을 고르시오.",
+      "stem": "나는 부산에서 서울로 전학을 왔습니다. 친구들과 놀 때는 가끔 부산 말이 나오지만, 반 앞에서 발표할 때는 표준어로 말합니다. 듣는 사람이 누구인지 생각하면 어떤 말을 써야 할지 알 수 있습니다.",
+      "answer": "듣는 사람과 상황에 맞게 말을 골라 쓴다",
+      "distractors": [
+        "부산 말은 쓰지 말아야 한다",
+        "발표할 때도 고향 말만 써야 한다",
+        "친구와 놀 때는 말을 하지 않는다"
+      ],
+      "solution": [
+        "글쓴이는 듣는 사람과 상황을 생각해 표준어와 방언을 골라 쓴다고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c080d3bf788e",
+      "difficulty": 3,
+      "instruction": "표준어와 방언에 대한 생각으로 알맞은 것을 고르시오.",
+      "stem": "반 친구들이 표준어와 방언에 대해 이야기를 나누었습니다.",
+      "answer": "상황에 따라 알맞게 골라 쓴다",
+      "distractors": [
+        "방언은 틀린 말이니 쓰지 않는다",
+        "표준어는 서울 사람만 쓴다",
+        "방언은 나이 든 사람만 쓴다"
+      ],
+      "solution": [
+        "표준어와 방언은 저마다 쓰임이 있으므로 상황에 맞게 골라 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1aa4749de08",
+      "difficulty": 3,
+      "instruction": "대화를 읽고 할머니께서 하신 말의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "할머니: \"아이고, 욕봤다. 퍼뜩 들어와서 쉬어라.\"\n민수: \"할머니, 제가 무슨 잘못을 했어요?\"",
+      "answer": "수고했으니 빨리 들어와서 쉬어라",
+      "distractors": [
+        "잘못했으니 빨리 들어와서 반성해라",
+        "혼났으니 천천히 들어와라",
+        "욕을 했으니 들어오지 마라"
+      ],
+      "solution": [
+        "경상 방언 '욕봤다'는 수고했다, '퍼뜩'은 빨리라는 말이다. 민수는 방언의 뜻을 오해했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c76022ce9b30",
+      "difficulty": 2,
+      "instruction": "표준어로만 된 문장을 고르시오.",
+      "stem": "가족과 나눈 말입니다.",
+      "answer": "어머니, 감자 좀 더 주세요.",
+      "distractors": [
+        "어멍, 감자 좀 더 주세요.",
+        "엄마, 감재 좀 더 주세요.",
+        "할매, 감자 좀 더 주이소."
+      ],
+      "solution": [
+        "'어멍', '감재', '할매', '-이소'는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c80e1ec98b0d",
+      "difficulty": 2,
+      "instruction": "방언이 쓰인 문장을 고르시오.",
+      "stem": "여행지에서 들은 말입니다.",
+      "answer": "혼저 옵서예.",
+      "distractors": [
+        "어서 오세요.",
+        "또 놀러 오세요.",
+        "안녕히 가세요."
+      ],
+      "solution": [
+        "'혼저 옵서예'는 제주 지역 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8d2b296488b",
+      "difficulty": 3,
+      "instruction": "제주 방언 '폭삭 속았수다'를 표준어로 바꾼 말을 고르시오.",
+      "stem": "이웃 할머니께서 밭일을 마친 사람들에게 '폭삭 속았수다'라고 하셨습니다.",
+      "answer": "수고 많으셨습니다",
+      "distractors": [
+        "완전히 속았습니다",
+        "어서 오십시오",
+        "안녕히 주무세요"
+      ],
+      "solution": [
+        "'폭삭 속았수다'는 제주 방언으로 수고 많으셨다는 인사다. 속는다는 말로 오해하기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c948f8eff959",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "아까 내가 했당께.",
+      "answer": "아까 내가 했다니까.",
+      "distractors": [
+        "아까 내가 할게.",
+        "아까 내가 안 했어.",
+        "아까 네가 했잖아."
+      ],
+      "solution": [
+        "'-당께'는 '-다니까'를 이르는 전라 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cf6c09f9dc20",
+      "difficulty": 2,
+      "instruction": "표준어와 방언의 짝이 잘못된 것을 고르시오.",
+      "stem": "방언 조사 숙제로 표준어와 방언을 짝 지었습니다.",
+      "answer": "할머니와 아부지",
+      "distractors": [
+        "할머니와 할매",
+        "아버지와 아부지",
+        "바다와 바당"
+      ],
+      "solution": [
+        "아부지는 아버지를 이르는 방언이다. 할머니는 경상에서 할매라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cff975a4845e",
+      "difficulty": 3,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "대구에 사는 민서는 여러 글을 씁니다.",
+      "answer": "전국 독후감 대회에 낼 글을 쓸 때",
+      "distractors": [
+        "고향 친구에게 편지를 쓸 때",
+        "할매께 생신 축하 쪽지를 쓸 때",
+        "사촌 언니에게 문자를 보낼 때"
+      ],
+      "solution": [
+        "전국 대회 글은 여러 지역 심사위원이 읽으므로 표준어로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0ad8dcb536f",
+      "difficulty": 1,
+      "instruction": "방언이 쓰인 문장을 고르시오.",
+      "stem": "다음은 여러 사람이 한 말입니다.",
+      "answer": "할매, 진지 잡수이소.",
+      "distractors": [
+        "할머니, 진지 잡수세요.",
+        "어머니, 식사하세요.",
+        "선생님, 안녕하세요."
+      ],
+      "solution": [
+        "'할매'와 '-이소'는 경상 지역 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d22c2485e943",
+      "difficulty": 3,
+      "instruction": "글을 읽고 글쓴이의 생각으로 알맞은 것을 고르시오.",
+      "stem": "우리 할머니는 부추를 정구지라고 부르십니다. 처음에는 이상했지만 지금은 그 말을 들으면 할머니 댁 마당이 떠오릅니다. 방언에는 그 지역 사람들의 삶이 함께 남아 있습니다.",
+      "answer": "방언에는 지역의 삶이 남아 있어 소중하다",
+      "distractors": [
+        "방언은 틀린 말이라 고쳐야 한다",
+        "할머니께 표준어만 쓰시라고 해야 한다",
+        "부추는 경상 지역에서만 자란다"
+      ],
+      "solution": [
+        "글쓴이는 방언에 지역 사람들의 삶이 남아 있다고 했다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2f0842cd5ef",
+      "difficulty": 3,
+      "instruction": "표준어와 방언의 짝이 잘못된 것을 고르시오.",
+      "stem": "제주와 강원 지역 방언을 조사해 짝을 지었습니다.",
+      "answer": "감자와 바당",
+      "distractors": [
+        "감자와 감재",
+        "바다와 바당",
+        "어머니와 어멍"
+      ],
+      "solution": [
+        "바당은 바다를 이르는 방언이다. 감자는 강원에서 감재라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d638bb1ed1e0",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "오늘 억수로 춥다. 단디 입고 나가래이.",
+      "answer": "오늘 몹시 춥다. 단단히 입고 나가거라.",
+      "distractors": [
+        "오늘 조금 춥다. 가볍게 입고 나가거라.",
+        "오늘 몹시 덥다. 단단히 입고 나가거라.",
+        "오늘 몹시 춥다. 나가지 말거라."
+      ],
+      "solution": [
+        "'억수로'는 몹시, '단디'는 단단히를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d7c46ed0e6f9",
+      "difficulty": 2,
+      "instruction": "표준어로만 된 문장을 고르시오.",
+      "stem": "장터에서 들은 말입니다.",
+      "answer": "옥수수 한 봉지에 얼마예요?",
+      "distractors": [
+        "강냉이 한 봉지에 얼마예요?",
+        "옥수수 한 봉지에 얼마여유?",
+        "옥수수 한 봉지 억수로 싸네."
+      ],
+      "solution": [
+        "'강냉이', '-여유', '억수로'는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d98d68812ae8",
+      "difficulty": 3,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "강릉에 사는 서준이는 여러 사람과 이야기합니다.",
+      "answer": "전국 어린이 기자단 회의에서 의견을 말할 때",
+      "distractors": [
+        "같은 반 친구와 축구할 때",
+        "할아버지와 감자를 캘 때",
+        "이웃 할머니께 인사할 때"
+      ],
+      "solution": [
+        "전국에서 모인 회의에서는 모두가 뜻을 정확히 알도록 표준어를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dab136a4b660",
+      "difficulty": 1,
+      "instruction": "표준어와 방언을 바르게 짝 지은 것을 고르시오.",
+      "stem": "강원 지역 시장에서 들은 말을 정리했습니다.",
+      "answer": "옥수수와 강냉이",
+      "distractors": [
+        "옥수수와 감재",
+        "어머니와 바당",
+        "김치와 가시개"
+      ],
+      "solution": [
+        "옥수수는 강원 지역에서 강냉이라고 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dbdf37732c91",
+      "difficulty": 1,
+      "instruction": "문장에서 '아부지'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "아부지, 오늘 일찍 들어오셨네예.",
+      "answer": "아버지",
+      "distractors": [
+        "어머니",
+        "할머니",
+        "선생님"
+      ],
+      "solution": [
+        "'아부지'는 경상 지역에서 아버지를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dc9c28ed27e2",
+      "difficulty": 3,
+      "instruction": "방언을 쓸 때 좋은 점으로 알맞은 것을 고르시오.",
+      "stem": "고향 친구를 오랜만에 만나 고향 말로 이야기합니다.",
+      "answer": "같은 지역 사람끼리 정겹고 가깝게 느낀다",
+      "distractors": [
+        "처음 만난 사람도 뜻을 정확히 안다",
+        "뉴스를 전할 때 뜻이 잘 통한다",
+        "글을 쓸 때 맞춤법이 쉬워진다"
+      ],
+      "solution": [
+        "같은 지역 말을 쓰면 서로 정겹고 가깝게 느낀다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dd118bdcb5df",
+      "difficulty": 1,
+      "instruction": "문장에서 '어멍'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "우리 어멍은 귤밭에서 일하십니다.",
+      "answer": "어머니",
+      "distractors": [
+        "아버지",
+        "할머니",
+        "선생님"
+      ],
+      "solution": [
+        "'어멍'은 제주 지역에서 어머니를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dd9c849c0a2a",
+      "difficulty": 2,
+      "instruction": "표준어가 필요한 까닭으로 알맞은 것을 고르시오.",
+      "stem": "전국 여러 지역 사람들이 함께 모여 회의를 합니다.",
+      "answer": "여러 지역 사람이 뜻을 정확히 주고받을 수 있다",
+      "distractors": [
+        "지역마다 말이 더 달라진다",
+        "방언을 모두 없앨 수 있다",
+        "말을 더 빨리 할 수 있다"
+      ],
+      "solution": [
+        "표준어를 쓰면 다른 지역 사람끼리도 뜻이 잘 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dea5d4da2f8b",
+      "difficulty": 3,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "부산에 사는 지호는 오늘 여러 일을 합니다.",
+      "answer": "온라인으로 전국 친구들 앞에서 발표할 때",
+      "distractors": [
+        "동네 친구와 축구할 때",
+        "할매와 시장에 갈 때",
+        "사촌과 전화로 수다를 떨 때"
+      ],
+      "solution": [
+        "전국 친구들이 듣는 발표에서는 뜻이 정확히 통하도록 표준어를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dfec13f51b5a",
+      "difficulty": 1,
+      "instruction": "방언을 써도 자연스러운 상황을 고르시오.",
+      "stem": "유나는 여러 사람과 말을 나눕니다.",
+      "answer": "할머니 댁에서 사촌들과 놀 때",
+      "distractors": [
+        "방송에서 뉴스를 전할 때",
+        "교과서 글을 쓸 때",
+        "공항 안내 방송을 할 때"
+      ],
+      "solution": [
+        "같은 고향 사촌끼리는 방언을 써도 뜻이 잘 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e3fb35bbb5db",
+      "difficulty": 1,
+      "instruction": "문장에서 '짐치'에 해당하는 표준어로 알맞은 것을 고르시오.",
+      "stem": "짐치 한 접시 더 주이소.",
+      "answer": "김치",
+      "distractors": [
+        "두부",
+        "고기",
+        "우유"
+      ],
+      "solution": [
+        "'짐치'는 김치를 이르는 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6be14131313",
+      "difficulty": 3,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "놀멍 쉬멍 갑서.",
+      "answer": "놀면서 쉬면서 가세요.",
+      "distractors": [
+        "놀지 말고 서둘러 가세요.",
+        "쉬지 말고 빨리 가세요.",
+        "놀다가 집에 있으세요."
+      ],
+      "solution": [
+        "'-멍'은 '-면서', '-서'는 '-세요'에 해당하는 제주 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e7304d16c29f",
+      "difficulty": 1,
+      "instruction": "방언이 쓰인 문장을 고르시오.",
+      "stem": "친구들이 학교에서 나눈 말입니다.",
+      "answer": "어서 싸게 가자잉.",
+      "distractors": [
+        "어서 빨리 가자.",
+        "천천히 걸어가자.",
+        "다 같이 출발하자."
+      ],
+      "solution": [
+        "'싸게'와 '-잉'은 전라 지역 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ebaf9bf0a16a",
+      "difficulty": 2,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "아라는 오늘 여러 사람에게 말을 전합니다.",
+      "answer": "다른 지역에서 오신 손님께 우리 마을을 소개할 때",
+      "distractors": [
+        "고향 친구와 떡볶이를 먹을 때",
+        "할머니께 반찬을 여쭐 때",
+        "동생과 숙제를 할 때"
+      ],
+      "solution": [
+        "다른 지역 손님이 잘 알아들으시게 하려면 표준어가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f35d6f28c8dd",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "얼른 와유. 밥 다 됐어유.",
+      "answer": "얼른 와요. 밥 다 됐어요.",
+      "distractors": [
+        "천천히 와요. 밥 아직 안 됐어요.",
+        "얼른 가요. 밥 다 먹었어요.",
+        "얼른 와요. 밥 다 먹었어요."
+      ],
+      "solution": [
+        "'-유'는 '-요'에 해당하는 충청 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f7c0f0164b34",
+      "difficulty": 3,
+      "instruction": "표준어로만 된 문장을 고르시오.",
+      "stem": "제주 여행에서 나눈 말을 적었습니다.",
+      "answer": "할머니, 바다가 참 예뻐요.",
+      "distractors": [
+        "할망, 바다가 참 예뻐요.",
+        "할머니, 바당이 참 예뻐요.",
+        "할머니, 바다가 참 곱닥하우다."
+      ],
+      "solution": [
+        "'할망', '바당', '곱닥하우다'는 제주 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f87896ddbc19",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "머라카노?",
+      "answer": "뭐라고 하니?",
+      "distractors": [
+        "어디 가니?",
+        "누가 왔니?",
+        "언제 오니?"
+      ],
+      "solution": [
+        "'머라카노'는 뭐라고 하니를 이르는 경상 방언이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "faa4ddf7e9e0",
+      "difficulty": 2,
+      "instruction": "방언으로 된 문장을 표준어로 바르게 바꾼 것을 고르시오.",
+      "stem": "할매, 내 왔다!",
+      "answer": "할머니, 저 왔어요!",
+      "distractors": [
+        "할아버지, 저 갈게요!",
+        "어머니, 저 왔어요!",
+        "할머니, 저 가요!"
+      ],
+      "solution": [
+        "'할매'는 할머니를 이르는 경상 방언이고, 왔다고 알리는 인사다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fd193911c4e9",
+      "difficulty": 1,
+      "instruction": "표준어를 쓰는 것이 더 알맞은 상황을 고르시오.",
+      "stem": "윤서는 하루 동안 여러 사람 앞에서 말을 합니다.",
+      "answer": "라디오 일기 예보를 전할 때",
+      "distractors": [
+        "동네 친구와 줄넘기할 때",
+        "할머니께 반찬을 여쭐 때",
+        "언니와 방에서 이야기할 때"
+      ],
+      "solution": [
+        "일기 예보는 온 나라 사람이 들으므로 표준어로 전한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

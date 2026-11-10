@@ -2,7 +2,7 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 218
+    "generatorCount": 224
   },
   "totalStandards": 248,
   "autoScorableStandards": 194,
@@ -82,7 +82,7 @@
       "autoScorable": 49,
       "manualOnly": 38,
       "covered": 23,
-      "generators": 47,
+      "generators": 51,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
@@ -142,7 +142,7 @@
       "autoScorable": 25,
       "manualOnly": 15,
       "covered": 9,
-      "generators": 19,
+      "generators": 21,
       "byDomain": {
         "이해": {
           "total": 20,
@@ -5038,9 +5038,10 @@
       "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 1,
+      "generatorCount": 2,
       "generatorIds": [
-        "korean.g12.st.s02-02.reading-break"
+        "korean.g12.st.s02-02.reading-break",
+        "korean.authored.k2-02-02"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5062,6 +5063,13 @@
         "alignments": [
           {
             "generatorId": "korean.g12.st.s02-02.reading-break",
+            "topicId": "kr.mt.korean.reading.1-2.2guk0202.04",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "korean.authored.k2-02-02",
             "topicId": "kr.mt.korean.reading.1-2.2guk0202.04",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
@@ -5536,10 +5544,11 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 3,
       "generatorIds": [
         "korean.g34.gr.s02.dictionary-order",
-        "korean.g34.gr.s02.dictionary-first"
+        "korean.g34.gr.s02.dictionary-first",
+        "korean.authored.k4-04-02"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5572,6 +5581,13 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "korean.authored.k4-04-02",
+            "topicId": "kr.mt.korean.grammar.3-4.4guk0402.04",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5583,9 +5599,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 1,
+      "generatorCount": 2,
       "generatorIds": [
-        "korean.g34.gr.s03.sentence-parts"
+        "korean.g34.gr.s03.sentence-parts",
+        "korean.authored.k4-04-03"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5607,6 +5624,13 @@
         "alignments": [
           {
             "generatorId": "korean.g34.gr.s03.sentence-parts",
+            "topicId": "kr.mt.korean.grammar.3-4.4guk0403.04",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "korean.authored.k4-04-03",
             "topicId": "kr.mt.korean.grammar.3-4.4guk0403.04",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
@@ -5863,9 +5887,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 1,
+      "generatorCount": 2,
       "generatorIds": [
-        "korean.g56.gr.s02.standard-word"
+        "korean.g56.gr.s02.standard-word",
+        "korean.authored.k6-04-02"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5887,6 +5912,13 @@
         "alignments": [
           {
             "generatorId": "korean.g56.gr.s02.standard-word",
+            "topicId": "kr.mt.korean.grammar.5-6.6guk0402.04",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "korean.authored.k6-04-02",
             "topicId": "kr.mt.korean.grammar.5-6.6guk0402.04",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
@@ -6137,10 +6169,11 @@
       "domain": "이해",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 3,
       "generatorIds": [
         "english.g34.lt.s01-02.match-case",
-        "english.g34.lt.s01-02.alphabet-order"
+        "english.g34.lt.s01-02.alphabet-order",
+        "english.authored.e4-01-02"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6169,6 +6202,13 @@
           },
           {
             "generatorId": "english.g34.lt.s01-02.alphabet-order",
+            "topicId": "kr.mt.english-efl.3-4.understanding.4영01-02.03.교실-자료에서-알파벳-찾기",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "english.authored.e4-01-02",
             "topicId": "kr.mt.english-efl.3-4.understanding.4영01-02.03.교실-자료에서-알파벳-찾기",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
@@ -6231,10 +6271,11 @@
       "domain": "표현",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 3,
       "generatorIds": [
         "english.g34.lt.s02-02.write-case",
-        "english.g34.lt.s02-02.first-letter"
+        "english.g34.lt.s02-02.first-letter",
+        "english.authored.e4-02-02"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6263,6 +6304,13 @@
           },
           {
             "generatorId": "english.g34.lt.s02-02.first-letter",
+            "topicId": "kr.mt.english-efl.3-4.expression.4영02-02.03.알파벳-카드-보고-쓰기",
+            "confidence": "standard-code-inferred",
+            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
+            "reviewStatus": "candidate"
+          },
+          {
+            "generatorId": "english.authored.e4-02-02",
             "topicId": "kr.mt.english-efl.3-4.expression.4영02-02.03.알파벳-카드-보고-쓰기",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
