@@ -433,7 +433,7 @@ const hoursMinutes = {
   skill: '시간을 몇 분 또는 몇 시간 몇 분으로 나타내기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const hours = difficulty === 1 ? 1 : difficulty === 2 ? rng.int(1, 2) : rng.int(2, 4);
+    const hours = difficulty === 1 ? rng.int(1, 3) : difficulty === 2 ? rng.int(1, 6) : rng.int(4, 12);
     const minutes = difficulty === 1 ? rng.int(1, 11) * 5 : rng.int(1, 59);
     const total = hours * 60 + minutes;
     const toMinutes = rng.bool();
@@ -569,10 +569,10 @@ const weekdayOfDate = {
 };
 
 const PERIODS = [
-  { big: '주일', small: '일', rate: 7, bigMax: 5 },
-  { big: '년', small: '개월', rate: 12, bigMax: 4 },
-  { big: '일', small: '시간', rate: 24, bigMax: 3 },
-  { big: '시간', small: '분', rate: 60, bigMax: 3 },
+  { big: '주일', small: '일', rate: 7, bigMax: 12 },
+  { big: '년', small: '개월', rate: 12, bigMax: 9 },
+  { big: '일', small: '시간', rate: 24, bigMax: 9 },
+  { big: '시간', small: '분', rate: 60, bigMax: 9 },
 ];
 
 const weeksDays = {

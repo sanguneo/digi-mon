@@ -124,27 +124,49 @@ const gcdStory = {
   },
 };
 
+const LCM_SCENES = [
+  { what: '버스', verb: '출발합니다', past: '출발했다면', again: '동시에 출발하는 것', unit: '분' },
+  { what: '기차', verb: '출발합니다', past: '출발했다면', again: '동시에 출발하는 것', unit: '분' },
+  { what: '분수대', verb: '물을 뿜습니다', past: '물을 뿜었다면', again: '동시에 물을 뿜는 것', unit: '초' },
+  { what: '신호등', verb: '깜박입니다', past: '깜박였다면', again: '동시에 깜박이는 것', unit: '초' },
+  { what: '알람', verb: '울립니다', past: '울렸다면', again: '동시에 울리는 것', unit: '분' },
+];
+
 const lcmStory = {
   id: 'math.g56.no.s05.lcm-story',
   standardCode: '[6수01-05]',
   skill: '최소공배수를 이용하여 다시 동시에 일어나는 때 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const [lo, hi] = difficulty === 1 ? [2, 12] : difficulty === 2 ? [4, 20] : [6, 40];
+    const [lo, hi] = difficulty === 1 ? [2, 30] : difficulty === 2 ? [4, 45] : [6, 60];
     const { a, b } = rng.until(() => ({ a: rng.int(lo, hi), b: rng.int(lo, hi) }), ({ a: x, b: y }) => (
       x < y && y % x !== 0 && gcd(x, y) > 1
     ));
     const L = lcm(a, b);
-    const scene = rng.pick([
-      { what: '버스', verb: '출발합니다', past: '출발했다면', again: '동시에 출발하는 것', unit: '분' },
-      { what: '분수대', verb: '물을 뿜습니다', past: '물을 뿜었다면', again: '동시에 물을 뿜는 것', unit: '초' },
-      { what: '신호등', verb: '깜박입니다', past: '깜박였다면', again: '동시에 깜박이는 것', unit: '초' },
-    ]);
+    const scene = rng.pick(LCM_SCENES);
+    const head = `가 ${scene.what}${josaEun(scene.what)} ${a}${scene.unit}마다, 나 ${scene.what}${josaEun(scene.what)} ${b}${scene.unit}마다 ${scene.verb}.`
+      + ` 지금 두 ${scene.what}${josaI(scene.what)} 동시에 ${scene.past},`;
+    // 난이도 2·3은 정해진 시간 동안 다시 함께 일어나는 횟수도 묻는다.
+    if (difficulty !== 1 && rng.bool()) {
+      const k = rng.int(2, difficulty === 2 ? 5 : 9);
+      const T = L * k + rng.int(0, L - 1);
+      return {
+        params: { kind: 'count', a, b, T },
+        instruction: '물음에 답하시오.',
+        stem: `${head} 앞으로 ${T}${scene.unit} 동안 다시 ${scene.again}은 몇 번입니까? (지금은 세지 않습니다.)`,
+        answer: { value: k, display: `${k}번`, accepts: [num(k), `${k}번`] },
+        solution: [
+          `다시 함께 일어나는 때는 ${numGwa(a)} ${b}의 공배수이고, 최소공배수는 ${L}이다.`,
+          `${T}까지 ${L}의 배수는 ${T} ÷ ${L}의 몫인 ${k}개이므로 ${k}번이다.`,
+        ],
+        dedupeKey: `lcm-story:count:${a}:${b}:${T}`,
+        difficulty,
+      };
+    }
     return {
-      params: { a, b },
+      params: { kind: 'first', a, b },
       instruction: '물음에 답하시오.',
-      stem: `가 ${scene.what}${josaEun(scene.what)} ${a}${scene.unit}마다, 나 ${scene.what}${josaEun(scene.what)} ${b}${scene.unit}마다 ${scene.verb}.`
-        + ` 지금 두 ${scene.what}${josaI(scene.what)} 동시에 ${scene.past}, 처음으로 다시 ${scene.again}은 몇 ${scene.unit} 후입니까?`,
+      stem: `${head} 처음으로 다시 ${scene.again}은 몇 ${scene.unit} 후입니까?`,
       answer: { value: L, display: `${L}${scene.unit} 후`, accepts: [num(L), `${L}${scene.unit}`, `${L}${scene.unit} 후`] },
       solution: [
         `다시 함께 일어나는 때는 ${numGwa(a)} ${b}의 공배수이다.`,
@@ -154,8 +176,15 @@ const lcmStory = {
       difficulty,
     };
   },
-  verify({ a, b }, answer) {
+  verify({ kind, a, b, T }, answer) {
     const v = answer.value;
+    if (kind === 'count') {
+      if (!Number.isInteger(v) || v < 1) return false;
+      // 1부터 T까지 두 수의 공배수를 하나씩 센다.
+      let c = 0;
+      for (let k = 1; k <= T; k += 1) if (k % a === 0 && k % b === 0) c += 1;
+      return c === v;
+    }
     if (!Number.isInteger(v) || v < 1 || v % a !== 0 || v % b !== 0) return false;
     // 더 작은 공배수가 없는지 하나씩 확인한다.
     for (let k = Math.max(a, b); k < v; k += 1) if (k % a === 0 && k % b === 0) return false;
@@ -776,8 +805,8 @@ const circleMeasure = {
   format: 'short-answer',
   generate(rng, { difficulty }) {
     const pi = PI[difficulty];
-    const kind = rng.pick(['circumference', 'diameter', 'area']);
-    const r = rng.int(1, difficulty === 3 ? 30 : 15);
+    const kind = rng.pick(['circumference', 'diameter', 'radius', 'area']);
+    const r = rng.int(1, difficulty === 1 ? 50 : difficulty === 2 ? 99 : 150);
     const d = 2 * r;
     if (kind === 'circumference') {
       const fromRadius = rng.bool();
@@ -804,14 +833,28 @@ const circleMeasure = {
         difficulty,
       };
     }
+    if (kind === 'radius') {
+      const c = fmtHundredths(d * pi.h);
+      return {
+        params: { kind, pi: pi.h, circumference: c },
+        instruction: `원주율은 ${pi.text}${pi.ro} 계산하시오.`,
+        stem: `원주가 ${c}cm인 원의 반지름은 몇 cm입니까?`,
+        answer: { value: r, display: `${r}cm`, accepts: [num(r), `${r}cm`] },
+        solution: [`지름은 ${c} ÷ ${pi.text} = ${d}cm이다.`, `반지름은 지름의 반이므로 ${d} ÷ 2 = ${r}cm이다.`],
+        dedupeKey: `circle:radius:${r}:${pi.text}`,
+        difficulty,
+      };
+    }
     const value = fmtHundredths(r * r * pi.h);
+    // 지름을 주면 반지름을 먼저 구해야 한다.
+    const fromDiameter = rng.bool();
     return {
       params: { kind, pi: pi.h, r },
       instruction: `원주율은 ${pi.text}${pi.ro} 계산하시오.`,
-      stem: `반지름이 ${r}cm인 원의 넓이는 몇 cm²입니까?`,
+      stem: `${fromDiameter ? `지름이 ${d}cm` : `반지름이 ${r}cm`}인 원의 넓이는 몇 cm²입니까?`,
       answer: { value, display: `${value}cm²`, accepts: [value, `${value}cm²`] },
       solution: ['원의 넓이는 (반지름) × (반지름) × (원주율)이다.', `${r} × ${r} × ${pi.text} = ${value}이므로 ${value}cm²이다.`],
-      dedupeKey: `circle:area:${r}:${pi.text}`,
+      dedupeKey: `circle:area:${fromDiameter ? 'd:' : ''}${r}:${pi.text}`,
       difficulty,
     };
   },
@@ -820,6 +863,11 @@ const circleMeasure = {
       // 지름에 원주율을 곱하면 주어진 원주가 되어야 한다.
       const v = answer.value;
       return Number.isInteger(v) && v * params.pi === parseHundredths(params.circumference);
+    }
+    if (params.kind === 'radius') {
+      // 반지름의 두 배에 원주율을 곱하면 주어진 원주가 되어야 한다.
+      const v = answer.value;
+      return Number.isInteger(v) && v > 0 && 2 * v * params.pi === parseHundredths(params.circumference);
     }
     const h = parseHundredths(answer.value);
     if (h === null) return false;

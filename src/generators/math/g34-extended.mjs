@@ -306,8 +306,8 @@ const mixedToImproper = {
   skill: '대분수를 가분수로 나타내기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const d = difficulty === 1 ? rng.int(2, 5) : difficulty === 2 ? rng.int(3, 9) : rng.int(6, 15);
-    const whole = difficulty === 1 ? rng.int(1, 3) : difficulty === 2 ? rng.int(2, 6) : rng.int(4, 12);
+    const d = difficulty === 1 ? rng.int(2, 9) : difficulty === 2 ? rng.int(3, 25) : rng.int(6, 40);
+    const whole = difficulty === 1 ? rng.int(1, 9) : difficulty === 2 ? rng.int(2, 40) : rng.int(5, 60);
     const n = rng.int(1, d - 1);
     const top = whole * d + n;
     const display = `${top}/${d}`;
