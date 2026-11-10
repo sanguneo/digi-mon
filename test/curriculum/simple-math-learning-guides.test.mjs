@@ -56,6 +56,11 @@ const EXTENDED_IDS = [
   'math.g12.no.s06.compare-expressions',
   'math.g12.no.s09.story-box',
   'math.g12.no.s11.times-compare',
+  'math.g12.no.s03.blank-digit-compare',
+  'math.g12.no.s02.compose-units',
+  'math.g12.no.s03.digit-cards',
+  'math.g12.no.s08.story-three',
+  'math.g12.no.s09.box-three',
 ];
 const registry = createRegistry();
 const spine = buildSpine(loadOntology());
