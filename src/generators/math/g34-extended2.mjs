@@ -124,10 +124,10 @@ const pictureGraph = {
 };
 
 const BAR_CONTEXTS = [
-  { topic: '좋아하는 과일별 학생 수', cats: ['사과', '배', '포도', '귤', '딸기'], unit: '명' },
-  { topic: '반별 모은 빈 병의 수', cats: ['1반', '2반', '3반', '4반', '5반'], unit: '개' },
-  { topic: '요일별 도서관 방문자 수', cats: ['월요일', '화요일', '수요일', '목요일', '금요일'], unit: '명' },
-  { topic: '마을별 심은 나무의 수', cats: ['가 마을', '나 마을', '다 마을', '라 마을', '마 마을'], unit: '그루' },
+  { topic: '좋아하는 과일별 학생 수', cats: ['사과', '배', '포도', '귤', '딸기'], what: '학생 수', unit: '명' },
+  { topic: '반별 모은 빈 병의 수', cats: ['1반', '2반', '3반', '4반', '5반'], what: '빈 병의 수', unit: '개' },
+  { topic: '요일별 도서관 방문자 수', cats: ['월요일', '화요일', '수요일', '목요일', '금요일'], what: '방문자 수', unit: '명' },
+  { topic: '마을별 심은 나무의 수', cats: ['가 마을', '나 마을', '다 마을', '라 마을', '마 마을'], what: '나무의 수', unit: '그루' },
 ];
 
 const barCompare = {
@@ -162,22 +162,22 @@ const barCompare = {
       counts[k] = step * rng.int(1, (counts[i] + counts[j]) / step - 1);
     }
     if (kind !== 'sum-vs') k = -1;
-    const { cats, unit } = c;
+    const { cats, unit, what } = c;
     const [ci, cj] = [cats[i], cats[j]];
     let value;
     let ask;
     let calc;
     if (kind === 'diff') {
       value = Math.abs(counts[i] - counts[j]);
-      ask = `${ci}${gwa(ci)} ${cj}의 수의 차는 몇 ${unit}입니까?`;
+      ask = `${ci}${gwa(ci)} ${cj}의 ${what}의 차는 몇 ${unit}입니까?`;
       calc = `${Math.max(counts[i], counts[j])} - ${Math.min(counts[i], counts[j])} = ${value}`;
     } else if (kind === 'sum2') {
       value = counts[i] + counts[j];
-      ask = `${ci}${gwa(ci)} ${cj}의 수를 합하면 몇 ${unit}입니까?`;
+      ask = `${ci}${gwa(ci)} ${cj}의 ${what}${josaEul(what)} 합하면 몇 ${unit}입니까?`;
       calc = `${counts[i]} + ${counts[j]} = ${value}`;
     } else if (kind === 'times') {
       value = N;
-      ask = `${ci}의 수는 ${cj}의 수의 몇 배입니까?`;
+      ask = `${ci}의 ${what}${josaEun(what)} ${cj}의 ${what}의 몇 배입니까?`;
       calc = `${counts[i]} ÷ ${counts[j]} = ${value}`;
     } else if (kind === 'more-by') {
       value = cj;
@@ -185,7 +185,7 @@ const barCompare = {
       calc = `${counts[i]} + ${N} = ${counts[j]}`;
     } else {
       value = counts[i] + counts[j] - counts[k];
-      ask = `${ci}${gwa(ci)} ${cj}의 수를 합하면 ${cats[k]}의 수보다 몇 ${unit} 더 많습니까?`;
+      ask = `${ci}${gwa(ci)} ${cj}의 ${what}${josaEul(what)} 합하면 ${cats[k]}의 ${what}보다 몇 ${unit} 더 많습니까?`;
       calc = `${counts[i]} + ${counts[j]} - ${counts[k]} = ${value}`;
     }
     const answer = kind === 'more-by' ? { value, display: value, accepts: [value] }
@@ -343,7 +343,7 @@ const lineChange = {
 const TABLE_CONTEXTS = [
   { topic: '좋아하는 운동', cats: ['축구', '야구', '농구', '피구', '배구'], what: '학생 수', unit: '명' },
   { topic: '반별 안경 쓴 학생 수', cats: ['1반', '2반', '3반', '4반'], what: '학생 수', unit: '명' },
-  { topic: '종류별 팔린 빵의 수', cats: ['단팥빵', '크림빵', '식빵', '소보로빵'], what: '빵의 수', unit: '개' },
+  { topic: '종류별 팔린 빵의 수', cats: ['단팥빵', '크림빵', '식빵', '소보로빵'], what: '수', whatAlone: '팔린 빵의 수', unit: '개' },
   { topic: '마을별 가로등의 수', cats: ['가 마을', '나 마을', '다 마을', '라 마을', '마 마을'], what: '가로등의 수', unit: '개' },
 ];
 
@@ -368,6 +368,8 @@ const tableMissing = {
     const total = sum(counts);
     const shown = counts.map((x, k) => (k === mi ? '□' : String(x)));
     const { cats, unit, what } = c;
+    // 항목 이름 없이 쓸 때의 말(예: '팔린 빵의 수')이 따로 있으면 그것을 쓴다.
+    const lone = c.whatAlone ?? what;
     const m = counts[mi];
     const findLine = `${cats[mi]}의 ${what}${josaEun(what)} ${total} - (${counts.filter((_, k) => k !== mi).join(' + ')}) = ${idaUnit(m, unit)}`;
     let value;
@@ -387,11 +389,11 @@ const tableMissing = {
       last = `${m} ÷ ${cell} = ${value}이므로 ${value}칸이다.`;
     } else if (kind === 'max-min') {
       value = counts[order[0]] - counts[order[n - 1]];
-      ask = `${what}${josaI(what)} 가장 많은 것과 가장 적은 것의 차는 몇 ${unit}입니까?`;
+      ask = `${lone}${josaI(lone)} 가장 많은 것과 가장 적은 것의 차는 몇 ${unit}입니까?`;
       last = `${counts[order[0]]} - ${counts[order[n - 1]]} = ${value}이다.`;
     } else {
       value = cats[mi];
-      ask = `${what}${josaI(what)} 두 번째로 많은 것은 무엇입니까?`;
+      ask = `${lone}${josaI(lone)} 두 번째로 많은 것은 무엇입니까?`;
       last = `큰 수부터 차례로 ${order.map((k) => counts[k]).join(', ')}이므로 답은 ${value}이다.`;
     }
     const answer = kind === 'rank2' ? { value, display: value, accepts: [value] }
@@ -895,7 +897,7 @@ const circlesInRow = {
       if (kind === 'big-circle') {
         return {
           shown: [r * n, n], value: r, check: { total: r * n, perR: n },
-          stem: `큰 원 안에 크기가 같은 작은 원 ${n}개를 큰 원의 지름 위에 한 줄로 맞닿게 그렸습니다. 큰 원의 반지름이 ${r * n}cm일 때 작은 원의 반지름은 몇 cm입니까?`,
+          stem: `큰 원 안에 크기가 같은 작은 원 ${n}개를 큰 원의 지름 위에 한 줄로 맞닿게 그렸더니 양 끝의 작은 원이 큰 원에 꼭 맞게 닿았습니다. 큰 원의 반지름이 ${r * n}cm일 때 작은 원의 반지름은 몇 cm입니까?`,
           solution: [`큰 원의 지름 ${2 * r * n}cm는 작은 원의 지름 ${n}개의 길이와 같다.`, `작은 원의 지름은 ${2 * r * n} ÷ ${n} = ${2 * r}cm이므로 반지름은 ${r}cm이다.`],
         };
       }
@@ -1039,7 +1041,8 @@ const mixedValue = (rng, P, lo, hi) => rng.int(lo, hi) * P.rate + rng.int(1, P.r
 
 /**
  * 단위가 섞인 문장제 생성기를 만든다. 각 kind 는 더하는 양(plus)과 빼는 양(minus),
- * 문장을 만드는 render 를 돌려준다. 답이 큰 단위로 나누어떨어지면 첫 양을 1 키운다.
+ * 문장을 만드는 render 를 돌려준다. 답이 큰 단위로 나누어떨어지는 경우는 다시 뽑아
+ * 문장·params·답이 모두 같은 수에서 나오게 한다.
  */
 function makeMeasureStory({ id, standardCode, skill, systems, kinds, build }) {
   return {
@@ -1050,9 +1053,11 @@ function makeMeasureStory({ id, standardCode, skill, systems, kinds, build }) {
     generate(rng, { difficulty }) {
       const P = systems(difficulty);
       const kind = rng.pick(kinds[difficulty]);
-      const made = rng.until(() => build[kind](rng, P, difficulty), (x) => sum(x.plus) - sum(x.minus) > 0);
+      const made = rng.until(() => build[kind](rng, P, difficulty), (x) => {
+        const diff = sum(x.plus) - sum(x.minus);
+        return diff > 0 && diff % P.rate !== 0;
+      });
       const { plus, minus } = made;
-      if ((sum(plus) - sum(minus)) % P.rate === 0) plus[0] += 1;
       const v = sum(plus) - sum(minus);
       const M = (x) => mixedFmt(x, P);
       const ask = v >= P.rate ? `몇 ${P.big} 몇 ${P.small}` : `몇 ${P.small}`;
@@ -1238,8 +1243,9 @@ const tonStory = {
         };
       }
       if (kind === 'compare') {
-        const a = mixedValue(rng, T_KG, difficulty === 1 ? 1 : 3, difficulty === 1 ? 3 : 9);
-        const b = rng.int(difficulty === 1 ? 1001 : 3001, difficulty === 1 ? 3999 : 9999);
+        // 하마는 1500~3000kg, 코끼리는 그보다 무거운 3t~7t 로 둔다.
+        const a = mixedValue(rng, T_KG, difficulty === 1 ? 3 : 5, difficulty === 1 ? 4 : 6);
+        const b = rng.int(1500, 3000);
         return {
           check: { pair: [a, b] }, value: Math.abs(a - b), unit: 'kg', shown: [a, b],
           stem: `코끼리의 무게는 ${M(a)}이고, 하마의 무게는 ${b}kg입니다. 두 동물의 무게의 차는 몇 kg입니까?`,
@@ -1438,7 +1444,7 @@ const blankDigitCompare = {
     return {
       params: { shownA, B, op },
       instruction: '물음에 답하시오.',
-      stem: `${shownA} ${op} ${B}\n0부터 9까지의 숫자 중 □ 안에 들어갈 수 있는 숫자는 모두 몇 개입니까?`,
+      stem: `${shownA} ${op} ${B}\n${lowest}부터 9까지의 숫자 중 □ 안에 들어갈 수 있는 숫자는 모두 몇 개입니까?`,
       answer: { value, display: `${value}개`, accepts: [num(value), `${value}개`] },
       solution: [
         `□ 앞의 자리 숫자는 같으므로 □가 있는 자리부터 비교한다.`,
@@ -1483,10 +1489,10 @@ const DIVIDE2_CONTEXTS = [
     asks: {
       full: (d) => `${d}개씩 가득 담은 봉지는 몇 봉지입니까?`,
       left: () => '봉지에 담고 남는 구슬은 몇 개입니까?',
-      'at-least': () => '구슬을 남김없이 모두 담으려면 봉지는 적어도 몇 장 필요합니까?',
+      'at-least': () => '구슬을 남김없이 모두 담으려면 봉지는 적어도 몇 봉지 필요합니까?',
       'more-needed': () => '남는 구슬 없이 모든 봉지를 가득 채우려면 구슬이 적어도 몇 개 더 있어야 합니까?',
     },
-    units: { full: '봉지', left: '개', 'at-least': '장', 'more-needed': '개' },
+    units: { full: '봉지', left: '개', 'at-least': '봉지', 'more-needed': '개' },
   },
   {
     intro: (t, d) => `색종이 ${t}장을 ${d}명에게 똑같이 나누어 주려고 합니다.`,
@@ -1872,49 +1878,89 @@ const decimalStory = {
 // [4수02-01] 대응 관계 표 · [4수02-02] 계산식 배열 · [4수02-03] 등호
 // ---------------------------------------------------------------------------
 
+const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째', '일곱째', '여덟째', '아홉째', '열째'];
+const PATTERN_CONTEXTS = {
+  grow: [
+    { intro: '규칙에 따라 바둑돌을 놓으면서 순서별 바둑돌의 수를 표로 나타냈습니다.', noun: '바둑돌의 수', unit: '개' },
+    { intro: '규칙에 따라 성냥개비로 모양을 만들면서 순서별 성냥개비의 수를 표로 나타냈습니다.', noun: '성냥개비의 수', unit: '개' },
+    { intro: '규칙에 따라 쌓기나무를 쌓으면서 순서별 쌓기나무의 수를 표로 나타냈습니다.', noun: '쌓기나무의 수', unit: '개' },
+  ],
+  shrink: [
+    { intro: '색종이를 날마다 같은 수만큼 쓰면서 순서별 남은 색종이의 수를 표로 나타냈습니다.', noun: '남은 색종이의 수', unit: '장' },
+    { intro: '구슬을 날마다 같은 수만큼 나누어 주면서 순서별 남은 구슬의 수를 표로 나타냈습니다.', noun: '남은 구슬의 수', unit: '개' },
+  ],
+};
+const stepOnce = (op, x, step) => (op === '+' ? x + step : op === '-' ? x - step : x * step);
+
 const correspondenceTable = {
   id: 'math.g34.mr.s02-01.correspondence-table',
   standardCode: '[4수02-01]',
-  skill: '두 양 사이의 변화 규칙을 표에서 찾아 모르는 값 구하기',
+  skill: '순서에 따라 한 가지 계산(+, -, ×)으로 변하는 규칙을 표에서 찾아 빈칸이나 다음 값 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const kind = difficulty === 1 ? rng.pick(['forward', 'forward', 'inverse']) : rng.pick(['forward', 'inverse']);
-    const a = difficulty === 1 ? rng.int(2, 9) : difficulty === 2 ? rng.int(2, 15) : rng.int(11, 25);
-    const b = difficulty === 1 ? rng.int(0, 9) : difficulty === 2 ? rng.int(0, 30) : rng.int(10, 99);
-    const s = rng.int(1, difficulty === 1 ? 5 : difficulty === 2 ? 10 : 20);
-    const xs = [s, s + 1, s + 2, s + 3];
-    const ys = xs.map((x) => a * x + b);
-    const X = difficulty === 1 ? rng.int(s + 6, s + 25) : difficulty === 2 ? rng.int(s + 10, 99) : rng.int(s + 30, 199);
-    const Y = a * X + b;
-    const value = kind === 'forward' ? Y : X;
-    const ask = kind === 'forward' ? `△가 ${X}일 때 ○는 얼마입니까?` : `○가 ${Y}일 때 △는 얼마입니까?`;
+    const op = difficulty === 1 ? '+' : difficulty === 2 ? rng.pick(['+', '-']) : rng.pick(['+', '-', '+', '-', '×']);
+    // 표에는 다섯째까지 보이고, 묻는 칸은 표 안의 빈칸(둘째~다섯째)이거나 표 뒤로 이어지는 칸이다.
+    const lastTarget = difficulty === 1 ? 5 : difficulty === 2 ? 7 : op === '×' ? 5 : 9;
+    const target = rng.int(1, lastTarget);
+    let step;
+    let start;
+    if (op === '×') {
+      step = rng.pick([2, 3]);
+      start = rng.int(2, step === 2 ? 60 : 8);
+    } else if (difficulty === 1) {
+      step = rng.int(2, 40);
+      start = rng.int(1, 99);
+    } else {
+      const [sLo, sHi, vLo, vHi] = difficulty === 2 ? [11, 99, 100, 999] : [101, 999, 1000, 9999];
+      step = rng.int(sLo, sHi);
+      // 빼는 규칙은 묻는 칸까지 수가 0보다 크게 남도록 시작 수를 정한다.
+      start = op === '-' ? rng.int(Math.max(vLo, step * Math.max(target, 4) + 1), vHi) : rng.int(vLo, vHi);
+    }
+    const seq = [start];
+    for (let k = 1; k <= Math.max(target, 4); k += 1) seq.push(stepOnce(op, seq[k - 1], step));
+    const value = seq[target];
+    const shownVals = seq.slice(0, 5).map((x, k) => (k === target ? null : x));
+    const cells = shownVals.map((x) => (x === null ? '□' : String(x)));
+    const c = rng.pick(op === '-' ? PATTERN_CONTEXTS.shrink : PATTERN_CONTEXTS.grow);
+    const rule = op === '+' ? `${step}씩 커지는` : op === '-' ? `${step}씩 작아지는` : `${step}배씩 커지는`;
+    const ask = target <= 4 ? `□ 안에 알맞은 ${c.noun}는 몇 ${c.unit}입니까?` : `같은 규칙으로 계속할 때 ${ORDINALS[target]}의 ${c.noun}는 몇 ${c.unit}입니까?`;
+    const sym = op === '×' ? '×' : op;
+    const work = target <= 4
+      ? `□ 바로 앞 칸인 ${ORDINALS[target - 1]}의 수가 ${seq[target - 1]}이므로 □는 ${seq[target - 1]} ${sym} ${step} = ${value}이다.`
+      : `다섯째의 수 ${seq[4]}에서 규칙대로 이어 가면 ${seq.slice(5, target + 1).join(', ')}이므로 ${ORDINALS[target]}의 수는 ${value}이다.`;
     return {
-      params: { kind, xs, ys, X, Y },
+      params: { op, shown: shownVals, target },
       instruction: '표를 보고 물음에 답하시오.',
-      stem: `표는 △와 ○ 사이의 대응 관계를 나타낸 것입니다.\n△: ${xs.join(', ')}\n○: ${ys.join(', ')}\n${ask}`,
+      stem: `${c.intro}\n순서: ${ORDINALS.slice(0, 5).join(', ')}\n${c.noun}(${c.unit}): ${cells.join(', ')}\n${ask}`,
       figure: {
         kind: 'data.table',
-        spec: { headers: xs.map(String), values: ys.map(String), headerLabel: '△', valueLabel: '○' },
-        altText: `대응 관계 표. △가 ${xs.join(', ')}일 때 ○는 차례로 ${ys.join(', ')}이다.`,
-        prompt: { ko: `흰 배경에 검은 선으로 그린 2행 대응 관계 표. 위 행은 ${xs.join(', ')}, 아래 행은 ${ys.join(', ')}. 초등 수학 교재용. AR 16:9` },
+        spec: { headers: ORDINALS.slice(0, 5), values: cells, headerLabel: '순서', valueLabel: `${c.noun}(${c.unit})` },
+        altText: `순서별 ${c.noun}를 나타낸 표. 첫째부터 다섯째까지 차례로 ${cells.join(', ')}이다.`,
+        prompt: { ko: `흰 배경에 검은 선으로 그린 2행 표. 위 행은 ${ORDINALS.slice(0, 5).join(', ')}, 아래 행은 ${cells.join(', ')}. 초등 수학 교재용. AR 16:9` },
       },
-      answer: { value, display: num(value), accepts: [num(value)] },
-      solution: [
-        `△가 1씩 커질 때 ○는 ${a}씩 커지므로 ○ = △ × ${a}${b > 0 ? ` + ${b}` : ''}이다.`,
-        kind === 'forward' ? `${X} × ${a}${b > 0 ? ` + ${b}` : ''} = ${Y}이다.` : `(${Y}${b > 0 ? ` - ${b}` : ''}) ÷ ${a} = ${X}이다.`,
-      ],
-      dedupeKey: `corr-table:${kind}:${a}:${b}:${s}:${X}`,
+      answer: unitAnswer(value, c.unit),
+      solution: [`순서가 하나씩 늘어날 때마다 ${c.noun}가 ${rule} 규칙이다.`, work],
+      dedupeKey: `corr-table:${op}:${start}:${step}:${target}`,
       difficulty,
     };
   },
-  verify({ kind, xs, ys, X, Y }, answer) {
+  verify({ op, shown, target }, answer) {
     const v = answer.value;
-    if (!Number.isInteger(v)) return false;
-    // 표의 두 칸에서 규칙(늘어나는 양과 시작 값)을 다시 읽어 대입한다.
-    const rate = ys[1] - ys[0];
-    const base = ys[0] - rate * xs[0];
-    if (ys.some((y, k) => y !== rate * xs[k] + base)) return false;
-    return kind === 'forward' ? v === rate * X + base : rate * v + base === Y;
+    if (!Number.isInteger(v) || v <= 0) return false;
+    // 빈칸이 아닌 이웃한 두 칸에서 규칙(더하는 수, 빼는 수, 곱하는 수)을 다시 읽는다.
+    const k0 = shown.findIndex((x, k) => x !== null && shown[k + 1] !== null && shown[k + 1] !== undefined);
+    const [x0, x1] = [shown[k0], shown[k0 + 1]];
+    const step = op === '+' ? x1 - x0 : op === '-' ? x0 - x1 : x1 / x0;
+    if (!Number.isInteger(step) || step <= (op === '×' ? 1 : 0)) return false;
+    const seq = shown.map((x) => (x === null ? v : x));
+    if (target >= seq.length) {
+      // 표 뒤의 칸이면 다섯째부터 거꾸로 되돌아가 다섯째 수가 되는지 본다.
+      let back = v;
+      for (let k = target; k > 4; k -= 1) back = op === '+' ? back - step : op === '-' ? back + step : back / step;
+      if (back !== seq[4]) return false;
+    } else if (shown[target] !== null) return false;
+    // 답을 빈칸에 넣었을 때 이웃한 모든 칸이 같은 규칙을 따라야 한다.
+    return seq.every((x, k) => k === 0 || stepOnce(op, seq[k - 1], step) === x);
   },
 };
 
@@ -1970,54 +2016,103 @@ const resultToRow = {
   },
 };
 
+// 한쪽 식의 값이 V 가 되도록 항을 만든다. 모든 수와 중간 계산 결과는 두 자리 수(99) 이하이다.
+const SIDE_MAKERS = {
+  'a+b': (rng, V) => { const a = rng.int(2, V - 2); return { signs: [1, 1], vals: [a, V - a] }; },
+  'a-b': (rng, V) => { const a = rng.int(V + 2, 99); return { signs: [1, -1], vals: [a, a - V] }; },
+  'a+b-c': (rng, V) => {
+    const S = rng.int(V + 2, 99);
+    const a = rng.int(2, S - 2);
+    return { signs: [1, 1, -1], vals: [a, S - a, S - V] };
+  },
+  'a-b+c': (rng, V) => {
+    const t = rng.int(2, V - 2);
+    const a = rng.int(t + 2, 99);
+    return { signs: [1, -1, 1], vals: [a, a - t, V - t] };
+  },
+  'a+b+c': (rng, V) => {
+    const a = rng.int(2, V - 4);
+    const b = rng.int(2, V - a - 2);
+    return { signs: [1, 1, 1], vals: [a, b, V - a - b] };
+  },
+};
+// 곱셈구구로 두 가지 이상 나타낼 수 있는 곱
+const MULTI_PRODUCTS = [[12, [[2, 6], [3, 4]]], [16, [[2, 8], [4, 4]]], [18, [[2, 9], [3, 6]]], [24, [[3, 8], [4, 6]]], [36, [[4, 9], [6, 6]]]];
+const BALANCE_TEMPLATES = {
+  1: [['a+b', 'a+b'], ['a+b', 'a-b'], ['a-b', 'a+b'], ['a-b', 'a-b']],
+  2: [['a+b', 'a+b'], ['a+b', 'a-b'], ['a-b', 'a+b'], ['a-b', 'a-b'], ['a×b', 'a+b'], ['a×b', 'a-b'], ['a+b', 'a×b'], ['a-b', 'a×b']],
+  3: [['a+b-c', 'a+b'], ['a-b+c', 'a-b'], ['a+b+c', 'a+b'], ['a+b', 'a+b-c'], ['a-b', 'a-b+c'], ['a+b+c', 'a-b'], ['a-b+c', 'a+b'], ['a×b', 'a+b-c'], ['a×b', 'a-b+c'], ['a×b', 'a×b']],
+};
+const sideText = (side, blank) => {
+  const xs = side.vals.map((x, k) => (k === blank ? '□' : String(x)));
+  if (side.mul) return `${xs[0]} × ${xs[1]}`;
+  return xs.map((x, k) => (k === 0 ? x : `${side.signs[k] > 0 ? '+' : '-'} ${x}`)).join(' ');
+};
+
 const balanceEquation = {
   id: 'math.g34.mr.s02-03.balance-ops',
   standardCode: '[4수02-03]',
-  skill: '뺄셈·곱셈이 들어간 식에서 등호의 양쪽이 같도록 □ 구하기',
+  skill: '두 자리 수 범위의 덧셈·뺄셈·곱셈구구 식에서 등호의 양쪽이 같도록 □ 구하기',
   format: 'fill-blank',
+  difficultyAxis: 'categorical',
+  difficultyNote: '수는 모두 99 이하로 같고, 1단계는 덧셈·뺄셈 두 항씩이며 □가 오른쪽에만, 2단계는 □가 양쪽 어디에나 오고 곱셈구구 곱이 들어가기도 하며, 3단계는 한쪽이 세 항이거나 곱셈구구 곱을 두 가지로 나타낸다.',
   generate(rng, { difficulty }) {
-    const kind = rng.pick(difficulty === 3 ? ['mul-mul', 'sub-sub', 'add-sub'] : ['sub-sub', 'sub-add', 'add-sub']);
-    const [lo, hi] = difficulty === 1 ? [10, 99] : difficulty === 2 ? [100, 999] : [100, 1999];
+    const [lShape, rShape] = rng.pick(BALANCE_TEMPLATES[difficulty]);
     const item = rng.until(() => {
-      if (kind === 'mul-mul') {
-        const c = rng.int(2, 9);
-        const p = rng.int(2, 30);
-        const b = rng.int(2, 40);
-        return { a: c * p, b, c, value: p * b, left: `${c * p} × ${b}`, right: (x) => `${x} × ${c}` };
+      let left;
+      let right;
+      if (lShape === 'a×b' && rShape === 'a×b') {
+        const [, pairs] = rng.pick(MULTI_PRODUCTS);
+        const [p, q] = rng.bool() ? pairs : [pairs[1], pairs[0]];
+        left = { mul: true, vals: rng.bool() ? [...p] : [p[1], p[0]] };
+        right = { mul: true, vals: rng.bool() ? [...q] : [q[1], q[0]] };
+      } else {
+        const hasMul = lShape === 'a×b' || rShape === 'a×b';
+        const mulVals = [rng.int(2, 9), rng.int(3, 9)];
+        if (rng.bool()) mulVals.reverse();
+        const V = hasMul ? mulVals[0] * mulVals[1] : rng.int(12, 95);
+        const make = (shape) => (shape === 'a×b' ? { mul: true, vals: mulVals } : SIDE_MAKERS[shape](rng, V));
+        left = make(lShape);
+        right = make(rShape);
       }
-      const a = rng.int(lo, hi);
-      const b = rng.int(lo, hi);
-      const c = rng.int(lo, hi);
-      if (kind === 'sub-sub') return { a: Math.max(a, b), b: Math.min(a, b), c, value: Math.max(a, b) - Math.min(a, b) + c, left: `${Math.max(a, b)} - ${Math.min(a, b)}`, right: (x) => `${x} - ${c}` };
-      if (kind === 'sub-add') {
-        const big = a + b + c;
-        return { a: big, b, c, value: big - b - c, left: `${big} - ${b}`, right: (x) => `${x} + ${c}` };
-      }
-      return { a, b, c: a + b + c, value: c, left: `${a} + ${b}`, right: (x) => `${a + b + c} - ${x}` };
-    }, (x) => x.value > 0 && ![x.a, x.b, x.c].includes(x.value) && x.a !== x.b);
-    const { a, b, c, value } = item;
-    const leftValue = kind === 'mul-mul' ? a * b : kind === 'add-sub' ? a + b : a - b;
+      const side = difficulty === 1 ? 'R' : rng.pick(['L', 'R']);
+      const blankSide = side === 'L' ? left : right;
+      const idx = rng.int(0, blankSide.vals.length - 1);
+      const value = blankSide.vals[idx];
+      const others = [...left.vals, ...right.vals];
+      others.splice((side === 'L' ? 0 : left.vals.length) + idx, 1);
+      return { left, right, side, idx, value, others };
+    }, (x) => x.value > 0 && !x.others.includes(x.value));
+    const { left, right, side, idx, value } = item;
+    const leftText = sideText(left, side === 'L' ? idx : -1);
+    const rightText = sideText(right, side === 'R' ? idx : -1);
+    const known = side === 'L' ? right : left;
+    const knownText = side === 'L' ? rightText : leftText;
+    const blankText = side === 'L' ? leftText : rightText;
+    const V = known.mul ? known.vals[0] * known.vals[1] : known.vals.reduce((acc, x, k) => acc + known.signs[k] * x, 0);
+    const hide = (s, on) => ({ ...s, vals: s.vals.map((x, k) => (on && k === idx ? null : x)) });
     return {
-      params: { kind, a, b, c },
+      params: { left: hide(left, side === 'L'), right: hide(right, side === 'R') },
       instruction: '등호(=)의 양쪽이 같도록 □ 안에 알맞은 수를 써넣으시오.',
-      stem: `${item.left} = ${item.right('□')}`,
+      stem: `${leftText} = ${rightText}`,
       answer: { value, display: num(value), accepts: [num(value)] },
       solution: [
-        `왼쪽을 계산하면 ${item.left} = ${leftValue}이다.`,
-        `${item.right('□')} = ${leftValue}${numberParticle(leftValue, '이', '가')} 되어야 하므로 □ = ${value}이다.`,
+        `□가 없는 쪽을 계산하면 ${knownText} = ${V}이다.`,
+        `${blankText} = ${V}${numberParticle(V, '이', '가')} 되어야 하므로 □ = ${value}이다.`,
       ],
-      dedupeKey: `balance-ops:${kind}:${a}:${b}:${c}`,
+      dedupeKey: `balance-ops:${leftText}=${rightText}`,
       difficulty,
     };
   },
-  verify({ kind, a, b, c }, answer) {
+  verify({ left, right }, answer) {
     const v = answer.value;
-    if (!Number.isInteger(v) || v <= 0) return false;
+    if (!Number.isInteger(v) || v <= 0 || v > 99) return false;
     // □ 자리에 답을 넣어 양쪽 값을 각각 계산해 비교한다.
-    if (kind === 'mul-mul') return a * b === v * c;
-    if (kind === 'sub-sub') return a - b === v - c;
-    if (kind === 'sub-add') return a - b === v + c;
-    return a + b === c - v;
+    const evalSide = (s) => {
+      const xs = s.vals.map((x) => (x === null ? v : x));
+      return s.mul ? xs[0] * xs[1] : xs.reduce((acc, x, k) => acc + s.signs[k] * x, 0);
+    };
+    return evalSide(left) === evalSide(right);
   },
 };
 

@@ -500,7 +500,7 @@ const TABLE_TOPICS = [
   },
   {
     intro: '반별로 모은 빈 병의 수', rowLabel: '반', cats: ['1반', '2반', '3반', '4반', '5반'], valueLabel: '빈 병의 수(개)',
-    unit: '개', measure: '빈 병의 수', place: '반', counter: '개', name: (c) => c,
+    unit: '개', measure: '빈 병의 수', place: '반', counter: '반', name: (c) => c,
   },
 ];
 
@@ -709,47 +709,45 @@ const correspondenceInverse = {
   skill: '대응표에서 규칙을 찾아 식으로 나타내고 □의 값으로 △의 값 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    let a;
-    let b;
-    if (difficulty === 1) {
-      if (rng.bool()) { a = rng.int(2, 30); b = 0; } else { a = 1; b = rng.int(3, 99); }
-    } else if (difficulty === 2) {
-      a = rng.int(2, 15);
-      b = rng.int(1, 30) * (rng.bool() ? 1 : -1);
-    } else {
-      a = rng.int(3, 25);
-      b = rng.int(1, 60) * (rng.bool() ? 1 : -1);
-    }
-    const f = (x) => a * x + b;
-    const start = (b < 0 ? Math.floor(-b / a) + 1 : 1) + rng.int(0, 8);
-    const xs = [0, 1, 2, 3].map((k) => start + k);
+    // [6수02-01]은 덧셈식·뺄셈식·곱셈식·나눗셈식 가운데 하나로 나타내는 간단한 대응 관계만 다룬다.
+    // 난이도는 수의 크기와 나눗셈식으로 커진다.
+    const op = rng.pick(difficulty === 1 ? ['+', '-', '×'] : ['+', '-', '×', '÷']);
+    const [bLo, bHi] = difficulty === 1 ? [2, 30] : difficulty === 2 ? [10, 99] : [100, 999];
+    const [aLo, aHi] = difficulty === 1 ? [2, 9] : difficulty === 2 ? [3, 19] : [11, 40];
+    const span = difficulty === 1 ? 80 : difficulty === 2 ? 250 : 600;
+    const k = op === '+' || op === '-' ? rng.int(bLo, bHi) : rng.int(aLo, aHi);
+    // ÷는 △가 k의 배수인 칸만 쓰므로 □ 쪽 수로 표를 만든다.
+    const lo = op === '-' ? k + 1 : 1;
+    const start = lo + rng.int(0, difficulty === 3 ? 40 : 8);
+    const base = [0, 1, 2, 3].map((j) => start + j);
+    const xs = op === '÷' ? base.map((x) => x * k) : base;
+    const f = { '+': (x) => x + k, '-': (x) => x - k, '×': (x) => x * k, '÷': (x) => x / k }[op];
     const ys = xs.map(f);
-    const X = intAvoid(rng, start + 5, difficulty === 1 ? 200 : difficulty === 2 ? 300 : 600, ys);
+    const pivot = intAvoid(rng, start + 5, start + span, op === '÷' ? [] : ys);
+    const X = op === '÷' ? pivot * k : pivot;
     const Y = f(X);
-    const rule = a === 1 ? `□ = △ + ${b}` : b === 0 ? `□ = △ × ${a}` : `□ = △ × ${a} ${b > 0 ? '+' : '-'} ${Math.abs(b)}`;
-    const back = a === 1
-      ? `△ = □ - ${b}이므로 ${Y} - ${b} = ${X}이다.`
-      : b === 0
-        ? `△ = □ ÷ ${a}이므로 ${Y} ÷ ${a} = ${X}이다.`
-        : `${Y} ${b > 0 ? '-' : '+'} ${Math.abs(b)} = ${Y - b}, ${Y - b} ÷ ${a} = ${X}이므로 △는 ${X}이다.`;
+    const inverse = { '+': '-', '-': '+', '×': '÷', '÷': '×' }[op];
+    const rule = `□ = △ ${op} ${k}`;
+    const back = `△ = □ ${inverse} ${k}이므로 ${Y} ${inverse} ${k} = ${X}이다.`;
     return {
       params: { xs, ys, Y },
       instruction: '표를 보고 물음에 답하시오.',
       stem: `두 양 사이의 대응 관계를 나타낸 표입니다.\n△ | ${xs.join(' | ')}\n□ | ${ys.join(' | ')}\n□가 ${Y}일 때 △는 얼마입니까?`,
       answer: { value: X, display: num(X), accepts: [num(X)] },
       solution: [`△와 □의 대응 관계를 식으로 나타내면 ${rule}이다.`, back],
-      dedupeKey: `corr-inv:${a}:${b}:${start}:${X}`,
+      dedupeKey: `corr-inv:${op}:${k}:${start}:${X}`,
       difficulty,
     };
   },
   verify({ xs, ys, Y }, answer) {
     const v = answer.value;
     if (!Number.isInteger(v) || v <= 0) return false;
-    // 표의 두 칸으로 기울기와 절편을 다시 구하고 모든 칸에 맞는지 본다.
-    const slope = (ys[1] - ys[0]) / (xs[1] - xs[0]);
-    const intercept = ys[0] - slope * xs[0];
-    if (xs.some((x, k) => slope * x + intercept !== ys[k])) return false;
-    return slope * v + intercept === Y;
+    // 표의 모든 칸에서 일정한 차 또는 일정한 몫을 다시 찾아 v를 □로 바꾸어 본다.
+    const diff = ys[0] - xs[0];
+    if (xs.every((x, j) => ys[j] - x === diff)) return v + diff === Y;
+    if (ys.every((y, j) => y % xs[j] === 0 && y / xs[j] === ys[0] / xs[0])) return v * (ys[0] / xs[0]) === Y;
+    if (xs.every((x, j) => x % ys[j] === 0 && x / ys[j] === xs[0] / ys[0])) return Y * (xs[0] / ys[0]) === v;
+    return false;
   },
 };
 
@@ -760,7 +758,7 @@ const RATIO_SCENES = [
   { intro: (p, q) => `직사각형의 가로는 ${p}cm이고, 세로는 ${q}cm입니다.`, P: '가로', Q: '세로', W: null },
 ];
 const RATIO_COMPLEMENT_SCENES = [
-  { intro: (w, p) => `어느 반 학생 ${w}명 중에서 안경을 쓴 학생은 ${p}명입니다.`, P: '안경을 쓴 학생 수', Q: '안경을 쓰지 않은 학생 수', W: '전체 학생 수' },
+  { intro: (w, p) => `어느 ${w <= 40 ? '반' : w <= 300 ? '학년' : '학교'} 학생 ${w}명 중에서 안경을 쓴 학생은 ${p}명입니다.`, P: '안경을 쓴 학생 수', Q: '안경을 쓰지 않은 학생 수', W: '전체 학생 수' },
   { intro: (w, p) => `${w}쪽짜리 동화책을 ${p}쪽 읽었습니다.`, P: '읽은 쪽수', Q: '남은 쪽수', W: '전체 쪽수' },
 ];
 const RATIO_FORMS = {
@@ -796,10 +794,12 @@ const ratioSituation = {
       if (difficulty === 2 && scene.W) pool.push(['P', 'W'], ['Q', 'W'], ['W', 'P'], ['W', 'Q']);
       roles = rng.pick(pool);
     }
-    const form = rng.pick(Object.keys(RATIO_FORMS));
     const [X, Y] = roles;
     const vals = { P: p, Q: q, W: p + q };
     const label = { P: scene.P, Q: scene.Q, W: scene.W };
+    // '…의 양의 …에 대한 비'처럼 '의'가 격히는 표현은 피하고 '…에 대한 …의 비'로 쓴다.
+    const forms = label[X].includes('의 ') ? ['f1', 'f2'] : Object.keys(RATIO_FORMS);
+    const form = rng.pick(forms);
     const phrase = RATIO_FORMS[form](label[X], label[Y]);
     const display = `${vals[X]} : ${vals[Y]}`;
     const intro = complement ? scene.intro(p + q, p) : scene.intro(p, q);
@@ -993,9 +993,10 @@ const proportionStory = {
   format: 'short-answer',
   generate(rng, { difficulty }) {
     const [xHi, kHi] = difficulty === 1 ? [9, 15] : difficulty === 2 ? [12, 40] : [20, 60];
-    const [x, y] = coprimePair(rng, 1, xHi);
-    const k1 = rng.int(2, kHi);
     const s = rng.pick(PROPORTION_SCENES);
+    // 공책은 한 권의 값이 자연수(100원 단위)가 되도록 1권당 값으로 비를 정한다.
+    const [x, y] = s.sB === 100 ? [1, rng.int(5, difficulty === 1 ? 15 : 30)] : coprimePair(rng, 1, xHi);
+    const k1 = rng.int(2, kHi);
     const askB = rng.bool();
     const a = x * k1 * s.sA;
     const b = y * k1 * s.sB;
@@ -1164,7 +1165,7 @@ const shareAdvanced = {
       v = otherShare;
       solution = [`한 묶음은 ${whoShare} ÷ ${firstAsk ? a : b} = ${u}${cnt}이다.`, `${other}${josaEun(other)} ${firstAsk ? b : a}묶음이므로 ${u} × ${firstAsk ? b : a} = ${v}${cnt}이다.`];
     } else if (kind === 'difference') {
-      stem = `${thing} ${T}${cnt}${josaEul(cnt)} ${P}${josaGwa(P)} ${Q}에게 ${ratioText} 나누어 주려고 합니다. 두 사람이 받는 ${thing} 수의 차는 몇 ${cnt}입니까?`;
+      stem = `${thing} ${T}${cnt}${josaEul(cnt)} ${P}${josaGwa(P)} ${Q}에게 ${ratioText} 나누어 주려고 합니다. ${P.endsWith('모둠') ? '두 모둠이' : '두 사람이'} 받는 ${thing} 수의 차는 몇 ${cnt}입니까?`;
       v = Math.abs(sa - sb);
       solution = [`${P}${josaEun(P)} ${T} × ${a}/${a + b} = ${sa}${cnt}, ${Q}${josaEun(Q)} ${T} × ${b}/${a + b} = ${sb}${cnt}${josaEul(cnt)} 받는다.`, `차는 ${Math.max(sa, sb)} - ${Math.min(sa, sb)} = ${v}${cnt}이다.`];
     } else {
@@ -1695,16 +1696,17 @@ const fractionTimesStory = {
       unit = 'kg';
     }
     const display = fmtRational(x.n * y.n, x.d * y.d);
+    const whole = (x.n * y.n) % (x.d * y.d) === 0;
     return {
       params: { kind, x, y },
-      instruction: '답을 기약분수로 나타내시오.',
+      instruction: whole ? '물음에 답하시오.' : '답을 기약분수로 나타내시오.',
       stem,
       answer: { value: display, display: `${display}${unit}`, accepts: unit ? [display, `${display}${unit}`] : [display] },
       solution: [
         `식으로 나타내면 ${fracText(x)} × ${fracText(y)}이다.`,
         ...([x, y].some((t) => t.d > 1 && t.n > t.d) ? [`대분수를 가분수로 바꾸면 ${x.n}/${x.d} × ${y.d === 1 ? y.n : `${y.n}/${y.d}`}이다.`] : []),
         '분자끼리, 분모끼리 곱한다.',
-        `${x.n * y.n}/${x.d * y.d}${fractionParticle(`${x.n * y.n}/${x.d * y.d}`, '을', '를')} 기약분수로 나타내면 ${display}이다.`,
+        `${x.n * y.n}/${x.d * y.d}${fractionParticle(`${x.n * y.n}/${x.d * y.d}`, '을', '를')} ${whole ? '자연수로' : '기약분수로'} 나타내면 ${display}이다.`,
       ],
       dedupeKey: `frac-times:${kind}:${fracText(x)}:${fracText(y)}`,
       difficulty,
@@ -1762,16 +1764,17 @@ const fractionDivideStory = {
       stem = `어떤 수에 ${fs}${fractionParticle(fs, '을', '를')} 곱했더니 ${gs}${fractionParticle(gs, '이', '가')} 되었습니다. 어떤 수는 얼마입니까?`;
     }
     const display = fmtRational(dividend.n * divisor.d, dividend.d * divisor.n);
+    const whole = (dividend.n * divisor.d) % (dividend.d * divisor.n) === 0;
     return {
       params: { kind, dividend, divisor },
-      instruction: '답을 기약분수로 나타내시오.',
+      instruction: whole ? '물음에 답하시오.' : '답을 기약분수로 나타내시오.',
       stem,
       answer: { value: display, display: `${display}${unit}`, accepts: unit ? [display, `${display}${unit}`] : [display] },
       solution: [
         `식으로 나타내면 ${fracText(dividend)} ÷ ${fracText(divisor)}이다.`,
         ...([dividend, divisor].some((t) => t.d > 1 && t.n > t.d) ? [`대분수를 가분수로 바꾸면 ${dividend.n}/${dividend.d} ÷ ${divisor.d === 1 ? divisor.n : `${divisor.n}/${divisor.d}`}이다.`] : []),
         '나누는 수의 분모와 분자를 바꾸어 곱한다.',
-        `계산하여 기약분수로 나타내면 ${display}이다.`,
+        `계산하여 ${whole ? '자연수로' : '기약분수로'} 나타내면 ${display}이다.`,
       ],
       dedupeKey: `frac-div:${kind}:${fracText(dividend)}:${fracText(divisor)}`,
       difficulty,
@@ -1815,6 +1818,8 @@ const decimalTimesStory = {
       y = { u: decUnits(rng, 11, 999), s: rng.pick([1, 2]) };
     }
     if (kind === 'times' && y.s === 0) y = { u: y.u * 10 + rng.int(1, 9), s: 1 };
+    // 철근 1m의 무게는 0.1kg~10kg 안에서 정한다.
+    if (kind === 'per-meter') x = { u: decUnits(rng, x.s === 1 ? 11 : 101, x.s === 1 ? 99 : 999), s: x.s };
     const tx = fmtDec(x.u, x.s);
     const ty = fmtDec(y.u, y.s);
     const v = fmtDec(x.u * y.u, x.s + y.s);
@@ -2340,15 +2345,22 @@ const circleApplied = {
         difficulty,
       };
     }
-    const r = rng.int(2, 99);
+    // 제곱근을 배우지 않으므로 같은 수를 두 번 곱한 값을 쉽게 떠올릴 수 있는 반지름(2~15, 또는 몇십)만 쓴다.
+    const r = rng.bool() ? rng.int(2, 15) : 10 * rng.int(2, 9);
     const S = fmtDec(r * r * 314, 2);
+    const askD = rng.bool();
+    const v = askD ? 2 * r : r;
     return {
-      params: { kind, sH: r * r * 314 },
+      params: { kind, sH: r * r * 314, askD },
       instruction: '원주율은 3.14로 계산하시오.',
-      stem: `넓이가 ${S}cm²인 원의 반지름은 몇 cm입니까?`,
-      answer: { value: r, display: `${r}cm`, accepts: [num(r), `${r}cm`] },
-      solution: [`(반지름) × (반지름) = ${S} ÷ 3.14 = ${r * r}이다.`, `${r} × ${r} = ${r * r}이므로 반지름은 ${r}cm이다.`],
-      dedupeKey: `circle-app:r-from-s:${r}`,
+      stem: `넓이가 ${S}cm²인 원의 ${askD ? '지름' : '반지름'}은 몇 cm입니까?`,
+      answer: { value: v, display: `${v}cm`, accepts: [num(v), `${v}cm`] },
+      solution: [
+        `(반지름) × (반지름) = ${S} ÷ 3.14 = ${r * r}이다.`,
+        `${r} × ${r} = ${r * r}이므로 반지름은 ${r}cm이다.`,
+        ...(askD ? [`지름은 ${r} × 2 = ${v}cm이다.`] : []),
+      ],
+      dedupeKey: `circle-app:r-from-s:${askD ? 'd' : 'r'}:${r}`,
       difficulty,
     };
   },
@@ -2359,6 +2371,7 @@ const circleApplied = {
       if (!Number.isInteger(v) || v <= 0) return false;
       if (kind === 'wheel-turns') return v * params.d * 314 === params.distH;
       if (kind === 'radius-from-circ') return (v + v) * 314 === params.cH;
+      if (params.askD) return v % 2 === 0 && (v / 2) * (v / 2) * 314 === params.sH;
       return v * v * 314 === params.sH;
     }
     const p = parseDec(answer.value);
@@ -2381,7 +2394,8 @@ const surfaceAreaPlus = {
     const kind = rng.pick(difficulty === 1 ? ['cube-edge', 'open-box'] : difficulty === 2 ? ['open-box', 'cuboid-height'] : ['cuboid-height', 'open-box']);
     const hi = difficulty === 1 ? 30 : difficulty === 2 ? 40 : 70;
     if (kind === 'cube-edge') {
-      const e = rng.int(2, 60);
+      // 제곱근을 쓰지 않도록 모서리는 2~15cm 또는 몇십cm만 쓴다.
+      const e = rng.bool() ? rng.int(2, 15) : 10 * rng.int(2, 6);
       const S = 6 * e * e;
       return {
         params: { kind, S },

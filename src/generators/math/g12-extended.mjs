@@ -339,6 +339,8 @@ const hundredChart = {
   standardCode: '[2수02-01]',
   skill: '수 배열표의 규칙으로 수 찾기',
   format: 'short-answer',
+  difficultyAxis: 'categorical',
+  difficultyNote: '난이도 1은 한 방향으로 한 칸, 2는 한 방향으로 2~4칸, 3은 위아래와 왼쪽·오른쪽 두 방향으로 움직여 찾는다.',
   generate(rng, { difficulty }) {
     const moves = difficulty === 1
       ? [{ dir: rng.pick(Object.keys(DIRECTIONS)), steps: 1 }]
@@ -433,7 +435,7 @@ const hoursMinutes = {
   skill: '시간을 몇 분 또는 몇 시간 몇 분으로 나타내기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const hours = difficulty === 1 ? rng.int(1, 3) : difficulty === 2 ? rng.int(1, 6) : rng.int(4, 12);
+    const hours = difficulty === 1 ? rng.int(1, 3) : difficulty === 2 ? rng.int(1, 6) : rng.int(4, 6);
     const minutes = difficulty === 1 ? rng.int(1, 11) * 5 : rng.int(1, 59);
     const total = hours * 60 + minutes;
     const toMinutes = rng.bool();
@@ -569,10 +571,11 @@ const weekdayOfDate = {
 };
 
 const PERIODS = [
-  { big: '주일', small: '일', rate: 7, bigMax: 12 },
-  { big: '년', small: '개월', rate: 12, bigMax: 9 },
-  { big: '일', small: '시간', rate: 24, bigMax: 9 },
-  { big: '시간', small: '분', rate: 60, bigMax: 9 },
+  // 2학년 범위(곱셈구구, 두 자리 수의 덧셈)에서 바꿀 수 있도록 큰 단위의 수를 작게 둔다.
+  { big: '주일', small: '일', rate: 7, bigMax: 9 },
+  { big: '년', small: '개월', rate: 12, bigMax: 4 },
+  { big: '일', small: '시간', rate: 24, bigMax: 3 },
+  { big: '시간', small: '분', rate: 60, bigMax: 4 },
 ];
 
 const weeksDays = {

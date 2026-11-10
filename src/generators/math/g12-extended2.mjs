@@ -382,17 +382,34 @@ const alternatingSteps = {
     let s1;
     let s2;
     if (difficulty === 1) {
-      start = rng.int(1, 60);
+      // 한 자리 수만큼씩 커지고, 모든 수가 99 이하이다.
       s1 = rng.int(1, 9);
       s2 = rng.until(() => rng.int(1, 9), (v) => v !== s1);
+      start = rng.int(1, 99 - 3 * (s1 + s2));
     } else if (difficulty === 2) {
-      start = rng.int(100, 899);
-      s1 = rng.int(2, 40);
-      s2 = rng.until(() => rng.int(-s1 + 1, 40), (v) => v !== s1 && v !== 0);
+      // 두 자리 수만큼씩 커지거나 작아지고, 모든 수가 1부터 99 사이에 있다.
+      s1 = rng.int(11, 30);
+      const offsetsOf = (b) => [0, s1, s1 + b, 2 * s1 + b, 2 * s1 + 2 * b, 3 * s1 + 2 * b, 3 * s1 + 3 * b];
+      const spanOf = (b) => Math.max(...offsetsOf(b)) - Math.min(...offsetsOf(b));
+      s2 = rng.pick(Array.from({ length: 71 }, (_, i) => i - 30).filter((b) => b !== 0 && b !== s1 && spanOf(b) <= 90));
+      const offsets = offsetsOf(s2);
+      start = rng.int(1 - Math.min(...offsets), 99 - Math.max(...offsets));
     } else {
-      start = rng.int(1000, 7999);
-      s1 = rng.int(11, 150);
-      s2 = rng.until(() => rng.int(-s1 + 1, 150), (v) => v !== s1 && v !== 0);
+      // 세 자리·네 자리 수에서는 한 자리의 숫자만 바뀌도록 몇·몇십·몇백·몇천씩 뛰어 센다.
+      // 두 계산이 서로 다른 자리를 바꾸고, 받아올림·받아내림이 생기지 않는다.
+      const width = rng.int(3, 4);
+      const [p1, p2] = rng.shuffle(Array.from({ length: width }, (_, i) => i)).slice(0, 2);
+      const digits = Array.from({ length: width }, (_, i) => rng.int(i === width - 1 ? 1 : 0, 9));
+      const placeStep = (p) => {
+        const lo = p === width - 1 ? 1 : 0;
+        const k = rng.pick(p === width - 1 ? [-2, -1, 1, 2] : [-3, -2, -1, 1, 2, 3]);
+        // 같은 계산이 세 번 되풀이되어도 그 자리의 숫자가 0~9(맨 앞자리는 1~9)에 머문다.
+        digits[p] = k > 0 ? rng.int(lo, 9 - 3 * k) : rng.int(lo - 3 * k, 9);
+        return k * 10 ** p;
+      };
+      s1 = placeStep(p1);
+      s2 = placeStep(p2);
+      start = digits.reduce((acc, d, p) => acc + d * 10 ** p, 0);
     }
     const terms = [start];
     for (let i = 1; i < length; i += 1) terms.push(terms[i - 1] + (i % 2 === 1 ? s1 : s2));
@@ -424,29 +441,36 @@ const alternatingSteps = {
 const growingStep = {
   id: 'math.g12.pd.s01.growing-step',
   standardCode: '[2수02-01]',
-  skill: '커지는 양이 일정하게 늘어나는 수의 배열에서 빈칸 채우기',
+  skill: '이웃한 두 수의 차가 일정하게 커지거나 작아지는 수의 배열에서 빈칸 채우기',
   format: 'fill-blank',
+  difficultyAxis: 'categorical',
+  difficultyNote: '모든 수는 99 이하이다. 난이도 1은 커지는 양이 1씩 늘어나는 배열, 2는 커지는 양이 2~5씩 늘어나거나 줄어드는 배열, 3은 수가 작아지면서 작아지는 양이 일정하게 늘어나거나 줄어드는 배열이다.',
   generate(rng, { difficulty }) {
-    const start = difficulty === 1 ? rng.int(1, 40) : difficulty === 2 ? rng.int(10, 199) : rng.int(200, 999);
-    const step = difficulty === 1 ? rng.int(1, 5) : difficulty === 2 ? rng.int(1, 12) : rng.int(5, 30);
-    const grow = difficulty === 1 ? 1 : difficulty === 2 ? rng.int(1, 4) : rng.int(2, 9);
     const length = 6;
+    // 차가 step, step+grow, ... 로 바뀌며 다섯 번 더해지므로 모두 합하면 5×step + 10×grow 이다.
+    const grow = difficulty === 1 ? 1 : difficulty === 2 ? rng.int(2, 5) : rng.int(1, 5);
+    const step = difficulty === 1 ? rng.int(1, 9) : rng.int(1, Math.floor((98 - 10 * grow) / 5));
+    const shrinking = difficulty !== 1 && rng.bool();
+    const up = difficulty !== 3;
+    const mags = Array.from({ length: length - 1 }, (_, i) => step + grow * (shrinking ? length - 2 - i : i));
+    const span = mags.reduce((s, m) => s + m, 0);
+    const start = up ? rng.int(1, 99 - span) : rng.int(span + 1, 99);
     const terms = [start];
-    for (let i = 1; i < length; i += 1) terms.push(terms[i - 1] + step + grow * (i - 1));
-    const blank = rng.int(2, length - 1);
+    for (let i = 1; i < length; i += 1) terms.push(terms[i - 1] + (up ? mags[i - 1] : -mags[i - 1]));
+    const blank = rng.int(1, length - 1);
     const value = terms[blank];
     const shown = terms.map((t, i) => (i === blank ? null : t));
-    const gaps = terms.slice(1).map((t, i) => t - terms[i]);
+    const change = mags[1] - mags[0];
     return {
       params: { shown },
       instruction: '규칙을 찾아 □ 안에 알맞은 수를 써넣으시오.',
       stem: shown.map((t) => (t === null ? '□' : String(t))).join(', '),
       answer: { value, display: num(value), accepts: [num(value)] },
       solution: [
-        `이웃한 두 수의 차가 ${gaps.slice(0, -1).join(', ')}, ${numRo(gaps.at(-1))} ${grow}씩 커지는 규칙이다.`,
-        `${ORDINALS[blank]} 수는 ${terms[blank - 1]} + ${gaps[blank - 1]} = ${value}이다.`,
+        `수가 차례로 ${mags.join(', ')}만큼 ${up ? '커지고' : '작아지고'}, ${up ? '커지는' : '작아지는'} 양이 ${Math.abs(change)}씩 ${change > 0 ? '커지는' : '작아지는'} 규칙이다.`,
+        `${ORDINALS[blank]} 수는 ${terms[blank - 1]} ${up ? '+' : '-'} ${mags[blank - 1]} = ${value}이다.`,
       ],
-      dedupeKey: `growing-step:${start}:${step}:${grow}:${blank}`,
+      dedupeKey: `growing-step:${terms.join(',')}:${blank}`,
       difficulty,
     };
   },
@@ -455,7 +479,7 @@ const growingStep = {
     if (!Number.isInteger(answer.value)) return false;
     const diffs = fillAndDiffs(shown, answer.value);
     const second = diffs.slice(1).map((d, i) => d - diffs[i]);
-    return second[0] > 0 && second.every((s) => s === second[0]);
+    return second[0] !== 0 && second.every((s) => s === second[0]);
   },
 };
 
@@ -465,10 +489,23 @@ const ruleFirstOver = {
   skill: '정한 규칙대로 수를 늘어놓을 때 기준 수를 처음 넘는 수와 그 전까지의 개수 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const start = difficulty === 1 ? rng.int(1, 30) : difficulty === 2 ? rng.int(10, 400) : rng.int(100, 3000);
-    const step = difficulty === 1 ? rng.int(2, 9) : difficulty === 2 ? rng.int(6, 60) : rng.int(25, 600);
-    const span = difficulty === 1 ? [3, 12] : [4, 14];
-    const limit = start + step * rng.int(span[0], span[1]) - rng.int(0, step - 1);
+    // 난이도 1·2는 기준 수가 99 이하라 두 자리 수의 덧셈으로 늘어놓는다.
+    // 난이도 3은 세 자리·네 자리 수를 10, 100, 1000씩 뛰어 센다.
+    let start;
+    let step;
+    let limit;
+    if (difficulty === 3) {
+      step = rng.pick([10, 100, 1000]);
+      const n = rng.int(4, step === 1000 ? 8 : 14);
+      start = rng.int(100, 9999 - step * (n + 1));
+      limit = start + step * n - rng.int(0, step - 1);
+    } else {
+      step = difficulty === 1 ? rng.int(2, 9) : rng.int(11, 32);
+      const n = rng.int(3, Math.min(12, Math.floor(98 / step)));
+      const r = rng.int(0, step - 1);
+      start = rng.int(1, Math.min(difficulty === 1 ? 30 : 60, 99 - step * n + r));
+      limit = start + step * n - r;
+    }
     const kind = rng.pick(['first-over', 'count-under']);
     // 처음으로 기준보다 커지는 수와, 기준보다 작은 수의 개수
     let k = 0;
@@ -535,9 +572,11 @@ const compareLength = {
   generate(rng, { difficulty }) {
     const count = difficulty === 3 ? 3 : 2;
     const [lo, hi] = difficulty === 1 ? [101, 299] : [101, 999];
+    // 난이도 1은 긴 길이의 cm 부분이 짧은 길이의 cm 부분보다 커서 받아내림이 없다.
+    const noBorrow = (ls) => difficulty !== 1 || Math.max(...ls) % 100 > Math.min(...ls) % 100;
     const lengths = rng.until(
       () => Array.from({ length: count }, () => rng.int(lo, hi)),
-      (ls) => new Set(ls).size === count && ls.every((l) => l % 100 !== 0),
+      (ls) => new Set(ls).size === count && ls.every((l) => l % 100 !== 0) && noBorrow(ls),
     );
     // 적어도 하나는 몇 m 몇 cm, 하나는 몇 cm로 쓴다.
     const asCm = rng.int(0, count - 1);
@@ -594,7 +633,9 @@ const lengthStory = {
       value = x + y - z;
     }
     if ([x, y, z].includes(value)) value = null;
-    if (value === null || [x, y, z].some((v) => v !== null && v % 100 === 0) || value % 100 === 0) {
+    // 난이도 1은 cm끼리 더해 100이 넘지 않아 받아올림이 없다.
+    const carries = difficulty === 1 && (x % 100) + (y % 100) >= 100;
+    if (value === null || carries || [x, y, z].some((v) => v !== null && v % 100 === 0) || value % 100 === 0) {
       return this.generate(rng, { difficulty });
     }
     const O = object;

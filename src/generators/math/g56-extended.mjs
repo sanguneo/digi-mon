@@ -149,7 +149,7 @@ const lcmStory = {
     // 난이도 2·3은 정해진 시간 동안 다시 함께 일어나는 횟수도 묻는다.
     if (difficulty !== 1 && rng.bool()) {
       const k = rng.int(2, difficulty === 2 ? 5 : 9);
-      const T = L * k + rng.int(0, L - 1);
+      const T = L * k + rng.int(1, L - 1);
       return {
         params: { kind: 'count', a, b, T },
         instruction: '물음에 답하시오.',
