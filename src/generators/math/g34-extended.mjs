@@ -128,7 +128,8 @@ const story3 = {
         expr,
         `답은 ${countIda(value, C)}.`,
       ],
-      dedupeKey: `story3:${kind}:${a}:${b}:${N}`,
+      // 맥락(명사)만 다른 같은 계산은 같은 문항으로 센다. 나눠 주고 남은 수도 옮기고 남은 수와 같은 셈이다.
+      dedupeKey: `story3:${kind === 'after-sale' ? 'left' : kind}:${a}:${b}`,
       difficulty,
     };
   },
@@ -171,7 +172,7 @@ const storyMultiply = {
       stem: `${g.noun}${josaI(g.noun)} 한 ${g.unit}에 ${per}${g.counter}씩 ${groups}${g.unit} 있습니다. ${g.noun}${josaEun(g.noun)} 모두 몇 ${g.counter}입니까?`,
       answer: { value: total, display: `${total}${g.counter}`, accepts: [num(total), `${total}${g.counter}`, expr] },
       solution: [`한 ${g.unit}에 ${per}${g.counter}씩 ${groups}${g.unit}이므로 곱셈으로 구한다.`, expr, `답은 ${total}${g.counter}이다.`],
-      dedupeKey: `story-multiply:${per}:${groups}:${g.noun}`,
+      dedupeKey: `story-multiply:${per}:${groups}`,
       difficulty,
     };
   },

@@ -56,6 +56,15 @@ function parseCanonical(text) {
   return m ? { n: Number(t), d: 1 } : null;
 }
 
+/** 약분을 끝낸 가분수(113/21)만 읽는다. 진분수·자연수와 약분하지 않은 답은 null. */
+function parseReducedImproper(text) {
+  const m = /^(\d+)\/(\d+)$/.exec(String(text));
+  if (!m) return null;
+  const [n, d] = [Number(m[1]), Number(m[2])];
+  if (d <= 1 || n <= d || gcd(n, d) !== 1) return null;
+  return { n, d };
+}
+
 const sameValue = (p, n, d) => p !== null && p.n * d === n * p.d;
 
 const mixedText = (w, n, d) => (w === 0 ? `${n}/${d}` : n === 0 ? `${w}` : `${w} ${n}/${d}`);
@@ -299,12 +308,15 @@ const mixedAddSubUnlike = {
     const Y = improper(y) * (L / y.d);
     const R = isAdd ? X + Y : X - Y;
     const display = fmtRational(R, L);
+    // '기약분수로'는 기약 가분수(113/21)도 뜻하므로 대분수와 함께 받는다.
+    const g = gcd(R, L);
+    const improperText = R / g > L / g && L / g > 1 ? `${R / g}/${L / g}` : null;
     const op = isAdd ? '+' : '-';
     return {
       params: { x, y, isAdd },
       instruction: '계산하여 기약분수로 나타내시오.',
       stem: `${mixedText(x.w, x.n, x.d)} ${op} ${mixedText(y.w, y.n, y.d)}`,
-      answer: { value: display, display, accepts: [display] },
+      answer: { value: display, display, accepts: improperText ? [display, improperText] : [display] },
       solution: [
         `두 분모 ${numGwa(x.d)} ${y.d}의 최소공배수 ${numRo(L)} 통분한다: ${mixedText(x.w, (x.n * L) / x.d, L)} ${op} ${mixedText(y.w, (y.n * L) / y.d, L)}`,
         isAdd ? '자연수끼리, 분수끼리 더하고 가분수는 대분수로 바꾼다.' : '분수끼리 뺄 수 없으면 자연수에서 1을 받아내려 뺀다.',
@@ -315,7 +327,7 @@ const mixedAddSubUnlike = {
     };
   },
   verify({ x, y, isAdd }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseCanonical(answer.value) ?? parseReducedImproper(answer.value);
     if (p === null) return false;
     // 답에서 둘째 수를 되돌려 첫째 수가 나오는지 교차 곱으로 본다.
     const backN = isAdd ? p.n * y.d - improper(y) * p.d : p.n * y.d + improper(y) * p.d;
@@ -387,7 +399,7 @@ const shareStory = {
         + ` 한 사람이 가지는 ${t.noun}${josaEun(t.noun)} 몇 ${t.unit}입니까?`,
       answer: { value: display, display: `${display}${t.unit}`, accepts: [display, `${display}${t.unit}`] },
       solution: [`${amount} ÷ ${people}의 몫은 ${amount}/${people}이다.`, `기약분수로 나타내면 ${display}${t.unit}이다.`],
-      dedupeKey: `share-story:${amount}:${people}:${t.unit}`,
+      dedupeKey: `share-story:${amount}:${people}`,
       difficulty,
     };
   },
@@ -531,22 +543,22 @@ const ruleTable = {
   skill: '대응표에서 규칙을 찾아 다른 값 구하기',
   format: 'short-answer',
   generate(rng, { difficulty }) {
-    const kind = difficulty === 1 ? rng.pick(['mul', 'add']) : difficulty === 2 ? rng.pick(['mul', 'add', 'sub']) : 'mul-add';
-    const a = rng.int(2, difficulty === 3 ? 9 : 12);
-    const b = rng.int(1, 9);
-    const f = (x) => (kind === 'mul' ? a * x : kind === 'add' ? x + a : kind === 'sub' ? x - a : a * x + b);
+    // [6수02-01]은 한 가지 연산의 대응 관계만 다룬다. 난이도 3은 연산 대신 수의 범위를 넓힌다.
+    const kind = difficulty === 1 ? rng.pick(['mul', 'add']) : rng.pick(['mul', 'add', 'sub']);
+    const a = difficulty === 3 ? rng.int(13, 25) : rng.int(2, 12);
+    const f = (x) => (kind === 'mul' ? a * x : kind === 'add' ? x + a : x - a);
     const start = kind === 'sub' ? a + 1 : rng.int(1, 3);
     const xs = [0, 1, 2, 3].map((k) => start + k);
     const target = rng.int(xs[3] + 3, difficulty === 3 ? 50 : 30);
     const value = f(target);
-    const rule = kind === 'mul' ? `□ = △ × ${a}` : kind === 'add' ? `□ = △ + ${a}` : kind === 'sub' ? `□ = △ - ${a}` : `□ = △ × ${a} + ${b}`;
+    const rule = kind === 'mul' ? `□ = △ × ${a}` : kind === 'add' ? `□ = △ + ${a}` : `□ = △ - ${a}`;
     return {
       params: { xs, ys: xs.map(f), target },
       instruction: '표를 보고 물음에 답하시오.',
       stem: `△ | ${xs.join(' | ')}\n□ | ${xs.map(f).join(' | ')}\n△가 ${target}일 때 □는 얼마입니까?`,
       answer: { value, display: num(value), accepts: [num(value)] },
       solution: [`△와 □의 대응 관계를 식으로 나타내면 ${rule}이다.`, `△에 ${numEul(target)} 넣으면 □는 ${value}이다.`],
-      dedupeKey: `rule-table:${kind}:${a}:${kind === 'mul-add' ? b : ''}:${start}:${target}`,
+      dedupeKey: `rule-table:${kind}:${a}:${start}:${target}`,
       difficulty,
     };
   },

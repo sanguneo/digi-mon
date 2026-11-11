@@ -222,7 +222,8 @@ const storyBox = {
       stem: story.stem,
       answer: { value: ans, display: `${ans}${C}`, accepts: [num(ans), `${ans}${C}`] },
       solution: [`모르는 수를 □로 놓으면 ${story.expr}이다.`, `□는 ${story.undo} 구한다.`, `답은 ${countIda(ans, C)}.`],
-      dedupeKey: `story-box:${kind}:${a}:${b}:${N}`,
+      // 맥락(장소·명사)만 다른 같은 계산은 같은 문항으로 센다.
+      dedupeKey: `story-box:${kind}:${a}:${b}`,
       difficulty,
     };
   },

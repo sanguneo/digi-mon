@@ -1634,7 +1634,7 @@ const estimateBuy = {
         stem: `한 개에 ${a}원인 ${item} ${b}개의 값을 ${a}${numberParticle(a, '을', '를')} ${unitName}으로 어림하여 구하면 약 몇 원입니까?`,
         answer: { value, display: `${value}원`, accepts: [num(value), `${value}원`, `약 ${value}원`] },
         solution: [`${numEun(a)} ${unitName}으로 어림하면 ${H * U}이다.`, `${H * U} × ${b} = ${value}이므로 약 ${value}원이다.`],
-        dedupeKey: `estimate-decide:product:${a}:${b}`,
+        dedupeKey: `estimate-decide:product:${U}:${a}:${b}`,
         difficulty,
       };
     }
@@ -1855,13 +1855,15 @@ const decimalStory = {
     const minus = kind === 'total' ? [] : kind === 'left' ? [b] : [e];
     const R = sum(plus) - sum(minus);
     const display = fmtDec(R, places);
+    // 끝자리 0을 붙여 자릿수를 맞춘 표기(14.40)도 같은 값이므로 받는다.
+    const padded = (R / 10 ** places).toFixed(places);
     const vals = [a, b, e].map((x) => fmtDec(x, places));
     const expr = kind === 'total' ? `${vals[0]} + ${vals[1]}` : kind === 'left' ? `${vals[0]} - ${vals[1]}` : `${vals[0]} - ${vals[2]} + ${vals[1]}`;
     return {
       params: { places, plus, minus, scale: sum(plus) },
       instruction: '식을 세워 답을 구하시오.',
       stem: amountStem(c, kind, vals),
-      answer: { value: display, display: `${display}${c.unit}`, accepts: [display, `${display}${c.unit}`] },
+      answer: { value: display, display: `${display}${c.unit}`, accepts: [...new Set([display, `${display}${c.unit}`, padded, `${padded}${c.unit}`])] },
       solution: ['소수점의 자리를 맞추어 같은 자리끼리 계산한다.', `${expr} = ${display}이다.`],
       dedupeKey: `decimal-story:${kind}:${places}:${a}:${b}:${kind === 'two-step' ? e : ''}`,
       difficulty,

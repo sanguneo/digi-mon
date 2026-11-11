@@ -810,7 +810,7 @@ const ratioSituation = {
     solution.push(`비교하는 양을 앞에, 기준량을 뒤에 써서 ${display}이다.`);
     return {
       params: { p, q, X, Y },
-      instruction: '물음에 답하시오.',
+      instruction: '물음에 답하시오. 비는 간단히 하지 말고 두 양의 수를 그대로 써서 나타내시오.',
       stem: `${intro} ${phrase}를 쓰시오.`,
       answer: { value: display, display, accepts: [display, `${vals[X]}:${vals[Y]}`] },
       solution,
@@ -1451,13 +1451,15 @@ const roundingStory = {
     const h = notMultiple(101, 9999, 10);
     const r = h % 10;
     const tenths = r >= 5 ? (h - r) / 10 + 1 : (h - r) / 10;
-    const v = fmtDec(tenths, 1);
+    // 소수 첫째 자리까지 나타내라고 했으므로 그 자릿수 표기(29.0)를 정답으로 내고, 같은 값(29)도 받는다.
+    const v = (tenths / 10).toFixed(1);
+    const short = fmtDec(tenths, 1);
     const x = fmtDec(h, 2);
     return {
       params: { kind, h },
       instruction: '물음에 답하시오.',
       stem: `철사의 길이를 재었더니 ${x}m였습니다. 철사의 길이를 반올림하여 소수 첫째 자리까지 나타내면 몇 m입니까?`,
-      answer: { value: v, display: `${v}m`, accepts: [v, `${v}m`] },
+      answer: { value: v, display: `${v}m`, accepts: [...new Set([v, `${v}m`, short, `${short}m`])] },
       solution: [`소수 둘째 자리 숫자가 ${r}${r >= 5 ? '이므로 올린다' : '이므로 버린다'}.`, `${x} -> ${v}이므로 ${v}m이다.`],
       dedupeKey: `rounding-story:${kind}:${h}`,
       difficulty,
@@ -1465,10 +1467,11 @@ const roundingStory = {
   },
   verify(params, answer) {
     if (params.kind === 'round-decimal') {
-      const p = parseDec(answer.value);
-      if (p === null || p.scale > 1) return false;
+      // 소수 첫째 자리까지의 답만 읽는다. 끝자리 0(29.0)은 자릿수를 밝힌 표기이므로 받는다.
+      const m = /^(0|[1-9]\d*)(?:\.(\d))?$/.exec(String(answer.value));
+      if (m === null) return false;
       // 답(0.1 단위)과 원래 길이(0.01 단위)의 차가 0.05 미만이거나, 정확히 0.05 아래에서 올린 경우만 허용한다.
-      const diff = p.units * 10 ** (1 - p.scale) * 10 - params.h;
+      const diff = (Number(m[1]) * 10 + Number(m[2] ?? 0)) * 10 - params.h;
       return diff > -5 && diff <= 5;
     }
     const v = answer.value;
