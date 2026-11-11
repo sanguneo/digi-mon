@@ -23,7 +23,7 @@ import {
   numRo,
   sinoKorean,
 } from '../../engine/korean-number.mjs';
-import { expressionAnswerForms } from '../expression-answer.mjs';
+import { commutedExpressions, expressionAnswerForms } from '../expression-answer.mjs';
 
 const CODE = (n) => `[2수01-${String(n).padStart(2, '0')}]`;
 const num = (n) => String(n);
@@ -498,7 +498,7 @@ const storyAdd = {
       params: { a, b, kind, name, noun: N, counter, place },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: story.stem,
-      answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, expr, ...expressionAnswerForms([expr], sum, counter)] },
+      answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, ...commutedExpressions(expr), ...expressionAnswerForms(commutedExpressions(expr), sum, counter)] },
       solution: [story.reason, expr, `답은 ${countIda(sum, counter)}.`],
       // 맥락(명사·장소)만 다른 같은 계산은 같은 문항으로 센다. 문제 구조(kind)는 남긴다.
       dedupeKey: `story-add:${kind}:${a}:${b}`,

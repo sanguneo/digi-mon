@@ -12,7 +12,7 @@ import { NAMES, THINGS } from '../corpus.mjs';
 import {
   countIda, josaEul, josaEun, josaI, numEul, numGwa, numI, numRo,
 } from '../../engine/korean-number.mjs';
-import { expressionAnswerForms } from '../expression-answer.mjs';
+import { commutedExpressions, expressionAnswerForms } from '../expression-answer.mjs';
 
 const num = (n) => String(n);
 const WEEKDAYS = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
@@ -222,7 +222,7 @@ const storyBox = {
       instruction: '모르는 수를 □로 하여 식을 쓰고 답을 구하시오.',
       stem: story.stem,
       // 식과 답을 함께 쓴 답(□ - 19 = 1, □ = 20)도 지시문대로 받는다.
-      answer: { value: ans, display: `${ans}${C}`, accepts: [num(ans), `${ans}${C}`, ...expressionAnswerForms([story.expr], ans, C)] },
+      answer: { value: ans, display: `${ans}${C}`, accepts: [num(ans), `${ans}${C}`, ...expressionAnswerForms(commutedExpressions(story.expr), ans, C)] },
       solution: [`모르는 수를 □로 놓으면 ${story.expr}이다.`, `□는 ${story.undo} 구한다.`, `답은 ${countIda(ans, C)}.`],
       // 맥락(장소·명사)만 다른 같은 계산은 같은 문항으로 센다.
       dedupeKey: `story-box:${kind}:${a}:${b}`,

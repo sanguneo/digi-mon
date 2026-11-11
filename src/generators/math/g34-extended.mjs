@@ -12,7 +12,7 @@ import {
   countIda, fracEun, josaEul, josaEun, josaI, numberParticle, numEun, numRo,
 } from '../../engine/korean-number.mjs';
 import { reducedFractionForms } from '../../engine/rational.mjs';
-import { expressionAnswerForms } from '../expression-answer.mjs';
+import { commutedExpressions, expressionAnswerForms } from '../expression-answer.mjs';
 
 const num = (n) => String(n);
 const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째', '일곱째', '여덟째', '아홉째', '열째'];
@@ -124,7 +124,7 @@ const story3 = {
       params: { a, b, add },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: stems[kind],
-      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, expr, ...expressionAnswerForms([expr], value, C)] },
+      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, ...commutedExpressions(expr), ...expressionAnswerForms(commutedExpressions(expr), value, C)] },
       solution: [
         add ? '두 날 들어온 수를 모두 더한다.' : '큰 수에서 작은 수를 빼서 차이나 남은 수를 구한다.',
         expr,
@@ -172,7 +172,7 @@ const storyMultiply = {
       params: { per, groups },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: `${g.noun}${josaI(g.noun)} 한 ${g.unit}에 ${per}${g.counter}씩 ${groups}${g.unit} 있습니다. ${g.noun}${josaEun(g.noun)} 모두 몇 ${g.counter}입니까?`,
-      answer: { value: total, display: `${total}${g.counter}`, accepts: [num(total), `${total}${g.counter}`, expr, ...expressionAnswerForms([expr], total, g.counter)] },
+      answer: { value: total, display: `${total}${g.counter}`, accepts: [num(total), `${total}${g.counter}`, ...commutedExpressions(expr), ...expressionAnswerForms(commutedExpressions(expr), total, g.counter)] },
       solution: [`한 ${g.unit}에 ${per}${g.counter}씩 ${groups}${g.unit}이므로 곱셈으로 구한다.`, expr, `답은 ${total}${g.counter}이다.`],
       dedupeKey: `story-multiply:${per}:${groups}`,
       difficulty,

@@ -363,3 +363,40 @@ test('[2수01-09] 식과 답을 쓰라는 □ 문장제는 식과 답을 함께 
   }
   for (const response of ['□ - 19 = 1, □ = 21', '□ - 19 = 1', '□ + 19 = 1, □ = 20']) assert.equal(correct(item, response), false, response);
 });
+
+// 5차 리뷰(head 75c28f7)가 재현한 반례를 고정한다.
+
+test('[6수01-01] 공장 문장제의 불량품은 만든 물건보다 적어서 상자 수가 1 이상이다', () => {
+  const { generator, raw } = make('math.g56.no.s01.mixed-ops-story', 'review:3:1402', 3);
+  const { kind, a, b, c, d, e } = raw.params;
+  assert.equal(kind, 'factory');
+  assert.equal(a * b * c, 80);
+  assert.equal(e, 30);
+  assert.ok(d > 0 && d < a * b * c, `불량 ${d}개, 생산 ${a * b * c}개`);
+  assert.equal((a * b * c - d) % e, 0);
+  assert.equal(raw.answer.value, (a * b * c - d) / e);
+  assert.ok(raw.answer.value >= 1);
+  assert.equal(generator.verify(raw.params, raw.answer), true);
+  // 상자 수가 0이 되는 답은 검증기가 거절한다(그래서 학습지 생성이 멈췄다).
+  assert.equal(generator.verify({ ...raw.params, d: a * b * c }, { value: 0 }), false);
+});
+
+test('[4수01-03][4수01-04] 덧셈·곱셈 문장제는 두 수의 순서를 바꾼 식도 정답으로 받는다', () => {
+  const story = make('math.g34.no.s03.story', 7, 1);
+  assert.match(story.raw.stem, /어제 490개, 오늘 379개/);
+  for (const response of ['379 + 490 = 869, 869개', '379 + 490 = 869, 869', '379+490=869', '490 + 379 = 869, 869개', '869개']) {
+    assert.equal(correct(story.item, response), true, response);
+  }
+  for (const response of ['379 + 490 = 868, 869개', '379 + 490 = 869, 870개', '379 - 490 = 869, 869개']) {
+    assert.equal(correct(story.item, response), false, response);
+  }
+
+  const multiply = make('math.g34.no.s04.story-multiply', 0, 1);
+  assert.match(multiply.raw.stem, /15장씩 7묶음/);
+  for (const response of ['7 × 15 = 105, 105장', '7 × 15 = 105, 105', '7×15=105', '15 × 7 = 105, 105장', '105장']) {
+    assert.equal(correct(multiply.item, response), true, response);
+  }
+  for (const response of ['7 × 15 = 105, 106장', '7 + 15 = 105, 105장', '7 ÷ 15 = 105, 105장']) {
+    assert.equal(correct(multiply.item, response), false, response);
+  }
+});

@@ -13,7 +13,7 @@ import { NAMES, THINGS } from '../corpus.mjs';
 import {
   countIda, josaEul, josaEun, josaI, numEul, numEun, numRo, particle,
 } from '../../engine/korean-number.mjs';
-import { expressionAnswerForms } from '../expression-answer.mjs';
+import { commutedExpressions, expressionAnswerForms } from '../expression-answer.mjs';
 
 const num = (n) => String(n);
 const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째', '일곱째', '여덟째', '아홉째', '열째'];
@@ -304,7 +304,7 @@ const storyThree = {
       params: { a, b, c, ops },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: stems[shape],
-      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, expr, ...expressionAnswerForms([expr], value, C)] },
+      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, ...commutedExpressions(expr), ...expressionAnswerForms(commutedExpressions(expr), value, C)] },
       solution: [
         `앞에서부터 차례로 계산하면 ${a} ${ops[0]} ${b} = ${first}, ${first} ${ops[1]} ${c} = ${value}이다.`,
         `답은 ${countIda(value, C)}.`,

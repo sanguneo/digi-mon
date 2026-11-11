@@ -1286,7 +1286,8 @@ const mixedOpsStory = {
       const c = rng.int(2, 12);
       const e = rng.int(5, 30);
       const total = a * b * c;
-      const d = (total % e) + e * rng.int(total % e === 0 ? 1 : 0, 3);
+      // 불량품은 만든 물건보다 적어야 한다. 상자 수가 1 이상이 되도록 e 묶음 수를 줄인다.
+      const d = (total % e) + e * Math.min(rng.int(total % e === 0 ? 1 : 0, 3), Math.floor(total / e) - 1);
       v = (total - d) / e;
       expr = `(${a} × ${b} × ${c} - ${d}) ÷ ${e}`;
       stem = `한 시간에 ${a}개씩 물건을 만드는 기계 ${b}대가 ${c}시간 동안 만든 물건 중 ${d}개가 불량품이었습니다. 불량품이 아닌 물건을 한 상자에 ${e}개씩 담으면 몇 상자가 됩니까?`;
