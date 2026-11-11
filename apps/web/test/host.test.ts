@@ -70,12 +70,32 @@ test('learner proxy strips teacher-only fields and never injects teacher token',
 test('teacher proxy injects the server-held credential', async () => {
   const response = await fetch(`${hostUrl}/teacher/api/v1/worksheets`, {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: { origin: hostUrl, 'content-type': 'application/json' },
     body: JSON.stringify({ subject: 'math', count: 1 }),
   });
 
   assert.equal(response.status, 200);
   assert.equal(receivedAuthorization, 'Bearer server-only-secret');
+});
+
+test('teacher proxy refuses cross-site, origin-less and non-JSON writes before adding the token', async () => {
+  const cases: [Record<string, string>, number][] = [
+    [{ origin: 'http://evil.example', 'content-type': 'text/plain' }, 403],
+    [{ origin: 'http://evil.example', 'content-type': 'application/json' }, 403],
+    [{ origin: 'http://localhost:5000', 'content-type': 'application/json' }, 403],
+    [{ 'content-type': 'application/json' }, 403],
+    [{ origin: hostUrl, 'content-type': 'text/plain' }, 415],
+  ];
+  for (const [headers, status] of cases) {
+    receivedAuthorization = 'untouched';
+    const response = await fetch(`${hostUrl}/teacher/api/v1/review/verdict`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ id: 'x', action: 'reset' }),
+    });
+    assert.equal(response.status, status, JSON.stringify(headers));
+    assert.equal(receivedAuthorization, 'untouched');
+  }
 });
 
 test('host serves the built single-page client', async () => {

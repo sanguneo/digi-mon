@@ -3,6 +3,8 @@ import http, { type IncomingMessage, type ServerResponse } from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { teacherRequestRefusal } from './teacher-origin.ts';
+
 export interface WebHostOptions {
   engineOrigin: string;
   teacherToken?: string;
@@ -54,6 +56,12 @@ async function proxy(
   const isLearner = url.pathname.startsWith('/learner/api/');
   if (!isTeacher && !isLearner) {
     response.writeHead(404).end();
+    return;
+  }
+  const refusal = isTeacher ? teacherRequestRefusal(request, false) : null;
+  if (refusal) {
+    response.writeHead(refusal.status, { 'content-type': 'application/json; charset=utf-8' });
+    response.end(JSON.stringify({ error: refusal.error }));
     return;
   }
 

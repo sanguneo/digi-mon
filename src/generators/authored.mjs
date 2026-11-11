@@ -21,6 +21,7 @@
  * '2 + 2 = □' 의 답을 5로 적어도 통과한다. 정답을 따로 계산하는 검산이 생기기 전까지
  * AI 작성 코퍼스는 국어·영어만 둔다.
  */
+import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -153,40 +154,69 @@ export function authoredGenerators(files) {
 export const AUTHORED_REVIEW_SCHEMA = 'digi-mon/authored-review-status@1';
 export const AUTHORED_REVIEW_FILE = 'review-status.json';
 
+/** 학습지에 나가는 내용 필드. 이 가운데 하나라도 바뀌면 이전 승인은 이 내용을 본 것이 아니다. */
+export const AUTHORED_CONTENT_KEYS = ['difficulty', 'instruction', 'stem', 'answer', 'distractors', 'solution'];
+
 /**
- * 사람이 검토를 마친 문항 id 집합을 읽는다. 목록에 없는 문항은 모두 '검토 전'이다.
- * 파일이 없으면 검토 완료 문항도 없다.
+ * 문항 내용 버전. 내용 필드를 정해진 순서로 이은 JSON 의 sha256 앞 16자리다.
+ * 승인은 이 값에 붙는다. 파일을 손으로 고쳐도 값이 바뀌어 승인이 저절로 풀린다.
+ */
+export function authoredRevision(item) {
+  const content = JSON.stringify(AUTHORED_CONTENT_KEYS.map((key) => item[key]));
+  return createHash('sha256').update(content).digest('hex').slice(0, 16);
+}
+
+/**
+ * 사람이 검토를 마친 문항을 읽는다. 값은 id → 승인한 내용 버전(revision)이다.
+ * 목록에 없는 문항은 모두 '검토 전'이다. 파일이 없으면 검토 완료 문항도 없다.
+ * revision 이 없는 항목(이전 형식)은 어떤 내용과도 맞지 않아 학습지에 나가지 않는다.
  */
 export function loadReviewStatus(root = AUTHORED_ROOT) {
   const file = path.join(root, AUTHORED_REVIEW_FILE);
-  if (!existsSync(file)) return new Set();
+  if (!existsSync(file)) return new Map();
   const fail = (msg) => {
     throw new Error(`AI 작성 검토 상태 오류 [${AUTHORED_REVIEW_FILE}]: ${msg}`);
   };
   const status = JSON.parse(readFileSync(file, 'utf8'));
   if (status?.schema !== AUTHORED_REVIEW_SCHEMA) fail(`schema 는 ${AUTHORED_REVIEW_SCHEMA}`);
   if (!Array.isArray(status.reviewed)) fail('reviewed 는 배열');
-  const ids = new Set();
+  const ids = new Map();
   for (const entry of status.reviewed) {
     if (!/^[0-9a-f]{12}$/.test(entry?.id ?? '')) fail(`id 형식 오류: ${entry?.id}`);
     if (ids.has(entry.id)) fail(`id 중복: ${entry.id}`);
     if (!nonEmpty(entry.reviewer)) fail(`${entry.id}: reviewer 가 비었다`);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.reviewedAt ?? '')) fail(`${entry.id}: reviewedAt 은 YYYY-MM-DD`);
-    ids.add(entry.id);
+    if (entry.revision !== undefined && !/^[0-9a-f]{16}$/.test(entry.revision)) fail(`${entry.id}: revision 은 16자리 16진수`);
+    ids.set(entry.id, entry.revision ?? null);
+  }
+  // excluded 는 사람이 검토해 학습지에서 뺀 문항이다. 문항은 지우지 않고 여기 표시만 한다.
+  // 없어도 된다(이전 파일). 검토 완료와 제외에 동시에 오를 수는 없다.
+  if (status.excluded !== undefined) {
+    if (!Array.isArray(status.excluded)) fail('excluded 는 배열');
+    const excluded = new Set();
+    for (const entry of status.excluded) {
+      if (!/^[0-9a-f]{12}$/.test(entry?.id ?? '')) fail(`excluded id 형식 오류: ${entry?.id}`);
+      if (excluded.has(entry.id)) fail(`excluded id 중복: ${entry.id}`);
+      if (ids.has(entry.id)) fail(`${entry.id}: reviewed 와 excluded 에 함께 있다`);
+      if (!nonEmpty(entry.reviewer)) fail(`${entry.id}: reviewer 가 비었다`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.excludedAt ?? '')) fail(`${entry.id}: excludedAt 은 YYYY-MM-DD`);
+      excluded.add(entry.id);
+    }
   }
   return ids;
 }
 
 /**
- * 코퍼스에서 검토 완료 문항만 남긴다. 남는 문항이 없는 파일은 뺀다.
- * 코퍼스에 없는 id 가 목록에 있으면 오타나 지워진 문항이므로 멈춘다.
+ * 코퍼스에서 검토 완료 문항만 남긴다. 승인한 내용 버전과 지금 내용 버전이 같아야 검토 완료다.
+ * 남는 문항이 없는 파일은 뺀다. 코퍼스에 없는 id 가 목록에 있으면 오타나 지워진 문항이므로 멈춘다.
+ * @param {Map<string, string | null>} reviewed loadReviewStatus 의 결과
  */
-export function reviewedOnly(files, reviewedIds) {
+export function reviewedOnly(files, reviewed) {
   const known = new Set(files.flatMap((file) => file.items.map((item) => item.id)));
-  const unknown = [...reviewedIds].filter((id) => !known.has(id));
+  const unknown = [...reviewed.keys()].filter((id) => !known.has(id));
   if (unknown.length > 0) throw new Error(`AI 작성 검토 상태 오류: 코퍼스에 없는 id ${unknown.join(', ')}`);
   return files
-    .map((file) => ({ ...file, items: file.items.filter((item) => reviewedIds.has(item.id)) }))
+    .map((file) => ({ ...file, items: file.items.filter((item) => reviewed.get(item.id) === authoredRevision(item)) }))
     .filter((file) => file.items.length > 0);
 }
 

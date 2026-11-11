@@ -156,11 +156,19 @@ export class ApiError extends Error {
   }
 }
 
+// 다른 기기에서 검토할 때 교사가 직접 입력한 토큰. 저장소에 남기지 않고 이 탭의 메모리에만 둔다.
+let typedTeacherToken = '';
+
+export function setTeacherToken(token: string) {
+  typedTeacherToken = token.trim();
+}
+
 async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(path, {
     ...init,
     headers: {
       'content-type': 'application/json',
+      ...(typedTeacherToken && path.startsWith('/teacher/api/') ? { authorization: `Bearer ${typedTeacherToken}` } : {}),
       ...init?.headers,
     },
   });
@@ -290,4 +298,123 @@ export async function createRemediation(
     }),
   });
   return result.worksheet;
+}
+
+export type ReviewStatus = 'pending' | 'reviewed' | 'excluded';
+export type ReviewAction = 'approve' | 'exclude' | 'reset';
+
+export interface ReviewNote {
+  verdict: string;
+  kind: string | null;
+  note: string;
+  source: string;
+}
+
+export interface ReviewSummary {
+  id: string;
+  subject: 'korean' | 'english';
+  standardCode: string;
+  skill: string;
+  difficulty: Difficulty;
+  instruction: string;
+  stem: string;
+  answer: string;
+  status: ReviewStatus;
+  priority: number | null;
+  reasons: Array<{ source: string; text: string }>;
+  notes: ReviewNote[];
+}
+
+export interface AuthoredItemFields {
+  instruction: string;
+  stem: string;
+  answer: string;
+  distractors: string[];
+  solution: string[];
+}
+
+export interface ReviewItemDetail extends ReviewSummary {
+  file: string;
+  item: AuthoredItemFields & { id: string; difficulty: Difficulty };
+  statusEntry: { reviewer: string; reviewedAt?: string; excludedAt?: string; reason?: string } | null;
+  /** 내용 버전. 모든 쓰기 요청에 돌려보내고, 서버 내용과 다르면 409 로 거절된다. */
+  revision: string;
+  /** 승인한 뒤 파일 내용이 바뀌어 그 승인이 풀렸다. */
+  staleApproval?: boolean;
+  writeEnabled: boolean;
+  saved?: boolean;
+  /** 일반 저장이 승인된 문항의 내용을 바꿔 승인을 풀었다. */
+  unapproved?: boolean;
+}
+
+export interface ReviewList {
+  writeEnabled: boolean;
+  total: number;
+  matched: number;
+  offset: number;
+  limit: number;
+  counts: Record<ReviewStatus, number>;
+  facets: {
+    subjects: string[];
+    standards: Array<{ code: string; subject: string; skill: string; count: number }>;
+    verdicts: string[];
+  };
+  items: ReviewSummary[];
+}
+
+export interface ReviewFilters {
+  subject?: string;
+  standard?: string;
+  status?: string;
+  verdict?: string;
+  offset?: number;
+  limit?: number;
+}
+
+export interface GateReason {
+  gate: string;
+  detail: string;
+}
+
+/** 작성 게이트 실패(422)의 사유 목록. 다른 오류면 null. */
+export function gateReasonsOf(error: unknown): GateReason[] | null {
+  if (!(error instanceof ApiError) || error.status !== 422) return null;
+  const detail = error.detail as { reasons?: GateReason[] } | null;
+  return detail?.reasons ?? null;
+}
+
+/** 다른 곳에서 문항이 바뀌어 거절된 쓰기(409)의 최신 내용. 다른 오류면 null. */
+export function conflictOf(error: unknown): ReviewItemDetail | null {
+  if (!(error instanceof ApiError) || error.status !== 409) return null;
+  const detail = error.detail as { current?: ReviewItemDetail } | null;
+  return detail?.current ?? null;
+}
+
+const REVIEW_API = '/teacher/api/v1/review';
+
+export function getReviewList(filters: ReviewFilters): Promise<ReviewList> {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(filters)) {
+    if (value !== undefined && value !== '') params.set(key, String(value));
+  }
+  return requestJson(`${REVIEW_API}/items?${params}`);
+}
+
+export function getReviewItem(id: string): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/item?id=${encodeURIComponent(id)}`);
+}
+
+export function saveReviewItem(id: string, revision: string, item: AuthoredItemFields): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/item`, { method: 'POST', body: JSON.stringify({ id, revision, item }) });
+}
+
+export function submitReviewVerdict(verdict: {
+  id: string;
+  revision: string;
+  action: ReviewAction;
+  reviewer?: string;
+  reason?: string;
+  item?: AuthoredItemFields;
+}): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/verdict`, { method: 'POST', body: JSON.stringify(verdict) });
 }

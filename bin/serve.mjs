@@ -49,6 +49,9 @@ server.listen(PORT, HOST, () => {
   console.log('  GET  /v1/prerequisites?code=[2수01-06]');
   console.log('  POST /v1/remediation  {weakStandards:["[6수01-08]"], depth, count}');
   console.log('  POST /v1/accuracy     {records: [...responseRecords]}  (교사 토큰 필요)');
+  console.log('  GET  /v1/review/items?subject&standard&status&verdict   (교사 토큰 필요)');
+  console.log('  GET  /v1/review/item?id=   POST /v1/review/item   POST /v1/review/verdict');
+  console.log(`  문항 검토 쓰기: ${process.env.DIGIMON_ADMIN_WRITE === '1' ? '켜짐 (data/authored 를 고칩니다)' : '꺼짐 (DIGIMON_ADMIN_WRITE=1 로 켬다)'}`);
 });
 
 /**
