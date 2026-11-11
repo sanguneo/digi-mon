@@ -205,24 +205,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 198,
+          "unique": 20,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 270,
+          "unique": 40,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 266,
+          "unique": 40,
           "failed": 0
         }
       },
-      "uniqueTotal": 621,
+      "uniqueTotal": 70,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5175
+      "uniqueRatio": 0.0583
     },
     {
       "generatorId": "math.g12.no.s01.count-native",
@@ -491,24 +491,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 314,
+          "unique": 172,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 398,
+          "unique": 385,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 399,
+          "unique": 393,
           "failed": 0
         }
       },
-      "uniqueTotal": 1099,
+      "uniqueTotal": 922,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9158
+      "uniqueRatio": 0.7683
     },
     {
       "generatorId": "math.g12.no.s05.story-sub",
@@ -517,24 +517,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 337,
+          "unique": 102,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 395,
+          "unique": 353,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 391,
           "failed": 0
         }
       },
-      "uniqueTotal": 1092,
+      "uniqueTotal": 745,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.91
+      "uniqueRatio": 0.6208
     },
     {
       "generatorId": "math.g12.no.s06.add",
@@ -595,7 +595,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 56,
+          "unique": 53,
           "failed": 0
         },
         "2": {
@@ -609,10 +609,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 733,
+      "uniqueTotal": 730,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.6108
+      "uniqueRatio": 0.6083
     },
     {
       "generatorId": "math.g12.no.s07.fact-family",
@@ -621,24 +621,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 25,
+          "unique": 16,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 233,
+          "unique": 173,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 370,
+          "unique": 358,
           "failed": 0
         }
       },
-      "uniqueTotal": 609,
+      "uniqueTotal": 527,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5075
+      "uniqueRatio": 0.4392
     },
     {
       "generatorId": "math.g12.no.s08.add-three",
@@ -725,24 +725,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 133,
+          "unique": 12,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 311,
+          "unique": 64,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 309,
+          "unique": 64,
           "failed": 0
         }
       },
-      "uniqueTotal": 555,
+      "uniqueTotal": 64,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.4625
+      "uniqueRatio": 0.0533
     },
     {
       "generatorId": "math.g12.no.s10.add-to-mult",
@@ -3131,10 +3131,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 181,
+      "uniqueTotal": 176,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.1508
+      "uniqueRatio": 0.1467
     },
     {
       "generatorId": "math.g56.no.s13.mul-natural",

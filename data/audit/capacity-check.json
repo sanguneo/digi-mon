@@ -4,7 +4,7 @@
   "baseSamples": 300,
   "minCeiling": 12,
   "generatorCount": 306,
-  "saturatedCount": 100,
+  "saturatedCount": 102,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -158,7 +158,7 @@
       "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 295798,
+  "observedCapacity": 293601,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -188,10 +188,10 @@
       "skill": "10개씩 묶음과 낱개로 수 세기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 557,
-      "uniqueAtDouble": 725,
-      "saturated": false,
-      "ceiling": null
+      "uniqueAtBase": 70,
+      "uniqueAtDouble": 70,
+      "saturated": true,
+      "ceiling": 70
     },
     {
       "generatorId": "math.g12.no.s01.count-native",
@@ -309,8 +309,8 @@
       "skill": "덧셈 상황에서 식 세우고 답 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 836,
-      "uniqueAtDouble": 1594,
+      "uniqueAtBase": 733,
+      "uniqueAtDouble": 1308,
       "saturated": false,
       "ceiling": null
     },
@@ -320,8 +320,8 @@
       "skill": "뺄셈 상황에서 식 세우고 답 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 829,
-      "uniqueAtDouble": 1580,
+      "uniqueAtBase": 592,
+      "uniqueAtDouble": 1029,
       "saturated": false,
       "ceiling": null
     },
@@ -353,8 +353,8 @@
       "skill": "덧셈식을 뺄셈식으로 바꾸기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 586,
-      "uniqueAtDouble": 1027,
+      "uniqueAtBase": 582,
+      "uniqueAtDouble": 1023,
       "saturated": false,
       "ceiling": null
     },
@@ -364,8 +364,8 @@
       "skill": "세 수로 덧셈식 만들기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 485,
-      "uniqueAtDouble": 807,
+      "uniqueAtBase": 420,
+      "uniqueAtDouble": 677,
       "saturated": false,
       "ceiling": null
     },
@@ -408,10 +408,10 @@
       "skill": "묶음 상황을 곱셈식으로 나타내기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 478,
-      "uniqueAtDouble": 626,
-      "saturated": false,
-      "ceiling": null
+      "uniqueAtBase": 64,
+      "uniqueAtDouble": 64,
+      "saturated": true,
+      "ceiling": 64
     },
     {
       "generatorId": "math.g12.no.s10.add-to-mult",
@@ -969,8 +969,8 @@
       "skill": "시간의 덧셈과 뺄셈",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 899,
-      "uniqueAtDouble": 1797,
+      "uniqueAtBase": 897,
+      "uniqueAtDouble": 1793,
       "saturated": false,
       "ceiling": null
     },
@@ -1420,8 +1420,8 @@
       "skill": "분수를 소수로, 소수를 분수로",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 170,
-      "uniqueAtDouble": 199,
+      "uniqueAtBase": 165,
+      "uniqueAtDouble": 194,
       "saturated": false,
       "ceiling": null
     },

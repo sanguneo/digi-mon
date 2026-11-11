@@ -108,6 +108,6 @@ test('filtered exclusions and parallel forms preserve exact selection and replay
 test('unfiltered real worksheet preserves baseline options bytes and fingerprint', () => {
   const result = worksheet({ seed: 'generator-filter-baseline', gradeBands: ['1-2'] });
   assert.equal(JSON.stringify(result.options), '{"subject":"math","gradeBands":["1-2"],"domains":null,"codes":null,"count":12,"difficulty":2,"difficultyMix":{"1":0.3,"2":0.5,"3":0.2},"modes":[],"followLearningOrder":false,"excludeItemIds":[]}');
-  assert.equal(result.fingerprint, '0612624303aa903931d70aefdf60d8417c66c63c08e8243a7815059005f57b3a');
+  assert.equal(result.fingerprint, '9162cba538063e97ca6b6efb8f331f8defb3d9d80a01e59c3458ac99c28113b6');
   assert.deepEqual(result, worksheet({ seed: result.seed, gradeBands: ['1-2'], generatorIds: undefined }));
 });
