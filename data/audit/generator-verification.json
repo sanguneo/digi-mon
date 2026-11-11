@@ -6225,10 +6225,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1194,
+      "uniqueTotal": 1192,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.995
+      "uniqueRatio": 0.9933
     },
     {
       "generatorId": "math.g34.mr.s02-01.correspondence-table",

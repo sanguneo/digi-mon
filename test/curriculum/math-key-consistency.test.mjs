@@ -3,6 +3,7 @@ import test from 'node:test';
 
 import { createRegistry } from '../../src/engine/registry.mjs';
 import { createRng } from '../../src/engine/rng.mjs';
+import { normalizeResponse } from '../../src/server/grade.mjs';
 import { buildSpine } from '../../src/ontology/spine.mjs';
 import { loadOntology } from '../../src/ontology/source.mjs';
 
@@ -192,13 +193,17 @@ function generate(generator, rng, difficulty) {
   return generator.generate(rng, { difficulty, standard: standardByCode.get(generator.standardCode) });
 }
 
-/** 난수 하나만 바꾼 변형 중 보이는 문제가 같은데 키가 다른 것을 모은다. */
+/**
+ * 난수 하나만 바꾼 변형 중 보이는 문제가 같은데 키가 다른 것(splits)과, 키는 같은데 답이 다른 것(collisions)을
+ * 모은다. 맥락을 고르는 난수 하나만 바꾸면 수는 그대로이고 맥락만 다른 문제가 나오므로, 맥락 낱말이 답인데
+ * 키에서 빠진 경우(두 자료의 '5월'과 '셋째 주')가 여기서 걸린다.
+ */
 function perturbedKeySplits(generator, seed, difficulty, variants = 1) {
   const plain = replayRng(seed, -1);
   const raw = generate(generator, plain.rng, difficulty);
   const shown = shownProblem(raw);
   const splits = [];
-  let sameProblem = 0;
+  const collisions = [];
   const sameProblemParams = [];
   for (let at = 0; at < plain.calls(); at += 1) {
     for (let variant = 0; variant < variants; variant += 1) {
@@ -208,12 +213,16 @@ function perturbedKeySplits(generator, seed, difficulty, variants = 1) {
       } catch {
         continue; // 바꾼 난수로 조건을 못 맞춘 변형은 문제가 없으므로 비교하지 않는다.
       }
+      const answers = [answerCore(raw), answerCore(other)].map((core) => JSON.stringify(core));
+      if (other.dedupeKey === raw.dedupeKey && answers[0] !== answers[1]) {
+        collisions.push({ at, key: raw.dedupeKey, answers });
+      }
       if (shownProblem(other) !== shown) continue;
       sameProblemParams.push(other.params);
       if (other.dedupeKey !== raw.dedupeKey) splits.push({ at, from: raw.dedupeKey, to: other.dedupeKey });
     }
   }
-  return { raw, splits, sameProblemParams };
+  return { raw, splits, collisions, sameProblemParams };
 }
 
 /** 이웃한 난수 한두 개를 맞바꾼 변형 중 관찰 순서만 다른데 키가 다른 것을 모은다. */
@@ -286,8 +295,9 @@ test('수학 생성기 키 일관성: 보이는 문제가 같으면 키가 같�
         else if (knownComp !== comp) failures.push(`${generator.id} 같은 키 다른 계산: ${raw.dedupeKey} | ${knownComp} | ${comp}`);
       }
       for (let s = 0; s < PERTURB_SEEDS; s += 1) {
-        const { splits } = perturbedKeySplits(generator, `keyprop-perturb:${difficulty}:${s}`, difficulty);
+        const { splits, collisions } = perturbedKeySplits(generator, `keyprop-perturb:${difficulty}:${s}`, difficulty);
         for (const split of splits) failures.push(`${generator.id} 쓰지 않는 난수가 키를 바꿈: ${split.from} | ${split.to}`);
+        for (const hit of collisions) failures.push(`${generator.id} 난수 하나를 바꾼 변형이 같은 키로 다른 답: ${hit.key} | ${hit.answers.join(' | ')}`);
       }
       for (let s = 0; s < ORDER_SEEDS; s += 1) {
         for (const split of reorderedKeySplits(generator, `keyprop-order:${difficulty}:${s}`, difficulty)) {
@@ -302,4 +312,69 @@ test('수학 생성기 키 일관성: 보이는 문제가 같으면 키가 같�
     if (!byGenerator.has(id)) byGenerator.set(id, line);
   }
   assert.deepEqual([...byGenerator.values()], []);
+});
+
+/** createRng 과 같은 모양이되 int 는 절반, pick 은 30% 확률로 범위의 끝값을 낸다(math-boundary-commutation 과 같다). */
+function edgeRng(seed) {
+  const rng = createRng(seed);
+  const coin = createRng(`${seed}|edge`);
+  const { int, pick } = rng;
+  rng.int = (min, max) => {
+    const c = coin.float();
+    if (max >= min && c < 0.25) return min;
+    if (max >= min && c < 0.5) return max;
+    return int(min, max);
+  };
+  rng.pick = (arr) => {
+    const c = coin.float();
+    if (Array.isArray(arr) && arr.length > 0 && c < 0.15) return arr[0];
+    if (Array.isArray(arr) && arr.length > 0 && c < 0.3) return arr.at(-1);
+    return pick(arr);
+  };
+  return rng;
+}
+
+/** 채점이 같게 보는 정답 집합. 표기 차이(띄어쓰기·전각)와 소수 끝자리 0(7.10 과 7.1)을 걷어 낸다. */
+const effectiveAnswers = (raw) => [...new Set(
+  (raw.choices ? correctChoices(raw) : (raw.answer?.accepts ?? [raw.answer?.value]).map(String))
+    .map((text) => normalizeResponse(text).replace(/(\d\.\d*?)0+(?!\d)/g, '$1').replace(/(\d)\.(?!\d)/g, '$1')),
+)].sort();
+
+// 6차 리뷰가 찾은 두 계열을 난이도를 가로질러 본다.
+// - 같은 수를 난이도마다 다른 정밀도로 들고 있으면(8.7 을 난이도 1은 87, 2는 870) 같은 문제가 다른 키를 받는다.
+//   난이도마다 범위가 달라 고른 seed 로는 겹치는 문제가 거의 안 나오므로, 범위 끝값을 자주 내는 난수로
+//   겹치는 문제를 만들고 난이도 구분 없이 보이는 문제(정답 집합은 채점이 같게 보는 꼴)를 키와 맞춰 본다.
+// - 키가 같은데 답이 다르면 서로 다른 문항이 한 문항 ID 를 쓴다. 같은 표본에서 키별 답을 맞춰 본다.
+const EDGE_SEEDS = 600;
+
+test('수학 생성기 키 일관성(난이도 가로지르기): 끝값 표본에서 같은 문제는 같은 키, 같은 키는 같은 답이다', () => {
+  const failures = new Map();
+  const fail = (id, message) => {
+    if (!failures.has(id)) failures.set(id, `${id} ${message}`);
+  };
+  for (const generator of mathGenerators) {
+    const keyByShown = new Map();
+    const answerByKey = new Map();
+    for (const difficulty of levelsOf(generator)) {
+      for (let s = 0; s < EDGE_SEEDS; s += 1) {
+        let raw;
+        try {
+          raw = generate(generator, edgeRng(`keyprop-edge:${difficulty}:${s}`), difficulty);
+        } catch {
+          continue; // 끝값에서 생성이 멈추는 경우는 math-boundary-commutation 이 본다.
+        }
+        const shown = JSON.stringify([raw.instruction, raw.stem, raw.figure ?? null, effectiveAnswers(raw)]);
+        const knownKey = keyByShown.get(shown);
+        if (knownKey === undefined) keyByShown.set(shown, raw.dedupeKey);
+        else if (knownKey !== raw.dedupeKey) fail(generator.id, `같은 문제 다른 키: ${knownKey} | ${raw.dedupeKey}`);
+        const answer = answerCore(raw);
+        const knownAnswer = answerByKey.get(raw.dedupeKey);
+        if (knownAnswer === undefined) answerByKey.set(raw.dedupeKey, answer);
+        else if (JSON.stringify(knownAnswer) !== JSON.stringify(answer)) {
+          fail(generator.id, `같은 키 다른 답: ${raw.dedupeKey} | ${JSON.stringify(knownAnswer)} | ${JSON.stringify(answer)}`);
+        }
+      }
+    }
+  }
+  assert.deepEqual([...failures.values()], []);
 });

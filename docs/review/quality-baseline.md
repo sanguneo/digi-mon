@@ -2,21 +2,21 @@
 
 `tools/export-quality-baseline.mjs`가 생성한다. 손으로 고치지 않는다.
 
-- 기준선 fingerprint: `8392301654b3c73f6c37054a2476fb114eb715e2ed4f0cf9af91eaa2e5ee49a8`
+- 기준선 fingerprint: `efac0d7c8ba60269f9d00f2390600c01231996b21a254109bf702c204f76639e`
 - 사례 24개 · 사례당 10문항 · 총 240문항
 - 이 문서는 사람 검토용 증거다. 생성 성공이나 자동 게이트 통과는 교육적 품질 승인이 아니다.
 
 | 사례 | 교과 | 학년군 | 요청 난이도 | 실제 난이도 | seed | worksheet fingerprint | 성취기준 수 |
 |---|---|---|---:|---|---|---|---:|
-| `WS-M12-D1` | math | 1-2 | 1 | 1:10 | `review-ws-m12-d1` | `bce2688099cec336bd799a295b52b486495a00c905a1a9f54db7595674f91f74` | 10 |
-| `WS-M12-D2` | math | 1-2 | 2 | 2:10 | `review-ws-m12-d2` | `fd5a65142855c2e9b91acb0efc1698e41eb361b9affcf1d9667df1ec8593b127` | 10 |
-| `WS-M12-D3` | math | 1-2 | 3 | 3:10 | `review-ws-m12-d3` | `01bd1aa1d828b21e3b06eca2ec0c4f32441adb6177cbb705013cc5a91f5fc586` | 10 |
-| `WS-M34-D1` | math | 3-4 | 1 | 1:10 | `review-ws-m34-d1` | `dc6e27fd205cfaa75ccbbfcab7cdd8eb520c79797d4fa0fe6a480da0c88dd3c2` | 10 |
-| `WS-M34-D2` | math | 3-4 | 2 | 1:2 2:8 | `review-ws-m34-d2` | `1e1bd4388046e35cbb3cbbfd9d25abc20fda3c31021fbbad68a6e264cadc7808` | 10 |
-| `WS-M34-D3` | math | 3-4 | 3 | 1:1 3:9 | `review-ws-m34-d3` | `8e055ab0b73a80095d37db501fd21305b261fe898ae96bd51d6007ae2a0eec75` | 10 |
-| `WS-M56-D1` | math | 5-6 | 1 | 1:10 | `review-ws-m56-d1` | `3a07ae5dc09e06a1dd8eb40bbbc49916feefebd96e4d85f2c8d8fe6fe460f9d3` | 10 |
-| `WS-M56-D2` | math | 5-6 | 2 | 1:1 2:9 | `review-ws-m56-d2` | `09fe98421b9653737ef378aa54ebdfedbe2c446448101950bd13249a4c30c7bd` | 10 |
-| `WS-M56-D3` | math | 5-6 | 3 | 3:10 | `review-ws-m56-d3` | `6eca3477d1bfd4c1e0db012e0958fe37ca634e3695f1092a5a30ad9c9d7b8cab` | 10 |
+| `WS-M12-D1` | math | 1-2 | 1 | 1:10 | `review-ws-m12-d1` | `200842a2f83caedd033aecbbf5c99e459abf2b0176e8380c53ebc8417c33c994` | 10 |
+| `WS-M12-D2` | math | 1-2 | 2 | 2:10 | `review-ws-m12-d2` | `92a17363610bb8dc6d0bcfba5e753ec572d45d0e5a6ecebeab440ad69e65a7e7` | 10 |
+| `WS-M12-D3` | math | 1-2 | 3 | 3:10 | `review-ws-m12-d3` | `d7a47a18d7e9a6c6240178438ba7120ceaf511168e2224e1fdd186d6d41ea5e6` | 10 |
+| `WS-M34-D1` | math | 3-4 | 1 | 1:10 | `review-ws-m34-d1` | `9861678469e50e25169fb57f633934425069b113866640798650e1fc6eff762e` | 10 |
+| `WS-M34-D2` | math | 3-4 | 2 | 1:2 2:8 | `review-ws-m34-d2` | `5d3f792989c172d0b6c20ae17cb6b18638fe6f305df052eebd4f0002b4cb5fe7` | 10 |
+| `WS-M34-D3` | math | 3-4 | 3 | 1:1 3:9 | `review-ws-m34-d3` | `4a2e3bfd48e19eee5a6b82575a42cad5c12b9b68270a14696af3c876770381c4` | 10 |
+| `WS-M56-D1` | math | 5-6 | 1 | 1:10 | `review-ws-m56-d1` | `86ce3a4d41cd40ef90049c3e18b9256123de8dfd974b7186a28986a896e12215` | 10 |
+| `WS-M56-D2` | math | 5-6 | 2 | 1:1 2:9 | `review-ws-m56-d2` | `86ba2f4c4367e031f7b6b08e5748dd7859514fc457c4327c62cdedb4ae368710` | 10 |
+| `WS-M56-D3` | math | 5-6 | 3 | 3:10 | `review-ws-m56-d3` | `6118f0db98bf4500681767911d707856f4704006af6dcec16d83f08659a8ff51` | 10 |
 | `WS-K12-D1` | korean | 1-2 | 1 | 1:10 | `review-ws-k12-d1` | `d8d8650b20293f56d7e0687fabe4e45b0c20501828454c09b1fb51c7c6be8b31` | 6 |
 | `WS-K12-D2` | korean | 1-2 | 2 | 1:4 2:6 | `review-ws-k12-d2` | `efff98d812822f7d002919c4a98bfd5da2af9c9e746ec1eabd9b70e6da5a32b6` | 6 |
 | `WS-K12-D3` | korean | 1-2 | 3 | 1:5 3:5 | `review-ws-k12-d3` | `b966e4aa1917001620c9a6d3e3e431f1703a5f9ec0f3a42b7cdce3c43f8e4958` | 6 |
@@ -35,7 +35,7 @@
 
 ## WS-M12-D1
 
-- fingerprint: `bce2688099cec336bd799a295b52b486495a00c905a1a9f54db7595674f91f74`
+- fingerprint: `200842a2f83caedd033aecbbf5c99e459abf2b0176e8380c53ebc8417c33c994`
 - seed: `review-ws-m12-d1`
 - 성취기준: `[2수01-02]` `[2수01-04]` `[2수01-05]` `[2수01-06]` `[2수02-01]` `[2수03-01]` `[2수03-02]` `[2수03-05]` `[2수03-07]` `[2수04-02]`
 
@@ -178,7 +178,7 @@ seed review-ws-m12-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M12-D2
 
-- fingerprint: `fd5a65142855c2e9b91acb0efc1698e41eb361b9affcf1d9667df1ec8593b127`
+- fingerprint: `92a17363610bb8dc6d0bcfba5e753ec572d45d0e5a6ecebeab440ad69e65a7e7`
 - seed: `review-ws-m12-d2`
 - 성취기준: `[2수01-03]` `[2수01-05]` `[2수01-07]` `[2수01-08]` `[2수01-11]` `[2수03-04]` `[2수03-09]` `[2수03-11]` `[2수03-13]` `[2수04-02]`
 
@@ -330,7 +330,7 @@ seed review-ws-m12-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M12-D3
 
-- fingerprint: `01bd1aa1d828b21e3b06eca2ec0c4f32441adb6177cbb705013cc5a91f5fc586`
+- fingerprint: `d7a47a18d7e9a6c6240178438ba7120ceaf511168e2224e1fdd186d6d41ea5e6`
 - seed: `review-ws-m12-d3`
 - 성취기준: `[2수01-02]` `[2수01-04]` `[2수01-05]` `[2수01-08]` `[2수01-09]` `[2수03-04]` `[2수03-05]` `[2수03-08]` `[2수03-12]` `[2수03-13]`
 
@@ -477,7 +477,7 @@ seed review-ws-m12-d3 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D1
 
-- fingerprint: `dc6e27fd205cfaa75ccbbfcab7cdd8eb520c79797d4fa0fe6a480da0c88dd3c2`
+- fingerprint: `9861678469e50e25169fb57f633934425069b113866640798650e1fc6eff762e`
 - seed: `review-ws-m34-d1`
 - 성취기준: `[4수01-13]` `[4수01-14]` `[4수03-04]` `[4수03-05]` `[4수03-09]` `[4수03-10]` `[4수03-18]` `[4수03-19]` `[4수03-23]` `[4수03-25]`
 
@@ -623,7 +623,7 @@ seed review-ws-m34-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D2
 
-- fingerprint: `1e1bd4388046e35cbb3cbbfd9d25abc20fda3c31021fbbad68a6e264cadc7808`
+- fingerprint: `5d3f792989c172d0b6c20ae17cb6b18638fe6f305df052eebd4f0002b4cb5fe7`
 - seed: `review-ws-m34-d2`
 - 성취기준: `[4수01-08]` `[4수01-09]` `[4수01-14]` `[4수03-01]` `[4수03-03]` `[4수03-10]` `[4수03-13]` `[4수03-17]` `[4수03-18]` `[4수04-02]`
 
@@ -766,7 +766,7 @@ seed review-ws-m34-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D3
 
-- fingerprint: `8e055ab0b73a80095d37db501fd21305b261fe898ae96bd51d6007ae2a0eec75`
+- fingerprint: `4a2e3bfd48e19eee5a6b82575a42cad5c12b9b68270a14696af3c876770381c4`
 - seed: `review-ws-m34-d3`
 - 성취기준: `[4수01-07]` `[4수01-11]` `[4수01-15]` `[4수02-03]` `[4수03-01]` `[4수03-05]` `[4수03-14]` `[4수03-17]` `[4수03-25]` `[4수04-02]`
 
@@ -912,7 +912,7 @@ seed review-ws-m34-d3 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D1
 
-- fingerprint: `3a07ae5dc09e06a1dd8eb40bbbc49916feefebd96e4d85f2c8d8fe6fe460f9d3`
+- fingerprint: `86ce3a4d41cd40ef90049c3e18b9256123de8dfd974b7186a28986a896e12215`
 - seed: `review-ws-m56-d1`
 - 성취기준: `[6수01-03]` `[6수01-04]` `[6수01-06]` `[6수01-09]` `[6수02-03]` `[6수03-01]` `[6수03-02]` `[6수03-03]` `[6수03-07]` `[6수03-08]`
 
@@ -1052,7 +1052,7 @@ seed review-ws-m56-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D2
 
-- fingerprint: `09fe98421b9653737ef378aa54ebdfedbe2c446448101950bd13249a4c30c7bd`
+- fingerprint: `86ba2f4c4367e031f7b6b08e5748dd7859514fc457c4327c62cdedb4ae368710`
 - seed: `review-ws-m56-d2`
 - 성취기준: `[6수01-06]` `[6수01-12]` `[6수01-15]` `[6수02-02]` `[6수02-03]` `[6수02-05]` `[6수03-06]` `[6수03-11]` `[6수03-12]` `[6수04-06]`
 
@@ -1195,7 +1195,7 @@ seed review-ws-m56-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D3
 
-- fingerprint: `6eca3477d1bfd4c1e0db012e0958fe37ca634e3695f1092a5a30ad9c9d7b8cab`
+- fingerprint: `6118f0db98bf4500681767911d707856f4704006af6dcec16d83f08659a8ff51`
 - seed: `review-ws-m56-d3`
 - 성취기준: `[6수01-04]` `[6수01-11]` `[6수01-14]` `[6수01-15]` `[6수02-05]` `[6수03-03]` `[6수03-14]` `[6수04-01]` `[6수04-03]` `[6수04-05]`
 

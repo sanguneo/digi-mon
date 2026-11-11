@@ -501,7 +501,8 @@ const twoSeries = {
       stem: `${what}${josaEul(what)} 조사하여 정리했습니다.\n${line(n0, a)}\n${line(n1, b)}\n${ask}`,
       answer,
       solution: [`${n0}${gwa(n0)} ${n1}의 자료를 때별로 나란히 놓고 비교한다.`, calc],
-      dedupeKey: `two-series:${a.join('-')}:${b.join('-')}:${kind}:${kind === 'gap-at' ? t : ''}:${kind === 'series-total' ? who : ''}`,
+      // 가장 큰 때를 묻는 문항은 때 이름(5월, 셋째 주)이 답이므로 키에 넣는다.
+      dedupeKey: `two-series:${a.join('-')}:${b.join('-')}:${kind}:${kind === 'gap-at' ? t : ''}:${kind === 'series-total' ? who : ''}${typeof value === 'string' ? `:${value}` : ''}`,
       difficulty,
     };
   },
@@ -1068,7 +1069,8 @@ function makeMeasureStory({ id, standardCode, skill, systems, kinds, build }) {
         params: { rate: P.rate, big: P.big, small: P.small, kind, plus, minus, scale: sum(plus) },
         instruction: '물음에 답하시오.',
         stem: made.render(M, ask, (w1, w2) => pj(P.small, w1, w2)),
-        answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${v}${P.small}`] },
+        // 작은 단위만 묻는 문항(큰 단위 미만)은 단위를 뺀 수만 쓴 답도 받는다.
+        answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${v}${P.small}`, ...(v < P.rate ? [String(v)] : [])] },
         solution: [
           `1${P.big}${pj(P.big, '은', '는')} ${P.rate}${P.small}이므로 같은 단위끼리 계산한다.`,
           `${expr} = ${display}${pj(P.small, '이다', '다')}.`,
@@ -1876,7 +1878,8 @@ const decimalStory = {
       stem: amountStem(c, kind, vals),
       answer: { value: display, display: `${display}${c.unit}`, accepts: [...new Set([display, `${display}${c.unit}`, padded, `${padded}${c.unit}`])] },
       solution: ['소수점의 자리를 맞추어 같은 자리끼리 계산한다.', `${expr} = ${display}이다.`],
-      dedupeKey: `decimal-story:${kind}:${places}:${a}:${b}:${kind === 'two-step' ? e : ''}`,
+      // 소수 둘째 자리 단위로 맞춘 값으로 키를 만든다. 8.7L 은 난이도 1(87)이든 2(870)이든 같은 문항이다.
+      dedupeKey: `decimal-story:${kind}:${[a, b, kind === 'two-step' ? e : null].map((x) => (x === null ? '' : x * 10 ** (2 - places))).join(':')}`,
       difficulty,
     };
   },

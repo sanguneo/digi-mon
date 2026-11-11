@@ -652,7 +652,8 @@ const lengthStory = {
       params: { x, y, z, kind: difficulty },
       instruction: '물음에 답하시오.',
       stem: stems[difficulty],
-      answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${value}cm`] },
+      // 'cm만' 묻는 문항(100cm 미만)은 단위를 뺀 수만 쓴 답도 받는다.
+      answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${value}cm`, ...(value < 100 ? [num(value)] : [])] },
       solution: [
         difficulty === 1 ? '이어 붙인 길이는 두 길이를 더한다.' : difficulty === 2 ? '남은 길이는 처음 길이에서 잘라 쓴 길이를 뺀다.' : '이어 붙인 길이를 먼저 구하고, 잘라 쓴 길이를 뺀다.',
         difficulty === 1
@@ -815,7 +816,8 @@ const startOrDuration = {
       params: { kind, start, end },
       instruction: '물음에 답하시오.',
       stem: `${name}${josaEun(name)} ${formatClock(start)}에 ${activity} 시작해서 ${formatClock(end)}에 마쳤습니다. ${activity} 하는 데 걸린 시간은 ${duration < 60 ? '몇 분' : '몇 시간 몇 분'}입니까?`,
-      answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${duration}분`] },
+      // '몇 분'만 묻는 문항(1시간 미만)은 단위를 뺀 수만 쓴 답도 받는다.
+      answer: { value: display, display, accepts: [display, display.replace(' ', ''), `${duration}분`, ...(duration < 60 ? [num(duration)] : [])] },
       solution: [`${formatClock(start)}부터 ${formatClock(end)}까지 걸린 시간을 구한다.`, `걸린 시간은 ${display}이다.`],
       dedupeKey: `start-or-duration:duration:${start}:${end}`,
       difficulty,

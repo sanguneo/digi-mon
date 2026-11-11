@@ -400,3 +400,48 @@ test('[4수01-03][4수01-04] 덧셈·곱셈 문장제는 두 수의 순서를 �
     assert.equal(correct(multiply.item, response), false, response);
   }
 });
+
+// 6차 리뷰(head 5bad6f4)가 재현한 반례를 고정한다.
+
+test('[2수03-13] cm만 묻는 길이 문장제는 수만 쓴 답도 받는다', () => {
+  const { item, raw } = make('math.g12.gm.s13.length-story', 0, 2);
+  assert.match(raw.stem, /2m 85cm인 .*1m 92cm를 잘라 썼습니다.*몇 cm입니까/);
+  for (const response of ['93', '93cm']) assert.equal(correct(item, response), true, response);
+  for (const response of ['94', '92cm', '0m 93cm']) assert.equal(correct(item, response), false, response);
+});
+
+test('[4수01-16] 소수 문장제는 난이도가 달라도 같은 문제면 같은 키다', () => {
+  const tenths = make('math.g34.no.s16.decimal-story', 13632, 1);
+  const hundredths = make('math.g34.no.s16.decimal-story', 26, 2);
+  for (const { raw } of [tenths, hundredths]) assert.match(raw.stem, /8\.7L.*1\.6L/s);
+  assert.equal(tenths.raw.stem, hundredths.raw.stem);
+  assert.equal(tenths.raw.instruction, hundredths.raw.instruction);
+  assert.equal(tenths.raw.dedupeKey, hundredths.raw.dedupeKey);
+  for (const response of ['7.1', '7.1L', '7.10L']) {
+    assert.equal(correct(tenths.item, response), true, response);
+    assert.equal(correct(hundredths.item, response), true, response);
+  }
+});
+
+test('[4수04-03] 두 자료의 가장 큰 때를 묻는 문항은 때 이름 체계가 다르면 다른 키다', () => {
+  // 리뷰 반례: seed 1, 난이도 3에서 맥락을 고르는 첫 난수를 소비하되 맥락만 0(월)과 2(주)로 바꾼다.
+  const withContext = (index) => {
+    const rng = createRng(1);
+    const { pick } = rng;
+    let first = true;
+    rng.pick = (arr) => {
+      if (!first) return pick(arr);
+      first = false;
+      pick(arr);
+      return arr[index];
+    };
+    return registry.get('math.g34.gd.s04-03.two-series').generate(rng, { difficulty: 3 });
+  };
+  const months = withContext(0);
+  const weeks = withContext(2);
+  assert.deepEqual([months.params.a, months.params.b, months.params.kind], [weeks.params.a, weeks.params.b, weeks.params.kind]);
+  assert.ok(['max-gap', 'combined-max'].includes(months.params.kind));
+  assert.equal(months.answer.value, '5월');
+  assert.equal(weeks.answer.value, '셋째 주');
+  assert.notEqual(months.dedupeKey, weeks.dedupeKey);
+});

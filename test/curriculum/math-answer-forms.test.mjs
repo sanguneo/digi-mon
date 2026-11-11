@@ -107,6 +107,37 @@ test('수학 생성기 채점: 같은 값을 단위·분수 꼴·끝자리 0만 
   assert.deepEqual([...failures.values()], []);
 });
 
+test('단위 하나만 묻는 문항은 단위를 뺀 수만 쓴 답도 받는다', () => {
+  // 정답 표기가 모두 같은 수와 한 단위(93cm)이고 물음이 그 단위를 이미 말하면('몇 cm입니까?', 'cm로 나타내시오',
+  // '□cm') 수만 쓴 답(93)도 같은 답이다. 정답이 두 단위를 섬어 쓴 꼴(1m 85cm)을 포함하거나 물음이
+  // 두 단위를 묻는 문항('몇 m 몇 cm', '□m □cm')은 수만 쓴 답이 어느 단위인지 정해지지 않으므로 보지 않는다.
+  const failures = new Map();
+  let checked = 0;
+  for (const generator of mathGenerators) {
+    if (generator.format === 'multiple-choice' || generator.scoring === 'manual') continue;
+    for (const { raw, item } of itemsOf(generator, 'unit-only')) {
+      const texts = [raw.answer.display, ...(raw.answer.accepts ?? [])].map(String);
+      const pairs = texts.map((text) => WITH_UNIT.exec(text)).filter(Boolean);
+      if (pairs.length === 0 || pairs.length < texts.filter((text) => !BARE.test(text)).length) continue;
+      const units = new Set(pairs.map((m) => m[2]));
+      const values = new Set(pairs.map((m) => m[1]));
+      if (units.size !== 1 || values.size !== 1) continue;
+      const [unit] = units;
+      const [value] = values;
+      const question = `${raw.instruction} ${raw.stem}`;
+      const quoted = unit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (!new RegExp(`몇 ?${quoted}|${quoted}(?:으로|로) |□ ?${quoted}`).test(question)) continue;
+      if (/몇 \S+ 몇 |□ ?\S+ □/.test(question)) continue;
+      checked += 1;
+      if (!correct(item, value) && !failures.has(generator.id)) {
+        failures.set(generator.id, `${generator.id} '${value}' 거절(정답 ${texts.join(' | ')}): ${raw.stem}`);
+      }
+    }
+  }
+  assert.ok(checked > 50_000, `한 단위 답 문항 ${checked}개`);
+  assert.deepEqual([...failures.values()], []);
+});
+
 test('식과 답을 요구하는 문항은 식과 답을 함께 쓴 답을 받고, 답만 쓰라는 문항은 답만 받는다', () => {
   // '계산식의 배열을 보고'처럼 식을 읽기만 하는 지시문은 식을 쓰라는 것이 아니다.
   const asksExpression = (instruction) => /식(을|으로)/.test(instruction) && /답/.test(instruction) && !/답만/.test(instruction);
