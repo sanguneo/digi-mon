@@ -140,6 +140,28 @@ function editedEntry(original, fields) {
 }
 
 /**
+ * 고친 문항을 작성 게이트(checkCandidate)에 다시 넣는다. 작성 파이프라인(authorStandard)과 같은 범위로,
+ * 중복은 같은 성취기준 파일 안에서만 보고 고치는 문항 자신은 뺀다. 다른 성취기준에 같은 지문이 있어도 막지 않는다.
+ *
+ * @param {object} file 문항이 든 코퍼스 파일
+ * @param {object} original 고치기 전 문항
+ * @param {object} fields 고친 필드
+ * @param {object} standard 스파인 성취기준 레코드
+ * @returns {{ entry: object, reasons: Array<{gate: string, detail: string}> }}
+ */
+export function checkEdit(file, original, fields, standard) {
+  const entry = editedEntry(original, fields);
+  const others = file.items.filter((item) => item.id !== entry.id);
+  const reasons = checkCandidate(entry, {
+    standard,
+    skill: file.skill,
+    seenIds: new Set(others.map((item) => item.id)),
+    seenStems: new Set(others.map((item) => item.stem)),
+  });
+  return { entry, reasons };
+}
+
+/**
  * @param {object} p
  * @param {object} p.spine 스파인. 게이트가 성취기준 레코드를 쓴다
  * @param {string} [p.root] data/authored 폴더
@@ -222,17 +244,10 @@ export function createReviewAdmin({
   }
 
   /** 게이트를 다시 돌려 통과할 때만 그 문항 하나를 바꿔 쓴다. 실패하면 422 와 사유 목록. */
-  function saveItem(snap, record, fields) {
-    const entry = editedEntry(record.item, fields);
+  function saveItem(record, fields) {
     const standard = standardByCode.get(record.file.standardCode);
     if (!standard) throw new ReviewAdminError(500, `스파인에 없는 성취기준: ${record.file.standardCode}`);
-    const others = snap.records.filter((r) => r.item.id !== entry.id);
-    const reasons = checkCandidate(entry, {
-      standard,
-      skill: record.file.skill,
-      seenIds: new Set(others.map((r) => r.item.id)),
-      seenStems: new Set(others.map((r) => r.item.stem)),
-    });
+    const { entry, reasons } = checkEdit(record.file, record.item, fields, standard);
     if (reasons.length > 0) {
       throw new ReviewAdminError(422, '작성 게이트를 통과하지 못해 저장하지 않았다', { reasons });
     }
@@ -310,7 +325,7 @@ export function createReviewAdmin({
           requireWrite();
           const snap = snapshot();
           const record = find(snap, body.id);
-          saveItem(snap, record, body.item);
+          saveItem(record, body.item);
           return { saved: true, ...detail(find(snapshot(), body.id)) };
         },
       },
@@ -329,7 +344,7 @@ export function createReviewAdmin({
           const snap = snapshot();
           const record = find(snap, body.id);
           // 고친 뒤 승인: 게이트를 통과해 저장된 뒤에만 승인한다.
-          if (body.item !== undefined) saveItem(snap, record, body.item);
+          if (body.item !== undefined) saveItem(record, body.item);
           applyVerdict(record.item.id, body.action, body.reviewer ?? '', body.reason);
           return { saved: body.item !== undefined, ...detail(find(snapshot(), record.item.id)) };
         },

@@ -1,4 +1,4 @@
-import { type FormEvent, useEffect, useState } from 'react';
+import { type FormEvent, useEffect, useRef, useState } from 'react';
 import {
   type AuthoredItemFields,
   type GateReason,
@@ -16,6 +16,8 @@ import './review-admin.css';
 
 export const REVIEWER_STORAGE_KEY = 'digimon.reviewer';
 const PAGE_SIZE = 50;
+/** 서버가 한 번에 주는 최대 문항 수(src/server/review-admin.mjs MAX_LIMIT). */
+const SERVER_PAGE_MAX = 500;
 
 const STATUS_LABEL: Record<ReviewStatus, string> = { pending: '검토 전', reviewed: '검토 완료', excluded: '제외' };
 const SUBJECT_LABEL: Record<string, string> = { korean: '국어', english: '영어' };
@@ -55,6 +57,21 @@ const fromForm = (form: ItemForm): AuthoredItemFields => ({
 
 const sameForm = (a: ItemForm, b: ItemForm) => JSON.stringify(a) === JSON.stringify(b);
 
+/** offset 부터 count 문항을 서버 한도(500)씩 나눠 받아 잇는다. */
+async function fetchRange(filters: Filters, offset: number, count: number): Promise<ReviewList> {
+  let result = await getReviewList({ ...filters, offset, limit: Math.min(count, SERVER_PAGE_MAX) });
+  let items = result.items;
+  while (items.length < count && offset + items.length < result.matched) {
+    const next = await getReviewList({
+      ...filters, offset: offset + items.length, limit: Math.min(count - items.length, SERVER_PAGE_MAX),
+    });
+    if (next.items.length === 0) break;
+    items = [...items, ...next.items];
+    result = next;
+  }
+  return { ...result, offset, items };
+}
+
 function readReviewer(): string {
   try {
     return localStorage.getItem(REVIEWER_STORAGE_KEY) ?? '';
@@ -65,8 +82,12 @@ function readReviewer(): string {
 
 export function ReviewAdmin() {
   const [filters, setFilters] = useState<Filters>({ subject: '', standard: '', status: '', verdict: '' });
-  const [limit, setLimit] = useState(PAGE_SIZE);
   const [list, setList] = useState<ReviewList | null>(null);
+  // 지금까지 보여 준 문항 수. 저장 뒤 목록을 다시 받을 때 이만큼 다시 채운다.
+  const shownRef = useRef(PAGE_SIZE);
+  // 필터가 바뀌거나 다시 받으면 올라간다. 그 전에 떠난 '더 보기' 응답은 버린다.
+  const listGeneration = useRef(0);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [listVersion, setListVersion] = useState(0);
   const [selected, setSelected] = useState<ReviewItemDetail | null>(null);
   const [form, setForm] = useState<ItemForm | null>(null);
@@ -78,17 +99,33 @@ export function ReviewAdmin() {
   const [gateReasons, setGateReasons] = useState<GateReason[]>([]);
 
   useEffect(() => {
-    let live = true;
-    getReviewList({ ...filters, limit }).then((result) => {
-      if (live) setList(result);
+    const generation = ++listGeneration.current;
+    fetchRange(filters, 0, shownRef.current).then((result) => {
+      if (generation === listGeneration.current) setList(result);
     }).catch((cause: unknown) => {
-      if (live) setError(cause instanceof Error ? cause.message : String(cause));
+      if (generation === listGeneration.current) setError(cause instanceof Error ? cause.message : String(cause));
     });
-    return () => { live = false; };
-  }, [filters, limit, listVersion]);
+  }, [filters, listVersion]);
+
+  const loadMore = async () => {
+    if (!list) return;
+    const generation = listGeneration.current;
+    setLoadingMore(true);
+    try {
+      const next = await fetchRange(filters, list.items.length, PAGE_SIZE);
+      if (generation !== listGeneration.current) return;
+      const items = [...list.items, ...next.items];
+      shownRef.current = items.length;
+      setList({ ...next, offset: 0, items });
+    } catch (cause) {
+      if (generation === listGeneration.current) setError(cause instanceof Error ? cause.message : String(cause));
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   const changeFilter = (key: keyof Filters, value: string) => {
-    setLimit(PAGE_SIZE);
+    shownRef.current = PAGE_SIZE;
     setFilters((current) => ({ ...current, [key]: value, ...(key === 'subject' ? { standard: '' } : {}) }));
   };
 
@@ -248,7 +285,7 @@ export function ReviewAdmin() {
             ))}
           </ol>
           {list && list.items.length < list.matched ? (
-            <button className="dm-btn" onClick={() => setLimit((n) => n + PAGE_SIZE)} type="button">더 보기</button>
+            <button className="dm-btn" disabled={loadingMore} onClick={() => void loadMore()} type="button">더 보기</button>
           ) : null}
         </div>
 

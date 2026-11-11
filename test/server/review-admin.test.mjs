@@ -9,6 +9,7 @@ import { loadSpine } from '../../src/authoring/pipeline.mjs';
 import {
   AUTHORED_REVIEW_FILE,
   AUTHORED_ROOT,
+  authoredFilePath,
   authoredGeneratorId,
   loadAuthoredCorpus,
   loadReviewStatus,
@@ -17,7 +18,9 @@ import {
 import { createRegistry } from '../../src/engine/registry.mjs';
 import { buildWorksheet } from '../../src/engine/worksheet.mjs';
 import { createApp } from '../../src/server/app.mjs';
-import { parsePriorityQueue, REVIEW_QUEUE_DOC } from '../../src/server/review-admin.mjs';
+import * as reviewAdmin from '../../src/server/review-admin.mjs';
+
+const { parsePriorityQueue, REVIEW_QUEUE_DOC } = reviewAdmin;
 
 /**
  * 문항 검토 관리자 API(src/server/review-admin.mjs). 저장소의 data/authored 는 건드리지 않고
@@ -237,6 +240,68 @@ test('고친 뒤 승인은 저장과 승인을 함께 하고, 빼기는 문항�
     assert.equal((await call('write', 'POST', '/v1/review/verdict', { id, action: 'reset' })).status, 200);
   }
   assert.deepEqual(readStatus(), { schema: 'digi-mon/authored-review-status@1', reviewed: [] });
+});
+
+test('목록은 offset 으로 500문항 뒤까지 넘겨 볼 수 있고 한 번에 500문항까지만 준다', async () => {
+  const total = loadAuthoredCorpus(root).reduce((n, f) => n + f.items.length, 0);
+  assert.ok(total > 1000, `코퍼스가 500문항 페이지 두 개보다 커야 한다: ${total}`);
+  const capped = await call('readOnly', 'GET', '/v1/review/items?limit=550');
+  assert.equal(capped.body.items.length, 500);
+  const ids = [];
+  for (let offset = 0; offset < total; offset += 500) {
+    const page = await call('readOnly', 'GET', `/v1/review/items?offset=${offset}&limit=500`);
+    assert.equal(page.status, 200);
+    assert.equal(page.body.offset, offset);
+    ids.push(...page.body.items.map((i) => i.id));
+  }
+  assert.equal(ids.length, total);
+  assert.equal(new Set(ids).size, total);
+  assert.deepEqual(ids.slice(0, 500), capped.body.items.map((i) => i.id));
+});
+
+test('지문 중복은 같은 성취기준 안에서만 막는다: 다른 성취기준과 지문이 같은 문항도 고쳐 저장된다', async () => {
+  const corpus = loadAuthoredCorpus(root);
+  const owner = corpus.find((f) => f.items.some((i) => i.id === '02ee7ef6f527'));
+  const cat = owner.items.find((i) => i.id === '02ee7ef6f527');
+  const elsewhere = corpus.filter((f) => f !== owner && f.items.some((i) => i.stem === cat.stem));
+  assert.ok(elsewhere.length > 0, '다른 성취기준에도 같은 지문이 있어야 이 테스트가 뜻이 있다');
+  const rel = path.relative(root, authoredFilePath(owner.subject, owner.standardCode, root));
+  const before = readFileSync(path.join(root, rel), 'utf8');
+
+  const same = await call('write', 'POST', '/v1/review/item', { id: cat.id, item: editable(cat) });
+  assert.equal(same.status, 200, JSON.stringify(same.body));
+  assert.equal(readFileSync(path.join(root, rel), 'utf8'), before, '그대로 다시 저장하면 파일이 바뀌지 않는다');
+
+  const solution = [...cat.solution, '낱말을 소리 내어 읽어 본다.'];
+  const fixed = await call('write', 'POST', '/v1/review/item', { id: cat.id, item: { ...editable(cat), solution } });
+  assert.equal(fixed.status, 200, JSON.stringify(fixed.body));
+  assert.deepEqual(itemsOf(rel).find((i) => i.id === cat.id).solution, solution);
+  writeFileSync(path.join(root, rel), before);
+});
+
+test('같은 성취기준 안의 지문 중복은 여전히 거절한다', async () => {
+  const before = readTree();
+  const [first, second] = itemsOf(FILE);
+  const dup = await call('write', 'POST', '/v1/review/item', { id: first.id, item: { ...editable(first), stem: second.stem } });
+  assert.equal(dup.status, 422);
+  assert.ok(dup.body.detail.reasons.some((r) => r.gate === 'duplicate'), JSON.stringify(dup.body.detail));
+  assert.deepEqual(readTree(), before);
+});
+
+test('성질: 코퍼스의 모든 기존 문항은 그대로 다시 저장하면 게이트를 통과하고 내용이 바뀌지 않는다', () => {
+  const standards = new Map(SPINE.standards.map((s) => [s.code, s]));
+  const failures = [];
+  let checked = 0;
+  for (const file of loadAuthoredCorpus(AUTHORED_ROOT)) {
+    for (const item of file.items) {
+      const { entry, reasons } = reviewAdmin.checkEdit(file, item, { ...editable(item), difficulty: item.difficulty }, standards.get(file.standardCode));
+      checked += 1;
+      if (reasons.length > 0) failures.push({ id: item.id, standard: file.standardCode, reasons });
+      else assert.deepEqual(entry, item, item.id);
+    }
+  }
+  assert.ok(checked > 3000, `${checked}`);
+  assert.deepEqual(failures.slice(0, 5), [], `${failures.length}문항이 그대로 다시 저장되지 않는다`);
 });
 
 test('검토 상태 파일의 excluded 도 스키마를 검사한다', () => {

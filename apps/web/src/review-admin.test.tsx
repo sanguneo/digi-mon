@@ -113,6 +113,38 @@ describe('review admin', () => {
     expect(screen.getByRole('button', { name: '되돌리기' })).toBeTruthy();
   });
 
+  it('pages past the 500-item server cap with offset and starts over when a filter changes', async () => {
+    const MATCHED = 1200;
+    const SERVER_MAX = 500;
+    const rowsFor = (prefix: string) => Array.from({ length: MATCHED }, (_, n) => ({
+      ...SUMMARY, id: `${prefix}${String(n).padStart(6, '0')}`, priority: null, reasons: [], notes: [], stem: `${prefix} 지문 ${n}`,
+    }));
+    const all = { '': rowsFor('aaaaaa'), problem: rowsFor('bbbbbb') };
+    vi.mocked(getReviewList).mockImplementation(async (filters) => {
+      const offset = filters.offset ?? 0;
+      const limit = Math.min(SERVER_MAX, filters.limit ?? 100);
+      const pool = all[(filters.verdict ?? '') as keyof typeof all];
+      return { ...list(true), total: MATCHED, matched: MATCHED, offset, limit, items: pool.slice(offset, offset + limit) };
+    });
+    await act(async () => { render(<ReviewAdmin />); });
+    const rows = () => [...screen.getByRole('list', { name: '검토할 문항' }).querySelectorAll('li')];
+    expect(rows()).toHaveLength(50);
+
+    for (let page = 2; page <= 12; page += 1) {
+      await act(async () => { fireEvent.click(screen.getByText('더 보기')); });
+      expect(rows()).toHaveLength(page * 50);
+    }
+    expect(vi.mocked(getReviewList)).toHaveBeenLastCalledWith(expect.objectContaining({ offset: 550, limit: 50 }));
+    expect(rows().map((row) => row.textContent?.match(/aaaaaa 지문 (\d+)/)?.[1])).toEqual(
+      Array.from({ length: 600 }, (_, n) => String(n)),
+    );
+
+    await act(async () => { fireEvent.change(screen.getByRole('combobox', { name: '오달 판정' }), { target: { value: 'problem' } }); });
+    expect(vi.mocked(getReviewList)).toHaveBeenLastCalledWith(expect.objectContaining({ verdict: 'problem', offset: 0, limit: 50 }));
+    expect(rows()).toHaveLength(50);
+    expect(rows()[0]?.textContent).toContain('bbbbbb 지문 0');
+  });
+
   it('disables every write control when the server has writing turned off', async () => {
     localStorage.setItem(REVIEWER_STORAGE_KEY, '김검토');
     await mount(false);
