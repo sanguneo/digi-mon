@@ -120,6 +120,25 @@ test('승인한 내용 버전이 지금 내용과 다르거나 없으면(손으�
   });
 });
 
+test('문항 파일은 있고 검토 상태 파일이 없으면 엔진이 멈추지 않고 검토 완료 문항은 0개다', () => {
+  const root = mkdtempSync(path.join(os.tmpdir(), 'digimon-review-'));
+  try {
+    const file = CORPUS.find((f) => f.standardCode === '[4국02-04]');
+    mkdirSync(path.join(root, file.subject));
+    writeFileSync(path.join(root, file.subject, 'k4-02-04.json'), JSON.stringify(file));
+    const reviewed = loadReviewStatus(root);
+    assert.ok(reviewed instanceof Map);
+    assert.equal(reviewed.size, 0);
+    const files = reviewedOnly(loadAuthoredCorpus(root), reviewed);
+    assert.deepEqual(files, []);
+    const registry = createRegistry({ authoredFiles: files });
+    assert.deepEqual(registry.all().filter((g) => g.authored).map((g) => g.id), []);
+    assert.deepEqual(authoredIdsInWorksheets(registry, [file]), []);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test('검토 상태 목록이 깨졌거나 없는 문항을 가리키면 생성을 멈춘다', () => {
   withStatus([{ id: 'ffffffffffff', reviewer: 'test', reviewedAt: '2026-11-11' }], (root) => {
     assert.throws(() => reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root)), /코퍼스에 없는 id ffffffffffff/);

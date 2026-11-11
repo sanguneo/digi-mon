@@ -173,7 +173,7 @@ export function authoredRevision(item) {
  */
 export function loadReviewStatus(root = AUTHORED_ROOT) {
   const file = path.join(root, AUTHORED_REVIEW_FILE);
-  if (!existsSync(file)) return new Set();
+  if (!existsSync(file)) return new Map();
   const fail = (msg) => {
     throw new Error(`AI 작성 검토 상태 오류 [${AUTHORED_REVIEW_FILE}]: ${msg}`);
   };
