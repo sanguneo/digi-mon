@@ -1,7 +1,7 @@
 import test, { after, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { once } from 'node:events';
-import { cpSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
@@ -342,4 +342,147 @@ test('검토 쓰기는 JSON 이 아니면 토큰이 있어도 415로 막고 아�
   }
   assert.deepEqual(readTree(), before);
   assert.deepEqual(readStatus(), status);
+});
+
+/** 이 테스트가 쓴 문항 파일과 검토 상태를 테스트 전 그대로 되돌린다. 뒤 테스트가 빈 상태를 가정한다. */
+function restoring(run) {
+  const tree = readTree();
+  const status = readFileSync(path.join(root, AUTHORED_REVIEW_FILE), 'utf8');
+  return Promise.resolve().then(run).finally(() => {
+    for (const [rel, text] of Object.entries(tree)) writeFileSync(path.join(root, rel), text);
+    writeFileSync(path.join(root, AUTHORED_REVIEW_FILE), status);
+  });
+}
+
+/** 서버를 다시 켠 것처럼 디스크에서 새로 읽어 학습지를 만든다. 그 성취기준 문항을 모두 뽑는다. */
+function worksheetIdsAfterRestart() {
+  const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
+  const registry = createRegistry({ authoredFiles: files });
+  const generatorId = authoredGeneratorId('korean', CODE);
+  if (!registry.all().some((g) => g.id === generatorId)) return [];
+  const count = files.find((f) => f.standardCode === CODE).items.length;
+  const worksheet = buildWorksheet(SPINE, registry, {
+    subject: 'korean', codes: [CODE], generatorIds: [generatorId], seed: 'restart', count,
+  });
+  return [...new Set(worksheet.items.map((i) => i.params.authoredId))].sort();
+}
+
+test('회귀: 승인한 문항을 고쳐 그냥 저장하면 승인이 풀려, 서버를 다시 켜도 학습지에 나가지 않는다', () => restoring(async () => {
+  const target = itemsOf(FILE).find((i) => i.solution.length > 1);
+  assert.equal((await call('write', 'POST', '/v1/review/verdict', { id: target.id, action: 'approve', reviewer: '김검토' })).status, 200);
+  assert.deepEqual(worksheetIdsAfterRestart(), [target.id]);
+
+  const save = await call('write', 'POST', '/v1/review/item', {
+    id: target.id, item: { ...editable(target), solution: target.solution.slice(0, -1).join('\n') },
+  });
+  assert.equal(save.status, 200, JSON.stringify(save.body));
+  assert.equal(save.body.status, 'pending');
+  assert.equal(save.body.unapproved, true);
+  assert.equal(save.body.statusEntry, null);
+  assert.deepEqual(readStatus().reviewed, []);
+  assert.deepEqual(worksheetIdsAfterRestart(), [], '고친 내용이 새 승인 없이 학습지에 나갔다');
+}));
+
+test('승인한 문항을 내용 그대로(공백만 다르게) 저장하면 승인을 유지한다', () => restoring(async () => {
+  const [item] = itemsOf(FILE);
+  await call('write', 'POST', '/v1/review/verdict', { id: item.id, action: 'approve', reviewer: '김검토' });
+  const fields = editable(item);
+  const same = await call('write', 'POST', '/v1/review/item', {
+    id: item.id, item: { ...fields, stem: `  ${fields.stem}  `, solution: `${fields.solution.join('\n\n')}\n` },
+  });
+  assert.equal(same.status, 200, JSON.stringify(same.body));
+  assert.equal(same.body.status, 'reviewed');
+  assert.equal(same.body.unapproved, false);
+  assert.deepEqual(readStatus().reviewed, [{ id: item.id, reviewer: '김검토', reviewedAt: '2026-11-12' }]);
+  assert.deepEqual(worksheetIdsAfterRestart(), [item.id]);
+}));
+
+test('고친 뒤 승인은 이미 승인된 문항이어도 새 검토자·날짜로 승인을 갈아 쓴다', () => restoring(async () => {
+  const target = itemsOf(FILE).find((i) => i.solution.length > 1);
+  await call('write', 'POST', '/v1/review/verdict', { id: target.id, action: 'approve', reviewer: '김검토' });
+  const later = reviewAdmin.createReviewAdmin({ spine: SPINE, root, writeEnabled: true, now: () => new Date(2026, 10, 20) });
+  const verdict = later.routes.find((r) => r.method === 'POST' && r.path === '/v1/review/verdict');
+  const result = verdict.handle({
+    id: target.id, action: 'approve', reviewer: '박검토', item: { ...editable(target), solution: target.solution.slice(0, 1) },
+  });
+  assert.equal(result.status, 'reviewed');
+  assert.deepEqual(readStatus().reviewed, [{ id: target.id, reviewer: '박검토', reviewedAt: '2026-11-20' }]);
+  assert.deepEqual(worksheetIdsAfterRestart(), [target.id]);
+  assert.deepEqual(itemsOf(FILE).find((i) => i.id === target.id).solution, target.solution.slice(0, 1));
+}));
+
+/** 결정적 의사 난수(mulberry32). 실패하면 seed 로 같은 순서를 다시 돌린다. */
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+test('성질: 어떤 순서로 저장·승인·고친 뒤 승인·빼기·되돌리기를 해도 학습지에 나가는 문항 = 현재 내용으로 승인된 문항', () => {
+  const mini = mkdtempSync(path.join(os.tmpdir(), 'digimon-review-prop-'));
+  try {
+    mkdirSync(path.join(mini, 'korean'));
+    cpSync(path.join(AUTHORED_ROOT, FILE), path.join(mini, FILE));
+    const pristine = readFileSync(path.join(mini, FILE), 'utf8');
+    const ids = JSON.parse(pristine).items.slice(0, 3).map((i) => i.id);
+    const content = (item) => ({ ...editable(item), difficulty: item.difficulty });
+    const current = () => new Map(JSON.parse(readFileSync(path.join(mini, FILE), 'utf8')).items.map((i) => [i.id, i]));
+    const variant = (item, n) => ({ ...editable(item), solution: [...item.solution.filter((s) => !s.startsWith('다시 읽어 확인한다')), `다시 읽어 확인한다 ${n}.`] });
+    let ops = 0;
+    for (let seed = 1; seed <= 25; seed += 1) {
+      writeFileSync(path.join(mini, FILE), pristine);
+      writeFileSync(path.join(mini, AUTHORED_REVIEW_FILE), JSON.stringify({ schema: 'digi-mon/authored-review-status@1', reviewed: [] }));
+      let day = 1;
+      const admin = reviewAdmin.createReviewAdmin({ spine: SPINE, root: mini, writeEnabled: true, now: () => new Date(2026, 10, day) });
+      const route = (p) => admin.routes.find((r) => r.method === 'POST' && r.path === p).handle;
+      const random = rng(seed);
+      const pick = (list) => list[Math.floor(random() * list.length)];
+      const log = [];
+      const approvals = new Map();
+      for (let step = 0; step < 20; step += 1) {
+        day = step + 1;
+        const id = pick(ids);
+        const item = current().get(id);
+        const kind = pick(['save-edit', 'save-same', 'save-space', 'approve', 'approve-edit', 'exclude', 'reset']);
+        const n = 1 + Math.floor(random() * 3);
+        log.push(`${kind}:${id}`);
+        if (kind === 'save-edit') route('/v1/review/item')({ id, item: variant(item, n) });
+        if (kind === 'save-same') route('/v1/review/item')({ id, item: editable(item) });
+        if (kind === 'save-space') route('/v1/review/item')({ id, item: { ...editable(item), instruction: ` ${item.instruction}\r\n` } });
+        if (kind === 'approve') route('/v1/review/verdict')({ id, action: 'approve', reviewer: `r${step}` });
+        if (kind === 'approve-edit') route('/v1/review/verdict')({ id, action: 'approve', reviewer: `r${step}`, item: variant(item, n) });
+        if (kind === 'exclude') route('/v1/review/verdict')({ id, action: 'exclude', reviewer: `r${step}` });
+        if (kind === 'reset') route('/v1/review/verdict')({ id, action: 'reset' });
+        ops += 1;
+
+        // 모델: 승인 순간의 내용을 기억한다. 내용이 바뀐 저장·빼기·되돌리기는 그 승인을 지운다.
+        const after = current();
+        if (kind.startsWith('approve')) approvals.set(id, { content: content(after.get(id)), reviewer: `r${step}`, day });
+        else if (kind === 'exclude' || kind === 'reset') approvals.delete(id);
+        else if (JSON.stringify(content(item)) !== JSON.stringify(content(after.get(id)))) approvals.delete(id);
+
+        const status = loadReviewStatus(mini);
+        const shipped = reviewedOnly(loadAuthoredCorpus(mini), status).flatMap((f) => f.items);
+        const where = `seed ${seed}: ${log.join(' → ')}`;
+        assert.deepEqual(shipped.map((i) => i.id).sort(), [...approvals.keys()].sort(), where);
+        for (const shippedItem of shipped) {
+          assert.deepEqual(content(shippedItem), approvals.get(shippedItem.id).content, `승인 뒤 바뀐 내용이 나간다 ${where}`);
+        }
+        const entries = JSON.parse(readFileSync(path.join(mini, AUTHORED_REVIEW_FILE), 'utf8')).reviewed;
+        for (const entry of entries) {
+          const expected = approvals.get(entry.id);
+          assert.equal(entry.reviewer, expected.reviewer, where);
+          assert.equal(entry.reviewedAt, `2026-11-${String(expected.day).padStart(2, '0')}`, where);
+        }
+      }
+    }
+    assert.equal(ops, 500);
+  } finally {
+    rmSync(mini, { recursive: true, force: true });
+  }
 });

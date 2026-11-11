@@ -422,4 +422,25 @@ describe('review admin', () => {
     }
     expect(screen.getByRole('textbox', { name: '지문' }).matches(':disabled')).toBe(true);
   });
+  it('warns that saving an edit to an approved item drops the approval, and shows the item back as pending', async () => {
+    const approved = detail(true, { status: 'reviewed', statusEntry: { reviewer: '김검토', reviewedAt: '2026-11-12' } });
+    vi.mocked(getReviewList).mockResolvedValue(list(true));
+    vi.mocked(getReviewItem).mockResolvedValue(approved);
+    await act(async () => { render(<ReviewAdmin />); });
+    await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+    const warning = () => screen.queryByText(/그냥 저장하면 승인이 풀려 검토 전으로 돌아가고/);
+    expect(warning()).toBeNull();
+
+    fireEvent.change(stemBox(), { target: { value: '하얀 토끼가 빨간 당근을 먹었습니다.' } });
+    expect(warning()).toBeTruthy();
+
+    vi.mocked(saveReviewItem).mockResolvedValue(detail(true, {
+      saved: true, unapproved: true, item: { ...approved.item, stem: '하얀 토끼가 빨간 당근을 먹었습니다.' },
+    }));
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: '저장' })); });
+    expect(screen.getByText(/승인이 풀렸고 검토 전으로 돌아갔습니다/)).toBeTruthy();
+    const head = screen.getByRole('form', { name: '문항 편집' }).querySelector('h3');
+    expect(head?.textContent).toContain('검토 전');
+    expect(warning()).toBeNull();
+  });
 });

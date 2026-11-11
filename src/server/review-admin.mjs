@@ -11,6 +11,8 @@
  *   POST /v1/review/verdict  승인 / 고친 뒤 승인 / 빼기 / 되돌리기
  *
  * 문항 파일은 고친 문항 하나만 바꾸고 나머지 문항·순서·포맷·id 는 그대로 둔다.
+ * 승인은 승인한 그때의 내용에만 붙는다. 승인된 문항의 내용을 바꾸는 일반 저장은 승인을 풀어 검토 전으로
+ * 되돌린다(내용이 그대로인 저장은 승인 유지). 고친 내용을 바로 내보내려면 '고친 뒤 승인'으로 새로 승인한다.
  * 실행 중인 서버의 생성기는 부팅 때 만든 것이라, 승인한 문항은 서버를 다시 켜야 학습지에 나온다.
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -46,6 +48,10 @@ export class ReviewAdminError extends Error {
 
 const nonEmpty = (v) => typeof v === 'string' && v.trim().length > 0;
 const clean = (v) => v.trim().replace(/\r\n?/g, '\n');
+
+/** 학습지에 나가는 내용 필드. 이 가운데 하나라도 바뀌면 이전 승인은 이 내용을 본 것이 아니다. */
+const CONTENT_KEYS = ['difficulty', 'instruction', 'stem', 'answer', 'distractors', 'solution'];
+export const sameContent = (a, b) => CONTENT_KEYS.every((key) => JSON.stringify(a[key]) === JSON.stringify(b[key]));
 
 function localDate(now) {
   const pad = (n) => String(n).padStart(2, '0');
@@ -243,7 +249,12 @@ export function createReviewAdmin({
     }
   }
 
-  /** 게이트를 다시 돌려 통과할 때만 그 문항 하나를 바꿔 쓴다. 실패하면 422 와 사유 목록. */
+  /**
+   * 게이트를 다시 돌려 통과할 때만 그 문항 하나를 바꿔 쓴다. 실패하면 422 와 사유 목록.
+   * 승인된 문항의 내용이 바뀌면 문항 파일보다 먼저 승인을 푼다. 두 쓰기 사이에 멈춰도 고친 내용이
+   * 옛 승인으로 학습지에 나가는 일은 없다(최악이 '내용은 그대로인데 검토 전').
+   * @returns {{ entry: object, unapproved: boolean }}
+   */
   function saveItem(record, fields) {
     const standard = standardByCode.get(record.file.standardCode);
     if (!standard) throw new ReviewAdminError(500, `스파인에 없는 성취기준: ${record.file.standardCode}`);
@@ -253,8 +264,13 @@ export function createReviewAdmin({
     }
     const file = { ...record.file, items: record.file.items.map((item) => (item.id === entry.id ? entry : item)) };
     assertAuthoredFile(file, record.file.standardCode);
+    const unapproved = record.status === 'reviewed' && !sameContent(entry, record.item);
+    if (unapproved) {
+      const status = readStatusFile(root);
+      writeStatusFile(root, { ...status, reviewed: status.reviewed.filter((e) => e.id !== entry.id) });
+    }
     writeFileSync(authoredFilePath(file.subject, file.standardCode, root), `${JSON.stringify(file, null, 2)}\n`, 'utf8');
-    return entry;
+    return { entry, unapproved };
   }
 
   function applyVerdict(id, action, reviewer, reason) {
@@ -325,8 +341,8 @@ export function createReviewAdmin({
           requireWrite();
           const snap = snapshot();
           const record = find(snap, body.id);
-          saveItem(record, body.item);
-          return { saved: true, ...detail(find(snapshot(), body.id)) };
+          const { unapproved } = saveItem(record, body.item);
+          return { saved: true, unapproved, ...detail(find(snapshot(), body.id)) };
         },
       },
       {

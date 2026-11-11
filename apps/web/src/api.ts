@@ -339,6 +339,8 @@ export interface ReviewItemDetail extends ReviewSummary {
   statusEntry: { reviewer: string; reviewedAt?: string; excludedAt?: string; reason?: string } | null;
   writeEnabled: boolean;
   saved?: boolean;
+  /** 일반 저장이 승인된 문항의 내용을 바꿔 승인을 풀었다. */
+  unapproved?: boolean;
 }
 
 export interface ReviewList {

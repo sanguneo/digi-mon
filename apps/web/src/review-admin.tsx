@@ -199,7 +199,9 @@ export function ReviewAdmin() {
    * keepDraft: 문항 내용을 바꾸지 않는 요청(빼기·되돌리기)이면 고치던 초안을 그대로 둔다.
    * 성공해 화면에 반영했을 때만 true.
    */
-  const run = async (task: () => Promise<ReviewItemDetail>, done: string, keepDraft = false): Promise<boolean> => {
+  const run = async (
+    task: () => Promise<ReviewItemDetail>, done: string | ((detail: ReviewItemDetail) => string), keepDraft = false,
+  ): Promise<boolean> => {
     const isLatest = requests.begin('item');
     setBusy(true);
     clearNotices();
@@ -209,7 +211,7 @@ export function ReviewAdmin() {
       if (!isLatest()) return false;
       setSelected(detail);
       if (!keepDraft) setForm(toForm(detail.item));
-      setMessage(done);
+      setMessage(typeof done === 'string' ? done : done(detail));
       return true;
     } catch (cause) {
       if (!isLatest()) return false;
@@ -254,7 +256,9 @@ export function ReviewAdmin() {
 
   const saveDraft = () => {
     if (!selected || !form) return Promise.resolve(false);
-    return run(() => saveReviewItem(selected.id, fromForm(form)), '작성 게이트를 통과해 저장했습니다.');
+    return run(() => saveReviewItem(selected.id, fromForm(form)), (detail) => (detail.unapproved
+      ? '작성 게이트를 통과해 저장했습니다. 내용이 바뀌어 승인이 풀렸고 검토 전으로 돌아갔습니다. 학습지에 내려면 다시 승인하세요.'
+      : '작성 게이트를 통과해 저장했습니다.'));
   };
 
   const save = (event: FormEvent<HTMLFormElement>) => {
@@ -476,6 +480,12 @@ export function ReviewAdmin() {
                 </label>
               </fieldset>
 
+              {selected.status === 'reviewed' && dirty ? (
+                <p className="dm-note dm-note--warn" role="status">
+                  승인된 문항입니다. 고친 내용을 그냥 저장하면 승인이 풀려 검토 전으로 돌아가고 학습지에서 빠집니다.
+                  바로 학습지에 내려면 &apos;고친 뒤 승인&apos;을 누르세요.
+                </p>
+              ) : null}
               {gateReasons.length > 0 ? (
                 <div className="dm-note dm-note--danger" role="alert">
                   <strong>작성 게이트를 통과하지 못해 저장하지 않았습니다</strong>
