@@ -150,6 +150,53 @@ test('English candidates are held to the official 800-word list', async () => {
   assert.equal(isOfficialEnglishWord('is'), true);
 });
 
+test('irregular inflections of official headwords pass the vocabulary gate', async () => {
+  // PR #2 2차 리뷰: 표제어가 불규칙 굴절형을 포함하는데 won·kept·built·eaten 을 막았다.
+  for (const word of ['won', 'kept', 'built', 'eaten', 'went', 'children', 'flew', 'left', 'found']) {
+    assert.equal(isOfficialEnglishWord(word), true, word);
+  }
+  // lose 는 800개 초등 표제어가 아니다(후보 풀에만 있다). 그래서 lost 는 계속 막는다.
+  assert.equal(isOfficialEnglishWord('lost'), false);
+  assert.equal(isOfficialEnglishWord('stole'), false);
+
+  const batch = JSON.stringify({
+    items: [{
+      difficulty: 1,
+      instruction: '문장의 뜻으로 알맞은 것을 고르시오.',
+      stem: 'We won the game.',
+      answer: '우리는 경기에서 이겼습니다.',
+      distractors: ['우리는 경기에서 졌습니다.', '우리는 경기를 봤습니다.', '우리는 노래를 불렀습니다.'],
+      solution: ["'won'은 'win'의 과거형으로 이겼다는 뜻이다."],
+    }],
+  });
+  const result = await authorStandard({
+    standard: ENGLISH, count: 1, client: fakeClient(batch), lint: fakeLint, root: tmpRoot(), dryRun: true, maxRounds: 1,
+  });
+  assert.deepEqual(result.rejected, []);
+  assert.deepEqual(result.accepted.map((e) => e.stem), ['We won the game.']);
+});
+
+test('GGW lint reads the answer and every distractor, not only the stem and solution', async () => {
+  // PR #2 2차 리뷰: 선택지에만 차단 표현이 있으면 린터를 건너뛰어 코퍼스에 들어갔다.
+  const inDistractor = { ...OPINION, stem: '가을은 책 읽기 좋은 계절입니다.', distractors: ['사실', '질문이 아니라 명령', '명령'] };
+  const inAnswer = { ...FACT, stem: '우리 반 학생은 스물다섯 명입니다.', answer: '의견이 아니라 사실' };
+  const clean = { ...FACT, stem: '물은 낮은 곳으로 흐릅니다.' };
+  const result = await authorStandard({
+    standard: KOREAN,
+    count: 3,
+    client: fakeClient(JSON.stringify({ items: [inDistractor, inAnswer, clean] })),
+    lint: fakeLint,
+    root: tmpRoot(),
+    dryRun: true,
+    maxRounds: 1,
+  });
+  assert.deepEqual(result.accepted.map((e) => e.stem), [clean.stem]);
+  assert.deepEqual(
+    result.rejected.map((r) => [r.entry.stem, r.reasons[0].gate]),
+    [[inDistractor.stem, 'ggw'], [inAnswer.stem, 'ggw']],
+  );
+});
+
 const FIXTURE = [{
   schema: AUTHORED_SCHEMA,
   subject: 'korean',

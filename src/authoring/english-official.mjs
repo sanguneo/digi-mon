@@ -15,21 +15,137 @@ const VOCAB_PATH = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'data', 'curriculum', 'english-official-vocabulary.json',
 );
 
-/** 규칙으로 되돌릴 수 없는 굴절형 -> 표제어. 표제어가 800개 안에 있을 때만 통과한다. */
-const IRREGULAR = {
+/**
+ * 불규칙 동사의 원형·과거형·과거분사형. 한 줄이 'bear bore born borne' 처럼 원형 뒤에 굴절형을
+ * 늘어놓는다. 원형이 800개 밖이면 굴절형도 통과하지 못하므로 넉넉히 실어도 된다.
+ */
+const IRREGULAR_VERBS = `
+be am is are was were been
+have has had
+do does did done
+arise arose arisen
+awake awoke awoken
+bear bore born borne
+beat beaten
+become became
+begin began begun
+bend bent
+bite bit bitten
+bleed bled
+blow blew blown
+break broke broken
+bring brought
+build built
+burn burnt
+buy bought
+catch caught
+choose chose chosen
+come came
+deal dealt
+dig dug
+draw drew drawn
+dream dreamt
+drink drank drunk
+drive drove driven
+die dying
+eat ate eaten
+fall fell fallen
+feed fed
+feel felt
+fight fought
+find found
+fly flew flown
+forget forgot forgotten
+forgive forgave forgiven
+freeze froze frozen
+get got gotten
+give gave given
+go went gone
+grow grew grown
+hang hung
+hear heard
+hide hid hidden
+hold held
+keep kept
+know knew known
+lay laid
+lead led
+learn learnt
+leave left
+lend lent
+lie lay lain lying
+light lit
+lose lost
+make made
+mean meant
+meet met
+pay paid
+ride rode ridden
+ring rang rung
+rise rose risen
+run ran
+say said
+see saw seen
+seek sought
+sell sold
+send sent
+shake shook shaken
+shine shone
+shoot shot
+show shown
+sing sang sung
+sink sank sunk
+sit sat
+sleep slept
+slide slid
+speak spoke spoken
+spend spent
+spell spelt
+spill spilt
+stand stood
+steal stole stolen
+stick stuck
+sting stung
+strike struck
+swim swam swum
+swing swung
+take took taken
+teach taught
+tear tore torn
+tell told
+think thought
+throw threw thrown
+tie tying
+understand understood
+wake woke woken
+wear wore worn
+weep wept
+win won
+wind wound
+write wrote written
+`;
+
+/** 동사 밖의 불규칙 굴절형(대명사 격, 불규칙 복수, 불규칙 비교급) -> 표제어. */
+const IRREGULAR_OTHER = {
   i: 'I', me: 'I', my: 'I', mine: 'I',
-  am: 'be', is: 'be', are: 'be', was: 'be', were: 'be', been: 'be',
-  has: 'have', had: 'have', does: 'do', did: 'do', done: 'do',
-  went: 'go', gone: 'go', came: 'come', ate: 'eat', saw: 'see', seen: 'see',
-  made: 'make', took: 'take', got: 'get', said: 'say', ran: 'run', sat: 'sit',
-  wrote: 'write', gave: 'give', told: 'tell', knew: 'know', found: 'find',
-  bought: 'buy', brought: 'bring', thought: 'think', taught: 'teach', felt: 'feel',
-  left: 'leave', met: 'meet', slept: 'sleep', swam: 'swim', sang: 'sing', drank: 'drink',
   children: 'child', men: 'man', women: 'woman', feet: 'foot', teeth: 'tooth', mice: 'mouse',
+  geese: 'goose', people: 'person', leaves: 'leaf', knives: 'knife', wives: 'wife', lives: 'life',
+  wolves: 'wolf', halves: 'half', shelves: 'shelf', thieves: 'thief',
   him: 'he', his: 'he', her: 'she', hers: 'she', us: 'we', our: 'we', ours: 'we',
   them: 'they', their: 'they', theirs: 'they', its: 'it', your: 'you', yours: 'you',
   better: 'good', best: 'good', worse: 'bad', worst: 'bad',
+  more: ['many', 'much'], most: ['many', 'much'], less: 'little', least: 'little',
+  farther: 'far', farthest: 'far', further: 'far', furthest: 'far', elder: 'old', eldest: 'old',
 };
+
+/** 불규칙 굴절형 -> 될 수 있는 표제어들. 'lay' 처럼 둘 이상의 원형에 걸리는 꼴이 있다. */
+const IRREGULAR = new Map();
+const addIrregular = (form, base) => IRREGULAR.set(form, [...(IRREGULAR.get(form) ?? []), base]);
+for (const line of IRREGULAR_VERBS.trim().split('\n')) {
+  const [base, ...forms] = line.split(' ');
+  for (const form of forms) addIrregular(form, base);
+}
+for (const [form, bases] of Object.entries(IRREGULAR_OTHER)) [bases].flat().forEach((base) => addIrregular(form, base));
 
 let cached;
 
@@ -74,7 +190,8 @@ export function isOfficialEnglishWord(raw, allowedNames = []) {
   const word = raw.toLowerCase();
   const words = officialEnglishWords();
   if (allowedNames.some((n) => n.toLowerCase() === word)) return true;
-  if (IRREGULAR[word] !== undefined) return words.has(IRREGULAR[word].toLowerCase());
+  // 'left', 'found' 처럼 불규칙형이 따로 표제어이기도 하므로 규칙 후보도 함께 본다.
+  if ((IRREGULAR.get(word) ?? []).some((base) => words.has(base.toLowerCase()))) return true;
   return candidates(word).some((c) => words.has(c));
 }
 

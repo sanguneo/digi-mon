@@ -112,9 +112,9 @@ function vocabularyForPrompt(standard) {
   return [];
 }
 
-/** 정답 표기·지문처럼 GGW 린터가 읽을 문면. 영어 문장과 한 낱말 선택지는 빼지 않는다. */
+/** GGW 린터가 읽을 문면: 지시문·지문·정답·오답지·해설 전부. 영어 문장과 한 낱말 선택지도 빼지 않는다. */
 function lintTexts(entry) {
-  return [entry.instruction, entry.stem, ...entry.solution].filter((t) => typeof t === 'string' && t.length > 0);
+  return [entry.instruction, entry.stem, entry.answer, ...entry.distractors, ...entry.solution].filter((t) => typeof t === 'string' && t.length > 0);
 }
 
 /**
