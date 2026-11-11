@@ -4,10 +4,11 @@ import { createRoot } from 'react-dom/client';
 import type { Worksheet } from './api.ts';
 import { Diagnostic } from './diagnostic.tsx';
 import { ProblemStudio } from './problem-studio.tsx';
+import { ReviewAdmin } from './review-admin.tsx';
 import './styles.css';
 import './worksheet-layout.css';
 
-type View = 'studio' | 'diagnostic';
+type View = 'studio' | 'diagnostic' | 'review';
 
 function App() {
   const [view, setView] = useState<View>('studio');
@@ -46,30 +47,45 @@ function App() {
           >
             진단평가
           </button>
+          <button
+            aria-current={view === 'review' ? 'page' : undefined}
+            className="dm-nav-button"
+            onClick={() => {
+              setView('review');
+              setWorksheet(null);
+            }}
+            type="button"
+          >
+            문항 검토
+          </button>
         </nav>
       </header>
 
       <main>
-        <section className="dm-hero">
-          <div>
-            <p className="dm-kicker">DREAM · MEASURE · MOVE</p>
-            <h1>오늘의 배움을<br />설계하세요</h1>
-          </div>
-          <p className="dm-hero__copy">
-            문제는 무작위로 쌓지 않습니다. 교육과정, 난이도, 진단 근거를 잇고
-            다음 한 걸음까지 분명하게 보여 줍니다.
-          </p>
-        </section>
+        {view === 'review' ? <ReviewAdmin /> : (
+          <>
+            <section className="dm-hero">
+              <div>
+                <p className="dm-kicker">DREAM · MEASURE · MOVE</p>
+                <h1>오늘의 배움을<br />설계하세요</h1>
+              </div>
+              <p className="dm-hero__copy">
+                문제는 무작위로 쌓지 않습니다. 교육과정, 난이도, 진단 근거를 잇고
+                다음 한 걸음까지 분명하게 보여 줍니다.
+              </p>
+            </section>
 
-        <ProblemStudio
-          key={view}
-          mode={view === 'diagnostic' ? 'diagnostic' : 'worksheet'}
-          onWorksheet={setWorksheet}
-        />
+            <ProblemStudio
+              key={view}
+              mode={view === 'diagnostic' ? 'diagnostic' : 'worksheet'}
+              onWorksheet={setWorksheet}
+            />
 
-        {view === 'diagnostic' && worksheet ? (
-          <Diagnostic key={worksheet.fingerprint} worksheet={worksheet} />
-        ) : null}
+            {view === 'diagnostic' && worksheet ? (
+              <Diagnostic key={worksheet.fingerprint} worksheet={worksheet} />
+            ) : null}
+          </>
+        )}
       </main>
 
       <footer className="dm-footer">

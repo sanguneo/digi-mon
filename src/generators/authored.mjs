@@ -174,6 +174,20 @@ export function loadReviewStatus(root = AUTHORED_ROOT) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.reviewedAt ?? '')) fail(`${entry.id}: reviewedAt 은 YYYY-MM-DD`);
     ids.add(entry.id);
   }
+  // excluded 는 사람이 검토해 학습지에서 뺀 문항이다. 문항은 지우지 않고 여기 표시만 한다.
+  // 없어도 된다(이전 파일). 검토 완료와 제외에 동시에 오를 수는 없다.
+  if (status.excluded !== undefined) {
+    if (!Array.isArray(status.excluded)) fail('excluded 는 배열');
+    const excluded = new Set();
+    for (const entry of status.excluded) {
+      if (!/^[0-9a-f]{12}$/.test(entry?.id ?? '')) fail(`excluded id 형식 오류: ${entry?.id}`);
+      if (excluded.has(entry.id)) fail(`excluded id 중복: ${entry.id}`);
+      if (ids.has(entry.id)) fail(`${entry.id}: reviewed 와 excluded 에 함께 있다`);
+      if (!nonEmpty(entry.reviewer)) fail(`${entry.id}: reviewer 가 비었다`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.excludedAt ?? '')) fail(`${entry.id}: excludedAt 은 YYYY-MM-DD`);
+      excluded.add(entry.id);
+    }
+  }
   return ids;
 }
 

@@ -15,6 +15,9 @@ AI가 쓴 문항(`data/authored/**`)은 사람이 검토하기 전까지 학습�
 
 ## 검토 방법
 
+관리자 화면(아래 '관리자 화면으로 검토하기')을 쓰면 2~4단계를 JSON을 손으로 고치지 않고 할 수 있다.
+손으로 할 때의 순서는 다음과 같다.
+
 1. 아래 순서대로 문항을 연다. 파일은 `data/authored/<교과>/<성취기준>.json`이고 문항은 `id`로 찾는다.
 2. 지시문·지문·정답·오답지·풀이를 읽고 다음을 확인한다.
    - 정답이 하나로만 정해지는가(오답지 가운데 맞다고 볼 수 있는 것이 없는가).
@@ -36,8 +39,56 @@ AI가 쓴 문항(`data/authored/**`)은 사람이 검토하기 전까지 학습�
    - `id`는 문항 id(12자리 16진수), `reviewer`는 검토한 사람, `reviewedAt`은 YYYY-MM-DD다.
    - 코퍼스에 없는 id나 빈 `reviewer`가 있으면 생성이 오류로 멈춘다. 오타가 조용히 무시되지 않는다.
    - 검토 완료를 되돌리려면 그 줄을 지운다.
+   - 학습지에서 뺄 문항은 지우지 않고 `excluded`에 올릴 수도 있다.
+     `{ "id", "reviewer", "excludedAt": "YYYY-MM-DD", "reason" }` 꼴이고 `reason`은 없어도 된다.
+     같은 id가 `reviewed`와 `excluded`에 함께 있으면 생성이 오류로 멈춘다.
 5. `npm run verify`로 생성기 수와 검토표 산출물을 다시 만들고 `npm test`가 통과하는지 본다.
    검토 완료 문항이 생기면 그 성취기준의 `<교과>.authored.<성취기준>` 생성기가 다시 등록된다.
+
+### 관리자 화면으로 검토하기
+
+교사 화면의 '문항 검토' 탭에서 목록을 보고, 문항을 고치고, 승인·고친 뒤 승인·빼기·되돌리기를 한다.
+파일을 쓰는 화면이라 내 컴퓨터에서만 켠다.
+
+1. 엔진과 화면을 켠다. `npm run web:dev`의 프록시는 교사 토큰 `e2e-teacher-token`을 붙이므로 엔진도 같은 토큰으로 켠다.
+
+   ```sh
+   # 터미널 1 (PowerShell이면: $env:TEACHER_TOKEN='e2e-teacher-token'; $env:DIGIMON_ADMIN_WRITE='1'; npm run serve)
+   TEACHER_TOKEN=e2e-teacher-token DIGIMON_ADMIN_WRITE=1 npm run serve
+   # 터미널 2
+   npm run web:dev
+   ```
+
+2. <http://127.0.0.1:4173>에서 '문항 검토' 탭을 연다. 폰에서 쓰려면 같은 네트워크에서
+   터미널 2에서 `cd apps/web && npx vite --host 0.0.0.0`으로 외부 접속을 열고 컴퓨터 주소의 4173 포트로 들어간다.
+   좁은 화면에서는 목록과 상세가 한 화면씩 번갈아 나온다.
+3. '검토자 이름'을 적는다. 브라우저에 저장되고 승인·빼기를 할 때 `reviewer`로 기록된다. 빈 값이면 서버가 거절한다.
+4. 목록은 우선 검토 35문항을 아래 표 순서대로 먼저 보여 주고, 나머지는 교과·성취기준 파일 순서다.
+   교과·성취기준·상태·오달 판정으로 거른다. 문항을 열면 이 문서의 '짚은 점'과
+   `data/authored/review-notes/*.jsonl`의 오달 판정(`{id, verdict, kind, note}` 한 줄에 하나)을 함께 보여 준다.
+5. 고칠 것이 있으면 폼에서 고치고 '저장'이나 '고친 뒤 승인'을 누른다. 서버가 작성 게이트(`checkCandidate`)를 다시 돌려
+   통과할 때만 그 문항 하나를 바꾼다. id는 그대로고 다른 문항·순서·파일 포맷도 그대로다.
+   통과하지 못하면 게이트 이름과 사유를 그대로 보여 주고 아무것도 쓰지 않는다.
+   GGW 린터는 묶음 단위로 도는 바깥 실행기라 화면에서는 돌리지 않는다.
+6. '빼기'는 문항을 지우지 않고 `review-status.json`의 `excluded`에 올린다. '되돌리기'는 검토 전으로 돌린다.
+7. 실행 중인 엔진의 생성기는 부팅 때 만든 것이다. 승인한 문항을 학습지에서 보려면 `npm run serve`를 다시 켠다.
+
+`DIGIMON_ADMIN_WRITE=1`이 없으면 조회만 되고 쓰기 요청은 403이다. 배포 서버에는 이 변수를 넣지 않는다.
+교사 토큰이 없거나 틀리면 조회도 403이다.
+
+검토를 마치면 바뀜 파일을 PR로 올린다.
+
+```sh
+git switch -c review/2026-11-12-<검토자>
+npm run verify            # 생성기 수·검토표 산출물을 다시 만든다
+npm test
+git add data/authored docs/review REVIEW.md
+git commit -m "AI 작성 문항 검토: <범위>"
+git push -u origin HEAD
+gh pr create --title "AI 작성 문항 검토: <범위>" --body "승인 N·고침 N·제외 N"
+```
+
+`git diff -- data/authored`로 바뀐 문항과 상태를 먼저 훑어 보고, 우선 검토 표에서 처리한 줄은 같은 PR에서 정리한다.
 
 ## 우선 검토할 문항 (35개)
 

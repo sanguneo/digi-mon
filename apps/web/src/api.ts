@@ -291,3 +291,108 @@ export async function createRemediation(
   });
   return result.worksheet;
 }
+
+export type ReviewStatus = 'pending' | 'reviewed' | 'excluded';
+export type ReviewAction = 'approve' | 'exclude' | 'reset';
+
+export interface ReviewNote {
+  verdict: string;
+  kind: string | null;
+  note: string;
+  source: string;
+}
+
+export interface ReviewSummary {
+  id: string;
+  subject: 'korean' | 'english';
+  standardCode: string;
+  skill: string;
+  difficulty: Difficulty;
+  instruction: string;
+  stem: string;
+  answer: string;
+  status: ReviewStatus;
+  priority: number | null;
+  reasons: Array<{ source: string; text: string }>;
+  notes: ReviewNote[];
+}
+
+export interface AuthoredItemFields {
+  instruction: string;
+  stem: string;
+  answer: string;
+  distractors: string[];
+  solution: string[];
+}
+
+export interface ReviewItemDetail extends ReviewSummary {
+  file: string;
+  item: AuthoredItemFields & { id: string; difficulty: Difficulty };
+  statusEntry: { reviewer: string; reviewedAt?: string; excludedAt?: string; reason?: string } | null;
+  writeEnabled: boolean;
+  saved?: boolean;
+}
+
+export interface ReviewList {
+  writeEnabled: boolean;
+  total: number;
+  matched: number;
+  offset: number;
+  limit: number;
+  counts: Record<ReviewStatus, number>;
+  facets: {
+    subjects: string[];
+    standards: Array<{ code: string; subject: string; skill: string; count: number }>;
+    verdicts: string[];
+  };
+  items: ReviewSummary[];
+}
+
+export interface ReviewFilters {
+  subject?: string;
+  standard?: string;
+  status?: string;
+  verdict?: string;
+  offset?: number;
+  limit?: number;
+}
+
+export interface GateReason {
+  gate: string;
+  detail: string;
+}
+
+/** 작성 게이트 실패(422)의 사유 목록. 다른 오류면 null. */
+export function gateReasonsOf(error: unknown): GateReason[] | null {
+  if (!(error instanceof ApiError) || error.status !== 422) return null;
+  const detail = error.detail as { reasons?: GateReason[] } | null;
+  return detail?.reasons ?? null;
+}
+
+const REVIEW_API = '/teacher/api/v1/review';
+
+export function getReviewList(filters: ReviewFilters): Promise<ReviewList> {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(filters)) {
+    if (value !== undefined && value !== '') params.set(key, String(value));
+  }
+  return requestJson(`${REVIEW_API}/items?${params}`);
+}
+
+export function getReviewItem(id: string): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/item?id=${encodeURIComponent(id)}`);
+}
+
+export function saveReviewItem(id: string, item: AuthoredItemFields): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/item`, { method: 'POST', body: JSON.stringify({ id, item }) });
+}
+
+export function submitReviewVerdict(verdict: {
+  id: string;
+  action: ReviewAction;
+  reviewer?: string;
+  reason?: string;
+  item?: AuthoredItemFields;
+}): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/verdict`, { method: 'POST', body: JSON.stringify(verdict) });
+}

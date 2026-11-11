@@ -42,6 +42,7 @@ import {
 } from '../engine/worksheet-forms.mjs';
 import { hasSvgRenderer, renderFigureSvg } from '../render/figure-svg.mjs';
 import { gradeWorksheet } from './grade.mjs';
+import { createReviewAdmin, ReviewAdminError } from './review-admin.mjs';
 
 const MAX_BODY_BYTES = 256 * 1024;
 const MAX_COUNT = 100;
@@ -377,6 +378,7 @@ export function createApp({
   spine,
   registry,
   teacherToken = process.env.TEACHER_TOKEN ?? null,
+  reviewAdmin = {},
 }) {
   const coverage = buildCoverage(spine, registry);
   const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
@@ -851,6 +853,14 @@ export function createApp({
         };
       },
     },
+    // AI 작성 문항 검토 관리자(src/server/review-admin.mjs). 모두 교사 토큰이 있어야 한다.
+    ...createReviewAdmin({ spine, ...reviewAdmin }).routes.map((route) => ({
+      ...route,
+      handle: (body, url, req) => {
+        requireTeacher(req, teacherToken);
+        return route.handle(body, url, req);
+      },
+    })),
   ];
 
   return async function handler(req, res) {
@@ -903,7 +913,7 @@ export function createApp({
       const body = req.method === 'POST' ? await readBody(req) : {};
       json(res, 200, await route.handle(body, url, req));
     } catch (error) {
-      if (error instanceof HttpError) {
+      if (error instanceof HttpError || error instanceof ReviewAdminError) {
         json(res, error.status, { error: error.message, detail: error.detail ?? null });
         return;
       }
