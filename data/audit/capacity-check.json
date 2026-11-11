@@ -158,7 +158,7 @@
       "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 293601,
+  "observedCapacity": 293688,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1299,8 +1299,8 @@
       "skill": "자연수의 혼합 계산",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 872,
-      "uniqueAtDouble": 1674,
+      "uniqueAtBase": 884,
+      "uniqueAtDouble": 1737,
       "saturated": false,
       "ceiling": null
     },
@@ -1552,8 +1552,8 @@
       "skill": "직육면체 모서리 길이의 합",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 314,
-      "uniqueAtDouble": 562,
+      "uniqueAtBase": 315,
+      "uniqueAtDouble": 565,
       "saturated": false,
       "ceiling": null
     },
@@ -1739,8 +1739,8 @@
       "skill": "직육면체의 겉넓이",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 261,
-      "uniqueAtDouble": 478,
+      "uniqueAtBase": 263,
+      "uniqueAtDouble": 482,
       "saturated": false,
       "ceiling": null
     },
@@ -2675,7 +2675,7 @@
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 897,
-      "uniqueAtDouble": 1782,
+      "uniqueAtDouble": 1786,
       "saturated": false,
       "ceiling": null
     },
@@ -2806,8 +2806,8 @@
       "skill": "띠그래프·원그래프의 백분율로 항목의 수, 차, 배, 전체 수, 띠의 길이 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 898,
-      "uniqueAtDouble": 1789,
+      "uniqueAtBase": 900,
+      "uniqueAtDouble": 1798,
       "saturated": false,
       "ceiling": null
     },
@@ -2828,8 +2828,8 @@
       "skill": "실험 결과를 보고 일이 일어날 가능성을 예상하고 판단하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 896,
-      "uniqueAtDouble": 1794,
+      "uniqueAtBase": 900,
+      "uniqueAtDouble": 1800,
       "saturated": false,
       "ceiling": null
     },
@@ -2895,7 +2895,7 @@
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 896,
-      "uniqueAtDouble": 1785,
+      "uniqueAtDouble": 1783,
       "saturated": false,
       "ceiling": null
     },

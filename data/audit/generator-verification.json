@@ -2819,10 +2819,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1194,
+      "uniqueTotal": 1195,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.995
+      "uniqueRatio": 0.9958
     },
     {
       "generatorId": "math.g56.no.s01.mixed-ops",
@@ -2831,24 +2831,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 390,
+          "unique": 397,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 390,
+          "unique": 397,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 395,
+          "unique": 399,
           "failed": 0
         }
       },
-      "uniqueTotal": 1140,
+      "uniqueTotal": 1178,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.95
+      "uniqueRatio": 0.9817
     },
     {
       "generatorId": "math.g56.no.s02.range",
@@ -3434,7 +3434,7 @@
         },
         "2": {
           "generated": 400,
-          "unique": 206,
+          "unique": 209,
           "failed": 0
         },
         "3": {
@@ -3443,10 +3443,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 378,
+      "uniqueTotal": 381,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.315
+      "uniqueRatio": 0.3175
     },
     {
       "generatorId": "math.g56.rm.s03-04.cuboid-net",
@@ -3881,14 +3881,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 187,
+          "unique": 189,
           "failed": 0
         }
       },
-      "uniqueTotal": 355,
+      "uniqueTotal": 357,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.2958
+      "uniqueRatio": 0.2975
     },
     {
       "generatorId": "math.g56.rm.s03-18.volume",
@@ -3907,14 +3907,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 208,
+          "unique": 209,
           "failed": 0
         }
       },
-      "uniqueTotal": 390,
+      "uniqueTotal": 391,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.325
+      "uniqueRatio": 0.3258
     },
     {
       "generatorId": "math.g56.rm.s03-19.volume-unit",
@@ -6081,7 +6081,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 396,
+          "unique": 398,
           "failed": 0
         },
         "2": {
@@ -6095,10 +6095,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1195,
+      "uniqueTotal": 1197,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9958
+      "uniqueRatio": 0.9975
     },
     {
       "generatorId": "math.g34.no.s06.wrong-calc",
@@ -6393,7 +6393,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 393,
+          "unique": 399,
           "failed": 0
         },
         "2": {
@@ -6407,10 +6407,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1193,
+      "uniqueTotal": 1199,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9942
+      "uniqueRatio": 0.9992
     },
     {
       "generatorId": "math.g56.rm.s04-03.table-steps",
@@ -6445,7 +6445,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 397,
+          "unique": 400,
           "failed": 0
         },
         "2": {
@@ -6459,10 +6459,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1197,
+      "uniqueTotal": 1200,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9975
+      "uniqueRatio": 1
     },
     {
       "generatorId": "math.g56.rm.s02-01.correspondence-inverse",
@@ -6606,19 +6606,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 397,
+          "unique": 395,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 398,
+          "unique": 397,
           "failed": 0
         }
       },
-      "uniqueTotal": 1192,
+      "uniqueTotal": 1188,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9933
+      "uniqueRatio": 0.99
     },
     {
       "generatorId": "math.g56.no.s01.mixed-ops-story",

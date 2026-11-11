@@ -46,7 +46,7 @@ check-vocabulary       문항 2,460개 / 낱말 3,547건 → 학년 어휘 위�
 check-fact-tables      사실 표 6종 114짝 → 구조 문제 0건
 check-difficulty       numeric 211 / single 26 / categorical 69 · 평평 0 · 축 불일치 0
 check-difficulty-notes categorical 69개 → 노트와 코드 불일치 0건
-check-capacity         포화 102/306 · 관측 문항 용량 293,601개 · 상한 미신고 0건
+check-capacity         포화 102/306 · 관측 문항 용량 293,688개 · 상한 미신고 0건
 check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) · 순환·역행 0
 ```
 
