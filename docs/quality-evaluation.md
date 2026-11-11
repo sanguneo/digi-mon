@@ -3,7 +3,7 @@
 이 문서는 사람이 작성하는 판정 원장이다. 표본과 정답은 [생성된 품질 기준선](review/quality-baseline.md)에서 읽는다.
 생성 성공, schema 통과, 자동 검산은 교육적 품질 승인이 아니다.
 
-baselineFingerprint: `07e44b288715b402ea02ec7b28b1e2a0e7a7ab0de5272cc0068c595449eaf76b`
+baselineFingerprint: `15e6a78c6e075589af51d209cc0072bbbfd390d575020ac82185358e0e64285c`
 reviewer: `pending`
 reviewDate: `pending`
 
@@ -72,15 +72,15 @@ reviewDate: `pending`
 
 | 사례 | 대상 fingerprint | 정렬 | 정답 | 발문 | 선택지 | 체감 난이도 | 반복 | 종합 | 근거·문항 번호 |
 |---|---|---|---|---|---|---|---|---|---|
-| `WS-M12-D1` | `c9ddc45ed425053c6890d928f60ea0a70e0f1526843bed4ee89d82afdc1a64e0` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M12-D2` | `e5eeeffceaf185ede0fb359b91fa4da7377739c399ab77b1b0aaa8c20de1f4b4` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M12-D3` | `95068016092cfad580f1532ab0c2b6434ecc445551a9ac6e4f80c87a9233ce6b` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M34-D1` | `b9d73af9d5973607d623d334ebb3417a885bca9bae782e0ba7468a2e10f9ae41` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M34-D2` | `27a05fd107957042103ae7f43850ba40026dc1feb06a35d4549045ddd34fea89` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M34-D3` | `dfbb3af0307be21b90cd05d522aebbb5bd97b9df21aeec8fed70cf07b4718220` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M56-D1` | `db997dfaa0b8281fef8ee54240847fb2c5754cbb645d5b9cd6d9e3bcd3f1eda9` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M56-D2` | `c4cff9b3839a2f8cd07cdfda671c10e3a88bc18ba82ac317ed589fdbe377700e` | pending | pending | pending | pending | pending | pending | pending | — |
-| `WS-M56-D3` | `7b27d19b9ae8954a7741bf620ed5b7a369d8afe1df3446a04d6412e345da0c14` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M12-D1` | `eed1e54ae3dda6971436cb3b742c303b2aaca083e8367d8bf994818230c8c7da` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M12-D2` | `9d5fe1ca3a7b94043f30150035ce8f6ddb182b54ce51da6ea10baf5a1d52ae22` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M12-D3` | `73da6d39b2a60f32a73d7d01b7941f5933f06e66638c3bfd603264bb139e1ae6` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M34-D1` | `b040844fec0799b8610900119897681e2faa687c907fa7fd7a683ef0da4fbfc0` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M34-D2` | `cfe5a1e5c184c9b6b4129a566071122357927ae950fd6c34f919278835ef502e` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M34-D3` | `f2410b7b06b3b30fe28b4be1180c75ff1c1f112e7511bb01d4a3fc41af3268b0` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M56-D1` | `8fe40a9f46b20e3aa8a73121c497c193e9fbdd7191fbc7be348d0b533c911b4d` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M56-D2` | `89310e985d22451c544deaed196c1c5e8ec5027dfb1a7aa6abd1fedc858d9975` | pending | pending | pending | pending | pending | pending | pending | — |
+| `WS-M56-D3` | `fe0f5fd3c5c533a208f34c88e27279511f06c250ca18400a0c7f7fc72b270f02` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-K12-D1` | `d8d8650b20293f56d7e0687fabe4e45b0c20501828454c09b1fb51c7c6be8b31` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-K12-D2` | `efff98d812822f7d002919c4a98bfd5da2af9c9e746ec1eabd9b70e6da5a32b6` | pending | pending | pending | pending | pending | pending | pending | — |
 | `WS-K12-D3` | `b966e4aa1917001620c9a6d3e3e431f1703a5f9ec0f3a42b7cdce3c43f8e4958` | pending | pending | pending | pending | pending | pending | pending | — |

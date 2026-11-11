@@ -4157,24 +4157,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 394,
+          "unique": 284,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 399,
+          "unique": 389,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 390,
           "failed": 0
         }
       },
-      "uniqueTotal": 1192,
+      "uniqueTotal": 1061,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9933
+      "uniqueRatio": 0.8842
     },
     {
       "generatorId": "math.g12.no.s11.times-compare",
@@ -4495,24 +4495,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 350,
+          "unique": 224,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 392,
+          "unique": 383,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 389,
+          "unique": 367,
           "failed": 0
         }
       },
-      "uniqueTotal": 1131,
+      "uniqueTotal": 974,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9425
+      "uniqueRatio": 0.8117
     },
     {
       "generatorId": "math.g34.no.s06.story-remainder",
@@ -4911,24 +4911,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 93,
+          "unique": 36,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 272,
+          "unique": 172,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 345,
+          "unique": 275,
           "failed": 0
         }
       },
-      "uniqueTotal": 667,
+      "uniqueTotal": 425,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5558
+      "uniqueRatio": 0.3542
     },
     {
       "generatorId": "math.g56.no.s11.mixed-divide",
@@ -5015,24 +5015,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 358,
+          "unique": 348,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 341,
+          "unique": 337,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 395,
+          "unique": 370,
           "failed": 0
         }
       },
-      "uniqueTotal": 1035,
+      "uniqueTotal": 991,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.8625
+      "uniqueRatio": 0.8258
     },
     {
       "generatorId": "math.g56.rm.s02-03.percent",

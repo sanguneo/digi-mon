@@ -4236,21 +4236,21 @@
       "byDifficulty": {
         "1": {
           "samples": 80,
-          "maxMagnitude": 2.337,
+          "maxMagnitude": 2.325,
           "steps": 2,
-          "paramMagnitude": 19.55
+          "paramMagnitude": 19.9
         },
         "2": {
           "samples": 80,
-          "maxMagnitude": 2.212,
+          "maxMagnitude": 2.188,
           "steps": 2,
-          "paramMagnitude": 19.8
+          "paramMagnitude": 19.825
         },
         "3": {
           "samples": 80,
-          "maxMagnitude": 2.587,
+          "maxMagnitude": 2.413,
           "steps": 2,
-          "paramMagnitude": 26.675
+          "paramMagnitude": 29.7
         }
       },
       "meaningful": true

@@ -2,21 +2,21 @@
 
 `tools/export-quality-baseline.mjs`가 생성한다. 손으로 고치지 않는다.
 
-- 기준선 fingerprint: `07e44b288715b402ea02ec7b28b1e2a0e7a7ab0de5272cc0068c595449eaf76b`
+- 기준선 fingerprint: `15e6a78c6e075589af51d209cc0072bbbfd390d575020ac82185358e0e64285c`
 - 사례 24개 · 사례당 10문항 · 총 240문항
 - 이 문서는 사람 검토용 증거다. 생성 성공이나 자동 게이트 통과는 교육적 품질 승인이 아니다.
 
 | 사례 | 교과 | 학년군 | 요청 난이도 | 실제 난이도 | seed | worksheet fingerprint | 성취기준 수 |
 |---|---|---|---:|---|---|---|---:|
-| `WS-M12-D1` | math | 1-2 | 1 | 1:10 | `review-ws-m12-d1` | `c9ddc45ed425053c6890d928f60ea0a70e0f1526843bed4ee89d82afdc1a64e0` | 10 |
-| `WS-M12-D2` | math | 1-2 | 2 | 2:10 | `review-ws-m12-d2` | `e5eeeffceaf185ede0fb359b91fa4da7377739c399ab77b1b0aaa8c20de1f4b4` | 10 |
-| `WS-M12-D3` | math | 1-2 | 3 | 3:10 | `review-ws-m12-d3` | `95068016092cfad580f1532ab0c2b6434ecc445551a9ac6e4f80c87a9233ce6b` | 10 |
-| `WS-M34-D1` | math | 3-4 | 1 | 1:10 | `review-ws-m34-d1` | `b9d73af9d5973607d623d334ebb3417a885bca9bae782e0ba7468a2e10f9ae41` | 10 |
-| `WS-M34-D2` | math | 3-4 | 2 | 1:2 2:8 | `review-ws-m34-d2` | `27a05fd107957042103ae7f43850ba40026dc1feb06a35d4549045ddd34fea89` | 10 |
-| `WS-M34-D3` | math | 3-4 | 3 | 1:1 3:9 | `review-ws-m34-d3` | `dfbb3af0307be21b90cd05d522aebbb5bd97b9df21aeec8fed70cf07b4718220` | 10 |
-| `WS-M56-D1` | math | 5-6 | 1 | 1:10 | `review-ws-m56-d1` | `db997dfaa0b8281fef8ee54240847fb2c5754cbb645d5b9cd6d9e3bcd3f1eda9` | 10 |
-| `WS-M56-D2` | math | 5-6 | 2 | 1:1 2:9 | `review-ws-m56-d2` | `c4cff9b3839a2f8cd07cdfda671c10e3a88bc18ba82ac317ed589fdbe377700e` | 10 |
-| `WS-M56-D3` | math | 5-6 | 3 | 3:10 | `review-ws-m56-d3` | `7b27d19b9ae8954a7741bf620ed5b7a369d8afe1df3446a04d6412e345da0c14` | 10 |
+| `WS-M12-D1` | math | 1-2 | 1 | 1:10 | `review-ws-m12-d1` | `eed1e54ae3dda6971436cb3b742c303b2aaca083e8367d8bf994818230c8c7da` | 10 |
+| `WS-M12-D2` | math | 1-2 | 2 | 2:10 | `review-ws-m12-d2` | `9d5fe1ca3a7b94043f30150035ce8f6ddb182b54ce51da6ea10baf5a1d52ae22` | 10 |
+| `WS-M12-D3` | math | 1-2 | 3 | 3:10 | `review-ws-m12-d3` | `73da6d39b2a60f32a73d7d01b7941f5933f06e66638c3bfd603264bb139e1ae6` | 10 |
+| `WS-M34-D1` | math | 3-4 | 1 | 1:10 | `review-ws-m34-d1` | `b040844fec0799b8610900119897681e2faa687c907fa7fd7a683ef0da4fbfc0` | 10 |
+| `WS-M34-D2` | math | 3-4 | 2 | 1:2 2:8 | `review-ws-m34-d2` | `cfe5a1e5c184c9b6b4129a566071122357927ae950fd6c34f919278835ef502e` | 10 |
+| `WS-M34-D3` | math | 3-4 | 3 | 1:1 3:9 | `review-ws-m34-d3` | `f2410b7b06b3b30fe28b4be1180c75ff1c1f112e7511bb01d4a3fc41af3268b0` | 10 |
+| `WS-M56-D1` | math | 5-6 | 1 | 1:10 | `review-ws-m56-d1` | `8fe40a9f46b20e3aa8a73121c497c193e9fbdd7191fbc7be348d0b533c911b4d` | 10 |
+| `WS-M56-D2` | math | 5-6 | 2 | 1:1 2:9 | `review-ws-m56-d2` | `89310e985d22451c544deaed196c1c5e8ec5027dfb1a7aa6abd1fedc858d9975` | 10 |
+| `WS-M56-D3` | math | 5-6 | 3 | 3:10 | `review-ws-m56-d3` | `fe0f5fd3c5c533a208f34c88e27279511f06c250ca18400a0c7f7fc72b270f02` | 10 |
 | `WS-K12-D1` | korean | 1-2 | 1 | 1:10 | `review-ws-k12-d1` | `d8d8650b20293f56d7e0687fabe4e45b0c20501828454c09b1fb51c7c6be8b31` | 6 |
 | `WS-K12-D2` | korean | 1-2 | 2 | 1:4 2:6 | `review-ws-k12-d2` | `efff98d812822f7d002919c4a98bfd5da2af9c9e746ec1eabd9b70e6da5a32b6` | 6 |
 | `WS-K12-D3` | korean | 1-2 | 3 | 1:5 3:5 | `review-ws-k12-d3` | `b966e4aa1917001620c9a6d3e3e431f1703a5f9ec0f3a42b7cdce3c43f8e4958` | 6 |
@@ -35,7 +35,7 @@
 
 ## WS-M12-D1
 
-- fingerprint: `c9ddc45ed425053c6890d928f60ea0a70e0f1526843bed4ee89d82afdc1a64e0`
+- fingerprint: `eed1e54ae3dda6971436cb3b742c303b2aaca083e8367d8bf994818230c8c7da`
 - seed: `review-ws-m12-d1`
 - 성취기준: `[2수01-02]` `[2수01-04]` `[2수01-05]` `[2수01-06]` `[2수02-01]` `[2수03-01]` `[2수03-02]` `[2수03-05]` `[2수03-07]` `[2수04-02]`
 
@@ -178,7 +178,7 @@ seed review-ws-m12-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M12-D2
 
-- fingerprint: `e5eeeffceaf185ede0fb359b91fa4da7377739c399ab77b1b0aaa8c20de1f4b4`
+- fingerprint: `9d5fe1ca3a7b94043f30150035ce8f6ddb182b54ce51da6ea10baf5a1d52ae22`
 - seed: `review-ws-m12-d2`
 - 성취기준: `[2수01-03]` `[2수01-05]` `[2수01-07]` `[2수01-08]` `[2수01-11]` `[2수03-04]` `[2수03-09]` `[2수03-11]` `[2수03-13]` `[2수04-02]`
 
@@ -330,7 +330,7 @@ seed review-ws-m12-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M12-D3
 
-- fingerprint: `95068016092cfad580f1532ab0c2b6434ecc445551a9ac6e4f80c87a9233ce6b`
+- fingerprint: `73da6d39b2a60f32a73d7d01b7941f5933f06e66638c3bfd603264bb139e1ae6`
 - seed: `review-ws-m12-d3`
 - 성취기준: `[2수01-02]` `[2수01-04]` `[2수01-05]` `[2수01-08]` `[2수01-09]` `[2수03-04]` `[2수03-05]` `[2수03-08]` `[2수03-12]` `[2수03-13]`
 
@@ -477,7 +477,7 @@ seed review-ws-m12-d3 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D1
 
-- fingerprint: `b9d73af9d5973607d623d334ebb3417a885bca9bae782e0ba7468a2e10f9ae41`
+- fingerprint: `b040844fec0799b8610900119897681e2faa687c907fa7fd7a683ef0da4fbfc0`
 - seed: `review-ws-m34-d1`
 - 성취기준: `[4수01-13]` `[4수01-14]` `[4수03-04]` `[4수03-05]` `[4수03-09]` `[4수03-10]` `[4수03-18]` `[4수03-19]` `[4수03-23]` `[4수03-25]`
 
@@ -623,7 +623,7 @@ seed review-ws-m34-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D2
 
-- fingerprint: `27a05fd107957042103ae7f43850ba40026dc1feb06a35d4549045ddd34fea89`
+- fingerprint: `cfe5a1e5c184c9b6b4129a566071122357927ae950fd6c34f919278835ef502e`
 - seed: `review-ws-m34-d2`
 - 성취기준: `[4수01-08]` `[4수01-09]` `[4수01-14]` `[4수03-01]` `[4수03-03]` `[4수03-10]` `[4수03-13]` `[4수03-17]` `[4수03-18]` `[4수04-02]`
 
@@ -766,7 +766,7 @@ seed review-ws-m34-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M34-D3
 
-- fingerprint: `dfbb3af0307be21b90cd05d522aebbb5bd97b9df21aeec8fed70cf07b4718220`
+- fingerprint: `f2410b7b06b3b30fe28b4be1180c75ff1c1f112e7511bb01d4a3fc41af3268b0`
 - seed: `review-ws-m34-d3`
 - 성취기준: `[4수01-07]` `[4수01-11]` `[4수01-15]` `[4수02-03]` `[4수03-01]` `[4수03-05]` `[4수03-14]` `[4수03-17]` `[4수03-25]` `[4수04-02]`
 
@@ -912,7 +912,7 @@ seed review-ws-m34-d3 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D1
 
-- fingerprint: `db997dfaa0b8281fef8ee54240847fb2c5754cbb645d5b9cd6d9e3bcd3f1eda9`
+- fingerprint: `8fe40a9f46b20e3aa8a73121c497c193e9fbdd7191fbc7be348d0b533c911b4d`
 - seed: `review-ws-m56-d1`
 - 성취기준: `[6수01-03]` `[6수01-04]` `[6수01-06]` `[6수01-09]` `[6수02-03]` `[6수03-01]` `[6수03-02]` `[6수03-03]` `[6수03-07]` `[6수03-08]`
 
@@ -1052,7 +1052,7 @@ seed review-ws-m56-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D2
 
-- fingerprint: `c4cff9b3839a2f8cd07cdfda671c10e3a88bc18ba82ac317ed589fdbe377700e`
+- fingerprint: `89310e985d22451c544deaed196c1c5e8ec5027dfb1a7aa6abd1fedc858d9975`
 - seed: `review-ws-m56-d2`
 - 성취기준: `[6수01-06]` `[6수01-12]` `[6수01-15]` `[6수02-02]` `[6수02-03]` `[6수02-05]` `[6수03-06]` `[6수03-11]` `[6수03-12]` `[6수04-06]`
 
@@ -1072,7 +1072,7 @@ seed review-ws-m56-d1 (같은 seed 로 동일한 학습지를 다시 만들 수 
     3/18
     답: ______________
 
- 3. 물음에 답하시오.
+ 3. 물음에 답하시오. 비는 간단히 하지 말고 두 양의 수를 그대로 써서 나타내시오.
     어느 학교 5학년 학생 중 남학생은 279명, 여학생은 76명입니다. 전체 학생 수의 여학생 수에 대한 비를 쓰시오.
     답: ______________
 
@@ -1130,7 +1130,7 @@ seed review-ws-m56-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
       · 1/6이다.
       [6수01-06] 분수를 약분하여 기약분수로 나타내기 (난이도 2)
 
- 3. 물음에 답하시오.
+ 3. 물음에 답하시오. 비는 간단히 하지 말고 두 양의 수를 그대로 써서 나타내시오.
     어느 학교 5학년 학생 중 남학생은 279명, 여학생은 76명입니다. 전체 학생 수의 여학생 수에 대한 비를 쓰시오.
     답: 355 : 76
       · '전체 학생 수의 여학생 수에 대한 비'에서 기준량은 여학생 수이고 비교하는 양은 전체 학생 수이다.
@@ -1195,7 +1195,7 @@ seed review-ws-m56-d2 (같은 seed 로 동일한 학습지를 다시 만들 수 
 
 ## WS-M56-D3
 
-- fingerprint: `7b27d19b9ae8954a7741bf620ed5b7a369d8afe1df3446a04d6412e345da0c14`
+- fingerprint: `fe0f5fd3c5c533a208f34c88e27279511f06c250ca18400a0c7f7fc72b270f02`
 - seed: `review-ws-m56-d3`
 - 성취기준: `[6수01-04]` `[6수01-11]` `[6수01-14]` `[6수01-15]` `[6수02-05]` `[6수03-03]` `[6수03-14]` `[6수04-01]` `[6수04-03]` `[6수04-05]`
 

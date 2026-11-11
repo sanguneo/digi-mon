@@ -158,7 +158,7 @@
       "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 296807,
+  "observedCapacity": 295798,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -1860,8 +1860,8 @@
       "skill": "문장제에서 처음 수나 바뀐 수를 □로 놓고 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 891,
-      "uniqueAtDouble": 1763,
+      "uniqueAtBase": 833,
+      "uniqueAtDouble": 1509,
       "saturated": false,
       "ceiling": null
     },
@@ -1993,7 +1993,7 @@
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtDouble": 1799,
       "saturated": false,
       "ceiling": null
     },
@@ -2003,8 +2003,8 @@
       "skill": "같은 수씩 여러 묶음인 상황을 곱셈식으로 나타내고 계산하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 869,
-      "uniqueAtDouble": 1671,
+      "uniqueAtBase": 771,
+      "uniqueAtDouble": 1357,
       "saturated": false,
       "ceiling": null
     },
@@ -2179,8 +2179,8 @@
       "skill": "똑같이 나누는 상황에서 몫을 분수로 나타내기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 560,
-      "uniqueAtDouble": 859,
+      "uniqueAtBase": 373,
+      "uniqueAtDouble": 490,
       "saturated": false,
       "ceiling": null
     },
@@ -2223,8 +2223,8 @@
       "skill": "대응표에서 규칙을 찾아 다른 값 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 812,
-      "uniqueAtDouble": 1448,
+      "uniqueAtBase": 788,
+      "uniqueAtDouble": 1377,
       "saturated": false,
       "ceiling": null
     },
