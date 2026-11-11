@@ -122,7 +122,8 @@ const countTensOnes = {
         `10개씩 묶음 ${tens}개는 ${tens * 10}이다.`,
         `낱개 ${ones}개를 더하면 ${tens * 10} + ${ones} = ${n}이다.`,
       ],
-      dedupeKey: `count-tens-ones:${tens}:${ones}:${thing.noun}`,
+      // 맥락(명사)만 다른 같은 계산은 같은 문항으로 센다.
+      dedupeKey: `count-tens-ones:${tens}:${ones}`,
       difficulty,
     };
   },
@@ -497,7 +498,8 @@ const storyAdd = {
       stem: story.stem,
       answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, expr] },
       solution: [story.reason, expr, `답은 ${countIda(sum, counter)}.`],
-      dedupeKey: `story-add:${kind}:${a}:${b}:${N}`,
+      // 맥락(명사·장소)만 다른 같은 계산은 같은 문항으로 센다. 문제 구조(kind)는 남긴다.
+      dedupeKey: `story-add:${kind}:${a}:${b}`,
       difficulty,
     };
   },
@@ -546,7 +548,8 @@ const storySub = {
       stem: story.stem,
       answer: { value: rest, display: `${expr} / 답 ${rest}${counter}`, accepts: [num(rest), `${rest}${counter}`, expr] },
       solution: [story.reason, expr, `답은 ${countIda(rest, counter)}.`],
-      dedupeKey: `story-sub:${kind}:${a}:${b}:${N}`,
+      // 맥락(명사·장소)만 다른 같은 계산은 같은 문항으로 센다. 문제 구조(kind)는 남긴다.
+      dedupeKey: `story-sub:${kind}:${a}:${b}`,
       difficulty,
     };
   },
@@ -880,7 +883,8 @@ const groupsToMultiplication = {
         accepts: [num(total), `${total}${thing.counter}`, expr, `${groups} × ${per} = ${total}`],
       },
       solution: [`${per}${thing.counter}씩 ${groups}묶음이다.`, expr],
-      dedupeKey: `groups:${per}:${groups}:${N}`,
+      // 맥락(명사·묶음 단위)만 다른 같은 계산은 같은 문항으로 센다.
+      dedupeKey: `groups:${per}:${groups}`,
       difficulty,
     };
   },

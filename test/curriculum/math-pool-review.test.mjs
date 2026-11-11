@@ -104,3 +104,29 @@ test('맥락 명사만 다른 같은 계산은 같은 문항으로 센다', () =
     }
   }
 });
+
+test('기초 생성기도 맥락 명사만 다른 같은 계산은 같은 문항으로 센다', () => {
+  const pairs = [
+    ['math.g12.no.s01.count-tens-ones', 3, 4],
+    ['math.g12.no.s05.story-add', 3, 19],
+    ['math.g12.no.s05.story-sub', 9, 11],
+    ['math.g12.no.s10.groups', 0, 3],
+  ];
+  for (const [id, left, right] of pairs) {
+    const one = make(id, `dedupe-review:${left}`, 1).raw;
+    const two = make(id, `dedupe-review:${right}`, 1).raw;
+    assert.notEqual(one.stem, two.stem, id);
+    assert.equal(one.answer.value, two.answer.value, id);
+    assert.equal(one.dedupeKey, two.dedupeKey, id);
+  }
+
+  // 키에 한글 맥락(명사)이 섞이지 않는다. 문제 구조(kind)는 남는다.
+  for (const [id] of pairs) {
+    for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+      for (let seed = 0; seed < 200; seed += 1) {
+        const { raw } = make(id, `context-key:${difficulty}:${seed}`, difficulty);
+        assert.doesNotMatch(raw.dedupeKey, /[가-힣]/, `${id} ${raw.dedupeKey}`);
+      }
+    }
+  }
+});

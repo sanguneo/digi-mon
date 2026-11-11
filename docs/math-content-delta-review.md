@@ -147,3 +147,29 @@ da7e5cad223367a15ca1edb3786ae57859299a16fa13d1b818bec3eee647b3fd
 
 이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
 변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
+
+## 2026-11-11 기초 생성기 키 정리
+
+- 검토일: 2026-11-11
+- 비교 기준: `940246d`
+- 판정: PR #3 리뷰 지적 6번(맥락 명사 키)이 기초 생성기 `src/generators/math/g12-number-operations.mjs`에도 남아 있어 같은 기준으로 고쳤다
+- 방법: 명사만 다르고 계산이 같은 seed 쌍을 생성기마다 찾아 회귀 테스트(`test/curriculum/math-pool-review.test.mjs`)를 먼저 넣어 실패를 확인한 뒤 고쳤다. 문항 본문·답·풀이·verify는 바꾸지 않았다.
+
+| 생성기 | 이전 키 | 바뀐 키 |
+|---|---|---|
+| `math.g12.no.s01.count-tens-ones` | `count-tens-ones:묶음:낱개:명사` | `count-tens-ones:묶음:낱개` |
+| `math.g12.no.s05.story-add` | `story-add:kind:a:b:명사` | `story-add:kind:a:b` |
+| `math.g12.no.s05.story-sub` | `story-sub:kind:a:b:명사` | `story-sub:kind:a:b` |
+| `math.g12.no.s10.groups` | `groups:묶음 수:묶음 개수:명사` | `groups:묶음 수:묶음 개수` |
+
+문제 구조(`kind`: 더 받기·모으기·함께 놀기, 덜어 내기·비교·나머지 부분)는 식은 같아도 다른 덧셈·뺄셈 상황이므로 키에 남겼다.
+`math.g12.no.s01.count-native`의 단위(`개`·`자루` 등)는 정답 읽기 자체가 달라지므로 남겼다. 나머지 키는 수·빈칸 위치·순서 방향만 담고 있다.
+
+검토한 수학 생성기는 265개이며 현재 소스 집합의 지문값은 다음과 같다.
+
+```text
+3ce70e3f74df2aa14c1adea3405cc61c307eca43a6fccf3e2e44c1d0d3cddde9
+```
+
+이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
+변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
