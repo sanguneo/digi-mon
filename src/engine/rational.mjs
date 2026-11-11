@@ -126,6 +126,18 @@ export function formatUnreducedFraction({ n, d }) {
   return `${n}/${d}`;
 }
 
+/**
+ * 값이 같은 기약 표기(진분수·가분수, 1보다 크면 대분수도). 자연수가 되면 그 수 하나.
+ * 답을 약분하지 않은 꼴로 보여 주는 문항도 학생이 약분해 쓴 같은 값은 정답이다.
+ * unit 을 주면 단위를 붙인 표기도 함께 돌려준다.
+ */
+export function reducedFractionForms(fraction, unit = '') {
+  const r = reduceFraction(fraction);
+  const forms = r.d === 1 ? [String(r.n)] : [formatFraction(r)];
+  if (r.d > 1 && r.n > r.d) forms.push(formatMixed(toMixed(r)));
+  return unit ? forms.flatMap((form) => [form, `${form}${unit}`]) : forms;
+}
+
 /** 한국어 읽기: 2/3 -> '3분의 2'. 분모를 먼저 읽는다. */
 export function readFraction({ n, d }) {
   return `${d}분의 ${n}`;

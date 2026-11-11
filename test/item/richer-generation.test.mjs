@@ -102,7 +102,13 @@ for (const [operation, kinds] of [
 test('simple arithmetic supports 30 and 50 distinct numeric drills without increasing difficulty', () => {
   for (const count of [30, 50]) {
     const options = {
-      subject: 'math', codes: ['[2수01-06]'], count, difficulty: 1, seed: `simple-drills:${count}`,
+      subject: 'math',
+      codes: ['[2수01-06]'],
+      // 빈 자리 숫자·식 비교 문항도 같은 성취기준에 있다. 이 검사는 두 자리 수 계산 연습만 본다.
+      generatorIds: ['math.g12.no.s06.add', 'math.g12.no.s06.sub'],
+      count,
+      difficulty: 1,
+      seed: `simple-drills:${count}`,
     };
     const worksheet = buildWorksheet(spine, registry, options);
     assert.equal(worksheet.produced, count);

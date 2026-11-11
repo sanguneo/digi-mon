@@ -39,6 +39,21 @@ function resolveChoiceResponse(item, raw) {
   return trimmed;
 }
 
+/**
+ * 소수 부분 끝에 0을 더 붙인 응답(6.2 -> 6.20, 6.2L -> 6.20L)은 같은 값이므로 정답과 같게 본다.
+ * 정답 표기에 소수점이 있는 수에만 0을 더할 수 있다. 정답보다 자릿수를 줄인 답(3.10 -> 3.1)과
+ * 자연수 답에 소수점을 붙인 답(6 -> 6.0)은 그대로 다르고, 수 밖의 글자(단위·연산 기호)도 같아야 한다.
+ */
+const NUMBER_TOKEN = /\d+(?:\.\d+)?/g;
+function matchesWithTrailingZeros(response, accepted) {
+  const got = response.match(NUMBER_TOKEN) ?? [];
+  const want = accepted.match(NUMBER_TOKEN) ?? [];
+  if (got.length === 0 || got.length !== want.length) return false;
+  if (response.replace(NUMBER_TOKEN, '#') !== accepted.replace(NUMBER_TOKEN, '#')) return false;
+  return got.every((token, k) => token === want[k]
+    || (want[k].includes('.') && token.startsWith(want[k]) && /^0+$/.test(token.slice(want[k].length))));
+}
+
 export function gradeItem(item, response) {
   // 작도 문항은 기계가 정답을 판정하지 않는다. 채점 기준을 넘겨 사람이 보게 한다.
   // 정확도를 계산할 때 이 문항을 섞으면 사람이 아직 안 본 것을 오답으로 세게 된다.
@@ -63,7 +78,8 @@ export function gradeItem(item, response) {
   const normalized = normalizeResponse(submitted);
   const accepted = item.answer.accepts.map(normalizeResponse);
   const answered = normalized.length > 0;
-  const correct = answered && accepted.includes(normalized);
+  const correct = answered && (accepted.includes(normalized)
+    || (item.format !== 'multiple-choice' && accepted.some((answer) => matchesWithTrailingZeros(normalized, answer))));
 
   return {
     number: item.number,

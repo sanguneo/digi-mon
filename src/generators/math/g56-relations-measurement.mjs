@@ -450,7 +450,7 @@ const cuboidEdgeSum = {
       solution: isCube
         ? ['정육면체의 모서리는 12개이고 길이가 모두 같다.', `${a} × 12 = ${total}cm`]
         : ['가로·세로·높이 모서리가 각각 4개씩이다.', `(${a} + ${b} + ${c}) × 4 = ${total}cm`],
-      dedupeKey: `edge-sum:${a}:${b}:${c}`,
+      dedupeKey: `edge-sum:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },
@@ -1002,7 +1002,8 @@ const areaOfPolygon = {
         `${spec.korean}의 넓이는 ${kind === 'trapezoid' ? '(윗변 + 아랫변) × 높이 ÷ 2' : kind === 'triangle' ? '밑변 × 높이 ÷ 2' : kind === 'rhombus' ? '두 대각선의 곱 ÷ 2' : '가로 × 세로'}로 구한다.`,
         `${kind === 'trapezoid' ? spec.formula(a, b, h) : spec.formula(a, b)} = ${value}cm²`,
       ],
-      dedupeKey: `area:${kind}:${a}:${b}:${h ?? ''}`,
+      // 마름모의 두 대각선은 말한 순서가 문제가 아니다.
+      dedupeKey: `area:${kind}:${kind === 'rhombus' ? [a, b].sort((x, y) => x - y).join(':') : `${a}:${b}`}:${h ?? ''}`,
       difficulty,
     };
   },
@@ -1266,7 +1267,7 @@ const surfaceArea = {
       solution: isCube
         ? ['정육면체는 합동인 정사각형 6개로 둘러싸여 있다.', `${a} × ${a} × 6 = ${value}cm²`]
         : ['마주보는 면이 각각 합동이므로 세 종류의 면을 구해 2배 한다.', `(${a}×${b} + ${b}×${c} + ${c}×${a}) × 2 = ${value}cm²`],
-      dedupeKey: `surface-area:${a}:${b}:${c}`,
+      dedupeKey: `surface-area:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },
@@ -1301,7 +1302,7 @@ const volume = {
         '직육면체의 부피는 가로 × 세로 × 높이로 구한다.',
         `${a} × ${b} × ${c} = ${value}cm³`,
       ],
-      dedupeKey: `volume:${a}:${b}:${c}`,
+      dedupeKey: `volume:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },
@@ -1388,7 +1389,8 @@ const averageValue = {
         `자료의 합은 ${values.join(' + ')} = ${total}이다.`,
         `자료의 수가 ${count}개이므로 평균은 ${total} ÷ ${count} = ${average}이다.`,
       ],
-      dedupeKey: `average:${values.join('-')}`,
+      // 자료를 말한 순서는 평균에 영향이 없다.
+      dedupeKey: `average:${[...values].sort((x, y) => x - y).join('-')}`,
       difficulty,
     };
   },
@@ -1429,7 +1431,7 @@ const findMissingForAverage = {
         `자료가 ${count}개이고 평균이 ${average}이므로 합계는 ${average} × ${count} = ${total}이다.`,
         `${total} - (${known.join(' + ')}) = ${rest}`,
       ],
-      dedupeKey: `missing-average:${known.join('-')}:${average}`,
+      dedupeKey: `missing-average:${[...known].sort((x, y) => x - y).join('-')}:${average}`,
       difficulty,
     };
   },

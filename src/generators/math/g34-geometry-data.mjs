@@ -761,7 +761,8 @@ const angleSum = {
       stem: `사각형의 네 각 중 세 각이 ${a}°, ${b}°, ${c}°입니다. 나머지 한 각은 몇 도입니까?`,
       answer: { value: missing, display: `${missing}°`, accepts: [num(missing), `${missing}°`, `${missing}도`] },
       solution: ['사각형의 네 각의 크기의 합은 360도다.', `360 - ${a} - ${b} - ${c} = ${missing}°`],
-      dedupeKey: `angle-sum-quad:${a}:${b}:${c}`,
+      // 아는 세 각을 말한 순서는 문제가 아니다. 그림이 없으므로 세 각의 집합이 문제다.
+      dedupeKey: `angle-sum-quad:${[a, b, c].sort((x, y) => x - y).join(':')}`,
       difficulty,
     };
   },
@@ -847,7 +848,7 @@ const readBarGraphValue = {
         `세로축 한 칸은 ${s.step}${s.unit}이다.`,
         `${s.categories[askIndex]} 막대는 ${value}${s.unit}까지 올라가 있다.`,
       ],
-      dedupeKey: `read-bar:${s.topic}:${s.counts.join('-')}:${askIndex}`,
+      dedupeKey: `read-bar:${s.topic}:${s.counts.join('-')}:${s.step}:${askIndex}`,
       difficulty,
     };
   },
@@ -987,7 +988,7 @@ const interpretBarGraph = {
       },
       answer: { value: spec.value, display: spec.display, accepts: spec.accepts },
       solution: spec.solution,
-      dedupeKey: `interpret-bar:${s.topic}:${s.counts.join('-')}:${mode}`,
+      dedupeKey: `interpret-bar:${s.topic}:${s.counts.join('-')}:${s.step}:${mode}`,
       difficulty,
     };
   },

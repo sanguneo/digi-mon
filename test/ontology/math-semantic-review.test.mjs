@@ -31,7 +31,7 @@ test('the reviewed math generator set is exact and fails closed on drift', () =>
   const review = reviewMathGeneratorSet(generators);
 
   assert.equal(review.valid, true);
-  assert.equal(review.approvedGeneratorIds.size, 152);
+  assert.equal(review.approvedGeneratorIds.size, 265);
   assert.equal(review.fingerprint, MATH_GENERATOR_REVIEW.reviewFingerprint);
 
   const drifted = generators.filter((generator) => generator.id !== 'math.g12.gm.s05.count-sides');
