@@ -3,7 +3,7 @@
 이 문서는 사람이 작성하는 판정 원장이다. 표본과 정답은 [생성된 품질 기준선](review/quality-baseline.md)에서 읽는다.
 생성 성공, schema 통과, 자동 검산은 교육적 품질 승인이 아니다.
 
-baselineFingerprint: `efac0d7c8ba60269f9d00f2390600c01231996b21a254109bf702c204f76639e`
+baselineFingerprint: `e9b8a4c2f07a4f410f5ba8775571983bedb9fc3dda6fecdab987d355fcb4b091`
 reviewer: `pending`
 reviewDate: `pending`
 

@@ -7095,24 +7095,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 94,
+          "unique": 41,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 154,
+          "unique": 82,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 68,
+          "unique": 29,
           "failed": 0
         }
       },
-      "uniqueTotal": 241,
+      "uniqueTotal": 113,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.2008
+      "uniqueRatio": 0.0942
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -7121,7 +7121,33 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 111,
+          "unique": 49,
+          "failed": 0
+        },
+        "2": {
+          "generated": 400,
+          "unique": 49,
+          "failed": 0
+        },
+        "3": {
+          "generated": 400,
+          "unique": 49,
+          "failed": 0
+        }
+      },
+      "uniqueTotal": 49,
+      "generated": 1200,
+      "failed": 0,
+      "uniqueRatio": 0.0408
+    },
+    {
+      "generatorId": "korean.g12.gr.s02.has-final",
+      "code": "[2국04-02]",
+      "skill": "받침이 있는 낱말 고르기",
+      "byDifficulty": {
+        "1": {
+          "generated": 400,
+          "unique": 109,
           "failed": 0
         },
         "2": {
@@ -7131,40 +7157,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 113,
+          "unique": 109,
           "failed": 0
         }
       },
-      "uniqueTotal": 117,
+      "uniqueTotal": 113,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0975
-    },
-    {
-      "generatorId": "korean.g12.gr.s02.has-final",
-      "code": "[2국04-02]",
-      "skill": "받침이 있는 낱말 고르기",
-      "byDifficulty": {
-        "1": {
-          "generated": 400,
-          "unique": 221,
-          "failed": 0
-        },
-        "2": {
-          "generated": 400,
-          "unique": 225,
-          "failed": 0
-        },
-        "3": {
-          "generated": 400,
-          "unique": 230,
-          "failed": 0
-        }
-      },
-      "uniqueTotal": 322,
-      "generated": 1200,
-      "failed": 0,
-      "uniqueRatio": 0.2683
+      "uniqueRatio": 0.0942
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -7261,14 +7261,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 233,
+          "unique": 236,
           "failed": 0
         }
       },
-      "uniqueTotal": 1033,
+      "uniqueTotal": 1036,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.8608
+      "uniqueRatio": 0.8633
     },
     {
       "generatorId": "korean.g34.gr.s02.dictionary-first",
@@ -7958,19 +7958,19 @@
         },
         "2": {
           "generated": 400,
-          "unique": 28,
+          "unique": 25,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 28,
+          "unique": 25,
           "failed": 0
         }
       },
-      "uniqueTotal": 28,
+      "uniqueTotal": 25,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.0233
+      "uniqueRatio": 0.0208
     },
     {
       "generatorId": "english.g34.st.s02-06.command",

@@ -27,14 +27,14 @@ export const FACT_OPINION = [
   { text: '이 책은 백 쪽입니다.', kind: 'fact', basis: '세어 보면 확인할 수 있다' },
   { text: '운동장에 나무가 다섯 그루 있습니다.', kind: 'fact', basis: '세어 보면 확인할 수 있다' },
 
-  { text: '가을이 가장 아름다운 계절입니다.', kind: 'opinion', basis: "'가장 아름답다' 는 사람마다 다르게 느낀다" },
-  { text: '이 책은 정말 재미있습니다.', kind: 'opinion', basis: "'재미있다' 는 읽는 사람의 느낌이다" },
-  { text: '수학은 어려운 과목입니다.', kind: 'opinion', basis: "'어렵다' 는 사람에 따라 다르다" },
-  { text: '우리 반 친구들은 모두 착합니다.', kind: 'opinion', basis: "'착하다' 는 보는 사람의 판단이다" },
-  { text: '아침에 운동하는 것이 좋습니다.', kind: 'opinion', basis: "'좋다' 는 생각을 나타낸다" },
-  { text: '이 그림이 더 예쁩니다.', kind: 'opinion', basis: "'예쁘다' 는 느낌이라 사람마다 다르다" },
-  { text: '겨울보다 여름이 낫습니다.', kind: 'opinion', basis: "'낫다' 는 비교하는 사람의 판단이다" },
-  { text: '도서관은 조용해야 합니다.', kind: 'opinion', basis: "'해야 한다' 는 주장을 나타낸다" },
+  { text: '가을이 가장 아름다운 계절입니다.', kind: 'opinion', basis: "'가장 아름답다'는 사람마다 다르게 느낀다" },
+  { text: '이 책은 정말 재미있습니다.', kind: 'opinion', basis: "'재미있다'는 읽는 사람의 느낌이다" },
+  { text: '수학은 어려운 과목입니다.', kind: 'opinion', basis: "'어렵다'는 사람에 따라 다르다" },
+  { text: '우리 반 친구들은 모두 착합니다.', kind: 'opinion', basis: "'착하다'는 보는 사람의 판단이다" },
+  { text: '아침에 운동하는 것이 좋습니다.', kind: 'opinion', basis: "'좋다'는 생각을 나타낸다" },
+  { text: '이 그림이 더 예쁩니다.', kind: 'opinion', basis: "'예쁘다'는 느낌이라 사람마다 다르다" },
+  { text: '겨울보다 여름이 낫습니다.', kind: 'opinion', basis: "'낫다'는 비교하는 사람의 판단이다" },
+  { text: '도서관은 조용해야 합니다.', kind: 'opinion', basis: "'해야 한다'는 주장을 나타낸다" },
 ];
 
 /**
@@ -44,12 +44,12 @@ export const FACT_OPINION = [
  * 비유가 아닌 문장은 사실을 그대로 적은 것이다.
  */
 export const FIGURATIVE = [
-  { text: '아기 볼이 사과처럼 빨갛습니다.', kind: 'simile', vehicle: '사과', basis: "'처럼' 으로 견주었다" },
-  { text: '눈이 솜처럼 부드럽습니다.', kind: 'simile', vehicle: '솜', basis: "'처럼' 으로 견주었다" },
-  { text: '아이가 새같이 노래합니다.', kind: 'simile', vehicle: '새', basis: "'같이' 로 견주었다" },
-  { text: '별이 보석같이 반짝입니다.', kind: 'simile', vehicle: '보석', basis: "'같이' 로 견주었다" },
-  { text: '구름이 솜사탕처럼 뭉쳤습니다.', kind: 'simile', vehicle: '솜사탕', basis: "'처럼' 으로 견주었다" },
-  { text: '바람이 속삭이듯이 지나갑니다.', kind: 'simile', vehicle: '속삭임', basis: "'듯이' 로 견주었다" },
+  { text: '아기 볼이 사과처럼 빨갛습니다.', kind: 'simile', vehicle: '사과', basis: "'처럼'으로 견주었다" },
+  { text: '눈이 솜처럼 부드럽습니다.', kind: 'simile', vehicle: '솜', basis: "'처럼'으로 견주었다" },
+  { text: '아이가 새같이 노래합니다.', kind: 'simile', vehicle: '새', basis: "'같이'로 견주었다" },
+  { text: '별이 보석같이 반짝입니다.', kind: 'simile', vehicle: '보석', basis: "'같이'로 견주었다" },
+  { text: '구름이 솜사탕처럼 뭉쳤습니다.', kind: 'simile', vehicle: '솜사탕', basis: "'처럼'으로 견주었다" },
+  { text: '바람이 속삭이듯이 지나갑니다.', kind: 'simile', vehicle: '속삭임', basis: "'듯이'로 견주었다" },
 
   { text: '내 동생은 우리 집 햇살입니다.', kind: 'metaphor', vehicle: '햇살', basis: '견주는 말 없이 바로 이르렀다' },
   { text: '시간은 화살입니다.', kind: 'metaphor', vehicle: '화살', basis: '견주는 말 없이 바로 이르렀다' },

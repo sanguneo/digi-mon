@@ -4,7 +4,7 @@
   "baseSamples": 300,
   "minCeiling": 12,
   "generatorCount": 306,
-  "saturatedCount": 102,
+  "saturatedCount": 103,
   "thinCount": 0,
   "declaredBounded": [
     {
@@ -129,8 +129,8 @@
     },
     {
       "generatorId": "english.g34.st.s01-05.meaning",
-      "ceiling": 28,
-      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다."
+      "ceiling": 25,
+      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 17개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다."
     },
     {
       "generatorId": "english.g34.st.s02-06.command",
@@ -158,7 +158,7 @@
       "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 292262,
+  "observedCapacity": 291827,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -3103,10 +3103,10 @@
       "skill": "낱말을 자모로 나누어 세기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 227,
-      "uniqueAtDouble": 247,
+      "uniqueAtBase": 113,
+      "uniqueAtDouble": 113,
       "saturated": true,
-      "ceiling": 247
+      "ceiling": 113
     },
     {
       "generatorId": "korean.g12.gr.s02.final",
@@ -3114,10 +3114,10 @@
       "skill": "낱말의 받침 찾기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 112,
-      "uniqueAtDouble": 117,
+      "uniqueAtBase": 49,
+      "uniqueAtDouble": 49,
       "saturated": true,
-      "ceiling": 117
+      "ceiling": 49
     },
     {
       "generatorId": "korean.g12.gr.s02.has-final",
@@ -3125,10 +3125,10 @@
       "skill": "받침이 있는 낱말 고르기",
       "axis": "single",
       "capacityNote": null,
-      "uniqueAtBase": 199,
-      "uniqueAtDouble": 272,
-      "saturated": false,
-      "ceiling": null
+      "uniqueAtBase": 107,
+      "uniqueAtDouble": 112,
+      "saturated": true,
+      "ceiling": 112
     },
     {
       "generatorId": "korean.g12.gr.s03.punctuation",
@@ -3169,8 +3169,8 @@
       "skill": "국어사전에서 낱말 찾는 순서 알기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 790,
-      "uniqueAtDouble": 1573,
+      "uniqueAtBase": 758,
+      "uniqueAtDouble": 1503,
       "saturated": false,
       "ceiling": null
     },
@@ -3465,11 +3465,11 @@
       "code": "[4영01-05]",
       "skill": "문장의 뜻 알기",
       "axis": "categorical",
-      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.",
-      "uniqueAtBase": 28,
-      "uniqueAtDouble": 28,
+      "capacityNote": "기존 문장 8개와 색·위치·행동 문장 17개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.",
+      "uniqueAtBase": 25,
+      "uniqueAtDouble": 25,
       "saturated": true,
-      "ceiling": 28
+      "ceiling": 25
     },
     {
       "generatorId": "english.g34.st.s02-06.command",

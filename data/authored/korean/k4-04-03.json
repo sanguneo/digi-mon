@@ -1,0 +1,2200 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국04-03]",
+  "skill": "기본 문장 짜임 이해와 사용",
+  "items": [
+    {
+      "id": "02704ae1217e",
+      "difficulty": 1,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "형이 먹습니다.",
+      "answer": "형이 사과를 먹습니다.",
+      "distractors": [
+        "형이 빨리 먹습니다.",
+        "형이 식탁에서 먹습니다.",
+        "형이 많이 먹습니다."
+      ],
+      "solution": [
+        "'사과를'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "067c3c65f2f6",
+      "difficulty": 1,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "오늘 아침 하늘이 맑습니다.",
+      "answer": "맑습니다",
+      "distractors": [
+        "오늘",
+        "아침",
+        "하늘이"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '맑습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0755b35220c4",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "내 꿈은 소방관입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0786cebfb18a",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "한겨울 바깥 공기가 □",
+      "answer": "차갑습니다.",
+      "distractors": [
+        "차가운.",
+        "공기를.",
+        "바깥에서."
+      ],
+      "solution": [
+        "문장을 완성하려면 '어떠하다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '차갑습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "07b2f792dbf4",
+      "difficulty": 1,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "동생이 읽습니다.",
+      "answer": "동생이 동화책을 읽습니다.",
+      "distractors": [
+        "동생이 큰 소리로 읽습니다.",
+        "동생이 방에서 읽습니다.",
+        "동생이 천천히 읽습니다."
+      ],
+      "solution": [
+        "'동화책을'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "080b1998ba26",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "운동장이 □",
+      "answer": "넓습니다.",
+      "distractors": [
+        "넓은.",
+        "운동장을.",
+        "친구와."
+      ],
+      "solution": [
+        "문장을 완성하려면 '어떠하다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '넓습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0b754f763695",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "시냇물이 마을 앞으로 □",
+      "answer": "흐릅니다.",
+      "distractors": [
+        "시냇물을.",
+        "마을에서.",
+        "졸졸."
+      ],
+      "solution": [
+        "문장을 완성하려면 '어찌하다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '흐릅니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0ddadd0a8f53",
+      "difficulty": 1,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "아침에 동생이 우유를 마셨습니다.",
+      "answer": "동생이",
+      "distractors": [
+        "아침에",
+        "우유를",
+        "마셨습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '동생이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0fd52db6e429",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "누나가 노래를 부릅니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "10fcac9b9108",
+      "difficulty": 2,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "강아지가 멍멍 짖습니다.",
+      "answer": "아기가 웁니다.",
+      "distractors": [
+        "하늘이 파랗습니다.",
+        "사과는 과일입니다.",
+        "형이 공을 찹니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "131b4ae47907",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "할머니께서 □ 심으십니다.",
+      "answer": "씨앗을",
+      "distractors": [
+        "씨앗이",
+        "씨앗에게",
+        "씨앗과"
+      ],
+      "solution": [
+        "문장을 완성하려면 '무엇을'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '씨앗을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13fd0fbbbfbc",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "아기가 웃습니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15530855617a",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "강아지가 짖습니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15e7ba34716c",
+      "difficulty": 1,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "병아리가 마당에서 삐악삐악 웁니다.",
+      "answer": "웁니다",
+      "distractors": [
+        "병아리가",
+        "마당에서",
+        "삐악삐악"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '웁니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "179eda46fdce",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "아버지께서 신문을 보십니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17f08fb3e07f",
+      "difficulty": 2,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "시냇물이 맑습니다.",
+      "answer": "꽃이 예쁩니다.",
+      "distractors": [
+        "새가 납니다.",
+        "고래는 동물입니다.",
+        "동생이 밥을 먹습니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19c12058fad0",
+      "difficulty": 2,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "탑니다, 자전거를, 형이",
+      "answer": "형이 자전거를 탑니다.",
+      "distractors": [
+        "탑니다 형이 자전거를.",
+        "자전거를 탑니다 형이.",
+        "형이 탑니다 자전거를."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '형이 자전거를 탑니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "208a9c8c4f6d",
+      "difficulty": 2,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "읽습니다, 언니가, 책을",
+      "answer": "언니가 책을 읽습니다.",
+      "distractors": [
+        "읽습니다 언니가 책을.",
+        "책을 읽습니다 언니가.",
+        "언니가 읽습니다 책을."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '언니가 책을 읽습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a98e28cb8bd",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "바람이 붑니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d591203ee6b",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "아버지께서 회사에 가십니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2df09312c645",
+      "difficulty": 2,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "어제 바다가 정말 시원했습니다.",
+      "answer": "시원했습니다",
+      "distractors": [
+        "어제",
+        "바다가",
+        "정말"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '시원했습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "314e57db2292",
+      "difficulty": 2,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "마당에서 강아지가 신발을 물었습니다.",
+      "answer": "강아지가",
+      "distractors": [
+        "마당에서",
+        "신발을",
+        "물었습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '강아지가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32345a7638dc",
+      "difficulty": 2,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "어머니께서 시장에서 귤을 사 오셨습니다.",
+      "answer": "귤을",
+      "distractors": [
+        "어머니께서",
+        "시장에서",
+        "사 오셨습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '귤을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3239c6c31ad8",
+      "difficulty": 3,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "동생이 친구에게 편지를 썼습니다.",
+      "answer": "편지를",
+      "distractors": [
+        "동생이",
+        "친구에게",
+        "썼습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '편지를'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32a6453dcfd2",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "고양이가 생선을 먹습니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "36d271d6b62c",
+      "difficulty": 2,
+      "instruction": "문장에서 '무엇이'에 해당하는 말을 고르시오.",
+      "stem": "아침마다 해가 동쪽에서 뜹니다.",
+      "answer": "해가",
+      "distractors": [
+        "아침마다",
+        "동쪽에서",
+        "뜹니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '해가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d96cfccd702",
+      "difficulty": 3,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "비가 내립니다.",
+      "answer": "버스가 떠납니다.",
+      "distractors": [
+        "버스가 빠릅니다.",
+        "이것은 버스입니다.",
+        "기사님이 버스를 운전합니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e843ded15cc",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "아이들이 마당에서 눈사람을 만듭니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40023b76c6a5",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 '누가'에 해당하는 말을 고르시오.",
+      "stem": "□ 공을 멀리 던졌습니다.",
+      "answer": "친구가",
+      "distractors": [
+        "친구를",
+        "친구에게",
+        "친구와"
+      ],
+      "solution": [
+        "문장을 완성하려면 '누가'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '친구가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "41257503e8c3",
+      "difficulty": 1,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "강아지가 마당에서 천천히 걸어갑니다.",
+      "answer": "걸어갑니다",
+      "distractors": [
+        "강아지가",
+        "마당에서",
+        "천천히"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '걸어갑니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "45a6b730368e",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "동생이 잡니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4b952ff809c3",
+      "difficulty": 3,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "참새 두 마리가 지붕에서 지저귑니다.",
+      "answer": "지저귑니다",
+      "distractors": [
+        "참새",
+        "두 마리가",
+        "지붕에서"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '지저귑니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4e9444d89035",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "오늘은 내 생일입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53e3c34f27db",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "우리 교실은 늘 조용합니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5431024e2b3c",
+      "difficulty": 2,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "할머니께서 마당에서 고추를 말리십니다.",
+      "answer": "할머니께서",
+      "distractors": [
+        "마당에서",
+        "고추를",
+        "말리십니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '할머니께서'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57665242c263",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "기차가 천천히 떠납니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57e0d08ece48",
+      "difficulty": 2,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "동생이 아침에 이를 닦았습니다.",
+      "answer": "닦았습니다",
+      "distractors": [
+        "동생이",
+        "아침에",
+        "이를"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '닦았습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "597f71bfc2ed",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "언니가 공책에 그림을 그립니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5bf20effacdf",
+      "difficulty": 2,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "나는 비 오는 날 우산을 썼습니다.",
+      "answer": "우산을",
+      "distractors": [
+        "나는",
+        "날",
+        "썼습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '우산을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5bfa2bfb1e13",
+      "difficulty": 3,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "아버지께서 씻으십니다.",
+      "answer": "아버지께서 그릇을 씻으십니다.",
+      "distractors": [
+        "아버지께서 부엌에서 씻으십니다.",
+        "아버지께서 깨끗하게 씻으십니다.",
+        "아버지께서 저녁에 씻으십니다."
+      ],
+      "solution": [
+        "'그릇을'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c9cbaec873f",
+      "difficulty": 3,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "여름 수박이 정말 달콤했습니다.",
+      "answer": "달콤했습니다",
+      "distractors": [
+        "여름",
+        "수박이",
+        "정말"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '달콤했습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e478601a9fc",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "거북은 걸음이 느립니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "629aec20b7d7",
+      "difficulty": 2,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "아기 볼이 솜처럼 부드럽습니다.",
+      "answer": "부드럽습니다",
+      "distractors": [
+        "아기",
+        "볼이",
+        "솜처럼"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '부드럽습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66a084adccf6",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "바다가 넓습니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "675a6f616317",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "이것은 내 연필입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "68c97dda9901",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "동생이 도서관에서 책을 빌렸습니다.",
+      "answer": "책을",
+      "distractors": [
+        "동생이",
+        "도서관에서",
+        "빌렸습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '책을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b1036aab2cf",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "하늘이 파랗습니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d4869392960",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "누나가 □ 읽습니다.",
+      "answer": "책을",
+      "distractors": [
+        "책이",
+        "책에게",
+        "책과"
+      ],
+      "solution": [
+        "문장을 완성하려면 '무엇을'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '책을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ead3c043423",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "추워서 나는 장갑을 꼈습니다.",
+      "answer": "장갑을",
+      "distractors": [
+        "추워서",
+        "나는",
+        "꼈습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '장갑을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "70392632ba72",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '누가'에 해당하는 말을 고르시오.",
+      "stem": "□ 운동장을 뛰어갑니다.",
+      "answer": "동생이",
+      "distractors": [
+        "동생을",
+        "동생에게",
+        "동생과"
+      ],
+      "solution": [
+        "문장을 완성하려면 '누가'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '동생이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "721afcee6435",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "동생이 학교에 갑니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74cc4d96632e",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "물고기가 연못에서 헤엄칩니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7592e5349d64",
+      "difficulty": 2,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "누나가 우체국에서 편지를 보냈습니다.",
+      "answer": "보냈습니다",
+      "distractors": [
+        "누나가",
+        "우체국에서",
+        "편지를"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '보냈습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "766863745657",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "새가 날아갑니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7b153959703d",
+      "difficulty": 2,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "교실에서 선생님께서 책을 읽으십니다.",
+      "answer": "선생님께서",
+      "distractors": [
+        "교실에서",
+        "책을",
+        "읽으십니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '선생님께서'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7cb3982ec292",
+      "difficulty": 3,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "할머니께서 만드십니다.",
+      "answer": "할머니께서 떡을 만드십니다.",
+      "distractors": [
+        "할머니께서 정성껏 만드십니다.",
+        "할머니께서 부엌에서 만드십니다.",
+        "할머니께서 아침에 만드십니다."
+      ],
+      "solution": [
+        "'떡을'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7cc6d11ae6fb",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "형이 책을 읽습니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "824d9620f569",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "밤하늘이 무척 어둡습니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8271a0820c07",
+      "difficulty": 2,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "동생이 물을 마십니다.",
+      "answer": "누나가 편지를 씁니다.",
+      "distractors": [
+        "누나가 웃습니다.",
+        "편지가 깁니다.",
+        "이것은 편지입니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "832b0c8ab833",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "수박이 무겁습니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "835cd7f72c74",
+      "difficulty": 1,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "운동장에서 친구가 공을 찼습니다.",
+      "answer": "친구가",
+      "distractors": [
+        "운동장에서",
+        "공을",
+        "찼습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '친구가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "84597f328768",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '누가'에 해당하는 말을 고르시오.",
+      "stem": "□ 꼬리를 흔듭니다.",
+      "answer": "강아지가",
+      "distractors": [
+        "강아지를",
+        "강아지에게",
+        "강아지와"
+      ],
+      "solution": [
+        "문장을 완성하려면 '누가'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '강아지가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "850faf7943bb",
+      "difficulty": 2,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "우리 반 친구들은 모두 착합니다.",
+      "answer": "착합니다",
+      "distractors": [
+        "우리",
+        "친구들은",
+        "모두"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '착합니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "85bc9e56b2ce",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "사탕이 답니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "86dfe2311cd6",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "참새가 지붕에 앉습니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8a817d40939f",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇이'에 해당하는 말을 고르시오.",
+      "stem": "오늘 바람이 많이 붑니다.",
+      "answer": "바람이",
+      "distractors": [
+        "오늘",
+        "많이",
+        "붑니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '바람이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e6aae1e96ce",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇이'에 해당하는 말을 고르시오.",
+      "stem": "봄날에 꽃이 활짝 피었습니다.",
+      "answer": "꽃이",
+      "distractors": [
+        "봄날에",
+        "활짝",
+        "피었습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '꽃이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9012f7bfa48f",
+      "difficulty": 3,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "찹니다, 공을, 친구가, 운동장에서",
+      "answer": "친구가 운동장에서 공을 찹니다.",
+      "distractors": [
+        "친구가 공을 찹니다 운동장에서.",
+        "찹니다 친구가 운동장에서 공을.",
+        "운동장에서 찹니다 친구가 공을."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '친구가 운동장에서 공을 찹니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "93218e2e2b22",
+      "difficulty": 3,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "그립니다, 동생이, 그림을, 도화지에",
+      "answer": "동생이 도화지에 그림을 그립니다.",
+      "distractors": [
+        "동생이 그림을 그립니다 도화지에.",
+        "그립니다 동생이 그림을 도화지에.",
+        "도화지에 그립니다 동생이 그림을."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '동생이 도화지에 그림을 그립니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "993d971442b3",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "친구가 힘차게 달립니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b72237fbf9f",
+      "difficulty": 3,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "친구가 동생에게 사탕을 주었습니다.",
+      "answer": "친구가",
+      "distractors": [
+        "동생에게",
+        "사탕을",
+        "주었습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '친구가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f48960d127b",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '무엇이다'에 해당하는 말을 고르시오.",
+      "stem": "토끼는 □",
+      "answer": "동물입니다.",
+      "distractors": [
+        "동물을.",
+        "동물과.",
+        "동물에게."
+      ],
+      "solution": [
+        "문장을 완성하려면 '무엇이다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '동물입니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a072ca4d07f4",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "할머니께서 빨래를 개십니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a18f32150d97",
+      "difficulty": 1,
+      "instruction": "문장에서 '누가'에 해당하는 말을 고르시오.",
+      "stem": "도서관에서 누나가 책을 빌렸습니다.",
+      "answer": "누나가",
+      "distractors": [
+        "도서관에서",
+        "책을",
+        "빌렸습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '누나가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a3f165771d99",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "고양이가 생선을 □",
+      "answer": "먹습니다.",
+      "distractors": [
+        "생선이.",
+        "부엌에서.",
+        "아침에."
+      ],
+      "solution": [
+        "문장을 완성하려면 '어찌하다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '먹습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6ba463c2fc4",
+      "difficulty": 3,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "이불이 포근합니다.",
+      "answer": "운동장이 조용합니다.",
+      "distractors": [
+        "운동장에 눈이 옵니다.",
+        "이곳은 운동장입니다.",
+        "아이들이 운동장을 돕니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad4208644733",
+      "difficulty": 3,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "아버지께서 신문을 읽으십니다.",
+      "answer": "할머니께서 나물을 다듬으십니다.",
+      "distractors": [
+        "할머니께서 웃으십니다.",
+        "할머니께서는 부지런하십니다.",
+        "이분은 우리 할머니이십니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ada4871d38d7",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "동생이 □ 마십니다.",
+      "answer": "우유를",
+      "distractors": [
+        "우유가",
+        "우유에게",
+        "우유와"
+      ],
+      "solution": [
+        "문장을 완성하려면 '무엇을'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '우유를'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aedb3700afd1",
+      "difficulty": 1,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "맑습니다, 하늘이",
+      "answer": "하늘이 맑습니다.",
+      "distractors": [
+        "맑습니다 하늘이.",
+        "하늘을 맑습니다.",
+        "하늘이 맑은."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '하늘이 맑습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af371d2f626b",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇이'에 해당하는 말을 고르시오.",
+      "stem": "어제 비가 많이 내렸습니다.",
+      "answer": "비가",
+      "distractors": [
+        "어제",
+        "많이",
+        "내렸습니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '비가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b0e6689ec2f9",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "아기가 방긋방긋 □",
+      "answer": "웃습니다.",
+      "distractors": [
+        "엄마를.",
+        "방에서.",
+        "아침에."
+      ],
+      "solution": [
+        "문장을 완성하려면 '어찌하다'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '웃습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b42397766c76",
+      "difficulty": 2,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "참새는 새입니다.",
+      "answer": "수박은 과일입니다.",
+      "distractors": [
+        "수박이 큽니다.",
+        "참새가 지저귑니다.",
+        "형이 수박을 자릅니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b472a4d6f20a",
+      "difficulty": 1,
+      "instruction": "문장에서 '어떠하다'에 해당하는 말을 고르시오.",
+      "stem": "우리 집 사과가 빨갛습니다.",
+      "answer": "빨갛습니다",
+      "distractors": [
+        "우리",
+        "집",
+        "사과가"
+      ],
+      "solution": [
+        "'무엇이'의 모양이나 성질을 나타내는 말은 '빨갛습니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6d17e4a9b04",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 '누가'에 해당하는 말을 고르시오.",
+      "stem": "□ 하늘 높이 날아갑니다.",
+      "answer": "비둘기가",
+      "distractors": [
+        "비둘기를",
+        "비둘기에게",
+        "비둘기와"
+      ],
+      "solution": [
+        "문장을 완성하려면 '누가'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '비둘기가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9a8fc188ffc",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "장미는 꽃입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9ee5c0ac0d7",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "사과는 과일입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb5423077d56",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "민지는 우리 반 반장입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bc94f01926fa",
+      "difficulty": 1,
+      "instruction": "문장에서 '어찌하다'에 해당하는 말을 고르시오.",
+      "stem": "아침마다 시냇물이 졸졸 흐릅니다.",
+      "answer": "흐릅니다",
+      "distractors": [
+        "아침마다",
+        "시냇물이",
+        "졸졸"
+      ],
+      "solution": [
+        "'누가'나 '무엇이'가 하는 움직임을 나타내는 말은 '흐릅니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd4865d64212",
+      "difficulty": 2,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "친구가 찹니다.",
+      "answer": "친구가 공을 찹니다.",
+      "distractors": [
+        "친구가 힘껏 찹니다.",
+        "친구가 운동장에서 찹니다.",
+        "친구가 또 찹니다."
+      ],
+      "solution": [
+        "'공을'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c43cafa05336",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "당근은 채소입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5bf14e71df8",
+      "difficulty": 2,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "수아가 그리기 대회에서 상을 받았습니다.",
+      "answer": "상을",
+      "distractors": [
+        "수아가",
+        "대회에서",
+        "받았습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '상을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c6efdfcf9eb1",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "할머니 댁 마당은 아주 깨끗합니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c812c9a5805b",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "물이 차갑습니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0f18b8ed045",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "꽃이 핍니다.",
+      "answer": "무엇이(누가) 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "움직임을 나타내는 서술어만 있고 '무엇을'에 해당하는 말이 없다.",
+        "그러므로 '무엇이(누가) 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d5433ad77507",
+      "difficulty": 2,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "동생이 화분에 씨앗을 심었습니다.",
+      "answer": "씨앗을",
+      "distractors": [
+        "동생이",
+        "화분에",
+        "심었습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '씨앗을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d61ede6fdb20",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "형이 □ 닦습니다.",
+      "answer": "신발을",
+      "distractors": [
+        "신발이",
+        "신발에게",
+        "신발과"
+      ],
+      "solution": [
+        "문장을 완성하려면 '무엇을'에 해당하는 말이 필요하다.",
+        "알맞은 말은 '신발을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db2362f3d08a",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇이'에 해당하는 말을 고르시오.",
+      "stem": "하늘에 별이 반짝반짝 빛납니다.",
+      "answer": "별이",
+      "distractors": [
+        "하늘에",
+        "반짝반짝",
+        "빛납니다"
+      ],
+      "solution": [
+        "움직임이나 상태의 임자가 되는 말은 '별이'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db96c45b5987",
+      "difficulty": 1,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "누나가 아침에 창문을 열었습니다.",
+      "answer": "창문을",
+      "distractors": [
+        "누나가",
+        "아침에",
+        "열었습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '창문을'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ddbfa7b3d432",
+      "difficulty": 2,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "입니다, 고래는, 동물",
+      "answer": "고래는 동물입니다.",
+      "distractors": [
+        "동물입니다 고래는.",
+        "고래는 입니다 동물.",
+        "입니다 동물 고래는."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 끝에 온다.",
+        "끝에 오는 말은 '동물입니다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e80e7776a3b0",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "동생이 우유를 마십니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "efac60791aac",
+      "difficulty": 3,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "갓 빨아 말린 이불이 폭신합니다.",
+      "answer": "무엇이(누가) 어떠하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 무엇이다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 모양이나 성질을 나타낸다.",
+        "그러므로 '무엇이(누가) 어떠하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0494c9f3b0a",
+      "difficulty": 2,
+      "instruction": "'무엇을'에 해당하는 말을 넣어 문장을 늘인 것을 고르시오.",
+      "stem": "누나가 그립니다.",
+      "answer": "누나가 꽃을 그립니다.",
+      "distractors": [
+        "누나가 열심히 그립니다.",
+        "누나가 교실에서 그립니다.",
+        "누나가 오늘 그립니다."
+      ],
+      "solution": [
+        "'꽃을'이 '무엇을'에 해당하는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0957c3b9d6b",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "우리 어머니는 의사입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1ae59aa4564",
+      "difficulty": 1,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "짖습니다, 개가",
+      "answer": "개가 짖습니다.",
+      "distractors": [
+        "짖습니다 개가.",
+        "개를 짖습니다.",
+        "개가 짖는."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '개가 짖습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f33c76fe50af",
+      "difficulty": 3,
+      "instruction": "주어진 문장과 짜임이 같은 문장을 고르시오.",
+      "stem": "우리 형은 중학생입니다.",
+      "answer": "우리 고모는 간호사입니다.",
+      "distractors": [
+        "우리 고모는 친절합니다.",
+        "우리 고모가 오셨습니다.",
+        "우리 고모가 주사를 놓습니다."
+      ],
+      "solution": [
+        "두 문장 모두 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f3eaaca81eb3",
+      "difficulty": 3,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "부릅니다, 노래를, 아이들이, 즐겁게",
+      "answer": "아이들이 즐겁게 노래를 부릅니다.",
+      "distractors": [
+        "아이들이 노래를 부릅니다 즐겁게.",
+        "부릅니다 아이들이 즐겁게 노래를.",
+        "즐겁게 부릅니다 노래를 아이들이."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '아이들이 즐겁게 노래를 부릅니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f4496d70f061",
+      "difficulty": 2,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "마십니다, 물을, 강아지가",
+      "answer": "강아지가 물을 마십니다.",
+      "distractors": [
+        "마십니다 강아지가 물을.",
+        "물을 마십니다 강아지가.",
+        "강아지가 마십니다 물을."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '강아지가 물을 마십니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f46d2d525fc7",
+      "difficulty": 3,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "누나가 접시에 사과를 담았습니다.",
+      "answer": "사과를",
+      "distractors": [
+        "누나가",
+        "접시에",
+        "담았습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '사과를'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f4967d93b0a0",
+      "difficulty": 2,
+      "instruction": "낱말을 바른 차례로 늘어놓아 만든 문장을 고르시오.",
+      "stem": "핍니다, 들판에, 꽃이",
+      "answer": "들판에 꽃이 핍니다.",
+      "distractors": [
+        "핍니다 들판에 꽃이.",
+        "꽃이 핍니다 들판에.",
+        "들판에 핍니다 꽃이."
+      ],
+      "solution": [
+        "우리말 문장은 서술어가 문장 끝에 온다.",
+        "바른 문장은 '들판에 꽃이 핍니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f5c2044d2170",
+      "difficulty": 2,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "나는 친구에게 편지를 씁니다.",
+      "answer": "무엇이(누가) 무엇을 어찌하다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇이다"
+      ],
+      "solution": [
+        "'무엇을'에 해당하는 말과 움직임을 나타내는 서술어가 함께 있다.",
+        "그러므로 '무엇이(누가) 무엇을 어찌하다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f9fbcb638139",
+      "difficulty": 3,
+      "instruction": "문장에서 '무엇을'에 해당하는 말을 고르시오.",
+      "stem": "아버지께서 나에게 자전거를 사 주셨습니다.",
+      "answer": "자전거를",
+      "distractors": [
+        "아버지께서",
+        "나에게",
+        "사 주셨습니다"
+      ],
+      "solution": [
+        "움직임의 대상이 되는 말은 '자전거를'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff4bceba9d16",
+      "difficulty": 1,
+      "instruction": "다음 문장의 짜임으로 알맞은 것을 고르시오.",
+      "stem": "개미는 곤충입니다.",
+      "answer": "무엇이(누가) 무엇이다",
+      "distractors": [
+        "무엇이(누가) 어찌하다",
+        "무엇이(누가) 어떠하다",
+        "무엇이(누가) 무엇을 어찌하다"
+      ],
+      "solution": [
+        "서술어가 '무엇이다'의 꼴이다.",
+        "그러므로 '무엇이(누가) 무엇이다' 짜임이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2118 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[2국03-01]",
+  "skill": "글자와 단어를 바르게 쓰기",
+  "items": [
+    {
+      "id": "00c5b91caee3",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "하늘의 빛깔을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "하늘이 파랗습니다.",
+      "distractors": [
+        "하느리 파랗습니다.",
+        "하늘이 파랏습니다.",
+        "하늘이 파라습니다."
+      ],
+      "solution": [
+        "'하늘이'와 '파랗습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "021400dfb026",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "도서관에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "도서관에서 책을 빌렸습니다.",
+      "distractors": [
+        "도서관에서 채글 빌렸습니다.",
+        "도서관에서 책을 빌렷습니다.",
+        "도서광에서 책을 빌렸습니다."
+      ],
+      "solution": [
+        "'도서관에서', '책을', '빌렸습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0966c5abc36a",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "밤하늘의 달을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "밤하늘에 둥근 달이 떴습니다.",
+      "distractors": [
+        "밤하늘에 둥근 다리 떴습니다.",
+        "밤하늘에 둥군 달이 떴습니다.",
+        "밤하늘에 둥근 달이 떳습니다."
+      ],
+      "solution": [
+        "'둥근', '달이', '떴습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0b4fdd449ced",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "겨울 날씨를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "겨울에는 날씨가 춥습니다.",
+      "distractors": [
+        "겨우레는 날씨가 춥습니다.",
+        "겨울에는 날시가 춥습니다.",
+        "겨울에는 날씨가 춥씀니다."
+      ],
+      "solution": [
+        "'겨울에는', '날씨가', '춥습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "130eda50c25b",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "봄이 되어 '꼬□'이 활짝 피었습니다.",
+      "answer": "ㅊ",
+      "distractors": [
+        "ㅅ",
+        "ㄷ",
+        "ㅈ"
+      ],
+      "solution": [
+        "'꽃'으로 써야 바르다.",
+        "그래서 받침은 ㅊ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17047acb1091",
+      "difficulty": 3,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "민수가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "하라버지께서 웃으셨습니다.",
+      "distractors": [
+        "아빠께 선물을 드렸습니다.",
+        "거북이 엉금엉금 기어갑니다.",
+        "바닷가에서 조개를 주웠습니다."
+      ],
+      "solution": [
+        "'할아버지께서 웃으셨습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1b3640a78584",
+      "difficulty": 1,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "아빠가 하시는 일을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "아빠는 신문을 읽으십니다.",
+      "distractors": [
+        "아빠는신문을 읽으십니다.",
+        "아빠 는 신문을 읽으십니다.",
+        "아빠는 신문을읽으십니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "200e3fba5c63",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "벽에 걸린 물건을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "벽에 시계가 걸려 있습니다.",
+      "distractors": [
+        "벽에 시게가 걸려 있습니다.",
+        "벼게 시계가 걸려 있습니다.",
+        "벽에 시계가 걸려 잇습니다."
+      ],
+      "solution": [
+        "'벽에', '시계가', '있습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "215994bb32c5",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "아빠께 드린 선물을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "아빠께 선물을 드렸습니다.",
+      "distractors": [
+        "아빠께 선무를 드렸습니다.",
+        "아빠께 선물을 드렷습니다.",
+        "아빠께 선믈을 드렸습니다."
+      ],
+      "solution": [
+        "'선물을', '드렸습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2280fe0e4e1f",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "오늘 날씨를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "날씨가 맑습니다.",
+      "distractors": [
+        "날씨가 막습니다.",
+        "날씨가 말씀니다.",
+        "날씨가 맑씀니다."
+      ],
+      "solution": [
+        "'맑다'의 받침 ㄺ을 살려 '맑습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23599de02861",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "동생의 신발을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "동생 신발이 작아졌습니다.",
+      "distractors": [
+        "동생 신바리 작아졌습니다.",
+        "동생 신발이 자가졌습니다.",
+        "동생 신발이 작아젔습니다."
+      ],
+      "solution": [
+        "'신발이', '작아졌습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23c059d5c76d",
+      "difficulty": 2,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "동생과 공놀이를 한 일을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "나는 동생과 공을 찼습니다.",
+      "distractors": [
+        "나는동생과 공을 찼습니다.",
+        "나는 동생 과 공을 찼습니다.",
+        "나는 동생과 공을찼습니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2586985b623a",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "창밖에 눈이 펑펑 내림니다.",
+      "answer": "'내림니다'",
+      "distractors": [
+        "'창밖에'",
+        "'눈이'",
+        "'펑펑'"
+      ],
+      "solution": [
+        "'내림니다'는 '내립니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29d81759a5dd",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "가을 나무를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "나뭇잎이 떨어졌습니다.",
+      "distractors": [
+        "나뭇입이 떨어졌습니다.",
+        "나무니피 떨어졌습니다.",
+        "나뭇잎이 떠러졌습니다."
+      ],
+      "solution": [
+        "'나뭇잎이'와 '떨어졌습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "29e607c66ce7",
+      "difficulty": 3,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "친구와 그림을 그린 일을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "친구와 함께 그림을 그렸습니다.",
+      "distractors": [
+        "친구와함께 그림을 그렸습니다.",
+        "친구 와 함께 그림을 그렸습니다.",
+        "친구와 함께 그림 을 그렸습니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2a5de0c85289",
+      "difficulty": 1,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "수아가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "여르메 수박을 먹었습니다.",
+      "distractors": [
+        "가을 하늘이 높습니다.",
+        "저녁에 목욕을 했습니다.",
+        "겨울에는 날씨가 춥습니다."
+      ],
+      "solution": [
+        "'여름에 수박을 먹었습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2b1be429bc7e",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "어항 속 물고기를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "어항 속 물고기가 헤엄칩니다.",
+      "distractors": [
+        "어항 속 물꼬기가 헤엄칩니다.",
+        "어항 속 물고기가 혜엄칩니다.",
+        "어항 속 물고기가 헤엄침니다."
+      ],
+      "solution": [
+        "'물고기가', '헤엄칩니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2db83d840a75",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "창문 '바□'에 눈이 내립니다.",
+      "answer": "ㄲ",
+      "distractors": [
+        "ㄱ",
+        "ㅋ",
+        "ㄴ"
+      ],
+      "solution": [
+        "'밖'으로 써야 바르다.",
+        "그래서 받침은 ㄲ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2e195ea083e4",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "책을 소리 내어 '이□었습니다'.",
+      "answer": "ㄺ",
+      "distractors": [
+        "ㄱ",
+        "ㄹ",
+        "ㄻ"
+      ],
+      "solution": [
+        "'읽었습니다'로 써야 바르다.",
+        "그래서 받침은 ㄺ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2e3e64321f2f",
+      "difficulty": 1,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "서연이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "어항 속 물꼬기가 헤엄칩니다.",
+      "distractors": [
+        "엄마가 부엌에서 요리하십니다.",
+        "어젯밤에 재미있는 꿈을 꾸었습니다.",
+        "닭장에서 달걀을 꺼냈습니다."
+      ],
+      "solution": [
+        "'어항 속 물고기가 헤엄칩니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2f99724e315d",
+      "difficulty": 3,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "태오가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "연피를 뾰족하게 깎았습니다.",
+      "distractors": [
+        "도서관에서 책을 빌렸습니다.",
+        "색종이로 비행기를 접었습니다.",
+        "봄이 되자 새싹이 돋았습니다."
+      ],
+      "solution": [
+        "'연필을 뾰족하게 깎았습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2fa249819554",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "저녁 반찬을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "저녁에 김치찌개를 먹었습니다.",
+      "distractors": [
+        "저녀게 김치찌개를 먹었습니다.",
+        "저녁에 김치찌게를 먹었습니다.",
+        "저녁에 김치찌개를 머것습니다."
+      ],
+      "solution": [
+        "'저녁에', '김치찌개를', '먹었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2fc465735c37",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "눈 오는 날을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "밖에 눈이 옵니다.",
+      "distractors": [
+        "박에 눈이 옵니다.",
+        "바께 눈이 옵니다.",
+        "밖에 누니 옵니다."
+      ],
+      "solution": [
+        "'밖'의 받침 ㄲ을 살려 '밖에'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "34c54cb3ca89",
+      "difficulty": 2,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "도윤이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "바다까에서 조개를 주웠습니다.",
+      "distractors": [
+        "넘어졌지만 괜찮습니다.",
+        "동화책을 소리 내어 읽었습니다.",
+        "저녁에 김치찌개를 먹었습니다."
+      ],
+      "solution": [
+        "'바닷가에서 조개를 주웠습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "382c37319a56",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "봄에 돋은 새싹을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "봄이 되자 새싹이 돋았습니다.",
+      "distractors": [
+        "보미 되자 새싹이 돋았습니다.",
+        "봄이 되자 새싸기 돋았습니다.",
+        "봄이 되자 새싹이 도닸습니다."
+      ],
+      "solution": [
+        "'봄이', '새싹이', '돋았습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a108f1ffac3",
+      "difficulty": 1,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "지호가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "동생 신바리 작아졌습니다.",
+      "distractors": [
+        "마당에 눈사람을 만들었습니다.",
+        "놀이터에서 그네를 탔습니다.",
+        "연필을 뾰족하게 깎았습니다."
+      ],
+      "solution": [
+        "'동생 신발이 작아졌습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3a344b8765cf",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "넘어진 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "넘어졌지만 괜찮습니다.",
+      "distractors": [
+        "넘어졌지만 괜찬습니다.",
+        "너머졌지만 괜찮습니다.",
+        "넘어젓지만 괜찮습니다."
+      ],
+      "solution": [
+        "'넘어졌지만', '괜찮습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d49c08b02a0",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "운동장에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "넓은 운동장에서 뛰었습니다.",
+      "distractors": [
+        "널븐 운동장에서 뛰었습니다.",
+        "넙은 운동장에서 뛰었습니다.",
+        "넓은 운동장에서 뒤었습니다."
+      ],
+      "solution": [
+        "'넓다'의 받침 ㄼ을 살려 '넓은'으로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "425459f0ac0a",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "의자에 앉은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "의자에 앉았습니다.",
+      "distractors": [
+        "의자에 안잤습니다.",
+        "의자에 안자씁니다.",
+        "의자에 앉앗습니다."
+      ],
+      "solution": [
+        "'앉다'에서 온 말이므로 '앉았습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4258dce305e8",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "친구가 내 이르믈 불렀습니다.",
+      "answer": "'이르믈'",
+      "distractors": [
+        "'친구가'",
+        "'내'",
+        "'불렀습니다'"
+      ],
+      "solution": [
+        "'이르믈'은 '이름을'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "46cf8daa3af9",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "배추를 뽑은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "밭에서 배추를 뽑았습니다.",
+      "distractors": [
+        "바테서 배추를 뽑았습니다.",
+        "밭에서 배추를 뽀밨습니다.",
+        "받에서 배추를 뽑았습니다."
+      ],
+      "solution": [
+        "'밭'의 받침 ㅌ을 살리고 '뽑았습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a35c6676a82",
+      "difficulty": 3,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "지안이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "겨우레는 날씨가 춥습니다.",
+      "distractors": [
+        "나뭇가지에 새가 앉았습니다.",
+        "흙장난을 하고 손을 씻었습니다.",
+        "공원에서 줄넘기를 했습니다."
+      ],
+      "solution": [
+        "'겨울에는 날씨가 춥습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4be7e065919c",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "할아버지의 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "할아버지께서 웃으셨습니다.",
+      "distractors": [
+        "하라버지께서 웃으셨습니다.",
+        "할아버지께서 우스셨습니다.",
+        "할아버지께서 웃으셧습니다."
+      ],
+      "solution": [
+        "'할아버지께서', '웃으셨습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53a471f75b53",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "의자에 '아□았습니다'라고 썼습니다.",
+      "answer": "ㄵ",
+      "distractors": [
+        "ㄴ",
+        "ㅈ",
+        "ㄶ"
+      ],
+      "solution": [
+        "'앉았습니다'로 써야 바르다.",
+        "그래서 받침은 ㄵ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "558b0ea0d835",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "어젯밤 꿈을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "어젯밤에 재미있는 꿈을 꾸었습니다.",
+      "distractors": [
+        "어젯밤에 재미있는 꾸믈 꾸었습니다.",
+        "어젣밤에 재미있는 꿈을 꾸었습니다.",
+        "어젯밤에 재미인는 꿈을 꾸었습니다."
+      ],
+      "solution": [
+        "'어젯밤에', '재미있는', '꿈을'이 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "563056f73b9d",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "우리 집 강아지를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "우리 집 강아지는 귀엽습니다.",
+      "distractors": [
+        "우리 집 강아지는 귀엽씁니다.",
+        "우리 집 강아지는 기엽습니다.",
+        "우리 집 강아지는 귀여습니다."
+      ],
+      "solution": [
+        "'귀엽다'에 '습니다'가 붙으므로 '귀엽습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "56f023b0b95b",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "엄마가 요리하시는 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "엄마가 부엌에서 요리하십니다.",
+      "distractors": [
+        "엄마가 부억에서 요리하십니다.",
+        "엄마가 부어케서 요리하십니다.",
+        "엄마가 부엌에서 요리하심니다."
+      ],
+      "solution": [
+        "'부엌에서', '요리하십니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5b4a100c95af",
+      "difficulty": 2,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "시우가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "보미 되자 새싹이 돋았습니다.",
+      "distractors": [
+        "동생 신발이 작아졌습니다.",
+        "마당에 눈사람을 만들었습니다.",
+        "놀이터에서 그네를 탔습니다."
+      ],
+      "solution": [
+        "'봄이 되자 새싹이 돋았습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c90550bed37",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "우리 집 앞의 나무를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "우리 집 앞에 큰 나무가 있습니다.",
+      "distractors": [
+        "우리 집 아페 큰 나무가 있습니다.",
+        "우리 집 앞에 큰 나무가 이씁니다.",
+        "우리 집 압에 큰 나무가 있습니다."
+      ],
+      "solution": [
+        "'앞에', '있습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5ed1ab21171a",
+      "difficulty": 3,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "하린이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "닥장에서 달걀을 꺼냈습니다.",
+      "distractors": [
+        "숙제를 다 끝냈습니다.",
+        "밤하늘에 둥근 달이 떴습니다.",
+        "아침에 빵을 구웠습니다."
+      ],
+      "solution": [
+        "'닭장에서 달걀을 꺼냈습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f0c76f73bb4",
+      "difficulty": 1,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "엄마가 하시는 일을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "엄마가 빨래를 합니다.",
+      "distractors": [
+        "엄마가빨래를 합니다.",
+        "엄마 가 빨래를 합니다.",
+        "엄마가 빨래를합니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f36df46c796",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "언니가 예쁜 머리핀을 사 주엇습니다.",
+      "answer": "'주엇습니다'",
+      "distractors": [
+        "'언니가'",
+        "'예쁜'",
+        "'머리핀을'"
+      ],
+      "solution": [
+        "'주엇습니다'는 '주었습니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "62f176e0f76b",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "저녁에 씻은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "저녁에 목욕을 했습니다.",
+      "distractors": [
+        "저녁에 모굑을 했습니다.",
+        "저녁에 목욕을 햇습니다.",
+        "저녁에 목욬을 했습니다."
+      ],
+      "solution": [
+        "'목욕을', '했습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66742e4bf4f2",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "연필을 깎은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "연필을 뾰족하게 깎았습니다.",
+      "distractors": [
+        "연피를 뾰족하게 깎았습니다.",
+        "연필을 뾰족하게 깍았습니다.",
+        "연필을 뾰조카게 깎았습니다."
+      ],
+      "solution": [
+        "'연필을', '뾰족하게', '깎았습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "680848025547",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "비에 젖은 옷을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "옷이 젖었습니다.",
+      "distractors": [
+        "오시 젖었습니다.",
+        "옷이 저젔습니다.",
+        "옷이 젓었습니다."
+      ],
+      "solution": [
+        "'옷이'와 '젖었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "681b6138dc45",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "좋아하는 음식을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "떡볶이가 맛있습니다.",
+      "distractors": [
+        "떡볶기가 맛있습니다.",
+        "떡볶이가 마싰습니다.",
+        "떡보끼가 맛있습니다."
+      ],
+      "solution": [
+        "'떡볶이'와 '맛있습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d2c1c9573cb",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "넘어져 다친 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "무릎을 다쳤습니다.",
+      "distractors": [
+        "무릅을 다쳤습니다.",
+        "무르플 다쳤습니다.",
+        "무릎을 다첬습니다."
+      ],
+      "solution": [
+        "'무릎'의 받침은 ㅍ이고 '다쳤습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d954e8bfd10",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "나뭇가지에 앉은 새를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "나뭇가지에 새가 앉았습니다.",
+      "distractors": [
+        "나무까지에 새가 앉았습니다.",
+        "나뭇가지에 새가 안잤습니다.",
+        "나뭇가지에 새가 앉앗습니다."
+      ],
+      "solution": [
+        "'나뭇가지에', '앉았습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ffc7379872b",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "비 오는 날을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "우산을 쓰고 갔습니다.",
+      "distractors": [
+        "우사늘 쓰고 갔습니다.",
+        "우산을 쓰고 갓습니다.",
+        "우산을 스고 갔습니다."
+      ],
+      "solution": [
+        "'우산을'과 '갔습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71f3e92cc24f",
+      "difficulty": 1,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "예린이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "젇가락으로 콩을 집었습니다.",
+      "distractors": [
+        "우리 집 앞에 큰 나무가 있습니다.",
+        "꽃밭에 나비가 날아왔습니다.",
+        "내 생일은 여름입니다."
+      ],
+      "solution": [
+        "'젓가락으로 콩을 집었습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7531dbed080c",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "엄마의 선물을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "엄마가 빵을 사 오셨습니다.",
+      "distractors": [
+        "엄마가 빵을 사 오셧습니다.",
+        "엄마가 빵을 사 오셨슴니다.",
+        "엄마가 빵을 사 오심니다."
+      ],
+      "solution": [
+        "'빵'과 '오셨습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "75376ab8855b",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "동생이 자는 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "동생이 낮잠을 잡니다.",
+      "distractors": [
+        "동생이 낫잠을 잡니다.",
+        "동생이 낮자믈 잡니다.",
+        "동생이 낮잠을 잠니다."
+      ],
+      "solution": [
+        "'낮잠을', '잡니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "756402e2f593",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "놀이터에서 논 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "놀이터에서 그네를 탔습니다.",
+      "distractors": [
+        "노리터에서 그네를 탔습니다.",
+        "놀이터에서 그내를 탔습니다.",
+        "놀이터에서 그네를 탓습니다."
+      ],
+      "solution": [
+        "'놀이터에서', '그네를', '탔습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7a36add36c77",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "책 읽은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "책을 많이 읽었습니다.",
+      "distractors": [
+        "책을 마니 읽었습니다.",
+        "책을 만이 읽었습니다.",
+        "책을 많히 읽었습니다."
+      ],
+      "solution": [
+        "'많다'에서 온 말이므로 '많이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7df04af23b09",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "닭장에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "닭장에서 달걀을 꺼냈습니다.",
+      "distractors": [
+        "닥장에서 달걀을 꺼냈습니다.",
+        "닭장에서 달갈을 꺼냈습니다.",
+        "닭장에서 달걀을 거냈습니다."
+      ],
+      "solution": [
+        "'닭장에서', '달걀을', '꺼냈습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "838f38b5329c",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "연못의 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "연못이 깊습니다.",
+      "distractors": [
+        "연모시 깊습니다.",
+        "연못이 깁습니다.",
+        "연못이 깊씁니다."
+      ],
+      "solution": [
+        "'연못'에 '이'가 붙고 '깊다'의 받침을 살려 '연못이 깊습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8497376ac178",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "친구와 함께 숙재를 했습니다.",
+      "answer": "'숙재를'",
+      "distractors": [
+        "'친구와'",
+        "'함께'",
+        "'했습니다'"
+      ],
+      "solution": [
+        "'숙재를'은 '숙제를'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "92ac0d1f60d5",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "공원에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "공원에서 줄넘기를 했습니다.",
+      "distractors": [
+        "공언에서 줄넘기를 했습니다.",
+        "공원에서 줄럼기를 했습니다.",
+        "공원에서 줄넘기를 햇습니다."
+      ],
+      "solution": [
+        "'공원에서', '줄넘기를', '했습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9429e15cb1e3",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "심부름한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "엄마 심부름으로 두부를 샀습니다.",
+      "distractors": [
+        "엄마 심부르므로 두부를 샀습니다.",
+        "엄마 심부름으로 두부를 삿습니다.",
+        "엄마 심부름으로 드부를 샀습니다."
+      ],
+      "solution": [
+        "'심부름으로', '두부를', '샀습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97a748c63d05",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "선생님께 한 인사를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "선생님께 인사했습니다.",
+      "distractors": [
+        "선생님께 인사햇습니다.",
+        "선생님께 인사했읍니다.",
+        "선생님게 인사했습니다."
+      ],
+      "solution": [
+        "'했습니다'와 '께'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "991967d5fa7e",
+      "difficulty": 1,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "어제 가족과 공언에 갔습니다.",
+      "answer": "'공언에'",
+      "distractors": [
+        "'어제'",
+        "'가족과'",
+        "'갔습니다'"
+      ],
+      "solution": [
+        "'공언에'는 '공원에'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "998d599bfb9a",
+      "difficulty": 3,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "동생과 블록으로 성을 싸았습니다.",
+      "answer": "'싸았습니다'",
+      "distractors": [
+        "'동생과'",
+        "'블록으로'",
+        "'성을'"
+      ],
+      "solution": [
+        "'싸았습니다'는 '쌓았습니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9af94096a56d",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "아침마다 이를 깨끄시 닦습니다.",
+      "answer": "'깨끄시'",
+      "distractors": [
+        "'아침마다'",
+        "'이를'",
+        "'닦습니다'"
+      ],
+      "solution": [
+        "'깨끄시'는 '깨끗이'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d376267560d",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "마당에서 논 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "마당에 눈사람을 만들었습니다.",
+      "distractors": [
+        "마당에 눈싸람을 만들었습니다.",
+        "마당에 눈사라믈 만들었습니다.",
+        "마당에 눈사람을 만드럿습니다."
+      ],
+      "solution": [
+        "'눈사람을', '만들었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f836f37049a",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "흙장난을 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "흙장난을 하고 손을 씻었습니다.",
+      "distractors": [
+        "흑장난을 하고 손을 씻었습니다.",
+        "흙장난을 하고 소늘 씻었습니다.",
+        "흙장난을 하고 손을 씨섰습니다."
+      ],
+      "solution": [
+        "'흙장난을', '손을', '씻었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a74ec07e3185",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "아침에 만든 음식을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "아침에 빵을 구웠습니다.",
+      "distractors": [
+        "아침에 빵을 구었습니다.",
+        "아치메 빵을 구웠습니다.",
+        "아침에 빵을 구웟습니다."
+      ],
+      "solution": [
+        "'아침에', '구웠습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a8542ccedef7",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "다리를 굽히는 곳은 '무르□'입니다.",
+      "answer": "ㅍ",
+      "distractors": [
+        "ㅂ",
+        "ㅁ",
+        "ㅅ"
+      ],
+      "solution": [
+        "'무릎'으로 써야 바르다.",
+        "그래서 받침은 ㅍ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa29035e967f",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "음식을 만드는 곳은 '부어□'입니다.",
+      "answer": "ㅋ",
+      "distractors": [
+        "ㄱ",
+        "ㄲ",
+        "ㅎ"
+      ],
+      "solution": [
+        "'부엌'으로 써야 바르다.",
+        "그래서 받침은 ㅋ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "accd6193c8e6",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "아기가 방긋 '우□었습니다'.",
+      "answer": "ㅅ",
+      "distractors": [
+        "ㄷ",
+        "ㅈ",
+        "ㅊ"
+      ],
+      "solution": [
+        "'웃었습니다'로 써야 바르다.",
+        "그래서 받침은 ㅅ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "afcbd8a070c1",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "거북이 걷는 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "거북이 엉금엉금 기어갑니다.",
+      "distractors": [
+        "거부기 엉금엉금 기어갑니다.",
+        "거북이 엉검엉검 기어갑니다.",
+        "거북이 엉금엉금 기어감니다."
+      ],
+      "solution": [
+        "'거북이', '엉금엉금', '기어갑니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b08cd702fe43",
+      "difficulty": 1,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "강아지가 꼬리를 흔들며 반겨씁니다.",
+      "answer": "'반겨씁니다'",
+      "distractors": [
+        "'강아지가'",
+        "'꼬리를'",
+        "'흔들며'"
+      ],
+      "solution": [
+        "'반겨씁니다'는 '반겼습니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b2e882898b4d",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "아침의 닭을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "닭이 꼬끼오 하고 웁니다.",
+      "distractors": [
+        "달기 꼬끼오 하고 웁니다.",
+        "닥이 꼬끼오 하고 웁니다.",
+        "닭이 꼬끼오 하고 움니다."
+      ],
+      "solution": [
+        "'닭'에 '이'가 붙으므로 '닭이'로 쓰고 '웁니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3045c0ac8a1",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "친구와 논 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "친구와 같이 놀았습니다.",
+      "distractors": [
+        "친구와 가치 놀았습니다.",
+        "친구와 갇이 놀았습니다.",
+        "친구와 갓치 놀았습니다."
+      ],
+      "solution": [
+        "'같다'에서 온 말이므로 '같이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4091cfc7aba",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "동화책을 읽은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "동화책을 소리 내어 읽었습니다.",
+      "distractors": [
+        "동화책을 소리 내어 일겄습니다.",
+        "동화채글 소리 내어 읽었습니다.",
+        "동화책을 소리 내어 익었습니다."
+      ],
+      "solution": [
+        "'동화책을', '읽었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4425df82974",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "여름 과일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "여름에 수박을 먹었습니다.",
+      "distractors": [
+        "여르메 수박을 먹었습니다.",
+        "여름에 수바글 먹었습니다.",
+        "여름에 수박을 먹얻습니다."
+      ],
+      "solution": [
+        "'여름에', '수박을', '먹었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b639557e1eca",
+      "difficulty": 3,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "고양이가 자는 곳을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "고양이가 의자 위에서 잡니다.",
+      "distractors": [
+        "고양이가 의자위에서 잡니다.",
+        "고양이 가 의자 위에서 잡니다.",
+        "고양이가의자 위에서 잡니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b64041267d90",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "꽃밭에 온 나비를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "꽃밭에 나비가 날아왔습니다.",
+      "distractors": [
+        "꼳밭에 나비가 날아왔습니다.",
+        "꽃바테 나비가 날아왔습니다.",
+        "꽃밭에 나비가 나라왔습니다."
+      ],
+      "solution": [
+        "'꽃밭에', '날아왔습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b83e47f9d1ed",
+      "difficulty": 2,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "공원에서 논 일을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "우리는 공원에서 놀았습니다.",
+      "distractors": [
+        "우리는공원에서 놀았습니다.",
+        "우리 는 공원에서 놀았습니다.",
+        "우리는 공원 에서 놀았습니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b912baec7a41",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "동생이 운동장에서 넘어저 울었습니다.",
+      "answer": "'넘어저'",
+      "distractors": [
+        "'동생이'",
+        "'운동장에서'",
+        "'울었습니다'"
+      ],
+      "solution": [
+        "'넘어저'는 '넘어져'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be4a16bf3bc4",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "친구에게 쓴 편지를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "친구에게 편지를 썼습니다.",
+      "distractors": [
+        "친구에게 편지를 썻습니다.",
+        "친구에게 편지를 써씁니다.",
+        "친구에게 편지를 썼읍니다."
+      ],
+      "solution": [
+        "'쓰다'에서 온 '썼습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c01de64067c1",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "화분 만들기를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "흙을 화분에 담았습니다.",
+      "distractors": [
+        "흘글 화분에 담았습니다.",
+        "흑을 화분에 담았습니다.",
+        "흙을 화부네 담았습니다."
+      ],
+      "solution": [
+        "'흙'의 받침 ㄺ을 살려 '흙을'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c2c914716203",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "동생이 웃은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "동생이 웃었습니다.",
+      "distractors": [
+        "동생이 우섰습니다.",
+        "동생이 욷었습니다.",
+        "동생이 웃엇습니다."
+      ],
+      "solution": [
+        "'웃다'에서 온 말이므로 '웃었습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c844aebc6527",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "새벽에 '다□'이 꼬끼오 하고 울었습니다.",
+      "answer": "ㄺ",
+      "distractors": [
+        "ㄱ",
+        "ㄹ",
+        "ㄼ"
+      ],
+      "solution": [
+        "'닭'으로 써야 바르다.",
+        "그래서 받침은 ㄺ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c85a8ad0d8a6",
+      "difficulty": 1,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "우리 반 선생님은 키가 큼니다.",
+      "answer": "'큼니다'",
+      "distractors": [
+        "'우리'",
+        "'선생님은'",
+        "'키가'"
+      ],
+      "solution": [
+        "'큼니다'는 '큽니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb555e239adc",
+      "difficulty": 3,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "나는 오늘 일기를 썻습니다.",
+      "answer": "'썻습니다'",
+      "distractors": [
+        "'나는'",
+        "'오늘'",
+        "'일기를'"
+      ],
+      "solution": [
+        "'썻습니다'는 '썼습니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0e940c3924c",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "물이 '기□어서' 들어가지 않았습니다.",
+      "answer": "ㅍ",
+      "distractors": [
+        "ㅂ",
+        "ㅎ",
+        "ㅁ"
+      ],
+      "solution": [
+        "'깊어서'로 써야 바르다.",
+        "그래서 받침은 ㅍ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2b9e3f0b387",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "종이접기를 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "색종이로 비행기를 접었습니다.",
+      "distractors": [
+        "색쫑이로 비행기를 접었습니다.",
+        "색종이로 비행기를 저벘습니다.",
+        "색종이로 비행기를 접엇습니다."
+      ],
+      "solution": [
+        "'색종이로', '접었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d618e283fdfa",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "젓가락질을 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "젓가락으로 콩을 집었습니다.",
+      "distractors": [
+        "젇가락으로 콩을 집었습니다.",
+        "젓가락으로 콩을 지벘습니다.",
+        "젓까락으로 콩을 집었습니다."
+      ],
+      "solution": [
+        "'젓가락으로', '집었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d67bd403fdbc",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "부엌에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "부엌에서 국을 끓였습니다.",
+      "distractors": [
+        "부억에서 국을 끓였습니다.",
+        "부엌에서 국을 끌였습니다.",
+        "부어케서 국을 끓였습니다."
+      ],
+      "solution": [
+        "'부엌'의 받침 ㅋ, '끓다'의 받침 ㅀ을 살려 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "daf9e4d5e381",
+      "difficulty": 1,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "오늘 선생님게 숙제를 냈습니다.",
+      "answer": "'선생님게'",
+      "distractors": [
+        "'오늘'",
+        "'숙제를'",
+        "'냈습니다'"
+      ],
+      "solution": [
+        "'선생님게'는 '선생님께'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db4dc1e8f134",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "손 씻기를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "손을 깨끗이 씻었습니다.",
+      "distractors": [
+        "손을 깨끄시 씻었습니다.",
+        "손을 깨끗이 씨섰습니다.",
+        "소늘 깨끗이 씻었습니다."
+      ],
+      "solution": [
+        "'깨끗이'와 '씻었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dbb9b2a379a9",
+      "difficulty": 2,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "하은이가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "벽에 시게가 걸려 있습니다.",
+      "distractors": [
+        "엄마 심부름으로 두부를 샀습니다.",
+        "동생이 낮잠을 잡니다.",
+        "젓가락으로 콩을 집었습니다."
+      ],
+      "solution": [
+        "'벽에 시계가 걸려 있습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dc1cb7bd3bb2",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "숲속의 새를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "숲에서 새가 노래합니다.",
+      "distractors": [
+        "수페서 새가 노래합니다.",
+        "숩에서 새가 노래합니다.",
+        "숲에서 새가 노래함니다."
+      ],
+      "solution": [
+        "'숲'의 받침 ㅍ을 살리고 '노래합니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e2cbe1376129",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "동생의 저녁 식사를 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "동생이 밥을 먹었습니다.",
+      "distractors": [
+        "동생이 바블 먹었습니다.",
+        "동생이 밥을 머것습니다.",
+        "동생이 밥을 먹엇습니다."
+      ],
+      "solution": [
+        "'밥을'과 '먹었습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e4a29ba8d8a1",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "아침, 점심, '저녀□'에 밥을 먹습니다.",
+      "answer": "ㄱ",
+      "distractors": [
+        "ㅋ",
+        "ㄲ",
+        "ㅇ"
+      ],
+      "solution": [
+        "'저녁'으로 써야 바르다.",
+        "그래서 받침은 ㄱ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e55bf905f57a",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "창문을 닫은 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "창문을 닫았습니다.",
+      "distractors": [
+        "창문을 다닸습니다.",
+        "창문을 닺았습니다.",
+        "창무늘 닫았습니다."
+      ],
+      "solution": [
+        "'닫다'에서 온 말이므로 '닫았습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e71b485389b0",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "숙제를 마친 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "숙제를 다 끝냈습니다.",
+      "distractors": [
+        "숙재를 다 끝냈습니다.",
+        "숙제를 다 끗냈습니다.",
+        "숙제를 다 끝냇습니다."
+      ],
+      "solution": [
+        "'숙제를', '끝냈습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e8fb1bbdc9a5",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "바닷가에서 한 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "바닷가에서 조개를 주웠습니다.",
+      "distractors": [
+        "바다까에서 조개를 주웠습니다.",
+        "바닷가에서 조게를 주웠습니다.",
+        "바닷가에서 조개를 주엇습니다."
+      ],
+      "solution": [
+        "'바닷가에서', '조개를', '주웠습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e9def92706cd",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "농부가 '바□'에서 채소를 기릅니다.",
+      "answer": "ㅌ",
+      "distractors": [
+        "ㄷ",
+        "ㅅ",
+        "ㅊ"
+      ],
+      "solution": [
+        "'밭'으로 써야 바르다.",
+        "그래서 받침은 ㅌ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea9b346d95c2",
+      "difficulty": 2,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "가을 하늘을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "가을 하늘이 높습니다.",
+      "distractors": [
+        "가을 하느리 높습니다.",
+        "가을 하늘이 놉습니다.",
+        "가을 하늘이 높슴니다."
+      ],
+      "solution": [
+        "'하늘이', '높습니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec438b5873fe",
+      "difficulty": 2,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "하늘의 구름을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "하늘에 구름이 떠 있습니다.",
+      "distractors": [
+        "하늘에구름이 떠 있습니다.",
+        "하늘 에 구름이 떠 있습니다.",
+        "하늘에 구름 이 떠 있습니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee8a8c33d4fc",
+      "difficulty": 2,
+      "instruction": "낱말을 잘못 쓴 문장을 고르시오.",
+      "stem": "유나가 쓴 일기를 살펴봅니다. 낱말을 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "숙재를 다 끝냈습니다.",
+      "distractors": [
+        "밤하늘에 둥근 달이 떴습니다.",
+        "아침에 빵을 구웠습니다.",
+        "어항 속 물고기가 헤엄칩니다."
+      ],
+      "solution": [
+        "'숙제를 다 끝냈습니다.'처럼 고쳐 써야 바르다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eef5672a4f25",
+      "difficulty": 2,
+      "instruction": "띄어쓰기를 바르게 한 문장을 고르시오.",
+      "stem": "동생이 사과를 먹는 모습을 띄어 쓴 문장입니다. 바르게 띄어 쓴 것은 어느 것입니까?",
+      "answer": "동생이 사과를 먹습니다.",
+      "distractors": [
+        "동생이사과를 먹습니다.",
+        "동생이 사과를먹습니다.",
+        "동생 이 사과를 먹습니다."
+      ],
+      "solution": [
+        "낱말과 낱말 사이는 띄어 쓴다.",
+        "낱말 뒤에 붙는 짧은 말은 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0693fcd7850",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 알맞은 받침을 고르시오.",
+      "stem": "나무가 많은 곳은 '수□'입니다.",
+      "answer": "ㅍ",
+      "distractors": [
+        "ㅂ",
+        "ㅁ",
+        "ㅎ"
+      ],
+      "solution": [
+        "'숲'으로 써야 바르다.",
+        "그래서 받침은 ㅍ이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0d4eb473794",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "내 생일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "내 생일은 여름입니다.",
+      "distractors": [
+        "내 생이른 여름입니다.",
+        "내 생일은 여름임니다.",
+        "내 셍일은 여름입니다."
+      ],
+      "solution": [
+        "'생일은', '여름입니다'가 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f24e2b53b9ab",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "나는 딸기를 제일 조아합니다.",
+      "answer": "'조아합니다'",
+      "distractors": [
+        "'나는'",
+        "'딸기를'",
+        "'제일'"
+      ],
+      "solution": [
+        "'조아합니다'는 '좋아합니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f51b05bc41cf",
+      "difficulty": 1,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "꽃이 핀 모습을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "꽃이 활짝 피었습니다.",
+      "distractors": [
+        "꼬치 활짝 피었습니다.",
+        "꽂이 활짝 피었습니다.",
+        "꼿이 활짝 피었습니다."
+      ],
+      "solution": [
+        "낱말 '꽃'에 '이'가 붙으므로 '꽃이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f684b24173ca",
+      "difficulty": 3,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "엄마가 맛있는 떡뽀끼를 만드셨습니다.",
+      "answer": "'떡뽀끼를'",
+      "distractors": [
+        "'엄마가'",
+        "'맛있는'",
+        "'만드셨습니다'"
+      ],
+      "solution": [
+        "'떡뽀끼를'은 '떡볶이를'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fa3beb6a0072",
+      "difficulty": 3,
+      "instruction": "바르게 쓴 문장을 고르시오.",
+      "stem": "물건을 산 일을 쓴 문장입니다. 낱말을 바르게 쓴 것은 어느 것입니까?",
+      "answer": "값이 싸서 샀습니다.",
+      "distractors": [
+        "갑시 싸서 샀습니다.",
+        "갑이 싸서 샀습니다.",
+        "값이 싸서 삿습니다."
+      ],
+      "solution": [
+        "'값'의 받침 ㅄ을 살리고 '샀습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fba52a452580",
+      "difficulty": 2,
+      "instruction": "잘못 쓴 낱말을 고르시오.",
+      "stem": "할머니께서 재미있는 옛날이야기를 들려주셧습니다.",
+      "answer": "'들려주셧습니다'",
+      "distractors": [
+        "'할머니께서'",
+        "'재미있는'",
+        "'옛날이야기를'"
+      ],
+      "solution": [
+        "'들려주셧습니다'는 '들려주셨습니다'로 고쳐 써야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

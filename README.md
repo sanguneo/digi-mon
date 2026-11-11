@@ -94,7 +94,7 @@ apps/web · apps/web-garden · 외부 클라이언트
 
 기준 코퍼스는 저장소 안의 `data/spine/standards.json`과 교육부 고시
 국어·수학·영어 별책 Markdown으로 고정한다. 현재 검증 대상은 성취기준 248개와
-생성기 193개다.
+생성기 193개다(사람 검토 전인 AI 작성 문항 생성기는 세지 않는다).
 
 ### 독립 실행
 
@@ -275,6 +275,25 @@ node bin/worksheet.mjs \
 
 출력 파일명에는 학습지 지문값 일부가 들어간다. 같은 교과와 시드를 사용해도
 옵션이 다르면 기존 파일을 덮어쓰지 않는다.
+
+### AI로 문항 쓰기
+
+AI는 문항을 쓰는 도구로만 쓴다. 엔진은 실행 중에 네트워크를 쓰지 않는다.
+`bin/ai-generate.mjs`가 OpenAI 호환 API에서 후보 문항을 받아 저장소 게이트와
+GGW 린터를 통과한 것만 `data/authored/<교과>/<성취기준>.json`에 더하고, 생성기는
+그 코퍼스에서 시드로 문항을 뽑는다. 단, 사람이 검토해 `data/authored/review-status.json`에
+올린 문항만 학습지에 나간다. 지금은 검토 완료 문항이 없어 AI 작성 문항은 하나도 나가지 않는다
+(`docs/authored-review-queue.md`).
+
+```bash
+export DIGIMON_LLM_BASE_URL=https://api.example.com/v1
+export DIGIMON_LLM_API_KEY=...
+export DIGIMON_LLM_MODEL=...
+node bin/ai-generate.mjs --subject korean --grade g34 --standard 4국02-04 --count 50
+node bin/ai-generate.mjs --subject english --grade g56 --count 30 --dry-run
+```
+
+설계와 게이트, 실행 방법은 `docs/ai-item-generation.md`에 있다.
 
 ## HTTP 서버
 
@@ -499,6 +518,7 @@ npx playwright test --config apps/web-garden/playwright.mobile.config.ts
 - 운영 자료와 보존 설계: `docs/operational-data-model.md`
 - 지문·음성·매체 자료 조달: `docs/asset-procurement.md`
 - 상세 품질 현황: `REVIEW.md`
+- AI 문항 작성 파이프라인과 국어·영어 문면 윤문 기록: `docs/ai-item-generation.md`
 
 ## 현재 사람 검토가 필요한 부분
 

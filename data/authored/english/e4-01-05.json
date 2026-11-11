@@ -1,0 +1,2231 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[4영01-05]",
+  "skill": "쉬운 단어ㆍ어구ㆍ문장의 의미를 이해하는 기초 의미 파악 표준",
+  "items": [
+    {
+      "id": "012050172b64",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The flower is yellow.",
+      "answer": "꽃은 노란색입니다.",
+      "distractors": [
+        "꽃은 빨간색입니다.",
+        "나무는 노란색입니다.",
+        "꽃은 파란색입니다."
+      ],
+      "solution": [
+        "'The flower is yellow.'의 뜻은 '꽃은 노란색입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "021dce8f4239",
+      "difficulty": 2,
+      "instruction": "글을 읽고 유나의 나이를 고르시오.",
+      "stem": "My name is Yuna. I am eleven years old.",
+      "answer": "열한 살",
+      "distractors": [
+        "열 살",
+        "아홉 살",
+        "열두 살"
+      ],
+      "solution": [
+        "'I am eleven years old.'는 열한 살이라는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "030aa1646713",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "My shoes are under the bed.",
+      "answer": "내 신발은 침대 아래에 있습니다.",
+      "distractors": [
+        "내 신발은 침대 위에 있습니다.",
+        "내 양말은 침대 아래에 있습니다.",
+        "네 신발은 침대 아래에 있습니다."
+      ],
+      "solution": [
+        "'My shoes are under the bed.'의 뜻은 '내 신발은 침대 아래에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0333e3e6ee65",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The bird can fly.",
+      "answer": "새는 날 수 있습니다.",
+      "distractors": [
+        "새는 헤엄칠 수 있습니다.",
+        "물고기는 날 수 있습니다.",
+        "새는 날 수 없습니다."
+      ],
+      "solution": [
+        "'The bird can fly.'의 뜻은 '새는 날 수 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "04dee5c6480f",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am a student.",
+      "answer": "나는 학생입니다.",
+      "distractors": [
+        "나는 선생님입니다.",
+        "그는 학생입니다.",
+        "나는 의사입니다."
+      ],
+      "solution": [
+        "'I am a student.'의 뜻은 '나는 학생입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "04fdf6cf7524",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "We play soccer in the park.",
+      "answer": "우리는 공원에서 축구를 합니다.",
+      "distractors": [
+        "우리는 학교에서 축구를 합니다.",
+        "우리는 공원에서 야구를 합니다.",
+        "그들은 공원에서 축구를 합니다."
+      ],
+      "solution": [
+        "'We play soccer in the park.'의 뜻은 '우리는 공원에서 축구를 합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "060b193d610d",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "너는 축구를 좋아하니?",
+      "answer": "Do you like soccer?",
+      "distractors": [
+        "I like soccer.",
+        "Do you play soccer?",
+        "Do you like baseball?"
+      ],
+      "solution": [
+        "'너는 축구를 좋아하니?'를 영어로 쓰면 'Do you like soccer?'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0b48756c1629",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "She is my sister.",
+      "answer": "그녀는 내 여동생입니다.",
+      "distractors": [
+        "그는 내 남동생입니다.",
+        "그녀는 내 친구입니다.",
+        "그녀는 내 엄마입니다."
+      ],
+      "solution": [
+        "'She is my sister.'의 뜻은 '그녀는 내 여동생입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0cc84fb26a5b",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Close your eyes.",
+      "answer": "눈을 감으세요.",
+      "distractors": [
+        "눈을 뜨세요.",
+        "입을 다무세요.",
+        "귀를 막으세요."
+      ],
+      "solution": [
+        "'Close your eyes.'의 뜻은 '눈을 감으세요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0da852626d96",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "It is cold today.",
+      "answer": "오늘은 춥습니다.",
+      "distractors": [
+        "오늘은 덥습니다.",
+        "어제는 추웠습니다.",
+        "오늘은 비가 옵니다."
+      ],
+      "solution": [
+        "'It is cold today.'의 뜻은 '오늘은 춥습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0f5a260e9f6e",
+      "difficulty": 3,
+      "instruction": "글을 읽고 미나가 좋아하지 않는 과일을 고르시오.",
+      "stem": "Mina likes apples. She does not like bananas.",
+      "answer": "바나나",
+      "distractors": [
+        "사과",
+        "포도",
+        "딸기"
+      ],
+      "solution": [
+        "'She does not like bananas.'에서 미나가 바나나를 좋아하지 않음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "123132b29d04",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "My sister is short.",
+      "answer": "내 여동생은 키가 작습니다.",
+      "distractors": [
+        "내 여동생은 키가 큽니다.",
+        "내 남동생은 키가 작습니다.",
+        "내 여동생은 나이가 많습니다."
+      ],
+      "solution": [
+        "'My sister is short.'의 뜻은 '내 여동생은 키가 작습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "137acc3f1daa",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The ball is behind the box.",
+      "answer": "공이 상자 뒤에 있습니다.",
+      "distractors": [
+        "공이 상자 앞에 있습니다.",
+        "공이 상자 안에 있습니다.",
+        "인형이 상자 뒤에 있습니다."
+      ],
+      "solution": [
+        "'The ball is behind the box.'의 뜻은 '공이 상자 뒤에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1418b202b7f1",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Sit down, please.",
+      "answer": "앉으세요.",
+      "distractors": [
+        "일어서세요.",
+        "들어오세요.",
+        "조용히 하세요."
+      ],
+      "solution": [
+        "'Sit down, please.'의 뜻은 '앉으세요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "165ad919df95",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "She can dance.",
+      "answer": "그녀는 춤을 출 수 있습니다.",
+      "distractors": [
+        "그녀는 춤을 출 수 없습니다.",
+        "그는 춤을 출 수 있습니다.",
+        "그녀는 노래할 수 있습니다."
+      ],
+      "solution": [
+        "'She can dance.'의 뜻은 '그녀는 춤을 출 수 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1a6b370fb8f4",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "It is snowing.",
+      "answer": "눈이 오고 있습니다.",
+      "distractors": [
+        "비가 오고 있습니다.",
+        "날씨가 덥습니다.",
+        "날씨가 맑습니다."
+      ],
+      "solution": [
+        "'It is snowing.'의 뜻은 '눈이 오고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1f0bc048c82a",
+      "difficulty": 1,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "문을 닫으세요.",
+      "answer": "Close the door.",
+      "distractors": [
+        "Open the door.",
+        "Close the window.",
+        "Clean the door."
+      ],
+      "solution": [
+        "'문을 닫으세요.'를 영어로 쓰면 'Close the door.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "23c3e6dfe7d4",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Thank you.",
+      "answer": "고맙습니다.",
+      "distractors": [
+        "미안합니다.",
+        "괜찮습니다.",
+        "안녕하세요."
+      ],
+      "solution": [
+        "'Thank you.'의 뜻은 '고맙습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "273937cca918",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I have a dog.",
+      "answer": "나는 개를 한 마리 기릅니다.",
+      "distractors": [
+        "나는 고양이를 한 마리 기릅니다.",
+        "너는 개를 한 마리 기릅니다.",
+        "나는 개를 좋아하지 않습니다."
+      ],
+      "solution": [
+        "'I have a dog.'의 뜻은 '나는 개를 한 마리 기릅니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2808765b07be",
+      "difficulty": 2,
+      "instruction": "글을 읽고 지금 날씨를 고르시오.",
+      "stem": "Look at the sky. It is snowing.",
+      "answer": "눈이 옵니다",
+      "distractors": [
+        "맑습니다",
+        "비가 옵니다",
+        "덥습니다"
+      ],
+      "solution": [
+        "'It is snowing.'에서 눈이 오고 있음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2821fcab972c",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Good morning.",
+      "answer": "좋은 아침입니다.",
+      "distractors": [
+        "잘 자요.",
+        "다음에 만나요.",
+        "고맙습니다."
+      ],
+      "solution": [
+        "'Good morning.'의 뜻은 '좋은 아침입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2f500802f6b8",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I like milk.",
+      "answer": "나는 우유를 좋아합니다.",
+      "distractors": [
+        "나는 주스를 좋아합니다.",
+        "나는 우유를 싫어합니다.",
+        "그녀는 우유를 좋아합니다."
+      ],
+      "solution": [
+        "'I like milk.'의 뜻은 '나는 우유를 좋아합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "33de1963458a",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The lion is strong.",
+      "answer": "사자는 힘이 셉니다.",
+      "distractors": [
+        "사자는 힘이 약합니다.",
+        "호랑이는 힘이 셉니다.",
+        "사자는 키가 작습니다."
+      ],
+      "solution": [
+        "'The lion is strong.'의 뜻은 '사자는 힘이 셉니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "348bbcfcd066",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Can I help you?",
+      "answer": "도와드릴까요?",
+      "distractors": [
+        "도와주세요.",
+        "도와줄 수 없어요.",
+        "누가 도와줄까요?"
+      ],
+      "solution": [
+        "'Can I help you?'의 뜻은 '도와드릴까요?'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3b109e45d5d7",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Open the door, please.",
+      "answer": "문을 열어 주세요.",
+      "distractors": [
+        "문을 닫아 주세요.",
+        "창문을 열어 주세요.",
+        "책을 펴 주세요."
+      ],
+      "solution": [
+        "'Open the door, please.'의 뜻은 '문을 열어 주세요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c041ad10ac8",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The cat is on the chair.",
+      "answer": "고양이가 의자 위에 있습니다.",
+      "distractors": [
+        "고양이가 의자 아래에 있습니다.",
+        "개가 의자 위에 있습니다.",
+        "고양이가 책상 위에 있습니다."
+      ],
+      "solution": [
+        "'The cat is on the chair.'의 뜻은 '고양이가 의자 위에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3ff797e2d710",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "공이 상자 안에 있습니다.",
+      "answer": "The ball is in the box.",
+      "distractors": [
+        "The ball is on the box.",
+        "The doll is in the box.",
+        "The ball is under the box."
+      ],
+      "solution": [
+        "'공이 상자 안에 있습니다.'를 영어로 쓰면 'The ball is in the box.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "45a9ae6c4893",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "This is my mom.",
+      "answer": "이분은 우리 엄마입니다.",
+      "distractors": [
+        "이분은 우리 아빠입니다.",
+        "저분은 우리 선생님입니다.",
+        "이 사람은 내 친구입니다."
+      ],
+      "solution": [
+        "'This is my mom.'의 뜻은 '이분은 우리 엄마입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "46290df500f6",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The fish are in the water.",
+      "answer": "물고기들이 물속에 있습니다.",
+      "distractors": [
+        "물고기들이 하늘에 있습니다.",
+        "새들이 물속에 있습니다.",
+        "물고기들이 바위 위에 있습니다."
+      ],
+      "solution": [
+        "'The fish are in the water.'의 뜻은 '물고기들이 물속에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "46f0218c069f",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The dog is in the house.",
+      "answer": "개가 집 안에 있습니다.",
+      "distractors": [
+        "개가 집 밖에 있습니다.",
+        "고양이가 집 안에 있습니다.",
+        "개가 학교 안에 있습니다."
+      ],
+      "solution": [
+        "'The dog is in the house.'의 뜻은 '개가 집 안에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "471db42cd696",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The baby is sleeping.",
+      "answer": "아기가 자고 있습니다.",
+      "distractors": [
+        "아기가 울고 있습니다.",
+        "아기가 먹고 있습니다.",
+        "강아지가 자고 있습니다."
+      ],
+      "solution": [
+        "'The baby is sleeping.'의 뜻은 '아기가 자고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "473195e24d83",
+      "difficulty": 2,
+      "instruction": "글을 읽고 고양이의 색깔을 고르시오.",
+      "stem": "I have a cat. It is white.",
+      "answer": "흰색",
+      "distractors": [
+        "검은색",
+        "갈색",
+        "노란색"
+      ],
+      "solution": [
+        "'It is white.'에서 고양이가 흰색임을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4956269ea683",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 아홉 살입니다.",
+      "answer": "I am nine years old.",
+      "distractors": [
+        "I am ten years old.",
+        "You are nine years old.",
+        "I am eight years old."
+      ],
+      "solution": [
+        "'나는 아홉 살입니다.'를 영어로 쓰면 'I am nine years old.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4991b8dae2c1",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I eat bread.",
+      "answer": "나는 빵을 먹습니다.",
+      "distractors": [
+        "나는 밥을 먹습니다.",
+        "나는 빵을 굽습니다.",
+        "그녀는 빵을 먹습니다."
+      ],
+      "solution": [
+        "'I eat bread.'의 뜻은 '나는 빵을 먹습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4cb9c604e6e6",
+      "difficulty": 3,
+      "instruction": "글을 읽고 글쓴이의 개에 대해 맞는 것을 고르시오.",
+      "stem": "My dog is big. It can run fast.",
+      "answer": "빨리 달릴 수 있습니다.",
+      "distractors": [
+        "몸집이 작습니다.",
+        "헤엄칠 수 없습니다.",
+        "이름이 없습니다."
+      ],
+      "solution": [
+        "'It can run fast.'에서 개가 빨리 달릴 수 있음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4f55f8f707d0",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "미나는 키가 크지 않습니다.",
+      "answer": "Mina is not tall.",
+      "distractors": [
+        "Mina is tall.",
+        "Mina is not short.",
+        "Yuna is not tall."
+      ],
+      "solution": [
+        "'미나는 키가 크지 않습니다.'를 영어로 쓰면 'Mina is not tall.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53528bad4aec",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Mina can play the piano.",
+      "answer": "미나는 피아노를 칠 수 있습니다.",
+      "distractors": [
+        "미나는 바이올린을 켤 수 있습니다.",
+        "미나는 피아노를 칠 수 없습니다.",
+        "민수는 피아노를 칠 수 있습니다."
+      ],
+      "solution": [
+        "'Mina can play the piano.'의 뜻은 '미나는 피아노를 칠 수 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5a490a37d418",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Minsu is reading a book.",
+      "answer": "민수는 책을 읽고 있습니다.",
+      "distractors": [
+        "민수는 책을 사고 있습니다.",
+        "미나는 책을 읽고 있습니다.",
+        "민수는 편지를 읽고 있습니다."
+      ],
+      "solution": [
+        "'Minsu is reading a book.'의 뜻은 '민수는 책을 읽고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5c1d64a4b620",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I have a red cap.",
+      "answer": "나는 빨간 모자가 있습니다.",
+      "distractors": [
+        "나는 파란 모자가 있습니다.",
+        "나는 빨간 가방이 있습니다.",
+        "너는 빨간 모자가 있습니다."
+      ],
+      "solution": [
+        "'I have a red cap.'의 뜻은 '나는 빨간 모자가 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5d7cefb603b0",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I have three books.",
+      "answer": "나는 책이 세 권 있습니다.",
+      "distractors": [
+        "나는 책이 두 권 있습니다.",
+        "나는 공책이 세 권 있습니다.",
+        "너는 책이 세 권 있습니다."
+      ],
+      "solution": [
+        "'I have three books.'의 뜻은 '나는 책이 세 권 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5e16bfc8ee97",
+      "difficulty": 3,
+      "instruction": "글을 읽고 글쓴이가 아침을 함께 먹는 사람을 고르시오.",
+      "stem": "I get up at seven. I eat breakfast with my mom.",
+      "answer": "엄마",
+      "distractors": [
+        "아빠",
+        "형",
+        "친구"
+      ],
+      "solution": [
+        "'with my mom'에서 엄마와 함께 아침을 먹음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f66364977f7",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Where is my cap?",
+      "answer": "내 모자는 어디에 있니?",
+      "distractors": [
+        "네 모자는 어디에 있니?",
+        "내 가방은 어디에 있니?",
+        "내 모자는 무슨 색이니?"
+      ],
+      "solution": [
+        "'Where is my cap?'의 뜻은 '내 모자는 어디에 있니?'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5f94c4c687d9",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Yuna does not like carrots.",
+      "answer": "유나는 당근을 좋아하지 않습니다.",
+      "distractors": [
+        "유나는 당근을 좋아합니다.",
+        "유나는 감자를 좋아하지 않습니다.",
+        "지호는 당근을 좋아하지 않습니다."
+      ],
+      "solution": [
+        "'Yuna does not like carrots.'의 뜻은 '유나는 당근을 좋아하지 않습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "646aa649b73a",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I can not swim.",
+      "answer": "나는 수영할 수 없습니다.",
+      "distractors": [
+        "나는 수영할 수 있습니다.",
+        "나는 달릴 수 없습니다.",
+        "너는 수영할 수 없습니다."
+      ],
+      "solution": [
+        "'I can not swim.'의 뜻은 '나는 수영할 수 없습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6581789c8be3",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The sun is hot.",
+      "answer": "해가 뜨겁습니다.",
+      "distractors": [
+        "해가 차갑습니다.",
+        "달이 뜨겁습니다.",
+        "해가 큽니다."
+      ],
+      "solution": [
+        "'The sun is hot.'의 뜻은 '해가 뜨겁습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "67ef8d6ff7be",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am happy.",
+      "answer": "나는 기쁩니다.",
+      "distractors": [
+        "나는 슬픕니다.",
+        "나는 피곤합니다.",
+        "너는 기쁩니다."
+      ],
+      "solution": [
+        "'I am happy.'의 뜻은 '나는 기쁩니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6814493ddb99",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The water is warm.",
+      "answer": "물이 따뜻합니다.",
+      "distractors": [
+        "물이 차갑습니다.",
+        "우유가 따뜻합니다.",
+        "물이 깨끗합니다."
+      ],
+      "solution": [
+        "'The water is warm.'의 뜻은 '물이 따뜻합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "68e60c1b0c64",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Jiho has two cats.",
+      "answer": "지호는 고양이 두 마리를 기릅니다.",
+      "distractors": [
+        "지호는 개 두 마리를 기릅니다.",
+        "지호는 고양이 세 마리를 기릅니다.",
+        "유나는 고양이 두 마리를 기릅니다."
+      ],
+      "solution": [
+        "'Jiho has two cats.'의 뜻은 '지호는 고양이 두 마리를 기릅니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6ac294395e34",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "This is my bag.",
+      "answer": "이것은 내 가방입니다.",
+      "distractors": [
+        "이것은 내 모자입니다.",
+        "저것은 네 가방입니다.",
+        "이것은 새 가방입니다."
+      ],
+      "solution": [
+        "'This is my bag.'의 뜻은 '이것은 내 가방입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "70881daec521",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "내 연필은 어디에 있니?",
+      "answer": "Where is my pencil?",
+      "distractors": [
+        "Where is your pencil?",
+        "What is my pencil?",
+        "Where is my bag?"
+      ],
+      "solution": [
+        "'내 연필은 어디에 있니?'를 영어로 쓰면 'Where is my pencil?'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "711fd2b11b9c",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I go to school by bus.",
+      "answer": "나는 버스를 타고 학교에 갑니다.",
+      "distractors": [
+        "나는 걸어서 학교에 갑니다.",
+        "나는 버스를 타고 공원에 갑니다.",
+        "나는 자전거를 타고 학교에 갑니다."
+      ],
+      "solution": [
+        "'I go to school by bus.'의 뜻은 '나는 버스를 타고 학교에 갑니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "719606084d62",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Look at the moon.",
+      "answer": "달을 보세요.",
+      "distractors": [
+        "해를 보세요.",
+        "별을 보세요.",
+        "달을 그리세요."
+      ],
+      "solution": [
+        "'Look at the moon.'의 뜻은 '달을 보세요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71abf6d77538",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The pencil is long.",
+      "answer": "연필이 깁니다.",
+      "distractors": [
+        "연필이 짧습니다.",
+        "지우개가 깁니다.",
+        "연필이 굵습니다."
+      ],
+      "solution": [
+        "'The pencil is long.'의 뜻은 '연필이 깁니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "723fcbff96b8",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "My bag is not heavy.",
+      "answer": "내 가방은 무겁지 않습니다.",
+      "distractors": [
+        "내 가방은 무겁습니다.",
+        "네 가방은 무겁지 않습니다.",
+        "내 가방은 크지 않습니다."
+      ],
+      "solution": [
+        "'My bag is not heavy.'의 뜻은 '내 가방은 무겁지 않습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "72a1da055727",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "My father is a doctor.",
+      "answer": "우리 아버지는 의사입니다.",
+      "distractors": [
+        "우리 아버지는 경찰관입니다.",
+        "우리 어머니는 의사입니다.",
+        "우리 아버지는 선생님입니다."
+      ],
+      "solution": [
+        "'My father is a doctor.'의 뜻은 '우리 아버지는 의사입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7382ce8b4d16",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Good night.",
+      "answer": "잘 자요.",
+      "distractors": [
+        "좋은 아침입니다.",
+        "안녕히 가세요.",
+        "반갑습니다."
+      ],
+      "solution": [
+        "'Good night.'의 뜻은 '잘 자요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "73f6c47b1308",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Tom is my friend.",
+      "answer": "톰은 내 친구입니다.",
+      "distractors": [
+        "톰은 내 형입니다.",
+        "에이미는 내 친구입니다.",
+        "톰은 네 친구입니다."
+      ],
+      "solution": [
+        "'Tom is my friend.'의 뜻은 '톰은 내 친구입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "75e43a0bb88d",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Tom has a red bike.",
+      "answer": "톰은 빨간 자전거를 가지고 있습니다.",
+      "distractors": [
+        "톰은 파란 자전거를 가지고 있습니다.",
+        "톰은 빨간 자동차를 가지고 있습니다.",
+        "에이미는 빨간 자전거를 가지고 있습니다."
+      ],
+      "solution": [
+        "'Tom has a red bike.'의 뜻은 '톰은 빨간 자전거를 가지고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7fd1598d191e",
+      "difficulty": 1,
+      "instruction": "글을 읽고 오늘 날씨를 고르시오.",
+      "stem": "It is hot today. We go swimming.",
+      "answer": "덥습니다",
+      "distractors": [
+        "춥습니다",
+        "비가 옵니다",
+        "바람이 붑니다"
+      ],
+      "solution": [
+        "'It is hot today.'에서 오늘 날씨가 더움을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80ea58160359",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "He is tall.",
+      "answer": "그는 키가 큽니다.",
+      "distractors": [
+        "그는 키가 작습니다.",
+        "그녀는 키가 큽니다.",
+        "그는 힘이 셉니다."
+      ],
+      "solution": [
+        "'He is tall.'의 뜻은 '그는 키가 큽니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "845dd491ad8e",
+      "difficulty": 2,
+      "instruction": "글을 읽고 톰이 좋아하는 운동을 고르시오.",
+      "stem": "This is Tom. He is my friend. He likes baseball.",
+      "answer": "야구",
+      "distractors": [
+        "축구",
+        "농구",
+        "수영"
+      ],
+      "solution": [
+        "'He likes baseball.'에서 톰이 야구를 좋아함을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "85a3e9cd534d",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "It is a big elephant.",
+      "answer": "그것은 큰 코끼리입니다.",
+      "distractors": [
+        "그것은 작은 코끼리입니다.",
+        "그것은 큰 사자입니다.",
+        "그것은 큰 원숭이입니다."
+      ],
+      "solution": [
+        "'It is a big elephant.'의 뜻은 '그것은 큰 코끼리입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88ac1f73e921",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am sad.",
+      "answer": "나는 슬픕니다.",
+      "distractors": [
+        "나는 기쁩니다.",
+        "나는 피곤합니다.",
+        "너는 슬픕니다."
+      ],
+      "solution": [
+        "'I am sad.'의 뜻은 '나는 슬픕니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88af2abe04f3",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I have a brother.",
+      "answer": "나는 남동생이 한 명 있습니다.",
+      "distractors": [
+        "나는 여동생이 한 명 있습니다.",
+        "나는 형제가 없습니다.",
+        "그는 남동생이 한 명 있습니다."
+      ],
+      "solution": [
+        "'I have a brother.'의 뜻은 '나는 남동생이 한 명 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88c0a806435b",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Jiho is not at home.",
+      "answer": "지호는 집에 없습니다.",
+      "distractors": [
+        "지호는 집에 있습니다.",
+        "지호는 학교에 없습니다.",
+        "유나는 집에 없습니다."
+      ],
+      "solution": [
+        "'Jiho is not at home.'의 뜻은 '지호는 집에 없습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8ceff0a48133",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The monkey is in the tree.",
+      "answer": "원숭이가 나무 위에 있습니다.",
+      "distractors": [
+        "원숭이가 나무 아래에 있습니다.",
+        "새가 나무 위에 있습니다.",
+        "원숭이가 집 안에 있습니다."
+      ],
+      "solution": [
+        "'The monkey is in the tree.'의 뜻은 '원숭이가 나무 위에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8ef2746bddb8",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "우리는 공원에 갑니다.",
+      "answer": "We go to the park.",
+      "distractors": [
+        "We go to the zoo.",
+        "They go to the park.",
+        "We are in the park."
+      ],
+      "solution": [
+        "'우리는 공원에 갑니다.'를 영어로 쓰면 'We go to the park.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8ff6d84589a0",
+      "difficulty": 1,
+      "instruction": "글을 읽고 글쓴이가 좋아하는 것을 고르시오.",
+      "stem": "I like music. I can sing well.",
+      "answer": "음악",
+      "distractors": [
+        "미술",
+        "과학",
+        "체육"
+      ],
+      "solution": [
+        "'I like music.'에서 글쓴이가 음악을 좋아함을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "939fe403b9d3",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The apple is red.",
+      "answer": "사과는 빨간색입니다.",
+      "distractors": [
+        "사과는 초록색입니다.",
+        "바나나는 빨간색입니다.",
+        "사과는 노란색입니다."
+      ],
+      "solution": [
+        "'The apple is red.'의 뜻은 '사과는 빨간색입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96e9f3e89722",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The dog is small.",
+      "answer": "그 개는 작습니다.",
+      "distractors": [
+        "그 개는 큽니다.",
+        "그 고양이는 작습니다.",
+        "그 개는 빠릅니다."
+      ],
+      "solution": [
+        "'The dog is small.'의 뜻은 '그 개는 작습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "983e921e34b8",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The window is open.",
+      "answer": "창문이 열려 있습니다.",
+      "distractors": [
+        "창문이 닫혀 있습니다.",
+        "문이 열려 있습니다.",
+        "창문이 깨져 있습니다."
+      ],
+      "solution": [
+        "'The window is open.'의 뜻은 '창문이 열려 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9863093c2309",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am ten years old.",
+      "answer": "나는 열 살입니다.",
+      "distractors": [
+        "나는 아홉 살입니다.",
+        "나는 열한 살입니다.",
+        "너는 열 살입니다."
+      ],
+      "solution": [
+        "'I am ten years old.'의 뜻은 '나는 열 살입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9c173df8cb27",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Do you like pizza?",
+      "answer": "너는 피자를 좋아하니?",
+      "distractors": [
+        "나는 피자를 좋아합니다.",
+        "너는 피자를 먹었니?",
+        "너는 빵을 좋아하니?"
+      ],
+      "solution": [
+        "'Do you like pizza?'의 뜻은 '너는 피자를 좋아하니?'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a097da8899a6",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I like dogs.",
+      "answer": "나는 개를 좋아합니다.",
+      "distractors": [
+        "나는 고양이를 좋아합니다.",
+        "나는 개를 싫어합니다.",
+        "그는 개를 좋아합니다."
+      ],
+      "solution": [
+        "'I like dogs.'의 뜻은 '나는 개를 좋아합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a4ccdf17f616",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 사과 두 개가 있습니다.",
+      "answer": "I have two apples.",
+      "distractors": [
+        "I have three apples.",
+        "I like two apples.",
+        "I have two bananas."
+      ],
+      "solution": [
+        "'나는 사과 두 개가 있습니다.'를 영어로 쓰면 'I have two apples.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5684bf5cc4b",
+      "difficulty": 3,
+      "instruction": "글을 읽고 공이 있는 곳을 고르시오.",
+      "stem": "Minsu has a ball. It is under the bed.",
+      "answer": "침대 아래",
+      "distractors": [
+        "침대 위",
+        "책상 아래",
+        "의자 위"
+      ],
+      "solution": [
+        "'It is under the bed.'에서 공이 침대 아래에 있음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a76813579380",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The room is clean.",
+      "answer": "방이 깨끗합니다.",
+      "distractors": [
+        "방이 더럽습니다.",
+        "부엌이 깨끗합니다.",
+        "방이 넓습니다."
+      ],
+      "solution": [
+        "'The room is clean.'의 뜻은 '방이 깨끗합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a7ddd70cf5a9",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The bag is blue.",
+      "answer": "가방은 파란색입니다.",
+      "distractors": [
+        "가방은 빨간색입니다.",
+        "모자는 파란색입니다.",
+        "가방은 노란색입니다."
+      ],
+      "solution": [
+        "'The bag is blue.'의 뜻은 '가방은 파란색입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ab0478ba5879",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The bird is on the tree.",
+      "answer": "새가 나무 위에 있습니다.",
+      "distractors": [
+        "새가 나무 아래에 있습니다.",
+        "새가 집 위에 있습니다.",
+        "다람쥐가 나무 위에 있습니다."
+      ],
+      "solution": [
+        "'The bird is on the tree.'의 뜻은 '새가 나무 위에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "abf8dc1256be",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The cat is sleeping on the bed.",
+      "answer": "고양이가 침대 위에서 자고 있습니다.",
+      "distractors": [
+        "고양이가 침대 아래에서 자고 있습니다.",
+        "개가 침대 위에서 자고 있습니다.",
+        "고양이가 침대 위에서 놀고 있습니다."
+      ],
+      "solution": [
+        "'The cat is sleeping on the bed.'의 뜻은 '고양이가 침대 위에서 자고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac4bc7f92787",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "It is a pencil.",
+      "answer": "그것은 연필입니다.",
+      "distractors": [
+        "그것은 펜입니다.",
+        "그것은 공책입니다.",
+        "그것은 지우개입니다."
+      ],
+      "solution": [
+        "'It is a pencil.'의 뜻은 '그것은 연필입니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "acdd082b59de",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "고양이가 의자 아래에 있습니다.",
+      "answer": "The cat is under the chair.",
+      "distractors": [
+        "The cat is on the chair.",
+        "The dog is under the chair.",
+        "The cat is under the desk."
+      ],
+      "solution": [
+        "'고양이가 의자 아래에 있습니다.'를 영어로 쓰면 'The cat is under the chair.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "acf855c28a0a",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I like bananas.",
+      "answer": "나는 바나나를 좋아합니다.",
+      "distractors": [
+        "나는 사과를 좋아합니다.",
+        "나는 바나나를 싫어합니다.",
+        "그는 바나나를 좋아합니다."
+      ],
+      "solution": [
+        "'I like bananas.'의 뜻은 '나는 바나나를 좋아합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af188e726c40",
+      "difficulty": 1,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 행복합니다.",
+      "answer": "I am happy.",
+      "distractors": [
+        "I am sad.",
+        "You are happy.",
+        "I am tired."
+      ],
+      "solution": [
+        "'나는 행복합니다.'를 영어로 쓰면 'I am happy.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3ae7cec1880",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am sorry.",
+      "answer": "미안합니다.",
+      "distractors": [
+        "고맙습니다.",
+        "반갑습니다.",
+        "괜찮습니다."
+      ],
+      "solution": [
+        "'I am sorry.'의 뜻은 '미안합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9178f8aaf4c",
+      "difficulty": 3,
+      "instruction": "글을 읽고 유나가 연주할 수 없는 악기를 고르시오.",
+      "stem": "Yuna can play the violin. She can not play the piano.",
+      "answer": "피아노",
+      "distractors": [
+        "바이올린",
+        "기타",
+        "북"
+      ],
+      "solution": [
+        "'She can not play the piano.'에서 유나가 피아노를 칠 수 없음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c1734b2dfc01",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "하늘이 파랗습니다.",
+      "answer": "The sky is blue.",
+      "distractors": [
+        "The sea is blue.",
+        "The sky is gray.",
+        "The sky is dark."
+      ],
+      "solution": [
+        "'하늘이 파랗습니다.'를 영어로 쓰면 'The sky is blue.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c2514241e4c4",
+      "difficulty": 1,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "안녕히 가세요.",
+      "answer": "Goodbye.",
+      "distractors": [
+        "Hello.",
+        "Thank you.",
+        "Good morning."
+      ],
+      "solution": [
+        "'안녕히 가세요.'를 영어로 쓰면 'Goodbye.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c46a4ec34e90",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "My mom is busy.",
+      "answer": "우리 엄마는 바쁩니다.",
+      "distractors": [
+        "우리 엄마는 한가합니다.",
+        "우리 아빠는 바쁩니다.",
+        "우리 엄마는 피곤합니다."
+      ],
+      "solution": [
+        "'My mom is busy.'의 뜻은 '우리 엄마는 바쁩니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c6887f4581ac",
+      "difficulty": 1,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Nice to meet you.",
+      "answer": "만나서 반갑습니다.",
+      "distractors": [
+        "다음에 또 만나요.",
+        "잘 지냈어요?",
+        "안녕히 주무세요."
+      ],
+      "solution": [
+        "'Nice to meet you.'의 뜻은 '만나서 반갑습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8192ce4d12d",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The pig is fat.",
+      "answer": "돼지가 뚱뚱합니다.",
+      "distractors": [
+        "돼지가 날씬합니다.",
+        "고양이가 뚱뚱합니다.",
+        "돼지가 빠릅니다."
+      ],
+      "solution": [
+        "'The pig is fat.'의 뜻은 '돼지가 뚱뚱합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb53ef383e34",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The box is heavy.",
+      "answer": "상자가 무겁습니다.",
+      "distractors": [
+        "상자가 가볍습니다.",
+        "가방이 무겁습니다.",
+        "상자가 큽니다."
+      ],
+      "solution": [
+        "'The box is heavy.'의 뜻은 '상자가 무겁습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc69449805f0",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The milk is cold.",
+      "answer": "우유가 차갑습니다.",
+      "distractors": [
+        "우유가 뜨겁습니다.",
+        "물이 차갑습니다.",
+        "우유가 맛있습니다."
+      ],
+      "solution": [
+        "'The milk is cold.'의 뜻은 '우유가 차갑습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce290ce7b6f1",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Wash your hands.",
+      "answer": "손을 씻으세요.",
+      "distractors": [
+        "얼굴을 씻으세요.",
+        "손을 드세요.",
+        "발을 씻으세요."
+      ],
+      "solution": [
+        "'Wash your hands.'의 뜻은 '손을 씻으세요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d47a3fd2f6a2",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "Amy likes cookies and milk.",
+      "answer": "에이미는 쿠키와 우유를 좋아합니다.",
+      "distractors": [
+        "에이미는 케이크와 주스를 좋아합니다.",
+        "톰은 쿠키와 우유를 좋아합니다.",
+        "에이미는 쿠키만 좋아합니다."
+      ],
+      "solution": [
+        "'Amy likes cookies and milk.'의 뜻은 '에이미는 쿠키와 우유를 좋아합니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d4b7720c3cc5",
+      "difficulty": 3,
+      "instruction": "글을 읽고 지호가 하는 일을 고르시오.",
+      "stem": "Jiho is in the kitchen. He is cooking.",
+      "answer": "요리하기",
+      "distractors": [
+        "청소하기",
+        "잠자기",
+        "숙제하기"
+      ],
+      "solution": [
+        "'He is cooking.'에서 지호가 요리하고 있음을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d9c96a64cd98",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "우리 엄마는 선생님입니다.",
+      "answer": "My mom is a teacher.",
+      "distractors": [
+        "My mom is a doctor.",
+        "My dad is a teacher.",
+        "My mom is a cook."
+      ],
+      "solution": [
+        "'우리 엄마는 선생님입니다.'를 영어로 쓰면 'My mom is a teacher.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dbcb639365cb",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "We sing a song.",
+      "answer": "우리는 노래를 부릅니다.",
+      "distractors": [
+        "우리는 춤을 춥니다.",
+        "그들은 노래를 부릅니다.",
+        "우리는 노래를 듣습니다."
+      ],
+      "solution": [
+        "'We sing a song.'의 뜻은 '우리는 노래를 부릅니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dea414c2534a",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I can run fast.",
+      "answer": "나는 빨리 달릴 수 있습니다.",
+      "distractors": [
+        "나는 천천히 걸을 수 있습니다.",
+        "나는 빨리 달릴 수 없습니다.",
+        "그는 빨리 달릴 수 있습니다."
+      ],
+      "solution": [
+        "'I can run fast.'의 뜻은 '나는 빨리 달릴 수 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dea927e6c0c7",
+      "difficulty": 1,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 고양이를 좋아합니다.",
+      "answer": "I like cats.",
+      "distractors": [
+        "I like dogs.",
+        "I have cats.",
+        "You like cats."
+      ],
+      "solution": [
+        "'나는 고양이를 좋아합니다.'를 영어로 쓰면 'I like cats.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e0ff7d902903",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I can swim.",
+      "answer": "나는 수영할 수 있습니다.",
+      "distractors": [
+        "나는 수영할 수 없습니다.",
+        "나는 달릴 수 있습니다.",
+        "너는 수영할 수 있습니다."
+      ],
+      "solution": [
+        "'I can swim.'의 뜻은 '나는 수영할 수 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e119c7c3efcb",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The cup is on the table.",
+      "answer": "컵이 탁자 위에 있습니다.",
+      "distractors": [
+        "컵이 탁자 아래에 있습니다.",
+        "접시가 탁자 위에 있습니다.",
+        "컵이 의자 위에 있습니다."
+      ],
+      "solution": [
+        "'The cup is on the table.'의 뜻은 '컵이 탁자 위에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1223bd56cea",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The book is under the desk.",
+      "answer": "책이 책상 아래에 있습니다.",
+      "distractors": [
+        "책이 책상 위에 있습니다.",
+        "공이 책상 아래에 있습니다.",
+        "책이 의자 아래에 있습니다."
+      ],
+      "solution": [
+        "'The book is under the desk.'의 뜻은 '책이 책상 아래에 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e41ddeb607dc",
+      "difficulty": 3,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I am not tired.",
+      "answer": "나는 피곤하지 않습니다.",
+      "distractors": [
+        "나는 피곤합니다.",
+        "나는 슬프지 않습니다.",
+        "너는 피곤하지 않습니다."
+      ],
+      "solution": [
+        "'I am not tired.'의 뜻은 '나는 피곤하지 않습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e848817d1194",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "날씨가 덥습니다.",
+      "answer": "It is hot.",
+      "distractors": [
+        "It is cold.",
+        "It is cool.",
+        "It is warm."
+      ],
+      "solution": [
+        "'날씨가 덥습니다.'를 영어로 쓰면 'It is hot.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e95154d9b060",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 아침을 먹습니다.",
+      "answer": "I eat breakfast.",
+      "distractors": [
+        "I eat lunch.",
+        "I eat dinner.",
+        "I cook breakfast."
+      ],
+      "solution": [
+        "'나는 아침을 먹습니다.'를 영어로 쓰면 'I eat breakfast.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e9a63097175a",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "I have two pencils.",
+      "answer": "나는 연필이 두 자루 있습니다.",
+      "distractors": [
+        "나는 연필이 세 자루 있습니다.",
+        "나는 펜이 두 자루 있습니다.",
+        "나는 연필이 한 자루도 없습니다."
+      ],
+      "solution": [
+        "'I have two pencils.'의 뜻은 '나는 연필이 두 자루 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eb4948a5aadf",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "나는 피아노를 칠 수 있습니다.",
+      "answer": "I can play the piano.",
+      "distractors": [
+        "I can play the violin.",
+        "I can not play the piano.",
+        "She can play the piano."
+      ],
+      "solution": [
+        "'나는 피아노를 칠 수 있습니다.'를 영어로 쓰면 'I can play the piano.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eb5bf27754b9",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "See you tomorrow.",
+      "answer": "내일 만나요.",
+      "distractors": [
+        "어제 만났어요.",
+        "오늘 만나요.",
+        "내일 전화해요."
+      ],
+      "solution": [
+        "'See you tomorrow.'의 뜻은 '내일 만나요.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eba926bf6d6f",
+      "difficulty": 3,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "에이미는 노래할 수 있습니다.",
+      "answer": "Amy can sing.",
+      "distractors": [
+        "Amy can not sing.",
+        "Amy can dance.",
+        "Tom can sing."
+      ],
+      "solution": [
+        "'에이미는 노래할 수 있습니다.'를 영어로 쓰면 'Amy can sing.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f173d26a83fd",
+      "difficulty": 2,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "그는 내 남동생입니다.",
+      "answer": "He is my brother.",
+      "distractors": [
+        "She is my sister.",
+        "He is my father.",
+        "He is your brother."
+      ],
+      "solution": [
+        "'그는 내 남동생입니다.'를 영어로 쓰면 'He is my brother.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1c716cf557b",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "It is raining.",
+      "answer": "비가 오고 있습니다.",
+      "distractors": [
+        "눈이 오고 있습니다.",
+        "바람이 불고 있습니다.",
+        "해가 나고 있습니다."
+      ],
+      "solution": [
+        "'It is raining.'의 뜻은 '비가 오고 있습니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f59db1ddf166",
+      "difficulty": 2,
+      "instruction": "문장의 뜻으로 알맞은 것을 고르시오.",
+      "stem": "The rabbit is fast.",
+      "answer": "토끼는 빠릅니다.",
+      "distractors": [
+        "토끼는 느립니다.",
+        "거북은 빠릅니다.",
+        "토끼는 작습니다."
+      ],
+      "solution": [
+        "'The rabbit is fast.'의 뜻은 '토끼는 빠릅니다.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f7526b639417",
+      "difficulty": 2,
+      "instruction": "글을 읽고 톰의 가방 색깔을 고르시오.",
+      "stem": "Tom has a red cap and a blue bag.",
+      "answer": "파란색",
+      "distractors": [
+        "빨간색",
+        "노란색",
+        "초록색"
+      ],
+      "solution": [
+        "'a blue bag'에서 톰의 가방이 파란색임을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fa20a73509ea",
+      "difficulty": 2,
+      "instruction": "글을 읽고 에이미의 모습으로 알맞은 것을 고르시오.",
+      "stem": "Amy is my sister. She is tall. She has long hair.",
+      "answer": "키가 크고 머리가 깁니다.",
+      "distractors": [
+        "키가 작고 머리가 깁니다.",
+        "키가 크고 머리가 짧습니다.",
+        "키가 작고 머리가 짧습니다."
+      ],
+      "solution": [
+        "'She is tall.'과 'She has long hair.'에서 에이미가 키가 크고 머리가 김을 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fc6378643873",
+      "difficulty": 1,
+      "instruction": "우리말 뜻에 맞는 영어 문장을 고르시오.",
+      "stem": "이것은 펜입니다.",
+      "answer": "This is a pen.",
+      "distractors": [
+        "This is a book.",
+        "That is a pen.",
+        "It is my pen."
+      ],
+      "solution": [
+        "'이것은 펜입니다.'를 영어로 쓰면 'This is a pen.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fde9462c5b41",
+      "difficulty": 2,
+      "instruction": "글을 읽고 글쓴이의 형제자매를 고르시오.",
+      "stem": "I have a brother and a sister.",
+      "answer": "남자 형제와 여자 형제",
+      "distractors": [
+        "여자 형제 둘",
+        "남자 형제 둘",
+        "여자 형제 하나"
+      ],
+      "solution": [
+        "'a brother and a sister'는 남자 형제 하나와 여자 형제 하나이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -40,13 +40,13 @@ Markdown으로 고정한다. 외부 저장소를 읽지 않으며, LF 정규화 
 
 생성기 306개
 verify-generators      문항 생성 검산 실패 0건 · SVG 렌더 41,585건
-mutation-test          틀린 답 34,618개 주입 → 통과 0개 · 무력한 검산 0개
+mutation-test          틀린 답 34,619개 주입 → 통과 0개 · 무력한 검산 0개
 check-korean           문면 109,004건 → 조사·표기 위반 0건
-check-vocabulary       문항 2,460개 / 낱말 3,547건 → 학년 어휘 위반 0건
+check-vocabulary       문항 2,460개 / 낱말 3,562건 → 학년 어휘 위반 0건
 check-fact-tables      사실 표 6종 114짝 → 구조 문제 0건
 check-difficulty       numeric 211 / single 26 / categorical 69 · 평평 0 · 축 불일치 0
 check-difficulty-notes categorical 69개 → 노트와 코드 불일치 0건
-check-capacity         포화 102/306 · 관측 문항 용량 292,262개 · 상한 미신고 0건
+check-capacity         포화 103/306 · 관측 문항 용량 291,827개 · 상한 미신고 0건
 check-prerequisites    성취기준 121/121 · 간선 158 (학년군 넘김 54) · 순환·역행 0
 ```
 

@@ -1,0 +1,2138 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[6국03-05]",
+  "skill": "쓰기 과정 점검·조정과 글 전체 고쳐쓰기",
+  "items": [
+    {
+      "id": "00aa785ca4c3",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "나는 결코 그 일을 잊겠다.",
+      "answer": "나는 결코 그 일을 잊지 않겠다.",
+      "distractors": [
+        "나는 결코 그 일을 잊었다.",
+        "나는 결코 그 일을 잊고 싶다.",
+        "나는 결코 그 일을 잊어야 한다."
+      ],
+      "solution": [
+        "'결코'는 '않다' 같은 부정하는 말과 함께 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "018d3d5d6607",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "내 꿈은 과학자가 되고 싶다.",
+      "answer": "나는 과학자가 되고 싶다.",
+      "distractors": [
+        "내 꿈은 과학자가 되고 싶었다.",
+        "내 꿈은 과학자가 되고 싶다고 한다.",
+        "내 꿈은 과학자도 되고 싶다."
+      ],
+      "solution": [
+        "'내 꿈은'과 '되고 싶다'가 어울리지 않는다. 주어를 '나는'으로 고치면 자연스럽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "028af625feab",
+      "difficulty": 1,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "나는 결코 거짓말을 한다.",
+      "answer": "나는 결코 거짓말을 하지 않는다.",
+      "distractors": [
+        "나는 결코 거짓말을 했다.",
+        "나는 결코 거짓말을 하고 싶다.",
+        "나는 결코 거짓말을 할 수 있다."
+      ],
+      "solution": [
+        "'결코'는 부정하는 말과 호응한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "047182cdac28",
+      "difficulty": 3,
+      "instruction": "글을 고쳐 쓴 방법으로 알맞은 것을 고르시오.",
+      "stem": "고치기 전: 나는 어제 공원에 갔다. 나는 공원에서 친구를 만났다. 나는 친구와 그네를 탔다.\n고친 뒤: 어제 공원에 가서 친구를 만나 함께 그네를 탔다.",
+      "answer": "되풀이된 말을 줄이고 문장을 이었다",
+      "distractors": [
+        "새로운 내용을 덧붙였다",
+        "문장의 차례를 바꾸었다",
+        "틀린 낱말을 바르게 고쳤다"
+      ],
+      "solution": [
+        "되풀이되던 '나는'을 빼고 세 문장을 하나로 이어 자연스럽게 고쳤다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "048a922c4fa1",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "그 일을 곰곰히 생각했다.",
+      "answer": "그 일을 곰곰이 생각했다.",
+      "distractors": [
+        "그 일을 곰곰히 생각했다.",
+        "그 일을 곰곰이생각했다.",
+        "그일을 곰곰이 생각했다."
+      ],
+      "solution": [
+        "'곰곰'에 '-이'가 붙어 '곰곰이'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0548b1636fd0",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "방에 옷이 널부러져 있다.",
+      "answer": "방에 옷이 널브러져 있다.",
+      "distractors": [
+        "방에 옷이 널부러져 있다.",
+        "방에 옷이 널브러져있다.",
+        "방에옷이 널브러져 있다."
+      ],
+      "solution": [
+        "바른 표기는 '널브러지다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0971d754be1c",
+      "difficulty": 1,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 줄넘기는 좋은 운동입니다. ㉡ 줄넘기를 하면 다리 힘이 세집니다. ㉢ 좁은 곳에서도 쉽게 할 수 있습니다. ㉣ 어제저녁에는 비빔밥을 먹었습니다.",
+      "answer": "㉣",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉢"
+      ],
+      "solution": [
+        "줄넘기의 좋은 점을 말하는 글이므로 저녁 메뉴 이야기인 ㉣이 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0aa0a6eecf6c",
+      "difficulty": 2,
+      "instruction": "글쓰기 과정에서 다음 활동을 하는 단계로 알맞은 것을 고르시오.",
+      "stem": "다 쓴 글을 소리 내어 읽으며 어색한 문장을 찾아 바꿉니다.",
+      "answer": "글 고쳐 쓰기",
+      "distractors": [
+        "내용 떠올리기",
+        "글 계획하기",
+        "주제 정하기"
+      ],
+      "solution": [
+        "다 쓴 글을 읽으며 어색한 문장을 바꾸는 것은 고쳐 쓰는 단계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "10317330b09f",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "나를 도와준 사람은 너 뿐이야.",
+      "answer": "나를 도와준 사람은 너뿐이야.",
+      "distractors": [
+        "나를 도와준 사람은 너 뿐이야.",
+        "나를 도와 준 사람은 너 뿐이야.",
+        "나를도와준 사람은 너뿐이야."
+      ],
+      "solution": [
+        "'뿐'은 사람을 나타내는 말 뒤에서 조사로 쓰여 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13452325cecf",
+      "difficulty": 2,
+      "instruction": "글을 고쳐 쓸 때 살펴볼 점으로 알맞지 않은 것을 고르시오.",
+      "stem": "설명하는 글을 쓰고 나서 짝과 바꾸어 읽으며 고칠 점을 찾습니다.",
+      "answer": "글이 몇 쪽인지",
+      "distractors": [
+        "읽는 사람이 이해하기 쉬운지",
+        "빠진 내용이 없는지",
+        "문단이 잘 나뉘었는지"
+      ],
+      "solution": [
+        "쪽수는 글의 내용이나 표현과 관계가 없다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15ed0f66f7b0",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "조금 더 기다릴 수 밖에 없다.",
+      "answer": "조금 더 기다릴 수밖에 없다.",
+      "distractors": [
+        "조금 더 기다릴수 밖에 없다.",
+        "조금 더 기다릴 수 밖에없다.",
+        "조금 더 기다릴수밖에 없다."
+      ],
+      "solution": [
+        "'밖에'는 조사라서 '수'에 붙여 쓰고, '수'는 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1726733c5cfb",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "웬지 기분이 좋다.",
+      "answer": "왠지 기분이 좋다.",
+      "distractors": [
+        "웬지 기분이 좋다.",
+        "왠 지 기분이 좋다.",
+        "왠지 기분이좋다."
+      ],
+      "solution": [
+        "'왜인지'를 줄인 말이므로 '왠지'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1a001253ca37",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "나도 할수 있다.",
+      "answer": "나도 할 수 있다.",
+      "distractors": [
+        "나도 할수 있다.",
+        "나도 할 수있다.",
+        "나도할 수 있다."
+      ],
+      "solution": [
+        "'수'는 앞말과 띄어 쓰고 '있다'와도 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ba55be7bc64",
+      "difficulty": 2,
+      "instruction": "글쓰기 과정에서 다음 활동을 하는 단계로 알맞은 것을 고르시오.",
+      "stem": "누구에게 무엇을 쓸지 정하고 처음, 가운데, 끝에 들어갈 내용을 나눕니다.",
+      "answer": "글 계획하기",
+      "distractors": [
+        "글 고쳐 쓰기",
+        "글 나누어 읽기",
+        "맞춤법 살피기"
+      ],
+      "solution": [
+        "읽는 사람과 짜임을 정하는 것은 계획하는 단계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d1fa55c8711",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "오늘 숙제를 해야 되.",
+      "answer": "오늘 숙제를 해야 돼.",
+      "distractors": [
+        "오늘 숙제를 해야 되.",
+        "오늘 숙제를 해야돼.",
+        "오늘숙제를 해야 돼."
+      ],
+      "solution": [
+        "'되어'를 줄여 '돼'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d652a6b9c4a",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "이게 어떻게 된거야?",
+      "answer": "이게 어떻게 된 거야?",
+      "distractors": [
+        "이게 어떻게 된거야?",
+        "이게 어떡해 된 거야?",
+        "이게어떻게 된 거야?"
+      ],
+      "solution": [
+        "'거'는 '것'을 줄인 말로 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2079934c8f49",
+      "difficulty": 1,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 그래서 우산을 쓰고 집에 왔습니다. ㉡ 학교가 끝날 무렵 비가 내렸습니다. ㉢ 다행히 사물함에 우산이 있었습니다.",
+      "answer": "㉡, ㉢, ㉠",
+      "distractors": [
+        "㉠, ㉡, ㉢",
+        "㉡, ㉠, ㉢",
+        "㉢, ㉡, ㉠"
+      ],
+      "solution": [
+        "비가 내리고, 우산이 있었고, 그래서 우산을 쓰고 왔다는 차례가 자연스럽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "22175e7adc77",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "희안한 일이 생겼다.",
+      "answer": "희한한 일이 생겼다.",
+      "distractors": [
+        "희안한 일이 생겼다.",
+        "희한한일이 생겼다.",
+        "히한한 일이 생겼다."
+      ],
+      "solution": [
+        "바른 표기는 '희한하다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2b79f94cee1a",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "할머니는 산 넘어 마을에 사신다.",
+      "answer": "할머니는 산 너머 마을에 사신다.",
+      "distractors": [
+        "할머니는 산 넘어 마을에 사신다.",
+        "할머니는 산너머 마을에 사신다.",
+        "할머니는 산 너머마을에 사신다."
+      ],
+      "solution": [
+        "산의 저쪽 공간은 '너머'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2cebac2fd081",
+      "difficulty": 1,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "어제 나는 도서관에 가겠다.",
+      "answer": "어제 나는 도서관에 갔다.",
+      "distractors": [
+        "어제 나는 도서관에 간다.",
+        "내일 나는 도서관에 갔다.",
+        "어제 나는 도서관에 가겠지."
+      ],
+      "solution": [
+        "'어제'는 지난 일이므로 '갔다'로 끝내야 한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2eb7c198aa7d",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "수업중에 떠들지 말자.",
+      "answer": "수업 중에 떠들지 말자.",
+      "distractors": [
+        "수업중에 떠들지 말자.",
+        "수업 중에 떠들지말자.",
+        "수업 중에떠들지 말자."
+      ],
+      "solution": [
+        "'중'은 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "307c8096e2c7",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "문을 꼭 잠궈라.",
+      "answer": "문을 꼭 잠가라.",
+      "distractors": [
+        "문을 꼭 잠궈 라.",
+        "문을 꼭잠가라.",
+        "문을 꼭 잠구어라."
+      ],
+      "solution": [
+        "기본형이 '잠그다'이므로 '잠가라'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "32e3f0602936",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "선생님께서 교실에 왔다.",
+      "answer": "선생님께서 교실에 오셨다.",
+      "distractors": [
+        "선생님께서 교실에 왔다.",
+        "선생님께 교실에 오셨다.",
+        "선생님께서 교실에 왔었다."
+      ],
+      "solution": [
+        "주어 '선생님'을 높이므로 서술어에 '-시-'를 넣어 '오셨다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "336b1a99b3d1",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "내 동생은 나 보다 키가 크다.",
+      "answer": "내 동생은 나보다 키가 크다.",
+      "distractors": [
+        "내동생은 나 보다 키가 크다.",
+        "내 동생은 나 보다 키가크다.",
+        "내동생은 나보다 키가 크다."
+      ],
+      "solution": [
+        "'보다'는 조사이므로 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "343c1b6ff291",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "그 영화는 별로 재미있었다.",
+      "answer": "그 영화는 별로 재미없었다.",
+      "distractors": [
+        "그 영화는 별로 재미있다.",
+        "그 영화는 별로재미없었다.",
+        "그 영화는 별로 재미 있었다."
+      ],
+      "solution": [
+        "'별로'는 부정하는 말과 함께 써서 '재미없었다'로 고친다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39619da44544",
+      "difficulty": 1,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "내일 우리는 소풍을 갔다.",
+      "answer": "내일 우리는 소풍을 간다.",
+      "distractors": [
+        "어제 우리는 소풍을 간다.",
+        "내일 우리는 소풍을 갔었다.",
+        "내일 우리는 소풍에 갔다."
+      ],
+      "solution": [
+        "'내일'은 앞으로 올 날이므로 '간다'가 어울린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3ac03b5e62fc",
+      "difficulty": 3,
+      "instruction": "이 문장을 띄어쓰기 원칙에 맞게 고쳐 쓴 것을 고르시오.",
+      "stem": "선생님께서 숙제를 내주셨다.",
+      "answer": "선생님께서 숙제를 내 주셨다.",
+      "distractors": [
+        "선생님께서 숙제를 내주셨다.",
+        "선생님 께서 숙제를 내 주셨다.",
+        "선생님께서 숙제를내 주셨다."
+      ],
+      "solution": [
+        "숙제를 내는 뜻의 '내다' 뒤에 보조 용언 '주다'가 이어지므로 '내 주셨다'처럼 띄어 쓰는 것이 원칙이며 붙여 쓰기도 허용된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d5f37926065",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "모두 함께 서로 협동해서 만들었다.",
+      "answer": "모두 협동해서 만들었다.",
+      "distractors": [
+        "모두 함께 서로 협동해서 만들었다.",
+        "모두 함께 서로 협동만 했다.",
+        "서로 함께 모두 협동해서 만들었다."
+      ],
+      "solution": [
+        "'협동'에 함께, 서로라는 뜻이 들어 있어 겹치는 말을 뺀다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3f4d5dc0fcc1",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "나는 선생님께 질문을 물어보았다.",
+      "answer": "나는 선생님께 여쭈어보았다.",
+      "distractors": [
+        "나는 선생님께 질문을 물어보았다.",
+        "나는 선생님에게 물어보았다.",
+        "나는 선생님께 질문을 물었다."
+      ],
+      "solution": [
+        "'질문'과 '물어보다'의 뜻이 겹치고, 선생님께는 '여쭈다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40865547f4a2",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "왠만하면 같이 가자.",
+      "answer": "웬만하면 같이 가자.",
+      "distractors": [
+        "왠만하면 같이 가자.",
+        "웬만 하면 같이 가자.",
+        "웬만하면 같이가자."
+      ],
+      "solution": [
+        "바른 표기는 '웬만하다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "40a60b177715",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "동생이 나를 쫒아왔다.",
+      "answer": "동생이 나를 쫓아왔다.",
+      "distractors": [
+        "동생이 나를 쫒아왔다.",
+        "동생이 나를 쫒아 왔다.",
+        "동생이나를 쫓아왔다."
+      ],
+      "solution": [
+        "바른 표기는 '쫓다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4292df725ba1",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "누나는 치마와 모자를 입었다.",
+      "answer": "누나는 치마를 입고 모자를 썼다.",
+      "distractors": [
+        "누나는 치마와 모자를 입었다.",
+        "누나는 치마와 모자를 썼다.",
+        "누나는 치마를 쓰고 모자를 입었다."
+      ],
+      "solution": [
+        "'치마'는 '입다', '모자'는 '쓰다'와 어울리므로 나누어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "429a0e09f4db",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "금새 해가 졌다.",
+      "answer": "금세 해가 졌다.",
+      "distractors": [
+        "금새 해가 졌다.",
+        "금 세 해가 졌다.",
+        "금세해가 졌다."
+      ],
+      "solution": [
+        "'금시에'를 줄인 말이므로 '금세'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "432ab2425713",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "그 공연은 가장 최고였다.",
+      "answer": "그 공연은 최고였다.",
+      "distractors": [
+        "그 공연은 가장 최고였다.",
+        "그 공연은 제일 최고였다.",
+        "그 공연은 가장최고였다."
+      ],
+      "solution": [
+        "'최고'에 이미 가장이라는 말이 들어 있어 '가장'을 뺀다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44ad93a68a0b",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "오랫만에 친구를 만났다.",
+      "answer": "오랜만에 친구를 만났다.",
+      "distractors": [
+        "오랫만에 친구를 만났다.",
+        "오랜 만에 친구를 만났다.",
+        "오랜만에 친구를만났다."
+      ],
+      "solution": [
+        "'오래간만'을 줄인 말이므로 '오랜만'으로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "452fb477f652",
+      "difficulty": 2,
+      "instruction": "이 문장을 띄어쓰기 원칙에 맞게 고쳐 쓴 것을 고르시오.",
+      "stem": "우리는 서로 도와가며 일했다.",
+      "answer": "우리는 서로 도와 가며 일했다.",
+      "distractors": [
+        "우리는 서로 도와가며 일했다.",
+        "우리는 서로도와 가며 일했다.",
+        "우리는서로 도와 가며 일했다."
+      ],
+      "solution": [
+        "'도와 가며'의 '가다'는 앞말을 돕는 말이라 띄어 쓰는 것이 원칙이다.",
+        "붙여 쓴 '도와가며'도 허용되지만 원칙에 맞는 표기는 '도와 가며'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "459a4b554274",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "일이 잘 됬으면 좋겠다.",
+      "answer": "일이 잘됐으면 좋겠다.",
+      "distractors": [
+        "일이 잘 됬으면 좋겠다.",
+        "일이 잘됬으면 좋겠다.",
+        "일이 잘됐으면좋겠다."
+      ],
+      "solution": [
+        "'되었으면'을 줄이면 '됐으면'이고, '잘되다'는 한 낱말이라 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "49b58a17b7e3",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "먹을만큼만 덜어라.",
+      "answer": "먹을 만큼만 덜어라.",
+      "distractors": [
+        "먹을만큼만 덜어라.",
+        "먹을 만큼 만 덜어라.",
+        "먹을만큼 만 덜어라."
+      ],
+      "solution": [
+        "'먹을' 뒤의 '만큼'은 띄어 쓰고 '만'은 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "49db8ad159e3",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "창문을 활짝 열었읍니다.",
+      "answer": "창문을 활짝 열었습니다.",
+      "distractors": [
+        "창문을 활짝 열었읍니다.",
+        "창문을 활짝열었습니다.",
+        "창문을활짝 열었습니다."
+      ],
+      "solution": [
+        "지금은 '-읍니다'를 쓰지 않고 '-습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4b7fa787ec5b",
+      "difficulty": 2,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 씨앗에서 싹이 텄습니다. ㉡ 화분에 흙을 담고 씨앗을 심었습니다. ㉢ 매일 물을 주었더니 잎이 자랐습니다.",
+      "answer": "㉡, ㉠, ㉢",
+      "distractors": [
+        "㉠, ㉡, ㉢",
+        "㉡, ㉢, ㉠",
+        "㉢, ㉠, ㉡"
+      ],
+      "solution": [
+        "씨앗을 심고, 싹이 트고, 물을 주어 잎이 자란 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4cca48a2ce21",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "반듯이 약속을 지켜라.",
+      "answer": "반드시 약속을 지켜라.",
+      "distractors": [
+        "반듯이 약속을 지켜라.",
+        "반드시 약속을지켜라.",
+        "반드시약속을 지켜라."
+      ],
+      "solution": [
+        "꼭이라는 말은 '반드시'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4d7f3875d4e7",
+      "difficulty": 3,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 그러자 강아지가 꼬리를 흔들며 다가왔습니다. ㉡ 길에서 떨고 있는 강아지를 보았습니다. ㉢ 가방에 있던 빵을 조금 떼어 주었습니다.",
+      "answer": "㉡, ㉢, ㉠",
+      "distractors": [
+        "㉡, ㉠, ㉢",
+        "㉠, ㉡, ㉢",
+        "㉢, ㉡, ㉠"
+      ],
+      "solution": [
+        "강아지를 보고, 빵을 주고, 그러자 강아지가 다가온 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5ab3e48f2f67",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "오늘은 할것이 많다.",
+      "answer": "오늘은 할 것이 많다.",
+      "distractors": [
+        "오늘은 할것이 많다.",
+        "오늘은 할 것이많다.",
+        "오늘은할 것이 많다."
+      ],
+      "solution": [
+        "'것'은 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "60b9bdaaa329",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "동생은 꽃 처럼 예쁘다.",
+      "answer": "동생은 꽃처럼 예쁘다.",
+      "distractors": [
+        "동생은 꽃 처럼 예쁘다.",
+        "동생은 꽃처럼예쁘다.",
+        "동생은꽃처럼 예쁘다."
+      ],
+      "solution": [
+        "'처럼'은 조사이므로 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "61606a0b0d0c",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "밥을 먹던지 빵을 먹던지 해라.",
+      "answer": "밥을 먹든지 빵을 먹든지 해라.",
+      "distractors": [
+        "밥을 먹던지 빵을 먹든지 해라.",
+        "밥을먹든지 빵을 먹든지 해라.",
+        "밥을 먹든 지 빵을 먹든 지 해라."
+      ],
+      "solution": [
+        "고르는 뜻을 나타낼 때는 '-든지'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "61e034fff8dd",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "어의없는 일이 생겼다.",
+      "answer": "어이없는 일이 생겼다.",
+      "distractors": [
+        "어의 없는 일이 생겼다.",
+        "어이 없는일이 생겼다.",
+        "어의없는일이 생겼다."
+      ],
+      "solution": [
+        "표준어는 '어이없다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "622f2e950293",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "열 두 살 생일을 맞았다.",
+      "answer": "열두 살 생일을 맞았다.",
+      "distractors": [
+        "열 두 살 생일을 맞았다.",
+        "열두살 생일을 맞았다.",
+        "열 두살 생일을 맞았다."
+      ],
+      "solution": [
+        "'열두'는 한 낱말이고 '살'은 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6591e30ced42",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "우리는 축구와 노래를 불렀다.",
+      "answer": "우리는 축구를 하고 노래를 불렀다.",
+      "distractors": [
+        "우리는 축구와 노래를 불렀다.",
+        "우리는 축구를 하며 노래와 불렀다.",
+        "우리는 축구와 노래를 했다."
+      ],
+      "solution": [
+        "'축구'는 '불렀다'와 어울리지 않으므로 '축구를 하고'를 넣는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "676c02fbe069",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "친구를 만난지 오래되었다.",
+      "answer": "친구를 만난 지 오래되었다.",
+      "distractors": [
+        "친구를 만난지 오래되었다.",
+        "친구를 만난 지 오래 되었다.",
+        "친구를만난 지 오래되었다."
+      ],
+      "solution": [
+        "시간이 지남을 나타내는 '지'는 띄어 쓰고 '오래되다'는 한 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "67adeec753e5",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "형은 나 만큼 키가 크다.",
+      "answer": "형은 나만큼 키가 크다.",
+      "distractors": [
+        "형은 나 만큼 키가 크다.",
+        "형은 나만큼 키가크다.",
+        "형은나만큼 키가 크다."
+      ],
+      "solution": [
+        "'만큼'은 조사로 쓰여 앞말에 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b2cede56da5",
+      "difficulty": 3,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 물을 아껴 써야 합니다. ㉡ 양치할 때 컵에 물을 받아 쓰면 물이 덜 듭니다. ㉢ 물은 높은 곳에서 낮은 곳으로 흐릅니다. ㉣ 설거지할 때 물을 틀어 놓지 않습니다.",
+      "answer": "㉢",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉣"
+      ],
+      "solution": [
+        "물을 아끼는 방법을 말하는 글인데 ㉢은 물이 흐르는 성질이라 중심 내용과 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6d6278d8519f",
+      "difficulty": 2,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 김치는 우리나라의 전통 음식입니다. ㉡ 배추나 무를 소금에 절여 양념을 버무려 만듭니다. ㉢ 떡국은 설날에 먹는 음식입니다. ㉣ 김치는 오래 두고 먹을 수 있습니다.",
+      "answer": "㉢",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉣"
+      ],
+      "solution": [
+        "김치를 설명하는 글인데 ㉢은 떡국 이야기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6e92f626a548",
+      "difficulty": 2,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 꿀벌은 꽃가루를 옮겨 식물이 열매를 맺게 돕습니다. ㉡ 나비는 날개 무늬가 아름답습니다. ㉢ 꿀벌이 모은 꿀은 사람도 먹습니다. ㉣ 그래서 꿀벌은 우리에게 고마운 곤충입니다.",
+      "answer": "㉡",
+      "distractors": [
+        "㉠",
+        "㉢",
+        "㉣"
+      ],
+      "solution": [
+        "꿀벌이 고마운 까닭을 말하는 글인데 ㉡은 나비 이야기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71ad0f7bb721",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "어제 숙제를 안했다.",
+      "answer": "어제 숙제를 안 했다.",
+      "distractors": [
+        "어제 숙제를 않 했다.",
+        "어제 숙제를 않했다.",
+        "어제 숙제를안 했다."
+      ],
+      "solution": [
+        "'안'은 '아니'를 줄인 말로 뒷말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7361ef98f572",
+      "difficulty": 1,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 마지막으로 뚜껑을 덮어 삼 분을 기다립니다. ㉡ 먼저 물을 끓입니다. ㉢ 끓는 물을 컵라면에 붓습니다.",
+      "answer": "㉡, ㉢, ㉠",
+      "distractors": [
+        "㉠, ㉡, ㉢",
+        "㉠, ㉢, ㉡",
+        "㉢, ㉡, ㉠"
+      ],
+      "solution": [
+        "물을 끓이고, 붓고, 뚜껑을 덮어 기다리는 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7a4f82a60348",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "책을 읽으므로써 많이 배웠다.",
+      "answer": "책을 읽음으로써 많이 배웠다.",
+      "distractors": [
+        "책을 읽으므로써 많이 배웠다.",
+        "책을 읽음 으로써 많이 배웠다.",
+        "책을읽음으로써 많이 배웠다."
+      ],
+      "solution": [
+        "수단을 나타낼 때는 '-음으로써'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7d1f7ed93e08",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "시험 공부를 열심이 했다.",
+      "answer": "시험공부를 열심히 했다.",
+      "distractors": [
+        "시험 공부를 열심이 했다.",
+        "시험공부를 열심이 했다.",
+        "시험공부를 열심히했다."
+      ],
+      "solution": [
+        "'열심하다'에서 온 말이라 '열심히'로 적고 '시험공부'는 한 낱말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7f927e2f50dd",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "나는 의사가 돼고 싶다.",
+      "answer": "나는 의사가 되고 싶다.",
+      "distractors": [
+        "나는 의사가 돼고 싶다.",
+        "나는 의사가 되고싶다.",
+        "나는 의사가되고 싶다."
+      ],
+      "solution": [
+        "'되어'로 바꿀 수 없으므로 '되고'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "81bcb227dd3e",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "몇일 동안 비가 왔다.",
+      "answer": "며칠 동안 비가 왔다.",
+      "distractors": [
+        "몇 일 동안 비가 왔다.",
+        "며칠동안 비가 왔다.",
+        "몇일동안 비가 왔다."
+      ],
+      "solution": [
+        "날수를 뜻하는 말은 '며칠'로 쓰고 '동안'은 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "829a3d06d538",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "공부 할 때는 조용히 하자.",
+      "answer": "공부할 때는 조용히 하자.",
+      "distractors": [
+        "공부 할 때는 조용히 하자.",
+        "공부할때는 조용히 하자.",
+        "공부할 때는 조용히하자."
+      ],
+      "solution": [
+        "'공부하다'는 한 낱말이라 붙여 쓰고 '때'는 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8563e2bb9e96",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "손을 깨끗히 씻었다.",
+      "answer": "손을 깨끗이 씻었다.",
+      "distractors": [
+        "손을 깨끗히 씻었다.",
+        "손을 깨끗이씻었다.",
+        "손을깨끗이 씻었다."
+      ],
+      "solution": [
+        "'깨끗하다'처럼 'ㅅ' 받침 뒤에서는 '-이'로 적어 '깨끗이'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "872bc33a3426",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "지도를 꼼꼼이 살폈다.",
+      "answer": "지도를 꼼꼼히 살폈다.",
+      "distractors": [
+        "지도를 꼼꼼이 살폈다.",
+        "지도를 꼼꼼히살폈다.",
+        "지도를꼼꼼히 살폈다."
+      ],
+      "solution": [
+        "'꼼꼼하다'에서 온 말이라 '꼼꼼히'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88b45104fba0",
+      "difficulty": 2,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 그런데 지갑을 집에 두고 온 것을 알았습니다. ㉡ 엄마 심부름으로 가게에 갔습니다. ㉢ 다시 집에 다녀와 우유를 샀습니다.",
+      "answer": "㉡, ㉠, ㉢",
+      "distractors": [
+        "㉡, ㉢, ㉠",
+        "㉠, ㉢, ㉡",
+        "㉢, ㉠, ㉡"
+      ],
+      "solution": [
+        "가게에 갔고, 지갑이 없는 것을 알고, 다시 다녀와 샀다는 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b74597e4402",
+      "difficulty": 3,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 겨울잠을 자는 동물이 있습니다. ㉡ 곰은 겨울 동안 굴에서 잠을 잡니다. ㉢ 개구리는 땅속에서 겨울을 납니다. ㉣ 참새는 겨울에도 먹이를 찾아 날아다닙니다.",
+      "answer": "㉣",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉢"
+      ],
+      "solution": [
+        "겨울잠을 자는 동물을 소개하는 글인데 ㉣의 참새는 겨울잠을 자지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c4b14fbc8fc",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "잘못을 솔직이 말했다.",
+      "answer": "잘못을 솔직히 말했다.",
+      "distractors": [
+        "잘못을 솔직이 말했다.",
+        "잘못을 솔직히말했다.",
+        "잘못을솔직히 말했다."
+      ],
+      "solution": [
+        "'솔직하다'에서 온 말이라 '솔직히'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f414e16df16",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "학생으로써 할 일을 했다.",
+      "answer": "학생으로서 할 일을 했다.",
+      "distractors": [
+        "학생으로써 할 일을 했다.",
+        "학생으로서 할일을 했다.",
+        "학생 으로서 할 일을 했다."
+      ],
+      "solution": [
+        "자격을 나타낼 때는 '으로서'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "901bef100722",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "모둠에서 역활을 나누었다.",
+      "answer": "모둠에서 역할을 나누었다.",
+      "distractors": [
+        "모둠에서 역활을 나누었다.",
+        "모둠에서 역할을나누었다.",
+        "모둠에서역할을 나누었다."
+      ],
+      "solution": [
+        "바른 표기는 '역할'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a19008673bb",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "내 바램이 이루어졌다.",
+      "answer": "내 바람이 이루어졌다.",
+      "distractors": [
+        "내 바램이 이루어졌다.",
+        "내바람이 이루어졌다.",
+        "내 바람이 이루어 졌다."
+      ],
+      "solution": [
+        "기본형이 '바라다'이므로 '바람'으로 쓰고 '이루어지다'는 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ddcd3d5ed8c",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "비가 오면 어떻해.",
+      "answer": "비가 오면 어떡해.",
+      "distractors": [
+        "비가 오면 어떻해.",
+        "비가오면 어떡해.",
+        "비가 오면 어떻게해."
+      ],
+      "solution": [
+        "'어떻게 해'를 줄인 말은 '어떡해'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a0b7c8c22eac",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "동생에게 수학을 가리켜 주었다.",
+      "answer": "동생에게 수학을 가르쳐 주었다.",
+      "distractors": [
+        "동생에게 수학을 가리켜 주었다.",
+        "동생에게 수학을 가르켜 주었다.",
+        "동생에게수학을 가르쳐 주었다."
+      ],
+      "solution": [
+        "지식을 알려 주는 것은 '가르치다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a1021c25be52",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "그러면 안되요.",
+      "answer": "그러면 안 돼요.",
+      "distractors": [
+        "그러면 안돼요.",
+        "그러면 안 되요.",
+        "그러면안 돼요."
+      ],
+      "solution": [
+        "'되어요'를 줄이면 '돼요'이고, '안'은 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a28c328429a4",
+      "difficulty": 3,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 그 뒤로 매일 아침 줄넘기를 했습니다. ㉡ 체육 시간에 줄넘기를 잘 못해서 속상했습니다. ㉢ 한 달이 지나자 이단 뛰기도 할 수 있게 되었습니다.",
+      "answer": "㉡, ㉠, ㉢",
+      "distractors": [
+        "㉡, ㉢, ㉠",
+        "㉢, ㉠, ㉡",
+        "㉠, ㉡, ㉢"
+      ],
+      "solution": [
+        "속상했던 일, 매일 연습한 일, 결과의 차례가 자연스럽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a309b1c849ca",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "눈에 띠는 옷을 입었다.",
+      "answer": "눈에 띄는 옷을 입었다.",
+      "distractors": [
+        "눈에 띠는 옷을 입었다.",
+        "눈에 띄는옷을 입었다.",
+        "눈에띄는 옷을 입었다."
+      ],
+      "solution": [
+        "'뜨이다'가 줄어든 말이라 '띄다'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ac04c8263a97",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "숙제를 깜빡 잃어버렸다.",
+      "answer": "숙제를 깜빡 잊어버렸다.",
+      "distractors": [
+        "숙제를 깜빡 잃어버렸다.",
+        "숙제를 깜빡 잊어 버렸다.",
+        "숙제를깜빡 잊어버렸다."
+      ],
+      "solution": [
+        "기억하지 못한 것이므로 '잊어버리다'를 쓰고 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad086bdfc7ce",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "퀴즈의 정답을 맞췄다.",
+      "answer": "퀴즈의 정답을 맞혔다.",
+      "distractors": [
+        "퀴즈의 정답을 맞췄다.",
+        "퀴즈의 정답을 마쳤다.",
+        "퀴즈의 정답을맞혔다."
+      ],
+      "solution": [
+        "문제의 답을 바르게 대는 것은 '맞히다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1a133d75054",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "비록 키는 작아서 힘이 세다.",
+      "answer": "비록 키는 작지만 힘이 세다.",
+      "distractors": [
+        "비록 키는 작으니 힘이 세다.",
+        "비록 키는 작고 힘이 세다.",
+        "비록 키는 작아도 힘이 약하다."
+      ],
+      "solution": [
+        "'비록'은 '-지만', '-어도' 같은 말과 함께 쓴다. 키가 작은데 힘이 세다는 내용이므로 '작지만'이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b36a4a450672",
+      "difficulty": 3,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 우리 반은 칭찬 릴레이를 하고 있습니다. ㉡ 매일 한 사람이 친구의 좋은 점을 말합니다. ㉢ 칭찬을 들은 친구는 다음 친구를 칭찬합니다. ㉣ 우리 반 교실은 삼 층 끝에 있습니다.",
+      "answer": "㉣",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉢"
+      ],
+      "solution": [
+        "칭찬 릴레이를 소개하는 글인데 ㉣은 교실 위치라 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b3b546aa3a9a",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "나는 우산을 챙겼다. 왜냐하면 하늘이 흐렸다.",
+      "answer": "나는 우산을 챙겼다. 왜냐하면 하늘이 흐렸기 때문이다.",
+      "distractors": [
+        "나는 우산을 챙겼다. 왜냐하면 하늘이 흐리다.",
+        "나는 우산을 챙겼다. 왜냐하면 하늘이 흐렸으니.",
+        "나는 우산을 챙겼다. 왜냐하면 하늘이 흐렸어도."
+      ],
+      "solution": [
+        "'왜냐하면'은 '때문이다'와 함께 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b60c3ba9fc82",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "비때문에 소풍이 미뤄졌다.",
+      "answer": "비 때문에 소풍이 미뤄졌다.",
+      "distractors": [
+        "비때문에 소풍이 미뤄졌다.",
+        "비 때문에 소풍이 미뤄 졌다.",
+        "비 때문에소풍이 미뤄졌다."
+      ],
+      "solution": [
+        "'때문'은 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b76a353c575b",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "오늘은 아침을 먹지않았다.",
+      "answer": "오늘은 아침을 먹지 않았다.",
+      "distractors": [
+        "오늘은 아침을 먹지않았다.",
+        "오늘은 아침을먹지 않았다.",
+        "오늘은아침을 먹지 않았다."
+      ],
+      "solution": [
+        "'먹지'와 '않았다'는 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9847cb2337a",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "시험이 끝나서 기분이 좋왔다.",
+      "answer": "시험이 끝나서 기분이 좋았다.",
+      "distractors": [
+        "시험이 끝나서 기분이 조았다.",
+        "시험이끝나서 기분이 좋았다.",
+        "시험이 끝나서 기분이 좋왔다"
+      ],
+      "solution": [
+        "'좋다'에 '-았다'가 붙어 '좋았다'가 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9b403bcb399",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "손가락으로 북쪽을 가르켰다.",
+      "answer": "손가락으로 북쪽을 가리켰다.",
+      "distractors": [
+        "손가락으로 북쪽을 가르켰다.",
+        "손가락으로 북쪽을 가르쳤다.",
+        "손가락으로북쪽을 가리켰다."
+      ],
+      "solution": [
+        "방향을 짚어 보일 때는 '가리키다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be22e75e8c0c",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "우체국에서 편지를 붙였다.",
+      "answer": "우체국에서 편지를 부쳤다.",
+      "distractors": [
+        "우체국에서 편지를 붙였다.",
+        "우체국에서 편지를부쳤다.",
+        "우체국 에서 편지를 부쳤다."
+      ],
+      "solution": [
+        "편지를 보내는 것은 '부치다'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be4584711ba8",
+      "difficulty": 1,
+      "instruction": "글을 고쳐 쓸 때 살펴볼 점으로 알맞지 않은 것을 고르시오.",
+      "stem": "글을 다 쓴 뒤 처음부터 다시 읽으며 고쳐 쓰려고 합니다.",
+      "answer": "글씨 색이 예쁜지",
+      "distractors": [
+        "주제에 맞는 내용인지",
+        "문장이 자연스러운지",
+        "맞춤법이 바른지"
+      ],
+      "solution": [
+        "고쳐 쓰기는 내용, 문장, 표기를 살피는 일이다. 글씨 색은 살펴볼 점이 아니다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf78c0b414ad",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "설겆이를 도와 드렸다.",
+      "answer": "설거지를 도와 드렸다.",
+      "distractors": [
+        "설겆이를 도와 드렸다.",
+        "설거지를도와 드렸다.",
+        "설겆이를도와드렸다."
+      ],
+      "solution": [
+        "표준어는 '설거지'이다.",
+        "'도와 드렸다'는 보조 용언 '드리다'를 띄어 쓴 것으로 원칙에 맞고, '도와드렸다'처럼 붙여 써도 된다(한글 맞춤법 제47항)."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bfeb09f9c9b4",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "우리 반은 줄넘기를 열심히 연습 했다.",
+      "answer": "우리 반은 줄넘기를 열심히 연습했다.",
+      "distractors": [
+        "우리반은 줄넘기를 열심히 연습 했다.",
+        "우리 반은 줄넘기를 열심이 연습했다.",
+        "우리반은 줄넘기를 열심히 연습했다."
+      ],
+      "solution": [
+        "'연습하다'는 한 낱말이라 붙여 쓰고 '우리 반'은 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3126d1c1645",
+      "difficulty": 2,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "할머니께서 밥을 먹는다.",
+      "answer": "할머니께서 진지를 드신다.",
+      "distractors": [
+        "할머니께서 진지를 먹는다.",
+        "할머니가 밥을 먹는다.",
+        "할머니께서 밥을 먹었다."
+      ],
+      "solution": [
+        "할머니를 높여 '진지'와 '드신다'를 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5b8203b8568",
+      "difficulty": 3,
+      "instruction": "글을 고쳐 쓴 방법으로 알맞은 것을 고르시오.",
+      "stem": "고치기 전: 오늘 급식이 맛있었다.\n고친 뒤: 오늘 급식으로 나온 고소한 잡채가 맛있었다.",
+      "answer": "자세한 내용을 덧붙였다",
+      "distractors": [
+        "되풀이된 말을 줄였다",
+        "문장의 차례를 바꾸었다",
+        "어울리지 않는 문장을 뺐다"
+      ],
+      "solution": [
+        "무엇이 맛있었는지 자세히 덧붙여 고쳤다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c7ce7f69822d",
+      "difficulty": 1,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 우리 동네에는 큰 공원이 있습니다. ㉡ 공원에는 산책길과 놀이터가 있습니다. ㉢ 우리 형은 피아노를 잘 칩니다. ㉣ 주말이면 많은 사람이 공원에서 쉽니다.",
+      "answer": "㉢",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉣"
+      ],
+      "solution": [
+        "공원을 소개하는 글인데 ㉢은 형의 피아노 이야기라 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cbb60dd29526",
+      "difficulty": 2,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 마지막으로 친구들 앞에서 발표했습니다. ㉡ 모둠 친구들과 주제를 정했습니다. ㉢ 도서관에서 자료를 찾아 정리했습니다.",
+      "answer": "㉡, ㉢, ㉠",
+      "distractors": [
+        "㉠, ㉡, ㉢",
+        "㉡, ㉠, ㉢",
+        "㉢, ㉡, ㉠"
+      ],
+      "solution": [
+        "주제를 정하고, 자료를 정리하고, 마지막으로 발표한 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ce941d78161d",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "문을 살며시 열고 들어 갔다.",
+      "answer": "문을 살며시 열고 들어갔다.",
+      "distractors": [
+        "문을 살며시 열고 들어 갔다.",
+        "문을 살며시열고 들어갔다.",
+        "문을 살며씨 열고 들어갔다."
+      ],
+      "solution": [
+        "'들어가다'는 한 낱말이라 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d035d0d4c7a9",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "이따가 꼭 연락 할게.",
+      "answer": "이따가 꼭 연락할게.",
+      "distractors": [
+        "이따가 꼭 연락 할게.",
+        "있다가 꼭 연락할게.",
+        "이따가 꼭연락할게."
+      ],
+      "solution": [
+        "'연락하다'는 한 낱말이라 붙여 쓴다. 조금 뒤라는 말은 '이따가'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d03ff7cec117",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "네가 올줄 알았다.",
+      "answer": "네가 올 줄 알았다.",
+      "distractors": [
+        "네가 올줄 알았다.",
+        "네가 올 줄알았다.",
+        "네가올 줄 알았다."
+      ],
+      "solution": [
+        "'줄'은 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d35e97bfdf69",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "오늘은 왠일로 일찍 일어났다.",
+      "answer": "오늘은 웬일로 일찍 일어났다.",
+      "distractors": [
+        "오늘은 왠일로 일찍 일어났다.",
+        "오늘은 웬 일로 일찍 일어났다.",
+        "오늘은 웬일로 일찍일어났다."
+      ],
+      "solution": [
+        "어찌 된 일이라는 말은 '웬일'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d5d075b6b0f2",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "설레임을 안고 여행을 떠났다.",
+      "answer": "설렘을 안고 여행을 떠났다.",
+      "distractors": [
+        "설레임을 안고 여행을 떠났다.",
+        "설렘을 안고 여행을떠났다.",
+        "설렘을안고 여행을 떠났다."
+      ],
+      "solution": [
+        "기본형이 '설레다'이므로 '설렘'으로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d75976d03245",
+      "difficulty": 2,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 우리 학교 도서관은 일 층에 있습니다. ㉡ 도서관에는 책이 만 권 넘게 있습니다. ㉢ 점심시간에는 책을 빌리려는 학생이 많습니다. ㉣ 급식실 옆 화단에는 해바라기가 핍니다.",
+      "answer": "㉣",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉢"
+      ],
+      "solution": [
+        "도서관을 소개하는 글이므로 화단 이야기인 ㉣이 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "defbb1a8f12b",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "이 연필은 내 꺼야.",
+      "answer": "이 연필은 내 거야.",
+      "distractors": [
+        "이 연필은 내꺼야.",
+        "이 연필은 내거야.",
+        "이 연필은 내 꺼야."
+      ],
+      "solution": [
+        "'것'을 줄인 말은 '거'로 적고 앞말과 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "df1e970be434",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "세수하고 눈꼽을 떼었다.",
+      "answer": "세수하고 눈곱을 떼었다.",
+      "distractors": [
+        "세수하고 눈꼽을 떼었다.",
+        "세수 하고 눈곱을 떼었다.",
+        "세수하고 눈곱을떼었다."
+      ],
+      "solution": [
+        "바른 표기는 '눈곱'이고 '세수하다'는 붙여 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e1bee92bb90a",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "내 생각은 너와 틀리다.",
+      "answer": "내 생각은 너와 다르다.",
+      "distractors": [
+        "내 생각은 너와 틀리다.",
+        "내 생각은 너와다르다.",
+        "내생각은 너와 다르다."
+      ],
+      "solution": [
+        "같지 않다는 말은 '다르다'이고 '틀리다'는 맞지 않다는 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6802382432d",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "구지 지금 갈 필요는 없다.",
+      "answer": "굳이 지금 갈 필요는 없다.",
+      "distractors": [
+        "구지 지금 갈 필요는 없다.",
+        "굳이 지금 갈필요는 없다.",
+        "굳이지금 갈 필요는 없다."
+      ],
+      "solution": [
+        "'굳다'에서 온 말이라 '굳이'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6d567030bcd",
+      "difficulty": 2,
+      "instruction": "글의 중심 내용과 어울리지 않는 문장을 고르시오.",
+      "stem": "㉠ 자전거를 탈 때는 안전 수칙을 지켜야 합니다. ㉡ 안전모를 꼭 씁니다. ㉢ 자전거는 두 바퀴로 굴러갑니다. ㉣ 밤에는 불빛을 켜고 달립니다.",
+      "answer": "㉢",
+      "distractors": [
+        "㉠",
+        "㉡",
+        "㉣"
+      ],
+      "solution": [
+        "안전 수칙을 말하는 글인데 ㉢은 자전거의 생김새라 어울리지 않는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e6de97e27455",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "엄마가 김치찌게를 끓이셨다.",
+      "answer": "엄마가 김치찌개를 끓이셨다.",
+      "distractors": [
+        "엄마가 김치찌게를 끓이셨다.",
+        "엄마가 김치찌개를끓이셨다.",
+        "엄마가김치찌개를 끓이셨다."
+      ],
+      "solution": [
+        "바른 표기는 '찌개'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ebcfa45d21a8",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "떡볶기를 먹고 싶다.",
+      "answer": "떡볶이를 먹고 싶다.",
+      "distractors": [
+        "떡볶기를 먹고싶다.",
+        "떡뽁이를 먹고 싶다.",
+        "떡볶이를 먹고싶다."
+      ],
+      "solution": [
+        "'볶다'에서 온 말이므로 '떡볶이'로 쓰고 '싶다'는 띄어 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee9d89794eb9",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "감기가 다 낳았다.",
+      "answer": "감기가 다 나았다.",
+      "distractors": [
+        "감기가 다 낳았다.",
+        "감기가 다 낫았다.",
+        "감기가다 나았다."
+      ],
+      "solution": [
+        "병이 좋아지는 것은 '낫다'이고 '나았다'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0c97d0a89c8",
+      "difficulty": 2,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "준비물을 일일히 확인했다.",
+      "answer": "준비물을 일일이 확인했다.",
+      "distractors": [
+        "준비물을 일일히 확인했다.",
+        "준비물을 일일이확인했다.",
+        "준비물을일일이 확인했다."
+      ],
+      "solution": [
+        "'일일'에 '-이'가 붙어 '일일이'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f1da023291de",
+      "difficulty": 3,
+      "instruction": "어색한 부분을 바르게 고친 문장을 고르시오.",
+      "stem": "역전 앞에서 친구를 만나자.",
+      "answer": "역 앞에서 친구를 만나자.",
+      "distractors": [
+        "역전 앞에서 친구를 만나자.",
+        "역전앞에서 친구를 만나자.",
+        "역 앞에서 친구를만나자."
+      ],
+      "solution": [
+        "'역전'에 이미 앞이라는 말이 들어 있어 '역 앞'으로 고친다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f34582347308",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "육계장이 무척 맵다.",
+      "answer": "육개장이 무척 맵다.",
+      "distractors": [
+        "육계장이 무척 맵다.",
+        "육개장이 무척맵다.",
+        "육개장이무척 맵다."
+      ],
+      "solution": [
+        "바른 표기는 '육개장'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fa6c924be2a2",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "배게를 베고 누웠다.",
+      "answer": "베개를 베고 누웠다.",
+      "distractors": [
+        "배게를 베고 누웠다.",
+        "베게를 베고 누웠다.",
+        "베개를 베고누웠다."
+      ],
+      "solution": [
+        "머리를 괴는 물건은 '베개'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fcce3557bdb9",
+      "difficulty": 1,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "제가 먼저 할께요.",
+      "answer": "제가 먼저 할게요.",
+      "distractors": [
+        "제가 먼저 할께요.",
+        "제가 먼저할게요.",
+        "제가먼저 할게요."
+      ],
+      "solution": [
+        "소리는 [께]로 나도 '-ㄹ게요'로 적는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fdd877dbbd62",
+      "difficulty": 3,
+      "instruction": "이 문장의 맞춤법과 띄어쓰기를 모두 바르게 고친 것을 고르시오.",
+      "stem": "내일 뵈요.",
+      "answer": "내일 봬요.",
+      "distractors": [
+        "내일 뵈요.",
+        "내일 봬 요.",
+        "내일뵈요."
+      ],
+      "solution": [
+        "'뵈어요'를 줄이면 '봬요'가 된다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "feb5ce6be28e",
+      "difficulty": 1,
+      "instruction": "글쓰기 과정에서 다음 활동을 하는 단계로 알맞은 것을 고르시오.",
+      "stem": "쓸 내용을 생각 그물로 떠올려 적어 봅니다.",
+      "answer": "내용 떠올리기",
+      "distractors": [
+        "글 고쳐 쓰기",
+        "글 나누어 읽기",
+        "문장 다듬기"
+      ],
+      "solution": [
+        "생각 그물로 쓸 내용을 떠올리는 것은 내용을 떠올리는 단계다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff29b0371b78",
+      "difficulty": 3,
+      "instruction": "문장을 자연스러운 순서로 늘어놓은 것을 고르시오.",
+      "stem": "㉠ 하지만 친구가 먼저 사과해서 화해했습니다. ㉡ 쉬는 시간에 친구와 말다툼을 했습니다. ㉢ 나도 미안하다고 말했습니다.",
+      "answer": "㉡, ㉠, ㉢",
+      "distractors": [
+        "㉠, ㉡, ㉢",
+        "㉡, ㉢, ㉠",
+        "㉢, ㉡, ㉠"
+      ],
+      "solution": [
+        "다투고, 친구가 먼저 사과하고, 나도 미안하다고 한 차례다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

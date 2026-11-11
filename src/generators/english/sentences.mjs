@@ -39,7 +39,7 @@ const sentenceMeaning = {
   format: 'multiple-choice',
   difficultyAxis: 'categorical',
   difficultyNote: '난이도 1은 세 단어 문장, 2 이상은 더 긴 문장까지 낸다.',
-  capacityNote: '기존 문장 8개와 색·위치·행동 문장 20개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.',
+  capacityNote: '기존 문장 8개와 색·위치·행동 문장 17개를 쓴다. 새 문장은 주체와 관계가 다른 뜻을 오답으로 제시한다.',
   generate(rng, { difficulty }) {
     const pool = difficulty === 1
       ? meaningScenes.filter((s) => wordCount(s.en) <= 3)
@@ -94,7 +94,7 @@ function situationGenerator({ id, standardCode, skill, table, capacityNote }) {
         stem: spec.situation,
         choices: buildChoices(rng, spec.en, wrong),
         answer: { value: spec.en, display: spec.en, accepts: [spec.en] },
-        solution: [`'${spec.situation}'에는 '${spec.en}'이 알맞다.`],
+        solution: [`${spec.situation} 쓰는 문장은 '${spec.en}'이다.`],
         dedupeKey: `${id}:${spec.en}`,
         difficulty,
       };
@@ -143,7 +143,7 @@ const templateBlank = {
       stem: spec.text,
       choices: buildChoices(rng, spec.answer, spec.wrong),
       answer: { value: spec.answer, display: spec.answer, accepts: [spec.answer] },
-      solution: [`빈칸에는 '${spec.answer}'가 알맞다.`],
+      solution: [`빈칸에 알맞은 단어는 '${spec.answer}'이다.`],
       dedupeKey: `blank:${spec.text}`,
       difficulty,
     };
@@ -178,12 +178,12 @@ function qaGenerator({ id, standardCode, skill, table, capacityNote }) {
           } : {}),
         },
         instruction: 'context' in spec
-          ? '주어진 말을 한 사람에게 묻습니다. 내용에 알맞은 대답을 고르시오.'
+          ? '앞의 말을 한 사람에게 묻습니다. 그 말에 맞는 대답을 고르시오.'
           : '물음에 알맞은 대답을 고르시오.',
         stem: 'context' in spec ? `${spec.context}\n${spec.q}` : spec.q,
         choices: buildChoices(rng, spec.a, spec.wrong),
         answer: { value: spec.a, display: spec.a, accepts: [spec.a] },
-        solution: [`'${spec.q}'에는 '${spec.a}'로 답한다.`],
+        solution: [`'${spec.q}'에 알맞은 대답은 '${spec.a}'이다.`],
         dedupeKey: `${id}:${spec.q}`,
         difficulty,
       };

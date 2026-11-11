@@ -1,0 +1,2003 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[4영02-06]",
+  "skill": "행동 지시를 쉬운 문장으로 말하거나 보고 쓰는 표준",
+  "items": [
+    {
+      "id": "041bf0e36993",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "창문을 닫으라고 합니다. Close □.",
+      "answer": "the window",
+      "distractors": [
+        "the book",
+        "your eyes",
+        "the box"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Close the window.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0439115f8404",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "여기서 멈추라고 할 때",
+      "answer": "Stop here.",
+      "distractors": [
+        "Start here.",
+        "Sit here.",
+        "Come here."
+      ],
+      "solution": [
+        "여기서 멈추라고 할 때 쓰는 문장은 'Stop here.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0c9ec17e104a",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "줄을 서서 기다리라고 할 때",
+      "answer": "Wait in line.",
+      "distractors": [
+        "Draw a line.",
+        "Make a circle.",
+        "Stand on the line."
+      ],
+      "solution": [
+        "줄을 서서 기다리라고 할 때 쓰는 문장은 'Wait in line.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0de70c8665da",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "책을 가져오라고 할 때",
+      "answer": "Bring your book.",
+      "distractors": [
+        "Read your book.",
+        "Close your book.",
+        "Buy your book."
+      ],
+      "solution": [
+        "책을 가져오라고 할 때 쓰는 문장은 'Bring your book.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "115c2fd43dfc",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "손을 씻으라고 할 때",
+      "answer": "Wash your hands.",
+      "distractors": [
+        "Wash your face.",
+        "Wash your feet.",
+        "Clean your room."
+      ],
+      "solution": [
+        "손을 씻으라고 할 때 쓰는 문장은 'Wash your hands.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "11d41a5babbf",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "점심 먹기 전에 손을 씻으라고 할 때",
+      "answer": "Wash your hands before lunch.",
+      "distractors": [
+        "Wash your hands after lunch.",
+        "Eat your lunch now.",
+        "Bring your lunch."
+      ],
+      "solution": [
+        "점심 먹기 전에 손을 씻으라고 할 때 쓰는 문장은 'Wash your hands before lunch.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1326a6d2837f",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "친구에게 고맙다고 말하라고 할 때",
+      "answer": "Say thank you to your friend.",
+      "distractors": [
+        "Say sorry to your friend.",
+        "Say goodbye to your friend.",
+        "Call your friend."
+      ],
+      "solution": [
+        "친구에게 고맙다고 말하라고 할 때 쓰는 문장은 'Say thank you to your friend.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13cd0758af1b",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "이를 닦으라고 할 때",
+      "answer": "Brush your teeth.",
+      "distractors": [
+        "Brush your hair.",
+        "Wash your teeth.",
+        "Clean your desk."
+      ],
+      "solution": [
+        "이를 닦으라고 할 때 쓰는 문장은 'Brush your teeth.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "143d915ad089",
+      "difficulty": 2,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Turn off the light.",
+      "answer": "불을 끕니다.",
+      "distractors": [
+        "불을 켭니다.",
+        "라디오를 끕니다.",
+        "문을 닫습니다."
+      ],
+      "solution": [
+        "'Turn off the light.'는 '불을 끕니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "14a7102af00b",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "이름을 말하라고 할 때",
+      "answer": "Say your name.",
+      "distractors": [
+        "Write your name.",
+        "Read your name.",
+        "Draw your name."
+      ],
+      "solution": [
+        "이름을 말하라고 할 때 쓰는 문장은 'Say your name.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16d4421d87df",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우유를 다 마시라고 할 때",
+      "answer": "Drink your milk.",
+      "distractors": [
+        "Drink your water.",
+        "Buy your milk.",
+        "Bring your milk."
+      ],
+      "solution": [
+        "우유를 다 마시라고 할 때 쓰는 문장은 'Drink your milk.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "17d576434bc7",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "웃으라고 할 때",
+      "answer": "Smile, please.",
+      "distractors": [
+        "Sing, please.",
+        "Sleep, please.",
+        "Stop, please."
+      ],
+      "solution": [
+        "웃으라고 할 때 쓰는 문장은 'Smile, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19d234578644",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "불을 켜라고 합니다. □ the light.",
+      "answer": "Turn on",
+      "distractors": [
+        "Turn off",
+        "Look at",
+        "Pick up"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Turn on the light.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1aaebaadb3e2",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "손을 들라고 합니다. Put up □.",
+      "answer": "your hand",
+      "distractors": [
+        "your cap",
+        "your book",
+        "your pen"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Put up your hand.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1ccdbeaec6da",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "불을 끄고 자라고 할 때",
+      "answer": "Turn off the light and sleep.",
+      "distractors": [
+        "Turn on the light and read.",
+        "Turn off the radio.",
+        "Wake up and eat."
+      ],
+      "solution": [
+        "불을 끄고 자라고 할 때 쓰는 문장은 'Turn off the light and sleep.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1d246aa3e530",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "창밖을 보라고 할 때",
+      "answer": "Look out the window.",
+      "distractors": [
+        "Close the window.",
+        "Open the window.",
+        "Clean the window."
+      ],
+      "solution": [
+        "창밖을 보라고 할 때 쓰는 문장은 'Look out the window.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1e70c2739c5b",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "외투를 입으라고 할 때",
+      "answer": "Put on your coat.",
+      "distractors": [
+        "Take off your coat.",
+        "Put on your shoes.",
+        "Wash your coat."
+      ],
+      "solution": [
+        "외투를 입으라고 할 때 쓰는 문장은 'Put on your coat.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2043cf34f38e",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "오른쪽으로 돌라고 할 때",
+      "answer": "Turn right.",
+      "distractors": [
+        "Turn around.",
+        "Stop here.",
+        "Go back."
+      ],
+      "solution": [
+        "오른쪽으로 돌라고 할 때 쓰는 문장은 'Turn right.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "240b31f673d3",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "노래를 부르라고 할 때",
+      "answer": "Sing a song.",
+      "distractors": [
+        "Read a book.",
+        "Play a game.",
+        "Draw a picture."
+      ],
+      "solution": [
+        "노래를 부르라고 할 때 쓰는 문장은 'Sing a song.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24850e99d022",
+      "difficulty": 3,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Open your book and read.",
+      "answer": "책을 펴고 읽습니다.",
+      "distractors": [
+        "책을 덮고 읽습니다.",
+        "책을 펴고 씁니다.",
+        "공책을 펴고 읽습니다."
+      ],
+      "solution": [
+        "'Open your book and read.'는 '책을 펴고 읽습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "311b427599cf",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "이름을 쓰라고 할 때",
+      "answer": "Write your name.",
+      "distractors": [
+        "Say your name.",
+        "Read your name.",
+        "Write your number."
+      ],
+      "solution": [
+        "이름을 쓰라고 할 때 쓰는 문장은 'Write your name.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3550e9063adf",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "점심을 먹으라고 할 때",
+      "answer": "Eat your lunch.",
+      "distractors": [
+        "Make your lunch.",
+        "Bring your lunch.",
+        "Eat your dinner."
+      ],
+      "solution": [
+        "점심을 먹으라고 할 때 쓰는 문장은 'Eat your lunch.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35fa8340fd38",
+      "difficulty": 2,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Close your eyes.",
+      "answer": "눈을 감습니다.",
+      "distractors": [
+        "눈을 뜹니다.",
+        "입을 다뭅니다.",
+        "귀를 막습니다."
+      ],
+      "solution": [
+        "'Close your eyes.'는 '눈을 감습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "37cc78102a1d",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "앉으라고 합니다. Please □.",
+      "answer": "sit down",
+      "distractors": [
+        "stand up",
+        "come in",
+        "go out"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Please sit down.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3ea29674ae2f",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "선생님을 보라고 합니다. □ your teacher.",
+      "answer": "Look at",
+      "distractors": [
+        "Listen to",
+        "Wait for",
+        "Talk to"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Look at your teacher.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "421a30e4c4ea",
+      "difficulty": 2,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Look at the board.",
+      "answer": "칠판을 봅니다.",
+      "distractors": [
+        "칠판을 닦습니다.",
+        "칠판에 씁니다.",
+        "책을 봅니다."
+      ],
+      "solution": [
+        "'Look at the board.'는 '칠판을 봅니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "43a6737b49a8",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "멈추라고 할 때",
+      "answer": "Stop, please.",
+      "distractors": [
+        "Go, please.",
+        "Jump, please.",
+        "Run, please."
+      ],
+      "solution": [
+        "멈추라고 할 때 쓰는 문장은 'Stop, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5350ca261c75",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "뛰지 말라고 할 때",
+      "answer": "Do not run.",
+      "distractors": [
+        "Do not sit.",
+        "Do not eat.",
+        "Do not sing."
+      ],
+      "solution": [
+        "뛰지 말라고 할 때 쓰는 문장은 'Do not run.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5667b308170e",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "줄을 서라고 할 때",
+      "answer": "Make a line.",
+      "distractors": [
+        "Draw a line.",
+        "Make a circle.",
+        "Read a line."
+      ],
+      "solution": [
+        "줄을 서라고 할 때 쓰는 문장은 'Make a line.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57e971dcb5c9",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "물을 마시라고 할 때",
+      "answer": "Drink some water.",
+      "distractors": [
+        "Drink some milk.",
+        "Bring some water.",
+        "Buy some water."
+      ],
+      "solution": [
+        "물을 마시라고 할 때 쓰는 문장은 'Drink some water.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5807c204844f",
+      "difficulty": 3,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Stand up and turn around.",
+      "answer": "일어서서 뒤로 돕니다.",
+      "distractors": [
+        "앉아서 뒤로 돕니다.",
+        "일어서서 앞으로 걷습니다.",
+        "앉아서 손을 듭니다."
+      ],
+      "solution": [
+        "'Stand up and turn around.'는 '일어서서 뒤로 돕니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5b1c1f616547",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "손을 잡으라고 할 때",
+      "answer": "Hold my hand.",
+      "distractors": [
+        "Wash my hand.",
+        "Hold my bag.",
+        "Touch my hand."
+      ],
+      "solution": [
+        "손을 잡으라고 할 때 쓰는 문장은 'Hold my hand.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6032588702b9",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "친구를 기다리라고 합니다. □ your friend.",
+      "answer": "Wait for",
+      "distractors": [
+        "Look at",
+        "Talk to",
+        "Listen to"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Wait for your friend.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "66fb4617f578",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "책을 읽으라고 할 때",
+      "answer": "Read the book.",
+      "distractors": [
+        "Write the book.",
+        "Close the book.",
+        "Open the box."
+      ],
+      "solution": [
+        "책을 읽으라고 할 때 쓰는 문장은 'Read the book.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "68cb198d48c7",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "방을 청소하라고 할 때",
+      "answer": "Clean your room.",
+      "distractors": [
+        "Clean your face.",
+        "Open your room.",
+        "Close your room."
+      ],
+      "solution": [
+        "방을 청소하라고 할 때 쓰는 문장은 'Clean your room.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "69700f3274ca",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "불을 켜라고 할 때",
+      "answer": "Turn on the light.",
+      "distractors": [
+        "Turn off the light.",
+        "Turn on the radio.",
+        "Close the door."
+      ],
+      "solution": [
+        "불을 켜라고 할 때 쓰는 문장은 'Turn on the light.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "705e71cd4fff",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "문을 열라고 할 때",
+      "answer": "Open the door.",
+      "distractors": [
+        "Close the door.",
+        "Open the box.",
+        "Paint the door."
+      ],
+      "solution": [
+        "문을 열라고 할 때 쓰는 문장은 'Open the door.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74b84e1f9fab",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "코를 만지라고 할 때",
+      "answer": "Touch your nose.",
+      "distractors": [
+        "Touch your ear.",
+        "Wash your nose.",
+        "Touch your head."
+      ],
+      "solution": [
+        "코를 만지라고 할 때 쓰는 문장은 'Touch your nose.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "76647ef56b3c",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "눈을 뜨라고 할 때",
+      "answer": "Open your eyes.",
+      "distractors": [
+        "Close your eyes.",
+        "Wash your eyes.",
+        "Open your mouth."
+      ],
+      "solution": [
+        "눈을 뜨라고 할 때 쓰는 문장은 'Open your eyes.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "76a0571ea78a",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "책을 펴라고 할 때",
+      "answer": "Open your book.",
+      "distractors": [
+        "Close your book.",
+        "Read your book.",
+        "Open your bag."
+      ],
+      "solution": [
+        "책을 펴라고 할 때 쓰는 문장은 'Open your book.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "77caf1c407a8",
+      "difficulty": 1,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "일어서라고 합니다. □, please.",
+      "answer": "Stand up",
+      "distractors": [
+        "Sit down",
+        "Come in",
+        "Go out"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Stand up, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7a8776b8e681",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "들어오라고 합니다. □, please.",
+      "answer": "Come in",
+      "distractors": [
+        "Go out",
+        "Sit down",
+        "Stand up"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Come in, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7cef5c7fb3b4",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "학교에 걸어가라고 할 때",
+      "answer": "Walk to school.",
+      "distractors": [
+        "Run to school.",
+        "Walk to the park.",
+        "Drive to school."
+      ],
+      "solution": [
+        "학교에 걸어가라고 할 때 쓰는 문장은 'Walk to school.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7e5f16496723",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "라디오를 켜라고 할 때",
+      "answer": "Turn on the radio.",
+      "distractors": [
+        "Turn off the radio.",
+        "Turn on the light.",
+        "Listen to the radio."
+      ],
+      "solution": [
+        "라디오를 켜라고 할 때 쓰는 문장은 'Turn on the radio.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7ebc7b0d62da",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "이리 오라고 할 때",
+      "answer": "Come here.",
+      "distractors": [
+        "Go home.",
+        "Stand up.",
+        "Look here."
+      ],
+      "solution": [
+        "이리 오라고 할 때 쓰는 문장은 'Come here.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "809e40299d4c",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "손을 내리라고 할 때",
+      "answer": "Put down your hand.",
+      "distractors": [
+        "Put up your hand.",
+        "Wash your hand.",
+        "Give me your hand."
+      ],
+      "solution": [
+        "손을 내리라고 할 때 쓰는 문장은 'Put down your hand.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80d8e98a8e3e",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "연필을 내려놓으라고 합니다. □ your pencil.",
+      "answer": "Put down",
+      "distractors": [
+        "Pick up",
+        "Put on",
+        "Take off"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Put down your pencil.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "83c5c3f67528",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "그림을 그리라고 할 때",
+      "answer": "Draw a picture.",
+      "distractors": [
+        "Paint the wall.",
+        "Look at the picture.",
+        "Take a picture."
+      ],
+      "solution": [
+        "그림을 그리라고 할 때 쓰는 문장은 'Draw a picture.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "846b5d5fe57f",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "모자를 벗으라고 할 때",
+      "answer": "Take off your cap.",
+      "distractors": [
+        "Put on your cap.",
+        "Take off your shoes.",
+        "Wash your cap."
+      ],
+      "solution": [
+        "모자를 벗으라고 할 때 쓰는 문장은 'Take off your cap.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "84808f95ed7d",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "칠판 앞으로 나오라고 할 때",
+      "answer": "Come to the board.",
+      "distractors": [
+        "Go to your desk.",
+        "Look at the board.",
+        "Clean the board."
+      ],
+      "solution": [
+        "칠판 앞으로 나오라고 할 때 쓰는 문장은 'Come to the board.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8546dfb72249",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "들어오라고 할 때",
+      "answer": "Come in, please.",
+      "distractors": [
+        "Go out, please.",
+        "Sit down, please.",
+        "Look out, please."
+      ],
+      "solution": [
+        "들어오라고 할 때 쓰는 문장은 'Come in, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8a0b5a94e356",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "일어서라고 할 때",
+      "answer": "Stand up.",
+      "distractors": [
+        "Sit down.",
+        "Come here.",
+        "Be quiet."
+      ],
+      "solution": [
+        "일어서라고 할 때 쓰는 문장은 'Stand up.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8dd7d80d8975",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "기다리라고 할 때",
+      "answer": "Wait, please.",
+      "distractors": [
+        "Walk, please.",
+        "Write, please.",
+        "Wake up, please."
+      ],
+      "solution": [
+        "기다리라고 할 때 쓰는 문장은 'Wait, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f863cc93363",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "신발을 벗으라고 할 때",
+      "answer": "Take off your shoes.",
+      "distractors": [
+        "Put on your shoes.",
+        "Take off your cap.",
+        "Clean your shoes."
+      ],
+      "solution": [
+        "신발을 벗으라고 할 때 쓰는 문장은 'Take off your shoes.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8fd57a359546",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "신발을 신으라고 할 때",
+      "answer": "Put on your shoes.",
+      "distractors": [
+        "Take off your shoes.",
+        "Wash your shoes.",
+        "Put on your coat."
+      ],
+      "solution": [
+        "신발을 신으라고 할 때 쓰는 문장은 'Put on your shoes.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "900eb4778d08",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "손을 씻고 오라고 할 때",
+      "answer": "Go and wash your hands.",
+      "distractors": [
+        "Come and sit down.",
+        "Go and read a book.",
+        "Come and eat lunch."
+      ],
+      "solution": [
+        "손을 씻고 오라고 할 때 쓰는 문장은 'Go and wash your hands.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90f2c206de81",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "신발을 신으라고 합니다. □ your shoes.",
+      "answer": "Put on",
+      "distractors": [
+        "Take off",
+        "Pick up",
+        "Look at"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Put on your shoes.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "938bddb21ab3",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "잠자리에 들라고 할 때",
+      "answer": "Go to bed.",
+      "distractors": [
+        "Wake up.",
+        "Get up.",
+        "Make your bed."
+      ],
+      "solution": [
+        "잠자리에 들라고 할 때 쓰는 문장은 'Go to bed.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "942a29874d19",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "공책을 보여 달라고 할 때",
+      "answer": "Show me your notebook.",
+      "distractors": [
+        "Give me your notebook.",
+        "Open your notebook.",
+        "Read your notebook."
+      ],
+      "solution": [
+        "공책을 보여 달라고 할 때 쓰는 문장은 'Show me your notebook.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96138b509d20",
+      "difficulty": 1,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Sit down.",
+      "answer": "자리에 앉습니다.",
+      "distractors": [
+        "자리에서 일어섭니다.",
+        "손을 듭니다.",
+        "문을 엽니다."
+      ],
+      "solution": [
+        "'Sit down.'는 '자리에 앉습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9674f97e2d22",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "창문을 열라고 할 때",
+      "answer": "Open the window.",
+      "distractors": [
+        "Close the window.",
+        "Open the door.",
+        "Clean the window."
+      ],
+      "solution": [
+        "창문을 열라고 할 때 쓰는 문장은 'Open the window.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ac7a8922f2a",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "일어나라고 아침에 깨울 때",
+      "answer": "Wake up.",
+      "distractors": [
+        "Go to bed.",
+        "Sit down.",
+        "Hurry up."
+      ],
+      "solution": [
+        "일어나라고 아침에 깨울 때 쓰는 문장은 'Wake up.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d6b6e7934c7",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "연필을 집으라고 할 때",
+      "answer": "Pick up your pencil.",
+      "distractors": [
+        "Put down your pencil.",
+        "Find your pencil.",
+        "Give me your pencil."
+      ],
+      "solution": [
+        "연필을 집으라고 할 때 쓰는 문장은 'Pick up your pencil.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a10c24ee4766",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "책상을 닦으라고 할 때",
+      "answer": "Clean your desk.",
+      "distractors": [
+        "Move your desk.",
+        "Clean your room.",
+        "Open your desk."
+      ],
+      "solution": [
+        "책상을 닦으라고 할 때 쓰는 문장은 'Clean your desk.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a2304e617175",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "노래를 들으라고 할 때",
+      "answer": "Listen to the song.",
+      "distractors": [
+        "Sing the song.",
+        "Write the song.",
+        "Stop the song."
+      ],
+      "solution": [
+        "노래를 들으라고 할 때 쓰는 문장은 'Listen to the song.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a23ba9005b4a",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "친구에게 인사하라고 할 때",
+      "answer": "Say hello to your friend.",
+      "distractors": [
+        "Say goodbye to your friend.",
+        "Call your friend.",
+        "Help your friend."
+      ],
+      "solution": [
+        "친구에게 인사하라고 할 때 쓰는 문장은 'Say hello to your friend.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad2206ca083a",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "책을 덮으라고 할 때",
+      "answer": "Close your book.",
+      "distractors": [
+        "Open your book.",
+        "Read your book.",
+        "Close your bag."
+      ],
+      "solution": [
+        "책을 덮으라고 할 때 쓰는 문장은 'Close your book.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b144c44cb2f5",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "공을 차라고 할 때",
+      "answer": "Kick the ball.",
+      "distractors": [
+        "Catch the ball.",
+        "Hit the ball.",
+        "Bring the ball."
+      ],
+      "solution": [
+        "공을 차라고 할 때 쓰는 문장은 'Kick the ball.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b55902c49ab2",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "서두르라고 할 때",
+      "answer": "Hurry up.",
+      "distractors": [
+        "Slow down.",
+        "Wake up.",
+        "Sit down."
+      ],
+      "solution": [
+        "서두르라고 할 때 쓰는 문장은 'Hurry up.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b7a215b4b9c2",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "앉으라고 할 때",
+      "answer": "Sit down, please.",
+      "distractors": [
+        "Stand up, please.",
+        "Come in, please.",
+        "Go out, please."
+      ],
+      "solution": [
+        "앉으라고 할 때 쓰는 문장은 'Sit down, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b80ac257034a",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "선물을 열어 보라고 할 때",
+      "answer": "Open the box.",
+      "distractors": [
+        "Close the box.",
+        "Bring the box.",
+        "Move the box."
+      ],
+      "solution": [
+        "선물을 열어 보라고 할 때 쓰는 문장은 'Open the box.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b84800bf8c6f",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "입을 벌리라고 할 때",
+      "answer": "Open your mouth.",
+      "distractors": [
+        "Close your mouth.",
+        "Open your eyes.",
+        "Wash your mouth."
+      ],
+      "solution": [
+        "입을 벌리라고 할 때 쓰는 문장은 'Open your mouth.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b90f0f48b6a8",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "손을 들라고 할 때",
+      "answer": "Put up your hand.",
+      "distractors": [
+        "Put down your hand.",
+        "Wash your hand.",
+        "Touch your nose."
+      ],
+      "solution": [
+        "손을 들라고 할 때 쓰는 문장은 'Put up your hand.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9c2cc0c6c0e",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "뛰어오르라고 할 때",
+      "answer": "Jump, please.",
+      "distractors": [
+        "Stop, please.",
+        "Run, please.",
+        "Sing, please."
+      ],
+      "solution": [
+        "뛰어오르라고 할 때 쓰는 문장은 'Jump, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3792016eacb",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "공책에 쓰라고 할 때",
+      "answer": "Write in your notebook.",
+      "distractors": [
+        "Read your notebook.",
+        "Open your notebook.",
+        "Draw on the wall."
+      ],
+      "solution": [
+        "공책에 쓰라고 할 때 쓰는 문장은 'Write in your notebook.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c3d4a0662d1b",
+      "difficulty": 2,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Put on your cap.",
+      "answer": "모자를 씁니다.",
+      "distractors": [
+        "모자를 벗습니다.",
+        "신발을 신습니다.",
+        "모자를 삽니다."
+      ],
+      "solution": [
+        "'Put on your cap.'는 '모자를 씁니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c43ce99926ed",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "불을 끄라고 할 때",
+      "answer": "Turn off the light.",
+      "distractors": [
+        "Turn on the light.",
+        "Turn off the radio.",
+        "Turn on the computer."
+      ],
+      "solution": [
+        "불을 끄라고 할 때 쓰는 문장은 'Turn off the light.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c6d3d0d8c41b",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "휴지를 주우라고 할 때",
+      "answer": "Pick up the paper.",
+      "distractors": [
+        "Cut the paper.",
+        "Find the paper.",
+        "Read the paper."
+      ],
+      "solution": [
+        "휴지를 주우라고 할 때 쓰는 문장은 'Pick up the paper.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8a012896a73",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "잘 들으라고 할 때",
+      "answer": "Listen to me, please.",
+      "distractors": [
+        "Speak to me, please.",
+        "Look at me, please.",
+        "Come to me, please."
+      ],
+      "solution": [
+        "잘 들으라고 할 때 쓰는 문장은 'Listen to me, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8b4eb610506",
+      "difficulty": 2,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "모자를 벗으라고 합니다. □ your cap.",
+      "answer": "Take off",
+      "distractors": [
+        "Put on",
+        "Pick up",
+        "Wash up"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Take off your cap.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ca53f35d57d3",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "창문을 닦으라고 할 때",
+      "answer": "Clean the window.",
+      "distractors": [
+        "Open the window.",
+        "Close the window.",
+        "Paint the window."
+      ],
+      "solution": [
+        "창문을 닦으라고 할 때 쓰는 문장은 'Clean the window.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc09dddb9921",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "창문을 닫으라고 할 때",
+      "answer": "Close the window.",
+      "distractors": [
+        "Open the window.",
+        "Close the door.",
+        "Clean the window."
+      ],
+      "solution": [
+        "창문을 닫으라고 할 때 쓰는 문장은 'Close the window.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cde7e5e9f5f8",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "칠판을 보라고 할 때",
+      "answer": "Look at the board.",
+      "distractors": [
+        "Look at the book.",
+        "Clean the board.",
+        "Write on the board."
+      ],
+      "solution": [
+        "칠판을 보라고 할 때 쓰는 문장은 'Look at the board.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0915804bbfa",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "의자에 앉으라고 할 때",
+      "answer": "Sit on the chair.",
+      "distractors": [
+        "Stand on the chair.",
+        "Move the chair.",
+        "Look at the chair."
+      ],
+      "solution": [
+        "의자에 앉으라고 할 때 쓰는 문장은 'Sit on the chair.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d280d6b69d98",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "잘 자라고 할 때",
+      "answer": "Sleep well.",
+      "distractors": [
+        "Eat well.",
+        "Wake up.",
+        "Play well."
+      ],
+      "solution": [
+        "잘 자라고 할 때 쓰는 문장은 'Sleep well.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2df00376439",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "선생님 말씀을 잘 들으라고 할 때",
+      "answer": "Listen to your teacher.",
+      "distractors": [
+        "Look at your teacher.",
+        "Help your teacher.",
+        "Call your teacher."
+      ],
+      "solution": [
+        "선생님 말씀을 잘 들으라고 할 때 쓰는 문장은 'Listen to your teacher.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2f2e8c03cf9",
+      "difficulty": 1,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Wash your feet.",
+      "answer": "발을 씻습니다.",
+      "distractors": [
+        "손을 씻습니다.",
+        "얼굴을 씻습니다.",
+        "발을 만집니다."
+      ],
+      "solution": [
+        "'Wash your feet.'는 '발을 씻습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d4ce7d9b42b2",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "얼굴을 씻으라고 할 때",
+      "answer": "Wash your face.",
+      "distractors": [
+        "Wash your hands.",
+        "Touch your face.",
+        "Draw your face."
+      ],
+      "solution": [
+        "얼굴을 씻으라고 할 때 쓰는 문장은 'Wash your face.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "db2199596d3e",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우산을 가져가라고 할 때",
+      "answer": "Take your umbrella.",
+      "distractors": [
+        "Open your umbrella.",
+        "Take your bag.",
+        "Close your umbrella."
+      ],
+      "solution": [
+        "우산을 가져가라고 할 때 쓰는 문장은 'Take your umbrella.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dc3ac3fa961b",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "물을 아끼라고 할 때",
+      "answer": "Save water.",
+      "distractors": [
+        "Drink water.",
+        "Bring water.",
+        "Buy water."
+      ],
+      "solution": [
+        "물을 아끼라고 할 때 쓰는 문장은 'Save water.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dcecd0550ee8",
+      "difficulty": 3,
+      "instruction": "□에 알맞은 말을 고르시오.",
+      "stem": "음악을 들으라고 합니다. □ the music.",
+      "answer": "Listen to",
+      "distractors": [
+        "Look at",
+        "Wait for",
+        "Talk to"
+      ],
+      "solution": [
+        "지시하는 문장을 완성하면 'Listen to the music.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dd4eb0710e26",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "집에 가라고 할 때",
+      "answer": "Go home.",
+      "distractors": [
+        "Come home.",
+        "Go to school.",
+        "Stay home."
+      ],
+      "solution": [
+        "집에 가라고 할 때 쓰는 문장은 'Go home.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e204608d26eb",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "우유를 가져오라고 할 때",
+      "answer": "Bring the milk.",
+      "distractors": [
+        "Drink the milk.",
+        "Buy the milk.",
+        "Find the milk."
+      ],
+      "solution": [
+        "우유를 가져오라고 할 때 쓰는 문장은 'Bring the milk.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e25d56601a14",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "펜을 내려놓으라고 할 때",
+      "answer": "Put down your pen.",
+      "distractors": [
+        "Pick up your pen.",
+        "Put down your bag.",
+        "Buy a pen."
+      ],
+      "solution": [
+        "펜을 내려놓으라고 할 때 쓰는 문장은 'Put down your pen.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e2f00604dc4a",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "문을 닫으라고 할 때",
+      "answer": "Close the door.",
+      "distractors": [
+        "Open the door.",
+        "Close the window.",
+        "Paint the door."
+      ],
+      "solution": [
+        "문을 닫으라고 할 때 쓰는 문장은 'Close the door.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e39ad1315647",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "조용히 하라고 할 때",
+      "answer": "Be quiet, please.",
+      "distractors": [
+        "Be kind, please.",
+        "Sing, please.",
+        "Hurry up, please."
+      ],
+      "solution": [
+        "조용히 하라고 할 때 쓰는 문장은 'Be quiet, please.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e9b25fcd9767",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "나를 보라고 할 때",
+      "answer": "Look at me.",
+      "distractors": [
+        "Listen to me.",
+        "Come to me.",
+        "Look at it."
+      ],
+      "solution": [
+        "나를 보라고 할 때 쓰는 문장은 'Look at me.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea2b0fbf2da8",
+      "difficulty": 2,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Do not touch it.",
+      "answer": "그것을 만지지 않습니다.",
+      "distractors": [
+        "그것을 만집니다.",
+        "그것을 먹지 않습니다.",
+        "그것을 가져옵니다."
+      ],
+      "solution": [
+        "'Do not touch it.'는 '그것을 만지지 않습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "eb2aa45b0cc4",
+      "difficulty": 3,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Put your bag on the desk.",
+      "answer": "가방을 책상 위에 놓습니다.",
+      "distractors": [
+        "가방을 책상 아래에 놓습니다.",
+        "책을 책상 위에 놓습니다.",
+        "가방을 의자 위에 놓습니다."
+      ],
+      "solution": [
+        "'Put your bag on the desk.'는 '가방을 책상 위에 놓습니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef0717c8bbdb",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "편지를 쓰라고 할 때",
+      "answer": "Write a letter.",
+      "distractors": [
+        "Read a letter.",
+        "Send a letter.",
+        "Find a letter."
+      ],
+      "solution": [
+        "편지를 쓰라고 할 때 쓰는 문장은 'Write a letter.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f45a1e4f2664",
+      "difficulty": 3,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Take out your pencil.",
+      "answer": "연필을 꺼냅니다.",
+      "distractors": [
+        "연필을 넣습니다.",
+        "연필을 깎습니다.",
+        "연필을 빌립니다."
+      ],
+      "solution": [
+        "'Take out your pencil.'는 '연필을 꺼냅니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f57edbc9e322",
+      "difficulty": 2,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "공을 잡으라고 할 때",
+      "answer": "Catch the ball.",
+      "distractors": [
+        "Kick the ball.",
+        "Bring the ball.",
+        "Find the ball."
+      ],
+      "solution": [
+        "공을 잡으라고 할 때 쓰는 문장은 'Catch the ball.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f8cfb77b94a9",
+      "difficulty": 1,
+      "instruction": "지시하는 말에 맞는 행동을 고르시오.",
+      "stem": "Open the window.",
+      "answer": "창문을 엽니다.",
+      "distractors": [
+        "창문을 닫습니다.",
+        "문을 엽니다.",
+        "창문을 닦습니다."
+      ],
+      "solution": [
+        "'Open the window.'는 '창문을 엽니다.'라는 지시이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb62dc707b0b",
+      "difficulty": 3,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "친구를 도와주라고 할 때",
+      "answer": "Help your friend.",
+      "distractors": [
+        "Call your friend.",
+        "Meet your friend.",
+        "Wait for your friend."
+      ],
+      "solution": [
+        "친구를 도와주라고 할 때 쓰는 문장은 'Help your friend.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff0dda24f1f7",
+      "difficulty": 1,
+      "instruction": "상황에 알맞은 문장을 고르시오.",
+      "stem": "밖에 나가 놀라고 할 때",
+      "answer": "Go out and play.",
+      "distractors": [
+        "Come in and sit.",
+        "Go to bed.",
+        "Stay in your room."
+      ],
+      "solution": [
+        "밖에 나가 놀라고 할 때 쓰는 문장은 'Go out and play.'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

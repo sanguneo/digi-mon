@@ -1,0 +1,2041 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[4국05-04]",
+  "skill": "감각적 표현을 감상하고 활용해 표현하기",
+  "items": [
+    {
+      "id": "0028a83b354c",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "생선 굽는 비린내가 부엌에 가득합니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'비린내'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "00ef9de3fe78",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "저녁노을이 하늘을 붉게 물들였습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'붉게'는 빛깔을 나타내므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "033749fc9c77",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "꿀을 한 숟가락 떠먹으니 □",
+      "answer": "달콤합니다.",
+      "distractors": [
+        "씁쓸합니다.",
+        "짭짤합니다.",
+        "시큼합니다."
+      ],
+      "solution": [
+        "꿀은 단맛이 나므로 달콤하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "03399f2d5f65",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "한여름 바닥이 맨발에 닿으니 뜨겁습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "맨발에 닿아 뜨거운 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0d357c83e254",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "목욕물이 뜨끈해서 몸이 사르르 풀렸습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "몸에 닿은 물이 뜨끈한 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0e5b9191d318",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "북을 둥둥 두드립니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'둥둥'은 북소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "13915e30b0f2",
+      "difficulty": 2,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "비 오는 날을 쓴 글입니다.",
+      "answer": "빗방울이 창문에 톡톡 부딪쳤습니다.",
+      "distractors": [
+        "아침부터 저녁까지 비가 왔습니다.",
+        "우산을 챙겨서 학교에 갔습니다.",
+        "오늘은 체육 수업이 없었습니다."
+      ],
+      "solution": [
+        "'톡톡'은 빗방울 소리를 흉내 낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "14c0412a7516",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "엄마가 끓인 김치찌개가 얼큰합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'얼큰합니다'는 맛을 나타내므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "15d11aa64e9a",
+      "difficulty": 3,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "운동회 날을 쓴 글입니다.",
+      "answer": "응원 소리가 운동장에 쩌렁쩌렁 울렸습니다.",
+      "distractors": [
+        "운동회는 금요일에 열렸습니다.",
+        "우리 반은 청군이었습니다.",
+        "나는 이어달리기에 나갔습니다."
+      ],
+      "solution": [
+        "'쩌렁쩌렁'은 큰 소리를 흉내 낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19a98f21b83f",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "한겨울 바람이 볼을 찌르듯이 차갑습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "볼에 닿는 바람이 차갑다는 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1be11aef988a",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "강아지가 꼬리를 흔들며 □",
+      "answer": "멍멍 짖습니다.",
+      "distractors": [
+        "야옹야옹 짖습니다.",
+        "꿀꿀 짖습니다.",
+        "음매 짖습니다."
+      ],
+      "solution": [
+        "강아지가 짖는 소리는 '멍멍'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1fa6e304025c",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "할머니가 만든 식혜가 달달합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'달달합니다'는 단맛을 나타내므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2107539844dd",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "새로 산 이불이 포근합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'포근합니다'는 몸에 닿는 느낌이므로 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "263cef9c1c2b",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "모래사장이 발바닥에 따끈따끈합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "발바닥에 닿는 모래가 따끈따끈한 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "28a20b5cd73a",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "갓 지은 밥솥을 여니 □",
+      "answer": "구수한 냄새가 납니다.",
+      "distractors": [
+        "비릿한 냄새가 납니다.",
+        "퀴퀴한 냄새가 납니다.",
+        "매캐한 냄새가 납니다."
+      ],
+      "solution": [
+        "갓 지은 밥에서는 구수한 냄새가 난다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2b8e28f7f410",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "아침 햇살에 이슬방울이 반짝입니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'반짝입니다'는 빛나는 모양이므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2bf60abf2dde",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "벽시계가 똑딱똑딱 갑니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'똑딱똑딱'은 시계 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d8e65b2bd73",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "갓 구운 빵에서 달콤한 냄새가 퍼집니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'냄새가 퍼진다'고 했으니 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "30a45bf978e5",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "눈이 펑펑 내려 온 세상이 하얗습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'하얗다'는 빛깔을 나타내는 말이라 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "311301f6433a",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "솜사탕이 입안에서 □",
+      "answer": "사르르 녹았습니다.",
+      "distractors": [
+        "딱딱하게 녹았습니다.",
+        "쾅쾅 녹았습니다.",
+        "뾰족하게 녹았습니다."
+      ],
+      "solution": [
+        "솜사탕이 부드럽게 녹는 모양은 '사르르'가 어울린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "341d0367747b",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "레몬 조각을 깨무니 입안이 □",
+      "answer": "시큼합니다.",
+      "distractors": [
+        "달콤합니다.",
+        "고소합니다.",
+        "짭짤합니다."
+      ],
+      "solution": [
+        "레몬은 신맛이 나므로 시큼하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3424eab12400",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "잔칫집 마당에 전 부치는 기름 냄새가 가득합니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'기름 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "34dfc6565884",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "오리가 연못에서 □",
+      "answer": "꽥꽥 웁니다.",
+      "distractors": [
+        "음매 웁니다.",
+        "멍멍 웁니다.",
+        "야옹 웁니다."
+      ],
+      "solution": [
+        "오리 우는 소리는 '꽥꽥'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "35daebaac72b",
+      "difficulty": 2,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "밤바다에 불빛이 반짝반짝 빛납니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'반짝반짝'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "389eeafbc4c6",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "운동화에서 퀴퀴한 냄새가 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'퀴퀴한 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39b5653d4d04",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "노란 개나리가 울타리를 덮었습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'노란'은 빛깔을 나타내는 말이라 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c469b81ed57",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "밤하늘에 별이 총총 떠 있습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "별이 총총 떠 있는 것은 눈으로 보아야 알 수 있다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e8a1eb377fa",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "레몬을 한 입 먹으니 시큼합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'시큼하다'는 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a6996411619",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "덜 익은 자두를 깨무니 시큼털털합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'시큼털털합니다'는 맛을 나타내므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4d7f65a62ea7",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "해가 지자 서쪽 하늘이 □",
+      "answer": "붉게 물들었습니다.",
+      "distractors": [
+        "짭짤하게 물들었습니다.",
+        "보들보들 물들었습니다.",
+        "시끄럽게 물들었습니다."
+      ],
+      "solution": [
+        "노을 진 하늘은 붉은빛으로 보인다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4f6f13851c2d",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "발밑에서 마른 낙엽이 바스락거립니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'바스락거립니다'는 낙엽 밟는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "52cd8b13a08a",
+      "difficulty": 1,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "바닷가에 간 일을 쓴 글입니다.",
+      "answer": "철썩철썩 파도 소리가 들렸습니다.",
+      "distractors": [
+        "바닷가까지 두 시간이 걸렸습니다.",
+        "우리 가족은 네 명입니다.",
+        "점심은 식당에서 먹었습니다."
+      ],
+      "solution": [
+        "'철썩철썩'은 파도 소리를 흉내 낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "52e5d64c4c72",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "부엌에서 고소한 참기름 냄새가 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'고소한 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "57a0f5f8c8ce",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "기차가 칙칙폭폭 다리를 건너갑니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'칙칙폭폭'은 기차 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "586ea678c045",
+      "difficulty": 1,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "참새가 짹짹 지저귑니다.",
+      "answer": "소리를 흉내 낸 말",
+      "distractors": [
+        "모양을 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'짹짹'은 나는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5a86a1682177",
+      "difficulty": 3,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "아빠가 드르렁드르렁 코를 곱니다.",
+      "answer": "소리를 흉내 낸 말",
+      "distractors": [
+        "모양을 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'드르렁드르렁'은 나는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5bb61a3654ce",
+      "difficulty": 1,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "봄 소풍을 다녀와서 쓴 일기의 한 부분입니다.",
+      "answer": "연분홍 벚꽃잎이 바람에 흩날렸습니다.",
+      "distractors": [
+        "아침 아홉 시에 학교에서 출발했습니다.",
+        "우리 반은 모두 스물다섯 명입니다.",
+        "소풍 장소는 시민 공원이었습니다."
+      ],
+      "solution": [
+        "'연분홍'은 빛깔을 나타낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5ec6b498de05",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "낡은 나무 문이 삐걱 열립니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'삐걱'은 문이 열리는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5ef6f145b7c1",
+      "difficulty": 1,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "시장 구경을 한 일을 쓴 글입니다.",
+      "answer": "고소한 참깨 볶는 냄새가 났습니다.",
+      "distractors": [
+        "시장은 집에서 가깝습니다.",
+        "엄마와 함께 시장에 갔습니다.",
+        "과일 가게에서 사과를 샀습니다."
+      ],
+      "solution": [
+        "'고소한 냄새'는 코로 맡은 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "63803c045823",
+      "difficulty": 2,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "거북이 엉금엉금 기어갑니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'엉금엉금'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b6e659f4731",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "밤송이 가시에 손이 닿으니 □",
+      "answer": "따끔했습니다.",
+      "distractors": [
+        "달콤했습니다.",
+        "향긋했습니다.",
+        "고소했습니다."
+      ],
+      "solution": [
+        "가시에 찔린 느낌은 따끔하다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6e0af965529b",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "할머니가 끓인 된장국이 짭짤합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'짭짤하다'는 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "714c8453f57c",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "빨간 단풍잎이 온 산을 덮었습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'빨간'은 빛깔을 나타내므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "75320e18f58f",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "처마 끝에서 빗방울이 똑똑 떨어집니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'똑똑'은 빗방울 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7587e987d60b",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "파란 하늘에 흰 구름이 둥실 떠 있습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'파란', '흰'은 빛깔을 나타내므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "769e95228209",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "까치가 깍깍 웁니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'깍깍'은 까치 우는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7af28639e487",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "군고구마 굽는 냄새가 골목에 가득합니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "골목에 가득한 냄새는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7c378a31556f",
+      "difficulty": 2,
+      "instruction": "눈으로 본 느낌을 나타낸 표현을 고르시오.",
+      "stem": "가을 숲길을 걸었습니다. 빨간 단풍잎이 길을 덮었습니다. 발밑에서 낙엽이 바스락바스락 소리를 냅니다. 상쾌한 숲 냄새가 납니다. 서늘한 바람이 목덜미를 스칩니다.",
+      "answer": "빨간 단풍잎",
+      "distractors": [
+        "바스락바스락",
+        "상쾌한 숲 냄새",
+        "서늘한 바람"
+      ],
+      "solution": [
+        "'빨간'은 빛깔이므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7c84d296e2e1",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "비 온 뒤 숲에서 풀 냄새가 싱그럽게 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "풀 냄새는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7dbec8a1a7ac",
+      "difficulty": 3,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "목욕을 한 일을 쓴 글입니다.",
+      "answer": "따끈한 물에 들어가니 몸이 노곤했습니다.",
+      "distractors": [
+        "저녁을 먹고 목욕을 했습니다.",
+        "아빠와 함께 목욕탕에 갔습니다.",
+        "목욕을 마치고 일찍 잤습니다."
+      ],
+      "solution": [
+        "'따끈한'은 살갗으로 느낀 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7e27d6021825",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "처음 먹어 본 고추가 혀끝을 얼얼하게 했습니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "혀끝이 얼얼한 것은 맛을 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7ee16ee3c629",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "바다는 끝없이 파랗게 펼쳐져 있습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'파랗게 펼쳐져 있다'는 눈으로 본 모습이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "82532665726a",
+      "difficulty": 1,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "아기가 아장아장 걸어옵니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'아장아장'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "82e5e648f426",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "알록달록한 풍선이 하늘로 올라갑니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'알록달록한'은 여러 빛깔이 섞인 모양이므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "830983ee9f0d",
+      "difficulty": 2,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "급식 시간을 쓴 글입니다.",
+      "answer": "갓 튀긴 돈가스가 바삭바삭했습니다.",
+      "distractors": [
+        "급식은 열두 시에 시작합니다.",
+        "우리 반은 셋째로 밥을 먹습니다.",
+        "오늘 반찬은 세 가지였습니다."
+      ],
+      "solution": [
+        "'바삭바삭했습니다'는 씹을 때의 느낌을 나타낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "849605ec4c88",
+      "difficulty": 2,
+      "instruction": "살갗으로 느낀 느낌을 나타낸 표현을 고르시오.",
+      "stem": "여름 바닷가에 갔습니다. 파란 파도가 철썩철썩 부서집니다. 발밑 모래가 뜨끈뜨끈합니다. 바닷물은 짭조름합니다.",
+      "answer": "모래가 뜨끈뜨끈",
+      "distractors": [
+        "파란 파도",
+        "파도가 철썩철썩",
+        "바닷물은 짭조름"
+      ],
+      "solution": [
+        "발에 닿는 모래가 뜨끈한 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b3e5e86dd37",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "밤새 추워서 연못물이 □",
+      "answer": "꽁꽁 얼었습니다.",
+      "distractors": [
+        "말랑말랑 얼었습니다.",
+        "보들보들 얼었습니다.",
+        "흐물흐물 얼었습니다."
+      ],
+      "solution": [
+        "물이 단단하게 언 모양은 '꽁꽁'이 어울린다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8d692b8a7585",
+      "difficulty": 1,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "공이 비탈길을 데굴데굴 굴러갑니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'데굴데굴'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f1bfc946fd0",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "개구리가 개굴개굴 웁니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'개굴개굴'은 개구리 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f495558bc08",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "새콤달콤한 귤이 입안에서 터집니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'새콤달콤하다'는 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "90401d38381d",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "덜 익은 감을 먹었더니 떫습니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'떫다'는 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "914815d03df5",
+      "difficulty": 3,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "오래 빨지 않은 걸레에서 □",
+      "answer": "쿰쿰한 냄새가 납니다.",
+      "distractors": [
+        "향긋한 냄새가 납니다.",
+        "달콤한 냄새가 납니다.",
+        "고소한 냄새가 납니다."
+      ],
+      "solution": [
+        "오래 빨지 않은 걸레에서는 쿰쿰한 냄새가 난다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "91852b6c8902",
+      "difficulty": 2,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "겨울 아침 등굣길을 쓴 글입니다.",
+      "answer": "찬 바람에 볼이 따끔따끔했습니다.",
+      "distractors": [
+        "아침 일곱 시에 일어났습니다.",
+        "옷을 입고 아침을 먹었습니다.",
+        "동생과 같이 학교에 갔습니다."
+      ],
+      "solution": [
+        "'따끔따끔했습니다'는 살갗으로 느낀 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "92abd3c5246e",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "보랏빛 나팔꽃이 담장을 타고 올랐습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'보랏빛'은 빛깔이므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9343784d7da4",
+      "difficulty": 2,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "생일잔치를 한 일을 쓴 글입니다.",
+      "answer": "달콤한 생크림 케이크를 나누어 먹었습니다.",
+      "distractors": [
+        "내 생일은 오월 오일입니다.",
+        "친구 다섯 명을 초대했습니다.",
+        "잔치는 우리 집에서 열었습니다."
+      ],
+      "solution": [
+        "'달콤한'은 맛을 나타낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "93909e8886cf",
+      "difficulty": 3,
+      "instruction": "살갗으로 느낀 느낌을 나타낸 표현을 고르시오.",
+      "stem": "비 오는 날 창가에 앉았습니다. 빗방울이 유리창을 톡톡 두드립니다. 회색 구름이 하늘을 덮었습니다. 축축한 흙냄새가 납니다. 창문에 손을 대니 차갑습니다.",
+      "answer": "손을 대니 차갑습니다",
+      "distractors": [
+        "유리창을 톡톡",
+        "회색 구름",
+        "축축한 흙냄새"
+      ],
+      "solution": [
+        "손에 닿아 차가운 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9428237e912f",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "노란 병아리가 아장아장 걷습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'노란'과 '아장아장'은 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "960ea6dd665c",
+      "difficulty": 1,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "토끼가 깡충깡충 뜁니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'깡충깡충'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "96b2bc5398f5",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "송아지가 외양간에서 □",
+      "answer": "음매 웁니다.",
+      "distractors": [
+        "꽥꽥 웁니다.",
+        "꿀꿀 웁니다.",
+        "짹짹 웁니다."
+      ],
+      "solution": [
+        "소 우는 소리는 '음매'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9761be6e21b8",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "비누를 손에 쥐니 미끌미끌합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'미끌미끌합니다'는 손에 닿는 느낌이므로 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "97c0aaa79e56",
+      "difficulty": 3,
+      "instruction": "혀로 맛본 느낌을 나타낸 표현을 고르시오.",
+      "stem": "겨울밤에 군고구마를 샀습니다. 손에 쥐니 따끈따끈합니다. 노란 속살에서 김이 모락모락 납니다. 한 입 먹으니 달콤합니다. 장작 타는 냄새가 납니다.",
+      "answer": "한 입 먹으니 달콤",
+      "distractors": [
+        "손에 쥐니 따끈따끈",
+        "노란 속살",
+        "장작 타는 냄새"
+      ],
+      "solution": [
+        "먹어서 단맛을 느낀 것은 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9b0ab1443b82",
+      "difficulty": 3,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "아침 식탁을 쓴 글입니다.",
+      "answer": "구수한 된장국 냄새가 부엌에 퍼졌습니다.",
+      "distractors": [
+        "아침은 일곱 시 반에 먹었습니다.",
+        "가족 모두 식탁에 앉았습니다.",
+        "나는 밥을 반 그릇 먹었습니다."
+      ],
+      "solution": [
+        "'구수한 냄새'는 코로 맡은 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d18de7f2b16",
+      "difficulty": 1,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "누군가 문을 똑똑 두드립니다.",
+      "answer": "소리를 흉내 낸 말",
+      "distractors": [
+        "모양을 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'똑똑'은 나는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e2b00a56f33",
+      "difficulty": 1,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "할머니 댁에 다녀온 일을 쓴 글입니다.",
+      "answer": "아궁이에서 장작이 타닥타닥 탔습니다.",
+      "distractors": [
+        "할머니 댁은 시골에 있습니다.",
+        "버스를 두 번 갈아탔습니다.",
+        "토요일에 가서 일요일에 왔습니다."
+      ],
+      "solution": [
+        "'타닥타닥'은 장작 타는 소리를 흉내 낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a03576aff06d",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "까끌까끌한 모래가 발가락 사이에 끼었습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'까끌까끌한'은 발에 닿는 느낌이므로 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a1a9e3dae2d1",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "엄마 머리카락에서 향긋한 샴푸 냄새가 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'향긋한 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a31d23eaee88",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "선인장 가시가 손가락을 따끔하게 찔렀습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'따끔하게'는 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5260e9d7357",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "무지개가 일곱 빛깔로 곱게 떠 있습니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "무지개의 빛깔은 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a5fd122b63ad",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "고양이 털이 손에 닿으니 복슬복슬합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "손에 닿는 털의 느낌이라 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6781b612b38",
+      "difficulty": 2,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "아이들이 하하 호호 웃습니다.",
+      "answer": "소리를 흉내 낸 말",
+      "distractors": [
+        "모양을 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'하하 호호'는 나는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a68d120d5ad5",
+      "difficulty": 2,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "자동차가 빵빵 경적을 울립니다.",
+      "answer": "소리를 흉내 낸 말",
+      "distractors": [
+        "모양을 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'빵빵'은 나는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aca352f324cd",
+      "difficulty": 2,
+      "instruction": "귀로 들은 느낌을 나타낸 표현을 고르시오.",
+      "stem": "아침 마당에 노란 햇살이 비칩니다. 참새가 짹짹 노래합니다. 부엌에서 구수한 밥 냄새가 퍼집니다. 차가운 바람이 볼에 닿습니다.",
+      "answer": "참새가 짹짹",
+      "distractors": [
+        "노란 햇살",
+        "구수한 밥 냄새",
+        "차가운 바람"
+      ],
+      "solution": [
+        "'짹짹'은 참새 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ad0bc6bc31b7",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "장미꽃에 코를 대니 □",
+      "answer": "향긋한 냄새가 납니다.",
+      "distractors": [
+        "퀴퀴한 냄새가 납니다.",
+        "비릿한 냄새가 납니다.",
+        "매캐한 냄새가 납니다."
+      ],
+      "solution": [
+        "꽃에서는 향긋한 냄새가 난다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aec3409396cf",
+      "difficulty": 3,
+      "instruction": "코로 맡은 느낌을 나타낸 표현을 고르시오.",
+      "stem": "할머니 댁 부엌에 들어갔습니다. 가마솥에서 하얀 김이 피어오릅니다. 도마 소리가 탁탁 납니다. 고소한 깨 냄새가 납니다. 할머니가 주신 식혜는 달콤합니다.",
+      "answer": "고소한 깨 냄새",
+      "distractors": [
+        "하얀 김",
+        "도마 소리가 탁탁",
+        "식혜는 달콤"
+      ],
+      "solution": [
+        "'고소한 깨 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af682c0226d4",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "강아지 털을 쓰다듬으니 보송보송합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "손으로 쓰다듬어 느낀 것이므로 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4932d60dad9",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "시냇물이 졸졸 흐릅니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'졸졸'은 물 흐르는 소리를 흉내 낸 말이라 귀로 들은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b82646d68849",
+      "difficulty": 1,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "고양이가 담장 위에서 □",
+      "answer": "야옹야옹 웁니다.",
+      "distractors": [
+        "멍멍 웁니다.",
+        "꼬끼오 웁니다.",
+        "꽥꽥 웁니다."
+      ],
+      "solution": [
+        "고양이 우는 소리는 '야옹야옹'이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c263411423b0",
+      "difficulty": 3,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "나뭇잎이 팔랑팔랑 떨어집니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'팔랑팔랑'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cb78715e2962",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "쓰레기통에서 고약한 냄새가 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'고약한 냄새'는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d362d8ae04ec",
+      "difficulty": 3,
+      "instruction": "이 문장의 흉내 내는 말이 무엇을 흉내 냈는지 고르시오.",
+      "stem": "흰 구름이 둥실둥실 떠갑니다.",
+      "answer": "모양을 흉내 낸 말",
+      "distractors": [
+        "소리를 흉내 낸 말",
+        "냄새를 나타낸 말",
+        "맛을 나타낸 말"
+      ],
+      "solution": [
+        "'둥실둥실'은 움직이는 모양을 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d3b4ad6f2295",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "운동장에서 아이들 웃음소리가 까르르 터져 나옵니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'까르르'는 웃음소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d6ef98a0eb66",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "감기약이 너무 써서 얼굴을 찡그렸습니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'써서'는 쓴맛을 나타내므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d87437f2de35",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "차가운 얼음 주머니를 이마에 대니 서늘합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "이마에 닿아 서늘한 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da60622332bd",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "바람에 대나무 잎이 사각사각 소리를 냅니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'사각사각'은 잎이 스치는 소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "da8826ed20d6",
+      "difficulty": 2,
+      "instruction": "감각적 표현이 쓰인 문장을 고르시오.",
+      "stem": "가을 산에 오른 일을 쓴 글입니다.",
+      "answer": "울긋불긋 단풍이 산을 덮었습니다.",
+      "distractors": [
+        "산에 오르는 데 한 시간이 걸렸습니다.",
+        "아빠와 함께 산에 올랐습니다.",
+        "산 꼭대기에서 사진을 찍었습니다."
+      ],
+      "solution": [
+        "'울긋불긋'은 빛깔을 나타낸 감각적 표현이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ddca15a44468",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "소나무 숲에 들어서니 상쾌한 솔 향이 납니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'솔 향'은 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "df5f792916ae",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "엄마가 자장가를 부르며 등을 토닥토닥 두드립니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'자장가를 부르며'는 들리는 소리이므로 귀로 들은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dfca07e63644",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "국수를 한 입 먹으니 국물이 싱겁습니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'싱겁습니다'는 간이 약한 맛이므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e76bbfdc9d89",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "천둥이 우르르 쾅쾅 칩니다.",
+      "answer": "귀로 들은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'우르르 쾅쾅'은 천둥소리를 흉내 낸 말이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ea08b05c495b",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "가을 들판이 누렇게 익은 벼로 출렁입니다.",
+      "answer": "눈으로 본 느낌",
+      "distractors": [
+        "귀로 들은 느낌",
+        "코로 맡은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'누렇게'는 빛깔을 나타내므로 눈으로 본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f30ec7fea036",
+      "difficulty": 2,
+      "instruction": "□에 들어갈 감각적 표현으로 알맞은 것을 고르시오.",
+      "stem": "한겨울에 장갑 없이 오래 있었더니 손이 □",
+      "answer": "시렸습니다.",
+      "distractors": [
+        "뜨거웠습니다.",
+        "따끈했습니다.",
+        "후끈했습니다."
+      ],
+      "solution": [
+        "추운 날 맨손이 차가워 아린 느낌은 시리다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f466a62d53b7",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "아카시아꽃 냄새가 바람을 타고 옵니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "꽃 냄새는 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f53d0ef9a594",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 몸의 어느 곳으로 느낀 것인지 고르시오.",
+      "stem": "바닷물을 살짝 맛보니 짭조름합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'짭조름합니다'는 짠맛을 나타내므로 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f765a893c397",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "꽃밭 앞을 지나니 향긋한 내음이 코끝에 닿습니다.",
+      "answer": "코로 맡은 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "혀로 맛본 느낌"
+      ],
+      "solution": [
+        "'향긋한 내음'은 코로 맡은 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb6276e5e34a",
+      "difficulty": 3,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "얼음 조각을 쥐니 손바닥이 시렸습니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "손바닥이 시린 것은 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fd6f70fd9f19",
+      "difficulty": 1,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "아기 볼이 보들보들합니다.",
+      "answer": "살갗으로 느낀 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'보들보들'은 만졌을 때의 느낌이라 살갗으로 느낀 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "feb53293ee33",
+      "difficulty": 2,
+      "instruction": "이 문장의 감각적 표현은 어떤 감각으로 느낀 것인지 고르시오.",
+      "stem": "꿀을 바른 떡이 달콤합니다.",
+      "answer": "혀로 맛본 느낌",
+      "distractors": [
+        "눈으로 본 느낌",
+        "귀로 들은 느낌",
+        "코로 맡은 느낌"
+      ],
+      "solution": [
+        "'달콤하다'는 혀로 맛본 느낌이다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2003 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "english",
+  "standardCode": "[6영02-08]",
+  "skill": "예시문을 참고하여 목적에 맞는 간단한 글을 쓰는 표준",
+  "items": [
+    {
+      "id": "010387ad21b4",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I go to school by bus. / 유나는 걸어서 학교에 갑니다. 유나의 글: I go to school ___.",
+      "answer": "on foot",
+      "distractors": [
+        "by bus",
+        "by train",
+        "by bike"
+      ],
+      "solution": [
+        "유나는 걸어서 학교에 갑니다. 그래서 빈칸에는 'on foot'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "07d36393511a",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The ___ is the king of the animals.",
+      "answer": "lion",
+      "distractors": [
+        "fish",
+        "egg",
+        "door"
+      ],
+      "solution": [
+        "빈칸에 'lion'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0bcbc7e7a3bb",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I hold my pencil in my ___.",
+      "answer": "hand",
+      "distractors": [
+        "nose",
+        "face",
+        "door"
+      ],
+      "solution": [
+        "빈칸에 'hand'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0bdc81ea1523",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 새 친구에게 쓰는 편지입니다. Hi, my name is Yuna. ___ We can be good friends.",
+      "answer": "I am in your class.",
+      "distractors": [
+        "You are my mom.",
+        "I was a baby.",
+        "Where is the class?"
+      ],
+      "solution": [
+        "새 친구에게 자기를 소개하는 편지이므로 같은 반이라는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "0f0e9677846d",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: It is raining today. / 오늘은 눈이 옵니다. 유나의 글: ___",
+      "answer": "It is snowing today.",
+      "distractors": [
+        "It is raining today.",
+        "It is hot today.",
+        "It was snowing yesterday."
+      ],
+      "solution": [
+        "오늘은 눈이 옵니다. 그래서 빈칸에는 'It is snowing today.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "141cccf2e005",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 겨울 일기입니다. It was snowing today. ___ It was fun.",
+      "answer": "I played in the snow with my friends.",
+      "distractors": [
+        "I swam in the river.",
+        "It was very hot.",
+        "I will play in the snow."
+      ],
+      "solution": [
+        "눈 오는 날의 일기이므로 오늘 눈에서 논 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "16303cf94fea",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We learn about animals and the earth in ___ class.",
+      "answer": "science",
+      "distractors": [
+        "music",
+        "history",
+        "kitchen"
+      ],
+      "solution": [
+        "빈칸에 'science'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "181b03910682",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I put my pencil case on the ___.",
+      "answer": "desk",
+      "distractors": [
+        "sun",
+        "milk",
+        "lion"
+      ],
+      "solution": [
+        "빈칸에 'desk'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "18614c58897a",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We saw a big ___ at the zoo. It has big teeth.",
+      "answer": "lion",
+      "distractors": [
+        "egg",
+        "pen",
+        "door"
+      ],
+      "solution": [
+        "빈칸에 'lion'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "190e66a8881f",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: I like dogs because they are fun. / 톰은 고양이가 조용해서 좋아합니다. 톰의 글: ___",
+      "answer": "I like cats because they are quiet.",
+      "distractors": [
+        "I like cats because they are big.",
+        "I like dogs because they are quiet.",
+        "I do not like cats."
+      ],
+      "solution": [
+        "톰은 고양이가 조용해서 좋아합니다. 그래서 빈칸에는 'I like cats because they are quiet.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "19de192315f2",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The ___ is hot and bright in the sky.",
+      "answer": "sun",
+      "distractors": [
+        "desk",
+        "box",
+        "pen"
+      ],
+      "solution": [
+        "빈칸에 'sun'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1b0d98e1ce2c",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 사과 쪽지입니다. Hi Tom, ___ I will not do it again.",
+      "answer": "I am sorry I took your pencil.",
+      "distractors": [
+        "Thank you for the pencil.",
+        "Can I have a pencil?",
+        "I like your pencil."
+      ],
+      "solution": [
+        "사과하는 쪽지이므로 잘못을 사과하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1eaf3675e9bc",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I cook an ___ for breakfast.",
+      "answer": "egg",
+      "distractors": [
+        "umbrella",
+        "ice",
+        "answer"
+      ],
+      "solution": [
+        "빈칸에 'egg'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "202ce77aa451",
+      "difficulty": 1,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 감사 카드입니다. Hi Mina, ___ You are a good friend.",
+      "answer": "Thank you for your help.",
+      "distractors": [
+        "I am sorry I am late.",
+        "Where are you going?",
+        "Do you like soccer?"
+      ],
+      "solution": [
+        "감사 카드이므로 고마움을 전하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24669f7a5ca6",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We learn about old kings in ___ class.",
+      "answer": "history",
+      "distractors": [
+        "science",
+        "music",
+        "garden"
+      ],
+      "solution": [
+        "빈칸에 'history'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "275682b6af1f",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "A rabbit can ___ high.",
+      "answer": "jump",
+      "distractors": [
+        "teach",
+        "open",
+        "red"
+      ],
+      "solution": [
+        "빈칸에 'jump'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2d83901cd389",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My grandfather has a big ___ with many flowers.",
+      "answer": "garden",
+      "distractors": [
+        "kitchen",
+        "desk",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'garden'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2fafe52e51d6",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I will visit my uncle tomorrow. / 미나는 내일 할아버지 댁에 갑니다. 미나의 글: I will visit ___ tomorrow.",
+      "answer": "my grandfather",
+      "distractors": [
+        "my uncle",
+        "my aunt",
+        "my cousin"
+      ],
+      "solution": [
+        "미나는 내일 할아버지 댁에 갑니다. 그래서 빈칸에는 'my grandfather'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2feacd2347c2",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We buy fruit and fish at the ___.",
+      "answer": "market",
+      "distractors": [
+        "library",
+        "zoo",
+        "school"
+      ],
+      "solution": [
+        "빈칸에 'market'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "301e70e34754",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I draw a ___ of my dog.",
+      "answer": "picture",
+      "distractors": [
+        "question",
+        "king",
+        "ice"
+      ],
+      "solution": [
+        "빈칸에 'picture'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "354710d2e23f",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Put up your ___ if you have a question.",
+      "answer": "hand",
+      "distractors": [
+        "nose",
+        "egg",
+        "book"
+      ],
+      "solution": [
+        "빈칸에 'hand'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "370fadebb837",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: There are three people in my family. / 톰의 가족은 다섯 명입니다. 톰의 글: There are ___ in my family.",
+      "answer": "five people",
+      "distractors": [
+        "three people",
+        "four people",
+        "five rooms"
+      ],
+      "solution": [
+        "톰의 가족은 다섯 명입니다. 그래서 빈칸에는 'five people'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "39513c9c408f",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Water turns into ___ in winter.",
+      "answer": "ice",
+      "distractors": [
+        "milk",
+        "egg",
+        "sun"
+      ],
+      "solution": [
+        "빈칸에 'ice'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3966e6ce1410",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 길 안내 쪽지입니다. Come to my house. ___ It is next to the bank.",
+      "answer": "Go up this road and turn right at the park.",
+      "distractors": [
+        "I live in a big house.",
+        "Where is your house?",
+        "My house is old."
+      ],
+      "solution": [
+        "집까지 가는 길을 알려 주는 쪽지이므로 길을 안내하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3bf6899b07c5",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Can you ___ me how to swim?",
+      "answer": "teach",
+      "distractors": [
+        "jump",
+        "red",
+        "queen"
+      ],
+      "solution": [
+        "빈칸에 'teach'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3d164a2754dc",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I drink a glass of ___.",
+      "answer": "milk",
+      "distractors": [
+        "book",
+        "pen",
+        "desk"
+      ],
+      "solution": [
+        "빈칸에 'milk'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3e01206bdc5c",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Trees turn red and yellow in ___.",
+      "answer": "autumn",
+      "distractors": [
+        "spring",
+        "music",
+        "library"
+      ],
+      "solution": [
+        "빈칸에 'autumn'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3fcd46d40703",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I can not swim. But I can run fast. / 미나는 스키를 못 타지만 스케이트는 잘 탑니다. 미나의 글: I can not ski. But I can ___.",
+      "answer": "skate well",
+      "distractors": [
+        "ski well",
+        "swim well",
+        "run fast"
+      ],
+      "solution": [
+        "미나는 스키를 못 타지만 스케이트는 잘 탑니다. 그래서 빈칸에는 'skate well'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "408012ca1380",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My dog likes to play with a ___.",
+      "answer": "ball",
+      "distractors": [
+        "ice",
+        "desk",
+        "king"
+      ],
+      "solution": [
+        "빈칸에 'ball'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42b6bcf6619d",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "In ___, it is very hot and we swim in the sea.",
+      "answer": "summer",
+      "distractors": [
+        "winter",
+        "spring",
+        "autumn"
+      ],
+      "solution": [
+        "빈칸에 'summer'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "44980665402b",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "There are four people in my ___.",
+      "answer": "family",
+      "distractors": [
+        "desk",
+        "sun",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'family'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4a2b40602c89",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Birds sit in the ___ and sing.",
+      "answer": "tree",
+      "distractors": [
+        "milk",
+        "pen",
+        "ice"
+      ],
+      "solution": [
+        "빈칸에 'tree'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4ec2954ad41e",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I sing songs in ___ class.",
+      "answer": "music",
+      "distractors": [
+        "science",
+        "history",
+        "kitchen"
+      ],
+      "solution": [
+        "빈칸에 'music'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "51eda11e7440",
+      "difficulty": 1,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 자기소개 글입니다. Hello, I am Minsu. ___ I like soccer.",
+      "answer": "I am twelve years old.",
+      "distractors": [
+        "He is twelve years old.",
+        "Are you twelve years old?",
+        "She likes soccer."
+      ],
+      "solution": [
+        "자기를 소개하는 글이므로 I로 시작해 자기 이야기를 하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5381263a9f36",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I brush my teeth in the morning. / 지호는 저녁에 샤워를 합니다. 지호의 글: I take a shower ___.",
+      "answer": "in the evening",
+      "distractors": [
+        "in the morning",
+        "at one",
+        "in the kitchen"
+      ],
+      "solution": [
+        "지호는 저녁에 샤워를 합니다. 그래서 빈칸에는 'in the evening'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "55410b1f8751",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "A ___ can swim in the water.",
+      "answer": "fish",
+      "distractors": [
+        "desk",
+        "book",
+        "tree"
+      ],
+      "solution": [
+        "빈칸에 'fish'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "56288f6c0626",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I write my name with a ___.",
+      "answer": "pen",
+      "distractors": [
+        "ball",
+        "egg",
+        "lion"
+      ],
+      "solution": [
+        "빈칸에 'pen'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "599e3efb5d25",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: I like spring. It is warm. / 미나는 겨울을 좋아합니다. 겨울은 춥습니다. 미나의 글: I like winter. ___",
+      "answer": "It is cold.",
+      "distractors": [
+        "It is warm.",
+        "It is hot.",
+        "It is long."
+      ],
+      "solution": [
+        "미나는 겨울을 좋아합니다. 겨울은 춥습니다. 그래서 빈칸에는 'It is cold.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5dd6ac0ff9f3",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My dog has a black ___. It can smell food well.",
+      "answer": "nose",
+      "distractors": [
+        "hand",
+        "face",
+        "door"
+      ],
+      "solution": [
+        "빈칸에 'nose'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6128746a021c",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 반려동물 소개 글입니다. I have an animal at home. ___ It likes carrots.",
+      "answer": "It is a rabbit.",
+      "distractors": [
+        "It is a fish.",
+        "I like animals.",
+        "Do you have an animal?"
+      ],
+      "solution": [
+        "당근을 좋아하는 반려동물을 소개하므로 토끼라고 밝히는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6225ffec8a66",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 초대장입니다. Please come to my party. ___ See you there!",
+      "answer": "It is at my house at three.",
+      "distractors": [
+        "I went to a party.",
+        "I was sick yesterday.",
+        "My party was fun."
+      ],
+      "solution": [
+        "초대하는 글이므로 모이는 곳과 시각을 알려 주는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6aa643254629",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: I am eleven years old. / 지호는 열두 살입니다. 지호의 글: Hello, I am Jiho. ___",
+      "answer": "I am twelve years old.",
+      "distractors": [
+        "I am eleven years old.",
+        "I am ten years old.",
+        "I have twelve books."
+      ],
+      "solution": [
+        "지호는 열두 살입니다. 그래서 빈칸에는 'I am twelve years old.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b219717ccd7",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Ten is a ___.",
+      "answer": "number",
+      "distractors": [
+        "letter",
+        "picture",
+        "kitchen"
+      ],
+      "solution": [
+        "빈칸에 'number'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "714b0c00f8ce",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I want to be a doctor. / 에이미의 꿈은 가수입니다. 에이미의 글: I want to be ___.",
+      "answer": "a singer",
+      "distractors": [
+        "a doctor",
+        "a cook",
+        "a pilot"
+      ],
+      "solution": [
+        "에이미의 꿈은 가수입니다. 그래서 빈칸에는 'a singer'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "71603981fd1e",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 시장에 다녀온 일기입니다. Yesterday I went to the market with my mom. ___ It was fun.",
+      "answer": "We bought some fruit.",
+      "distractors": [
+        "We will buy some fruit.",
+        "Do you like fruit?",
+        "Please buy some fruit."
+      ],
+      "solution": [
+        "어제 한 일을 쓰는 일기이므로 지난 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "74c60216e5af",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 주말 계획 글입니다. I have plans for this weekend. ___ I will also read a book.",
+      "answer": "I will visit my aunt.",
+      "distractors": [
+        "I visited my aunt last week.",
+        "I like my aunt.",
+        "My aunt is a nurse."
+      ],
+      "solution": [
+        "앞으로 할 일을 쓰는 글이므로 will을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "763fb8786160",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We eat dinner at seven in the ___.",
+      "answer": "evening",
+      "distractors": [
+        "morning",
+        "history",
+        "zoo"
+      ],
+      "solution": [
+        "빈칸에 'evening'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "79deda0d158a",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: My favorite food is pizza. / 민수가 가장 좋아하는 음식은 바나나입니다. 민수의 글: ___",
+      "answer": "My favorite food is bananas.",
+      "distractors": [
+        "My favorite food is pizza.",
+        "My favorite color is yellow.",
+        "I do not like bananas."
+      ],
+      "solution": [
+        "민수가 가장 좋아하는 음식은 바나나입니다. 그래서 빈칸에는 'My favorite food is bananas.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7b06b985449d",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 선생님께 드리는 감사 편지입니다. To my teacher, ___ You are the best teacher.",
+      "answer": "Thank you for teaching us.",
+      "distractors": [
+        "I am sorry for teaching you.",
+        "Please teach me tomorrow.",
+        "Who is your teacher?"
+      ],
+      "solution": [
+        "선생님께 고마움을 전하는 편지이므로 가르쳐 주셔서 고맙다는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7e50b8f08fe7",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Fish live in the ___.",
+      "answer": "water",
+      "distractors": [
+        "desk",
+        "book",
+        "sun"
+      ],
+      "solution": [
+        "빈칸에 'water'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7ed873e88684",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 엄마께 쓰는 사과 쪽지입니다. Mom, ___ I will clean my room now.",
+      "answer": "I am sorry I did not clean my room.",
+      "distractors": [
+        "Thank you for the cake.",
+        "My room is clean.",
+        "I like my room."
+      ],
+      "solution": [
+        "방을 치우지 않은 일을 사과하는 쪽지이므로 사과하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "80082ca63cde",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I smell with my ___.",
+      "answer": "nose",
+      "distractors": [
+        "hand",
+        "desk",
+        "book"
+      ],
+      "solution": [
+        "빈칸에 'nose'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8152adb844a2",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I went fishing with my dad. / 민수는 엄마와 함께 쇼핑을 갔습니다. 민수의 글: I went shopping with ___.",
+      "answer": "my mom",
+      "distractors": [
+        "my dad",
+        "my friend",
+        "my sister"
+      ],
+      "solution": [
+        "민수는 엄마와 함께 쇼핑을 갔습니다. 그래서 빈칸에는 'my mom'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "899aa9f7ce45",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 물건을 빌려 달라는 쪽지입니다. Hi Jiho, ___ I will give it back tomorrow.",
+      "answer": "Can I use your pencil?",
+      "distractors": [
+        "Thank you for the pencil.",
+        "I have two pencils.",
+        "Where is my pencil?"
+      ],
+      "solution": [
+        "빌려 달라고 부탁하는 쪽지이므로 써도 되는지 묻는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8c63dd610c13",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Mina is my ___. We play together every day.",
+      "answer": "friend",
+      "distractors": [
+        "desk",
+        "pen",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'friend'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8e2a2aea650c",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I play soccer after school. / 미나는 방과 후에 피아노를 칩니다. 미나의 글: I ___ after school.",
+      "answer": "play the piano",
+      "distractors": [
+        "play soccer",
+        "read books",
+        "go swimming"
+      ],
+      "solution": [
+        "미나는 방과 후에 피아노를 칩니다. 그래서 빈칸에는 'play the piano'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f8851067d81",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 분실물 쪽지입니다. I can not find my cap. ___ Please call me.",
+      "answer": "It is blue and small.",
+      "distractors": [
+        "I found a cap.",
+        "I want a new bag.",
+        "Where is the park?"
+      ],
+      "solution": [
+        "잃어버린 모자를 찾는 글이므로 모자의 생김새를 알려 주는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "922fedb4a8b7",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We buy apples and bread at the ___.",
+      "answer": "market",
+      "distractors": [
+        "library",
+        "school",
+        "zoo"
+      ],
+      "solution": [
+        "빈칸에 'market'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9371798cb889",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: My dad is a cook. He makes good food. / 유나의 엄마는 간호사입니다. 엄마는 아픈 사람을 돕습니다. 유나의 글: My mom is a nurse. She helps ___.",
+      "answer": "sick people",
+      "distractors": [
+        "good food",
+        "tall trees",
+        "big lions"
+      ],
+      "solution": [
+        "유나의 엄마는 간호사입니다. 엄마는 아픈 사람을 돕습니다. 그래서 빈칸에는 'sick people'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "940c2a5524dd",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I am a ___. I go to school every day.",
+      "answer": "student",
+      "distractors": [
+        "king",
+        "egg",
+        "lion"
+      ],
+      "solution": [
+        "빈칸에 'student'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "947b0ed0ea52",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Please ___ your book to page ten.",
+      "answer": "open",
+      "distractors": [
+        "jump",
+        "yellow",
+        "queen"
+      ],
+      "solution": [
+        "빈칸에 'open'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "95373da333cf",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I put my books in the ___.",
+      "answer": "box",
+      "distractors": [
+        "sun",
+        "milk",
+        "lion"
+      ],
+      "solution": [
+        "빈칸에 'box'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "99ebce6a6ca0",
+      "difficulty": 1,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 안부 편지입니다. Hi Grandfather, ___ I miss you. Love, Jiho",
+      "answer": "How are you?",
+      "distractors": [
+        "Who are you?",
+        "What is this?",
+        "How much is it?"
+      ],
+      "solution": [
+        "할아버지께 쓰는 안부 편지이므로 안부를 묻는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9a0ec98215d7",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 친구 소개 글입니다. This is my friend, Amy. ___ She plays the piano well.",
+      "answer": "She is good at music.",
+      "distractors": [
+        "He is good at music.",
+        "She is bad at music.",
+        "I am good at music."
+      ],
+      "solution": [
+        "에이미를 소개하고 피아노를 잘 친다고 했으므로 음악을 잘한다는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9e7cf5e5b479",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My mom cooks dinner in the ___.",
+      "answer": "kitchen",
+      "distractors": [
+        "library",
+        "zoo",
+        "school"
+      ],
+      "solution": [
+        "빈칸에 'kitchen'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9f2e89494e10",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I write a ___ to my grandfather.",
+      "answer": "letter",
+      "distractors": [
+        "ball",
+        "lion",
+        "milk"
+      ],
+      "solution": [
+        "빈칸에 'letter'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a01814a1c365",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 가족 소개 글입니다. There are four people in my family. ___ My mom is a nurse.",
+      "answer": "My dad is a police officer.",
+      "distractors": [
+        "My dog is white.",
+        "I like my school.",
+        "Where is your family?"
+      ],
+      "solution": [
+        "가족을 한 사람씩 소개하는 글이므로 아빠를 소개하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a133190e48fc",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I have a brother and a sister. / 톰은 누나가 둘 있습니다. 톰의 글: I have ___.",
+      "answer": "two sisters",
+      "distractors": [
+        "two brothers",
+        "a sister",
+        "three sisters"
+      ],
+      "solution": [
+        "톰은 누나가 둘 있습니다. 그래서 빈칸에는 'two sisters'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a4918b0ed2c1",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Flowers grow in the ___.",
+      "answer": "garden",
+      "distractors": [
+        "kitchen",
+        "library",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'garden'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a892531ccb48",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "It is raining. Take your ___.",
+      "answer": "umbrella",
+      "distractors": [
+        "book",
+        "ball",
+        "pen"
+      ],
+      "solution": [
+        "빈칸에 'umbrella'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aa69e95bcd2f",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I went to the zoo yesterday. / 민수는 어제 해변에 갔습니다. 민수의 글: I went to ___ yesterday.",
+      "answer": "the beach",
+      "distractors": [
+        "the zoo",
+        "the park",
+        "the library"
+      ],
+      "solution": [
+        "민수는 어제 해변에 갔습니다. 그래서 빈칸에는 'the beach'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aeb9eea5056f",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Amy plays the ___ in music class.",
+      "answer": "violin",
+      "distractors": [
+        "desk",
+        "egg",
+        "nose"
+      ],
+      "solution": [
+        "빈칸에 'violin'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af5f591948a4",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Put the toys in the ___, please.",
+      "answer": "box",
+      "distractors": [
+        "sun",
+        "king",
+        "nose"
+      ],
+      "solution": [
+        "빈칸에 'box'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b086b4061fed",
+      "difficulty": 1,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 도서관 안내문입니다. Please read this. ___ Do not eat food in the library.",
+      "answer": "Be quiet.",
+      "distractors": [
+        "Run fast.",
+        "Play soccer.",
+        "Sing a song."
+      ],
+      "solution": [
+        "도서관에서 지킬 규칙이므로 조용히 하라는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b4c0d04ccf20",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 생일 파티 일기입니다. Today was my party. ___ We ate a big cake.",
+      "answer": "My friends came to my house.",
+      "distractors": [
+        "My friends will come to my house.",
+        "Do your friends like cake?",
+        "Please come to my house."
+      ],
+      "solution": [
+        "오늘 있었던 일을 쓰는 일기이므로 지난 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b67fe9843d1c",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: My brother is tall. / 에이미의 언니는 머리가 깁니다. 에이미의 글: My sister has ___.",
+      "answer": "long hair",
+      "distractors": [
+        "short hair",
+        "a long tail",
+        "big eyes"
+      ],
+      "solution": [
+        "에이미의 언니는 머리가 깁니다. 그래서 빈칸에는 'long hair'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b6c6b8cc5987",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "예시문: I can play the piano. / 지호는 배드민턴을 칠 줄 압니다. 지호의 글: ___",
+      "answer": "I can play badminton.",
+      "distractors": [
+        "I can play the piano.",
+        "I can play soccer.",
+        "I can not play badminton."
+      ],
+      "solution": [
+        "지호는 배드민턴을 칠 줄 압니다. 그래서 빈칸에는 'I can play badminton.'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b8862760392c",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: My cat is white and small. / 에이미의 개는 갈색이고 큽니다. 에이미의 글: My dog is ___.",
+      "answer": "brown and big",
+      "distractors": [
+        "white and small",
+        "brown and small",
+        "black and big"
+      ],
+      "solution": [
+        "에이미의 개는 갈색이고 큽니다. 그래서 빈칸에는 'brown and big'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9e8e9b4c199",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The teacher asks a ___, and I answer it.",
+      "answer": "question",
+      "distractors": [
+        "letter",
+        "picture",
+        "number"
+      ],
+      "solution": [
+        "빈칸에 'question'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9ec8021778a",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 그림일기입니다. I went to the beach today. ___ It was a great day.",
+      "answer": "I swam in the sea.",
+      "distractors": [
+        "I will swim tomorrow.",
+        "Do you like the sea?",
+        "Please come to the beach."
+      ],
+      "solution": [
+        "오늘 한 일을 적는 일기이므로 지난 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bb43b37364d4",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My friends and I study ___ in the library.",
+      "answer": "together",
+      "distractors": [
+        "yellow",
+        "apple",
+        "queen"
+      ],
+      "solution": [
+        "빈칸에 'together'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bcf6e101eb2b",
+      "difficulty": 3,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: The library is next to the bank. / 은행은 학교 앞에 있습니다. 민수의 글: The bank is ___.",
+      "answer": "in front of the school",
+      "distractors": [
+        "next to the school",
+        "behind the school",
+        "in front of the park"
+      ],
+      "solution": [
+        "은행은 학교 앞에 있다. 그래서 빈칸에는 'in front of the school'이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be6070c00ab2",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Please ___ the door.",
+      "answer": "open",
+      "distractors": [
+        "apple",
+        "red",
+        "king"
+      ],
+      "solution": [
+        "빈칸에 'open'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c5a6f6885343",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "She has a happy ___. She smiles all day.",
+      "answer": "face",
+      "distractors": [
+        "hand",
+        "door",
+        "box"
+      ],
+      "solution": [
+        "빈칸에 'face'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c8d8ee45f69d",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Please close the ___. It is cold.",
+      "answer": "door",
+      "distractors": [
+        "desk",
+        "tree",
+        "sun"
+      ],
+      "solution": [
+        "빈칸에 'door'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c95c74120404",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "My ___ drinks milk and sleeps all day.",
+      "answer": "cat",
+      "distractors": [
+        "egg",
+        "tree",
+        "pen"
+      ],
+      "solution": [
+        "빈칸에 'cat'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cadcac8d0867",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 운동회 초대 글입니다. We have a sports day at school. ___ Please come and see us.",
+      "answer": "It is on the school field at ten.",
+      "distractors": [
+        "I like sports.",
+        "It was fun.",
+        "Do you play sports?"
+      ],
+      "solution": [
+        "초대하는 글이므로 장소와 시각을 알려 주는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cddfbda584dc",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 잃어버린 개를 찾는 포스터입니다. Please help me find my dog. ___ He has a short tail.",
+      "answer": "He is small and white.",
+      "distractors": [
+        "I have a cat.",
+        "I found a dog.",
+        "Dogs are fun."
+      ],
+      "solution": [
+        "개를 찾는 글이므로 개의 생김새를 알려 주는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d0cbfd423415",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 꿈을 소개하는 글입니다. I want to be a cook. ___ I want to make good food for people.",
+      "answer": "I like cooking.",
+      "distractors": [
+        "I do not like food.",
+        "My dad is a pilot.",
+        "I want to be a doctor."
+      ],
+      "solution": [
+        "요리사가 되고 싶은 까닭을 이어 쓰므로 요리를 좋아한다는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d2c62964efe9",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 주말에 한 일 일기입니다. Last weekend, I went to the mountain with my family. ___ It was a fun day.",
+      "answer": "We had lunch at the top.",
+      "distractors": [
+        "We will have lunch at the top.",
+        "Do you like mountains?",
+        "Please come with us."
+      ],
+      "solution": [
+        "지난 주말에 한 일을 쓰므로 지난 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d70c1b2c8ad3",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "The wife of a king is a ___.",
+      "answer": "queen",
+      "distractors": [
+        "girl",
+        "lion",
+        "student"
+      ],
+      "solution": [
+        "빈칸에 'queen'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e3be8b27f35f",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 고마운 친구에게 쓰는 쪽지입니다. Hi Minsu, I was sick yesterday. ___ You are kind.",
+      "answer": "Thank you for your call.",
+      "distractors": [
+        "I am sorry I called you.",
+        "Are you sick?",
+        "I will be sick tomorrow."
+      ],
+      "solution": [
+        "걱정해 준 친구에게 고마움을 전하는 쪽지이므로 고맙다는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e4084058ffc0",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 좋아하는 동물 소개 글입니다. My favorite animal is the elephant. ___ It has a long nose.",
+      "answer": "It is big and gray.",
+      "distractors": [
+        "It is small and pink.",
+        "It can fly.",
+        "It lives in the sea."
+      ],
+      "solution": [
+        "코끼리를 소개하므로 크고 회색이라는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e67693b74d3e",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 날씨를 알리는 글입니다. Good morning! ___ Take your umbrella.",
+      "answer": "It will rain today.",
+      "distractors": [
+        "It is hot and dry.",
+        "It was a nice day.",
+        "I like the sun."
+      ],
+      "solution": [
+        "우산을 챙기라고 했으므로 비가 온다는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e8849842a522",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 좋아하는 계절 소개 글입니다. I like autumn. ___ I like to walk in the park.",
+      "answer": "It is cool and nice.",
+      "distractors": [
+        "It is very cold.",
+        "It is very hot.",
+        "It snows every day."
+      ],
+      "solution": [
+        "가을을 좋아하는 까닭을 쓰므로 가을 날씨를 알맞게 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e924d979b0f3",
+      "difficulty": 2,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 학교 소개 글입니다. This is my school. ___ We read books there.",
+      "answer": "It has a big library.",
+      "distractors": [
+        "It has a big garden.",
+        "It has a big kitchen.",
+        "It has a big park."
+      ],
+      "solution": [
+        "뒤 문장에서 책을 읽는다고 했으므로 도서관을 소개하는 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec92fbc156aa",
+      "difficulty": 3,
+      "instruction": "글의 목적에 맞게 빈칸에 알맞은 문장을 고르시오.",
+      "stem": "다음은 여름 방학 계획 글입니다. I will learn to swim this summer. ___ I will swim every day.",
+      "answer": "I will go to the sea with my dad.",
+      "distractors": [
+        "I went to the sea last year.",
+        "The sea was cold.",
+        "I can not go to the sea."
+      ],
+      "solution": [
+        "방학 계획을 쓰는 글이므로 will을 써서 앞으로 할 일을 쓴 문장이 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f0d99a9c83e4",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We can see a lion at the ___.",
+      "answer": "zoo",
+      "distractors": [
+        "library",
+        "kitchen",
+        "market"
+      ],
+      "solution": [
+        "빈칸에 'zoo'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f60881e24f81",
+      "difficulty": 2,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Snow falls in ___.",
+      "answer": "winter",
+      "distractors": [
+        "summer",
+        "science",
+        "music"
+      ],
+      "solution": [
+        "빈칸에 'winter'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f71dd2983f88",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "We borrow books at the ___.",
+      "answer": "library",
+      "distractors": [
+        "kitchen",
+        "garden",
+        "zoo"
+      ],
+      "solution": [
+        "빈칸에 'library'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb69c9a0c817",
+      "difficulty": 3,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "An ___ is a red fruit.",
+      "answer": "apple",
+      "distractors": [
+        "egg",
+        "umbrella",
+        "ice"
+      ],
+      "solution": [
+        "빈칸에 'apple'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fdab59107568",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "Bananas are ___.",
+      "answer": "yellow",
+      "distractors": [
+        "nose",
+        "door",
+        "king"
+      ],
+      "solution": [
+        "빈칸에 'yellow'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fe5944466e10",
+      "difficulty": 1,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I get up at seven. / 지호는 여섯 시에 일어납니다. 지호의 글: I get up ___.",
+      "answer": "at six",
+      "distractors": [
+        "at seven",
+        "at ten",
+        "at night"
+      ],
+      "solution": [
+        "지호는 여섯 시에 일어납니다. 그래서 빈칸에는 'at six'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ff1b07430448",
+      "difficulty": 2,
+      "instruction": "예시문을 참고하여 빈칸에 알맞은 말을 고르시오.",
+      "stem": "예시문: I have lunch at twelve. / 유나는 저녁을 여섯 시에 먹습니다. 유나의 글: I have dinner ___.",
+      "answer": "at six",
+      "distractors": [
+        "at twelve",
+        "at seven",
+        "at one"
+      ],
+      "solution": [
+        "유나는 저녁을 여섯 시에 먹습니다. 그래서 빈칸에는 'at six'가 알맞다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fffc33a5209b",
+      "difficulty": 1,
+      "instruction": "빈칸에 알맞은 낱말을 고르시오.",
+      "stem": "I go to the ___ to borrow a book.",
+      "answer": "library",
+      "distractors": [
+        "kitchen",
+        "market",
+        "zoo"
+      ],
+      "solution": [
+        "빈칸에 'library'를 넣어야 문장의 뜻이 통한다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

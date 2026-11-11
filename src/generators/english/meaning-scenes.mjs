@@ -35,7 +35,14 @@ const colorScenes = coloredObjects.flatMap((object) => colors.map((color) => ({
   ko: `${object.ko}${josaI(object.ko)} ${color.ko}.`,
   contentWords: [object.en, color.en],
 })));
-const locationScenes = subjects.flatMap((subject) => places.flatMap((place) => relations.map((relation) => ({
+/**
+ * 'in the desk' 는 서랍 속을 말하는 어색한 문장이고 우리말 '책상 안에' 도 그렇다.
+ * 안에 담길 수 있는 곳(상자)에만 'in' 을 쓴다.
+ */
+const fitsRelation = (place, relation) => relation.en !== 'in' || place.en === 'box';
+const locationScenes = subjects.flatMap((subject) => places.flatMap((place) => relations
+  .filter((relation) => fitsRelation(place, relation))
+  .map((relation) => ({
   kind: 'location',
   en: `The ${subject.en} is ${relation.en} the ${place.en}.`,
   ko: `${subject.ko}${josaI(subject.ko)} ${place.ko} ${relation.ko} 있습니다.`,

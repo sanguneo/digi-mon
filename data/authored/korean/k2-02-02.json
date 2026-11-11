@@ -1,0 +1,2148 @@
+{
+  "schema": "digi-mon/authored-items@1",
+  "subject": "korean",
+  "standardCode": "[2국02-02]",
+  "skill": "의미가 드러나도록 알맞게 띄어 읽기",
+  "items": [
+    {
+      "id": "04cb21e2a4be",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "개미가 커다란 과자를 옮깁니다.",
+      "answer": "개미가 ∨ 커다란 과자를 옮깁니다.",
+      "distractors": [
+        "개미가 커다란 ∨ 과자를 옮깁니다.",
+        "개미가 커다란 과자를 옮 ∨ 깁니다.",
+        "개미가 커다 ∨ 란 과자를 옮깁니다."
+      ],
+      "solution": [
+        "'개미가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "04efaf0e79b2",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "동생이 빨간 사과를 먹었습니다.",
+      "answer": "동생이 ∨ 빨간 사과를 먹었습니다.",
+      "distractors": [
+        "동생이 빨간 ∨ 사과를 먹었습니다.",
+        "동생이 빨간 사과를 먹 ∨ 었습니다.",
+        "동 ∨ 생이 빨간 사과를 먹었습니다."
+      ],
+      "solution": [
+        "'동생이' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "08383590891d",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "서연이가 집에서 동생에게 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "누나가 파란 ∨ 치마를 입었습니다.",
+      "distractors": [
+        "손을 씻고 ∨ 밥을 먹었습니다.",
+        "날씨가 맑아서 ∨ 우리는 넓은 공원에 갔습니다.",
+        "예쁜 꽃과 푸른 나무를 ∨ 그렸습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "086b1513bf32",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "나비가 노란 꽃에 앉았습니다.",
+      "answer": "나비가 ∨ 노란 꽃에 앉았습니다.",
+      "distractors": [
+        "나비가 노란 ∨ 꽃에 앉았습니다.",
+        "나비가 노란 꽃 ∨ 에 앉았습니다.",
+        "나비가 노란 꽃에 앉 ∨ 았습니다."
+      ],
+      "solution": [
+        "'나비가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "111cb2ecec0d",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "하얀 토끼가 빨간 당근을 먹습니다.",
+      "answer": "'토끼가' 다음",
+      "distractors": [
+        "'하얀' 다음",
+        "'빨간' 다음",
+        "'당근을' 다음"
+      ],
+      "solution": [
+        "'하얀 토끼가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '토끼가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "18797e79d153",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "민수가 둥근 풍선을 불었습니다.",
+      "answer": "민수가 ∨ 둥근 풍선을 불었습니다.",
+      "distractors": [
+        "민수가 둥근 ∨ 풍선을 불었습니다.",
+        "민수가 둥근 풍선을 불 ∨ 었습니다.",
+        "민수가 둥근 풍 ∨ 선을 불었습니다."
+      ],
+      "solution": [
+        "'민수가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1c73ff1545e1",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "배가 아파서 ∨ 약을 먹었습니다.",
+      "answer": "이어 주는 말 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'배가 아파서'까지가 앞의 일과 뒤의 일을 이어 주는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "1e788d9742c4",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "날씨가 맑아서 우리는 넓은 공원에 갔습니다.",
+      "answer": "날씨가 맑아서 ∨ 우리는 넓은 공원에 갔습니다.",
+      "distractors": [
+        "날씨가 맑아서 우리는 넓은 ∨ 공원에 갔습니다.",
+        "날씨가 맑아서 우리는 넓은 공 ∨ 원에 갔습니다.",
+        "날씨가 맑아서 우리는 넓은 공원에 갔 ∨ 습니다."
+      ],
+      "solution": [
+        "'날씨가 맑아서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '맑아서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "20ccc7f8fa19",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "씩씩한 동생이 무거운 가방을 멨습니다.",
+      "answer": "'동생이' 다음",
+      "distractors": [
+        "'씩씩한' 다음",
+        "'무거운' 다음",
+        "'가방을' 다음"
+      ],
+      "solution": [
+        "'씩씩한 동생이'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '동생이' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "229fd1ec8726",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "할아버지께서 신문을 읽으십니다.",
+      "answer": "할아버지께서 ∨ 신문을 읽으십니다.",
+      "distractors": [
+        "할아버지께서 신문을 읽 ∨ 으십니다.",
+        "할아버 ∨ 지께서 신문을 읽으십니다.",
+        "할아버지께서 신 ∨ 문을 읽으십니다."
+      ],
+      "solution": [
+        "'할아버지께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "243f1e186e2e",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "공원에 가서 자전거를 탔습니다.",
+      "answer": "공원에 가서 ∨ 자전거를 탔습니다.",
+      "distractors": [
+        "공원에 가서 자전거를 탔습 ∨ 니다.",
+        "공원에 가서 자전 ∨ 거를 탔습니다.",
+        "공원에 가서 자전거를 탔 ∨ 습니다."
+      ],
+      "solution": [
+        "'공원에 가서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '가서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "24802f8f94c5",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "누나가 피아노를 칩니다.",
+      "answer": "누나가 ∨ 피아노를 칩니다.",
+      "distractors": [
+        "누나가 피아노를 칩 ∨ 니다.",
+        "누 ∨ 나가 피아노를 칩니다.",
+        "누나가 피아 ∨ 노를 칩니다."
+      ],
+      "solution": [
+        "'누나가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "25b3ca726349",
+      "difficulty": 2,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "지호가 친구 앞에서 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "다람쥐가 작은 ∨ 도토리를 모읍니다.",
+      "distractors": [
+        "바람이 불어서 ∨ 모자가 날아갔습니다.",
+        "숙제를 마치고 ∨ 재미있는 만화를 보았습니다.",
+        "아버지께서 ∨ 큰 상자를 옮기셨습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "262f90d5a074",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "숙제를 마치고 재미있는 만화를 보았습니다.",
+      "answer": "숙제를 마치고 ∨ 재미있는 만화를 보았습니다.",
+      "distractors": [
+        "숙제를 마치고 재미있는 만화를 보 ∨ 았습니다.",
+        "숙제를 마치고 재미있는 ∨ 만화를 보았습니다.",
+        "숙제를 마치고 재미있는 만화를 보았 ∨ 습니다."
+      ],
+      "solution": [
+        "'숙제를 마치고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '마치고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "27e6a9ebac61",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "동생이 커다란 눈사람을 만들었습니다.",
+      "answer": "동생이 ∨ 커다란 눈사람을 만들었습니다.",
+      "distractors": [
+        "동생이 커다란 ∨ 눈사람을 만들었습니다.",
+        "동생이 커다란 눈사람을 만 ∨ 들었습니다.",
+        "동생이 커다란 눈 ∨ 사람을 만들었습니다."
+      ],
+      "solution": [
+        "'동생이' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "299f4f1336c1",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "시장에 가서 싱싱한 생선을 샀습니다.",
+      "answer": "시장에 가서 ∨ 싱싱한 생선을 샀습니다.",
+      "distractors": [
+        "시장에 가서 싱싱한 ∨ 생선을 샀습니다.",
+        "시장에 가서 싱싱한 생선을 샀 ∨ 습니다.",
+        "시 ∨ 장에 가서 싱싱한 생선을 샀습니다."
+      ],
+      "solution": [
+        "'시장에 가서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '가서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2b0c7c95498f",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "길이 미끄러워서 천천히 걸었습니다.",
+      "answer": "길이 미끄러워서 ∨ 천천히 걸었습니다.",
+      "distractors": [
+        "길이 미끄 ∨ 러워서 천천히 걸었습니다.",
+        "길이 미끄러워서 천 ∨ 천히 걸었습니다.",
+        "길이 미끄러워서 천천히 걸 ∨ 었습니다."
+      ],
+      "solution": [
+        "'길이 미끄러워서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '미끄러워서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "2e53ed0416b3",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "작은 참새가 노란 모이를 쪼았습니다.",
+      "answer": "'참새가' 다음",
+      "distractors": [
+        "'작은' 다음",
+        "'노란' 다음",
+        "'모이를' 다음"
+      ],
+      "solution": [
+        "'작은 참새가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '참새가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "31646516cfd7",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "지안이가 짝과 함께 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "감기에 걸려서 따뜻한 ∨ 물을 마셨습니다.",
+      "distractors": [
+        "언니가 ∨ 예쁜 꽃을 그렸습니다.",
+        "민수가 ∨ 둥근 풍선을 불었습니다.",
+        "책을 읽고 ∨ 일기를 썼습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "33ade6b3188d",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "배가 고파서 밥을 먹었습니다.",
+      "answer": "배가 고파서 ∨ 밥을 먹었습니다.",
+      "distractors": [
+        "배가 고파서 밥을 먹 ∨ 었습니다.",
+        "배가 고 ∨ 파서 밥을 먹었습니다.",
+        "배가 고파서 밥을 먹었 ∨ 습니다."
+      ],
+      "solution": [
+        "'배가 고파서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '고파서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3445eee517a3",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "참새가 작은 벌레를 잡았습니다.",
+      "answer": "참새가 ∨ 작은 벌레를 잡았습니다.",
+      "distractors": [
+        "참새가 작은 ∨ 벌레를 잡았습니다.",
+        "참새가 작은 벌레를 잡 ∨ 았습니다.",
+        "참새가 작은 벌 ∨ 레를 잡았습니다."
+      ],
+      "solution": [
+        "'참새가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "37efc61cc9a7",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "언니가 노래를 부릅니다.",
+      "answer": "언니가 ∨ 노래를 부릅니다.",
+      "distractors": [
+        "언니가 노래를 부릅 ∨ 니다.",
+        "언 ∨ 니가 노래를 부릅니다.",
+        "언니가 노래를 부 ∨ 릅니다."
+      ],
+      "solution": [
+        "'언니가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c1075e1d3c5",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "할머니께서 따뜻한 국을 끓이셨습니다.",
+      "answer": "할머니께서 ∨ 따뜻한 국을 끓이셨습니다.",
+      "distractors": [
+        "할머니께서 따뜻한 ∨ 국을 끓이셨습니다.",
+        "할머니께서 따뜻한 국을 끓 ∨ 이셨습니다.",
+        "할머니께서 따뜻한 국을 끓이 ∨ 셨습니다."
+      ],
+      "solution": [
+        "'할머니께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3c2e784c1ec2",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "날씨가 더워서 부채를 부쳤습니다.",
+      "answer": "날씨가 더워서 ∨ 부채를 부쳤습니다.",
+      "distractors": [
+        "날씨가 더워서 부채를 부 ∨ 쳤습니다.",
+        "날씨가 더 ∨ 워서 부채를 부쳤습니다.",
+        "날씨가 더워서 부 ∨ 채를 부쳤습니다."
+      ],
+      "solution": [
+        "'날씨가 더워서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '더워서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3fa340cf056a",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "형이 축구를 합니다.",
+      "answer": "형이 ∨ 축구를 합니다.",
+      "distractors": [
+        "형이 축구를 합니 ∨ 다.",
+        "형이 축 ∨ 구를 합니다.",
+        "형이 축구를 합 ∨ 니다."
+      ],
+      "solution": [
+        "'형이' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "3ff1796d76c0",
+      "difficulty": 3,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "감자와 고구마와 당근을 ∨ 씻었습니다.",
+      "answer": "늘어놓은 말이 끝난 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "이어 주는 말 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'감자와 고구마와 당근을'까지가 여러 가지를 늘어놓은 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4135499c4f38",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "작은 공책과 긴 자를 챙겼습니다.",
+      "answer": "작은 공책과 긴 자를 ∨ 챙겼습니다.",
+      "distractors": [
+        "작은 ∨ 공책과 긴 자를 챙겼습니다.",
+        "작은 공책과 긴 ∨ 자를 챙겼습니다.",
+        "작은 공 ∨ 책과 긴 자를 챙겼습니다."
+      ],
+      "solution": [
+        "'작은 공책과 긴 자를'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '자를' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42ada9e16ea3",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "노란 병아리와 하얀 오리가 놉니다.",
+      "answer": "노란 병아리와 하얀 오리가 ∨ 놉니다.",
+      "distractors": [
+        "노란 ∨ 병아리와 하얀 오리가 놉니다.",
+        "노란 병아리와 하얀 ∨ 오리가 놉니다.",
+        "노란 병아 ∨ 리와 하얀 오리가 놉니다."
+      ],
+      "solution": [
+        "'노란 병아리와 하얀 오리가'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '오리가' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "42c55151fcca",
+      "difficulty": 3,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "공책과 연필과 자를 ∨ 책상에 놓았습니다.",
+      "answer": "늘어놓은 말이 끝난 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "이어 주는 말 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'공책과 연필과 자를'까지가 여러 가지를 늘어놓은 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4978ead0b15d",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "우리 엄마가 맛있는 잡채를 만드셨습니다.",
+      "answer": "'엄마가' 다음",
+      "distractors": [
+        "'우리' 다음",
+        "'맛있는' 다음",
+        "'잡채를' 다음"
+      ],
+      "solution": [
+        "'우리 엄마가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '엄마가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "499101d4ba38",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "다람쥐가 작은 도토리를 모읍니다.",
+      "answer": "다람쥐가 ∨ 작은 도토리를 모읍니다.",
+      "distractors": [
+        "다람쥐가 작은 ∨ 도토리를 모읍니다.",
+        "다람쥐가 작은 도토리를 모 ∨ 읍니다.",
+        "다람쥐가 작은 도토 ∨ 리를 모읍니다."
+      ],
+      "solution": [
+        "'다람쥐가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4b9753d69632",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "봄이 오면 ∨ 꽃이 핍니다.",
+      "answer": "이어 주는 말 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'봄이 오면'까지가 앞의 일과 뒤의 일을 이어 주는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4d487f638397",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "노란 나비가 예쁜 꽃을 찾습니다.",
+      "answer": "'나비가' 다음",
+      "distractors": [
+        "'노란' 다음",
+        "'예쁜' 다음",
+        "'꽃을' 다음"
+      ],
+      "solution": [
+        "'노란 나비가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '나비가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "4e08fe87d8e6",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "책을 읽고 일기를 썼습니다.",
+      "answer": "책을 읽고 ∨ 일기를 썼습니다.",
+      "distractors": [
+        "책을 읽고 일기를 썼 ∨ 습니다.",
+        "책을 읽고 일기를 썼습 ∨ 니다.",
+        "책을 읽고 일 ∨ 기를 썼습니다."
+      ],
+      "solution": [
+        "'책을 읽고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '읽고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "52a1eaee2cf6",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "형이 새 자전거를 탑니다.",
+      "answer": "형이 ∨ 새 자전거를 탑니다.",
+      "distractors": [
+        "형이 새 ∨ 자전거를 탑니다.",
+        "형이 새 자전거를 탑 ∨ 니다.",
+        "형이 새 자전 ∨ 거를 탑니다."
+      ],
+      "solution": [
+        "'형이' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5392987f4506",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "공을 차다가 유리창을 깼습니다.",
+      "answer": "공을 차다가 ∨ 유리창을 깼습니다.",
+      "distractors": [
+        "공을 차다가 유리창을 깼 ∨ 습니다.",
+        "공을 차다가 유리창을 깼습 ∨ 니다.",
+        "공을 차다가 유리 ∨ 창을 깼습니다."
+      ],
+      "solution": [
+        "'공을 차다가'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '차다가' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "53cf53390dfe",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "작은 개미가 커다란 빵을 옮깁니다.",
+      "answer": "'개미가' 다음",
+      "distractors": [
+        "'작은' 다음",
+        "'커다란' 다음",
+        "'빵을' 다음"
+      ],
+      "solution": [
+        "'작은 개미가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '개미가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "540ee5720bfa",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "예쁜 꽃과 푸른 나무를 그렸습니다.",
+      "answer": "예쁜 꽃과 푸른 나무를 ∨ 그렸습니다.",
+      "distractors": [
+        "예쁜 ∨ 꽃과 푸른 나무를 그렸습니다.",
+        "예쁜 꽃과 푸른 ∨ 나무를 그렸습니다.",
+        "예쁜 꽃과 푸른 나무를 그렸 ∨ 습니다."
+      ],
+      "solution": [
+        "'예쁜 꽃과 푸른 나무를'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '나무를' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "581dec0eeef6",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "아버지께서 큰 상자를 옮기셨습니다.",
+      "answer": "아버지께서 ∨ 큰 상자를 옮기셨습니다.",
+      "distractors": [
+        "아버지께서 큰 ∨ 상자를 옮기셨습니다.",
+        "아버지께서 큰 상자를 옮 ∨ 기셨습니다.",
+        "아버지께서 큰 상 ∨ 자를 옮기셨습니다."
+      ],
+      "solution": [
+        "'아버지께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "5efa6d41b377",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "병아리가 모이를 쪼아 먹습니다.",
+      "answer": "병아리가 ∨ 모이를 쪼아 먹습니다.",
+      "distractors": [
+        "병아리가 모이를 쪼아 먹 ∨ 습니다.",
+        "병아리가 모이를 쪼아 ∨ 먹습니다.",
+        "병아 ∨ 리가 모이를 쪼아 먹습니다."
+      ],
+      "solution": [
+        "'병아리가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "63aa6758ff80",
+      "difficulty": 2,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "하은이가 국어 시간에 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "동생이 빨간 ∨ 사과를 먹었습니다.",
+      "distractors": [
+        "엄마가 ∨ 맛있는 김밥을 쌌습니다.",
+        "길이 미끄러워서 ∨ 천천히 걸었습니다.",
+        "시장에 가서 ∨ 싱싱한 생선을 샀습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "657efaaac443",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "선생님께서 ∨ 숙제를 내 주셨습니다.",
+      "answer": "'누가'에 해당하는 말 다음이라서",
+      "distractors": [
+        "이어 주는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'선생님께서'까지가 누가 하는 일인지 나타내는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6b7a7c569c27",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "연필, 지우개, 공책을 ∨ 가방에 넣었습니다.",
+      "answer": "늘어놓은 말이 끝난 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "이어 주는 말 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'연필, 지우개, 공책을'까지가 여러 가지를 늘어놓은 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "6e0be6ccbfb4",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "우리 형이 ∨ 동생에게 책을 읽어 주었습니다.",
+      "answer": "'누가'에 해당하는 말 다음이라서",
+      "distractors": [
+        "이어 주는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'우리 형이'까지가 누가 하는 일인지 나타내는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "70bb6b42e355",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "받아쓰기가 끝나고 ∨ 친구와 놀았습니다.",
+      "answer": "이어 주는 말 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'받아쓰기가 끝나고'까지가 앞의 일과 뒤의 일을 이어 주는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "72670e713968",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "따뜻한 장갑과 두꺼운 목도리를 샀습니다.",
+      "answer": "따뜻한 장갑과 두꺼운 목도리를 ∨ 샀습니다.",
+      "distractors": [
+        "따뜻한 ∨ 장갑과 두꺼운 목도리를 샀습니다.",
+        "따뜻한 장갑과 두꺼운 ∨ 목도리를 샀습니다.",
+        "따뜻한 장갑과 두꺼운 목도 ∨ 리를 샀습니다."
+      ],
+      "solution": [
+        "'따뜻한 장갑과 두꺼운 목도리를'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '목도리를' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "762034304ccb",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "우리 선생님께서 재미있는 이야기를 들려주셨습니다.",
+      "answer": "'선생님께서' 다음",
+      "distractors": [
+        "'우리' 다음",
+        "'재미있는' 다음",
+        "'이야기를' 다음"
+      ],
+      "solution": [
+        "'우리 선생님께서'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '선생님께서' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "78d7162e9143",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "태오가 엄마 앞에서 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "그림을 그리고 색 ∨ 칠을 했습니다.",
+      "distractors": [
+        "맛있는 딸기와 달콤한 포도를 ∨ 먹었습니다.",
+        "참새가 ∨ 작은 벌레를 잡았습니다.",
+        "숙제를 끝내고 ∨ 놀이터에 갔습니다."
+      ],
+      "solution": [
+        "정답 문장은 '색칠'이라는 한 낱말 가운데에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7910a499dea7",
+      "difficulty": 1,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "할머니께서 ∨ 맛있는 떡을 만드셨습니다.",
+      "answer": "'누가'에 해당하는 말 다음이라서",
+      "distractors": [
+        "이어 주는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'할머니께서'까지가 누가 하는 일인지 나타내는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "796c9b439b9c",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "도윤이가 동화책을 펴고 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "할머니께서 따뜻한 ∨ 국을 끓이셨습니다.",
+      "distractors": [
+        "동생이 ∨ 커다란 눈사람을 만들었습니다.",
+        "공원에 가서 ∨ 자전거를 탔습니다.",
+        "빨간 사과와 노란 바나나를 ∨ 샀습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7af061508b57",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "시우가 방과 후에 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "새 ∨ 가방과 새 신발을 받았습니다.",
+      "distractors": [
+        "형이 ∨ 새 자전거를 탑니다.",
+        "날씨가 더워서 ∨ 부채를 부쳤습니다.",
+        "비가 그치고 ∨ 예쁜 무지개가 떴습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "7caa3d9f2d1c",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "어린 사슴이 맑은 물을 마십니다.",
+      "answer": "'사슴이' 다음",
+      "distractors": [
+        "'어린' 다음",
+        "'맑은' 다음",
+        "'물을' 다음"
+      ],
+      "solution": [
+        "'어린 사슴이'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '사슴이' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "81c6fc6bda92",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "친구를 만나서 맛있는 떡볶이를 먹었습니다.",
+      "answer": "친구를 만나서 ∨ 맛있는 떡볶이를 먹었습니다.",
+      "distractors": [
+        "친구를 만나서 맛있는 떡볶이를 먹 ∨ 었습니다.",
+        "친구를 만나서 맛있는 ∨ 떡볶이를 먹었습니다.",
+        "친구를 만나서 맛있는 떡볶이를 먹었 ∨ 습니다."
+      ],
+      "solution": [
+        "'친구를 만나서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '만나서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "83032b6f56f1",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "유나가 도서관에서 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "병아리가 모 ∨ 이를 쪼아 먹습니다.",
+      "distractors": [
+        "동생이 울어서 ∨ 사탕을 주었습니다.",
+        "작은 공책과 긴 자를 ∨ 챙겼습니다.",
+        "우리 반은 ∨ 줄넘기를 했습니다."
+      ],
+      "solution": [
+        "정답 문장은 '모이'라는 한 낱말 가운데에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "89d64e4eb395",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "지호가 줄넘기를 합니다.",
+      "answer": "지호가 ∨ 줄넘기를 합니다.",
+      "distractors": [
+        "지호가 줄넘기를 합 ∨ 니다.",
+        "지 ∨ 호가 줄넘기를 합니다.",
+        "지호가 줄넘 ∨ 기를 합니다."
+      ],
+      "solution": [
+        "'지호가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8b158d47a945",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "비가 그치고 예쁜 무지개가 떴습니다.",
+      "answer": "비가 그치고 ∨ 예쁜 무지개가 떴습니다.",
+      "distractors": [
+        "비가 그치고 예쁜 ∨ 무지개가 떴습니다.",
+        "비가 그치고 예쁜 무지 ∨ 개가 떴습니다.",
+        "비가 그치고 예쁜 무지개가 떴 ∨ 습니다."
+      ],
+      "solution": [
+        "'비가 그치고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '그치고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8f487e5eee5c",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "민준이가 아침 독서 시간에 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "눈이 와서 커다란 ∨ 눈사람을 만들었습니다.",
+      "distractors": [
+        "엄마가 부르셔서 ∨ 동생은 하던 놀이를 멈추었습니다.",
+        "노란 병아리와 하얀 오리가 ∨ 놉니다.",
+        "개미가 ∨ 커다란 과자를 옮깁니다."
+      ],
+      "solution": [
+        "정답 문장은 꾸며 주는 말 '커다란'과 꾸밈을 받는 말 '눈사람' 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "8ff85d295e1a",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "이를 닦고 잠자리에 들었습니다.",
+      "answer": "이를 닦고 ∨ 잠자리에 들었습니다.",
+      "distractors": [
+        "이를 닦고 잠자리에 들었 ∨ 습니다.",
+        "이를 닦고 잠자 ∨ 리에 들었습니다.",
+        "이를 닦고 잠자리에 들 ∨ 었습니다."
+      ],
+      "solution": [
+        "'이를 닦고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '닦고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9023c092c133",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "눈이 와서 눈사람을 만들었습니다.",
+      "answer": "눈이 와서 ∨ 눈사람을 만들었습니다.",
+      "distractors": [
+        "눈이 와서 눈사람을 만 ∨ 들었습니다.",
+        "눈이 와서 눈사 ∨ 람을 만들었습니다.",
+        "눈이 와서 눈사람을 만들 ∨ 었습니다."
+      ],
+      "solution": [
+        "'눈이 와서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '와서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "919ee18c59ae",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "삼촌께서 멋진 모자를 쓰셨습니다.",
+      "answer": "삼촌께서 ∨ 멋진 모자를 쓰셨습니다.",
+      "distractors": [
+        "삼촌께서 멋진 ∨ 모자를 쓰셨습니다.",
+        "삼촌께서 멋진 모자를 쓰 ∨ 셨습니다.",
+        "삼촌께서 멋진 모 ∨ 자를 쓰셨습니다."
+      ],
+      "solution": [
+        "'삼촌께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "92815108a110",
+      "difficulty": 1,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "지민이가 ∨ 놀이터에서 그네를 탔습니다.",
+      "answer": "'누가'에 해당하는 말 다음이라서",
+      "distractors": [
+        "이어 주는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'지민이가'까지가 누가 하는 일인지 나타내는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "92cbc5255bef",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "하얀 우유와 고소한 빵을 먹었습니다.",
+      "answer": "하얀 우유와 고소한 빵을 ∨ 먹었습니다.",
+      "distractors": [
+        "하얀 ∨ 우유와 고소한 빵을 먹었습니다.",
+        "하얀 우유와 고소한 ∨ 빵을 먹었습니다.",
+        "하얀 우 ∨ 유와 고소한 빵을 먹었습니다."
+      ],
+      "solution": [
+        "'하얀 우유와 고소한 빵을'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '빵을' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9529acd6eef1",
+      "difficulty": 3,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "사과와 배와 감을 ∨ 바구니에 담았습니다.",
+      "answer": "늘어놓은 말이 끝난 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "이어 주는 말 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'사과와 배와 감을'까지가 여러 가지를 늘어놓은 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9ae23127ade4",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "동생이 울어서 사탕을 주었습니다.",
+      "answer": "동생이 울어서 ∨ 사탕을 주었습니다.",
+      "distractors": [
+        "동생이 울어서 사탕을 주 ∨ 었습니다.",
+        "동생이 울 ∨ 어서 사탕을 주었습니다.",
+        "동생이 울어서 사 ∨ 탕을 주었습니다."
+      ],
+      "solution": [
+        "'동생이 울어서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '울어서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9bfde1cf23c3",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "고양이가 생선을 먹습니다.",
+      "answer": "고양이가 ∨ 생선을 먹습니다.",
+      "distractors": [
+        "고양이가 생선을 먹 ∨ 습니다.",
+        "고양 ∨ 이가 생선을 먹습니다.",
+        "고양이가 생 ∨ 선을 먹습니다."
+      ],
+      "solution": [
+        "'고양이가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "9d9dbe7014a6",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "감기에 걸려서 따뜻한 물을 마셨습니다.",
+      "answer": "감기에 걸려서 ∨ 따뜻한 물을 마셨습니다.",
+      "distractors": [
+        "감기에 걸려서 따뜻한 ∨ 물을 마셨습니다.",
+        "감기에 걸려서 따뜻한 물을 마셨 ∨ 습니다.",
+        "감기에 걸려서 따뜻한 물을 마 ∨ 셨습니다."
+      ],
+      "solution": [
+        "'감기에 걸려서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '걸려서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a4c522a9189c",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "누나가 파란 치마를 입었습니다.",
+      "answer": "누나가 ∨ 파란 치마를 입었습니다.",
+      "distractors": [
+        "누나가 파란 ∨ 치마를 입었습니다.",
+        "누나가 파란 치마를 입 ∨ 었습니다.",
+        "누나가 파란 치 ∨ 마를 입었습니다."
+      ],
+      "solution": [
+        "'누나가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a50a1e09b949",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "맛있는 딸기와 달콤한 포도를 먹었습니다.",
+      "answer": "맛있는 딸기와 달콤한 포도를 ∨ 먹었습니다.",
+      "distractors": [
+        "맛있는 ∨ 딸기와 달콤한 포도를 먹었습니다.",
+        "맛있는 딸기와 달콤한 ∨ 포도를 먹었습니다.",
+        "맛있는 딸기와 달콤한 포 ∨ 도를 먹었습니다."
+      ],
+      "solution": [
+        "'맛있는 딸기와 달콤한 포도를'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '포도를' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a50b428b2748",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "우리 반은 줄넘기를 했습니다.",
+      "answer": "우리 반은 ∨ 줄넘기를 했습니다.",
+      "distractors": [
+        "우리 ∨ 반은 줄넘기를 했습니다.",
+        "우리 반은 줄넘기를 했 ∨ 습니다.",
+        "우리 반은 줄넘 ∨ 기를 했습니다."
+      ],
+      "solution": [
+        "'반은' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6512450a743",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "아빠가 설거지를 하십니다.",
+      "answer": "아빠가 ∨ 설거지를 하십니다.",
+      "distractors": [
+        "아빠가 설거지를 하십 ∨ 니다.",
+        "아빠가 설거 ∨ 지를 하십니다.",
+        "아빠가 설거지를 하 ∨ 십니다."
+      ],
+      "solution": [
+        "'아빠가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a6a994919e76",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "문을 열고 밖으로 나갔습니다.",
+      "answer": "문을 열고 ∨ 밖으로 나갔습니다.",
+      "distractors": [
+        "문을 열고 밖으로 나갔 ∨ 습니다.",
+        "문을 열고 밖 ∨ 으로 나갔습니다.",
+        "문을 열고 밖으로 나 ∨ 갔습니다."
+      ],
+      "solution": [
+        "'문을 열고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '열고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "a875fc00c0e4",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "친구가 노란 우산을 빌려주었습니다.",
+      "answer": "친구가 ∨ 노란 우산을 빌려주었습니다.",
+      "distractors": [
+        "친구가 노란 ∨ 우산을 빌려주었습니다.",
+        "친구가 노란 우산을 빌 ∨ 려주었습니다.",
+        "친구가 노란 우 ∨ 산을 빌려주었습니다."
+      ],
+      "solution": [
+        "'친구가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "aebe6444f258",
+      "difficulty": 2,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "수아가 발표 시간에 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "열이 나서 병 ∨ 원에 갔습니다.",
+      "distractors": [
+        "친구를 만나서 ∨ 맛있는 떡볶이를 먹었습니다.",
+        "친구가 ∨ 노란 우산을 빌려주었습니다.",
+        "삼촌께서 ∨ 멋진 모자를 쓰셨습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "af1da3ceaee8",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "선생님께서 재미있는 책을 읽어 주셨습니다.",
+      "answer": "선생님께서 ∨ 재미있는 책을 읽어 주셨습니다.",
+      "distractors": [
+        "선생님께서 재미있는 ∨ 책을 읽어 주셨습니다.",
+        "선생님께서 재미있는 책을 읽어 주 ∨ 셨습니다.",
+        "선생님께서 재미있는 책을 읽어 ∨ 주셨습니다."
+      ],
+      "solution": [
+        "'선생님께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b145f23f322b",
+      "difficulty": 2,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "예린이가 모둠 활동 시간에 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "하얀 ∨ 우유와 고소한 빵을 먹었습니다.",
+      "distractors": [
+        "고양이가 ∨ 하얀 우유를 마십니다.",
+        "나비가 ∨ 노란 꽃에 앉았습니다.",
+        "문을 열고 ∨ 밖으로 나갔습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b1f6041c5ca6",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "강아지가 작은 공을 물었습니다.",
+      "answer": "강아지가 ∨ 작은 공을 물었습니다.",
+      "distractors": [
+        "강아지가 작은 ∨ 공을 물었습니다.",
+        "강아지가 작은 공을 물 ∨ 었습니다.",
+        "강아 ∨ 지가 작은 공을 물었습니다."
+      ],
+      "solution": [
+        "'강아지가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b22a0a57d948",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "손을 씻고 밥을 먹었습니다.",
+      "answer": "손을 씻고 ∨ 밥을 먹었습니다.",
+      "distractors": [
+        "손을 씻고 밥을 먹었 ∨ 습니다.",
+        "손 ∨ 을 씻고 밥을 먹었습니다.",
+        "손을 씻고 밥을 먹 ∨ 었습니다."
+      ],
+      "solution": [
+        "'손을 씻고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '씻고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b564e6f7b215",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "빨간 사과와 노란 바나나를 샀습니다.",
+      "answer": "빨간 사과와 노란 바나나를 ∨ 샀습니다.",
+      "distractors": [
+        "빨간 ∨ 사과와 노란 바나나를 샀습니다.",
+        "빨간 사과와 노란 ∨ 바나나를 샀습니다.",
+        "빨간 사과와 노란 바나 ∨ 나를 샀습니다."
+      ],
+      "solution": [
+        "'빨간 사과와 노란 바나나를'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '바나나를' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b65f55ce0cca",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "선생님께서 이름을 부르십니다.",
+      "answer": "선생님께서 ∨ 이름을 부르십니다.",
+      "distractors": [
+        "선생님께서 이름을 부 ∨ 르십니다.",
+        "선생 ∨ 님께서 이름을 부르십니다.",
+        "선생님께서 이 ∨ 름을 부르십니다."
+      ],
+      "solution": [
+        "'선생님께서' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b8ed4573edb2",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "엄마가 맛있는 김밥을 쌌습니다.",
+      "answer": "엄마가 ∨ 맛있는 김밥을 쌌습니다.",
+      "distractors": [
+        "엄마가 맛있는 ∨ 김밥을 쌌습니다.",
+        "엄마가 맛있는 김밥을 쌌 ∨ 습니다.",
+        "엄마가 맛있는 김 ∨ 밥을 쌌습니다."
+      ],
+      "solution": [
+        "'엄마가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "b9da1999dcbc",
+      "difficulty": 3,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "창문을 열었더니 ∨ 시원한 바람이 들어왔습니다.",
+      "answer": "이어 주는 말 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'창문을 열었더니'까지가 앞의 일과 뒤의 일을 이어 주는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd97255ab721",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "빨간 자동차가 넓은 길을 달립니다.",
+      "answer": "'자동차가' 다음",
+      "distractors": [
+        "'빨간' 다음",
+        "'넓은' 다음",
+        "'길을' 다음"
+      ],
+      "solution": [
+        "'빨간 자동차가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '자동차가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bd9afdb1a581",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "새 가방과 새 신발을 받았습니다.",
+      "answer": "새 가방과 새 신발을 ∨ 받았습니다.",
+      "distractors": [
+        "새 ∨ 가방과 새 신발을 받았습니다.",
+        "새 가방과 새 ∨ 신발을 받았습니다.",
+        "새 가 ∨ 방과 새 신발을 받았습니다."
+      ],
+      "solution": [
+        "'새 가방과 새 신발을'까지가 늘어놓은 말이다.",
+        "늘어놓은 말이 끝난 '신발을' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "be41ba8c1fd7",
+      "difficulty": 2,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "우유와 빵과 과일을 ∨ 샀습니다.",
+      "answer": "늘어놓은 말이 끝난 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "이어 주는 말 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'우유와 빵과 과일을'까지가 여러 가지를 늘어놓은 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "bf51cecdee64",
+      "difficulty": 3,
+      "instruction": "잘못 띄어 읽은 문장을 고르시오.",
+      "stem": "하린이가 할머니 앞에서 문장을 소리 내어 읽고, 쉬어 읽은 곳에 ∨ 표시를 했습니다.",
+      "answer": "강아지가 작은 ∨ 공을 물었습니다.",
+      "distractors": [
+        "아기가 ∨ 귀여운 인형을 안았습니다.",
+        "이를 닦고 ∨ 잠자리에 들었습니다.",
+        "공을 차다가 ∨ 유리창을 깼습니다."
+      ],
+      "solution": [
+        "정답 문장은 뜻이 이어지는 말 사이에서 끊어 읽었다.",
+        "나머지 문장은 뜻이 끊기는 자리에서 알맞게 띄어 읽었다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c100ddc3f52b",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "고양이가 하얀 우유를 마십니다.",
+      "answer": "고양이가 ∨ 하얀 우유를 마십니다.",
+      "distractors": [
+        "고양이가 하얀 ∨ 우유를 마십니다.",
+        "고양이가 하얀 우유를 마 ∨ 십니다.",
+        "고양 ∨ 이가 하얀 우유를 마십니다."
+      ],
+      "solution": [
+        "'고양이가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c189d80b5ba2",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "엄마가 빨래를 개십니다.",
+      "answer": "엄마가 ∨ 빨래를 개십니다.",
+      "distractors": [
+        "엄마가 빨래를 개십 ∨ 니다.",
+        "엄마가 빨 ∨ 래를 개십니다.",
+        "엄마가 빨래를 개 ∨ 십니다."
+      ],
+      "solution": [
+        "'엄마가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c59c850dcd83",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "귀여운 강아지가 작은 공을 굴립니다.",
+      "answer": "'강아지가' 다음",
+      "distractors": [
+        "'귀여운' 다음",
+        "'작은' 다음",
+        "'공을' 다음"
+      ],
+      "solution": [
+        "'귀여운 강아지가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '강아지가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "c89173702edd",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "바람이 불어서 모자가 날아갔습니다.",
+      "answer": "바람이 불어서 ∨ 모자가 날아갔습니다.",
+      "distractors": [
+        "바 ∨ 람이 불어서 모자가 날아갔습니다.",
+        "바람이 불 ∨ 어서 모자가 날아갔습니다.",
+        "바람이 불어서 모자가 날아 ∨ 갔습니다."
+      ],
+      "solution": [
+        "'바람이 불어서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '불어서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc1209f76036",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "동생이 그림을 그립니다.",
+      "answer": "동생이 ∨ 그림을 그립니다.",
+      "distractors": [
+        "동생이 그림을 그 ∨ 립니다.",
+        "동 ∨ 생이 그림을 그립니다.",
+        "동생이 그 ∨ 림을 그립니다."
+      ],
+      "solution": [
+        "'동생이' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cc37ef5fca38",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "아기가 귀여운 인형을 안았습니다.",
+      "answer": "아기가 ∨ 귀여운 인형을 안았습니다.",
+      "distractors": [
+        "아기가 귀여운 ∨ 인형을 안았습니다.",
+        "아기가 귀여운 인형을 안 ∨ 았습니다.",
+        "아기가 귀여 ∨ 운 인형을 안았습니다."
+      ],
+      "solution": [
+        "'아기가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "cd3f2bc651b5",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "강아지가 꼬리를 흔듭니다.",
+      "answer": "강아지가 ∨ 꼬리를 흔듭니다.",
+      "distractors": [
+        "강아지가 꼬리를 흔 ∨ 듭니다.",
+        "강아 ∨ 지가 꼬리를 흔듭니다.",
+        "강아지가 꼬 ∨ 리를 흔듭니다."
+      ],
+      "solution": [
+        "'강아지가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d03bf73e23ba",
+      "difficulty": 3,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "엄마가 부르셔서 동생은 하던 놀이를 멈추었습니다.",
+      "answer": "엄마가 부르셔서 ∨ 동생은 하던 놀이를 멈추었습니다.",
+      "distractors": [
+        "엄마가 부르셔서 동생은 하던 ∨ 놀이를 멈추었습니다.",
+        "엄마가 부르셔서 동생은 하던 놀이를 멈 ∨ 추었습니다.",
+        "엄마가 부르셔서 동 ∨ 생은 하던 놀이를 멈추었습니다."
+      ],
+      "solution": [
+        "'엄마가 부르셔서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '부르셔서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d12da635fc3e",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "아기가 우유를 먹습니다.",
+      "answer": "아기가 ∨ 우유를 먹습니다.",
+      "distractors": [
+        "아기가 우유를 먹 ∨ 습니다.",
+        "아 ∨ 기가 우유를 먹습니다.",
+        "아기가 우 ∨ 유를 먹습니다."
+      ],
+      "solution": [
+        "'아기가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "d75a01e2c32b",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "친절한 이웃이 따뜻한 차를 주셨습니다.",
+      "answer": "'이웃이' 다음",
+      "distractors": [
+        "'친절한' 다음",
+        "'따뜻한' 다음",
+        "'차를' 다음"
+      ],
+      "solution": [
+        "'친절한 이웃이'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '이웃이' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dc49ab699e13",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "착한 민수가 무거운 짐을 들었습니다.",
+      "answer": "'민수가' 다음",
+      "distractors": [
+        "'착한' 다음",
+        "'무거운' 다음",
+        "'짐을' 다음"
+      ],
+      "solution": [
+        "'착한 민수가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '민수가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dca55d4f2ac7",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "그림을 그리고 색칠을 했습니다.",
+      "answer": "그림을 그리고 ∨ 색칠을 했습니다.",
+      "distractors": [
+        "그림을 그리고 색칠을 했 ∨ 습니다.",
+        "그림을 그리고 색칠을 했습 ∨ 니다.",
+        "그림을 그리고 색 ∨ 칠을 했습니다."
+      ],
+      "solution": [
+        "'그림을 그리고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '그리고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "dfbc9f5f62d4",
+      "difficulty": 1,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "민수가 ∨ 친구에게 사과했습니다.",
+      "answer": "'누가'에 해당하는 말 다음이라서",
+      "distractors": [
+        "이어 주는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'민수가'까지가 누가 하는 일인지 나타내는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "e155bc4f917d",
+      "difficulty": 1,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "친구가 편지를 썼습니다.",
+      "answer": "친구가 ∨ 편지를 썼습니다.",
+      "distractors": [
+        "친구가 편지를 썼 ∨ 습니다.",
+        "친 ∨ 구가 편지를 썼습니다.",
+        "친구가 편 ∨ 지를 썼습니다."
+      ],
+      "solution": [
+        "'친구가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ebcedf54ef52",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "어린 동생이 새 운동화를 신었습니다.",
+      "answer": "'동생이' 다음",
+      "distractors": [
+        "'어린' 다음",
+        "'새' 다음",
+        "'운동화를' 다음"
+      ],
+      "solution": [
+        "'어린 동생이'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '동생이' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ec65be496feb",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "숙제를 끝내고 놀이터에 갔습니다.",
+      "answer": "숙제를 끝내고 ∨ 놀이터에 갔습니다.",
+      "distractors": [
+        "숙제를 끝내고 놀이터에 갔습 ∨ 니다.",
+        "숙제를 끝내고 놀이 ∨ 터에 갔습니다.",
+        "숙제를 끝내고 놀이터에 갔 ∨ 습니다."
+      ],
+      "solution": [
+        "'숙제를 끝내고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '끝내고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ee1c335b39fc",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "밥을 먹고 이를 닦았습니다.",
+      "answer": "밥을 먹고 ∨ 이를 닦았습니다.",
+      "distractors": [
+        "밥을 먹고 이를 닦았 ∨ 습니다.",
+        "밥 ∨ 을 먹고 이를 닦았습니다.",
+        "밥을 먹고 이를 닦 ∨ 았습니다."
+      ],
+      "solution": [
+        "'밥을 먹고'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '먹고' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ef4a16213137",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "언니가 예쁜 꽃을 그렸습니다.",
+      "answer": "언니가 ∨ 예쁜 꽃을 그렸습니다.",
+      "distractors": [
+        "언니가 예쁜 ∨ 꽃을 그렸습니다.",
+        "언니가 예쁜 꽃을 그렸 ∨ 습니다.",
+        "언니가 예쁜 꽃을 그 ∨ 렸습니다."
+      ],
+      "solution": [
+        "'언니가' 다음에서 끊어 읽으면 누가 하는 일인지 알기 쉽다.",
+        "꾸며 주는 말 뒤나 낱말 가운데에서 끊으면 뜻이 흐려진다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "f2ffb16e0a97",
+      "difficulty": 2,
+      "instruction": "알맞게 띄어 읽은 것을 고르시오.",
+      "stem": "열이 나서 병원에 갔습니다.",
+      "answer": "열이 나서 ∨ 병원에 갔습니다.",
+      "distractors": [
+        "열이 나서 병 ∨ 원에 갔습니다.",
+        "열이 나서 병원에 갔 ∨ 습니다.",
+        "열 ∨ 이 나서 병원에 갔습니다."
+      ],
+      "solution": [
+        "'열이 나서'에서 앞의 일이 끝나고 뒤의 일로 이어진다.",
+        "그래서 '나서' 다음에서 끊어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb2f9c2ef754",
+      "difficulty": 3,
+      "instruction": "∨ 표시를 한 곳에서 띄어 읽는 까닭을 고르시오.",
+      "stem": "물을 많이 마셔서 ∨ 배가 불렀습니다.",
+      "answer": "이어 주는 말 다음이라서",
+      "distractors": [
+        "'누가'에 해당하는 말 다음이라서",
+        "늘어놓은 말이 끝난 다음이라서",
+        "문장이 끝난 다음이라서"
+      ],
+      "solution": [
+        "'물을 많이 마셔서'까지가 앞의 일과 뒤의 일을 이어 주는 말이 끝난 자리다.",
+        "이런 자리에서 띄어 읽으면 뜻을 알기 쉽다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "fb82da0c16c7",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "부지런한 개미가 많은 먹이를 모았습니다.",
+      "answer": "'개미가' 다음",
+      "distractors": [
+        "'부지런한' 다음",
+        "'많은' 다음",
+        "'먹이를' 다음"
+      ],
+      "solution": [
+        "'부지런한 개미가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '개미가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "ffe60008533a",
+      "difficulty": 2,
+      "instruction": "문장을 읽을 때 띄어 읽기에 알맞은 곳을 고르시오.",
+      "stem": "커다란 고래가 시원한 물을 뿜었습니다.",
+      "answer": "'고래가' 다음",
+      "distractors": [
+        "'커다란' 다음",
+        "'시원한' 다음",
+        "'물을' 다음"
+      ],
+      "solution": [
+        "'커다란 고래가'까지가 누가 하는 일인지 나타내는 말이다.",
+        "그래서 '고래가' 다음에서 띄어 읽는다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import { generators as koreanGrammar } from '../generators/korean/grammar.mjs';
 import { generators as englishLetters } from '../generators/english/letters.mjs';
 import { generators as koreanSentences } from '../generators/korean/sentences.mjs';
 import { generators as englishSentences } from '../generators/english/sentences.mjs';
+import { authoredGenerators, generators as authoredCorpus } from '../generators/authored.mjs';
 import { MANUAL_SCORING, PARTIAL_SCORING, SUBJECT_STRATEGY, scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
 import { isStandardCode } from '../curriculum/standard-code.mjs';
@@ -54,6 +55,8 @@ const MODULES = [
   { file: 'english/letters.mjs', generators: englishLetters },
   { file: 'korean/sentences.mjs', generators: koreanSentences },
   { file: 'english/sentences.mjs', generators: englishSentences },
+  // data/authored 의 AI 작성 코퍼스 가운데 사람이 검토를 마친 문항(review-status.json)만. 없으면 생성기도 없다.
+  { file: 'authored.mjs', generators: authoredCorpus },
 ];
 
 /**
@@ -123,11 +126,19 @@ function assertGeneratorContract(g, file) {
   }
 }
 
-export function createRegistry() {
+/**
+ * @param {{ authoredFiles?: object[] }} [options] authoredFiles 를 주면 data/authored 대신
+ *   그 코퍼스로 AI 작성 생성기를 만든다. 테스트와 작성 파이프라인의 검산용이다.
+ *   주어진 코퍼스는 검토 상태를 거치지 않는다. 학습지에 나가는 기본 레지스트리만 검토 완료 문항을 쓴다.
+ */
+export function createRegistry({ authoredFiles } = {}) {
   const byId = new Map();
   const byStandardCode = new Map();
+  const modules = authoredFiles === undefined
+    ? MODULES
+    : MODULES.map((m) => (m.file === 'authored.mjs' ? { ...m, generators: authoredGenerators(authoredFiles) } : m));
 
-  for (const { file, generators } of MODULES) {
+  for (const { file, generators } of modules) {
     for (const g of generators) {
       const learningGuide = g.learningGuide ?? learningGuideFor(g.id);
       const generator = {

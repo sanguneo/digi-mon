@@ -61,7 +61,9 @@ test('Korean lower-grade feeling inference includes evidence-rich narratives and
 test('English meaning adds color, spatial relation, and action contrasts within existing vocabulary', () => {
   const items = samples(ids.english, 2, 800);
   const added = items.filter((item) => !SENTENCE_MEANINGS.some((spec) => spec.en === item.params.en));
-  assert.equal(new Set(added.map((item) => item.params.en)).size, 20);
+  // 'in the desk' 처럼 어색한 위치 문장 3개를 뺐다: 색 6 + 위치 9 + 행동 2.
+  assert.equal(new Set(added.map((item) => item.params.en)).size, 17);
+  assert.ok(added.every((item) => !item.params.en.includes('in the desk')));
   assert.deepEqual(new Set(added.map((item) => item.params.kind)), new Set(['color', 'location', 'action']));
   const allowed = new Set(englishWordsFor('3-4'));
   for (const item of added) {

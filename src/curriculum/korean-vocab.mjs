@@ -247,13 +247,13 @@ export const SPELLING_PAIRS = [
   { correct: '같이', wrong: '가치', note: "'같다'의 뜻이 살아 있으므로 '같이'로 적는다" },
   { correct: '많이', wrong: '마니', note: "'많다'의 뜻이 살아 있으므로 '많이'로 적는다" },
   { correct: '깊이', wrong: '기피', note: "'깊다'의 뜻이 살아 있으므로 '깊이'로 적는다" },
-  { correct: '앉다', wrong: '안따', note: '겹받침 ㄴㅈ 을 그대로 적는다' },
-  { correct: '읽다', wrong: '익따', note: '겹받침 ㄹㄱ 을 그대로 적는다' },
-  { correct: '없다', wrong: '업따', note: '겹받침 ㅂㅅ 을 그대로 적는다' },
-  { correct: '많다', wrong: '만타', note: '겹받침 ㄴㅎ 을 그대로 적는다' },
-  { correct: '좋다', wrong: '조타', note: '받침 ㅎ 을 그대로 적는다' },
-  { correct: '놓다', wrong: '노타', note: '받침 ㅎ 을 그대로 적는다' },
-  { correct: '같다', wrong: '갓다', note: '받침 ㅌ 을 그대로 적는다' },
+  { correct: '앉다', wrong: '안따', note: '겹받침 ㄴㅈ을 그대로 적는다' },
+  { correct: '읽다', wrong: '익따', note: '겹받침 ㄹㄱ을 그대로 적는다' },
+  { correct: '없다', wrong: '업따', note: '겹받침 ㅂㅅ을 그대로 적는다' },
+  { correct: '많다', wrong: '만타', note: '겹받침 ㄴㅎ을 그대로 적는다' },
+  { correct: '좋다', wrong: '조타', note: '받침 ㅎ을 그대로 적는다' },
+  { correct: '놓다', wrong: '노타', note: '받침 ㅎ을 그대로 적는다' },
+  { correct: '같다', wrong: '갓다', note: '받침 ㅌ을 그대로 적는다' },
 ];
 
 /**
@@ -303,20 +303,40 @@ export function vocabularyFor(gradeBand) {
   return list;
 }
 
+/**
+ * 낱말 자체를 문항으로 내는 자리(자모 세기·받침·국어사전 순서)에 쓰는 표제어.
+ *
+ * 문장 자산에서 떼어 온 어절('버리면'·'고쳐'·'않게')과 맞춤법 문항의 정답 표기
+ * ('꽃이'·'빛이')는 문장 안에서는 학년 어휘지만, '낱말'로 따로 내놓으면 사전에 없는
+ * 꼴이다. '버리면의 마지막 글자', '꽃이가 하늘보다 앞에 온다' 같은 풀이가 그렇게 나왔다.
+ * 그래서 생활 어휘와 문항이 가르치는 기본형만 쓴다. 모두 vocabularyFor 의 부분집합이다.
+ */
+const HEADWORDS_BY_BAND = {
+  '1-2': dedupe([...LIFE_G12]),
+  '3-4': dedupe([...LIFE_G12, ...LIFE_G34, ...TAUGHT_G34]),
+  '5-6': dedupe([...LIFE_G12, ...LIFE_G34, ...TAUGHT_G34, ...LIFE_G56, ...DIALECTS.map((d) => d.standard)]),
+};
+
+function headwordsFor(gradeBand) {
+  const list = HEADWORDS_BY_BAND[gradeBand];
+  if (!list) throw new Error(`어휘 목록이 없는 학년군: ${gradeBand}`);
+  return list;
+}
+
 
 /**
  * 받침이 있는/없는 낱말. 표기·조사 문항은 받침 유무로 갈린다.
  * 한 글자로 된 낱말은 자모 세기·사전 순서 문항에 쓰기 어려우므로 두 글자 이상만 준다.
  */
 export function wordsWithFinal(gradeBand, want) {
-  return vocabularyFor(gradeBand)
+  return headwordsFor(gradeBand)
     .filter((w) => [...w].length >= 2 && !w.includes(' '))
     .filter((w) => (finalOf(w) !== '') === want);
 }
 
 /** 글자 수로 고른다. 사전 순서 문항은 글자 수를 맞추면 첫 글자 비교가 초점이 된다. */
 export function wordsOfLength(gradeBand, length) {
-  return vocabularyFor(gradeBand).filter((w) => [...w].length === length && !w.includes(' '));
+  return headwordsFor(gradeBand).filter((w) => [...w].length === length && !w.includes(' '));
 }
 
 /**
@@ -327,7 +347,7 @@ export function wordsOfLength(gradeBand, length) {
  * 문항이 '한글 음절이 아니다' 로 죽었다.
  */
 export function plainNouns(gradeBand) {
-  return vocabularyFor(gradeBand).filter((w) => {
+  return headwordsFor(gradeBand).filter((w) => {
     if ([...w].length < 2) return false;
     if (w.includes(' ')) return false;
     if (/다$/.test(w)) return false;

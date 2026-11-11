@@ -116,12 +116,12 @@ export const END_MARKS = {
 export const SENTENCE_MEANINGS = [
   { en: 'I like apples.', ko: '나는 사과를 좋아합니다.' },
   { en: 'The cat is on the desk.', ko: '고양이가 책상 위에 있습니다.' },
-  { en: 'She is my friend.', ko: '그 아이는 내 친구입니다.' },
+  { en: 'She is my friend.', ko: '그녀는 내 친구입니다.' },
   { en: 'We go to school.', ko: '우리는 학교에 갑니다.' },
   { en: 'The dog is big.', ko: '그 개는 큽니다.' },
   { en: 'I drink milk.', ko: '나는 우유를 마십니다.' },
   { en: 'Open the door.', ko: '문을 여세요.' },
-  { en: 'The sun is bright.', ko: '해가 밝게 빛납니다.' },
+  { en: 'The sun is bright.', ko: '해가 밝습니다.' },
 ];
 
 /**

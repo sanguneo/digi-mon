@@ -13,6 +13,14 @@
  * 정답 대조가 원리적으로 안 된다(MANUAL_SCORING 에 분류).
  */
 import { buildChoices } from '../../engine/item.mjs';
+
+/**
+ * 알파벳 글자 뒤 조사. 글자 이름을 우리말로 읽은 끝소리가 정한다.
+ * L(엘)·M(엠)·N(엔)·R(알)만 받침으로 끝나고, L·R 의 받침은 ㄹ이라 '로'를 쓴다.
+ * 예전 풀이는 '첫 글자 n를 대문자 N로' 처럼 한 가지 조사를 고정해 틀렸다.
+ */
+const letterEul = (ch) => `${ch}${'LMNR'.includes(ch.toUpperCase()) ? '을' : '를'}`;
+const letterRo = (ch) => `${ch}${'MN'.includes(ch.toUpperCase()) ? '으로' : '로'}`;
 import {
   ALPHABET,
   CONFUSABLE_LETTERS,
@@ -138,7 +146,7 @@ const writeCase = {
       answer: { value: target, display: target, accepts: [target] },
       solution: [
         `${given}의 글자를 하나씩 ${toUpper ? '대문자' : '소문자'}로 바꾼다.`,
-        `${target}이다.`,
+        `바꿔 쓴 낱말은 '${target}'이다.`,
       ],
       dedupeKey: `write-case:${word}:${toUpper ? 'upper' : 'lower'}`,
       difficulty,
@@ -179,8 +187,8 @@ const firstLetterCase = {
       stem: word.toLowerCase(),
       answer: { value: target, display: target, accepts: [target] },
       solution: [
-        `첫 글자 ${word.charAt(0).toLowerCase()}를 대문자 ${word.charAt(0).toUpperCase()}로 바꾼다.`,
-        `${target}이다.`,
+        `첫 글자 ${letterEul(word.charAt(0).toLowerCase())} 대문자 ${letterRo(word.charAt(0).toUpperCase())} 바꾼다.`,
+        `바꿔 쓴 낱말은 '${target}'이다.`,
       ],
       dedupeKey: `first-letter:${word}`,
       difficulty,
@@ -257,7 +265,7 @@ const fixSentenceCase = {
       solution: [
         '영어 문장의 첫 글자는 대문자로 쓴다.',
         ...(dropMark ? [spec.rule] : []),
-        `${spec.correct}이다.`,
+        `바르게 고쳐 쓴 문장은 '${spec.correct}'이다.`,
       ],
       dedupeKey: `fix-case:${spec.correct}:${dropMark ? 'mark' : 'head'}`,
       difficulty,
