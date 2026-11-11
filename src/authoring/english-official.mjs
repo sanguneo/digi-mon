@@ -163,26 +163,57 @@ export function officialEnglishWords() {
   return words;
 }
 
-function candidates(word) {
-  const out = [word];
-  const add = (w) => { if (w.length >= 2) out.push(w); };
-  if (word.endsWith("'s")) add(word.slice(0, -2));
-  if (word.endsWith('ies')) add(`${word.slice(0, -3)}y`);
-  if (word.endsWith('es')) add(word.slice(0, -2));
-  if (word.endsWith('s')) add(word.slice(0, -1));
-  if (word.endsWith('ied')) add(`${word.slice(0, -3)}y`);
-  for (const suffix of ['ed', 'ing', 'er', 'est']) {
+const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
+const isConsonant = (ch) => ch !== undefined && !VOWELS.has(ch);
+
+/**
+ * 표제어 하나의 규칙 굴절형(-'s, -s/-es/-ies, -ed/-d/-ied, -ing, -er/-est/-ier/-iest).
+ * 'stop' -> 'stopped' 처럼 자음-모음-자음으로 끝나면 끝 자음을 겹친 꼴도 함께 낸다.
+ * 품사 정보가 없어서 'corn' -> 'corner', 'bee' -> 'beer' 처럼 꼴만 맞는 낱말은 여전히 지나간다.
+ */
+export function regularInflections(base) {
+  const forms = new Set([`${base}'s`]);
+  const last = base.at(-1);
+  const consonantY = last === 'y' && isConsonant(base.at(-2));
+  const yStem = base.slice(0, -1);
+  const endsE = last === 'e';
+  const eStem = endsE ? base.slice(0, -1) : base;
+  const cvc = base.length >= 3 && isConsonant(last) && !'wxy'.includes(last)
+    && VOWELS.has(base.at(-2)) && isConsonant(base.at(-3));
+
+  forms.add(consonantY ? `${yStem}ies` : `${base}s`);
+  if (/(s|x|z|ch|sh|o)$/.test(base)) forms.add(`${base}es`);
+  for (const suffix of ['ed', 'er', 'est']) {
+    if (consonantY) forms.add(`${yStem}i${suffix}`);
+    else forms.add(`${eStem}${suffix}`);
+    if (cvc) forms.add(`${base}${last}${suffix}`);
+  }
+  forms.add(`${endsE && !/(ee|ye|oe)$/.test(base) ? eStem : base}ing`);
+  if (cvc) forms.add(`${base}${last}ing`);
+  return forms;
+}
+
+/** 끝을 떼어 표제어가 될 수 있는 꼴을 모은다. 실제로 받는지는 regularInflections 로 되짚는다. */
+function stems(word) {
+  const out = new Set();
+  for (const suffix of ["'s", 's', 'es', 'ies', 'd', 'ed', 'ied', 'ing', 'er', 'ier', 'est', 'iest']) {
     if (!word.endsWith(suffix)) continue;
     const stem = word.slice(0, -suffix.length);
-    add(stem);
-    add(`${stem}e`);
-    // stopped -> stop, running -> run, bigger -> big
-    if (stem.length >= 3 && stem.at(-1) === stem.at(-2)) add(stem.slice(0, -1));
+    if (stem.length < 2) continue;
+    out.add(stem);
+    out.add(`${stem}e`);
+    out.add(`${stem}y`);
+    if (stem.at(-1) === stem.at(-2)) out.add(stem.slice(0, -1));
   }
-  if (word.endsWith('ier')) add(`${word.slice(0, -3)}y`);
-  if (word.endsWith('iest')) add(`${word.slice(0, -4)}y`);
-  if (word.endsWith('d')) add(word.slice(0, -1));
   return out;
+}
+
+/** word 가 800개 안 표제어의 규칙 굴절형인가. 떼어 낸 어간을 다시 굴절해 같은 꼴이 나올 때만 받는다. */
+function isRegularInflectionOfOfficial(word, words) {
+  for (const stem of stems(word)) {
+    if (words.has(stem) && regularInflections(stem).has(word)) return true;
+  }
+  return false;
 }
 
 /** 낱말 하나가 800개 안의 낱말(또는 그 굴절형)인가. */
@@ -192,7 +223,7 @@ export function isOfficialEnglishWord(raw, allowedNames = []) {
   if (allowedNames.some((n) => n.toLowerCase() === word)) return true;
   // 'left', 'found' 처럼 불규칙형이 따로 표제어이기도 하므로 규칙 후보도 함께 본다.
   if ((IRREGULAR.get(word) ?? []).some((base) => words.has(base.toLowerCase()))) return true;
-  return candidates(word).some((c) => words.has(c));
+  return words.has(word) || isRegularInflectionOfOfficial(word, words);
 }
 
 /** 문면에서 영어 낱말을 뽑아 800개 밖의 것만 돌려준다. */

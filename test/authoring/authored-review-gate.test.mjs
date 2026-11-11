@@ -23,16 +23,27 @@ const SPINE = loadSpine();
 const CORPUS = loadAuthoredCorpus();
 const isAuthoredItem = (item) => item.params?.authoredId !== undefined || String(item.dedupeKey).startsWith('authored:');
 
-test('검토 전 AI 작성 문항은 기본 레지스트리와 학습지에 나오지 않는다', () => {
-  const registry = createRegistry();
-  assert.deepEqual(registry.all().filter((g) => g.authored).map((g) => g.id), []);
-  const leaked = [];
-  for (const file of CORPUS) {
+/** 성취기준마다 학습지를 뽑아 나온 AI 작성 문항 id 를 모은다. */
+const authoredIdsInWorksheets = (registry, files) => {
+  const ids = [];
+  for (const file of files) {
     for (const seed of ['review-gate-a', 'review-gate-b']) {
       const worksheet = buildWorksheet(SPINE, registry, { subject: file.subject, codes: [file.standardCode], seed, count: 10 });
-      for (const item of worksheet.items.filter(isAuthoredItem)) leaked.push(`${file.standardCode} ${item.params.authoredId}`);
+      for (const item of worksheet.items.filter(isAuthoredItem)) ids.push(item.params.authoredId);
     }
   }
+  return ids;
+};
+
+test('기본 레지스트리와 학습지에는 저장소에서 검토 완료된 AI 작성 문항만 나온다', () => {
+  const reviewedIds = loadReviewStatus();
+  const reviewedFiles = reviewedOnly(CORPUS, reviewedIds);
+  const registry = createRegistry();
+  assert.deepEqual(
+    registry.all().filter((g) => g.authored).map((g) => g.id).sort(),
+    reviewedFiles.map((f) => authoredGeneratorId(f.subject, f.standardCode)).sort(),
+  );
+  const leaked = authoredIdsInWorksheets(registry, CORPUS).filter((id) => !reviewedIds.has(id));
   assert.deepEqual(leaked, []);
 });
 
@@ -52,6 +63,28 @@ const withStatus = (reviewed, run) => {
     rmSync(root, { recursive: true, force: true });
   }
 };
+
+test('검토 완료가 0개면 AI 작성 생성기도 없고 학습지에 AI 작성 문항이 나오지 않는다', () => {
+  withStatus([], (root, file) => {
+    const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
+    assert.deepEqual(files, []);
+    const registry = createRegistry({ authoredFiles: files });
+    assert.deepEqual(registry.all().filter((g) => g.authored).map((g) => g.id), []);
+    assert.deepEqual(authoredIdsInWorksheets(registry, [file]), []);
+  });
+});
+
+test('검토 완료가 1개면 그 문항 하나만 학습지에 나온다', () => {
+  const [only] = CORPUS.find((f) => f.standardCode === '[4국02-04]').items;
+  withStatus([{ id: only.id, reviewer: 'test', reviewedAt: '2026-11-11' }], (root, file) => {
+    const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
+    const registry = createRegistry({ authoredFiles: files });
+    assert.deepEqual(registry.all().filter((g) => g.authored).map((g) => g.id), [authoredGeneratorId('korean', '[4국02-04]')]);
+    const ids = authoredIdsInWorksheets(registry, [file]);
+    assert.ok(ids.length > 0);
+    assert.deepEqual(new Set(ids), new Set([only.id]));
+  });
+});
 
 test('검토 완료로 바꾼 문항만 학습지에 나오고 나머지는 여전히 빠진다', () => {
   const [first, second] = CORPUS.find((f) => f.standardCode === '[4국02-04]').items;
@@ -85,10 +118,11 @@ test('손으로 만든 국어·영어 생성기는 그대로 학습지를 채운
     assert.equal(worksheet.produced, 20, subject);
     assert.equal(worksheet.shortfall, 0, subject);
   }
-  // AI 작성 코퍼스가 있던 성취기준도 손으로 만든 생성기가 문항을 낸다.
+  // AI 작성 코퍼스가 있던 성취기준도 손으로 만든 생성기만으로 문항을 낸다.
+  const handmadeOnly = createRegistry({ authoredFiles: [] });
   for (const file of CORPUS) {
-    const worksheet = buildWorksheet(SPINE, registry, { subject: file.subject, codes: [file.standardCode], seed: 'handmade', count: 3 });
+    const worksheet = buildWorksheet(SPINE, handmadeOnly, { subject: file.subject, codes: [file.standardCode], seed: 'handmade', count: 3 });
     assert.ok(worksheet.produced > 0, file.standardCode);
-    assert.ok(worksheet.items.every((item) => !registry.get(item.generatorId).authored), file.standardCode);
+    assert.ok(worksheet.items.every((item) => !handmadeOnly.get(item.generatorId).authored), file.standardCode);
   }
 });

@@ -11,7 +11,7 @@ import { authorStandard, loadSpine, summarizeRejections, targetStandards } from 
 import { createLlmClient, llmConfigFromEnv, parseCandidates } from '../../src/authoring/llm.mjs';
 import { lintWithGgw } from '../../src/authoring/ggw.mjs';
 import { checkCandidate, normalizeCandidate } from '../../src/authoring/gates.mjs';
-import { isOfficialEnglishWord } from '../../src/authoring/english-official.mjs';
+import { isOfficialEnglishWord, officialEnglishWords, regularInflections } from '../../src/authoring/english-official.mjs';
 import { AUTHORED_SCHEMA, authoredGeneratorId, loadAuthoredCorpus } from '../../src/generators/authored.mjs';
 import { createRegistry } from '../../src/engine/registry.mjs';
 import { buildWorksheet } from '../../src/engine/worksheet.mjs';
@@ -148,6 +148,68 @@ test('English candidates are held to the official 800-word list', async () => {
   assert.equal(isOfficialEnglishWord('likes'), true);
   assert.equal(isOfficialEnglishWord('stopped'), true);
   assert.equal(isOfficialEnglishWord('is'), true);
+});
+
+test('a word outside the official list is rejected even when dropping a final letter leaves a headword', async () => {
+  // PR #2 리뷰(2001dcc): 끝 'd' 를 조건 없이 떼서 'beard' 가 'bear' 로 통과했다.
+  assert.equal(isOfficialEnglishWord('beard'), false);
+  const beard = {
+    difficulty: 1,
+    instruction: '문장의 뜻으로 알맞은 것을 고르시오.',
+    stem: 'He has a beard.',
+    answer: '그는 턱수염이 있습니다.',
+    distractors: ['그는 모자가 있습니다.', '그는 가방이 있습니다.', '그는 연필이 있습니다.'],
+    solution: ["'beard'는 턱수염이라는 뜻이다."],
+  };
+  const played = {
+    ...beard,
+    stem: 'She played with the cats.',
+    answer: '그녀는 고양이들과 놀았습니다.',
+    distractors: ['그녀는 개들과 놀았습니다.', '그녀는 고양이들을 씻었습니다.', '그녀는 고양이들을 그렸습니다.'],
+    solution: ["'played'는 'play'의 과거형이고 'cats'는 'cat'의 복수형이다."],
+  };
+  const root = tmpRoot();
+  try {
+    const result = await authorStandard({
+      standard: ENGLISH, count: 2, client: fakeClient(JSON.stringify({ items: [beard, played] })), lint: fakeLint, root, dryRun: true, maxRounds: 1,
+    });
+    assert.deepEqual(result.accepted.map((e) => e.stem), ['She played with the cats.']);
+    assert.deepEqual(result.rejected.map((r) => r.reasons.map((reason) => reason.detail)), [["공식 초등 권장 어휘 800개 밖 'beard'"]]);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('every suffix rule accepts only real inflections of an official word', () => {
+  // 성질: 표제어 v 에 접미사를 붙인 꼴은 철자 규칙에 맞는 굴절일 때만 받는다.
+  // 규칙에 어긋나는데 받은 꼴은 다른 표제어의 굴절이어야 한다(bees <- bee, skies <- sky).
+  const expected = (v, suffix) => {
+    const e = v.endsWith('e');
+    const consonantY = /[^aeiou]y$/.test(v);
+    switch (suffix) {
+      case 's': return !consonantY;
+      case 'd': return e;
+      case 'es': return /(s|x|z|ch|sh|o)$/.test(v);
+      case 'ed': case 'er': case 'est': return !e && !consonantY;
+      case 'ing': return !e || /(ee|ye|oe)$/.test(v);
+      default: return false; // -ly, -ful, -ness 는 파생어다.
+    }
+  };
+  const words = officialEnglishWords();
+  const inflectionOfAnother = (form, v) => [...words].some((b) => b !== v && regularInflections(b).has(form));
+  const wrong = [];
+  for (const v of words) {
+    if (!/^[a-z]{2,}$/.test(v)) continue;
+    for (const suffix of ['s', 'd', 'es', 'ed', 'ing', 'er', 'est', 'ly', 'ful', 'ness']) {
+      const form = v + suffix;
+      if (words.has(form)) continue;
+      const got = isOfficialEnglishWord(form);
+      if (got === expected(v, suffix)) continue;
+      if (got && inflectionOfAnother(form, v)) continue;
+      wrong.push(`${form}=${got}`);
+    }
+  }
+  assert.deepEqual(wrong, []);
 });
 
 test('irregular inflections of official headwords pass the vocabulary gate', async () => {
