@@ -321,7 +321,7 @@
         "count": 10,
         "difficulty": 2
       },
-      "worksheetFingerprint": "e7d8a7724065dfdc453310a49879df2604618d48bf4f4fc8d747cb26d15b1cf7",
+      "worksheetFingerprint": "42aef7af0e221f64901933d2bbfa8e232d33367dbb7f989644843c244c6f021b",
       "standardsUsed": [
         "[2국02-02]",
         "[2국02-04]",
@@ -661,5 +661,5 @@
       }
     }
   ],
-  "fingerprint": "014b8276da11527b7ac01369ec55d0a47ac6b8d90e55b2bd3ecd8d1d15680f5e"
+  "fingerprint": "ecc52737d4334efa0d156e99c439362729b452ae3635f889d380752c8b2cc015"
 }

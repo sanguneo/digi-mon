@@ -844,7 +844,7 @@
       "id": "6c122a2d829b",
       "difficulty": 3,
       "instruction": "상황에 알맞은 문장을 고르시오.",
-      "stem": "내 동생이 여섯 살이고 수영을 좋아한다고 말할 때",
+      "stem": "내 남동생이 여섯 살이고 수영을 좋아한다고 말할 때",
       "answer": "My brother is six. He likes swimming.",
       "distractors": [
         "My brother is seven. He likes swimming.",
@@ -852,7 +852,7 @@
         "My sister is six. She likes swimming."
       ],
       "solution": [
-        "내 동생이 여섯 살이고 수영을 좋아한다고 말할 때 쓰는 문장은 'My brother is six. He likes swimming.'이다."
+        "내 남동생이 여섯 살이고 수영을 좋아한다고 말할 때 쓰는 문장은 'My brother is six. He likes swimming.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -1129,7 +1129,7 @@
       "id": "9039f6f27027",
       "difficulty": 2,
       "instruction": "상황에 알맞은 문장을 고르시오.",
-      "stem": "내 동생이 아기라고 소개할 때",
+      "stem": "내 여동생이 아기라고 소개할 때",
       "answer": "This is my baby sister.",
       "distractors": [
         "This is my big sister.",
@@ -1137,7 +1137,7 @@
         "My sister likes babies."
       ],
       "solution": [
-        "내 동생이 아기라고 소개할 때 쓰는 문장은 'This is my baby sister.'이다."
+        "내 여동생이 아기라고 소개할 때 쓰는 문장은 'This is my baby sister.'이다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

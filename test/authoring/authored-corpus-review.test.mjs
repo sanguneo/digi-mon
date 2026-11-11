@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { loadAuthoredCorpus } from '../../src/generators/authored.mjs';
 
 /**
@@ -18,6 +19,71 @@ test('허용된 보조 용언 붙여쓰기를 원칙을 묻지 않고 오답으�
     for (const m of item.answer.matchAll(AUXILIARY)) {
       const joined = item.answer.slice(0, m.index) + m[1] + m[2] + item.answer.slice(m.index + m[0].length);
       if (item.distractors.includes(joined) && !item.instruction.includes('원칙')) offenders.push(`${code} ${item.id} ${joined}`);
+    }
+  }
+  assert.deepEqual(offenders, []);
+});
+
+// PR #2 3차 리뷰. 활용형('도와 드렸다')까지 보고, 붙여 쓴 정답 + 띄어 쓴 오답지 배치도 막는다.
+// '들어가다', '잊어버리다'처럼 사전에 한 낱말로 오른 말은 붙여 써야만 하므로 뺀다.
+const AUXILIARY_INFLECTED = /([가-힣]*[아어와워봐해줘쳐려켜혀]) (갔|가|갑|간|갈|줬|줘|주|준|줄|줍|봤|봐|보|본|볼|봅|왔|와|오|온|올|옵|버리|버려|버렸|버린|놓|두|둬|뒀|둔|냈|내|드렸|드려|드리|드린|드릴|드립|있)/g;
+const ONE_WORD = /(들어가|들어갔|들어오|들어왔|잊어버|돌아가|돌아갔|돌아오|돌아왔|나아가|올라가|내려가|알아보|살펴보|빌려주)/;
+
+test('보조 용언을 붙여 쓴 것과 띄어 쓴 것을 원칙을 묻지 않고 정답·오답으로 가르지 않는다', () => {
+  const offenders = [];
+  for (const { code, item } of ITEMS) {
+    if (item.instruction.includes('원칙')) continue;
+    const options = [item.answer, ...item.distractors];
+    for (const spaced of options) {
+      for (const m of spaced.matchAll(AUXILIARY_INFLECTED)) {
+        if (ONE_WORD.test(m[1] + m[2])) continue;
+        const joined = spaced.slice(0, m.index) + m[1] + m[2] + spaced.slice(m.index + m[0].length);
+        if (options.includes(joined) && (spaced === item.answer || joined === item.answer)) offenders.push(`${code} ${item.id} ${spaced} / ${joined}`);
+      }
+    }
+  }
+  assert.deepEqual(offenders, []);
+});
+
+// PR #2 3차 리뷰. '동생'·'사촌'·'조카'는 성별을 정하지 않는다. 지시문이 성별을 밝히지 않으면
+// brother/sister, he/she만 다른 선택지는 둘 다 맞는다.
+const GENDER_SWAP = { brother: 'sister', sister: 'brother', he: 'she', she: 'he', his: 'her', her: 'his', him: 'her', boy: 'girl', girl: 'boy', son: 'daughter', daughter: 'son', nephew: 'niece', niece: 'nephew' };
+const UNGENDERED_KIN = /(?<![남여])동생|사촌|조카/;
+const genderBlind = (s) => s.toLowerCase().replace(/[a-z]+/g, (w) => (GENDER_SWAP[w] ? '#' : w));
+
+test('성별을 정하지 않은 우리말 관계어로 성별만 다른 영어 선택지를 가르지 않는다', () => {
+  const offenders = ITEMS.filter(({ code, item }) => code.includes('영')
+    && UNGENDERED_KIN.test(`${item.instruction} ${item.stem}`.replace(/[A-Za-z][^가-힣]*/g, ' '))
+    && item.distractors.some((d) => d !== item.answer && genderBlind(d) === genderBlind(item.answer)));
+  assert.deepEqual(offenders.map(({ code, item }) => `${code} ${item.id} ${item.stem}`), []);
+});
+
+// PR #2 3차 리뷰. 띄어 읽기 정답이 하나로 정해져야 한다. 주어(-이/-가/-께서) 뒤, 이어 주는 말(-고/-서/-며/-면/-다가) 뒤,
+// 목적어(-을/-를) 뒤의 쉼은 뜻을 살린 읽기로 볼 수 있으므로 '잘못 읽은 것'의 정답이 될 수 없고,
+// '알맞게 읽은 것'의 오답지가 될 수 없다. 꾸며 주는 말과 꾸밈을 받는 말 사이, 낱말 가운데의 쉼은 틀린 쉼이다.
+// 정할 수 없는 문항은 docs/korean-audit-2026-11-11.md 표에 '사람 검토 필요'로 올라 있어야 한다.
+const HUMAN_REVIEW = new Set([...readFileSync(new URL('../../docs/korean-audit-2026-11-11.md', import.meta.url), 'utf8')
+  .matchAll(/\| `([0-9a-f]{12})` \|[^\n]*사람 검토 필요/g)].map((m) => m[1]));
+const pauseKind = (item, option) => {
+  const named = /^'([^']+)' 다음$/.exec(option);
+  if (!named && !option.includes(' ∨ ')) return null;
+  if (!named && option.replace(' ∨ ', '') === item.stem) return 'inside-word';
+  const left = named ? named[1] : option.slice(0, option.indexOf(' ∨ ')).split(' ').pop();
+  if (/[을를]$/.test(left)) return 'object';
+  if (/(고|서|며|면|다가)$/.test(left)) return 'connective';
+  if (left.length > 1 && /(께서|[이가])$/.test(left)) return 'subject';
+  return 'other';
+};
+const ACCEPTABLE_PAUSE = new Set(['object', 'connective', 'subject']);
+
+test('띄어 읽기 문항의 정답이 하나로 정해지거나 사람 검토 목록에 있다', () => {
+  const offenders = [];
+  for (const { code, item } of ITEMS) {
+    if (code !== '[2국02-02]' || HUMAN_REVIEW.has(item.id)) continue;
+    if (item.instruction.includes('잘못 띄어 읽은')) {
+      if (ACCEPTABLE_PAUSE.has(pauseKind(item, item.answer))) offenders.push(`${item.id} 정답 ${item.answer}`);
+    } else if (/알맞게 띄어 읽은|띄어 읽기에 알맞은 곳/.test(item.instruction)) {
+      for (const d of item.distractors) if (ACCEPTABLE_PAUSE.has(pauseKind(item, d))) offenders.push(`${item.id} 오답지 ${d}`);
     }
   }
   assert.deepEqual(offenders, []);
