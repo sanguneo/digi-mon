@@ -450,7 +450,7 @@ const cuboidEdgeSum = {
       solution: isCube
         ? ['정육면체의 모서리는 12개이고 길이가 모두 같다.', `${a} × 12 = ${total}cm`]
         : ['가로·세로·높이 모서리가 각각 4개씩이다.', `(${a} + ${b} + ${c}) × 4 = ${total}cm`],
-      dedupeKey: `edge-sum:${a}:${b}:${c}`,
+      dedupeKey: `edge-sum:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },
@@ -1266,7 +1266,7 @@ const surfaceArea = {
       solution: isCube
         ? ['정육면체는 합동인 정사각형 6개로 둘러싸여 있다.', `${a} × ${a} × 6 = ${value}cm²`]
         : ['마주보는 면이 각각 합동이므로 세 종류의 면을 구해 2배 한다.', `(${a}×${b} + ${b}×${c} + ${c}×${a}) × 2 = ${value}cm²`],
-      dedupeKey: `surface-area:${a}:${b}:${c}`,
+      dedupeKey: `surface-area:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },
@@ -1301,7 +1301,7 @@ const volume = {
         '직육면체의 부피는 가로 × 세로 × 높이로 구한다.',
         `${a} × ${b} × ${c} = ${value}cm³`,
       ],
-      dedupeKey: `volume:${a}:${b}:${c}`,
+      dedupeKey: `volume:${isCube ? 'cube' : 'cuboid'}:${a}:${b}:${c}`,
       difficulty,
     };
   },

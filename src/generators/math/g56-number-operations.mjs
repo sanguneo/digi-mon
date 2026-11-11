@@ -100,7 +100,7 @@ const mixedOperations = {
         stem: presentation === 'story' ? context : stem,
         answer: { value, display: num(value), accepts: [num(value), ...(presentation === 'story' ? [`${value}장`] : [])] },
         solution,
-        dedupeKey: `mixed-ops:${stem}`,
+        dedupeKey: `mixed-ops:${presentation}:${stem}`,
         difficulty,
       };
     }

@@ -847,7 +847,7 @@ const readBarGraphValue = {
         `세로축 한 칸은 ${s.step}${s.unit}이다.`,
         `${s.categories[askIndex]} 막대는 ${value}${s.unit}까지 올라가 있다.`,
       ],
-      dedupeKey: `read-bar:${s.topic}:${s.counts.join('-')}:${askIndex}`,
+      dedupeKey: `read-bar:${s.topic}:${s.counts.join('-')}:${s.step}:${askIndex}`,
       difficulty,
     };
   },
@@ -987,7 +987,7 @@ const interpretBarGraph = {
       },
       answer: { value: spec.value, display: spec.display, accepts: spec.accepts },
       solution: spec.solution,
-      dedupeKey: `interpret-bar:${s.topic}:${s.counts.join('-')}:${mode}`,
+      dedupeKey: `interpret-bar:${s.topic}:${s.counts.join('-')}:${s.step}:${mode}`,
       difficulty,
     };
   },

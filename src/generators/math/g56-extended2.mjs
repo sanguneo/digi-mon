@@ -486,7 +486,7 @@ const bandGraphRead = {
       stem: `${head} ${question}`,
       answer: { value: v, display: `${v}${unit}`, accepts: [num(v), `${v}${unit}`] },
       solution,
-      dedupeKey: `band-read:${kind}:${p.join('-')}:${kind === 'missing' || kind === 'times' ? '' : T}:${i}:${j}:${L}`,
+      dedupeKey: `band-read:${kind}:${p.join('-')}:${T}:${i}:${j}:${L}`,
       difficulty,
     };
   },
@@ -608,7 +608,7 @@ const tableGraphSteps = {
       stem: `${lead}\n${tableText}\n${question}`,
       answer: { value: v, display: `${v}${unit}`, accepts: [num(v), `${v}${unit}`] },
       solution,
-      dedupeKey: `table-steps:${kind}:${rows.map((r) => r.join('-')).join('/')}:${i}`,
+      dedupeKey: `table-steps:${t.intro}:${kind}:${rows.map((r) => r.join('-')).join('/')}:${i}`,
       difficulty,
     };
   },
@@ -701,7 +701,7 @@ const experimentJudge = {
         `실험에서 ${high ? '가장 많이' : '가장 적게'} 나온 색은 ${answer}(${ext}번)이다.`,
         `따라서 다음에 화살이 멈출 가능성이 가장 ${word} 색은 ${answer}${particle(answer, '이라고', '라고')} 예상할 수 있다.`,
       ],
-      dedupeKey: `experiment:${high ? 'high' : 'low'}:${counts.join('-')}`,
+      dedupeKey: `experiment:${high ? 'high' : 'low'}:${colors.join('-')}:${counts.join('-')}`,
       difficulty,
     };
   },
@@ -1200,7 +1200,7 @@ const shareAdvanced = {
       stem,
       answer: { value: v, display: `${v}${cnt}`, accepts: [num(v), `${v}${cnt}`] },
       solution,
-      dedupeKey: `share-adv:${kind}:${ratioText.replace(/[^\d/:. ]/g, '')}:${kind === 'total' || kind === 'other' ? whoShare : T}:${firstAsk ? 1 : 2}`,
+      dedupeKey: `share-adv:${kind}:${ratioText.replace(/[^\d/:. ]/g, '')}:${kind === 'total' || kind === 'other' ? whoShare : T}:${kind === 'difference' ? '' : firstAsk ? 1 : 2}`,
       difficulty,
     };
   },
@@ -2514,7 +2514,7 @@ const volumeMixedUnits = {
           `모서리의 길이를 m로 나타내면 ${fmtDec(a, 2)}m, ${fmtDec(b, 2)}m, ${fmtDec(c, 2)}m이다.`,
           `${fmtDec(a, 2)} × ${fmtDec(b, 2)} × ${fmtDec(c, 2)} = ${v}이므로 ${v}m³이다.`,
         ],
-        dedupeKey: `vol-units:to-m3:${a}:${b}:${c}`,
+        dedupeKey: `vol-units:to-m3:${ta}:${tb}:${tc}`,
         difficulty,
       };
     }

@@ -208,7 +208,7 @@ const barCompare = {
         `${cats.slice(0, 4).map((x, n) => `${x} ${counts[n]}${unit}`).join(', ')}, ${cats[4]} ${idaUnit(counts[4], unit)}.`,
         `${calc}이므로 답은 ${kind === 'more-by' ? `${value}${particle(value, '이다', '다')}` : kind === 'times' ? `${value}배이다` : idaUnit(value, unit)}.`,
       ],
-      dedupeKey: `bar-compare:${counts.join('-')}:${kind}:${i}:${j}:${k}:${N}`,
+      dedupeKey: `bar-compare:${c.topic}:${step}:${counts.join('-')}:${kind}:${i}:${j}:${k}:${N}`,
       difficulty,
     };
   },
@@ -314,7 +314,7 @@ const lineChange = {
       stem: `${c.topic} 꺾은선그래프의 점: ${points}\n${ask}`,
       answer,
       solution,
-      dedupeKey: `line-change:${values.join('-')}:${kind}:${i}:${j}:${t}`,
+      dedupeKey: `line-change:${c.topic}:${values.join('-')}:${kind === 'total-change' ? 'span-change' : kind}:${i}:${j}:${t}`,
       difficulty,
     };
   },
@@ -412,7 +412,7 @@ const tableMissing = {
       },
       answer,
       solution: [`${findLine}.`, last],
-      dedupeKey: `table-missing:${counts.join('-')}:${mi}:${kind}:${kind === 'missing-diff' ? oj : ''}:${cell}`,
+      dedupeKey: `table-missing:${c.topic}:${counts.join('-')}:${mi}:${kind}:${kind === 'missing-diff' ? oj : ''}:${cell}`,
       difficulty,
     };
   },
@@ -501,7 +501,7 @@ const twoSeries = {
       stem: `${what}${josaEul(what)} 조사하여 정리했습니다.\n${line(n0, a)}\n${line(n1, b)}\n${ask}`,
       answer,
       solution: [`${n0}${gwa(n0)} ${n1}의 자료를 때별로 나란히 놓고 비교한다.`, calc],
-      dedupeKey: `two-series:${a.join('-')}:${b.join('-')}:${kind}:${t}:${kind === 'series-total' ? who : ''}`,
+      dedupeKey: `two-series:${a.join('-')}:${b.join('-')}:${kind}:${kind === 'gap-at' ? t : ''}:${kind === 'series-total' ? who : ''}`,
       difficulty,
     };
   },
@@ -1074,7 +1074,7 @@ function makeMeasureStory({ id, standardCode, skill, systems, kinds, build }) {
           `${expr} = ${display}${pj(P.small, '이다', '다')}.`,
           `답은 ${display}${pj(P.small, '이다', '다')}.`,
         ],
-        dedupeKey: `measure-story:${P.small}:${kind}:${plus.join('+')}:${minus.join('-')}`,
+        dedupeKey: `measure-story:${P.small}:${kind}:${plus.join('+')}:${minus.join('-')}${made.keyPart ? `:${made.keyPart}` : ''}`,
         difficulty,
       };
     },
@@ -1167,7 +1167,7 @@ const capacityStory = makeMeasureStory({
       const b = rng.int(1001, 6999);
       const big = Math.max(a, b);
       const small = Math.min(a, b);
-      return { plus: [big], minus: [small], render: (M, ask) => `가 그릇에는 물이 ${M(a)}, 나 그릇에는 물이 ${b}mL 들어 있습니다. 두 그릇에 들어 있는 물의 양의 차는 ${ask}입니까?` };
+      return { plus: [big], minus: [small], keyPart: `${a}:${b}`, render: (M, ask) => `가 그릇에는 물이 ${M(a)}, 나 그릇에는 물이 ${b}mL 들어 있습니다. 두 그릇에 들어 있는 물의 양의 차는 ${ask}입니까?` };
     },
     'combine-then-pour': (rng, P) => {
       const a = mixedValue(rng, P, 2, 9);
@@ -1539,7 +1539,7 @@ const divide2Story = {
             : mode === 'at-least' ? `남는 ${r}${c.units.left}도 있어야 하므로 몫보다 1 큰 ${q + 1}${unit}가 필요하다.`.replace(`${unit}가`, `${unit}${josaI(unit)}`)
               : `${d} - ${r} = ${d - r}만큼 더 있으면 나머지 없이 나누어떨어진다.`,
       ],
-      dedupeKey: `divide2-story:${mode}:${total}:${d}`,
+      dedupeKey: `divide2-story:${c === DIVIDE2_CONTEXTS[2] ? 'share' : 'group'}:${mode}:${total}:${d}`,
       difficulty,
     };
   },

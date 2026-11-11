@@ -271,6 +271,40 @@ test('보이는 문제가 같으면 같은 문항으로 센다', () => {
   }
 });
 
+test('[6수02-05] 두 몫의 차를 묻는 비례배분 문항은 쓰지 않는 물음 순서로 다른 문항이 되지 않는다', () => {
+  const left = make('math.g56.rm.s02-05.share-advanced', 627, 3).raw;
+  const right = make('math.g56.rm.s02-05.share-advanced', 3800, 3).raw;
+  assert.equal(left.params.kind, 'difference');
+  assert.notEqual(left.params.firstAsk, right.params.firstAsk);
+  assert.equal(left.stem, right.stem);
+  assert.equal(left.answer.value, 165);
+  assert.equal(right.answer.value, 165);
+  assert.equal(left.dedupeKey, right.dedupeKey);
+});
+
+test('수가 같아도 풀이 구조가 다른 문항(정육면체와 직육면체, 나눠 주기와 묶어 세기)은 같은 문항으로 세지 않는다', () => {
+  const structureOf = {
+    'math.g56.rm.s03-04.edge-sum': (raw) => raw.stem.includes('정육면체'),
+    'math.g56.rm.s03-17.surface-area': (raw) => raw.stem.includes('정육면체'),
+    'math.g56.rm.s03-18.volume': (raw) => raw.stem.includes('정육면체'),
+    'math.g34.no.s07.story-two-digit': (raw) => raw.stem.includes('명에게 똑같이'),
+  };
+  for (const [id, structure] of Object.entries(structureOf)) {
+    const byKey = new Map();
+    const seen = new Set();
+    for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+      for (let seed = 0; seed < 2000; seed += 1) {
+        const { raw } = make(id, `keyprop:${difficulty}:${seed}`, difficulty);
+        const kind = structure(raw);
+        seen.add(kind);
+        if (byKey.has(raw.dedupeKey)) assert.equal(kind, byKey.get(raw.dedupeKey), `${id} ${raw.dedupeKey}`);
+        else byKey.set(raw.dedupeKey, kind);
+      }
+    }
+    assert.equal(seen.size, 2, id);
+  }
+});
+
 test('[4수03-14] 시간의 덧셈과 뺄셈은 보이는 식으로 다시 계산한 값이 답이다', () => {
   const seconds = (text) => {
     const part = (unit) => Number(new RegExp(`(\\d+)${unit}`).exec(text)?.[1] ?? 0);
