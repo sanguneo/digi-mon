@@ -765,7 +765,7 @@
 {"id":"10af53866d6a","verdict":"problem","kind":"norm","note":"'땅이 4도 더 높았습니다' 대신 '땅의 온도가 4도 더 높았습니다'라고 써야 호응한다."}
 {"id":"10ce4a8e7b8c","verdict":"ok","kind":"other","note":"컵 바깥에 맺힌 물방울을 적은 문장만 관찰 결과다."}
 {"id":"169d9c8236ee","verdict":"ok","kind":"other","note":"우산을 접은 뒤 끈으로 묶어 꽂는 순서가 적절하다."}
-{"id":"19405467b533","verdict":"problem","kind":"other","note":"연을 띄울 때 바람을 등지는 방향은 부적절하므로 바람을 마주 보는 방향으로 고쳐야 한다."}
+{"id":"19405467b533","verdict":"ok","kind":"other","note":"[정정] 오달은 '바람을 마주 보고 띄워야 한다'며 problem으로 봤으나, 연은 바람을 등지고 띄운다(NASA GRC kitefly). 문항이 맞아 ok로 고침."}
 {"id":"1a0a14b65188","verdict":"ok","kind":"other","note":"자른 과일을 꼬치에 꽂고 접시에 담는 순서가 적절하다."}
 {"id":"1c04f4ad50ca","verdict":"ok","kind":"other","note":"책상 높이가 같았다는 문장만 측정 결과를 나타낸다."}
 {"id":"24f90b921565","verdict":"ok","kind":"other","note":"라디오를 켜고 방송을 맞춘 뒤 소리 크기를 조절하는 순서가 자연스럽다."}
