@@ -173,3 +173,28 @@ da7e5cad223367a15ca1edb3786ae57859299a16fa13d1b818bec3eee647b3fd
 
 이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
 변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
+
+## 2026-11-11 PR #3 재리뷰 지적 4건
+
+- 검토일: 2026-11-11
+- 비교 기준: `940246d`(재리뷰 head)
+- 판정: 재리뷰 BLOCK(지적 4건), 같은 계열을 전 수학 생성기에서 훑어 함께 고쳤다
+- 방법: 리뷰어가 낸 seed·난이도 반례와 계열 전체를 도는 회귀 테스트(`test/curriculum/math-pool-review.test.mjs`)를 먼저 넣고, 수정 전 커밋(`df844bc`)에서 6건 모두 실패하는 것을 확인한 뒤 고쳤다. 전 수학 생성기를 난이도마다 600개씩 다시 만들어 분수 표기·끝자리 0·같은 문제 다른 키를 확인했다.
+
+| 지적 | 생성기 | 수정 |
+|---|---|---|
+| `기약분수로`라고 하고 기약 가분수(`63/4`)를 오답 처리 | `math.g56.no.s09.mixed-times`, `math.g56.no.s10.share-story`, `math.g56.no.s11.mixed-divide`, `math.g56.no.s12.decimal-to-fraction`, `math.g56.no.s08.fraction-story`, `math.g56.no.s09.fraction-times-story`, `math.g56.no.s11.fraction-divide-story` | 기약 가분수도 받고 verify도 같게 했다. 약분하지 않은 답(`126/8`)은 그대로 받지 않는다 |
+| 분모를 유지한 답만 받고 약분한 같은 값(`13 3/5`)을 오답 처리 | `math.g34.no.s15.mixed-add-sub`, `math.g34.no.s10.to-improper`, `math.g34.no.s15.fraction-story`, 같은 계열 `math.g34.no.s10.to-mixed`, `math.g34.no.s15.add-sub`, `math.g34.no.s09.part-of-whole`, `math.g56.no.s08.add-sub`, `math.g56.no.s09.multiply`, `math.g56.no.s10.divide-natural` | 같은 값의 기약 표기를 받고 verify는 교차 곱으로 본다. 3~4학년 문항의 정답 표시는 그대로 분모를 유지한다(약분은 5~6학년 내용). 가분수·대분수로 바꾸라는 문항은 그 꼴만 받는다 |
+| 끝자리 0을 붙인 소수(`6.20`, `6.20L`)를 오답 처리 | `math.g56.no.s15.decimal-divide-story` 외 소수 답 문항 전체 | 채점(`src/server/grade.mjs`)이 정답에 소수점이 있는 수에만 끝자리 0을 더 붙인 응답을 같은 값으로 본다. 자릿수를 줄인 답(`3.10`에 `3.1`), 자연수에 붙인 소수점(`6.0`), 다른 단위는 그대로 오답이다. `g56-extended2`의 소수 파서도 끝자리 0을 읽는다 |
+| 총합 문항 키에 쓰지 않는 범주가 들어가 같은 문제가 다른 ID | `math.g12.pd.s04-02.tally`, 같은 계열 `math.g12.no.s07.add-to-sub`, `math.g12.no.s07.fact-family`, `math.g56.no.s12.relation`, `math.g34.mr.s03-14.time-arithmetic` | 키에 물음에 나오는 성분만 남겼다(총합은 범주 없음, 차는 큰 쪽·작은 쪽 순, 같은 두 수의 뺄셈은 빼는 수, 덧셈식 만들기는 두 수 순서 무시, 분수→소수는 내부 자릿수 제외) |
+
+`math.g34.mr.s03-14.time-arithmetic`은 키를 훑다가 정답 오류가 드러났다. 난이도 1·2 뺄셈에서 빼는 시간을 초 단위로 뽑고 분까지만 보여 주어, 보이는 식과 답이 1분씩 어긋났다(예: `1시간 9분 - 11분`의 답을 `57분`으로 냄, 표본 2,019개 중 1,990개). 빼는 시간을 표시 단위로 뽑게 고치고, 보이는 식으로 다시 계산한 값이 답인지 보는 테스트를 넣었다.
+
+검토한 수학 생성기는 265개이며 현재 소스 집합의 지문값은 다음과 같다.
+
+```text
+569bc50fff88f2639b525dddbf5cdb25e00ce02af068b94114bfad7136328b11
+```
+
+이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
+변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.

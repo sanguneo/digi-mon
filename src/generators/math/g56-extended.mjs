@@ -65,6 +65,15 @@ function parseReducedImproper(text) {
   return { n, d };
 }
 
+/** '기약분수로'는 기약 가분수(63/4)도 뜻한다. 값이 1보다 크고 자연수가 아니면 그 표기를, 아니면 빈 목록을 돌려준다. */
+function reducedImproperForms(n, d, unit = '') {
+  const g = gcd(n, d);
+  const [rn, rd] = [n / g, d / g];
+  return rn > rd && rd > 1 ? [`${rn}/${rd}`, ...(unit ? [`${rn}/${rd}${unit}`] : [])] : [];
+}
+
+const parseReduced = (text) => parseCanonical(text) ?? parseReducedImproper(text);
+
 const sameValue = (p, n, d) => p !== null && p.n * d === n * p.d;
 
 const mixedText = (w, n, d) => (w === 0 ? `${n}/${d}` : n === 0 ? `${w}` : `${w} ${n}/${d}`);
@@ -355,7 +364,7 @@ const mixedTimes = {
       params: { x, y },
       instruction: '계산하여 기약분수로 나타내시오.',
       stem: `${mixedText(x.w, x.n, x.d)} × ${yText}`,
-      answer: { value: display, display, accepts: [display] },
+      answer: { value: display, display, accepts: [display, ...reducedImproperForms(N, D)] },
       solution: [
         `대분수를 가분수로 바꾸면 ${improper(x)}/${x.d} × ${y.d === 1 ? y.w : `${improper(y)}/${y.d}`}이다.`,
         `분자끼리, 분모끼리 곱하면 ${N}/${D}이고, 기약분수로 나타내면 ${display}이다.`,
@@ -365,7 +374,7 @@ const mixedTimes = {
     };
   },
   verify({ x, y }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     if (p === null) return false;
     // 곱을 둘째 수로 나누면 첫째 수가 되어야 한다: p / (Y/y.d) = X/x.d
     return p.n * y.d * x.d === improper(x) * improper(y) * p.d;
@@ -397,14 +406,18 @@ const shareStory = {
       instruction: '몫을 기약분수로 나타내시오.',
       stem: `${t.noun} ${amount}${t.unit}${unitParticle(t.unit, '을', '를')} ${people}명이 똑같이 나누어 가지려고 합니다.`
         + ` 한 사람이 가지는 ${t.noun}${josaEun(t.noun)} 몇 ${t.unit}입니까?`,
-      answer: { value: display, display: `${display}${t.unit}`, accepts: [display, `${display}${t.unit}`] },
+      answer: {
+        value: display,
+        display: `${display}${t.unit}`,
+        accepts: [display, `${display}${t.unit}`, ...reducedImproperForms(amount, people, t.unit)],
+      },
       solution: [`${amount} ÷ ${people}의 몫은 ${amount}/${people}이다.`, `기약분수로 나타내면 ${display}${t.unit}이다.`],
       dedupeKey: `share-story:${amount}:${people}`,
       difficulty,
     };
   },
   verify({ amount, people }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     // 한 사람 몫에 사람 수를 곱하면 전체가 되어야 한다.
     return p !== null && p.n * people === amount * p.d;
   },
@@ -427,7 +440,7 @@ const mixedDivide = {
       params: { x, y },
       instruction: '계산하여 기약분수로 나타내시오.',
       stem: `${mixedText(x.w, x.n, x.d)} ÷ ${mixedText(y.w, y.n, y.d)}`,
-      answer: { value: display, display, accepts: [display] },
+      answer: { value: display, display, accepts: [display, ...reducedImproperForms(N, D)] },
       solution: [
         `가분수로 바꾸면 ${improper(x)}/${x.d} ÷ ${improper(y)}/${y.d}이다.`,
         `나누는 분수의 분모와 분자를 바꾸어 곱하면 ${improper(x)}/${x.d} × ${y.d}/${improper(y)} = ${N}/${D}이다.`,
@@ -438,7 +451,7 @@ const mixedDivide = {
     };
   },
   verify({ x, y }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     if (p === null) return false;
     // 몫에 나누는 수를 곱하면 나누어지는 수가 되어야 한다.
     return p.n * improper(y) * x.d === improper(x) * p.d * y.d;
@@ -516,7 +529,7 @@ const decimalToFraction = {
       params: { units, scale },
       instruction: '소수를 기약분수로 나타내시오.',
       stem: text,
-      answer: { value: display, display, accepts: [display] },
+      answer: { value: display, display, accepts: [display, ...reducedImproperForms(units, denom)] },
       solution: [
         `${text}${numberParticle(Number(text.at(-1)), '은', '는')} ${units}/${denom}이다.`,
         gcd(units, denom) === 1
@@ -528,7 +541,7 @@ const decimalToFraction = {
     };
   },
   verify({ units, scale }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     return p !== null && p.n * 10 ** scale === units * p.d;
   },
 };

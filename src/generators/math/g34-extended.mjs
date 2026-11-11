@@ -11,6 +11,7 @@
 import {
   countIda, fracEun, josaEul, josaEun, josaI, numberParticle, numEun, numRo,
 } from '../../engine/korean-number.mjs';
+import { reducedFractionForms } from '../../engine/rational.mjs';
 
 const num = (n) => String(n);
 const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째', '일곱째', '여덟째', '아홉째', '열째'];
@@ -292,13 +293,19 @@ const findDividend2 = makeFindDividend(
 
 const mixedText = (whole, n, d) => (n === 0 ? `${whole}` : whole === 0 ? `${n}/${d}` : `${whole} ${n}/${d}`);
 
-/** '2 3/5', '13/5', '3' 을 분모 d 의 분자 하나로 바꾼다. 분모가 다르면 null. */
+/**
+ * '2 3/5', '13/5', '3' 을 분모 d 의 분자 하나로 바꾼다.
+ * 약분한 답(13 3/5)처럼 분모가 달라도 값이 같으면 교차 곱으로 분모 d 에 맞춘다. 맞출 수 없으면 null.
+ */
 function toNumerator(text, d) {
   const mixed = /^(\d+) (\d+)\/(\d+)$/.exec(text);
-  if (mixed) return Number(mixed[3]) === d && Number(mixed[2]) < d && Number(mixed[2]) > 0 ? Number(mixed[1]) * d + Number(mixed[2]) : null;
   const frac = /^(\d+)\/(\d+)$/.exec(text);
-  if (frac) return Number(frac[2]) === d ? Number(frac[1]) : null;
-  return /^\d+$/.test(text) ? Number(text) * d : null;
+  if (!mixed && !frac) return /^\d+$/.test(text) ? Number(text) * d : null;
+  const den = Number(mixed ? mixed[3] : frac[2]);
+  if (mixed && !(Number(mixed[2]) > 0 && Number(mixed[2]) < den)) return null;
+  const top = mixed ? Number(mixed[1]) * den + Number(mixed[2]) : Number(frac[1]);
+  if (den === 0 || (top * d) % den !== 0) return null;
+  return (top * d) / den;
 }
 
 const mixedToImproper = {
@@ -316,7 +323,8 @@ const mixedToImproper = {
       params: { whole, n, d },
       instruction: '대분수를 가분수로 나타내시오.',
       stem: mixedText(whole, n, d),
-      answer: { value: display, display, accepts: [display] },
+      // 약분한 가분수(10/4 대신 5/2)도 같은 값의 가분수이므로 받는다.
+      answer: { value: display, display, accepts: [...new Set([display, ...reducedFractionForms({ n: top, d }).filter((f) => !f.includes(' '))])] },
       solution: [
         `자연수 ${numEun(whole)} 1/${d}이 ${whole * d}개인 수이다.`,
         `${whole * d} + ${n} = ${top}이므로 ${display}이다.`,
@@ -327,10 +335,12 @@ const mixedToImproper = {
   },
   verify({ whole, n, d }, answer) {
     const m = /^(\d+)\/(\d+)$/.exec(String(answer.value));
-    if (!m || Number(m[2]) !== d) return false;
-    // 가분수를 다시 대분수로 나누어 본다.
-    const top = Number(m[1]);
-    return Math.floor(top / d) === whole && top % d === n;
+    if (!m || Number(m[2]) === 0) return false;
+    // 가분수를 분모 d 로 되돌려(교차 곱) 다시 대분수로 나누어 본다.
+    const [top, den] = [Number(m[1]), Number(m[2])];
+    if (top <= den || (top * d) % den !== 0) return false;
+    const back = (top * d) / den;
+    return Math.floor(back / d) === whole && back % d === n;
   },
 };
 
@@ -364,7 +374,7 @@ const mixedAddSub = {
       params: { A, B, d, isAdd },
       instruction: '계산하시오.',
       stem: `${mixedText(aw, an, d)} ${op} ${mixedText(bw, bn, d)}`,
-      answer: { value: display, display, accepts: [display, `${R}/${d}`] },
+      answer: { value: display, display, accepts: [...new Set([display, `${R}/${d}`, ...reducedFractionForms({ n: R, d })])] },
       solution: isAdd
         ? [
           `자연수끼리 더하면 ${aw} + ${bw} = ${aw + bw}, 분수끼리 더하면 ${an}/${d} + ${bn}/${d} = ${an + bn}/${d}이다.`,

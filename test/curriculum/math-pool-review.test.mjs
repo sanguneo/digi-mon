@@ -130,3 +130,158 @@ test('기초 생성기도 맥락 명사만 다른 같은 계산은 같은 문항
     }
   }
 });
+
+// 재리뷰(head 940246d)가 재현한 반례와 같은 계열을 고정한다.
+
+const doubled = (text) => {
+  const m = /^(?:(\d+) )?(\d+)\/(\d+)$/.exec(text);
+  const d = Number(m[3]);
+  return `${(Number(m[1] ?? 0) * d + Number(m[2])) * 2}/${d * 2}`;
+};
+
+test('[6수01] 기약분수로 나타내라는 분수 문항은 기약 가분수도 정답으로 받고 약분하지 않은 답은 받지 않는다', () => {
+  const { generator, item, raw } = make('math.g56.no.s09.mixed-times', 1, 1);
+  assert.equal(raw.stem, '1 3/4 × 9');
+  for (const response of ['15 3/4', '63/4']) {
+    assert.equal(correct(item, response), true, response);
+    assert.equal(generator.verify(raw.params, { value: response }), true, response);
+  }
+  for (const response of ['126/8', '15 6/8', '64/4']) {
+    assert.equal(correct(item, response), false, response);
+    assert.equal(generator.verify(raw.params, { value: response }), false, response);
+  }
+
+  const ids = [
+    'math.g56.no.s09.mixed-times', 'math.g56.no.s10.share-story', 'math.g56.no.s11.mixed-divide',
+    'math.g56.no.s12.decimal-to-fraction', 'math.g56.no.s08.fraction-story', 'math.g56.no.s09.fraction-times-story',
+    'math.g56.no.s11.fraction-divide-story',
+  ];
+  for (const id of ids) {
+    let checked = 0;
+    for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+      for (let seed = 0; seed < 200; seed += 1) {
+        const { generator: g, item: it, raw: r } = make(id, `reduced-improper:${difficulty}:${seed}`, difficulty);
+        const m = /^(\d+) (\d+)\/(\d+)$/.exec(r.answer.value);
+        if (!m) continue;
+        const improper = `${Number(m[1]) * Number(m[3]) + Number(m[2])}/${m[3]}`;
+        assert.equal(correct(it, improper), true, `${id} ${r.stem} ${improper}`);
+        assert.equal(g.verify(r.params, { value: improper }), true, `${id} ${improper}`);
+        assert.equal(correct(it, doubled(r.answer.value)), false, `${id} ${doubled(r.answer.value)}`);
+        assert.equal(g.verify(r.params, { value: doubled(r.answer.value) }), false, `${id} ${doubled(r.answer.value)}`);
+        checked += 1;
+      }
+    }
+    assert.ok(checked > 0, id);
+  }
+});
+
+test('[4수01-15] 분모를 유지한 답을 보이는 분수 계산도 약분한 같은 값을 정답으로 받는다', () => {
+  const { generator, item, raw } = make('math.g34.no.s15.mixed-add-sub', 2, 1);
+  assert.equal(raw.stem, '5 4/10 + 8 2/10');
+  for (const response of ['13 6/10', '13 3/5', '136/10', '68/5']) {
+    assert.equal(correct(item, response), true, response);
+    assert.equal(generator.verify(raw.params, { value: response }), true, response);
+  }
+  for (const response of ['13 3/6', '13 4/10', '67/5']) {
+    assert.equal(correct(item, response), false, response);
+    assert.equal(generator.verify(raw.params, { value: response }), false, response);
+  }
+
+  // 같은 값의 기약 표기(진분수·가분수·대분수)는 받고, 값이 다른 답은 받지 않는다.
+  const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+  const ids = [
+    'math.g34.no.s15.mixed-add-sub', 'math.g34.no.s15.fraction-story', 'math.g34.no.s10.to-improper', 'math.g34.no.s10.to-mixed',
+    'math.g34.no.s15.add-sub', 'math.g34.no.s09.part-of-whole',
+    'math.g56.no.s08.add-sub', 'math.g56.no.s09.multiply', 'math.g56.no.s10.divide-natural',
+  ];
+  for (const id of ids) {
+    let checked = 0;
+    for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+      for (let seed = 0; seed < 200; seed += 1) {
+        const { generator: g, item: it, raw: r } = make(id, `reduced-equal:${difficulty}:${seed}`, difficulty);
+        const m = /^(?:(\d+) )?(\d+)\/(\d+)$/.exec(r.answer.value);
+        if (!m) continue;
+        const top = Number(m[1] ?? 0) * Number(m[3]) + Number(m[2]);
+        const k = gcd(top, Number(m[3]));
+        const [n, d] = [top / k, Number(m[3]) / k];
+        if (d === 1) continue;
+        const forms = id.endsWith('to-improper') ? [`${n}/${d}`] : id.endsWith('to-mixed') ? [`${Math.floor(n / d)} ${n % d}/${d}`] : n > d ? [`${Math.floor(n / d)} ${n % d}/${d}`, `${n}/${d}`] : [`${n}/${d}`];
+        for (const form of forms) {
+          assert.equal(correct(it, form), true, `${id} ${r.stem} ${form}`);
+          assert.equal(g.verify(r.params, { value: form }), true, `${id} ${r.stem} ${form}`);
+        }
+        const wrong = `${n + 1}/${d}`;
+        assert.equal(correct(it, wrong), false, `${id} ${wrong}`);
+        assert.equal(g.verify(r.params, { value: wrong }), false, `${id} ${wrong}`);
+        checked += 1;
+      }
+    }
+    assert.ok(checked > 0, id);
+  }
+
+  // 대분수·가분수로 바꾸라는 문항은 꼴을 그대로 요구한다.
+  const toImproper = make('math.g34.no.s10.to-improper', 'form:0', 1);
+  const mixed = toImproper.raw.stem;
+  assert.equal(correct(toImproper.item, mixed), false, mixed);
+  const toMixed = make('math.g34.no.s10.to-mixed', 'form:0', 1);
+  assert.equal(correct(toMixed.item, toMixed.raw.stem), false, toMixed.raw.stem);
+});
+
+test('[6수01-15] 끝자리 0을 붙인 소수 답도 같은 값으로 받고 단위와 자릿수 요구는 그대로 둔다', () => {
+  const { generator, item, raw } = make('math.g56.no.s15.decimal-divide-story', 0, 1);
+  assert.match(raw.stem, /86\.8L.*14/);
+  for (const response of ['6.2', '6.2L', '6.20', '6.20L']) assert.equal(correct(item, response), true, response);
+  for (const response of ['6.21', '6.2kg', '6.20kg', '62', '6']) assert.equal(correct(item, response), false, response);
+  for (const value of ['6.2', '6.20']) assert.equal(generator.verify(raw.params, { value }), true, value);
+  assert.equal(generator.verify(raw.params, { value: '6.21' }), false);
+
+  // 채점 규칙: 정답에 소수점이 있는 수에만 0을 더 붙일 수 있다.
+  const shortAnswer = (accepts) => ({ format: 'short-answer', scoring: 'auto', answer: { value: accepts[0], display: accepts[0], accepts } });
+  assert.equal(correct(shortAnswer(['3.10']), '3.1'), false);
+  assert.equal(correct(shortAnswer(['3.10']), '3.100'), true);
+  assert.equal(correct(shortAnswer(['6']), '6.0'), false);
+  assert.equal(correct(shortAnswer(['86.8 ÷ 14 = 6.2']), '86.80 ÷ 14 = 6.20'), true);
+  assert.equal(correct(shortAnswer(['86.8 ÷ 14 = 6.2']), '86.8 ÷ 140 = 6.2'), false);
+});
+
+test('[2수04-02] 모두 몇 명인지 묻는 자료 세기 문항은 쓰지 않는 범주로 다른 문항이 되지 않는다', () => {
+  const left = make('math.g12.pd.s04-02.tally', 4879, 2).raw;
+  const right = make('math.g12.pd.s04-02.tally', 27709, 2).raw;
+  assert.equal(left.stem, right.stem);
+  assert.equal(left.instruction, right.instruction);
+  assert.equal(left.answer.value, 5);
+  assert.equal(left.dedupeKey, right.dedupeKey);
+});
+
+test('보이는 문제가 같으면 같은 문항으로 센다', () => {
+  const ids = [
+    'math.g12.pd.s04-02.tally', 'math.g12.no.s07.add-to-sub', 'math.g12.no.s07.fact-family',
+    'math.g34.mr.s03-14.time-arithmetic', 'math.g56.no.s12.relation',
+  ];
+  for (const id of ids) {
+    const keyByProblem = new Map();
+    for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+      for (let seed = 0; seed < 600; seed += 1) {
+        const { raw } = make(id, `same-problem:${difficulty}:${seed}`, difficulty);
+        const shown = JSON.stringify([raw.instruction, raw.stem, raw.figure ?? null]);
+        if (keyByProblem.has(shown)) assert.equal(raw.dedupeKey, keyByProblem.get(shown), `${id} ${raw.stem}`);
+        else keyByProblem.set(shown, raw.dedupeKey);
+      }
+    }
+  }
+});
+
+test('[4수03-14] 시간의 덧셈과 뺄셈은 보이는 식으로 다시 계산한 값이 답이다', () => {
+  const seconds = (text) => {
+    const part = (unit) => Number(new RegExp(`(\\d+)${unit}`).exec(text)?.[1] ?? 0);
+    return part('시간') * 3600 + part('분') * 60 + part('초');
+  };
+  for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+    for (let seed = 0; seed < 300; seed += 1) {
+      const { raw } = make('math.g34.mr.s03-14.time-arithmetic', `time-shown:${difficulty}:${seed}`, difficulty);
+      const [left, op, right] = raw.stem.split(/ ([+-]) /);
+      const expected = op === '+' ? seconds(left) + seconds(right) : seconds(left) - seconds(right);
+      assert.equal(seconds(raw.answer.value), expected, `${raw.stem} = ${raw.answer.value}`);
+    }
+  }
+});

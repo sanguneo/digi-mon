@@ -259,7 +259,8 @@ const timeArithmetic = {
       + (withSeconds ? rng.int(1, 59) : 0);
     const b = isAdd
       ? rng.int(1, 2) * 3600 + rng.int(1, 59) * 60 + (withSeconds ? rng.int(1, 59) : 0)
-      : rng.int(unitStep, Math.max(unitStep, a - unitStep));
+      // 빼는 시간도 표시 단위(분, 난이도 3은 초)로 뽑는다. 초가 숨으면 보이는 식과 답이 어긋난다.
+      : rng.int(1, Math.max(1, a / unitStep - 1)) * unitStep;
     const result = isAdd ? a + b : a - b;
     const display = formatHms(result, withSeconds);
     return {

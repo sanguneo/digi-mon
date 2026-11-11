@@ -729,16 +729,21 @@ const tallySurvey = {
     const [p, q] = rng.shuffle(kinds.map((_, idx) => idx)).slice(0, 2);
     let stemTail;
     let value;
+    // 키에는 물음에 실제로 나오는 범주만 넣는다. 모두 몇 명인지 묻는 문항은 범주를 쓰지 않는다.
+    let asked;
     if (ask === 'count') {
       stemTail = `${survey.topic}${josaI(survey.topic)} ${kinds[p]}인 학생은 몇 명입니까?`;
       value = counts[p];
+      asked = kinds[p];
     } else if (ask === 'total') {
       stemTail = '조사한 학생은 모두 몇 명입니까?';
       value = list.length;
+      asked = '';
     } else {
       const [hi, lo] = counts[p] >= counts[q] ? [p, q] : [q, p];
       stemTail = `${survey.topic}${josaI(survey.topic)} ${kinds[hi]}인 학생은 ${kinds[lo]}인 학생보다 몇 명 더 많습니까?`;
       value = counts[hi] - counts[lo];
+      asked = `${kinds[hi]}:${kinds[lo]}`;
     }
     if (ask === 'difference' && value === 0) return this.generate(rng, { difficulty });
     return {
@@ -750,7 +755,7 @@ const tallySurvey = {
         `종류별로 세면 ${kinds.map((k, idx) => `${k} ${counts[idx]}명`).join(', ')}이다.`,
         ask === 'total' ? `모두 더하면 ${list.length}명이다.` : `답은 ${value}명이다.`,
       ],
-      dedupeKey: `tally:${survey.topic}:${list.join('-')}:${ask}:${kinds[p]}:${ask === 'difference' ? kinds[q] : ''}`,
+      dedupeKey: `tally:${survey.topic}:${list.join('-')}:${ask}:${asked}`,
       difficulty,
     };
   },

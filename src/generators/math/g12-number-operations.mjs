@@ -690,7 +690,8 @@ const addToSub = {
         `덧셈식 ${a} + ${b} = ${c}에서 두 수 중 하나를 빼면 나머지 수가 남는다.`,
         `${c} - ${subtrahend} = ${hidden}`,
       ],
-      dedupeKey: `add-to-sub:${a}:${b}:${useA ? 'a' : 'b'}`,
+      // 두 수가 같으면 어느 쪽을 빼도 같은 문제다. 빼는 수로 센다.
+      dedupeKey: `add-to-sub:${a}:${b}:${subtrahend}`,
       difficulty,
     };
   },
@@ -718,7 +719,8 @@ const factFamily = {
       stem: `${trio.join(', ')}`,
       answer: { value: c, display: expr, accepts: [expr, `${b} + ${a} = ${c}`] },
       solution: [`가장 큰 수 ${numI(c)} 합이다.`, expr],
-      dedupeKey: `fact-family:${a}:${b}`,
+      // 보이는 것은 세 수뿐이고 두 덧셈식을 모두 받으므로 더하는 두 수의 순서는 세지 않는다.
+      dedupeKey: `fact-family:${Math.min(a, b)}:${Math.max(a, b)}`,
       difficulty,
     };
   },

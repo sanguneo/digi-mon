@@ -38,6 +38,7 @@ import {
   makeFraction,
   readFraction,
   reduceFraction,
+  reducedFractionForms,
   subDecimals,
   subFractions,
   parseFractionText,
@@ -569,7 +570,7 @@ const partOfWhole = {
       params: { n, d },
       instruction: '분수로 나타내시오.',
       stem: `${thing.noun} 한 개를 똑같이 ${d}조각으로 나누었습니다. 그중 ${n}조각은 전체의 얼마입니까?`,
-      answer: { value: formatFraction(fraction), display: formatFraction(fraction), accepts: [formatFraction(fraction), readFraction(fraction)] },
+      answer: { value: formatFraction(fraction), display: formatFraction(fraction), accepts: [...new Set([formatFraction(fraction), readFraction(fraction), ...reducedFractionForms(fraction)])] },
       solution: [
         `똑같이 ${d}조각으로 나누었으므로 한 조각은 전체의 ${formatFraction(makeFraction(1, d))}이다.`,
         `${n}조각은 ${formatFraction(fraction)}이다.`,
@@ -581,8 +582,9 @@ const partOfWhole = {
   verify({ n, d }, answer) {
     const match = /^(\d+)\/(\d+)$/.exec(answer.value);
     if (!match) return false;
-    // 분자가 분모보다 작아야 전체의 일부다.
-    return Number(match[1]) === n && Number(match[2]) === d && n < d;
+    // 분자가 분모보다 작아야 전체의 일부다. 약분한 같은 값(2/4 대신 1/2)은 교차 곱으로 본다.
+    const [top, den] = [Number(match[1]), Number(match[2])];
+    return top > 0 && top < den && top * d === n * den && n < d;
   },
 };
 
@@ -645,7 +647,12 @@ const improperToMixedItem = {
       params: { improper, mixed },
       instruction: '가분수를 대분수로 나타내시오.',
       stem: formatFraction(improper),
-      answer: { value: display, display, accepts: [display, `${whole} ${rest}/${d}`] },
+      // 약분한 대분수(2 2/4 대신 2 1/2)도 같은 값의 대분수이므로 받는다.
+      answer: {
+        value: display,
+        display,
+        accepts: [...new Set([display, `${whole} ${rest}/${d}`, ...reducedFractionForms(improper).filter((form) => form.includes(' '))])],
+      },
       solution: [
         `${improper.n} ÷ ${d} = ${whole} ... ${rest}`,
         `자연수 부분은 ${whole}, 남은 분수는 ${rest}/${d}이므로 ${display}이다.`,
@@ -656,8 +663,12 @@ const improperToMixedItem = {
   },
   verify({ improper, mixed }, answer) {
     // 대분수를 다시 가분수로 되돌려 원래 값과 같은지 본다.
+    // 답이 분수 부분을 약분한 대분수여도 교차 곱으로 같은 값인지 본다.
     const rebuilt = mixed.whole * mixed.d + mixed.n;
-    return rebuilt === improper.n && answer.value === formatMixed(mixed);
+    const m = /^(\d+) (\d+)\/(\d+)$/.exec(String(answer.value));
+    if (!m || !(Number(m[2]) > 0 && Number(m[2]) < Number(m[3]))) return false;
+    const top = Number(m[1]) * Number(m[3]) + Number(m[2]);
+    return rebuilt === improper.n && top * improper.d === improper.n * Number(m[3]);
   },
 };
 
@@ -864,7 +875,7 @@ const addSubSameDenominator = {
         params: { a, b, isAdd: true, result: sum },
         instruction: '계산하시오.',
         stem: `${formatFraction(a)} + ${formatFraction(b)}`,
-        answer: { value: display, display, accepts: [display, formatFraction(sum)] },
+        answer: { value: display, display, accepts: [...new Set([display, formatFraction(sum), ...reducedFractionForms(sum)])] },
         solution: [`분모가 같으므로 분자끼리 더한다.`, `${n1} + ${n2} = ${sum.n}`, `답은 ${display}이다.`],
         dedupeKey: `frac-add:${n1}:${n2}:${d}`,
         difficulty,
@@ -880,7 +891,7 @@ const addSubSameDenominator = {
       params: { a, b, isAdd: false, result: diff },
       instruction: '계산하시오.',
       stem: `${formatFraction(a)} - ${formatFraction(b)}`,
-      answer: { value: display, display, accepts: [display, formatFraction(diff)] },
+      answer: { value: display, display, accepts: [...new Set([display, formatFraction(diff), ...reducedFractionForms(diff)])] },
       solution: [`분모가 같으므로 분자끼리 뺀다.`, `${n1} - ${n2} = ${diff.n}`, `답은 ${display}이다.`],
       dedupeKey: `frac-sub:${n1}:${n2}:${d}`,
       difficulty,
@@ -891,9 +902,9 @@ const addSubSameDenominator = {
     // params 의 result 를 되읽으면 answer 를 보지 않는 검산이 되어 아무것도 잡지 못한다.
     const parsed = parseFractionText(answer.value);
     if (!parsed) return false;
-    // 6/6 처럼 자연수로 적힌 답은 분모를 맞춰 되돌린다.
-    const restored = parsed.d === 1 ? { n: parsed.n * a.d, d: a.d } : parsed;
-    if (restored.d !== a.d) return false;
+    // 약분한 답(1/3)이나 자연수로 적힌 답(6/6 -> 1)은 교차 곱으로 분모를 맞춰 되돌린다.
+    if (parsed.d === 0 || (parsed.n * a.d) % parsed.d !== 0) return false;
+    const restored = { n: (parsed.n * a.d) / parsed.d, d: a.d };
     const back = isAdd ? subSameDenominator(restored, b) : addSameDenominator(restored, b);
     return back.n === a.n && back.d === a.d;
   },

@@ -56,6 +56,24 @@ function parseCanonical(text) {
   return m ? { n: Number(t), d: 1 } : null;
 }
 
+/** 약분을 끝낸 가분수(63/4)만 읽는다. 진분수·자연수와 약분하지 않은 답은 null. */
+function parseReducedImproper(text) {
+  const m = /^(\d+)\/(\d+)$/.exec(String(text));
+  if (!m) return null;
+  const [n, d] = [Number(m[1]), Number(m[2])];
+  if (d <= 1 || n <= d || gcd(n, d) !== 1) return null;
+  return { n, d };
+}
+
+/** '기약분수로'는 기약 가분수(63/4)도 뜻한다. 값이 1보다 크고 자연수가 아니면 그 표기를, 아니면 빈 목록을 돌려준다. */
+function reducedImproperForms(n, d, unit = '') {
+  const g = gcd(n, d);
+  const [rn, rd] = [n / g, d / g];
+  return rn > rd && rd > 1 ? [`${rn}/${rd}`, ...(unit ? [`${rn}/${rd}${unit}`] : [])] : [];
+}
+
+const parseReduced = (text) => parseCanonical(text) ?? parseReducedImproper(text);
+
 const mixedText = (w, n, d) => (w === 0 ? `${n}/${d}` : n === 0 ? `${w}` : `${w} ${n}/${d}`);
 /** {n, d} 가분수를 대분수 표기로. 약분은 하지 않는다(문제에 주어진 꼴 그대로). */
 const fracText = ({ n, d }) => (n % d === 0 ? `${n / d}` : n < d ? `${n}/${d}` : `${Math.floor(n / d)} ${n % d}/${d}`);
@@ -68,9 +86,12 @@ function fmtDec(units, scale) {
   return f ? `${w}.${f}` : w;
 }
 
-/** 소수 표기를 엄격히 읽는다. 끝의 0, 앞의 0, 단위가 붙은 답은 null. */
+/**
+ * 소수 표기를 엄격히 읽는다. 앞의 0, 단위가 붙은 답은 null.
+ * 소수 부분 끝에 붙인 0(6.20)은 같은 값이므로 읽되, 자연수에 붙인 소수점(6.0)은 받지 않는다.
+ */
 function parseDec(text) {
-  const m = /^(0|[1-9]\d*)(?:\.(\d*[1-9]))?$/.exec(String(text));
+  const m = /^(0|[1-9]\d*)(?:\.(\d*[1-9])0*)?$/.exec(String(text));
   if (!m) return null;
   const f = m[2] ?? '';
   return { units: Number(m[1] + f), scale: f.length };
@@ -1620,7 +1641,7 @@ const fractionAddSubStory = {
         params: { kind: 'three', terms: [x, y, z], signs: [1, 1, -1] },
         instruction: '답을 기약분수로 나타내시오.',
         stem: `물통에 물이 ${tx}L 들어 있었습니다. 물을 ${ty}L 더 부은 뒤 ${tz}L${particle('리터', '을', '를')} 사용했습니다. 물통에 남은 물은 몇 L입니까?`,
-        answer: { value: display, display: `${display}L`, accepts: [display, `${display}L`] },
+        answer: { value: display, display: `${display}L`, accepts: [display, `${display}L`, ...reducedImproperForms(r.n, r.d, 'L')] },
         solution: [
           `식으로 나타내면 ${tx} + ${ty} - ${tz}이다.`,
           `대분수를 가분수로 바꾸면 ${x.n}/${x.d} + ${y.n}/${y.d} - ${z.n}/${z.d}이다.`,
@@ -1644,7 +1665,7 @@ const fractionAddSubStory = {
       params: { kind, terms: [p, q], signs: [1, kind === 'total' ? 1 : -1] },
       instruction: '답을 기약분수로 나타내시오.',
       stem: FRACTION_ADD_SCENES[kind](tp, tq, unit),
-      answer: { value: display, display: `${display}${unit}`, accepts: [display, `${display}${unit}`] },
+      answer: { value: display, display: `${display}${unit}`, accepts: [display, `${display}${unit}`, ...reducedImproperForms(r.n, r.d, unit)] },
       solution: [
         `식으로 나타내면 ${tp} ${kind === 'total' ? '+' : '-'} ${tq}이다.`,
         ...(difficulty === 1 ? [] : [`대분수를 가분수로 바꾸면 ${p.n}/${p.d} ${kind === 'total' ? '+' : '-'} ${q.n}/${q.d}이다.`]),
@@ -1656,7 +1677,7 @@ const fractionAddSubStory = {
     };
   },
   verify({ terms, signs }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     if (p === null) return false;
     let acc = { n: 0, d: 1 };
     terms.forEach((t, i) => { acc = ratAdd(acc, t, signs[i]); });
@@ -1704,7 +1725,11 @@ const fractionTimesStory = {
       params: { kind, x, y },
       instruction: whole ? '물음에 답하시오.' : '답을 기약분수로 나타내시오.',
       stem,
-      answer: { value: display, display: `${display}${unit}`, accepts: unit ? [display, `${display}${unit}`] : [display] },
+      answer: {
+        value: display,
+        display: `${display}${unit}`,
+        accepts: [...(unit ? [display, `${display}${unit}`] : [display]), ...reducedImproperForms(x.n * y.n, x.d * y.d, unit)],
+      },
       solution: [
         `식으로 나타내면 ${fracText(x)} × ${fracText(y)}이다.`,
         ...([x, y].some((t) => t.d > 1 && t.n > t.d) ? [`대분수를 가분수로 바꾸면 ${x.n}/${x.d} × ${y.d === 1 ? y.n : `${y.n}/${y.d}`}이다.`] : []),
@@ -1716,7 +1741,7 @@ const fractionTimesStory = {
     };
   },
   verify({ x, y }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     if (p === null) return false;
     // 곱을 한 수로 나누면 다른 수가 되어야 한다: p ÷ y = x
     return p.n * y.d * x.d === x.n * y.n * p.d;
@@ -1772,7 +1797,14 @@ const fractionDivideStory = {
       params: { kind, dividend, divisor },
       instruction: whole ? '물음에 답하시오.' : '답을 기약분수로 나타내시오.',
       stem,
-      answer: { value: display, display: `${display}${unit}`, accepts: unit ? [display, `${display}${unit}`] : [display] },
+      answer: {
+        value: display,
+        display: `${display}${unit}`,
+        accepts: [
+          ...(unit ? [display, `${display}${unit}`] : [display]),
+          ...reducedImproperForms(dividend.n * divisor.d, dividend.d * divisor.n, unit),
+        ],
+      },
       solution: [
         `식으로 나타내면 ${fracText(dividend)} ÷ ${fracText(divisor)}이다.`,
         ...([dividend, divisor].some((t) => t.d > 1 && t.n > t.d) ? [`대분수를 가분수로 바꾸면 ${dividend.n}/${dividend.d} ÷ ${divisor.d === 1 ? divisor.n : `${divisor.n}/${divisor.d}`}이다.`] : []),
@@ -1784,7 +1816,7 @@ const fractionDivideStory = {
     };
   },
   verify({ dividend, divisor }, answer) {
-    const p = parseCanonical(answer.value);
+    const p = parseReduced(answer.value);
     if (p === null) return false;
     // 몫 × 나누는 수 = 나누어지는 수
     return p.n * divisor.n * dividend.d === dividend.n * p.d * divisor.d;

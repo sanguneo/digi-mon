@@ -22,6 +22,7 @@ import {
   parseDecimalText,
   parseFractionText,
   reduceFraction,
+  reducedFractionForms,
   subFractions,
   toMixed,
 } from '../../engine/rational.mjs';
@@ -469,7 +470,7 @@ const addSubDifferentDenominators = {
       params: { x, y, isAdd, result },
       instruction: '계산하시오.',
       stem: `${formatFraction(x)} ${isAdd ? '+' : '-'} ${formatFraction(y)}`,
-      answer: { value: display, display, accepts: [display, formatFraction(result)] },
+      answer: { value: display, display, accepts: [...new Set([display, formatFraction(result), ...reducedFractionForms(result)])] },
       solution: [
         `최소공배수 ${numRo(common)} 통분한다.`,
         `${(x.n * common) / x.d}/${common} ${isAdd ? '+' : '-'} ${(y.n * common) / y.d}/${common}`,
@@ -483,7 +484,7 @@ const addSubDifferentDenominators = {
     // 역연산으로 되짚는다.
     const back = isAdd ? subFractions(result, y) : addFractions(result, y);
     const expected = reduceFraction(x);
-    return back.n === expected.n && back.d === expected.d && answer.value === formatReduced(result);
+    return back.n === expected.n && back.d === expected.d && reducedFractionForms(result).includes(answer.value);
   },
 };
 
@@ -509,7 +510,7 @@ const multiplyFractionsItem = {
         params: { a, b: makeFraction(k, 1), result },
         instruction: '계산하시오.',
         stem: `${formatFraction(a)} × ${k}`,
-        answer: { value: display, display, accepts: [display, formatFraction(result)] },
+        answer: { value: display, display, accepts: [...new Set([display, formatFraction(result), ...reducedFractionForms(result)])] },
         solution: [`분자에 자연수를 곱한다: ${n} × ${k} = ${n * k}`, `${fracEul(`${n * k}/${d}`)} 약분하면 ${display}`],
         dedupeKey: `frac-mul-nat:${n}:${d}:${k}`,
         difficulty,
@@ -525,7 +526,7 @@ const multiplyFractionsItem = {
       params: { a, b, result },
       instruction: '계산하시오.',
       stem: `${formatFraction(a)} × ${formatFraction(b)}`,
-      answer: { value: display, display, accepts: [display, formatFraction(result)] },
+      answer: { value: display, display, accepts: [...new Set([display, formatFraction(result), ...reducedFractionForms(result)])] },
       solution: [
         `분자끼리, 분모끼리 곱한다: ${a.n} × ${b.n} = ${a.n * b.n}, ${a.d} × ${b.d} = ${a.d * b.d}`,
         `기약분수로 나타내면 ${display}이다.`,
@@ -538,7 +539,7 @@ const multiplyFractionsItem = {
     // 곱을 한 인수로 나누어 다른 인수가 나오는지 본다.
     const back = divideFractions(result, b);
     const expected = reduceFraction(a);
-    return back.n === expected.n && back.d === expected.d && answer.value === formatReduced(result);
+    return back.n === expected.n && back.d === expected.d && reducedFractionForms(result).includes(answer.value);
   },
 };
 
@@ -558,7 +559,7 @@ const divideByNatural = {
       params: { a, k, result },
       instruction: '계산하시오.',
       stem: `${formatFraction(a)} ÷ ${k}`,
-      answer: { value: display, display, accepts: [display, formatFraction(result)] },
+      answer: { value: display, display, accepts: [...new Set([display, formatFraction(result), ...reducedFractionForms(result)])] },
       solution: [
         `자연수로 나누는 것은 그 수의 역수를 곱하는 것과 같다.`,
         `${formatFraction(a)} × 1/${k} = ${formatFraction({ n, d: d * k })}`,
@@ -572,7 +573,7 @@ const divideByNatural = {
     // 몫에 나누는 수를 곱하면 원래 분수가 되어야 한다.
     const back = multiplyFractions(result, makeFraction(k, 1));
     const expected = reduceFraction(a);
-    return back.n === expected.n && back.d === expected.d && answer.value === formatReduced(result);
+    return back.n === expected.n && back.d === expected.d && reducedFractionForms(result).includes(answer.value);
   },
 };
 
@@ -645,7 +646,8 @@ const fractionDecimalRelation = {
           `분모를 ${power}으로 만든다: ${formatFraction(fraction)} = ${units}/${power}`,
           `${formatDecimal(decimal)}이다.`,
         ],
-        dedupeKey: `frac-to-dec:${n}:${d}:${scale}`,
+        // 분수를 소수로 바꾸는 문제는 분수만 보이므로 내부 자릿수(scale)는 세지 않는다.
+        dedupeKey: `frac-to-dec:${n}:${d}`,
         difficulty,
       };
     }

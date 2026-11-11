@@ -14,6 +14,7 @@
 import {
   josaEul, josaEun, josaI, numberParticle, numEul, numEun, numI, numRo, particle, particleRo, unitParticle,
 } from '../../engine/korean-number.mjs';
+import { reducedFractionForms } from '../../engine/rational.mjs';
 
 const num = (n) => String(n);
 const UNIT_SYMBOLS = new Set(['cm', 'mm', 'm', 'km', 'g', 'kg', 't', 'L', 'mL']);
@@ -1765,13 +1766,19 @@ const decimalCompose = {
 const mixedText = (whole, n, d) => (n === 0 ? `${whole}` : whole === 0 ? `${n}/${d}` : `${whole} ${n}/${d}`);
 const fracOf = (top, d) => mixedText(Math.floor(top / d), top % d, d);
 
-/** '2 3/5', '13/5', '3' 을 분모 d 의 분자 하나로 바꾼다. 분모가 다르면 null. */
+/**
+ * '2 3/5', '13/5', '3' 을 분모 d 의 분자 하나로 바꾼다.
+ * 약분한 답(13 3/5)처럼 분모가 달라도 값이 같으면 교차 곱으로 분모 d 에 맞춘다. 맞출 수 없으면 null.
+ */
 function toNumerator(text, d) {
   const mixed = /^(\d+) (\d+)\/(\d+)$/.exec(text);
-  if (mixed) return Number(mixed[3]) === d && Number(mixed[2]) < d && Number(mixed[2]) > 0 ? Number(mixed[1]) * d + Number(mixed[2]) : null;
   const frac = /^(\d+)\/(\d+)$/.exec(text);
-  if (frac) return Number(frac[2]) === d ? Number(frac[1]) : null;
-  return /^\d+$/.test(text) ? Number(text) * d : null;
+  if (!mixed && !frac) return /^\d+$/.test(text) ? Number(text) * d : null;
+  const den = Number(mixed ? mixed[3] : frac[2]);
+  if (mixed && !(Number(mixed[2]) > 0 && Number(mixed[2]) < den)) return null;
+  const top = mixed ? Number(mixed[1]) * den + Number(mixed[2]) : Number(frac[1]);
+  if (den === 0 || (top * d) % den !== 0) return null;
+  return (top * d) / den;
 }
 
 const AMOUNT_CONTEXTS = [
@@ -1815,7 +1822,11 @@ const fractionStory = {
       params: { d, plus, minus },
       instruction: '식을 세워 답을 구하시오.',
       stem: amountStem(c, kind, vals),
-      answer: { value: display, display, accepts: [display, `${display}${c.unit}`, `${R}/${d}`] },
+      answer: {
+        value: display,
+        display,
+        accepts: [...new Set([display, `${display}${c.unit}`, `${R}/${d}`, ...reducedFractionForms({ n: R, d }, c.unit)])],
+      },
       solution: [
         `분모가 같으므로 분자끼리 계산한다.`,
         `${expr} = ${display}이다.`,
