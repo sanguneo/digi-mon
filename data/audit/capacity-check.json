@@ -158,7 +158,7 @@
       "capacityNote": "기존 질문-응답 5개와 앞말의 수·장소·시간·과목에 근거하여 답하는 대화 4개를 쓴다."
     }
   ],
-  "observedCapacity": 293688,
+  "observedCapacity": 292262,
   "rows": [
     {
       "generatorId": "math.g12.no.s01.read-sino",
@@ -255,7 +255,7 @@
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtDouble": 1799,
       "saturated": false,
       "ceiling": null
     },
@@ -1255,8 +1255,8 @@
       "skill": "삼각형·사각형의 각의 크기 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 857,
-      "uniqueAtDouble": 1657,
+      "uniqueAtBase": 856,
+      "uniqueAtDouble": 1655,
       "saturated": false,
       "ceiling": null
     },
@@ -1310,8 +1310,8 @@
       "skill": "이상·이하·초과·미만",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 900,
-      "uniqueAtDouble": 1797,
+      "uniqueAtBase": 820,
+      "uniqueAtDouble": 1566,
       "saturated": false,
       "ceiling": null
     },
@@ -1673,8 +1673,8 @@
       "skill": "사각형·삼각형의 넓이 구하기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 566,
-      "uniqueAtDouble": 834,
+      "uniqueAtBase": 560,
+      "uniqueAtDouble": 805,
       "saturated": false,
       "ceiling": null
     },
@@ -1772,8 +1772,8 @@
       "skill": "평균 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 896,
-      "uniqueAtDouble": 1793,
+      "uniqueAtBase": 887,
+      "uniqueAtDouble": 1748,
       "saturated": false,
       "ceiling": null
     },
@@ -1783,8 +1783,8 @@
       "skill": "평균을 이용해 빠진 값 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 897,
-      "uniqueAtDouble": 1794,
+      "uniqueAtBase": 894,
+      "uniqueAtDouble": 1777,
       "saturated": false,
       "ceiling": null
     },
@@ -1970,8 +1970,8 @@
       "skill": "조사한 자료를 분류하여 세고 비교하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtBase": 466,
+      "uniqueAtDouble": 712,
       "saturated": false,
       "ceiling": null
     },
@@ -2443,8 +2443,8 @@
       "skill": "색깔과 모양 두 기준으로 분류하여 세기",
       "axis": "categorical",
       "capacityNote": null,
-      "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtBase": 899,
+      "uniqueAtDouble": 1796,
       "saturated": false,
       "ceiling": null
     },
@@ -2784,8 +2784,8 @@
       "skill": "목표 평균을 이루려면 다음에 받아야 할 점수 구하기",
       "axis": "numeric",
       "capacityNote": null,
-      "uniqueAtBase": 880,
-      "uniqueAtDouble": 1719,
+      "uniqueAtBase": 879,
+      "uniqueAtDouble": 1711,
       "saturated": false,
       "ceiling": null
     },
@@ -2829,7 +2829,7 @@
       "axis": "numeric",
       "capacityNote": null,
       "uniqueAtBase": 900,
-      "uniqueAtDouble": 1800,
+      "uniqueAtDouble": 1799,
       "saturated": false,
       "ceiling": null
     },

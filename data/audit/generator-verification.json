@@ -2857,24 +2857,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 399,
+          "unique": 283,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 400,
+          "unique": 399,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 399,
           "failed": 0
         }
       },
-      "uniqueTotal": 1199,
+      "uniqueTotal": 1072,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9992
+      "uniqueRatio": 0.8933
     },
     {
       "generatorId": "math.g56.no.s03.rounding",
@@ -3725,14 +3725,14 @@
         },
         "3": {
           "generated": 400,
-          "unique": 322,
+          "unique": 303,
           "failed": 0
         }
       },
-      "uniqueTotal": 663,
+      "uniqueTotal": 644,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.5525
+      "uniqueRatio": 0.5367
     },
     {
       "generatorId": "math.g56.rm.s03-13.area-unit",
@@ -3949,7 +3949,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 398,
+          "unique": 385,
           "failed": 0
         },
         "2": {
@@ -3963,10 +3963,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1198,
+      "uniqueTotal": 1183,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9983
+      "uniqueRatio": 0.9858
     },
     {
       "generatorId": "math.g56.rm.s04-02.missing-for-average",
@@ -3975,7 +3975,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 400,
+          "unique": 394,
           "failed": 0
         },
         "2": {
@@ -3989,10 +3989,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1200,
+      "uniqueTotal": 1194,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 1
+      "uniqueRatio": 0.995
     },
     {
       "generatorId": "math.g56.rm.s04-03.band-graph",
@@ -4417,24 +4417,24 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 400,
+          "unique": 40,
           "failed": 0
         },
         "2": {
           "generated": 400,
-          "unique": 400,
+          "unique": 234,
           "failed": 0
         },
         "3": {
           "generated": 400,
-          "unique": 400,
+          "unique": 301,
           "failed": 0
         }
       },
-      "uniqueTotal": 1200,
+      "uniqueTotal": 541,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 1
+      "uniqueRatio": 0.4508
     },
     {
       "generatorId": "math.g34.no.s03.missing-digit",
@@ -6341,7 +6341,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 393,
+          "unique": 386,
           "failed": 0
         },
         "2": {
@@ -6355,10 +6355,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1155,
+      "uniqueTotal": 1148,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 0.9625
+      "uniqueRatio": 0.9567
     },
     {
       "generatorId": "math.g56.rm.s04-01.average-groups",
@@ -6445,7 +6445,7 @@
       "byDifficulty": {
         "1": {
           "generated": 400,
-          "unique": 400,
+          "unique": 399,
           "failed": 0
         },
         "2": {
@@ -6459,10 +6459,10 @@
           "failed": 0
         }
       },
-      "uniqueTotal": 1200,
+      "uniqueTotal": 1199,
       "generated": 1200,
       "failed": 0,
-      "uniqueRatio": 1
+      "uniqueRatio": 0.9992
     },
     {
       "generatorId": "math.g56.rm.s02-01.correspondence-inverse",
