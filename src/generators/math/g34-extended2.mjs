@@ -1820,12 +1820,12 @@ const fractionStory = {
     const expr = kind === 'total' ? `${vals[0]} + ${vals[1]}` : kind === 'left' ? `${vals[0]} - ${vals[1]}` : `${vals[0]} - ${vals[2]} + ${vals[1]}`;
     return {
       params: { d, plus, minus },
-      instruction: '식을 세워 답을 구하시오.',
+      instruction: '식을 세워 계산하고 답만 쓰시오.',
       stem: amountStem(c, kind, vals),
       answer: {
         value: display,
         display,
-        accepts: [...new Set([display, `${display}${c.unit}`, `${R}/${d}`, ...reducedFractionForms({ n: R, d }, c.unit)])],
+        accepts: [...new Set([display, `${display}${c.unit}`, `${R}/${d}`, `${R}/${d}${c.unit}`, ...reducedFractionForms({ n: R, d }, c.unit)])],
       },
       solution: [
         `분모가 같으므로 분자끼리 계산한다.`,
@@ -1872,7 +1872,7 @@ const decimalStory = {
     const expr = kind === 'total' ? `${vals[0]} + ${vals[1]}` : kind === 'left' ? `${vals[0]} - ${vals[1]}` : `${vals[0]} - ${vals[2]} + ${vals[1]}`;
     return {
       params: { places, plus, minus, scale: sum(plus) },
-      instruction: '식을 세워 답을 구하시오.',
+      instruction: '식을 세워 계산하고 답만 쓰시오.',
       stem: amountStem(c, kind, vals),
       answer: { value: display, display: `${display}${c.unit}`, accepts: [...new Set([display, `${display}${c.unit}`, padded, `${padded}${c.unit}`])] },
       solution: ['소수점의 자리를 맞추어 같은 자리끼리 계산한다.', `${expr} = ${display}이다.`],

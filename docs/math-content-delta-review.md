@@ -241,3 +241,33 @@ da7e5cad223367a15ca1edb3786ae57859299a16fa13d1b818bec3eee647b3fd
 
 이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
 변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.
+
+## 2026-11-11 4차 리뷰 지적 3건과 관찰 순서·답 표기 성질 테스트
+
+- 검토일: 2026-11-11
+- 비교 기준: `8ab28c5`(4차 리뷰 head)
+- 판정: 4차 리뷰 BLOCK(지적 3건). 같은 계열을 수학 생성기 전부에 거는 성질 테스트를 넣고, 걸린 생성기를 모두 고쳤다
+- 방법: 리뷰 반례 3건(`test/curriculum/math-pool-review.test.mjs`)과 성질 테스트(`test/curriculum/math-key-consistency.test.mjs`의 관찰 순서 섭동, 새 `test/curriculum/math-answer-forms.test.mjs`)를 먼저 넣고 `8ab28c5`에서 실패하는 것을 확인한 뒤 고쳤다.
+
+리뷰 지적 3건:
+
+| 지적 | 생성기 | 수정 |
+|---|---|---|
+| 단위를 붙인 약분하지 않은 가분수(`183/15L`)를 오답 처리 | `math.g34.no.s15.fraction-story` | 단위를 붙인 약분하지 않은 가분수도 받는다 |
+| 관찰한 순서만 다른 자료(seed 29·51 난이도1)가 다른 키 | `math.g12.pd.s04-02.tally`, `math.g12.pd.s04-01.two-criteria` | 키를 범주별 개수(정렬)와 묻는 비교의 개수로 만든다. 두 기준 분류는 색깔·모양 칸마다의 개수 |
+| '식을 쓰고 답을 구하시오'인데 `□ - 19 = 1, □ = 20`을 오답 처리 | `math.g12.no.s09.story-box` | 식과 답을 함께 쓴 답(`식, 답`, `식, □ = 답`, 단위 붙인 답)도 받는다 |
+
+성질 테스트와 걸린 생성기:
+
+1. 관찰 순서(키 일관성 테스트에 추가): 쉼표로 늘어놓은 항목의 자리만 다른 문제는 같은 키다. seed 2,000개 표본에서 항목 자리만 다른 문제끼리 비교하고, seed 100개에서 이웃한 난수 한두 개를 맞바꿔 섞는 순서만 바꾼 변형도 비교한다. 늘어놓은 순서가 곧 문제인 수열(□나 ...가 항목인 줄)은 뺀다. 걸린 생성기 11개: 리뷰 2건 외에 `math.g12.no.s03.order`(늘어놓을 수), `math.g34.gd.s25.angle-sum`(사각형의 세 각), `math.g56.no.s02.range`(후보 수), `math.g56.rm.s03-12.area`(마름모의 두 대각선), `math.g56.rm.s04-01.average`·`math.g56.rm.s04-02.missing-for-average`·`math.g56.rm.s04-01.average-records`·`math.g56.rm.s04-01.average-target`(평균을 낼 자료), `math.g56.rm.s04-06.experiment-judge`(색과 횟수의 짝). 모두 늘어놓은 항목을 정렬해 키에 넣는다.
+2. 같은 값의 다른 표기(새 테스트): 수 하나가 답인 문항은 단위를 붙인 꼴과 뗀 꼴, 분수면 약분한·약분하지 않은 가분수와 대분수, 소수면 끝에 0을 붙인 꼴을 받는다. 지시문이 꼴을 정하면('기약분수로', '가분수로', '대분수로', '그대로') 그 꼴만 본다. 걸린 생성기 3개: 리뷰 1건 외에 `math.g34.no.s15.add-sub`(분모를 유지한 대분수 `1 2/10`을 받는다), `math.g34.no.s09.read`(`4분의 2`를 `1/2`로 쓰는 것은 읽기가 아니므로 지시문을 '읽은 그대로 분수로 나타내시오.'로 밝혔다).
+3. 식과 답(새 테스트): 지시문이 식과 답을 함께 요구하면 식과 답을 한 칸에 함께 쓴 답을 받고, 답만 쓰라는 지시문은 답만 받는다. 걸린 생성기 11개: 숫자만 받던 `math.g34.no.s15.fraction-story`·`math.g34.no.s16.decimal-story`('식을 세워 계산하고 답만 쓰시오.'), `math.g56.rm.s02-04.proportion-story`('비례식을 세워 계산하고 답만 쓰시오.'), `math.g56.no.s01.mixed-ops-story`('하나의 식으로 나타내어 계산하고 답만 쓰시오.')는 지시문을 채점에 맞췄다. 리뷰 1건과, 식만 또는 답만 받고 `8 + 4 = 12, 12개`처럼 함께 쓴 답을 받지 않던 `math.g12.no.s05.story-add`·`story-sub`·`math.g12.no.s10.groups`·`math.g12.no.s08.story-three`·`math.g34.no.s03.story`·`math.g34.no.s04.story-multiply`는 함께 쓴 답(`src/generators/expression-answer.mjs`)을 받는다.
+
+검토한 수학 생성기는 265개이며 현재 소스 집합의 지문값은 다음과 같다.
+
+```text
+d96859154f8ae5f180a4e77e87b2dc83b4124468826dfb172d550ce344da0c96
+```
+
+이 근거에 따라 `src/curriculum/generator-reviews.mjs`의 승인 지문값을 갱신한다.
+변경 감지와 실패 검사는 그대로 둔다. 외부 교과 전문가의 품질 승인을 뜻하지 않는다.

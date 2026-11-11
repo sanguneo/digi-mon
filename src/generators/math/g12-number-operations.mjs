@@ -23,6 +23,7 @@ import {
   numRo,
   sinoKorean,
 } from '../../engine/korean-number.mjs';
+import { expressionAnswerForms } from '../expression-answer.mjs';
 
 const CODE = (n) => `[2수01-${String(n).padStart(2, '0')}]`;
 const num = (n) => String(n);
@@ -321,7 +322,8 @@ const orderThree = {
       stem: `${set.join(', ')}`,
       answer: { value: sorted, display, accepts: [display, sorted.join(' ')] },
       solution: [`가장 ${descending ? '큰' : '작은'} 수는 ${sorted[0]}이다.`, `차례로 늘어놓으면 ${display}이다.`],
-      dedupeKey: `order:${set.join('-')}:${descending ? 'desc' : 'asc'}`,
+      // 늘어놓을 수의 집합이 같으면 보인 순서와 상관없이 같은 문항이다.
+      dedupeKey: `order:${[...set].sort((x, y) => x - y).join('-')}:${descending ? 'desc' : 'asc'}`,
       difficulty,
     };
   },
@@ -496,7 +498,7 @@ const storyAdd = {
       params: { a, b, kind, name, noun: N, counter, place },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: story.stem,
-      answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, expr] },
+      answer: { value: sum, display: `${expr} / 답 ${sum}${counter}`, accepts: [num(sum), `${sum}${counter}`, expr, ...expressionAnswerForms([expr], sum, counter)] },
       solution: [story.reason, expr, `답은 ${countIda(sum, counter)}.`],
       // 맥락(명사·장소)만 다른 같은 계산은 같은 문항으로 센다. 문제 구조(kind)는 남긴다.
       dedupeKey: `story-add:${kind}:${a}:${b}`,
@@ -546,7 +548,7 @@ const storySub = {
       params: { a, b, kind, noun: N, counter, place },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: story.stem,
-      answer: { value: rest, display: `${expr} / 답 ${rest}${counter}`, accepts: [num(rest), `${rest}${counter}`, expr] },
+      answer: { value: rest, display: `${expr} / 답 ${rest}${counter}`, accepts: [num(rest), `${rest}${counter}`, expr, ...expressionAnswerForms([expr], rest, counter)] },
       solution: [story.reason, expr, `답은 ${countIda(rest, counter)}.`],
       // 맥락(명사·장소)만 다른 같은 계산은 같은 문항으로 센다. 문제 구조(kind)는 남긴다.
       dedupeKey: `story-sub:${kind}:${a}:${b}`,
@@ -882,7 +884,10 @@ const groupsToMultiplication = {
       answer: {
         value: total,
         display: `${expr} / 답 ${total}${thing.counter}`,
-        accepts: [num(total), `${total}${thing.counter}`, expr, `${groups} × ${per} = ${total}`],
+        accepts: [
+          num(total), `${total}${thing.counter}`, expr, `${groups} × ${per} = ${total}`,
+          ...expressionAnswerForms([expr, `${groups} × ${per} = ${total}`], total, thing.counter),
+        ],
       },
       solution: [`${per}${thing.counter}씩 ${groups}묶음이다.`, expr],
       // 맥락(명사·묶음 단위)만 다른 같은 계산은 같은 문항으로 센다.

@@ -187,7 +187,8 @@ const averageRecords = {
         `기록의 합은 ${values.join(' + ')} = ${sum}이다.`,
         `학생이 ${n}명이므로 평균은 ${sum} ÷ ${n} = ${text}${s.unit}이다.`,
       ],
-      dedupeKey: `avg-records:${values.join('-')}`,
+      // 기록을 말한 순서는 평균에 영향이 없다.
+      dedupeKey: `avg-records:${[...values].sort((x, y) => x - y).join('-')}`,
       difficulty,
     };
   },
@@ -250,7 +251,7 @@ const averageTarget = {
         `${k + 1}번의 평균이 ${T}점이 되려면 점수의 합이 ${T} × ${k + 1} = ${T * (k + 1)}점이어야 한다.`,
         `지금까지 점수의 합은 ${scores.join(' + ')} = ${S}점이므로 ${T * (k + 1)} - ${S} = ${need}점을 받아야 한다.`,
       ],
-      dedupeKey: `avg-target:${scores.join('-')}:${T}`,
+      dedupeKey: `avg-target:${[...scores].sort((x, y) => x - y).join('-')}:${T}`,
       difficulty,
     };
   },
@@ -701,7 +702,8 @@ const experimentJudge = {
         `실험에서 ${high ? '가장 많이' : '가장 적게'} 나온 색은 ${answer}(${ext}번)이다.`,
         `따라서 다음에 화살이 멈출 가능성이 가장 ${word} 색은 ${answer}${particle(answer, '이라고', '라고')} 예상할 수 있다.`,
       ],
-      dedupeKey: `experiment:${high ? 'high' : 'low'}:${colors.join('-')}:${counts.join('-')}`,
+      // 색과 횟수의 짝이 문제이고, 짝을 말한 순서는 문제가 아니다.
+      dedupeKey: `experiment:${high ? 'high' : 'low'}:${colors.map((c, x) => `${c}${counts[x]}`).sort().join('-')}`,
       difficulty,
     };
   },
@@ -1030,7 +1032,7 @@ const proportionStory = {
     const eq = askB ? `${a} : ${b} = ${c} : □` : `${a} : ${b} = □ : ${c}`;
     return {
       params: { a, b, c, askB },
-      instruction: '비례식을 세워 답을 구하시오.',
+      instruction: '비례식을 세워 계산하고 답만 쓰시오.',
       stem: `${s.intro(a, b)} ${askB ? s.askB(c) : s.askA(c)}`,
       answer: { value: v, display: `${v}${unit}`, accepts: [num(v), `${v}${unit}`] },
       solution: [
@@ -1293,7 +1295,7 @@ const mixedOpsStory = {
     const unit = kind === 'shop' || kind === 'save' ? '원' : kind === 'factory' ? '상자' : kind === 'group' ? '장' : '개';
     return {
       params,
-      instruction: '하나의 식으로 나타내어 답을 구하시오.',
+      instruction: '하나의 식으로 나타내어 계산하고 답만 쓰시오.',
       stem,
       answer: { value: v, display: `${v}${unit}`, accepts: [num(v), `${v}${unit}`] },
       solution: [

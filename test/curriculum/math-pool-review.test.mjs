@@ -319,3 +319,47 @@ test('[4수03-14] 시간의 덧셈과 뺄셈은 보이는 식으로 다시 계�
     }
   }
 });
+
+// 4차 리뷰(head 8ab28c5)가 재현한 반례를 고정한다.
+
+test('[4수01-15] 단위가 있는 분수 문장제는 약분하지 않은 가분수에 단위를 붙인 답도 받는다', () => {
+  const { generator, item, raw } = make('math.g34.no.s15.fraction-story', 0, 2);
+  assert.match(raw.stem, /9 2\/15L.*3 1\/15L/);
+  for (const response of ['183/15L', '183/15', '12 3/15L', '12 3/15', '61/5L', '12 1/5']) {
+    assert.equal(correct(item, response), true, response);
+  }
+  for (const response of ['184/15L', '183/15kg', '12 4/15L']) assert.equal(correct(item, response), false, response);
+  assert.equal(generator.verify(raw.params, { value: '183/15' }), true);
+});
+
+test('[2수04-02] 관찰한 순서만 다른 자료 세기 문항은 같은 문항으로 센다', () => {
+  const left = make('math.g12.pd.s04-02.tally', 29, 1).raw;
+  const right = make('math.g12.pd.s04-02.tally', 51, 1).raw;
+  const observed = (raw) => raw.stem.split('\n')[1].split(', ');
+  assert.notEqual(left.stem, right.stem);
+  assert.deepEqual(observed(left).sort(), observed(right).sort());
+  assert.equal(left.stem.split('\n')[2], right.stem.split('\n')[2]);
+  assert.equal(left.dedupeKey, right.dedupeKey);
+
+  // 두 기준 분류도 조각을 늘어놓은 순서가 아니라 종류별 개수로 센다.
+  const keyByCounts = new Map();
+  for (let difficulty = 1; difficulty <= 3; difficulty += 1) {
+    for (let seed = 0; seed < 3000; seed += 1) {
+      const { raw } = make('math.g12.pd.s04-01.two-criteria', `observe-order:${difficulty}:${seed}`, difficulty);
+      const [list, ask] = raw.stem.split('\n');
+      const problem = JSON.stringify([list.split(', ').sort(), ask]);
+      if (keyByCounts.has(problem)) assert.equal(raw.dedupeKey, keyByCounts.get(problem), raw.stem);
+      else keyByCounts.set(problem, raw.dedupeKey);
+    }
+  }
+});
+
+test('[2수01-09] 식과 답을 쓰라는 □ 문장제는 식과 답을 함께 쓴 답도 받는다', () => {
+  const { item, raw } = make('math.g12.no.s09.story-box', 1, 1);
+  assert.match(raw.instruction, /식을 쓰고 답을/);
+  assert.match(raw.stem, /19개를 다른 곳으로 옮겼더니 1개가 남았습니다/);
+  for (const response of ['□ - 19 = 1, □ = 20', '□-19=1, 20', '□ - 19 = 1, 20개', '20', '20개']) {
+    assert.equal(correct(item, response), true, response);
+  }
+  for (const response of ['□ - 19 = 1, □ = 21', '□ - 19 = 1', '□ + 19 = 1, □ = 20']) assert.equal(correct(item, response), false, response);
+});

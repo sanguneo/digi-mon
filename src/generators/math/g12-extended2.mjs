@@ -13,6 +13,7 @@ import { NAMES, THINGS } from '../corpus.mjs';
 import {
   countIda, josaEul, josaEun, josaI, numEul, numEun, numRo, particle,
 } from '../../engine/korean-number.mjs';
+import { expressionAnswerForms } from '../expression-answer.mjs';
 
 const num = (n) => String(n);
 const ORDINALS = ['첫째', '둘째', '셋째', '넷째', '다섯째', '여섯째', '일곱째', '여덟째', '아홉째', '열째'];
@@ -303,7 +304,7 @@ const storyThree = {
       params: { a, b, c, ops },
       instruction: '식을 쓰고 답을 구하시오.',
       stem: stems[shape],
-      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, expr] },
+      answer: { value, display: `${value}${C}`, accepts: [num(value), `${value}${C}`, expr, ...expressionAnswerForms([expr], value, C)] },
       solution: [
         `앞에서부터 차례로 계산하면 ${a} ${ops[0]} ${b} = ${first}, ${first} ${ops[1]} ${c} = ${value}이다.`,
         `답은 ${countIda(value, C)}.`,
@@ -874,7 +875,8 @@ const twoCriteria = {
       stem: `${list.join(', ')}\n${asks[kind]}`,
       answer: { value, display: `${value}개`, accepts: [num(value), `${value}개`] },
       solution: ['색깔을 먼저 보고, 그중에서 모양을 다시 본다.', `조건에 맞는 조각은 ${value}개이다.`],
-      dedupeKey: `two-criteria:${pieces.map(([c, s]) => `${c}${s}`).join('')}:${kind}:${color}${shape}`,
+      // 조각을 늘어놓은 순서가 아니라 색깔·모양 칸마다의 개수가 문제다.
+      dedupeKey: `two-criteria:${COLORS.flatMap((_, c) => SHAPES.map((__, s) => pieces.filter(([pc, ps]) => pc === c && ps === s).length)).join('-')}:${kind}:${color}${shape}`,
       difficulty,
     };
   },

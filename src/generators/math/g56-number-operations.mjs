@@ -200,7 +200,8 @@ const numberRange = {
               : `${boundary} 미만은 ${boundary}보다 작은 수다. ${numEun(boundary)} 넣지 않는다.`,
         `조건에 맞는 수는 ${display}이다.`,
       ],
-      dedupeKey: `range:${word}:${boundary}:${shuffled.join('-')}`,
+      // 후보 수를 보인 순서는 문제가 아니다.
+      dedupeKey: `range:${word}:${boundary}:${[...shuffled].sort((x, y) => x - y).join('-')}`,
       difficulty,
     };
   },

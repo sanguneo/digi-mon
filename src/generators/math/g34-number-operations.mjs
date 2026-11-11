@@ -537,7 +537,7 @@ const readFractionItem = {
     }
     return {
       params: { n, d, direction: 'to-fraction' },
-      instruction: '분수로 나타내시오.',
+      instruction: '읽은 그대로 분수로 나타내시오.',
       stem: reading,
       answer: { value: formatFraction(fraction), display: formatFraction(fraction), accepts: [formatFraction(fraction)] },
       solution: [`'${d}분의 ${n}'은 분모가 ${d}, 분자가 ${n}인 분수다.`, formatFraction(fraction)],
@@ -875,7 +875,8 @@ const addSubSameDenominator = {
         params: { a, b, isAdd: true, result: sum },
         instruction: '계산하시오.',
         stem: `${formatFraction(a)} + ${formatFraction(b)}`,
-        answer: { value: display, display, accepts: [...new Set([display, formatFraction(sum), ...reducedFractionForms(sum)])] },
+        // 분모를 유지한 대분수(1 2/6)도 같은 값이다.
+        answer: { value: display, display, accepts: [...new Set([display, formatFraction(sum), ...(sum.n > sum.d && sum.n % sum.d !== 0 ? [formatMixed(toMixed(sum))] : []), ...reducedFractionForms(sum)])] },
         solution: [`분모가 같으므로 분자끼리 더한다.`, `${n1} + ${n2} = ${sum.n}`, `답은 ${display}이다.`],
         dedupeKey: `frac-add:${n1}:${n2}:${d}`,
         difficulty,

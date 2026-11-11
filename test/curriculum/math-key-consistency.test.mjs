@@ -15,17 +15,23 @@ import { loadOntology } from '../../src/ontology/source.mjs';
 //    - 난수 하나 바꾸기: 난이도마다 PERTURB_SEEDS 개의 seed 에서 난수 호출을 하나씩만 다른 값으로
 //      바꿔 다시 만든다. 문제는 그대로인데 키가 바뀌면 쓰이지 않는 난수가 키에 들어간 것이다.
 //      seed 표본만으로는 큰 수 범위에서 같은 문제가 거의 다시 나오지 않아 이 경우를 놓친다.
+//    - 관찰 순서만 바꾸기: 쉼표로 늘어놓은 자료(조사 결과, 평균을 낼 기록, 후보 수)는 순서를 바꿔도
+//      같은 문제다. seed 표본에서 항목 자리만 다른 문제끼리 키를 비교하고, ORDER_SEEDS 개의 seed 에서
+//      이웃한 난수 한두 개씩을 서로 맞바꿔(섞기 순서가 바뀐다) 다시 만든 변형도 비교한다.
+//      늘어놓은 순서가 곧 문제인 수열(□나 ...가 항목인 줄)은 뺀다.
 // 2) 키가 같으면 계산도 같다. 계산 = (지시문, 본문에 나온 수의 종류, 그림 자료의 수, 정답의 수).
 //    본문에서 이미 나온 수를 물음에서 다시 말하는 것(예: '23명씩 탈 때')은 말버릇이므로 수의 종류만 본다.
 //    이름·물건·단위 같은 맥락 낱말만 다른 문제는 이전 리뷰(맥락 명사 키) 기준대로 같은 문항이므로
 //    낱말은 비교하지 않는다. 학년 이름의 숫자(5학년)는 수량이 아니라 이름이다.
 //
-// 표본 크기: 생성기당 최대 6,000개(난이도 3 × 2,000) + 섭동 기준 seed 900개의 모든 난수 호출.
-// 수정 전 코드(9d66dd8)에서 이 크기로 리뷰 2건을 포함한 9개 생성기가 걸렸고, 전 생성기를 한 번에 20초
-// 안팎에 끝난다. 드물게 걸리는 경우는 표본을 늘린 일회성 실행(난이도당 seed 20,000개, 섭동 1,500개)으로
+// 표본 크기: 생성기당 최대 6,000개(난이도 3 × 2,000) + 섭동 기준 seed 900개의 모든 난수 호출
+// + 관찰 순서 섭동 기준 seed 300개의 이웃 난수 맞바꿈. 수정 전 코드(9d66dd8)에서 리뷰 2건을 포함한
+// 9개 생성기가, 관찰 순서 비교를 더한 뒤 수정 전 코드(8ab28c5)에서 리뷰 2건을 포함한 11개 생성기가
+// 걸렸다. 전 생성기를 한 번에 40초 안팎에 끝난다. 드물게 걸리는 경우는 표본을 늘린 일회성 실행(난이도당 seed 20,000개, 섭동 1,500개)으로
 // 따로 찾아 고쳤다(docs/math-content-delta-review.md).
 const SEEDS = 2000;
 const PERTURB_SEEDS = 300;
+const ORDER_SEEDS = 100;
 
 const spine = buildSpine(loadOntology());
 const standardByCode = new Map(spine.standards.map((s) => [s.code, s]));
@@ -41,11 +47,36 @@ const levelsOf = (g) => g.difficulties ?? (g.difficultyAxis === 'single' ? [1] :
 function replayRng(seed, perturbAt, variant = 0) {
   const base = createRng(seed);
   const alt = createRng(`${seed}|alt|${perturbAt}|${variant}`);
-  let calls = 0;
-  const next = () => {
+  return rngFrom(seed, (call) => {
     const original = base.float();
     const other = alt.float();
-    const value = calls === perturbAt ? other : original;
+    return call === perturbAt ? other : original;
+  });
+}
+
+/**
+ * createRng 과 같은 수열에서 at 번째부터 length 개와 그 바로 뒤 length 개를 맞바꾼 수열.
+ * 섞기(shuffle) 안의 난수를 맞바꾸면 늘어놓는 순서만 바뀐 변형이 나온다.
+ */
+function swappedRng(seed, at, length) {
+  const base = createRng(seed);
+  const values = [];
+  const valueAt = (index) => {
+    while (values.length <= index) values.push(base.float());
+    return values[index];
+  };
+  return rngFrom(seed, (call) => {
+    if (call >= at && call < at + length) return valueAt(call + length);
+    if (call >= at + length && call < at + 2 * length) return valueAt(call - length);
+    return valueAt(call);
+  });
+}
+
+/** valueOf(호출 번호)로 난수를 내는 rng. 메서드 모양은 src/engine/rng.mjs 와 같다. */
+function rngFrom(seed, valueOf) {
+  let calls = 0;
+  const next = () => {
+    const value = valueOf(calls);
     calls += 1;
     return value;
   };
@@ -102,6 +133,57 @@ const answerCore = (raw) => {
   const text = raw.choices ? correctChoices(raw).join('|') : String(raw.answer?.value);
   return /\d/.test(text) ? numbersIn(text) : text;
 };
+/**
+ * 두 줄이 쉼표로 늘어놓은 항목의 자리만 바꾼 것인가. 앞뒤의 같은 부분을 떼고 남은 가운데를 항목으로
+ * 나눠 여러 항목의 모음이 같은지 본다. 수 가운데(1/4 의 1/ 과 4)는 자르지 않는다.
+ */
+const NUMBER_CHAR = /[\d./]/;
+const isSequence = (line) => line.split(', ').some((item) => item === '□' || item === '...');
+function isReorderedLine(a, b) {
+  if (a === b) return true;
+  if (isSequence(a) || isSequence(b) || [...a].sort().join('') !== [...b].sort().join('')) return false;
+  let prefix = 0;
+  while (prefix < a.length && a[prefix] === b[prefix]) prefix += 1;
+  let suffix = 0;
+  while (suffix < a.length - prefix && a[a.length - 1 - suffix] === b[b.length - 1 - suffix]) suffix += 1;
+  const cuttable = (text, at) => at === 0 || at === text.length || !(NUMBER_CHAR.test(text[at - 1]) && NUMBER_CHAR.test(text[at]));
+  // 자르는 자리는 같은 부분의 끝 그대로이거나, 그 안쪽의 띄어쓰기·쉼표 경계와 수·단위와 조사 사이(8cm|인)다.
+  const hangul = (ch) => ch !== undefined && /[가-힣]/.test(ch);
+  // 같은 부분 안의 온전한 항목은 양쪽에 똑같이 들어가므로, 처음 달라지는 항목 안에서만 자리를 찾는다.
+  const before = a.lastIndexOf(', ', prefix - 1);
+  const after = a.indexOf(', ', a.length - suffix);
+  const starts = [prefix];
+  for (let p = prefix - 1; p >= (before < 0 ? 0 : before + 2); p -= 1) {
+    if (p === 0 || a[p - 1] === ' ' || (hangul(a[p - 1]) && !hangul(a[p]))) starts.push(p);
+  }
+  const ends = [suffix];
+  for (let s = suffix - 1; s >= (after < 0 ? 0 : a.length - after); s -= 1) {
+    const at = a.length - s;
+    if (s === 0 || a[at] === ',' || a[at] === ' ' || (!hangul(a[at - 1]) && hangul(a[at]))) ends.push(s);
+  }
+  for (const p of starts) {
+    for (const s of ends) {
+      if (![cuttable(a, p), cuttable(b, p), cuttable(a, a.length - s), cuttable(b, b.length - s)].every(Boolean)) continue;
+      const left = a.slice(p, a.length - s).split(', ');
+      const right = b.slice(p, b.length - s).split(', ');
+      if (left.length >= 2 && left.length === right.length && [...left].sort().join('\n') === [...right].sort().join('\n')) return true;
+    }
+  }
+  return false;
+}
+/** 지시문·그림·정답은 같고 본문이 줄마다 항목 자리만 다른가. */
+function isReordered(one, two) {
+  const fixed = (raw) => JSON.stringify([raw.instruction, raw.figure ?? null, answerSet(raw)]);
+  if (fixed(one) !== fixed(two)) return false;
+  const left = String(one.stem).split('\n');
+  const right = String(two.stem).split('\n');
+  return left.length === right.length && left.every((line, k) => isReorderedLine(line, right[k]));
+}
+/** 자리만 바꾼 문제끼리 같은 값이 되는 묶음 키. 묶음 안에서만 isReordered 로 짝을 본다. */
+const reorderBucket = (raw) => JSON.stringify([
+  raw.instruction, raw.figure ?? null, answerSet(raw), String(raw.stem).split('\n').map((line) => [...line].sort().join('')),
+]);
+
 const computation = (raw) => JSON.stringify([
   raw.instruction, [...new Set(numbersIn(raw.stem))], numbersIn(raw.figure?.spec), answerCore(raw),
 ]);
@@ -134,6 +216,25 @@ function perturbedKeySplits(generator, seed, difficulty, variants = 1) {
   return { raw, splits, sameProblemParams };
 }
 
+/** 이웃한 난수 한두 개를 맞바꾼 변형 중 관찰 순서만 다른데 키가 다른 것을 모은다. */
+function reorderedKeySplits(generator, seed, difficulty) {
+  const plain = replayRng(seed, -1);
+  const raw = generate(generator, plain.rng, difficulty);
+  const splits = [];
+  for (const length of [1, 2]) {
+    for (let at = 0; at + 2 * length <= plain.calls(); at += 1) {
+      let other;
+      try {
+        other = generate(generator, swappedRng(seed, at, length).rng, difficulty);
+      } catch {
+        continue;
+      }
+      if (other.dedupeKey !== raw.dedupeKey && isReordered(raw, other)) splits.push({ from: raw.dedupeKey, to: other.dedupeKey });
+    }
+  }
+  return splits;
+}
+
 test('섭동 rng 는 바꾸지 않으면 createRng 과 같은 문항을 만든다', () => {
   for (const generator of mathGenerators) {
     for (const difficulty of levelsOf(generator)) {
@@ -161,9 +262,20 @@ test('수학 생성기 키 일관성: 보이는 문제가 같으면 키가 같�
   for (const generator of mathGenerators) {
     const keyByShown = new Map();
     const computationByKey = new Map();
+    const reorderBuckets = new Map();
     for (const difficulty of levelsOf(generator)) {
       for (let s = 0; s < SEEDS; s += 1) {
         const raw = generate(generator, createRng(`keyprop:${difficulty}:${s}`), difficulty);
+        if (String(raw.stem).includes(', ')) {
+          const bucketKey = reorderBucket(raw);
+          const bucket = reorderBuckets.get(bucketKey) ?? [];
+          for (const other of bucket) {
+            if (other.dedupeKey !== raw.dedupeKey && isReordered(other, raw)) {
+              failures.push(`${generator.id} 관찰 순서만 다른 문제 다른 키: ${other.dedupeKey} | ${raw.dedupeKey}`);
+            }
+          }
+          if (bucket.length < 8) reorderBuckets.set(bucketKey, [...bucket, raw]);
+        }
         const shown = shownProblem(raw);
         const knownKey = keyByShown.get(shown);
         if (knownKey === undefined) keyByShown.set(shown, raw.dedupeKey);
@@ -176,6 +288,11 @@ test('수학 생성기 키 일관성: 보이는 문제가 같으면 키가 같�
       for (let s = 0; s < PERTURB_SEEDS; s += 1) {
         const { splits } = perturbedKeySplits(generator, `keyprop-perturb:${difficulty}:${s}`, difficulty);
         for (const split of splits) failures.push(`${generator.id} 쓰지 않는 난수가 키를 바꿈: ${split.from} | ${split.to}`);
+      }
+      for (let s = 0; s < ORDER_SEEDS; s += 1) {
+        for (const split of reorderedKeySplits(generator, `keyprop-order:${difficulty}:${s}`, difficulty)) {
+          failures.push(`${generator.id} 관찰 순서를 바꾼 섭동이 키를 바꿈: ${split.from} | ${split.to}`);
+        }
       }
     }
   }

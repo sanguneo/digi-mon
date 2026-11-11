@@ -1002,7 +1002,8 @@ const areaOfPolygon = {
         `${spec.korean}의 넓이는 ${kind === 'trapezoid' ? '(윗변 + 아랫변) × 높이 ÷ 2' : kind === 'triangle' ? '밑변 × 높이 ÷ 2' : kind === 'rhombus' ? '두 대각선의 곱 ÷ 2' : '가로 × 세로'}로 구한다.`,
         `${kind === 'trapezoid' ? spec.formula(a, b, h) : spec.formula(a, b)} = ${value}cm²`,
       ],
-      dedupeKey: `area:${kind}:${a}:${b}:${h ?? ''}`,
+      // 마름모의 두 대각선은 말한 순서가 문제가 아니다.
+      dedupeKey: `area:${kind}:${kind === 'rhombus' ? [a, b].sort((x, y) => x - y).join(':') : `${a}:${b}`}:${h ?? ''}`,
       difficulty,
     };
   },
@@ -1388,7 +1389,8 @@ const averageValue = {
         `자료의 합은 ${values.join(' + ')} = ${total}이다.`,
         `자료의 수가 ${count}개이므로 평균은 ${total} ÷ ${count} = ${average}이다.`,
       ],
-      dedupeKey: `average:${values.join('-')}`,
+      // 자료를 말한 순서는 평균에 영향이 없다.
+      dedupeKey: `average:${[...values].sort((x, y) => x - y).join('-')}`,
       difficulty,
     };
   },
@@ -1429,7 +1431,7 @@ const findMissingForAverage = {
         `자료가 ${count}개이고 평균이 ${average}이므로 합계는 ${average} × ${count} = ${total}이다.`,
         `${total} - (${known.join(' + ')}) = ${rest}`,
       ],
-      dedupeKey: `missing-average:${known.join('-')}:${average}`,
+      dedupeKey: `missing-average:${[...known].sort((x, y) => x - y).join('-')}:${average}`,
       difficulty,
     };
   },

@@ -12,6 +12,7 @@ import { NAMES, THINGS } from '../corpus.mjs';
 import {
   countIda, josaEul, josaEun, josaI, numEul, numGwa, numI, numRo,
 } from '../../engine/korean-number.mjs';
+import { expressionAnswerForms } from '../expression-answer.mjs';
 
 const num = (n) => String(n);
 const WEEKDAYS = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
@@ -220,7 +221,8 @@ const storyBox = {
       params: { kind, a: kind.startsWith('change') ? a : null, b: kind.startsWith('start') ? b : null, c },
       instruction: '모르는 수를 □로 하여 식을 쓰고 답을 구하시오.',
       stem: story.stem,
-      answer: { value: ans, display: `${ans}${C}`, accepts: [num(ans), `${ans}${C}`] },
+      // 식과 답을 함께 쓴 답(□ - 19 = 1, □ = 20)도 지시문대로 받는다.
+      answer: { value: ans, display: `${ans}${C}`, accepts: [num(ans), `${ans}${C}`, ...expressionAnswerForms([story.expr], ans, C)] },
       solution: [`모르는 수를 □로 놓으면 ${story.expr}이다.`, `□는 ${story.undo} 구한다.`, `답은 ${countIda(ans, C)}.`],
       // 맥락(장소·명사)만 다른 같은 계산은 같은 문항으로 센다.
       dedupeKey: `story-box:${kind}:${a}:${b}`,
@@ -729,12 +731,12 @@ const tallySurvey = {
     const [p, q] = rng.shuffle(kinds.map((_, idx) => idx)).slice(0, 2);
     let stemTail;
     let value;
-    // 키에는 물음에 실제로 나오는 범주만 넣는다. 모두 몇 명인지 묻는 문항은 범주를 쓰지 않는다.
+    // 키에는 물음에 실제로 나오는 범주의 개수만 넣는다. 모두 몇 명인지 묻는 문항은 범주를 쓰지 않는다.
     let asked;
     if (ask === 'count') {
       stemTail = `${survey.topic}${josaI(survey.topic)} ${kinds[p]}인 학생은 몇 명입니까?`;
       value = counts[p];
-      asked = kinds[p];
+      asked = counts[p];
     } else if (ask === 'total') {
       stemTail = '조사한 학생은 모두 몇 명입니까?';
       value = list.length;
@@ -743,7 +745,7 @@ const tallySurvey = {
       const [hi, lo] = counts[p] >= counts[q] ? [p, q] : [q, p];
       stemTail = `${survey.topic}${josaI(survey.topic)} ${kinds[hi]}인 학생은 ${kinds[lo]}인 학생보다 몇 명 더 많습니까?`;
       value = counts[hi] - counts[lo];
-      asked = `${kinds[hi]}:${kinds[lo]}`;
+      asked = `${counts[hi]}:${counts[lo]}`;
     }
     if (ask === 'difference' && value === 0) return this.generate(rng, { difficulty });
     return {
@@ -755,7 +757,8 @@ const tallySurvey = {
         `종류별로 세면 ${kinds.map((k, idx) => `${k} ${counts[idx]}명`).join(', ')}이다.`,
         ask === 'total' ? `모두 더하면 ${list.length}명이다.` : `답은 ${value}명이다.`,
       ],
-      dedupeKey: `tally:${survey.topic}:${list.join('-')}:${ask}:${asked}`,
+      // 관찰한 순서와 맥락(주제·범주 이름)이 아니라 범주별 개수와 묻는 비교가 문제다.
+      dedupeKey: `tally:${ask}:${[...counts].sort((x, y) => x - y).join('-')}:${asked}`,
       difficulty,
     };
   },
