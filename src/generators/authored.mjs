@@ -12,6 +12,9 @@
  * 학습지는 두 종류 문항을 함께 낸다.
  *
  * 정답은 표의 사실이므로 verify 가 같은 표를 되읽는다(영어 문장 생성기와 같은 한계).
+ * 수학은 이 한계 때문에 받지 않는다. 모델이 준 답을 모델이 준 답으로 검산하면
+ * '2 + 2 = □' 의 답을 5로 적어도 통과한다. 정답을 따로 계산하는 검산이 생기기 전까지
+ * AI 작성 코퍼스는 국어·영어만 둔다.
  */
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -19,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { buildChoices } from '../engine/item.mjs';
 
 export const AUTHORED_SCHEMA = 'digi-mon/authored-items@1';
-export const AUTHORED_SUBJECTS = ['korean', 'english', 'math'];
+export const AUTHORED_SUBJECTS = ['korean', 'english'];
 export const AUTHORED_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'data', 'authored');
 
 const SUBJECT_LETTER = { 국: 'k', 영: 'e', 수: 'm' };

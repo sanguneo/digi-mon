@@ -8,7 +8,8 @@
  *
  * 후보를 OpenAI 호환 API 로 받아 게이트와 GGW 린터를 통과한 것만
  * data/authored/<교과>/<성취기준>.json 에 더한다. --standard 를 빼면 그 교과·학년군의
- * 자동 채점 성취기준 전부를 돈다. --dry-run 은 파일을 쓰지 않고 결과만 보여 준다.
+ * AI 작성 대상 성취기준 전부를 돈다(사람 채점, 음성·그림·지문 자료가 필요한 기준, 선택지를 내면
+ * 안 되는 기준은 뺀다). API 요청이 실패하면 그 성취기준에서 멈추고 종료 코드 1로 끝난다. --dry-run 은 파일을 쓰지 않고 결과만 보여 준다.
  * --candidates 는 LLM 을 부르지 않고 파일에 적힌 후보(LLM 응답과 같은 꼴)를 같은 게이트와
  * GGW 린터에 통과시킨다. 파일마다 standardCode 를 적거나 --standard 로 준다. 키가 필요 없다.
  *
@@ -28,8 +29,8 @@ import {
 } from '../src/authoring/pipeline.mjs';
 import { AUTHORED_ROOT } from '../src/generators/authored.mjs';
 
-const USAGE = `사용법: node bin/ai-generate.mjs --subject <korean|english|math> [--grade g12|g34|g56] [--standard <코드>] [--count N] [--dry-run]
-       node bin/ai-generate.mjs --subject <korean|english|math> --candidates <file.json> [--candidates ...] [--standard <코드>] [--dry-run]
+const USAGE = `사용법: node bin/ai-generate.mjs --subject <korean|english> [--grade g12|g34|g56] [--standard <코드>] [--count N] [--dry-run]
+       node bin/ai-generate.mjs --subject <korean|english> --candidates <file.json> [--candidates ...] [--standard <코드>] [--dry-run]
 환경변수 ${LLM_ENV.join(', ')} 가 필요하다(--candidates 는 필요 없다).`;
 
 function fail(message, code = 2) {
@@ -63,7 +64,8 @@ if (args.help) {
   console.log(USAGE);
   process.exit(0);
 }
-if (!['korean', 'english', 'math'].includes(args.subject)) fail('--subject 는 korean, english, math 중 하나다');
+// 수학은 모델 답을 따로 검산할 길이 없어 받지 않는다(src/generators/authored.mjs).
+if (!['korean', 'english'].includes(args.subject)) fail('--subject 는 korean, english 중 하나다');
 const count = Number(args.count);
 const batchSize = Number(args.batch);
 const maxRounds = Number(args.rounds);
@@ -86,7 +88,7 @@ if (args.candidates) {
     } catch (error) {
       fail(`${file}: ${error.message}`);
     }
-    if (!standard) fail(`${file}: 사람이 채점하는 성취기준이라 대상이 아니다`);
+    if (!standard) fail(`${file}: AI 작성 대상 성취기준이 아니다`);
     const n = Math.max(candidates.items.length, 1);
     jobs.push({ standard, client: candidatesClient(candidates.items, candidates.model), count: n, batchSize: n, maxRounds: 1 });
   }
@@ -123,6 +125,10 @@ for (const job of jobs) {
       dryRun: args['dry-run'],
     });
     results.push(result);
+    if (result.error) {
+      failed = true;
+      console.error(`${standard.code} API 요청 실패: ${result.error}`);
+    }
     if (!args.json) {
       const rejections = summarizeRejections(result.rejected);
       const reasonText = Object.entries(rejections).map(([gate, n]) => `${gate} ${n}`).join(', ') || '없음';

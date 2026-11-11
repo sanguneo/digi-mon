@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { authorStandard, loadSpine, summarizeRejections, targetStandards } from '../../src/authoring/pipeline.mjs';
 import { createLlmClient, llmConfigFromEnv, parseCandidates } from '../../src/authoring/llm.mjs';
 import { lintWithGgw } from '../../src/authoring/ggw.mjs';
+import { checkCandidate, normalizeCandidate } from '../../src/authoring/gates.mjs';
 import { isOfficialEnglishWord } from '../../src/authoring/english-official.mjs';
 import { AUTHORED_SCHEMA, authoredGeneratorId, loadAuthoredCorpus } from '../../src/generators/authored.mjs';
 import { createRegistry } from '../../src/engine/registry.mjs';
@@ -300,6 +301,130 @@ test('CLI refuses to run without LLM settings and runs end to end against a fake
     assert.match(summary.warnings[0], /GGW 린터가 없어/);
     assert.ok(!run.stdout.includes('sk-test'));
     assert.equal(loadAuthoredCorpus(root)[0].items.length, 2);
+  } finally {
+    server.close();
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('LLM client redacts the key before cutting the error body, so a key on the cut boundary never leaks', async () => {
+  const apiKey = 'sk-boundary-secret-0123456789';
+  for (const at of [270, 290, 295, 299, 300]) {
+    const body = `${'x'.repeat(at)}${apiKey} tail`;
+    const client = createLlmClient({ baseUrl: 'http://llm.test/v1', apiKey, model: 'm', fetchImpl: async () => new Response(body, { status: 500 }) });
+    await assert.rejects(client.complete([]), (error) => /HTTP 500/.test(error.message) && !error.message.includes(apiKey.slice(0, 6)));
+  }
+});
+
+test('an API failure stops authoring with an error instead of counting as a rejected candidate', async () => {
+  const root = tmpRoot();
+  try {
+    let calls = 0;
+    const client = {
+      model: 'fake-model',
+      async complete() {
+        calls += 1;
+        if (calls === 1) return KOREAN_BATCH;
+        throw new Error('LLM 요청 실패: http://llm.test/v1/chat/completions HTTP 401 bad key');
+      },
+    };
+    const result = await authorStandard({ standard: KOREAN, count: 10, client, lint: fakeLint, root, maxRounds: 3 });
+    assert.equal(calls, 2);
+    assert.match(result.error, /HTTP 401/);
+    assert.ok(result.rejected.every((r) => r.reasons.every((reason) => reason.gate !== 'response')));
+    // 앞 바퀴에서 통과한 문항은 버리지 않는다.
+    assert.equal(result.accepted.length, 2);
+    assert.equal(loadAuthoredCorpus(root)[0].items.length, 2);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+const STANDARD = (code) => SPINE.standards.find((s) => s.code === code);
+const gate = (standard, raw) => {
+  const entry = normalizeCandidate(raw, standard.code, { model: 'fake', prompt: 'p' });
+  return checkCandidate(entry, { standard, skill: standard.summary, seenIds: new Set(), seenStems: new Set() });
+};
+
+test('standards that need audio or picture assets, or forbid choices, are neither targeted nor accepted', () => {
+  const korean = targetStandards(SPINE, { subject: 'korean' }).map((s) => s.code);
+  const english = targetStandards(SPINE, { subject: 'english' }).map((s) => s.code);
+  assert.ok(korean.includes('[4국02-04]'));
+  assert.ok(english.includes('[4영01-05]'));
+  for (const code of ['[6국04-06]', '[2국01-01]', '[4국02-02]', '[4국06-01]']) assert.ok(!korean.includes(code), code);
+  for (const code of ['[4영01-01]', '[4영02-04]']) assert.ok(!english.includes(code), code);
+  assert.throws(() => targetStandards(SPINE, { subject: 'korean', standard: '6국04-06' }), /고쳐 쓰게/);
+  assert.throws(() => targetStandards(SPINE, { subject: 'english', standard: '4영01-01' }), /음성/);
+
+  const listening = gate(STANDARD('[4영01-01]'), {
+    difficulty: 1,
+    instruction: '들려주는 낱말의 첫소리를 고르시오.',
+    stem: 'bag',
+    answer: 'b',
+    distractors: ['d', 'p', 'g'],
+    solution: ["'bag'은 b 소리로 시작한다."],
+  });
+  assert.deepEqual(listening.map((r) => r.gate), ['eligibility']);
+  const spacing = gate(STANDARD('[6국04-06]'), {
+    difficulty: 1,
+    instruction: '띄어쓰기가 바른 문장을 고르시오.',
+    stem: '나는학교에갑니다.',
+    answer: '나는 학교에 갑니다.',
+    distractors: ['나는 학교 에 갑니다.', '나는학교에 갑니다.', '나 는 학교에 갑니다.'],
+    solution: ['조사는 앞말에 붙이고 단어 사이는 띄어 쓴다.'],
+  });
+  assert.deepEqual(spacing.map((r) => r.gate), ['eligibility']);
+});
+
+test('math authoring is refused because the model answer would only be checked against itself', async () => {
+  const math = SPINE.standards.find((s) => s.subject === 'math' && s.gradeBand === '1-2');
+  const wrong = gate(math, {
+    difficulty: 1,
+    instruction: '□ 안에 알맞은 수를 고르시오.',
+    stem: '2 + 2 = □',
+    answer: '5',
+    distractors: ['4', '3', '6'],
+    solution: ['2와 2를 더하면 5이다.'],
+  });
+  assert.deepEqual(wrong.map((r) => r.gate), ['eligibility']);
+  assert.throws(() => targetStandards(SPINE, { subject: 'math' }), /국어·영어/);
+  await assert.rejects(
+    authorStandard({ standard: math, count: 1, client: fakeClient('{"items":[]}'), lint: fakeLint, root: path.join(os.tmpdir(), 'digimon-authored-unused'), dryRun: true }),
+    /국어·영어/,
+  );
+
+  const bareEnv = { PATH: process.env.PATH, SYSTEMROOT: process.env.SYSTEMROOT };
+  const cli = await runCli(['--subject', 'math', '--grade', 'g12'], bareEnv);
+  assert.equal(cli.code, 2);
+  assert.match(cli.stderr, /korean, english/);
+});
+
+test('CLI exits nonzero when the LLM endpoint rejects the key, and keeps the key out of output', async () => {
+  const server = http.createServer((req, res) => {
+    req.resume();
+    req.on('end', () => {
+      res.statusCode = 401;
+      res.end('invalid key sk-cli-secret');
+    });
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const root = tmpRoot();
+  try {
+    const run = await runCli(
+      ['--subject', 'korean', '--grade', 'g34', '--standard', '4국02-04', '--count', '2', '--rounds', '2', '--corpus-root', root],
+      {
+        PATH: process.env.PATH,
+        SYSTEMROOT: process.env.SYSTEMROOT,
+        DIGIMON_LLM_BASE_URL: `http://127.0.0.1:${server.address().port}/v1`,
+        DIGIMON_LLM_API_KEY: 'sk-cli-secret',
+        DIGIMON_LLM_MODEL: 'fake',
+        DIGIMON_GGW_LINTER: path.join(root, 'missing-linter.ts'),
+      },
+    );
+    assert.equal(run.code, 1, run.stdout);
+    assert.match(run.stderr, /HTTP 401/);
+    assert.ok(!`${run.stdout}${run.stderr}`.includes('sk-cli-secret'));
   } finally {
     server.close();
     rmSync(root, { recursive: true, force: true });

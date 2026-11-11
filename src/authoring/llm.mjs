@@ -33,7 +33,8 @@ export function createLlmClient({ baseUrl, apiKey, model, fetchImpl = fetch, tim
         signal: AbortSignal.timeout(timeoutMs),
       });
       if (!response.ok) {
-        const body = (await response.text()).slice(0, 300).replaceAll(apiKey, '***');
+        // 키를 먼저 가리고 자른다. 거꾸로 하면 자른 경계에 걸린 키 앞부분이 그대로 남는다.
+        const body = (await response.text()).replaceAll(apiKey, '***').slice(0, 300);
         throw new Error(`LLM 요청 실패: ${url} HTTP ${response.status} ${body}`);
       }
       const data = await response.json();

@@ -26,6 +26,7 @@ AI는 문항을 쓰는 도구로만 쓴다. 학습지를 만드는 엔진은 지
 | `contract` | 문항 계약과 정답 검산 | `generateItem`, `validateItem` |
 | `korean-text` | 숫자·단위·따옴표 뒤 조사, 조사 중복, 공백, 치환 흔적 | `src/engine/korean-text-checks.mjs` |
 | `vocabulary` | 국어 학년군 어휘, 영어 선택지 낱말 목록과 공식 800개 | `src/curriculum/vocabulary-gate.mjs`, `src/authoring/english-official.mjs` |
+| `eligibility` | AI 작성 대상 성취기준인지(국어·영어, 자동 채점, 자료 있음, 선택형 허용) | `authoringIneligibility` |
 | `answer-leak` | 발문이나 지문에 오답 없이 정답만 드러나는지 | `answerLeak` |
 | `duplicate` | 코퍼스나 같은 묶음에 같은 지문이 있는지 | `checkCandidate` |
 | `ggw` | GGW 린터의 high·mid 문장 지적 | `polish-lint.ts --scan --json`, `--json` |
@@ -73,7 +74,7 @@ npm test
 
 | 옵션 | 뜻 |
 | --- | --- |
-| `--subject` | `korean`, `english`, `math` |
+| `--subject` | `korean`, `english`. 수학은 모델 답을 따로 검산할 길이 없어 받지 않는다 |
 | `--grade` | `g12`, `g34`, `g56` |
 | `--standard` | `4국02-04` 또는 `[4국02-04]`. 빼면 조건에 맞는 성취기준 전부 |
 | `--count` | 성취기준마다 받을 통과 문항 수(기본 20) |
@@ -83,7 +84,10 @@ npm test
 | `--candidates` | LLM 을 부르지 않고 후보 파일을 게이트에 통과시킨다. 여러 번 줄 수 있고 키가 필요 없다 |
 
 출력은 성취기준마다 요청 수, 통과 수, 게이트별 탈락 수, 코퍼스 전후 문항 수와 탈락
-예시 다섯 개다. 사람이 채점하는 성취기준은 선택형으로 바꾸지 않으므로 대상에서 뺀다.
+예시 다섯 개다. 사람이 채점하는 성취기준, 아직 없는 음성·그림·지문 자료가 있어야 하는
+성취기준, 선택지를 내면 안 되는 [6국04-06]은 대상에서 빼고(`authoringIneligibility`), 후보 게이트도
+같은 규칙으로 `eligibility` 탈락시킨다. 인증 실패·장애·시간 초과 같은 API 오류는 후보 탈락으로
+세지 않는다. 그 성취기준에서 멈추고 앞서 통과한 문항만 쓴 뒤 종료 코드 1로 끝난다.
 
 ## 코퍼스 파일
 

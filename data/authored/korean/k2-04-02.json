@@ -695,26 +695,6 @@
       }
     },
     {
-      "id": "61b896d2021e",
-      "difficulty": 2,
-      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
-      "stem": "태오가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
-      "answer": "잠짜리가 날아요.",
-      "distractors": [
-        "친구와 함께 놀았어요.",
-        "옆집 친구와 놀았어요.",
-        "밖에 나가 놀아요."
-      ],
-      "solution": [
-        "'잠짜리'는 소리 나는 대로 썼다.",
-        "'잠자리'로 고쳐 써야 한다."
-      ],
-      "provenance": {
-        "model": "claude-opus-5-5",
-        "prompt": "digi-mon/authoring-prompt@1"
-      }
-    },
-    {
       "id": "63de9b19da85",
       "difficulty": 1,
       "instruction": "소리와 글자가 다른 낱말을 고르시오.",
@@ -1073,6 +1053,26 @@
       ],
       "solution": [
         "'웃다'에서 온 말이므로 소리가 [욷끼]여도 '웃기셨습니다'로 쓴다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
+      "id": "88d46542e4d6",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장을 고르시오.",
+      "stem": "태오가 쓴 받아쓰기 공책을 살펴보았습니다. 소리 나는 대로 잘못 쓴 문장은 어느 것입니까?",
+      "answer": "꼬치 피었어요.",
+      "distractors": [
+        "친구와 함께 놀았어요.",
+        "옆집 친구와 놀았어요.",
+        "밖에 나가 놀아요."
+      ],
+      "solution": [
+        "'꼬치'는 소리 나는 대로 썼다.",
+        "'꽃이'로 고쳐 써야 한다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",
@@ -1519,6 +1519,25 @@
       }
     },
     {
+      "id": "b2a2beb72ef3",
+      "difficulty": 2,
+      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
+      "stem": "친구와 가치 놀아요.",
+      "answer": "친구와 같이 놀아요.",
+      "distractors": [
+        "친구와 갔이 놀아요.",
+        "친구와 가치 노라요.",
+        "친구와 갇이 놀아요."
+      ],
+      "solution": [
+        "'같이'는 [가치]로 소리 나지만 '같이'로 써야 바른 표기다."
+      ],
+      "provenance": {
+        "model": "claude-opus-5-5",
+        "prompt": "digi-mon/authoring-prompt@1"
+      }
+    },
+    {
       "id": "b44e4bb47f73",
       "difficulty": 1,
       "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
@@ -1742,25 +1761,6 @@
       ],
       "solution": [
         "'가써요'처럼 소리 나지만 '갔어요'로 써야 바른 표기다."
-      ],
-      "provenance": {
-        "model": "claude-opus-5-5",
-        "prompt": "digi-mon/authoring-prompt@1"
-      }
-    },
-    {
-      "id": "cb97ea71cdca",
-      "difficulty": 2,
-      "instruction": "소리 나는 대로 잘못 쓴 문장입니다. 바르게 고쳐 쓴 것을 고르시오.",
-      "stem": "잠짜리가 날아요.",
-      "answer": "잠자리가 날아요.",
-      "distractors": [
-        "잠차리가 날아요.",
-        "잠짜리가 나라요.",
-        "잡자리가 날아요."
-      ],
-      "solution": [
-        "'잠짜리'처럼 소리 나지만 '잠자리'로 써야 바른 표기다."
       ],
       "provenance": {
         "model": "claude-opus-5-5",

@@ -8,6 +8,7 @@
  *   vocabulary   학년 어휘(curriculum/vocabulary-gate.mjs, check-vocabulary 와 같은 규칙)
  *                영어는 공식 초등 권장 어휘 800개 밖 낱말도 막는다
  *   answer-leak  발문·지문이 정답을 드러내는지
+ *   eligibility  AI 작성 대상 성취기준인지(교과, 채점 방식, 필요한 자료, 허용 형식)
  *   duplicate    코퍼스나 같은 묶음에 이미 있는지
  * GGW 린터는 묶음 단위로 돌아서 src/authoring/ggw.mjs 에 따로 있다.
  */
@@ -21,6 +22,36 @@ import { englishWordsFor } from '../curriculum/english-vocab.mjs';
 import { englishWordsOf, learnedWordsOf } from '../curriculum/vocabulary-gate.mjs';
 import { englishWordsOutsideOfficial } from './english-official.mjs';
 import { ENGLISH_NAMES } from './prompt.mjs';
+import { scoringModeOf } from '../curriculum/scoring-policy.mjs';
+import { ASSET_REQUIREMENTS } from '../curriculum/asset-requirements.mjs';
+
+/** AI 가 문항을 쓸 수 있는 교과. 수학은 모델 답을 따로 검산할 길이 없어 빼 둔다. */
+export const AUTHORING_SUBJECTS = ['korean', 'english'];
+
+/** 선택지를 내면 성취기준이 요구하는 능력을 재지 못하는 기준. */
+const CHOICES_FORBIDDEN = {
+  '[6국04-06]': '바른 문장을 선택지로 보여 주지 않고 직접 고쳐 쓰게 하는 성취기준이다(test/engine/korean-spacing.test.mjs)',
+};
+
+const ASSET_KIND_LABEL = {
+  audio: '음성', media: '그림·매체', passage: '지문', dialogue: '대화', procedure: '수행 루브릭', wordlist: '어휘 목록', sentence: '문장',
+};
+
+/**
+ * 성취기준이 AI 작성 대상이 아니면 그 까늭을, 대상이면 null 을 돌려준다.
+ * 코퍼스는 글로 된 선택형 문항만 낸다. 그래서 사람이 채점하는 기준, 아직 없는 자료(음성·그림·지문)가
+ * 있어야 성립하는 기준, 선택지를 내면 안 되는 기준은 받지 않는다.
+ */
+export function authoringIneligibility(standard) {
+  if (!AUTHORING_SUBJECTS.includes(standard.subject)) {
+    return `AI 작성은 국어·영어만 받는다. ${standard.subject} 는 모델 답을 따로 검산할 길이 없다`;
+  }
+  if (scoringModeOf(standard.code) === 'manual') return '사람이 채점하는 성취기준이다';
+  if (CHOICES_FORBIDDEN[standard.code]) return CHOICES_FORBIDDEN[standard.code];
+  const asset = ASSET_REQUIREMENTS[standard.code];
+  if (asset) return `${ASSET_KIND_LABEL[asset.kind] ?? asset.kind} 자료(${asset.need})가 있어야 성립하는데 아직 없다`;
+  return null;
+}
 
 const text = (v) => (typeof v === 'string' ? v.trim().replace(/\r\n?/g, '\n') : v);
 
@@ -71,6 +102,8 @@ export function answerLeak(entry) {
  * @param {Set<string>} ctx.seenStems 코퍼스와 앞선 후보의 지문
  */
 export function checkCandidate(entry, { standard, skill, seenIds, seenStems }) {
+  const ineligible = authoringIneligibility(standard);
+  if (ineligible) return [{ gate: 'eligibility', detail: ineligible }];
   const reasons = [];
   const file = {
     schema: AUTHORED_SCHEMA,

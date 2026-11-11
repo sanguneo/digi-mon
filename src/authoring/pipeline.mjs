@@ -12,7 +12,6 @@ import { buildSpine } from '../ontology/spine.mjs';
 import { createRegistry } from '../engine/registry.mjs';
 import { createRng } from '../engine/rng.mjs';
 import { generateItem } from '../engine/worksheet.mjs';
-import { scoringModeOf } from '../curriculum/scoring-policy.mjs';
 import { vocabularyFor } from '../curriculum/korean-vocab.mjs';
 import {
   AUTHORED_ROOT,
@@ -22,7 +21,7 @@ import {
 } from '../generators/authored.mjs';
 import { buildMessages, PROMPT_VERSION } from './prompt.mjs';
 import { parseCandidates } from './llm.mjs';
-import { checkCandidate, normalizeCandidate } from './gates.mjs';
+import { AUTHORING_SUBJECTS, authoringIneligibility, checkCandidate, normalizeCandidate } from './gates.mjs';
 import { lintWithGgw } from './ggw.mjs';
 import { officialEnglishWords } from './english-official.mjs';
 
@@ -45,15 +44,24 @@ export function loadSpine() {
 }
 
 /**
- * 작성 대상 성취기준. 사람이 채점하는(manual) 기준은 선택형으로 바꾸지 않으므로 뺀다.
+ * 작성 대상 성취기준. 사람이 채점하는 기준, 아직 없는 자료가 있어야 하는 기준, 선택지를 내면
+ * 안 되는 기준은 뺀다(gates.mjs authoringIneligibility). 성취기준을 직접 짚었는데 대상이
+ * 아니면 까닭을 담아 오류를 던진다.
  */
 export function targetStandards(spine, { subject, gradeBand, standard }) {
+  if (subject && !AUTHORING_SUBJECTS.includes(subject)) {
+    throw new Error(`AI 작성은 국어·영어만 받는다(${AUTHORING_SUBJECTS.join(', ')}): ${subject}`);
+  }
   const code = standard ? normalizeStandardCode(standard) : undefined;
   const list = spine.standards.filter((s) => (!subject || s.subject === subject)
     && (!gradeBand || s.gradeBand === gradeBand)
     && (!code || s.code === code));
   if (code && list.length === 0) throw new Error(`조건에 맞는 성취기준이 없다: ${code} (${subject ?? '-'} ${gradeBand ?? '-'})`);
-  return list.filter((s) => scoringModeOf(s.code) !== 'manual');
+  if (code) {
+    const reason = authoringIneligibility(list[0]);
+    if (reason) throw new Error(`${code} 는 AI 작성 대상이 아니다: ${reason}`);
+  }
+  return list.filter((s) => authoringIneligibility(s) === null);
 }
 
 export function readCorpusFile(subject, code, root = AUTHORED_ROOT) {
@@ -122,6 +130,8 @@ function lintTexts(entry) {
  * @param {number} [p.batchSize] 한 번에 요청하는 후보 수
  * @param {number} [p.maxRounds] 요청 횟수 상한
  * @param {object} [p.registry]
+ * @returns 결과. API 요청이 실패하면(인증·장애·시간 초과) 거기서 멈추고 error 에 까닭을 담는다.
+ *   그때까지 통과한 문항은 그대로 쓴다. 응답이 왔지만 형식이 깨진 것은 후보 탈락(response)이다.
  */
 export async function authorStandard({
   standard,
@@ -134,6 +144,8 @@ export async function authorStandard({
   maxRounds = 3,
   registry = createRegistry(),
 }) {
+  const ineligible = authoringIneligibility(standard);
+  if (ineligible) throw new Error(`${standard.code} 는 AI 작성 대상이 아니다: ${ineligible}`);
   const existing = readCorpusFile(standard.subject, standard.code, root);
   const skill = existing?.skill ?? standard.summary;
   const seenIds = new Set(existing?.items.map((i) => i.id) ?? []);
@@ -147,16 +159,25 @@ export async function authorStandard({
   const warnings = [];
   let requested = 0;
   let ggwMode = null;
+  let error = null;
 
   for (let round = 0; round < maxRounds && accepted.length < count; round += 1) {
     const need = Math.min(batchSize, count - accepted.length);
     requested += need;
     const messages = buildMessages({ standard, count: need, vocabulary, examples, avoidStems: [...seenStems].slice(-40) });
+    let content;
+    try {
+      content = await client.complete(messages);
+    } catch (failure) {
+      // 전송·API 오류는 후보 탈락이 아니다. 다음 바퀴도 같은 까닭으로 실패하므로 멈춘다.
+      error = failure.message;
+      break;
+    }
     let raws;
     try {
-      raws = parseCandidates(await client.complete(messages));
-    } catch (error) {
-      rejected.push({ entry: null, reasons: [{ gate: 'response', detail: error.message }] });
+      raws = parseCandidates(content);
+    } catch (failure) {
+      rejected.push({ entry: null, reasons: [{ gate: 'response', detail: failure.message }] });
       continue;
     }
 
@@ -202,6 +223,7 @@ export async function authorStandard({
     corpusBefore: existing?.items.length ?? 0,
     corpusAfter: (existing?.items.length ?? 0) + (dryRun ? 0 : accepted.length),
     written,
+    error,
   };
 }
 
