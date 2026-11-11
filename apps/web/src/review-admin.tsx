@@ -6,6 +6,7 @@ import {
   type ReviewItemDetail,
   type ReviewList,
   type ReviewStatus,
+  conflictOf,
   gateReasonsOf,
   getReviewItem,
   getReviewList,
@@ -58,6 +59,17 @@ const fromForm = (form: ItemForm): AuthoredItemFields => ({
 });
 
 const sameForm = (a: ItemForm, b: ItemForm) => JSON.stringify(a) === JSON.stringify(b);
+
+const FIELD_LABEL: Record<keyof ItemForm, string> = {
+  instruction: '지시문', stem: '지문', answer: '정답', distractors: '오답지', solution: '풀이',
+};
+const fieldText = (form: ItemForm, key: keyof ItemForm) => {
+  const value = form[key];
+  return Array.isArray(value) ? value.join(' / ') : value;
+};
+/** 초안과 최신 내용이 다른 필드. 409 뒤 비교에 쓴다. */
+const changedFields = (draft: ItemForm, latest: ItemForm) => (Object.keys(FIELD_LABEL) as Array<keyof ItemForm>)
+  .filter((key) => fieldText(draft, key) !== fieldText(latest, key));
 const messageOf = (cause: unknown) => (cause instanceof Error ? cause.message : String(cause));
 
 /** 화면에 떠 있는 목록과 그 목록을 받은 필터. '더 보기'는 이 필터로만 잇는다. */
@@ -115,6 +127,8 @@ export function ReviewAdmin() {
   const [message, setMessage] = useState('');
   const [gateReasons, setGateReasons] = useState<GateReason[]>([]);
   const [pendingLeave, setPendingLeave] = useState<Leave | null>(null);
+  // 다른 곳에서 문항이 바뀌어 마지막 쓰기가 409 로 거절됐다. 최신 내용은 불러왔고 초안은 남겨 두었다.
+  const [conflicted, setConflicted] = useState(false);
 
   useEffect(() => {
     const isLatest = requests.begin('list');
@@ -175,6 +189,7 @@ export function ReviewAdmin() {
     setError('');
     setMessage('');
     setGateReasons([]);
+    setConflicted(false);
   };
 
   const open = async (id: string) => {
@@ -197,11 +212,13 @@ export function ReviewAdmin() {
   /**
    * 저장·판정·되돌리기. 응답이 왔을 때 그사이 다른 문항을 열었거나 목록으로 나갔으면 화면에는 반영하지 않는다.
    * keepDraft: 문항 내용을 바꾸지 않는 요청(빼기·되돌리기)이면 고치던 초안을 그대로 둔다.
+   * 409(다른 곳에서 바뀜)면 최신 내용을 화면에 올리되, 고치던 초안이 있으면 버리지 않고 비교하게 둔다.
    * 성공해 화면에 반영했을 때만 true.
    */
   const run = async (
     task: () => Promise<ReviewItemDetail>, done: string | ((detail: ReviewItemDetail) => string), keepDraft = false,
   ): Promise<boolean> => {
+    const hadDraft = dirty;
     const isLatest = requests.begin('item');
     setBusy(true);
     clearNotices();
@@ -215,6 +232,14 @@ export function ReviewAdmin() {
       return true;
     } catch (cause) {
       if (!isLatest()) return false;
+      const latest = conflictOf(cause);
+      if (latest) {
+        setListVersion((v) => v + 1);
+        setSelected(latest);
+        if (!hadDraft) setForm(toForm(latest.item));
+        setConflicted(true);
+        return false;
+      }
       const reasons = gateReasonsOf(cause);
       if (reasons) setGateReasons(reasons);
       setError(messageOf(cause));
@@ -256,7 +281,7 @@ export function ReviewAdmin() {
 
   const saveDraft = () => {
     if (!selected || !form) return Promise.resolve(false);
-    return run(() => saveReviewItem(selected.id, fromForm(form)), (detail) => (detail.unapproved
+    return run(() => saveReviewItem(selected.id, selected.revision, fromForm(form)), (detail) => (detail.unapproved
       ? '작성 게이트를 통과해 저장했습니다. 내용이 바뀌어 승인이 풀렸고 검토 전으로 돌아갔습니다. 학습지에 내려면 다시 승인하세요.'
       : '작성 게이트를 통과해 저장했습니다.'));
   };
@@ -278,6 +303,7 @@ export function ReviewAdmin() {
     };
     void run(() => submitReviewVerdict({
       id: selected.id,
+      revision: selected.revision,
       action,
       ...(action === 'reset' ? {} : { reviewer: reviewer.trim() }),
       ...(action === 'approve' && dirty ? { item: fromForm(form) } : {}),
@@ -485,6 +511,42 @@ export function ReviewAdmin() {
                   승인된 문항입니다. 고친 내용을 그냥 저장하면 승인이 풀려 검토 전으로 돌아가고 학습지에서 빠집니다.
                   바로 학습지에 내려면 &apos;고친 뒤 승인&apos;을 누르세요.
                 </p>
+              ) : null}
+              {selected.staleApproval ? (
+                <p className="dm-note dm-note--warn" role="status">
+                  승인한 뒤 문항 파일이 바뀌어 그 승인은 풀렸습니다. 지금 내용을 보고 다시 승인해야 학습지에 나갑니다.
+                </p>
+              ) : null}
+              {conflicted ? (
+                <div className="dm-note dm-note--warn" role="alert" aria-label="다른 곳에서 바뀜">
+                  <strong>다른 곳에서 이 문항이 바뀌었습니다</strong>
+                  <p>
+                    요청은 반영하지 않았고 최신 내용을 다시 불러왔습니다.
+                    {dirty
+                      ? ' 고치던 초안은 그대로 두었습니다. 최신 내용과 비교한 뒤 다시 저장하거나 승인하세요.'
+                      : ' 최신 내용을 확인한 뒤 다시 판정하세요.'}
+                  </p>
+                  {dirty ? (
+                    <>
+                      <dl className="dm-review__conflict">
+                        {changedFields(form, toForm(selected.item)).map((key) => (
+                          <div key={key}>
+                            <dt>{FIELD_LABEL[key]}</dt>
+                            <dd>최신: {fieldText(toForm(selected.item), key)}</dd>
+                            <dd>내 초안: {fieldText(form, key)}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                      <button
+                        className="dm-btn"
+                        onClick={() => { setForm(toForm(selected.item)); setConflicted(false); }}
+                        type="button"
+                      >
+                        내 초안 버리고 최신 내용 쓰기
+                      </button>
+                    </>
+                  ) : null}
+                </div>
               ) : null}
               {gateReasons.length > 0 ? (
                 <div className="dm-note dm-note--danger" role="alert">

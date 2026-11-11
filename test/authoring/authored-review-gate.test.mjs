@@ -8,6 +8,7 @@ import {
   AUTHORED_REVIEW_FILE,
   AUTHORED_REVIEW_SCHEMA,
   authoredGeneratorId,
+  authoredRevision,
   loadAuthoredCorpus,
   loadReviewStatus,
   reviewedOnly,
@@ -76,7 +77,7 @@ test('검토 완료가 0개면 AI 작성 생성기도 없고 학습지에 AI 작
 
 test('검토 완료가 1개면 그 문항 하나만 학습지에 나온다', () => {
   const [only] = CORPUS.find((f) => f.standardCode === '[4국02-04]').items;
-  withStatus([{ id: only.id, reviewer: 'test', reviewedAt: '2026-11-11' }], (root, file) => {
+  withStatus([{ id: only.id, reviewer: 'test', reviewedAt: '2026-11-11', revision: authoredRevision(only) }], (root, file) => {
     const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
     const registry = createRegistry({ authoredFiles: files });
     assert.deepEqual(registry.all().filter((g) => g.authored).map((g) => g.id), [authoredGeneratorId('korean', '[4국02-04]')]);
@@ -88,7 +89,7 @@ test('검토 완료가 1개면 그 문항 하나만 학습지에 나온다', () 
 
 test('검토 완료로 바꾼 문항만 학습지에 나오고 나머지는 여전히 빠진다', () => {
   const [first, second] = CORPUS.find((f) => f.standardCode === '[4국02-04]').items;
-  const reviewed = [first.id, second.id].map((id) => ({ id, reviewer: 'test', reviewedAt: '2026-11-11' }));
+  const reviewed = [first, second].map((item) => ({ id: item.id, reviewer: 'test', reviewedAt: '2026-11-11', revision: authoredRevision(item) }));
   withStatus(reviewed, (root) => {
     const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
     assert.deepEqual(files.flatMap((f) => f.items.map((i) => i.id)), [first.id, second.id]);
@@ -99,6 +100,23 @@ test('검토 완료로 바꾼 문항만 학습지에 나오고 나머지는 여�
     });
     assert.equal(worksheet.produced, 2);
     assert.deepEqual(new Set(worksheet.items.map((i) => i.params.authoredId)), new Set([first.id, second.id]));
+  });
+});
+
+test('승인한 내용 버전이 지금 내용과 다르거나 없으면(손으로 고친 파일·이전 형식) 학습지에 나가지 않는다', () => {
+  const [first, second, third] = CORPUS.find((f) => f.standardCode === '[4국02-04]').items;
+  const handEdited = { ...first, solution: [...first.solution, '한 번 더 읽는다.'] };
+  const reviewed = [
+    { id: first.id, reviewer: 'test', reviewedAt: '2026-11-11', revision: authoredRevision(handEdited) },
+    { id: second.id, reviewer: 'test', reviewedAt: '2026-11-11' },
+    { id: third.id, reviewer: 'test', reviewedAt: '2026-11-11', revision: authoredRevision(third) },
+  ];
+  withStatus(reviewed, (root) => {
+    const files = reviewedOnly(loadAuthoredCorpus(root), loadReviewStatus(root));
+    assert.deepEqual(files.flatMap((f) => f.items.map((i) => i.id)), [third.id]);
+  });
+  withStatus([{ ...reviewed[2], revision: 'xyz' }], (root) => {
+    assert.throws(() => loadReviewStatus(root), /revision/);
   });
 });
 

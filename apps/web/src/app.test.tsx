@@ -25,7 +25,7 @@ it('keeps an unsaved review draft when the teacher visits another tab and comes 
     facets: { subjects: ['korean'], standards: [], verdicts: [] }, items: [ITEM],
   } satisfies ReviewList);
   vi.mocked(getReviewItem).mockResolvedValue({
-    ...ITEM, file: 'data/authored/korean/k2-02-02.json', statusEntry: null, writeEnabled: true,
+    ...ITEM, file: 'data/authored/korean/k2-02-02.json', statusEntry: null, writeEnabled: true, revision: 'aaaaaaaaaaaaaaaa',
     item: { id: ITEM.id, difficulty: 1, instruction: ITEM.instruction, stem: ITEM.stem, answer: ITEM.answer, distractors: ['a', 'b', 'c'], solution: ['s'] },
   } satisfies ReviewItemDetail);
 

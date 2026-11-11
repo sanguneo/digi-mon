@@ -337,6 +337,10 @@ export interface ReviewItemDetail extends ReviewSummary {
   file: string;
   item: AuthoredItemFields & { id: string; difficulty: Difficulty };
   statusEntry: { reviewer: string; reviewedAt?: string; excludedAt?: string; reason?: string } | null;
+  /** 내용 버전. 모든 쓰기 요청에 돌려보내고, 서버 내용과 다르면 409 로 거절된다. */
+  revision: string;
+  /** 승인한 뒤 파일 내용이 바뀌어 그 승인이 풀렸다. */
+  staleApproval?: boolean;
   writeEnabled: boolean;
   saved?: boolean;
   /** 일반 저장이 승인된 문항의 내용을 바꿔 승인을 풀었다. */
@@ -379,6 +383,13 @@ export function gateReasonsOf(error: unknown): GateReason[] | null {
   return detail?.reasons ?? null;
 }
 
+/** 다른 곳에서 문항이 바뀌어 거절된 쓰기(409)의 최신 내용. 다른 오류면 null. */
+export function conflictOf(error: unknown): ReviewItemDetail | null {
+  if (!(error instanceof ApiError) || error.status !== 409) return null;
+  const detail = error.detail as { current?: ReviewItemDetail } | null;
+  return detail?.current ?? null;
+}
+
 const REVIEW_API = '/teacher/api/v1/review';
 
 export function getReviewList(filters: ReviewFilters): Promise<ReviewList> {
@@ -393,12 +404,13 @@ export function getReviewItem(id: string): Promise<ReviewItemDetail> {
   return requestJson(`${REVIEW_API}/item?id=${encodeURIComponent(id)}`);
 }
 
-export function saveReviewItem(id: string, item: AuthoredItemFields): Promise<ReviewItemDetail> {
-  return requestJson(`${REVIEW_API}/item`, { method: 'POST', body: JSON.stringify({ id, item }) });
+export function saveReviewItem(id: string, revision: string, item: AuthoredItemFields): Promise<ReviewItemDetail> {
+  return requestJson(`${REVIEW_API}/item`, { method: 'POST', body: JSON.stringify({ id, revision, item }) });
 }
 
 export function submitReviewVerdict(verdict: {
   id: string;
+  revision: string;
   action: ReviewAction;
   reviewer?: string;
   reason?: string;

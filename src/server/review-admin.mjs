@@ -6,9 +6,13 @@
  * 로컬 서버에서만 받는다. 배포 서버가 실수로 저장소 파일을 쓰지 않게 하려는 것이다.
  *
  *   GET  /v1/review/items    목록. 우선 검토 문항(docs/authored-review-queue.md) 먼저
- *   GET  /v1/review/item     문항 하나
+ *   GET  /v1/review/item     문항 하나. 내용 버전(revision)을 함께 준다
  *   POST /v1/review/item     문항 고치기. 작성 게이트(checkCandidate)를 다시 통과해야 저장한다
  *   POST /v1/review/verdict  승인 / 고친 뒤 승인 / 빼기 / 되돌리기
+ *
+ * 쓰기 요청은 모두 검토자가 본 내용 버전(revision)을 보내야 한다. 없으면 400, 그사이 다른 탭·사람이
+ * 내용을 바꿔 지금 버전과 다르면 409 와 최신 내용(detail.current)을 돌려준다. 못 본 내용을 승인하는 일을 막는다.
+ * 승인 항목에는 승인한 내용 버전을 함께 남기고, 생성기는 지금 내용과 같을 때만 검토 완료로 본다.
  *
  * 문항 파일은 고친 문항 하나만 바꾸고 나머지 문항·순서·포맷·id 는 그대로 둔다.
  * 승인은 승인한 그때의 내용에만 붙는다. 승인된 문항의 내용을 바꾸는 일반 저장은 승인을 풀어 검토 전으로
@@ -24,6 +28,7 @@ import {
   AUTHORED_ROOT,
   assertAuthoredFile,
   authoredFilePath,
+  authoredRevision,
   loadAuthoredCorpus,
   loadReviewStatus,
 } from '../generators/authored.mjs';
@@ -49,9 +54,6 @@ export class ReviewAdminError extends Error {
 const nonEmpty = (v) => typeof v === 'string' && v.trim().length > 0;
 const clean = (v) => v.trim().replace(/\r\n?/g, '\n');
 
-/** 학습지에 나가는 내용 필드. 이 가운데 하나라도 바뀌면 이전 승인은 이 내용을 본 것이 아니다. */
-const CONTENT_KEYS = ['difficulty', 'instruction', 'stem', 'answer', 'distractors', 'solution'];
-export const sameContent = (a, b) => CONTENT_KEYS.every((key) => JSON.stringify(a[key]) === JSON.stringify(b[key]));
 
 function localDate(now) {
   const pad = (n) => String(n).padStart(2, '0');
@@ -197,12 +199,18 @@ export function createReviewAdmin({
     const records = [];
     for (const file of files) {
       for (const item of file.items) {
-        const entry = reviewed.get(item.id) ?? excluded.get(item.id) ?? null;
+        const revision = authoredRevision(item);
+        const approval = reviewed.get(item.id);
+        // 승인한 뒤 파일이 바뀜 문항은 검토 전이다(생성기 reviewedOnly 와 같은 판단).
+        const approved = approval !== undefined && approval.revision === revision;
+        const entry = (approved ? approval : null) ?? excluded.get(item.id) ?? null;
         const row = priority.get(item.id);
         records.push({
           file,
           item,
-          status: reviewed.has(item.id) ? 'reviewed' : excluded.has(item.id) ? 'excluded' : 'pending',
+          revision,
+          status: approved ? 'reviewed' : excluded.has(item.id) ? 'excluded' : 'pending',
+          staleApproval: approval !== undefined && !approved,
           statusEntry: entry,
           priority: row?.rank ?? null,
           reasons: row ? [{ source: row.source, text: row.reason }] : [],
@@ -232,9 +240,25 @@ export function createReviewAdmin({
     ...summary(r),
     file: `data/authored/${path.relative(root, authoredFilePath(r.file.subject, r.file.standardCode, root)).replace(/\\/g, '/')}`,
     item: r.item,
+    revision: r.revision,
+    staleApproval: r.staleApproval,
     statusEntry: r.statusEntry,
     writeEnabled,
   });
+
+  /** 검토자가 본 내용 버전이 없으면 400. 실제 판단은 기록을 찾은 뒤 requireCurrent 가 한다. */
+  function requireRevision(body) {
+    if (typeof body.revision !== 'string' || !/^[0-9a-f]{16}$/.test(body.revision)) {
+      throw new ReviewAdminError(400, '본 내용의 버전(revision)이 필요하다. 문항을 다시 열어라');
+    }
+  }
+
+  /** 검토자가 본 내용이 지금 내용과 다르면 409 와 최신 내용. 아무것도 쓰지 않는다. */
+  function requireCurrent(record, revision) {
+    if (record.revision !== revision) {
+      throw new ReviewAdminError(409, '다른 곳에서 이 문항이 바뀌었다. 최신 내용을 보고 다시 하라', { current: detail(record) });
+    }
+  }
 
   function find(snap, id) {
     if (!/^[0-9a-f]{12}$/.test(id ?? '')) throw new ReviewAdminError(400, 'id 는 12자리 16진수');
@@ -264,21 +288,24 @@ export function createReviewAdmin({
     }
     const file = { ...record.file, items: record.file.items.map((item) => (item.id === entry.id ? entry : item)) };
     assertAuthoredFile(file, record.file.standardCode);
-    const unapproved = record.status === 'reviewed' && !sameContent(entry, record.item);
-    if (unapproved) {
-      const status = readStatusFile(root);
+    const revision = authoredRevision(entry);
+    const unapproved = record.status === 'reviewed' && revision !== record.revision;
+    // 승인 항목이 새 내용과 맞지 않으면(이미 낡은 승인 포함) 지운다. 옛 내용으로 되돌려도 살아나지 않게.
+    const status = readStatusFile(root);
+    if (status.reviewed.some((e) => e.id === entry.id && e.revision !== revision)) {
       writeStatusFile(root, { ...status, reviewed: status.reviewed.filter((e) => e.id !== entry.id) });
     }
     writeFileSync(authoredFilePath(file.subject, file.standardCode, root), `${JSON.stringify(file, null, 2)}\n`, 'utf8');
-    return { entry, unapproved };
+    return { entry, revision, unapproved };
   }
 
-  function applyVerdict(id, action, reviewer, reason) {
+  /** revision: 승인할 때 그 승인이 붙는 내용 버전. */
+  function applyVerdict(id, action, reviewer, reason, revision) {
     const status = readStatusFile(root);
     const reviewed = status.reviewed.filter((e) => e.id !== id);
     const excluded = (status.excluded ?? []).filter((e) => e.id !== id);
     const date = localDate(now());
-    if (action === 'approve') reviewed.push({ id, reviewer: reviewer.trim(), reviewedAt: date });
+    if (action === 'approve') reviewed.push({ id, reviewer: reviewer.trim(), reviewedAt: date, revision });
     if (action === 'exclude') {
       excluded.push({ id, reviewer: reviewer.trim(), excludedAt: date, ...(nonEmpty(reason) ? { reason: reason.trim() } : {}) });
     }
@@ -339,8 +366,10 @@ export function createReviewAdmin({
         path: '/v1/review/item',
         handle: (body) => {
           requireWrite();
+          requireRevision(body);
           const snap = snapshot();
           const record = find(snap, body.id);
+          requireCurrent(record, body.revision);
           const { unapproved } = saveItem(record, body.item);
           return { saved: true, unapproved, ...detail(find(snapshot(), body.id)) };
         },
@@ -357,11 +386,13 @@ export function createReviewAdmin({
           if (body.item !== undefined && body.action !== 'approve') {
             throw new ReviewAdminError(400, '문항 수정은 승인(approve)과만 함께 보낼 수 있다');
           }
+          requireRevision(body);
           const snap = snapshot();
           const record = find(snap, body.id);
-          // 고친 뒤 승인: 게이트를 통과해 저장된 뒤에만 승인한다.
-          if (body.item !== undefined) saveItem(record, body.item);
-          applyVerdict(record.item.id, body.action, body.reviewer ?? '', body.reason);
+          requireCurrent(record, body.revision);
+          // 고친 뒤 승인: 게이트를 통과해 저장된 뒤에만, 저장한 그 내용에 승인을 붙인다.
+          const revision = body.item !== undefined ? saveItem(record, body.item).revision : record.revision;
+          applyVerdict(record.item.id, body.action, body.reviewer ?? '', body.reason, revision);
           return { saved: body.item !== undefined, ...detail(find(snapshot(), record.item.id)) };
         },
       },

@@ -8,6 +8,9 @@ AI가 쓴 문항(`data/authored/**`)은 사람이 검토하기 전까지 학습�
 - 문항마다 검토 상태가 있다. 기본값은 '검토 전'이다.
 - `data/authored/review-status.json`의 `reviewed`에 오른 문항만 '검토 완료'다.
   `src/generators/authored.mjs`는 검토 완료 문항으로만 생성기를 만든다.
+- 승인은 승인한 그때의 내용에만 붙는다. `reviewed` 항목의 `revision`은 승인한 내용의 버전(난이도·지시문·지문·정답·오답지·풀이의
+  sha256 앞 16자리)이고, 지금 문항 내용의 버전과 같을 때만 검토 완료다. 승인한 뒤 문항 파일을 고치면(손으로 고쳐도)
+  승인은 저절로 풀려 학습지에서 빠지고, 지금 내용을 다시 승인해야 나간다. `revision`이 없는 항목도 검토 전으로 본다.
 - 지금 검토 완료는 0개다. 코퍼스 31개 파일 3,458문항(국어 22개 파일 2,469문항, 영어 9개 파일 989문항)이
   모두 생성에서 빠진다. 국어·영어 학습지는 손으로 만든 생성기만으로 나간다.
 - `test/authoring/authored-review-gate.test.mjs`가 검토 전 문항이 학습지에 나오지 않는 것,
@@ -31,12 +34,14 @@ AI가 쓴 문항(`data/authored/**`)은 사람이 검토하기 전까지 학습�
    {
      "schema": "digi-mon/authored-review-status@1",
      "reviewed": [
-       { "id": "111cb2ecec0d", "reviewer": "검토자 이름", "reviewedAt": "2026-11-12" }
+       { "id": "111cb2ecec0d", "reviewer": "검토자 이름", "reviewedAt": "2026-11-12", "revision": "<내용 버전>" }
      ]
    }
    ```
 
    - `id`는 문항 id(12자리 16진수), `reviewer`는 검토한 사람, `reviewedAt`은 YYYY-MM-DD다.
+   - `revision`은 검토한 내용의 버전이다. 관리자 화면으로 승인하면 저절로 적힌다. 손으로 적을 때는 다음으로 구한다.
+     `node --input-type=module -e "import { loadAuthoredCorpus, authoredRevision } from './src/generators/authored.mjs'; const i = loadAuthoredCorpus().flatMap((f) => f.items).find((x) => x.id === process.argv[1]); console.log(authoredRevision(i));" 111cb2ecec0d`
    - 코퍼스에 없는 id나 빈 `reviewer`가 있으면 생성이 오류로 멈춘다. 오타가 조용히 무시되지 않는다.
    - 검토 완료를 되돌리려면 그 줄을 지운다.
    - 학습지에서 뺄 문항은 지우지 않고 `excluded`에 올릴 수도 있다.
@@ -76,6 +81,10 @@ AI가 쓴 문항(`data/authored/**`)은 사람이 검토하기 전까지 학습�
 5. 고칠 것이 있으면 폼에서 고치고 '저장'이나 '고친 뒤 승인'을 누른다. 서버가 작성 게이트(`checkCandidate`)를 다시 돌려
    통과할 때만 그 문항 하나를 바꾼다. id는 그대로고 다른 문항·순서·파일 포맷도 그대로다.
    통과하지 못하면 게이트 이름과 사유를 그대로 보여 주고 아무것도 쓰지 않는다.
+   저장·승인·고친 뒤 승인·빼기·되돌리기는 모두 문항을 열 때 받은 내용 버전을 함께 보낸다. 그사이 다른 탭이나
+   다른 검토자가 내용을 바꿨으면 서버가 409로 거절하고, 화면은 '다른 곳에서 이 문항이 바뀌었습니다'를 띄운 뒤
+   최신 내용을 다시 불러온다. 고치던 초안은 버리지 않고 필드별로 최신 내용과 비교해 보여 주므로, 확인한 뒤 다시
+   저장·승인하거나 '내 초안 버리고 최신 내용 쓰기'를 누른다. 못 본 내용이 승인되는 일은 없다.
    GGW 린터는 묶음 단위로 도는 바깥 실행기라 화면에서는 돌리지 않는다.
 6. '빼기'는 문항을 지우지 않고 `review-status.json`의 `excluded`에 올린다. '되돌리기'는 검토 전으로 돌린다.
 7. 실행 중인 엔진의 생성기는 부팅 때 만든 것이다. 승인한 문항을 학습지에서 보려면 `npm run serve`를 다시 켠다.

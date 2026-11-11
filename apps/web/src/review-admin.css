@@ -45,6 +45,21 @@
   margin: 0 0 8px;
 }
 
+.dm-review__conflict {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.dm-review__conflict dt {
+  font-weight: 600;
+}
+
+.dm-review__conflict dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 .dm-review__leave-actions {
   display: flex;
   flex-wrap: wrap;

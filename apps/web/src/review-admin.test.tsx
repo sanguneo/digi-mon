@@ -36,9 +36,12 @@ function list(writeEnabled: boolean): ReviewList {
   };
 }
 
+const REV_A = 'aaaaaaaaaaaaaaaa';
+const REV_B = 'bbbbbbbbbbbbbbbb';
+
 function detail(writeEnabled: boolean, overrides: Partial<ReviewItemDetail> = {}): ReviewItemDetail {
   return {
-    ...SUMMARY, file: 'data/authored/korean/k2-02-02.json', statusEntry: null, writeEnabled,
+    ...SUMMARY, file: 'data/authored/korean/k2-02-02.json', statusEntry: null, writeEnabled, revision: REV_A,
     item: {
       id: SUMMARY.id, difficulty: 1, instruction: SUMMARY.instruction, stem: SUMMARY.stem, answer: SUMMARY.answer,
       distractors: ["'하얀' 다음", "'당근을' 다음", "'빨간' 다음"], solution: ['주어 뒤에서 쉰다.'],
@@ -100,7 +103,7 @@ describe('review admin', () => {
     expect(alert.textContent).toContain('answer-leak');
     expect(alert.textContent).toContain('지문에 정답만 있고 오답은 없다');
     expect((screen.getByRole('textbox', { name: '지문' }) as HTMLTextAreaElement).value).toBe('새 지문');
-    expect(saveReviewItem).toHaveBeenCalledWith(SUMMARY.id, expect.objectContaining({ stem: '새 지문' }));
+    expect(saveReviewItem).toHaveBeenCalledWith(SUMMARY.id, REV_A, expect.objectContaining({ stem: '새 지문' }));
   });
 
   it('remembers the reviewer name locally and sends it with approve and fix-then-approve', async () => {
@@ -113,7 +116,7 @@ describe('review admin', () => {
 
     vi.mocked(submitReviewVerdict).mockResolvedValue(detail(true, { status: 'reviewed' }));
     await act(async () => { fireEvent.click(approve); });
-    expect(submitReviewVerdict).toHaveBeenLastCalledWith({ id: SUMMARY.id, action: 'approve', reviewer: '김검토' });
+    expect(submitReviewVerdict).toHaveBeenLastCalledWith({ id: SUMMARY.id, revision: REV_A, action: 'approve', reviewer: '김검토' });
 
     fireEvent.change(screen.getByRole('textbox', { name: '풀이 (한 줄에 한 단계)' }), { target: { value: '첫 줄\n\n둘째 줄' } });
     expect((screen.getByRole('button', { name: '승인' }) as HTMLButtonElement).disabled).toBe(true);
@@ -129,7 +132,7 @@ describe('review admin', () => {
     vi.mocked(submitReviewVerdict).mockResolvedValue(detail(true, { status: 'excluded' }));
     fireEvent.change(screen.getByRole('textbox', { name: '뺄 이유 (선택)' }), { target: { value: '정답이 둘' } });
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: '빼기' })); });
-    expect(submitReviewVerdict).toHaveBeenCalledWith({ id: SUMMARY.id, action: 'exclude', reviewer: '김검토', reason: '정답이 둘' });
+    expect(submitReviewVerdict).toHaveBeenCalledWith({ id: SUMMARY.id, revision: REV_A, action: 'exclude', reviewer: '김검토', reason: '정답이 둘' });
     expect(screen.getByRole('button', { name: '되돌리기' })).toBeTruthy();
   });
 
@@ -300,11 +303,11 @@ describe('review admin', () => {
     it('can save first and then open the other item', async () => {
       await mount();
       vi.mocked(getReviewItem).mockResolvedValue(detailB());
-      vi.mocked(saveReviewItem).mockImplementation(async (_id, item) => detail(true, { item: { ...detail(true).item, ...item } }));
+      vi.mocked(saveReviewItem).mockImplementation(async (_id, _revision, item) => detail(true, { item: { ...detail(true).item, ...item } }));
       editA();
       await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
       await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '저장하고 이동' })); });
-      expect(saveReviewItem).toHaveBeenCalledWith(SUMMARY.id, expect.objectContaining({ stem: 'A 고친 지문' }));
+      expect(saveReviewItem).toHaveBeenCalledWith(SUMMARY.id, REV_A, expect.objectContaining({ stem: 'A 고친 지문' }));
       expect(stemBox().value).toBe(B_STEM);
     });
 
@@ -442,5 +445,76 @@ describe('review admin', () => {
     const head = screen.getByRole('form', { name: '문항 편집' }).querySelector('h3');
     expect(head?.textContent).toContain('검토 전');
     expect(warning()).toBeNull();
+  });
+  describe('a write rejected because the item changed elsewhere (409)', () => {
+    const theirs = '하얀 토끼가 빨간 당근을 맛있게 먹습니다.';
+    const latest = () => detail(true, { revision: REV_B, item: { ...detail(true).item, stem: theirs } });
+    const conflict = () => new ApiError('다른 곳에서 이 문항이 바뀌었다', 409, { current: latest() });
+    const conflictNote = () => screen.queryByRole('alert', { name: '다른 곳에서 바뀜' });
+
+    it('reloads the latest content instead of approving it unseen, then approves with the new revision', async () => {
+      localStorage.setItem(REVIEWER_STORAGE_KEY, '김검토');
+      await mount();
+      vi.mocked(submitReviewVerdict).mockRejectedValueOnce(conflict());
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '승인' })); });
+      expect(submitReviewVerdict).toHaveBeenCalledTimes(1);
+      expect(conflictNote()?.textContent).toContain('최신 내용을 다시 불러왔습니다');
+      expect(stemBox().value).toBe(theirs);
+      expect(screen.getByRole('form', { name: '문항 편집' }).querySelector('h3')?.textContent).toContain('검토 전');
+
+      vi.mocked(submitReviewVerdict).mockResolvedValue(latest());
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '승인' })); });
+      expect(submitReviewVerdict).toHaveBeenLastCalledWith({ id: SUMMARY.id, revision: REV_B, action: 'approve', reviewer: '김검토' });
+      expect(conflictNote()).toBeNull();
+    });
+
+    it.each([
+      ['저장', 'save'],
+      ['고친 뒤 승인', 'fix-approve'],
+    ] as const)('keeps the draft after %s is rejected, shows what differs, and can re-apply or drop it', async (button, op) => {
+      localStorage.setItem(REVIEWER_STORAGE_KEY, '김검토');
+      await mount();
+      if (op === 'save') vi.mocked(saveReviewItem).mockRejectedValueOnce(conflict());
+      else vi.mocked(submitReviewVerdict).mockRejectedValueOnce(conflict());
+      fireEvent.change(stemBox(), { target: { value: '내가 고친 지문' } });
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: button })); });
+
+      expect(stemBox().value).toBe('내가 고친 지문');
+      const note = conflictNote()!;
+      expect(note.textContent).toContain('고치던 초안은 그대로 두었습니다');
+      expect(note.textContent).toContain(`최신: ${theirs}`);
+      expect(note.textContent).toContain('내 초안: 내가 고친 지문');
+
+      // 다시 적용: 같은 버튼을 다시 누르면 최신 버전(revision)으로 초안을 보낸다.
+      vi.mocked(saveReviewItem).mockResolvedValue(latest());
+      vi.mocked(submitReviewVerdict).mockResolvedValue(latest());
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: button })); });
+      if (op === 'save') {
+        expect(saveReviewItem).toHaveBeenLastCalledWith(SUMMARY.id, REV_B, expect.objectContaining({ stem: '내가 고친 지문' }));
+      } else {
+        expect(submitReviewVerdict).toHaveBeenLastCalledWith(expect.objectContaining({
+          revision: REV_B, action: 'approve', item: expect.objectContaining({ stem: '내가 고친 지문' }),
+        }));
+      }
+    });
+
+    it('drops the draft for the latest content when asked', async () => {
+      await mount();
+      vi.mocked(saveReviewItem).mockRejectedValueOnce(conflict());
+      fireEvent.change(stemBox(), { target: { value: '내가 고친 지문' } });
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '저장' })); });
+      await act(async () => { fireEvent.click(within(conflictNote()!).getByRole('button', { name: '내 초안 버리고 최신 내용 쓰기' })); });
+      expect(stemBox().value).toBe(theirs);
+      expect(conflictNote()).toBeNull();
+      expect((screen.getByRole('button', { name: '저장' }) as HTMLButtonElement).disabled).toBe(true);
+    });
+
+    it('says when an approval was dropped because the file changed after it', async () => {
+      vi.mocked(getReviewList).mockResolvedValue(list(true));
+      vi.mocked(getReviewItem).mockResolvedValue(detail(true, { staleApproval: true }));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+      expect(screen.getByText(/승인한 뒤 문항 파일이 바뀌어 그 승인은 풀렸습니다/)).toBeTruthy();
+    });
   });
 });
