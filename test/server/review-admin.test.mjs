@@ -322,3 +322,24 @@ test('검토 상태 파일의 excluded 도 스키마를 검사한다', () => {
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('검토 쓰기는 JSON 이 아니면 토큰이 있어도 415로 막고 아무것도 바꾸지 않는다', async () => {
+  const before = readTree();
+  const status = readStatus();
+  const { items } = (await call('write', 'GET', '/v1/review/items?limit=1')).body;
+  for (const [pathname, type] of [
+    ['/v1/review/verdict', 'text/plain'],
+    ['/v1/review/verdict', 'application/x-www-form-urlencoded'],
+    ['/v1/review/item', 'text/plain'],
+    ['/v1/review/verdict', null],
+  ]) {
+    const response = await fetch(`${servers.write.url}${pathname}`, {
+      method: 'POST',
+      headers: { authorization: `Bearer ${TOKEN}`, ...(type ? { 'content-type': type } : {}) },
+      body: JSON.stringify({ id: items[0].id, action: 'reject', reviewer: '위조', reason: 'csrf' }),
+    });
+    assert.equal(response.status, 415, `${pathname} ${type}`);
+  }
+  assert.deepEqual(readTree(), before);
+  assert.deepEqual(readStatus(), status);
+});

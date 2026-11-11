@@ -13,6 +13,8 @@ export function webConfig(env: Record<string, string | undefined>): UserConfig {
       host: allowRemote ? '0.0.0.0' : '127.0.0.1',
       port: 4173,
       strictPort: true,
+      // Vite 기본 CORS 는 다른 localhost 포트의 페이지에 응답을 읽게 해 준다. 교사 토큰이 붙는 응답이라 끈다.
+      cors: false,
       proxy: {
         '/teacher/api': teacherApiProxy(ENGINE),
         '/learner/api': {
@@ -26,6 +28,7 @@ export function webConfig(env: Record<string, string | undefined>): UserConfig {
       host: '127.0.0.1',
       port: 4173,
       strictPort: true,
+      cors: false,
     },
   };
 }

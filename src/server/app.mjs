@@ -854,8 +854,11 @@ export function createApp({
       },
     },
     // AI 작성 문항 검토 관리자(src/server/review-admin.mjs). 모두 교사 토큰이 있어야 한다.
+    // 쓰기는 JSON 만 받는다. text/plain·폼은 브라우저가 사전 요청 없이 다른 사이트에서 보낼 수 있어서,
+    // 프록시를 거치지 않고 들어와도 여기서 한 번 더 막는다.
     ...createReviewAdmin({ spine, ...reviewAdmin }).routes.map((route) => ({
       ...route,
+      requireJson: route.method !== 'GET',
       handle: (body, url, req) => {
         requireTeacher(req, teacherToken);
         return route.handle(body, url, req);
@@ -910,6 +913,10 @@ export function createApp({
         return;
       }
 
+      if (route.requireJson
+        && req.headers['content-type']?.split(';')[0]?.trim().toLowerCase() !== 'application/json') {
+        throw new HttpError(415, '검토 쓰기 요청은 application/json 만 받는다');
+      }
       const body = req.method === 'POST' ? await readBody(req) : {};
       json(res, 200, await route.handle(body, url, req));
     } catch (error) {
