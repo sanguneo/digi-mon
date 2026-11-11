@@ -50,6 +50,18 @@ const IDS = [
   'math.g12.no.s11.times-table',
   'math.g12.no.s11.times-blank',
 ];
+// 1~2학년 수와 연산의 확장 생성기. 같은 학습지에 섞여 나오므로 같은 안내 계약을 지킨다.
+const EXTENDED_IDS = [
+  'math.g12.no.s06.missing-digit',
+  'math.g12.no.s06.compare-expressions',
+  'math.g12.no.s09.story-box',
+  'math.g12.no.s11.times-compare',
+  'math.g12.no.s03.blank-digit-compare',
+  'math.g12.no.s02.compose-units',
+  'math.g12.no.s03.digit-cards',
+  'math.g12.no.s08.story-three',
+  'math.g12.no.s09.box-three',
+];
 const registry = createRegistry();
 const spine = buildSpine(loadOntology());
 const ajv = new Ajv2020({ allErrors: true, strict: false });
@@ -141,7 +153,7 @@ test('100-question ordinary worksheets deliver learner hints without teacher not
   assert.deepEqual(built.options.modes, []);
   assert.equal(new Set(built.items.map(({ id }) => id)).size, 100);
   for (const item of built.items) {
-    assert.ok(IDS.includes(item.generatorId));
+    assert.ok(IDS.includes(item.generatorId) || EXTENDED_IDS.includes(item.generatorId), item.generatorId);
     assertGuided(registry.get(item.generatorId), item.learningSupport);
   }
 

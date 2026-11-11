@@ -2,7 +2,7 @@
   "schema": "digi-mon/difficulty-notes-check@1",
   "note": "노트가 자기 모순이 아닌지만 본다. 노트의 서술이 교육과정상 옳은지는 사람이 봐야 한다.",
   "samplesPerLevel": 120,
-  "categoricalCount": 47,
+  "categoricalCount": 69,
   "problemCount": 0,
   "problems": [],
   "rows": [
@@ -280,7 +280,7 @@
       "uniqueByLevel": {
         "1": 96,
         "2": 109,
-        "3": 116
+        "3": 115
       }
     },
     {
@@ -306,6 +306,332 @@
         "1": 4,
         "2": 8,
         "3": 8
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s06.missing-digit",
+      "code": "[2수01-06]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 119,
+        "3": 118
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s11.times-compare",
+      "code": "[2수01-11]",
+      "note": "난이도 1은 2단과 5단, 2는 2단부터 5단까지, 3은 2단부터 9단까지의 곱을 비교한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 95,
+        "2": 103,
+        "3": 116
+      }
+    },
+    {
+      "generatorId": "math.g12.pd.s01.hundred-chart",
+      "code": "[2수02-01]",
+      "note": "난이도 1은 한 방향으로 한 칸, 2는 한 방향으로 2~4칸, 3은 위아래와 왼쪽·오른쪽 두 방향으로 움직여 찾는다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 105,
+        "2": 107,
+        "3": 118
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s09.elapsed-time",
+      "code": "[2수03-09]",
+      "note": "난이도 1은 10분 단위로 시가 바뀌지 않는 계산, 2는 5분 단위로 시가 바뀔 수 있는 계산, 3은 1분 단위로 시가 바뀌는 계산이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 67,
+        "2": 113,
+        "3": 119
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s13.length-add-sub",
+      "code": "[2수03-13]",
+      "note": "난이도 1은 cm끼리 받아올림·받아내림이 없고, 2는 cm끼리 더해 100cm를 넘는 덧셈, 3은 cm에서 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g34.no.s03.missing-digit",
+      "code": "[4수01-03]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 받아올림이 있는 덧셈, 3은 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g34.no.s15.mixed-add-sub",
+      "code": "[4수01-15]",
+      "note": "난이도 1은 분수 부분끼리 받아올림·받아내림이 없는 계산, 2는 분수 부분의 합이 1 이상인 덧셈, 3은 자연수에서 1을 받아내리는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 117,
+        "3": 117
+      }
+    },
+    {
+      "generatorId": "math.g34.mr.s02-02.expression-sequence",
+      "code": "[4수02-02]",
+      "note": "난이도 1은 백 단위로 커지는 덧셈식, 2는 덧셈식이나 뺄셈식, 3은 곱셈식의 배열이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 116,
+        "2": 118,
+        "3": 110
+      }
+    },
+    {
+      "generatorId": "math.g34.mr.s03-16.length-add-sub",
+      "code": "[4수03-16]",
+      "note": "난이도 1은 받아올림·받아내림이 없는 계산, 2는 작은 단위끼리 더해 큰 단위로 받아올리는 덧셈, 3은 큰 단위에서 받아내리는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g56.no.s08.mixed-add-sub",
+      "code": "[6수01-08]",
+      "note": "난이도 1은 한 분모가 다른 분모의 배수인 덧셈, 2는 두 분모의 최소공배수로 통분하는 덧셈, 3은 통분한 뒤 자연수에서 받아내림이 있는 뺄셈이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 117,
+        "2": 119,
+        "3": 116
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s03.blank-digit-compare",
+      "code": "[2수01-03]",
+      "note": "난이도 1은 세 자리 수, 2는 네 자리 수의 십·일의 자리, 3은 네 자리 수의 천·백의 자리에 □가 있어 뒤의 자리까지 비교해야 한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 118,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s02.compose-units",
+      "code": "[2수01-02]",
+      "note": "난이도 1은 세 자리 수, 2는 빈 자리가 있을 수 있는 네 자리 수, 3은 100이나 10, 1이 10개 이상이어서 받아올려 나타내는 네 자리 수다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 114,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.no.s03.digit-cards",
+      "code": "[2수01-03]",
+      "note": "난이도 1은 카드 3장으로 세 자리 수, 2는 카드 4장으로 네 자리 수, 3은 카드 4장으로 만든 수 중 기준 수에 가장 가까운 수를 찾는다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 104,
+        "2": 113,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.pd.s01.growing-step",
+      "code": "[2수02-01]",
+      "note": "모든 수는 99 이하이다. 난이도 1은 커지는 양이 1씩 늘어나는 배열, 2는 커지는 양이 2~5씩 늘어나거나 줄어드는 배열, 3은 수가 작아지면서 작아지는 양이 일정하게 늘어나거나 줄어드는 배열이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 118,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s11.compare-length",
+      "code": "[2수03-11]",
+      "note": "난이도 1은 1m와 3m 사이의 두 길이, 2는 10m보다 짧은 두 길이, 3은 세 길이에서 가장 긴 길이와 가장 짧은 길이를 찾아 비교한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 119,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s13.length-story",
+      "code": "[2수03-13]",
+      "note": "난이도 1은 이어 붙인 길이(덧셈), 2는 잘라 내고 남은 길이(뺄셈), 3은 이어 붙인 뒤 잘라 내는 두 단계 계산이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s09.date-after",
+      "code": "[2수03-09]",
+      "note": "난이도 1은 같은 달 안의 계산, 2는 다음 달로 한 번 넘어가는 계산, 3은 두 달 이상 넘어가는 계산이다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 118,
+        "2": 117,
+        "3": 118
+      }
+    },
+    {
+      "generatorId": "math.g12.gm.s09.start-or-duration",
+      "code": "[2수03-09]",
+      "note": "난이도 1은 10분 단위로 1시간이 안 되는 시간, 2는 5분 단위로 2시간까지, 3은 1분 단위로 4시간까지의 시간을 다룬다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 113,
+        "2": 118,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.pd.s04-01.two-criteria",
+      "code": "[2수04-01]",
+      "note": "난이도 1은 조각 8개, 2는 12개, 3은 16개를 두 기준으로 분류한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.pd.s04-02.table-missing",
+      "code": "[2수04-02]",
+      "note": "난이도 1은 세 항목 표의 빈칸, 2는 네 항목 표의 빈칸, 3은 다섯 항목 표의 빈칸을 먼저 구한 뒤 가장 많은 것과 가장 적은 것의 차를 구한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 116,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g12.pd.s04-03.circle-graph",
+      "code": "[2수04-03]",
+      "note": "난이도 1은 세 항목 그래프, 2는 네 항목 그래프, 3은 다섯 항목 그래프에서 세어 비교한다.",
+      "mentionedLevels": [
+        1,
+        2,
+        3
+      ],
+      "uniqueByLevel": {
+        "1": 116,
+        "2": 120,
+        "3": 120
+      }
+    },
+    {
+      "generatorId": "math.g34.mr.s02-03.balance-ops",
+      "code": "[4수02-03]",
+      "note": "수는 모두 99 이하로 같고, 1단계는 덧셈·뺄셈 두 항씩이며 □가 오른쪽에만, 2단계는 □가 양쪽 어디에나 오고 곱셈구구 곱이 들어가기도 하며, 3단계는 한쪽이 세 항이거나 곱셈구구 곱을 두 가지로 나타낸다.",
+      "mentionedLevels": [],
+      "uniqueByLevel": {
+        "1": 120,
+        "2": 120,
+        "3": 120
       }
     },
     {
