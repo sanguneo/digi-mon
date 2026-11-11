@@ -43,7 +43,7 @@ const MODULES = [
   { file: 'english/letters.mjs', generators: englishLetters },
   { file: 'korean/sentences.mjs', generators: koreanSentences },
   { file: 'english/sentences.mjs', generators: englishSentences },
-  // data/authored 의 AI 작성 코퍼스. 비어 있으면 생성기도 없다.
+  // data/authored 의 AI 작성 코퍼스 가운데 사람이 검토를 마친 문항(review-status.json)만. 없으면 생성기도 없다.
   { file: 'authored.mjs', generators: authoredCorpus },
 ];
 
@@ -117,6 +117,7 @@ function assertGeneratorContract(g, file) {
 /**
  * @param {{ authoredFiles?: object[] }} [options] authoredFiles 를 주면 data/authored 대신
  *   그 코퍼스로 AI 작성 생성기를 만든다. 테스트와 작성 파이프라인의 검산용이다.
+ *   주어진 코퍼스는 검토 상태를 거치지 않는다. 학습지에 나가는 기본 레지스트리만 검토 완료 문항을 쓴다.
  */
 export function createRegistry({ authoredFiles } = {}) {
   const byId = new Map();

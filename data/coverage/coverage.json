@@ -2,7 +2,7 @@
   "schema": "digi-mon/coverage@2",
   "generatedFrom": {
     "standardCount": 248,
-    "generatorCount": 224
+    "generatorCount": 193
   },
   "totalStandards": 248,
   "autoScorableStandards": 194,
@@ -82,7 +82,7 @@
       "autoScorable": 49,
       "manualOnly": 38,
       "covered": 23,
-      "generators": 51,
+      "generators": 29,
       "byDomain": {
         "듣기·말하기": {
           "total": 18,
@@ -142,7 +142,7 @@
       "autoScorable": 25,
       "manualOnly": 15,
       "covered": 9,
-      "generators": 21,
+      "generators": 12,
       "byDomain": {
         "이해": {
           "total": 20,
@@ -5038,10 +5038,9 @@
       "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g12.st.s02-02.reading-break",
-        "korean.authored.k2-02-02"
+        "korean.g12.st.s02-02.reading-break"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5067,13 +5066,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-02-02",
-            "topicId": "kr.mt.korean.reading.1-2.2guk0202.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5085,10 +5077,9 @@
       "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g12.st.s02-04.mind",
-        "korean.authored.k2-02-04"
+        "korean.g12.st.s02-04.mind"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5114,13 +5105,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-02-04",
-            "topicId": "kr.mt.korean.reading.1-2.2guk0204.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5132,10 +5116,9 @@
       "domain": "쓰기",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g12.gr.s03-01.spelling",
-        "korean.authored.k2-03-01"
+        "korean.g12.gr.s03-01.spelling"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5161,13 +5144,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-03-01",
-            "topicId": "kr.mt.korean.writing.1-2.2guk0301.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5179,11 +5155,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g12.gr.s01.letter-name",
-        "korean.g12.gr.s01.count-letters",
-        "korean.authored.k2-04-01"
+        "korean.g12.gr.s01.count-letters"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5216,13 +5191,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-04-01",
-            "topicId": "kr.mt.korean.grammar.1-2.2guk0401.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5234,11 +5202,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g12.gr.s02.final",
-        "korean.g12.gr.s02.has-final",
-        "korean.authored.k2-04-02"
+        "korean.g12.gr.s02.has-final"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5271,13 +5238,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-04-02",
-            "topicId": "kr.mt.korean.grammar.1-2.2guk0402.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5289,11 +5249,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g12.gr.s03.punctuation",
-        "korean.g12.gr.s03.punctuation-name",
-        "korean.authored.k2-04-03"
+        "korean.g12.gr.s03.punctuation-name"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5326,13 +5285,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k2-04-03",
-            "topicId": "kr.mt.korean.grammar.1-2.2guk0403.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5344,11 +5296,10 @@
       "domain": "읽기",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g34.st.s02-04.fact-opinion",
-        "korean.g34.st.s02-04.opinion-word",
-        "korean.authored.k4-02-04"
+        "korean.g34.st.s02-04.opinion-word"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5381,13 +5332,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-02-04",
-            "topicId": "kr.mt.korean.reading.3-4.4guk0204.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5401,10 +5345,9 @@
       "scoringMode": "partial",
       "partialScored": "주어진 절차를 순서대로 배열하는 문항",
       "partialNotScored": "절차와 결과가 드러나는 글을 직접 쓰는 활동",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.st.s03-02.procedure",
-        "korean.authored.k4-03-02"
+        "korean.g34.st.s03-02.procedure"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5430,13 +5373,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-03-02",
-            "topicId": "kr.mt.korean.writing.3-4.4guk0302.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5450,10 +5386,9 @@
       "scoringMode": "partial",
       "partialScored": "주어진 글에서 의견과 그 이유를 가려내는 문항",
       "partialNotScored": "의견을 담은 글을 직접 쓰는 활동",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.st.s03-03.reason",
-        "korean.authored.k4-03-03"
+        "korean.g34.st.s03-03.reason"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5479,13 +5414,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-03-03",
-            "topicId": "kr.mt.korean.writing.3-4.4guk0303.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5497,10 +5425,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.gr.s01.relation",
-        "korean.authored.k4-04-01"
+        "korean.g34.gr.s01.relation"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5526,13 +5453,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-04-01",
-            "topicId": "kr.mt.korean.grammar.3-4.4guk0401.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5544,11 +5464,10 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g34.gr.s02.dictionary-order",
-        "korean.g34.gr.s02.dictionary-first",
-        "korean.authored.k4-04-02"
+        "korean.g34.gr.s02.dictionary-first"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5581,13 +5500,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-04-02",
-            "topicId": "kr.mt.korean.grammar.3-4.4guk0402.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5599,10 +5511,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.gr.s03.sentence-parts",
-        "korean.authored.k4-04-03"
+        "korean.g34.gr.s03.sentence-parts"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5628,13 +5539,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-04-03",
-            "topicId": "kr.mt.korean.grammar.3-4.4guk0403.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5646,10 +5550,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.gr.s04.honorific",
-        "korean.authored.k4-04-04"
+        "korean.g34.gr.s04.honorific"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5675,13 +5578,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-04-04",
-            "topicId": "kr.mt.korean.grammar.3-4.4guk0404.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5693,10 +5589,9 @@
       "domain": "문학",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g34.st.s05-04.sensory",
-        "korean.authored.k4-05-04"
+        "korean.g34.st.s05-04.sensory"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5722,13 +5617,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k4-05-04",
-            "topicId": "kr.mt.korean.literature.3-4.4guk0504.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5742,10 +5630,9 @@
       "scoringMode": "partial",
       "partialScored": "글로 적힌 대화에서 생략된 내용을 추론하는 문항",
       "partialNotScored": "실제로 듣고 추론하며 말로 반응하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.st.s01-01.inference",
-        "korean.authored.k6-01-01"
+        "korean.g56.st.s01-01.inference"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5771,13 +5658,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-01-01",
-            "topicId": "kr.mt.korean.listening-speaking.5-6.6guk0101.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5791,10 +5671,9 @@
       "scoringMode": "partial",
       "partialScored": "글로 적힌 대화·주장에서 근거의 타당성을 판정하는 문항",
       "partialNotScored": "실제 담화를 들으며 판단하고 말로 참여하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.st.s01-02.claim-reason",
-        "korean.authored.k6-01-02"
+        "korean.g56.st.s01-02.claim-reason"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5820,13 +5699,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-01-02",
-            "topicId": "kr.mt.korean.listening-speaking.5-6.6guk0102.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5840,10 +5712,9 @@
       "scoringMode": "partial",
       "partialScored": "맞춤법·띄어쓰기가 틀린 문장을 바르게 고치는 문항",
       "partialNotScored": "글 전체의 흐름을 고쳐 쓰는 활동",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.st.s03-05.fix",
-        "korean.authored.k6-03-05"
+        "korean.g56.st.s03-05.fix"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5869,13 +5740,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-03-05",
-            "topicId": "kr.mt.korean.writing.5-6.6guk0305.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5887,10 +5751,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.gr.s02.standard-word",
-        "korean.authored.k6-04-02"
+        "korean.g56.gr.s02.standard-word"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5916,13 +5779,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-04-02",
-            "topicId": "kr.mt.korean.grammar.5-6.6guk0402.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5934,10 +5790,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.gr.s03.idiom",
-        "korean.authored.k6-04-03"
+        "korean.g56.gr.s03.idiom"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -5963,13 +5818,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-04-03",
-            "topicId": "kr.mt.korean.grammar.5-6.6guk0403.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -5981,10 +5829,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.gr.s04.agreement",
-        "korean.authored.k6-04-04"
+        "korean.g56.gr.s04.agreement"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6010,13 +5857,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-04-04",
-            "topicId": "kr.mt.korean.grammar.5-6.6guk0404.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6028,10 +5868,9 @@
       "domain": "문법",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "korean.g56.gr.s05.tense",
-        "korean.authored.k6-04-05"
+        "korean.g56.gr.s05.tense"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6053,13 +5892,6 @@
         "alignments": [
           {
             "generatorId": "korean.g56.gr.s05.tense",
-            "topicId": "kr.mt.korean.grammar.5-6.6guk0405.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-04-05",
             "topicId": "kr.mt.korean.grammar.5-6.6guk0405.04",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
@@ -6114,11 +5946,10 @@
       "domain": "문학",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "korean.g56.st.s05-02.figurative",
-        "korean.g56.st.s05-02.vehicle",
-        "korean.authored.k6-05-02"
+        "korean.g56.st.s05-02.vehicle"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6151,13 +5982,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "korean.authored.k6-05-02",
-            "topicId": "kr.mt.korean.literature.5-6.6guk0502.04",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6169,11 +5993,10 @@
       "domain": "이해",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "english.g34.lt.s01-02.match-case",
-        "english.g34.lt.s01-02.alphabet-order",
-        "english.authored.e4-01-02"
+        "english.g34.lt.s01-02.alphabet-order"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6206,13 +6029,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e4-01-02",
-            "topicId": "kr.mt.english-efl.3-4.understanding.4영01-02.03.교실-자료에서-알파벳-찾기",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6224,10 +6040,9 @@
       "domain": "이해",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g34.st.s01-05.meaning",
-        "english.authored.e4-01-05"
+        "english.g34.st.s01-05.meaning"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6253,13 +6068,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e4-01-05",
-            "topicId": "kr.mt.english-efl.3-4.understanding.4영01-05.03.쉬운-문장-의미-확인",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6271,11 +6079,10 @@
       "domain": "표현",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "english.g34.lt.s02-02.write-case",
-        "english.g34.lt.s02-02.first-letter",
-        "english.authored.e4-02-02"
+        "english.g34.lt.s02-02.first-letter"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6308,13 +6115,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e4-02-02",
-            "topicId": "kr.mt.english-efl.3-4.expression.4영02-02.03.알파벳-카드-보고-쓰기",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6328,10 +6128,9 @@
       "scoringMode": "partial",
       "partialScored": "상황에 알맞은 행동 지시 문장을 고르는 문항",
       "partialNotScored": "지시문을 실제로 말하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g34.st.s02-06.command",
-        "english.authored.e4-02-06"
+        "english.g34.st.s02-06.command"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6357,13 +6156,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e4-02-06",
-            "topicId": "kr.mt.english-efl.3-4.expression.4영02-06.03.순서-있는-행동-표현",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6377,10 +6169,9 @@
       "scoringMode": "partial",
       "partialScored": "물음에 알맞은 응답을 고르는 문항",
       "partialNotScored": "실제로 묻고 답하며 말하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g34.st.s02-08.qa",
-        "english.authored.e4-02-08"
+        "english.g34.st.s02-08.qa"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6406,13 +6197,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e4-02-08",
-            "topicId": "kr.mt.english-efl.3-4.expression.4영02-08.03.짝-대화에서-핵심-답하기",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6424,11 +6208,10 @@
       "domain": "표현",
       "module": null,
       "scoringMode": "auto",
-      "generatorCount": 3,
+      "generatorCount": 2,
       "generatorIds": [
         "english.g56.lt.s02-03.end-mark",
-        "english.g56.lt.s02-03.fix-case",
-        "english.authored.e6-02-03"
+        "english.g56.lt.s02-03.fix-case"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6461,13 +6244,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e6-02-03",
-            "topicId": "kr.mt.english-efl.5-6.expression.6영02-03.03.문장-부호-점검",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6481,10 +6257,9 @@
       "scoringMode": "partial",
       "partialScored": "상황에 알맞은 소개·묘사 문장을 고르는 문항",
       "partialNotScored": "소개·묘사를 실제로 말하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g56.st.s02-04.expression",
-        "english.authored.e6-02-04"
+        "english.g56.st.s02-04.expression"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6510,13 +6285,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e6-02-04",
-            "topicId": "kr.mt.english-efl.5-6.expression.6영02-04.03.비교-표현으로-설명",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6530,10 +6298,9 @@
       "scoringMode": "partial",
       "partialScored": "세부 정보를 묻는 말에 알맞은 응답을 고르는 문항",
       "partialNotScored": "실제로 묻고 답하며 말하는 수행",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g56.st.s02-07.qa",
-        "english.authored.e6-02-07"
+        "english.g56.st.s02-07.qa"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6559,13 +6326,6 @@
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
             "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e6-02-07",
-            "topicId": "kr.mt.english-efl.5-6.expression.6영02-07.03.읽은-정보로-짝-대화",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
           }
         ]
       }
@@ -6579,10 +6339,9 @@
       "scoringMode": "partial",
       "partialScored": "예시문의 빈칸을 채워 목적에 맞는 문장을 완성하는 문항",
       "partialNotScored": "글을 직접 구성해 쓰는 활동",
-      "generatorCount": 2,
+      "generatorCount": 1,
       "generatorIds": [
-        "english.g56.st.s02-08.blank",
-        "english.authored.e6-02-08"
+        "english.g56.st.s02-08.blank"
       ],
       "semanticCoverage": {
         "contract": "digi-mon/generator-topic-alignment@1",
@@ -6604,13 +6363,6 @@
         "alignments": [
           {
             "generatorId": "english.g56.st.s02-08.blank",
-            "topicId": "kr.mt.english-efl.5-6.expression.6영02-08.03.경험-글-초안과-수정",
-            "confidence": "standard-code-inferred",
-            "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",
-            "reviewStatus": "candidate"
-          },
-          {
-            "generatorId": "english.authored.e6-02-08",
             "topicId": "kr.mt.english-efl.5-6.expression.6영02-08.03.경험-글-초안과-수정",
             "confidence": "standard-code-inferred",
             "note": "성취기준의 assesses 주제에서 만든 검토 후보. 생성기별 평가 구인 검토 전에는 승인 정렬로 사용하지 않는다.",

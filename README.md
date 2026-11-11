@@ -94,7 +94,7 @@ apps/web · apps/web-garden · 외부 클라이언트
 
 기준 코퍼스는 저장소 안의 `data/spine/standards.json`과 교육부 고시
 국어·수학·영어 별책 Markdown으로 고정한다. 현재 검증 대상은 성취기준 248개와
-생성기 224개다.
+생성기 193개다(사람 검토 전인 AI 작성 문항 생성기는 세지 않는다).
 
 ### 독립 실행
 
@@ -281,7 +281,9 @@ node bin/worksheet.mjs \
 AI는 문항을 쓰는 도구로만 쓴다. 엔진은 실행 중에 네트워크를 쓰지 않는다.
 `bin/ai-generate.mjs`가 OpenAI 호환 API에서 후보 문항을 받아 저장소 게이트와
 GGW 린터를 통과한 것만 `data/authored/<교과>/<성취기준>.json`에 더하고, 생성기는
-그 코퍼스에서 시드로 문항을 뽑는다.
+그 코퍼스에서 시드로 문항을 뽑는다. 단, 사람이 검토해 `data/authored/review-status.json`에
+올린 문항만 학습지에 나간다. 지금은 검토 완료 문항이 없어 AI 작성 문항은 하나도 나가지 않는다
+(`docs/authored-review-queue.md`).
 
 ```bash
 export DIGIMON_LLM_BASE_URL=https://api.example.com/v1
@@ -357,7 +359,7 @@ Authorization: Bearer <TEACHER_TOKEN>
 
 `npm run verify`는 현재 다음 항목을 포함한 전체 검증 사슬을 실행한다.
 
-- 224개 생성기의 난이도별 대량 표본 생성
+- 193개 생성기의 난이도별 대량 표본 생성
 - 생성된 정답의 재검산
 - 의도적으로 주입한 오답을 놓치는지 확인하는 뮤테이션 검사
 - 한국어 표기와 허용 어휘 검사

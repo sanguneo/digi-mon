@@ -11,6 +11,11 @@
  * 코퍼스가 비어 있으면 생성기도 없다. 기존 생성기와 같은 성취기준에 등록되므로
  * 학습지는 두 종류 문항을 함께 낸다.
  *
+ * 검토 상태: 게이트를 통과한 문항도 처음에는 '검토 전'이다. 사람이 검토해
+ * data/authored/review-status.json 의 reviewed 목록에 올린 문항만 생성기에 들어간다.
+ * 리뷰를 돌릴 때마다 정답이 둘로 읽히는 애매한 문항이 새로 나와서, 기계 게이트만으로는
+ * 학습지에 내보내지 않기로 했다(docs/authored-review-queue.md).
+ *
  * 정답은 표의 사실이므로 verify 가 같은 표를 되읽는다(영어 문장 생성기와 같은 한계).
  * 수학은 이 한계 때문에 받지 않는다. 모델이 준 답을 모델이 준 답으로 검산하면
  * '2 + 2 = □' 의 답을 5로 적어도 통과한다. 정답을 따로 계산하는 검산이 생기기 전까지
@@ -145,4 +150,44 @@ export function authoredGenerators(files) {
   return files.map(authoredGenerator);
 }
 
-export const generators = authoredGenerators(loadAuthoredCorpus());
+export const AUTHORED_REVIEW_SCHEMA = 'digi-mon/authored-review-status@1';
+export const AUTHORED_REVIEW_FILE = 'review-status.json';
+
+/**
+ * 사람이 검토를 마친 문항 id 집합을 읽는다. 목록에 없는 문항은 모두 '검토 전'이다.
+ * 파일이 없으면 검토 완료 문항도 없다.
+ */
+export function loadReviewStatus(root = AUTHORED_ROOT) {
+  const file = path.join(root, AUTHORED_REVIEW_FILE);
+  if (!existsSync(file)) return new Set();
+  const fail = (msg) => {
+    throw new Error(`AI 작성 검토 상태 오류 [${AUTHORED_REVIEW_FILE}]: ${msg}`);
+  };
+  const status = JSON.parse(readFileSync(file, 'utf8'));
+  if (status?.schema !== AUTHORED_REVIEW_SCHEMA) fail(`schema 는 ${AUTHORED_REVIEW_SCHEMA}`);
+  if (!Array.isArray(status.reviewed)) fail('reviewed 는 배열');
+  const ids = new Set();
+  for (const entry of status.reviewed) {
+    if (!/^[0-9a-f]{12}$/.test(entry?.id ?? '')) fail(`id 형식 오류: ${entry?.id}`);
+    if (ids.has(entry.id)) fail(`id 중복: ${entry.id}`);
+    if (!nonEmpty(entry.reviewer)) fail(`${entry.id}: reviewer 가 비었다`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.reviewedAt ?? '')) fail(`${entry.id}: reviewedAt 은 YYYY-MM-DD`);
+    ids.add(entry.id);
+  }
+  return ids;
+}
+
+/**
+ * 코퍼스에서 검토 완료 문항만 남긴다. 남는 문항이 없는 파일은 뺀다.
+ * 코퍼스에 없는 id 가 목록에 있으면 오타나 지워진 문항이므로 멈춘다.
+ */
+export function reviewedOnly(files, reviewedIds) {
+  const known = new Set(files.flatMap((file) => file.items.map((item) => item.id)));
+  const unknown = [...reviewedIds].filter((id) => !known.has(id));
+  if (unknown.length > 0) throw new Error(`AI 작성 검토 상태 오류: 코퍼스에 없는 id ${unknown.join(', ')}`);
+  return files
+    .map((file) => ({ ...file, items: file.items.filter((item) => reviewedIds.has(item.id)) }))
+    .filter((file) => file.items.length > 0);
+}
+
+export const generators = authoredGenerators(reviewedOnly(loadAuthoredCorpus(), loadReviewStatus()));
