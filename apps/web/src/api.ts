@@ -156,11 +156,19 @@ export class ApiError extends Error {
   }
 }
 
+// 다른 기기에서 검토할 때 교사가 직접 입력한 토큰. 저장소에 남기지 않고 이 탭의 메모리에만 둔다.
+let typedTeacherToken = '';
+
+export function setTeacherToken(token: string) {
+  typedTeacherToken = token.trim();
+}
+
 async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(path, {
     ...init,
     headers: {
       'content-type': 'application/json',
+      ...(typedTeacherToken && path.startsWith('/teacher/api/') ? { authorization: `Bearer ${typedTeacherToken}` } : {}),
       ...init?.headers,
     },
   });

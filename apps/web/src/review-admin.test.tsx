@@ -10,6 +10,8 @@ import {
   type ReviewItemDetail,
   type ReviewList,
 } from './api.ts';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { REVIEWER_STORAGE_KEY, ReviewAdmin } from './review-admin.tsx';
 
 vi.mock('./api.ts', async (original) => ({
@@ -51,6 +53,24 @@ async function mount(writeEnabled = true) {
   await act(async () => { render(<ReviewAdmin />); });
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: /하얀 토끼가/ })); });
 }
+
+function deferred<T>() {
+  let resolve!: (value: T) => void;
+  let reject!: (cause: unknown) => void;
+  const promise = new Promise<T>((ok, fail) => { resolve = ok; reject = fail; });
+  return { promise, resolve, reject };
+}
+
+const B_ID = '20ccc7f8fa19';
+const B_STEM = '씩씩한 동생이 가방을 멨습니다.';
+const detailB = (overrides: Partial<ReviewItemDetail> = {}) => detail(true, {
+  id: B_ID, priority: null, reasons: [], notes: [], stem: B_STEM,
+  item: { ...detail(true).item, id: B_ID, stem: B_STEM },
+  ...overrides,
+});
+const stemBox = () => screen.getByRole('textbox', { name: '지문' }) as HTMLTextAreaElement;
+const row = (name: RegExp) => within(screen.getByRole('list', { name: '검토할 문항' })).getByRole('button', { name });
+const leavePrompt = () => screen.queryByRole('alertdialog', { name: '저장하지 않은 수정' });
 
 beforeEach(() => { localStorage.clear(); });
 afterEach(() => { cleanup(); vi.clearAllMocks(); });
@@ -143,6 +163,254 @@ describe('review admin', () => {
     expect(vi.mocked(getReviewList)).toHaveBeenLastCalledWith(expect.objectContaining({ verdict: 'problem', offset: 0, limit: 50 }));
     expect(rows()).toHaveLength(50);
     expect(rows()[0]?.textContent).toContain('bbbbbb 지문 0');
+  });
+
+  it('keeps the last opened item when an earlier detail response arrives late', async () => {
+    vi.mocked(getReviewList).mockResolvedValue(list(true));
+    const a = deferred<ReviewItemDetail>();
+    const b = deferred<ReviewItemDetail>();
+    vi.mocked(getReviewItem).mockImplementation((id) => (id === B_ID ? b.promise : a.promise));
+    await act(async () => { render(<ReviewAdmin />); });
+    await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+    await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+    await act(async () => { b.resolve(detailB()); });
+    fireEvent.change(stemBox(), { target: { value: 'B 고친 지문' } });
+    await act(async () => { a.resolve(detail(true)); });
+    expect(screen.getByRole('form', { name: '문항 편집' }).textContent).toContain(B_ID);
+    expect(stemBox().value).toBe('B 고친 지문');
+  });
+
+  describe('drops a stale response whichever order the requests settle in', () => {
+    type Op = 'save' | 'approve' | 'fix-approve' | 'exclude' | 'reset';
+    const ops: Op[] = ['save', 'approve', 'fix-approve', 'exclude', 'reset'];
+    const orders = ['older-first', 'newer-first'] as const;
+    it.each(ops.flatMap((op) => orders.map((order) => [op, order] as const)))('%s then open another item, %s', async (op, order) => {
+      localStorage.setItem(REVIEWER_STORAGE_KEY, '김검토');
+      vi.mocked(getReviewList).mockResolvedValue(list(true));
+      const opened = detail(true, op === 'reset' ? { status: 'reviewed' } : {});
+      const older = deferred<ReviewItemDetail>();
+      const newer = deferred<ReviewItemDetail>();
+      vi.mocked(getReviewItem).mockImplementation((id) => (id === B_ID ? newer.promise : Promise.resolve(opened)));
+      vi.mocked(saveReviewItem).mockReturnValue(older.promise);
+      vi.mocked(submitReviewVerdict).mockReturnValue(older.promise);
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+
+      if (op === 'save' || op === 'fix-approve') fireEvent.change(stemBox(), { target: { value: 'A 고친 지문' } });
+      const button = { save: '저장', approve: '승인', 'fix-approve': '고친 뒤 승인', exclude: '빼기', reset: '되돌리기' }[op];
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: button })); });
+      await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+      const prompt = leavePrompt();
+      if (prompt) await act(async () => { fireEvent.click(within(prompt).getByRole('button', { name: '수정 버리기' })); });
+
+      const settle = [
+        async () => { older.resolve({ ...opened, status: op === 'exclude' ? 'excluded' : op === 'reset' ? 'pending' : 'reviewed' }); },
+        async () => { newer.resolve(detailB()); },
+      ];
+      for (const step of order === 'older-first' ? settle : [...settle].reverse()) await act(step);
+
+      expect(screen.getByRole('form', { name: '문항 편집' }).textContent).toContain(B_ID);
+      expect(stemBox().value).toBe(B_STEM);
+      expect(screen.queryByRole('status')).toBeNull();
+      expect((screen.getByRole('button', { name: '빼기' }) as HTMLButtonElement).disabled).toBe(false);
+    });
+
+    it.each(orders)('list refresh after a filter change, %s', async (order) => {
+      const first = deferred<ReviewList>();
+      const second = deferred<ReviewList>();
+      vi.mocked(getReviewList).mockImplementation((filters) => (filters.verdict === 'none' ? second.promise : first.promise));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.change(screen.getByRole('combobox', { name: '오달 판정' }), { target: { value: 'none' } }); });
+      expect(getReviewList).toHaveBeenLastCalledWith(expect.objectContaining({ verdict: 'none' }));
+      const settle = [
+        async () => { first.resolve(list(true)); },
+        async () => { second.resolve({ ...list(true), matched: 1, items: [list(true).items[1]!] }); },
+      ];
+      for (const step of order === 'older-first' ? settle : [...settle].reverse()) await act(step);
+      expect(screen.getByRole('list', { name: '검토할 문항' }).querySelectorAll('li')).toHaveLength(1);
+      expect(screen.getByText('1문항')).toBeTruthy();
+    });
+  });
+
+  describe('pagination never mixes two filters', () => {
+    const MATCHED = 120;
+    const rowsFor = (prefix: string) => Array.from({ length: MATCHED }, (_, n) => ({
+      ...SUMMARY, id: `${prefix}${String(n).padStart(6, '0')}`, priority: null, reasons: [], notes: [], stem: `${prefix} 지문 ${n}`,
+    }));
+    const pools = { '': rowsFor('aaaaaa'), problem: rowsFor('bbbbbb') };
+    const page = (filters: { verdict?: string; offset?: number; limit?: number }): ReviewList => {
+      const offset = filters.offset ?? 0;
+      const limit = filters.limit ?? 50;
+      const pool = pools[(filters.verdict ?? '') as keyof typeof pools];
+      return { ...list(true), total: MATCHED, matched: MATCHED, offset, limit, items: pool.slice(offset, offset + limit) };
+    };
+    const rowTexts = () => [...screen.getByRole('list', { name: '검토할 문항' }).querySelectorAll('li')].map((li) => li.textContent ?? '');
+    const changeVerdict = (value: string) => fireEvent.change(screen.getByRole('combobox', { name: '오달 판정' }), { target: { value } });
+
+    it('blocks 더 보기 while the new filter is still loading', async () => {
+      const pending = deferred<ReviewList>();
+      vi.mocked(getReviewList).mockImplementation(async (filters) => (
+        filters.verdict === 'problem' && (filters.offset ?? 0) === 0 ? pending.promise : page(filters)
+      ));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { changeVerdict('problem'); });
+      const more = screen.queryByRole('button', { name: '더 보기' }) as HTMLButtonElement | null;
+      if (more) await act(async () => { fireEvent.click(more); });
+      expect(vi.mocked(getReviewList)).not.toHaveBeenCalledWith(expect.objectContaining({ verdict: 'problem', offset: 50 }));
+
+      await act(async () => { pending.resolve(page({ verdict: 'problem', offset: 0, limit: 50 })); });
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '더 보기' })); });
+      expect(rowTexts()).toHaveLength(100);
+      expect(rowTexts().every((text) => text.includes('bbbbbb'))).toBe(true);
+    });
+
+    it('drops a 더 보기 page that lands after the filter changed', async () => {
+      const more = deferred<ReviewList>();
+      vi.mocked(getReviewList).mockImplementation(async (filters) => (
+        !filters.verdict && (filters.offset ?? 0) === 50 ? more.promise : page(filters)
+      ));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '더 보기' })); });
+      await act(async () => { changeVerdict('problem'); });
+      await act(async () => { more.resolve(page({ offset: 50, limit: 50 })); });
+      expect(rowTexts()).toHaveLength(50);
+      expect(rowTexts().every((text) => text.includes('bbbbbb'))).toBe(true);
+    });
+  });
+
+  describe('unsaved corrections are never dropped silently', () => {
+    const editA = () => fireEvent.change(stemBox(), { target: { value: 'A 고친 지문' } });
+
+    it('asks before opening another item, and keeps the draft when told to keep editing', async () => {
+      await mount();
+      vi.mocked(getReviewItem).mockResolvedValue(detailB());
+      editA();
+      await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+      expect(getReviewItem).toHaveBeenCalledTimes(1);
+      await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '계속 고치기' })); });
+      expect(leavePrompt()).toBeNull();
+      expect(stemBox().value).toBe('A 고친 지문');
+
+      await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+      await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '수정 버리기' })); });
+      expect(getReviewItem).toHaveBeenLastCalledWith(B_ID);
+      expect(stemBox().value).toBe(B_STEM);
+    });
+
+    it('can save first and then open the other item', async () => {
+      await mount();
+      vi.mocked(getReviewItem).mockResolvedValue(detailB());
+      vi.mocked(saveReviewItem).mockImplementation(async (_id, item) => detail(true, { item: { ...detail(true).item, ...item } }));
+      editA();
+      await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+      await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '저장하고 이동' })); });
+      expect(saveReviewItem).toHaveBeenCalledWith(SUMMARY.id, expect.objectContaining({ stem: 'A 고친 지문' }));
+      expect(stemBox().value).toBe(B_STEM);
+    });
+
+    it('stays on the item when saving before leaving is rejected', async () => {
+      await mount();
+      vi.mocked(saveReviewItem).mockRejectedValue(new ApiError('작성 게이트를 통과하지 못해 저장하지 않았다', 422, {
+        reasons: [{ gate: 'answer-leak', detail: '정답 노출' }],
+      }));
+      editA();
+      await act(async () => { fireEvent.click(row(/씩씩한 동생이/)); });
+      await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '저장하고 이동' })); });
+      expect(getReviewItem).toHaveBeenCalledTimes(1);
+      expect(stemBox().value).toBe('A 고친 지문');
+      expect(screen.getByRole('alert').textContent).toContain('answer-leak');
+    });
+
+    it('asks before going back to the list', async () => {
+      await mount();
+      editA();
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: '목록으로' })); });
+      expect(stemBox().value).toBe('A 고친 지문');
+      await act(async () => { fireEvent.click(within(leavePrompt()!).getByRole('button', { name: '수정 버리기' })); });
+      expect(screen.queryByRole('form', { name: '문항 편집' })).toBeNull();
+    });
+
+    it.each([
+      ['빼기', 'excluded', '제외'],
+      ['되돌리기', 'pending', '검토 전'],
+    ] as const)('keeps the draft through %s', async (button, status, label) => {
+      localStorage.setItem(REVIEWER_STORAGE_KEY, '김검토');
+      vi.mocked(getReviewList).mockResolvedValue(list(true));
+      vi.mocked(getReviewItem).mockResolvedValue(detail(true, { status: 'reviewed' }));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+      vi.mocked(submitReviewVerdict).mockResolvedValue(detail(true, { status }));
+      editA();
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: button })); });
+      expect(stemBox().value).toBe('A 고친 지문');
+      expect(within(screen.getByRole('form', { name: '문항 편집' })).getByText(label, { selector: '.dm-badge' })).toBeTruthy();
+      expect((screen.getByRole('button', { name: '저장' }) as HTMLButtonElement).disabled).toBe(false);
+    });
+
+    it('asks the browser to confirm leaving the page while there is a draft', async () => {
+      await mount();
+      const clean = new Event('beforeunload', { cancelable: true });
+      window.dispatchEvent(clean);
+      expect(clean.defaultPrevented).toBe(false);
+      editA();
+      const dirty = new Event('beforeunload', { cancelable: true });
+      window.dispatchEvent(dirty);
+      expect(dirty.defaultPrevented).toBe(true);
+    });
+  });
+
+  describe('below 900px', () => {
+    // jsdom 은 @media 를 평가하지 않으니, 좁은 화면 규칙 블록만 꺼내 그대로 건다.
+    const reviewCss = readFileSync(join(import.meta.dirname, 'review-admin.css'), 'utf8');
+    const narrowRules = (() => {
+      const start = reviewCss.indexOf('@media (max-width: 900px)');
+      const open = reviewCss.indexOf('{', start);
+      let depth = 0;
+      for (let i = open; i < reviewCss.length; i += 1) {
+        if (reviewCss[i] === '{') depth += 1;
+        if (reviewCss[i] === '}') depth -= 1;
+        if (depth === 0) return reviewCss.slice(open + 1, i);
+      }
+      throw new Error('900px 규칙 블록을 찾지 못했다');
+    })();
+    let style: HTMLStyleElement;
+    beforeEach(() => {
+      style = document.createElement('style');
+      style.textContent = narrowRules;
+      document.head.append(style);
+    });
+    afterEach(() => { style.remove(); });
+    const visible = (element: Element) => {
+      for (let node: Element | null = element; node; node = node.parentElement) {
+        if (getComputedStyle(node).display === 'none') return false;
+      }
+      return true;
+    };
+
+    it('hides the detail pane until an item is open (rules applied)', async () => {
+      vi.mocked(getReviewList).mockResolvedValue(list(true));
+      await act(async () => { render(<ReviewAdmin />); });
+      expect(visible(screen.getByRole('list', { name: '검토할 문항' }))).toBe(true);
+      expect(visible(screen.getByText('왼쪽 목록에서 문항을 고르세요.'))).toBe(false);
+    });
+
+    it('shows a failed list request', async () => {
+      vi.mocked(getReviewList).mockRejectedValue(new ApiError('교사 토큰이 없거나 틀렸습니다.', 403, undefined));
+      await act(async () => { render(<ReviewAdmin />); });
+      const alert = screen.getByRole('alert');
+      expect(alert.textContent).toContain('교사 토큰이 없거나 틀렸습니다.');
+      expect(visible(alert)).toBe(true);
+    });
+
+    it('shows a failed first detail request', async () => {
+      vi.mocked(getReviewList).mockResolvedValue(list(true));
+      vi.mocked(getReviewItem).mockRejectedValue(new ApiError('문항을 찾지 못했습니다.', 404, undefined));
+      await act(async () => { render(<ReviewAdmin />); });
+      await act(async () => { fireEvent.click(row(/하얀 토끼가/)); });
+      const alert = screen.getByRole('alert');
+      expect(alert.textContent).toContain('문항을 찾지 못했습니다.');
+      expect(visible(alert)).toBe(true);
+    });
   });
 
   it('disables every write control when the server has writing turned off', async () => {

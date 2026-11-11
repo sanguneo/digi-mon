@@ -10,8 +10,10 @@ import {
   getReviewItem,
   getReviewList,
   saveReviewItem,
+  setTeacherToken,
   submitReviewVerdict,
 } from './api.ts';
+import { useLatestRequests } from './latest-request.ts';
 import './review-admin.css';
 
 export const REVIEWER_STORAGE_KEY = 'digimon.reviewer';
@@ -56,6 +58,16 @@ const fromForm = (form: ItemForm): AuthoredItemFields => ({
 });
 
 const sameForm = (a: ItemForm, b: ItemForm) => JSON.stringify(a) === JSON.stringify(b);
+const messageOf = (cause: unknown) => (cause instanceof Error ? cause.message : String(cause));
+
+/** 화면에 떠 있는 목록과 그 목록을 받은 필터. '더 보기'는 이 필터로만 잇는다. */
+interface ShownList {
+  filters: Filters;
+  list: ReviewList;
+}
+
+/** 초안을 버릴 수 있는 이동. 저장 안 한 수정이 있으면 먼저 물어본다. */
+type Leave = { kind: 'open'; id: string } | { kind: 'back' };
 
 /** offset 부터 count 문항을 서버 한도(500)씩 나눠 받아 잇는다. */
 async function fetchRange(filters: Filters, offset: number, count: number): Promise<ReviewList> {
@@ -82,43 +94,58 @@ function readReviewer(): string {
 
 export function ReviewAdmin() {
   const [filters, setFilters] = useState<Filters>({ subject: '', standard: '', status: '', verdict: '' });
-  const [list, setList] = useState<ReviewList | null>(null);
+  const [shown, setShown] = useState<ShownList | null>(null);
+  const list = shown?.list ?? null;
   // 지금까지 보여 준 문항 수. 저장 뒤 목록을 다시 받을 때 이만큼 다시 채운다.
   const shownRef = useRef(PAGE_SIZE);
-  // 필터가 바뀌거나 다시 받으면 올라간다. 그 전에 떠난 '더 보기' 응답은 버린다.
-  const listGeneration = useRef(0);
+  // 이 화면의 모든 비동기 요청은 여기서 세대를 받는다. list: 목록·더 보기, item: 상세·저장·판정·되돌리기.
+  const requests = useLatestRequests<'list' | 'item'>();
+  const [listLoading, setListLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [listVersion, setListVersion] = useState(0);
+  const [listError, setListError] = useState('');
   const [selected, setSelected] = useState<ReviewItemDetail | null>(null);
   const [form, setForm] = useState<ItemForm | null>(null);
   const [reviewer, setReviewer] = useState(readReviewer);
+  const [teacherToken, setTeacherTokenInput] = useState('');
   const [excludeReason, setExcludeReason] = useState('');
   const [busy, setBusy] = useState(false);
+  const [openError, setOpenError] = useState('');
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [gateReasons, setGateReasons] = useState<GateReason[]>([]);
+  const [pendingLeave, setPendingLeave] = useState<Leave | null>(null);
 
   useEffect(() => {
-    const generation = ++listGeneration.current;
+    const isLatest = requests.begin('list');
+    setListLoading(true);
     fetchRange(filters, 0, shownRef.current).then((result) => {
-      if (generation === listGeneration.current) setList(result);
+      if (!isLatest()) return;
+      setShown({ filters, list: result });
+      setListError('');
     }).catch((cause: unknown) => {
-      if (generation === listGeneration.current) setError(cause instanceof Error ? cause.message : String(cause));
+      if (isLatest()) setListError(messageOf(cause));
+    }).finally(() => {
+      if (isLatest()) setListLoading(false);
     });
-  }, [filters, listVersion]);
+  }, [filters, listVersion, requests]);
+
+  // 화면 목록이 지금 필터로 받은 것이고 새로 받는 중이 아닐 때만 잇는다.
+  const canLoadMore = Boolean(shown && shown.filters === filters && !listLoading && !loadingMore);
 
   const loadMore = async () => {
-    if (!list) return;
-    const generation = listGeneration.current;
+    if (!shown || !canLoadMore) return;
+    const base = shown;
+    const isLatest = requests.join('list');
     setLoadingMore(true);
     try {
-      const next = await fetchRange(filters, list.items.length, PAGE_SIZE);
-      if (generation !== listGeneration.current) return;
-      const items = [...list.items, ...next.items];
+      const next = await fetchRange(base.filters, base.list.items.length, PAGE_SIZE);
+      if (!isLatest()) return;
+      const items = [...base.list.items, ...next.items];
       shownRef.current = items.length;
-      setList({ ...next, offset: 0, items });
+      setShown({ filters: base.filters, list: { ...next, offset: 0, items } });
     } catch (cause) {
-      if (generation === listGeneration.current) setError(cause instanceof Error ? cause.message : String(cause));
+      if (isLatest()) setListError(messageOf(cause));
     } finally {
       setLoadingMore(false);
     }
@@ -138,38 +165,60 @@ export function ReviewAdmin() {
     }
   };
 
-  const show = (detail: ReviewItemDetail) => {
-    setSelected(detail);
-    setForm(toForm(detail.item));
+  const changeTeacherToken = (value: string) => {
+    setTeacherTokenInput(value);
+    setTeacherToken(value);
+  };
+
+  const clearNotices = () => {
+    setOpenError('');
+    setError('');
+    setMessage('');
+    setGateReasons([]);
   };
 
   const open = async (id: string) => {
-    setError('');
-    setMessage('');
-    setGateReasons([]);
-    setExcludeReason('');
+    const isLatest = requests.begin('item');
+    clearNotices();
+    setBusy(true);
     try {
-      show(await getReviewItem(id));
+      const detail = await getReviewItem(id);
+      if (!isLatest()) return;
+      setSelected(detail);
+      setForm(toForm(detail.item));
+      setExcludeReason('');
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : String(cause));
+      if (isLatest()) setOpenError(messageOf(cause));
+    } finally {
+      if (isLatest()) setBusy(false);
     }
   };
 
-  const run = async (task: () => Promise<ReviewItemDetail>, done: string) => {
+  /**
+   * 저장·판정·되돌리기. 응답이 왔을 때 그사이 다른 문항을 열었거나 목록으로 나갔으면 화면에는 반영하지 않는다.
+   * keepDraft: 문항 내용을 바꾸지 않는 요청(빼기·되돌리기)이면 고치던 초안을 그대로 둔다.
+   * 성공해 화면에 반영했을 때만 true.
+   */
+  const run = async (task: () => Promise<ReviewItemDetail>, done: string, keepDraft = false): Promise<boolean> => {
+    const isLatest = requests.begin('item');
     setBusy(true);
-    setError('');
-    setMessage('');
-    setGateReasons([]);
+    clearNotices();
     try {
-      show(await task());
-      setMessage(done);
+      const detail = await task();
       setListVersion((v) => v + 1);
+      if (!isLatest()) return false;
+      setSelected(detail);
+      if (!keepDraft) setForm(toForm(detail.item));
+      setMessage(done);
+      return true;
     } catch (cause) {
+      if (!isLatest()) return false;
       const reasons = gateReasonsOf(cause);
       if (reasons) setGateReasons(reasons);
-      setError(cause instanceof Error ? cause.message : String(cause));
+      setError(messageOf(cause));
+      return false;
     } finally {
-      setBusy(false);
+      if (isLatest()) setBusy(false);
     }
   };
 
@@ -178,10 +227,44 @@ export function ReviewAdmin() {
   const hasReviewer = reviewer.trim().length > 0;
   const canWrite = writeEnabled && !busy;
 
+  useEffect(() => {
+    if (!dirty) return undefined;
+    const warn = (event: BeforeUnloadEvent) => event.preventDefault();
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [dirty]);
+
+  const go = (target: Leave) => {
+    setPendingLeave(null);
+    if (target.kind === 'open') {
+      void open(target.id);
+      return;
+    }
+    requests.begin('item');
+    setBusy(false);
+    clearNotices();
+    setSelected(null);
+    setForm(null);
+  };
+
+  const leave = (target: Leave) => {
+    if (dirty) setPendingLeave(target);
+    else go(target);
+  };
+
+  const saveDraft = () => {
+    if (!selected || !form) return Promise.resolve(false);
+    return run(() => saveReviewItem(selected.id, fromForm(form)), '작성 게이트를 통과해 저장했습니다.');
+  };
+
   const save = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!selected || !form) return;
-    void run(() => saveReviewItem(selected.id, fromForm(form)), '작성 게이트를 통과해 저장했습니다.');
+    void saveDraft();
+  };
+
+  const saveThenGo = async (target: Leave) => {
+    setPendingLeave(null);
+    if (await saveDraft()) go(target);
   };
 
   const verdict = (action: ReviewAction) => {
@@ -195,7 +278,7 @@ export function ReviewAdmin() {
       ...(action === 'reset' ? {} : { reviewer: reviewer.trim() }),
       ...(action === 'approve' && dirty ? { item: fromForm(form) } : {}),
       ...(action === 'exclude' && excludeReason.trim() ? { reason: excludeReason.trim() } : {}),
-    }), labels[action]);
+    }), labels[action], action !== 'approve');
   };
 
   const standards = list?.facets.standards.filter((s) => !filters.subject || s.subject === filters.subject) ?? [];
@@ -226,6 +309,42 @@ export function ReviewAdmin() {
             value={reviewer}
           />
         </label>
+        <label className="dm-field dm-review__reviewer">
+          <span>교사 토큰 (다른 기기에서 들어왔을 때만)</span>
+          <input
+            autoComplete="off"
+            onChange={(event) => changeTeacherToken(event.target.value)}
+            placeholder="이 컴퓨터에서는 비워 둡니다"
+            type="password"
+            value={teacherToken}
+          />
+        </label>
+      </div>
+
+      {/* 오류와 '수정 버리기' 확인은 두 패널 밖에 둔다. 좁은 화면에서는 한 패널이 숨어 있다. */}
+      <div className="dm-review__notices">
+        {listError ? (
+          <div className="dm-note dm-note--danger" role="alert">
+            <p>목록을 불러오지 못했습니다. {listError}</p>
+            <button className="dm-btn" onClick={() => setListVersion((v) => v + 1)} type="button">다시 불러오기</button>
+          </div>
+        ) : null}
+        {openError ? <div className="dm-note dm-note--danger" role="alert">문항을 열지 못했습니다. {openError}</div> : null}
+        {pendingLeave ? (
+          <div className="dm-note dm-note--warn dm-review__leave" role="alertdialog" aria-label="저장하지 않은 수정">
+            <p>
+              <code>{selected?.id}</code> 문항에 저장하지 않은 수정이 있습니다.
+              {pendingLeave.kind === 'open' ? ' 다른 문항을 열기 전에' : ' 목록으로 가기 전에'} 어떻게 할까요?
+            </p>
+            <div className="dm-review__leave-actions">
+              <button className="dm-btn dm-btn--primary" disabled={!canWrite} onClick={() => void saveThenGo(pendingLeave)} type="button">
+                저장하고 이동
+              </button>
+              <button className="dm-btn dm-review__exclude" onClick={() => go(pendingLeave)} type="button">수정 버리기</button>
+              <button autoFocus className="dm-btn" onClick={() => setPendingLeave(null)} type="button">계속 고치기</button>
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className="dm-review__layout">
@@ -268,7 +387,7 @@ export function ReviewAdmin() {
                 <button
                   aria-current={selected?.id === item.id ? 'true' : undefined}
                   className="dm-review__row"
-                  onClick={() => void open(item.id)}
+                  onClick={() => leave({ kind: 'open', id: item.id })}
                   type="button"
                 >
                   <span className="dm-review__row-meta">
@@ -285,14 +404,14 @@ export function ReviewAdmin() {
             ))}
           </ol>
           {list && list.items.length < list.matched ? (
-            <button className="dm-btn" disabled={loadingMore} onClick={() => void loadMore()} type="button">더 보기</button>
+            <button className="dm-btn" disabled={!canLoadMore} onClick={() => void loadMore()} type="button">더 보기</button>
           ) : null}
         </div>
 
         <div className="dm-review__detail-pane">
           {selected && form ? (
             <form className="dm-review__detail" onSubmit={save} aria-label="문항 편집">
-              <button className="dm-btn dm-review__back" onClick={() => { setSelected(null); setForm(null); }} type="button">
+              <button className="dm-btn dm-review__back" onClick={() => leave({ kind: 'back' })} type="button">
                 목록으로
               </button>
               <header className="dm-review__detail-head">
@@ -388,7 +507,7 @@ export function ReviewAdmin() {
             </form>
           ) : (
             <div className="dm-review__empty">
-              {error ? <div className="dm-note dm-note--danger" role="alert">{error}</div> : <p>왼쪽 목록에서 문항을 고르세요.</p>}
+              <p>왼쪽 목록에서 문항을 고르세요.</p>
             </div>
           )}
         </div>
