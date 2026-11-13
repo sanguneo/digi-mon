@@ -79,6 +79,13 @@ async function proxy(
   if (isTeacher && options.teacherToken) {
     headers.set('authorization', `Bearer ${options.teacherToken}`);
   }
+  // 엔진 리밋이 클라이언트별로 설 수 있게 주소를 넘긴다(DIGIMON_TRUST_PROXY).
+  const peer = request.socket.remoteAddress;
+  const forwardedFor = request.headers['x-forwarded-for'];
+  const chain = [forwardedFor, peer].filter(Boolean).join(', ');
+  if (chain) headers.set('x-forwarded-for', chain);
+  const realIp = request.headers['x-real-ip'];
+  if (typeof realIp === 'string') headers.set('x-real-ip', realIp);
 
   const method = request.method ?? 'GET';
   const upstream = await fetch(`${options.engineOrigin}${targetPath}${url.search}`, {

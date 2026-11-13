@@ -11,12 +11,16 @@ let host: http.Server;
 let hostUrl = '';
 let receivedAuthorization: string | undefined;
 let receivedBody: Record<string, unknown> = {};
+let receivedForwardedFor: string | undefined;
+let receivedRealIp: string | undefined;
 
 before(async () => {
   engine = http.createServer(async (request, response) => {
     const chunks: Buffer[] = [];
     for await (const chunk of request) chunks.push(Buffer.from(chunk));
     receivedAuthorization = request.headers.authorization;
+    receivedForwardedFor = request.headers['x-forwarded-for'] as string | undefined;
+    receivedRealIp = request.headers['x-real-ip'] as string | undefined;
     receivedBody = JSON.parse(Buffer.concat(chunks).toString('utf8')) as Record<string, unknown>;
     response.writeHead(200, { 'content-type': 'application/json' });
     response.end(JSON.stringify({ ok: true }));
@@ -96,6 +100,22 @@ test('teacher proxy refuses cross-site, origin-less and non-JSON writes before a
     assert.equal(response.status, status, JSON.stringify(headers));
     assert.equal(receivedAuthorization, 'untouched');
   }
+});
+
+test('proxy appends the peer address to X-Forwarded-For and keeps X-Real-IP', async () => {
+  const post = (headers: Record<string, string>) => fetch(`${hostUrl}/learner/api/v1/grade`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...headers },
+    body: JSON.stringify({ responses: {} }),
+  });
+
+  assert.equal((await post({})).status, 200);
+  assert.equal(receivedForwardedFor, '127.0.0.1');
+  assert.equal(receivedRealIp, undefined);
+
+  assert.equal((await post({ 'x-forwarded-for': '203.0.113.7', 'x-real-ip': '203.0.113.7' })).status, 200);
+  assert.equal(receivedForwardedFor, '203.0.113.7, 127.0.0.1');
+  assert.equal(receivedRealIp, '203.0.113.7');
 });
 
 test('host serves the built single-page client', async () => {
