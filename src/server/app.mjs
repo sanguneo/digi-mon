@@ -370,21 +370,33 @@ function createRateLimiter() {
   };
 }
 
-const LOOPBACK_ADDRESSES = new Set(['127.0.0.1', '::1', '::ffff:127.0.0.1']);
+/** 127.0.0.0/8, ::1, ::ffff:127.x */
+function isLoopback(address) {
+  const lower = address.toLowerCase();
+  const v4 = lower.startsWith('::ffff:') ? lower.slice(7) : lower;
+  return lower === '::1' || (isIP(v4) === 4 && v4.startsWith('127.'));
+}
 
 /**
  * 리밋을 매길 클라이언트 주소.
  *
  * nginx → 앱 호스트 → 엔진 구성에서는 모든 요청이 127.0.0.1 에서 와서 한 버킷을 나눠 쓴다.
- * trustProxy 를 켰고 소켓 상대가 루프백일 때만 X-Forwarded-For 의 첫 주소를 쓴다.
- * 루프백이 아닌 상대가 보낸 XFF 는 위조할 수 있으니 믿지 않는다. 형식이 틀리면 소켓 주소다.
+ * trustProxy 를 켰고 소켓 상대가 루프백일 때만 X-Forwarded-For 를 본다. 목록을 오른쪽부터 읽어
+ * 루프백이 아닌 첫 항목을 쓴다. 그것이 nginx 가 $remote_addr 로 덧붙인 주소이고, 그보다 왼쪽은
+ * 클라이언트가 마음대로 넣을 수 있으니 보지 않는다. 그 항목이 IP 가 아니거나 없으면 소켓 주소다.
+ * 루프백이 아닌 상대가 보낸 XFF 는 통째로 믿지 않는다.
  */
 export function clientAddress(req, trustProxy = false) {
   const socketAddress = req.socket.remoteAddress ?? 'unknown';
-  if (!trustProxy || !LOOPBACK_ADDRESSES.has(socketAddress)) return socketAddress;
+  if (!trustProxy || !isLoopback(socketAddress)) return socketAddress;
   const forwarded = req.headers['x-forwarded-for'];
-  const first = (Array.isArray(forwarded) ? forwarded[0] : forwarded)?.split(',')[0]?.trim();
-  return first && isIP(first) !== 0 ? first : socketAddress;
+  const entries = (Array.isArray(forwarded) ? forwarded.join(',') : forwarded ?? '').split(',');
+  for (let index = entries.length - 1; index >= 0; index -= 1) {
+    const entry = entries[index].trim();
+    if (isIP(entry) !== 0 && isLoopback(entry)) continue;
+    return isIP(entry) !== 0 ? entry : socketAddress;
+  }
+  return socketAddress;
 }
 
 /** 요청 하나가 서버에 시키는 문항 생성량. 리밋은 이 값을 센다. */

@@ -308,11 +308,13 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 
 요청 리밋은 클라이언트 주소별로 센다. nginx와 앱 호스트(`apps/web`, `apps/web-garden`) 뒤에
 엔진을 두면 모든 요청이 `127.0.0.1`에서 와서 한 버킷을 나눠 쓴다. 이때는
-`DIGIMON_TRUST_PROXY=1`을 켜라. 엔진은 루프백(`127.0.0.1`, `::1`, `::ffff:127.0.0.1`)에서
-온 요청에 한해 `X-Forwarded-For`의 첫 주소를 클라이언트로 본다. 루프백이 아닌 상대가
-보낸 `X-Forwarded-For`나 IP가 아닌 값은 무시하고 소켓 주소를 쓴다. 기본값은 꺼짐이다.
-첫 주소를 믿는 만큼 nginx는 클라이언트가 보낸 값을 잇지 말고
-`proxy_set_header X-Forwarded-For $remote_addr;`로 덮어쓰는 편이 안전하다.
+`DIGIMON_TRUST_PROXY=1`을 켜라. 엔진은 루프백(`127.0.0.0/8`, `::1`, `::ffff:127.x`)에서
+온 요청에 한해 `X-Forwarded-For` 목록을 오른쪽부터 읽어 루프백이 아닌 첫 주소를
+클라이언트로 본다. nginx가 `$remote_addr`로 덧붙인 주소가 여기에 해당하고, 그보다 왼쪽에
+클라이언트가 적어 보낸 값은 보지 않는다. 그 주소가 IP가 아니거나 루프백뿐이면, 또는
+루프백이 아닌 상대가 보낸 요청이면 소켓 주소를 쓴다. 기본값은 꺼짐이다.
+그래서 nginx 설정이 `$proxy_add_x_forwarded_for`여도 안전하다.
+`proxy_set_header X-Forwarded-For $remote_addr;`로 덮어쓰는 것은 선택 사항인 추가 보강이다.
 
 ### 주요 경로
 
