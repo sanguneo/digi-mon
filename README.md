@@ -306,6 +306,14 @@ TEACHER_TOKEN='replace-with-a-secret' npm run serve
 기본 주소는 `http://127.0.0.1:8787`이다. 외부에 공개해야 할 때만 `HOST`를
 명시한다.
 
+요청 리밋은 클라이언트 주소별로 센다. nginx와 앱 호스트(`apps/web`, `apps/web-garden`) 뒤에
+엔진을 두면 모든 요청이 `127.0.0.1`에서 와서 한 버킷을 나눠 쓴다. 이때는
+`DIGIMON_TRUST_PROXY=1`을 켜라. 엔진은 루프백(`127.0.0.1`, `::1`, `::ffff:127.0.0.1`)에서
+온 요청에 한해 `X-Forwarded-For`의 첫 주소를 클라이언트로 본다. 루프백이 아닌 상대가
+보낸 `X-Forwarded-For`나 IP가 아닌 값은 무시하고 소켓 주소를 쓴다. 기본값은 꺼짐이다.
+첫 주소를 믿는 만큼 nginx는 클라이언트가 보낸 값을 잇지 말고
+`proxy_set_header X-Forwarded-For $remote_addr;`로 덮어쓰는 편이 안전하다.
+
 ### 주요 경로
 
 | 요청 | 경로 | 설명 |
